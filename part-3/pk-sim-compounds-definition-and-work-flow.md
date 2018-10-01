@@ -3,14 +3,14 @@
 A Compound is a set of data that describes the properties of the substance whose behavior is to be simulated. These properties are defined within the building block **Compound**. For each project, several compounds may be defined. The compounds defined can be saved as a templates and then be shared among several projects and users.
 
 ## Definition of new Compounds in PK- Sim®‌
-    
+
 To create a new compound, do one of the following:
 
-*   Click on **Compound** ![Image](../assets/images/part-3/Compound-2.png) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+- Click on **Compound** ![Image](../assets/images/part-3/Compound-2.png) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
-*   Right mouse click on **Compounds** in the **Building Block Explorer** and select ![Image](../assets/images/part-3/Compound_trans.png) **Add Compound...**
+- Right mouse click on **Compounds** in the **Building Block Explorer** and select ![Image](../assets/images/part-3/Compound_trans.png) **Add Compound...**
 
-*   Use the short cut **Ctrl+Alt+C**
+- Use the short cut **Ctrl+Alt+C**
 
 A dialog will open, where the properties of the compound can be defined. The compound is initialized by giving it a **Name** in the respective input field. The name is used to identify the substance when its parameters are saved in the project and/or as a template. The properties of the compound can then be set or changed:
 
@@ -20,25 +20,24 @@ The **Create Compound** building block is subdivided into three tabs: Basic Phys
 
 ### Basic Physico-chemistry‌
 
-In the uppermost checkbox one can define the compound as being a small or a large molecule, such as a protein. If **Is small molecule** is de-selected, the permeability for passive diffusion into blood cells and into the intracellular space of the organs as well as the intestinal permeability will be set to zero. If the drug is a small molecule and is used in a **Model for proteins and large molecules**, the drug will not enter the endosomal space (see [Modeling of Proteins](../part-1/05-modeling-concepts-modeling-of-proteins.md)).
+In the uppermost checkbox one can define the compound as being a small or a large molecule, such as a protein. If **Is small molecule** is de-selected, the permeability for passive diffusion into blood cells and into the intracellular space of the organs as well as the intestinal permeability will be set to zero. If the drug is a small molecule and is used in a **Model for proteins and large molecules**, the drug will not enter the endosomal space (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)).
 
 Then, the basic physico-chemical properties have to be specified in the **Basic Physico-chemistry** Tab. For drug properties in many cases numerous values, determined using various methods or assays, are available (e.g. logMA, logP, clogP for lipophilicity). You can therefore specify several alternative values. Later, in the simulation, you can choose the most appropriate value from the list.
 
 To enter an additional value:
 
 1.  Click **Add** ![Image](../assets/icons/Add.png) at the end of a row.
-    
+
 2.  Enter the alternative name
-    
+
 3.  If desired, enter a short description in the respective input field
-    
+
 4.  Click **OK** ![Image](../assets/icons/OK.png)
-    
 
 To delete a value:
 
 1.  Click **Delete** ![Image](../assets/icons/Delete.png)
-    
+
 2.  Click **Yes**
 
 If several alternative values have been defined, you can select a default one by ticking the respective check box. When setting up the simulation, a value set as default will be ranked first. The alternative values can still be selected, if desired.
@@ -47,7 +46,7 @@ If several alternative values have been defined, you can select a default one by
 Please note that a value set as default cannot be deleted. In order to delete the value, define another default value.
 {% endhint %}
 
-**Lipophilicity** 
+**Lipophilicity**
 
 {% hint style="tip" %}
 As lipophicity input, the partition coefficient between lipid membranes and water, i.e. the membrane affinity (logMA) is recommended. Alternatively, other lipophilicity values (e.g. logP, clogP) can be used, but in this case the quality of the simulation results might be affected. The type of lipophilicity measurement can be described in the first column (experiment).
@@ -99,9 +98,8 @@ pka values always refer to the pka value of the acidic form of the compound. The
 {% endhint %}
 
 {% hint style="note" %}
-The pka values are used for the calculation of pH-dependent changes in solubility in the gastrointestinal tract. Furthermore, when using the distribution model (see [Creating new simulations in PK-Sim®](12-pk-sim-simulations.md#creating-new-simulations-in-pk-sim)) of Rodgers and Rowland or the model of Schmitt the compound type is a basic parameter for calculating the partition coefficients. It is furthermore used by the two charge-dependent methods of Schmitt to calculate the permeability of the barrier between interstitial and cellular space.
+The pka values are used for the calculation of pH-dependent changes in solubility in the gastrointestinal tract. Furthermore, when using the distribution model (see [Creating new simulations in PK-Sim®](pk-sim-simulations.md#creating-new-simulations-in-pk-sim)) of Rodgers and Rowland or the model of Schmitt the compound type is a basic parameter for calculating the partition coefficients. It is furthermore used by the two charge-dependent methods of Schmitt to calculate the permeability of the barrier between interstitial and cellular space.
 {% endhint %}
-
 
 **Solubility**
 
@@ -125,35 +123,35 @@ After having defined the basic physico-chemical properties of the compound, proc
 
 Five kinds of processes can be defined in the ADME tab depending on the type of interaction between the compound and the biological entity influencing the pharmacokinetics of the drug in vivo:
 
-*   Absorption
+- Absorption
 
-*   Distribution
+- Distribution
 
-*   Metabolism
+- Metabolism
 
-*   Transport & Excretion
+- Transport & Excretion
 
-*   Inhibition
+- Inhibition
 
 For each of these items one or more ADME processes can be defined in order to systematically collect all available information on absorption, degradation, transport and binding processes from e.g. _in vitro_ assays and use this information to obtain specific kinetic rates used in the simulation.
 
 A general workflow for defining a specific process in _Protein Binding Partners_, _Metabolizing Enzymes_, _Total Hepatic Clearances_, _Transport Proteins_, _Renal Clearances_, _Biliary Clearances_ is as follows:
 
-*   Right click on the biological process you want to add to (e.g. **Metabolizing Enzymes** in the **Metabolism** branch, **Renal Clearances** in the **Transport & Excretion** branch, …).
+- Right click on the biological process you want to add to (e.g. **Metabolizing Enzymes** in the **Metabolism** branch, **Renal Clearances** in the **Transport & Excretion** branch, …).
 
-*   Click on the **Add …** command (e.g. **Add Metabolizing Enzyme …**).
+- Click on the **Add …** command (e.g. **Add Metabolizing Enzyme …**).
 
-*   Enter a name for the biological process you want to add.
+- Enter a name for the biological process you want to add.
 
-*   Enter a name for the data source (e.g. in vitro assay, literature, laboratory results).
+- Enter a name for the data source (e.g. in vitro assay, literature, laboratory results).
 
-*   Select the process type from the list.
+- Select the process type from the list.
 
-*   Enter the required input parameters (see tables below for an overview of the input parameters for each process type).
+- Enter the required input parameters (see tables below for an overview of the input parameters for each process type).
 
-*   If physiological parameters are based on in vivo measurements, e.g. the intrinsic clearance, the respective species used in the experiment has to be selected.
+- If physiological parameters are based on in vivo measurements, e.g. the intrinsic clearance, the respective species used in the experiment has to be selected.
 
-*   Click **OK**.
+- Click **OK**.
 
 After definition of the required parameters the specific clearance or kinetic rate constant used in the simulation is automatically calculated taking into account the parameters listed under **Calculation parameters**.
 
@@ -161,7 +159,7 @@ After definition of the required parameters the specific clearance or kinetic ra
 Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol ![Image](../assets/icons/Warning.png). The formula can be reset by clicking on ![Image](../assets/icons/Reset.png)
 {% endhint %}
 
-After having defined the biological properties of the compound, you will have to link specific processes to enzymatic, transport, and binding settings defined for the selected individual/species in the Simulation. This is described in [Select relevant biological processes](12-pk-sim-simulations.md#select-relevant-biological-processes).
+After having defined the biological properties of the compound, you will have to link specific processes to enzymatic, transport, and binding settings defined for the selected individual/species in the Simulation. This is described in [Select relevant biological processes](pk-sim-simulations.md#select-relevant-biological-processes).
 
 In the following an overview of the process types is given that can be defined for the different biological properties including additional information on the required input parameters.
 
@@ -194,7 +192,7 @@ If experimental values for intestinal permeability are available, e.g. from Caco
 {% endhint %}
 
 #### Distribution
-    
+
 ##### Partition coefficient calculation methods‌
 
 Two parameters determine the rate and extent of passive distribution in the body: steady state organ-plasma partition coefficients as well as permeability surface area (PxSA) products of each organ.
@@ -211,7 +209,7 @@ Organ/plasma partition coefficients are based on the concept of partition coeffi
 
 ![Partition Coefficients](../assets/images/part-3/Partition_Coefficients.png)
 
-with ![Image](../assets/images/part-3/Fx_organ.png) = volume fraction of water, lipid and protein, 
+with ![Image](../assets/images/part-3/Fx_organ.png) = volume fraction of water, lipid and protein,
 ![Image](../assets/images/part-3/K_lipid.png) = lipid/water partition coefficient,
 
 ![Image](../assets/images/part-3/K_protein.png) = protein/water partition coefficient,
@@ -227,7 +225,7 @@ Partition coefficients are derived from input data as follows:
 Drug partitioning between plasma and red blood cells is calculated in analogous manner to ![Drug Partitioning](../assets/images/part-3/Eq_Krbc_PKSim.png)
 
 The only exceptions are the Schmitt model that additionally takes into account the amount of acidic and neutral phospholipids as well as neutral lipids, and the Rodgers & Rowland model, if experimental data for blood-to-plasma concentration ratios (B:P) are available.
-        
+  
 The equation for the calculation of Krbc in the Schmitt partition model is:
 ![Drug Partitioning Schmitt](../assets/images/part-3/equation-15-4.png)
 
@@ -235,19 +233,19 @@ If a value for B:P is used in the Rodgers & Rowland model, Krbc is calculated as
 ![Drug Partitioning Rodgers & Rowland](../assets/images/part-3/equation-15-5.png)
 
 where HCT is the hematocrit and BPratio is the blood-to-plasma concentration ratio.
-        
+  
 Five different methods for the calculation of organ-plasma partition coefficients are available in PK-Sim®. No general rules have emerged to determine which distribution model is best suited based on knowledge about the substance properties. However, some trends are contained within the different model foundations and assumptions as outlined below:
 
-|Partition coefficient calculation method |Description |
-|--- |--- |
-|PK-Sim® Standard (default)|The relevant compound parameters are lipophilicity and binding to plasma proteins. As lipophilicity measure, the membrane affinity (partition coefficient between water and an artificial membrane bilayer) is preferred in this model. The subcompartments of tissue and blood or plasma are assumed to consist of lipids, proteins, and water. Therefore the respective volume fractions as well as lipid/water (Klipid) and protein/ water (Kprotein) partition coefficients of the compound are considered.|
-|Rodgers & Rowland|In contrast to the previous models this approach explicitly considers electrostatic interactions between ionized compounds (e.g. moderate-to-strong bases) and anionic phospholipids at physiological pH. It also considers interactions with intracellular neutral phospholipids and neutral lipids. Two additional input parameters are therefore necessary for the calculation of partition coefficients: the blood to plasma concentration ratios BPratio, as a measure for electrostatic interactions of drugs with acidic phospholipids, and the vegetable oil-water partition coefficient (Dvo:w) which is a better surrogate than the octanol-water partition coefficient (Po:w) for neutral lipid \[[59](../references.md#59)\], \[[62](../references.md#62)\], \[[60](../references.md#60)\], \[[61](../references.md61)\].|
-|Schmitt|This new approach offers a universally applicable method to calculate organ-plasma partition coefficients under explicit consideration of electrostatic interactions between charged molecules at physiological pH and acidic phospholipids. pH differences between different subcompartments are taken into account, which leads to different amounts of dissociated and undissociated weak acids and bases. In contrast to the Poulin & Theil model the lipid subcompartment is assumed to consist of neutral lipids, neutral phospholipids and acidic phospholipids in order to better describe partitioning into biological membranes – especially of charged drugs. For each of these membrane constituents fractional volumes based on experimental literature data were used 68.|
-|Poulin & Theil |The approach developed by Poulin and Theil considers the cell lipid subcompartment as mainly consisting of phospholipids with a lipophilicity-hydrophobicity behavior similar to a mixture of 30 % neutral lipids and 70 % water. Organ-plasma partition coefficients are then calculated using the volume fractions of the aqueous (Fw) and organic subcompartments (Fneutral lipid and Fphospholipid) of the respective organ and plasma for this distribution model (select the combobox "advanced" in Individual --> Anatomy & Physiology and go to Physiology --> Tissue and body fluid physiology --> Tissue composition). For adipose tissue vegetable oil-water partition coefficients (Dvo:w) are used as lipophilicity measures, whereas octanol- water partition coefficients (Po:w) are used for non-adipose tissue \[[53](../references.md#53)\], \[[54](../references.md#54)\], \[[55](../references.md#55)\], \[[52](../references.md#52)\].|
-|Berezhkovskiy |The assumptions made to describe drug partitioning into biological membranes as well as the input parameters correspond to those made in the Poulin & Theil model. However, peripheral drug elimination as well as drug exchange between compartments are considered, which leads to a modified version of the equation presented by Poulin and Theil \[[5](../references.md#5)\].|
+| Partition coefficient calculation method | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PK-Sim® Standard (default)               | The relevant compound parameters are lipophilicity and binding to plasma proteins. As lipophilicity measure, the membrane affinity (partition coefficient between water and an artificial membrane bilayer) is preferred in this model. The subcompartments of tissue and blood or plasma are assumed to consist of lipids, proteins, and water. Therefore the respective volume fractions as well as lipid/water (Klipid) and protein/ water (Kprotein) partition coefficients of the compound are considered.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Rodgers & Rowland                        | In contrast to the previous models this approach explicitly considers electrostatic interactions between ionized compounds (e.g. moderate-to-strong bases) and anionic phospholipids at physiological pH. It also considers interactions with intracellular neutral phospholipids and neutral lipids. Two additional input parameters are therefore necessary for the calculation of partition coefficients: the blood to plasma concentration ratios BPratio, as a measure for electrostatic interactions of drugs with acidic phospholipids, and the vegetable oil-water partition coefficient (Dvo:w) which is a better surrogate than the octanol-water partition coefficient (Po:w) for neutral lipid \[[59](../references.md#59)\], \[[62](../references.md#62)\], \[[60](../references.md#60)\], \[[61](../references.md61)\].                                                                                                                       |
+| Schmitt                                  | This new approach offers a universally applicable method to calculate organ-plasma partition coefficients under explicit consideration of electrostatic interactions between charged molecules at physiological pH and acidic phospholipids. pH differences between different subcompartments are taken into account, which leads to different amounts of dissociated and undissociated weak acids and bases. In contrast to the Poulin & Theil model the lipid subcompartment is assumed to consist of neutral lipids, neutral phospholipids and acidic phospholipids in order to better describe partitioning into biological membranes – especially of charged drugs. For each of these membrane constituents fractional volumes based on experimental literature data were used 68.                                                                                                                                                                     |
+| Poulin & Theil                           | The approach developed by Poulin and Theil considers the cell lipid subcompartment as mainly consisting of phospholipids with a lipophilicity-hydrophobicity behavior similar to a mixture of 30 % neutral lipids and 70 % water. Organ-plasma partition coefficients are then calculated using the volume fractions of the aqueous (Fw) and organic subcompartments (Fneutral lipid and Fphospholipid) of the respective organ and plasma for this distribution model (select the combobox "advanced" in Individual --> Anatomy & Physiology and go to Physiology --> Tissue and body fluid physiology --> Tissue composition). For adipose tissue vegetable oil-water partition coefficients (Dvo:w) are used as lipophilicity measures, whereas octanol- water partition coefficients (Po:w) are used for non-adipose tissue \[[53](../references.md#53)\], \[[54](../references.md#54)\], \[[55](../references.md#55)\], \[[52](../references.md#52)\]. |
+| Berezhkovskiy                            | The assumptions made to describe drug partitioning into biological membranes as well as the input parameters correspond to those made in the Poulin & Theil model. However, peripheral drug elimination as well as drug exchange between compartments are considered, which leads to a modified version of the equation presented by Poulin and Theil \[[5](../references.md#5)\].                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ##### Cellular permeability calculation methods
-        
+
 The rates of permeation across the cell membranes (interstitial-cell barrier) depend on the permeability surface area (PxSA) products of each organ. The permeability values (the part of the PxSA-products that is substance-dependent) are proportional to the permeability of a phospholipid bilayer for the simulated substance. They are calculated from the physico-chemical data of the compound currently active in the simulation.
 
 **How are permeability surface-area (PxSA) products predicted in PK-Sim®?**
@@ -260,14 +258,14 @@ First, PxSA-products were previously determined by fitting simulations to experi
 
 There are three different methods available in PK-Sim® to calculate the permeability parameters for the barriers between interstitial space and intracellular space which can be chosen from the drop-down menu:
 
-|Permeability parameters calculation method |Description|
-|--- |---|
-|PK-Sim® Standard (default)|With the method PK-Sim® Standard, the permeability parameters are calculated from the physico-chemical properties given in the Compound Data Window. The degree of dissociation of acids and bases is not taken into account. It is assumed that this value is the same in all organs and species and that differences originate only from size-dependent surface areas.|
-|Charge dependent Schmitt |With this method, the degree of dissociation of acids and bases is taken into account assuming that the permeabilities for charged species are significantly smaller than for neutral species. The degree of dissociation is calculated from the pKa-values given for the **Compound** and the pH-values of the interstitial and intracellular spaces given. The permeabilities calculated with the method PK-Sim® Standard P0 are modified by a factor f(pKa- values, pH-value) accounting for the fractions of neutral/charged species:<br>![Image](../assets/images/part-3/ph-1.png)<br>Since the pH-values of the interstitial and intracellular space differ for some organs, the permeability in the direction interstitial space -> intracellular space can differ from the permeability in the direction intracellular -> interstitial space.|
-|Charge dependent Schmitt normalized PK-Sim®| This method calculates the permeabilities in a similar way as dependent the method Charge Dependent Schmitt with the difference, that Schmitt the permeabilities are normalized to obtain the values calculated normalized to with the method PK-Sim® Standard:<br>![Image](../assets/images/part-3/ph-2.png) <br>Thus, the permeability in the direction interstitial -> intracellular is the same as calculated with the method PK-Sim® Standard while the ratio of the permeabilities in the two directions is the same as calculated with the method Charge Dependent Schmitt.
+| Permeability parameters calculation method  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PK-Sim® Standard (default)                  | With the method PK-Sim® Standard, the permeability parameters are calculated from the physico-chemical properties given in the Compound Data Window. The degree of dissociation of acids and bases is not taken into account. It is assumed that this value is the same in all organs and species and that differences originate only from size-dependent surface areas.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Charge dependent Schmitt                    | With this method, the degree of dissociation of acids and bases is taken into account assuming that the permeabilities for charged species are significantly smaller than for neutral species. The degree of dissociation is calculated from the pKa-values given for the **Compound** and the pH-values of the interstitial and intracellular spaces given. The permeabilities calculated with the method PK-Sim® Standard P0 are modified by a factor f(pKa- values, pH-value) accounting for the fractions of neutral/charged species:<br>![Image](../assets/images/part-3/ph-1.png)<br>Since the pH-values of the interstitial and intracellular space differ for some organs, the permeability in the direction interstitial space -> intracellular space can differ from the permeability in the direction intracellular -> interstitial space. |
+| Charge dependent Schmitt normalized PK-Sim® | This method calculates the permeabilities in a similar way as dependent the method Charge Dependent Schmitt with the difference, that Schmitt the permeabilities are normalized to obtain the values calculated normalized to with the method PK-Sim® Standard:<br>![Image](../assets/images/part-3/ph-2.png) <br>Thus, the permeability in the direction interstitial -> intracellular is the same as calculated with the method PK-Sim® Standard while the ratio of the permeabilities in the two directions is the same as calculated with the method Charge Dependent Schmitt.                                                                                                                                                                                                                                                                    |
 
 ##### Specific organ permeability
-        
+
 The specific organ permeability, i.e. the organ permeability normalized to the surface area, represents the part of the permeability times surface area (PxSA)- products that is substance-dependent and they are proportional to the permeability of a phospholipid bilayer for the simulated substance. They are calculated from the physico-chemical data of the compound, namely the lipophilicity and the effective molecular weight. If different lipophilicity values have been specified several permeability values based on these alternative values are displayed in the drop down list that opens if you click on **Show Values**. If available, further permeability values can be entered manually. You can later chose the lipophilicity value that is to be used in the **Simulation** from the values specified here.
 
 {% hint style="note" %}
@@ -288,31 +286,31 @@ Partners branch. When setting up a simulation the binding partner defined in the
 
 Protein Binding Partners
 
-|Process Type| Description| Necessary Input Parameter|
-|--- |--- |--- |
-|Specific Binding| If experimental data on binding of the compound to specific protein binding partners are available, these values also suit as input parameters.| ![Image](../assets/images/part-3/k-off.png)|
+| Process Type     | Description                                                                                                                                     | Necessary Input Parameter                   |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| Specific Binding | If experimental data on binding of the compound to specific protein binding partners are available, these values also suit as input parameters. | ![Image](../assets/images/part-3/k-off.png) |
 
 {% hint style="note" %}
 Sometimes enzymes that catalyze a metabolic degradation process can also bind the compound at a binding site different to the catalytically active center. It is therefore possible to link an enzyme defined in the individual/species to both a metabolic and a binding process when setting up a simulation.
 {% endhint %}
 
 ### Metabolism
-    
+
 Depending on the available experimental information you can either define process types in the **Metabolizing Enzymes** branch or the **Total Hepatic Clearance** branch. Please note that the calculation sheet offered for metabolizing enzymes refers to the liver in case of intrinsic clearance processes and in all other cases to the organ in which the respective enzyme is expressed. Using this calculation sheet, input values will be transferred to specific clearance values which are then used in the simulation. The sheet is only meant to help the user with the calculations. However, processes defined here may also be applied to other organs given that relevant expression levels are appropriately defined in the individual.
 
 ##### Metabolizing Enzymes
 
-| Process Type | Description | Required Input Parameters |
-|---|---|---|
-| Intrinsic clearance – First order| A first order degradation process catalyzed by intracellular enzymesis defined in the liver. The input parameters are intrinsic clearance values which are either estimated orscaled from in vitro data. The specific clearance used in the simulation is obtained by scaling the intrinsic clearance value from liver cellsto the whole organ using the following calculation parameters:<br>• Volume (liver)<br>• Fraction intracellular (liver)| Intrinsic clearance(measured with liver cells or fitted); Volume(liver); Fraction intracellular (liver)|
-| Intrinsic clearance – Michaelis-Menten| It is also possible to define a Michaelis-Menten type saturable kinetics processfor intrinsic clearance. The input parameters are Km and Vmax (referring to liver tissue, e.g. liver slices or perfused liver) which were either estimated or scaled from in vitro data. <br>The specific Vmax value used in the simulation (referring to the cellular volume) is scaled from the Vmax in liver tissue using the following calculation parameters:<br>• Fraction interstitial (liver)<br>• Fraction intracellular (liver)<br>The default value for Km is 1 μmol/l. Itmay be changed manually.| Km; Vmax(measured with liver tissue or fitted); Fraction interstitial (liver);Fraction intracellular (liver)|
-| In vitro clearance – First order| By explicitly defining specific clearance values referring to the cellular volume (either estimated orscaled from in vitro data) and the corresponding enzyme concentration aspecific clearance value normalized tothe enzyme concentration is calculated automatically. <br>The default value for enzyme concentration is 1 μmol/l. It may be changed manually.| Enzyme concentration; Specific clearance(measured with cellular in vitrosystem or fitted)|
-| In vitro clearance – Michaelis-Menten| You can also explicitly define specific Vmax values referring to the cellular volume (either estimated or scaled fromin vitro data) to implement a Michaelis-Menten type saturable kinetics process.This value is then used to calculate kcatby normalizing the specific Vmax valueto the respective enzyme concentration. <br>The default value for Km and the enzyme concentration is 1 μmol/l. It may be changed manually.| Vmax; Km(measured withcellular in vitrosystem or fitted)|
-| In vitro clearance – Hill | Metabolic enzyme activity is described as saturable process displaying a cooperativity, which is characterized bythe Hill equation. The corresponding kcat value is calculated from Vmax determined in an in vitro assay. | Enzyme concentration; Vmax; Km; Hill coefficient(measured with cellular in vitro system or fitted)|
-| In vitro metabolic rate in the presenceof recombinant CYPs/enzymes – First Order | Some in vitro assays use recombinant CYP enzymes to determine in vitro clearance values. These can be usedas input for PK-Sim® after correction for the enzyme concentration in the assay when implementing a firstorder degradation process. Differences in intrinsic activity (per unit CYP)between rhCYP and human liver enzymes complicate the issue \[[63](../references.md#63)\], \[[56](../references.md#56)\]. Therefore, an intersystem extrapolating factor (ISEF), which is a dimensionless number used as a direct scaler to convert data obtained with a rhCYP system tothe "HLM environment" may be used.This factor has to be calculated by the user.| In vitro clearance / concentration of recombinant enzyme; Intersystem extrapolating factor (ISEF)|
-| In vitro metabolic rate in the presence of recombinant CYPs/enzymes – Michaelis-Menten | If Km and Vmax values for a saturable kinetics process were determined experimentally using recombinant CYP enzymes, Km can be directly used as for PK-Sim® where as Vmax has to benormalized to the enzyme concentration in the assay. Differences in intrinsic activity (per unit CYP) between rhCYP and human liver enzymes complicate the issue \[[63](../references.md#63)\], \[[56](../references.md#56)\]. Therefore, an intersystem extrapolating factor (ISEF),which is a dimension less number used as a direct scaler to convert data obtained with a rhCYP system to the "HLM environment" may be used.| In vitro Vmax /concentration of the recombinant enzyme; Km; Intersystem extrapolating factor (ISEF)|
-| In vitro metabolic rate in the presence of liver microsomes – First Order| In vitro clearance values obtained from microsome assays can be used as input parameters for definition of a first order metabolization process. If the clearance values are normalized to the amount of microsomal protein present in the assay they can be used without further modification.The in vitro clearance value is scaled to an in vivo specific clearance value using the content of CYP proteins in liver microsomes. The default value is 108 pmol/mg microsomal protein which is the CYP3A4 protein content in liver microsomes (see note under thetable). Please change this value if other enzymes were defined. | In vitro clearance for liver microsomes; Content of CYP proteins in liver microsomes from literature (e.g. \[[63](../references.md#63)\],\[[64](../references.md#64)\]) or measured experimentally |
-| In vitro metabolic rate in the presence of liver microsomes – Michaelis-Menten | For the definition of a saturable Michaelis-Menten like kinetics process in vitro Vmax values normalized to the enzyme concentration in the microsomal assay can be used as input parameter. <br>The in vitro Vmax value is then scaled to an in vivo Vmax value using the content of CYP proteins in liver microsomes. The default value is 108 pmol/mg microsomal protein which is the CYP3A4 protein content in liver microsomes (see note under the table). Please change this value if other enzymes were defined.| In vitro Vmax for liver microsomes; Content of CYP proteins in liver microsomes from literature (e.g. \[[63](../references.md#63)\], \[[64](../references.md#64)\]) or measured experimentally; Km|
+| Process Type                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Required Input Parameters                                                                                                                                                                          |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Intrinsic clearance – First order                                                      | A first order degradation process catalyzed by intracellular enzymesis defined in the liver. The input parameters are intrinsic clearance values which are either estimated orscaled from in vitro data. The specific clearance used in the simulation is obtained by scaling the intrinsic clearance value from liver cellsto the whole organ using the following calculation parameters:<br>• Volume (liver)<br>• Fraction intracellular (liver)                                                                                                                                                                                                                   | Intrinsic clearance(measured with liver cells or fitted); Volume(liver); Fraction intracellular (liver)                                                                                            |
+| Intrinsic clearance – Michaelis-Menten                                                 | It is also possible to define a Michaelis-Menten type saturable kinetics processfor intrinsic clearance. The input parameters are Km and Vmax (referring to liver tissue, e.g. liver slices or perfused liver) which were either estimated or scaled from in vitro data. <br>The specific Vmax value used in the simulation (referring to the cellular volume) is scaled from the Vmax in liver tissue using the following calculation parameters:<br>• Fraction interstitial (liver)<br>• Fraction intracellular (liver)<br>The default value for Km is 1 μmol/l. Itmay be changed manually.                                                                        | Km; Vmax(measured with liver tissue or fitted); Fraction interstitial (liver);Fraction intracellular (liver)                                                                                       |
+| In vitro clearance – First order                                                       | By explicitly defining specific clearance values referring to the cellular volume (either estimated orscaled from in vitro data) and the corresponding enzyme concentration aspecific clearance value normalized tothe enzyme concentration is calculated automatically. <br>The default value for enzyme concentration is 1 μmol/l. It may be changed manually.                                                                                                                                                                                                                                                                                                     | Enzyme concentration; Specific clearance(measured with cellular in vitrosystem or fitted)                                                                                                          |
+| In vitro clearance – Michaelis-Menten                                                  | You can also explicitly define specific Vmax values referring to the cellular volume (either estimated or scaled fromin vitro data) to implement a Michaelis-Menten type saturable kinetics process.This value is then used to calculate kcatby normalizing the specific Vmax valueto the respective enzyme concentration. <br>The default value for Km and the enzyme concentration is 1 μmol/l. It may be changed manually.                                                                                                                                                                                                                                        | Vmax; Km(measured withcellular in vitrosystem or fitted)                                                                                                                                           |
+| In vitro clearance – Hill                                                              | Metabolic enzyme activity is described as saturable process displaying a cooperativity, which is characterized bythe Hill equation. The corresponding kcat value is calculated from Vmax determined in an in vitro assay.                                                                                                                                                                                                                                                                                                                                                                                                                                            | Enzyme concentration; Vmax; Km; Hill coefficient(measured with cellular in vitro system or fitted)                                                                                                 |
+| In vitro metabolic rate in the presenceof recombinant CYPs/enzymes – First Order       | Some in vitro assays use recombinant CYP enzymes to determine in vitro clearance values. These can be usedas input for PK-Sim® after correction for the enzyme concentration in the assay when implementing a firstorder degradation process. Differences in intrinsic activity (per unit CYP)between rhCYP and human liver enzymes complicate the issue \[[63](../references.md#63)\], \[[56](../references.md#56)\]. Therefore, an intersystem extrapolating factor (ISEF), which is a dimensionless number used as a direct scaler to convert data obtained with a rhCYP system tothe "HLM environment" may be used.This factor has to be calculated by the user. | In vitro clearance / concentration of recombinant enzyme; Intersystem extrapolating factor (ISEF)                                                                                                  |
+| In vitro metabolic rate in the presence of recombinant CYPs/enzymes – Michaelis-Menten | If Km and Vmax values for a saturable kinetics process were determined experimentally using recombinant CYP enzymes, Km can be directly used as for PK-Sim® where as Vmax has to benormalized to the enzyme concentration in the assay. Differences in intrinsic activity (per unit CYP) between rhCYP and human liver enzymes complicate the issue \[[63](../references.md#63)\], \[[56](../references.md#56)\]. Therefore, an intersystem extrapolating factor (ISEF),which is a dimension less number used as a direct scaler to convert data obtained with a rhCYP system to the "HLM environment" may be used.                                                  | In vitro Vmax /concentration of the recombinant enzyme; Km; Intersystem extrapolating factor (ISEF)                                                                                                |
+| In vitro metabolic rate in the presence of liver microsomes – First Order              | In vitro clearance values obtained from microsome assays can be used as input parameters for definition of a first order metabolization process. If the clearance values are normalized to the amount of microsomal protein present in the assay they can be used without further modification.The in vitro clearance value is scaled to an in vivo specific clearance value using the content of CYP proteins in liver microsomes. The default value is 108 pmol/mg microsomal protein which is the CYP3A4 protein content in liver microsomes (see note under thetable). Please change this value if other enzymes were defined.                                   | In vitro clearance for liver microsomes; Content of CYP proteins in liver microsomes from literature (e.g. \[[63](../references.md#63)\],\[[64](../references.md#64)\]) or measured experimentally |
+| In vitro metabolic rate in the presence of liver microsomes – Michaelis-Menten         | For the definition of a saturable Michaelis-Menten like kinetics process in vitro Vmax values normalized to the enzyme concentration in the microsomal assay can be used as input parameter. <br>The in vitro Vmax value is then scaled to an in vivo Vmax value using the content of CYP proteins in liver microsomes. The default value is 108 pmol/mg microsomal protein which is the CYP3A4 protein content in liver microsomes (see note under the table). Please change this value if other enzymes were defined.                                                                                                                                              | In vitro Vmax for liver microsomes; Content of CYP proteins in liver microsomes from literature (e.g. \[[63](../references.md#63)\], \[[64](../references.md#64)\]) or measured experimentally; Km |
 
 {% hint style="note" %}
 For calculation of in vivo clearance or Vmax values from _in vitro_ values obtained from microsomal assays the content of the CYP enzyme defined as the process type has to be specified. The default value in PK-Sim® is 108 pmol/mg microsomal protein which is the CYP3A4 protein content in liver microsomes \[[63](../references.md#63)\]. CYP enzyme contents in liver microsomes from this reference are shown when you move the mouse over the parameter Content of CYP proteins in liver microsomes. If you have defined other than these CYP enzymes, please insert the corresponding value in PK-Sim®.
@@ -320,13 +318,13 @@ For calculation of in vivo clearance or Vmax values from _in vitro_ values obtai
 
 ##### Total Hepatic Clearance
 
-|Process Type |Description | Necessary Input Parameter|
-|--- |--- |--- |
-|Liver Plasma Clearance| If you have experimental plasma clearance values you can use them by choosing this process type. The specific clearance used in the simulation is then automatically calculated on the basis of the following parameters:<br> • Body weight <br>• Volume (liver) <br>• Hematocrit <br>• Blood flow rate (liver) <br>• Blood flow rate (portal vein) <br>• Fraction intracellular (liver) <br>• Blood/Plasma concentration ratio <br>• Fraction unbound in plasma <br>• Plasma clearance <br>• Lipophilicity <br>The default value for fraction unbound (experiment) is 0.5 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound.| Fraction unbound (plasma); Plasma clearance; all parameters listed in the left column (if not entered, default values as specified in the Compound building block for the given species are used)|
-|In vitro hepatocytes – t1/2 | You can also directly use t1/2 values from hepatocyte assays. The specific clearance used in the simulation is then automatically calculated considering the following parameters: <br>• Number of cells/g liver tissue <br>• Number of cell/incubation <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• t1/2 (assay) <br>The default value for fraction unbound (assay) is 0.1 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound.|Number of cell/incubation; Fraction unbound (assay); t1/2 (assay)|
-|In vitro hepatocytes – residual fraction | If hepatocyte assay data with residual fractions are available, please specify these values in this process type. The specific clearance used in the simulation is then automatically calculatedon the basis of the following parameters: <br>• Number of cells/g liver tissue <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• Measuring time <br>• Residual fraction The default value for fraction unbound (assay) is 0.1 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound.| Number of cell / incubation; Fraction unbound (assay); Measuring time; Residual fraction|
-|In vitro liver microsomes – t1/2 | t1/2 values from microsomal assays can be used as input parameters to calculate specific liver clearances. Scaling of the in vitro value is done using the following parameters: <br>• Microsomal protein mass/g liver <br>• Amount of protein in the incubation <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• t1/2 (microsomal assay) The value for fraction unbound (assay) is calculated in PK-Sim® using the lipophilicity of the compound and the amount of protein in incubation. Please change this parameter if you have experimental data for the fraction unbound.| Amount protein/incubation; Fraction unbound (assay); Measuring time; t1/2 (microsomal assay)|
-|In vitro liver microsomes – residual fraction | Residual fractions obtained from liver microsome assays may also serve as input parameters. The value for the specific liver clearance is then calculated using the following parameters: <br>• Microsomal protein mass/g liver <br>• Amount protein/incubation <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• Measuring time <br>• Residual fraction <br>The value for fraction unbound (assay) is calculated in PK-Sim® using the lipophilicity of the compound and the amount of protein in incubation. Please change this parameter if you have experimental data for the fraction unbound. | Amount protein/incubation; Fraction unbound (assay); Measuring time; Residual fraction|
+| Process Type                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Necessary Input Parameter                                                                                                                                                                         |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Liver Plasma Clearance                        | If you have experimental plasma clearance values you can use them by choosing this process type. The specific clearance used in the simulation is then automatically calculated on the basis of the following parameters:<br> • Body weight <br>• Volume (liver) <br>• Hematocrit <br>• Blood flow rate (liver) <br>• Blood flow rate (portal vein) <br>• Fraction intracellular (liver) <br>• Blood/Plasma concentration ratio <br>• Fraction unbound in plasma <br>• Plasma clearance <br>• Lipophilicity <br>The default value for fraction unbound (experiment) is 0.5 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound. | Fraction unbound (plasma); Plasma clearance; all parameters listed in the left column (if not entered, default values as specified in the Compound building block for the given species are used) |
+| In vitro hepatocytes – t1/2                   | You can also directly use t1/2 values from hepatocyte assays. The specific clearance used in the simulation is then automatically calculated considering the following parameters: <br>• Number of cells/g liver tissue <br>• Number of cell/incubation <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• t1/2 (assay) <br>The default value for fraction unbound (assay) is 0.1 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound.                                                                                                                                                                   | Number of cell/incubation; Fraction unbound (assay); t1/2 (assay)                                                                                                                                 |
+| In vitro hepatocytes – residual fraction      | If hepatocyte assay data with residual fractions are available, please specify these values in this process type. The specific clearance used in the simulation is then automatically calculatedon the basis of the following parameters: <br>• Number of cells/g liver tissue <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• Measuring time <br>• Residual fraction The default value for fraction unbound (assay) is 0.1 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound.                                                                                                                      | Number of cell / incubation; Fraction unbound (assay); Measuring time; Residual fraction                                                                                                          |
+| In vitro liver microsomes – t1/2              | t1/2 values from microsomal assays can be used as input parameters to calculate specific liver clearances. Scaling of the in vitro value is done using the following parameters: <br>• Microsomal protein mass/g liver <br>• Amount of protein in the incubation <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• t1/2 (microsomal assay) The value for fraction unbound (assay) is calculated in PK-Sim® using the lipophilicity of the compound and the amount of protein in incubation. Please change this parameter if you have experimental data for the fraction unbound.                                                                    | Amount protein/incubation; Fraction unbound (assay); Measuring time; t1/2 (microsomal assay)                                                                                                      |
+| In vitro liver microsomes – residual fraction | Residual fractions obtained from liver microsome assays may also serve as input parameters. The value for the specific liver clearance is then calculated using the following parameters: <br>• Microsomal protein mass/g liver <br>• Amount protein/incubation <br>• Fraction intracellular (liver) <br>• Fraction unbound (assay) <br>• Measuring time <br>• Residual fraction <br>The value for fraction unbound (assay) is calculated in PK-Sim® using the lipophilicity of the compound and the amount of protein in incubation. Please change this parameter if you have experimental data for the fraction unbound.                                                  | Amount protein/incubation; Fraction unbound (assay); Measuring time; Residual fraction                                                                                                            |
 
 {% hint style="note" %}
 Total hepatic clearance is a systemic process that does not have to be linked to properties defined in an individual/species when generating a simulation.
@@ -338,21 +336,21 @@ Drug transport across endothelial, epithelial or cellular barriers is responsibl
 
 ##### Transport Proteins
 
-|Process Type |Description | Necessary Input Parameter|
-|--- |--- |--- |
-|Intrinsic active transport - Michaelis-Menten| A transporter-mediated unidirectional transfer of a compound across a cellular membrane is described as saturable process following the Michaelis-Menten type kinetics. The specific Vmax value used in the simulation (referring to the cellular volume) is scaled from the Vmax in liver tissue using the following calculation parameters: <br>• Fraction interstitial (liver) <br>• Fraction intracellular (liver) <br>The default value for Km is 1 μmol/l. It may be manually changed.| Km; Vmax (measured with liver tissue or fitted)|
-|Specific active transport - Michaelis-Menten | Here a Michaelis-Menten type saturable transport process is defined. The input parameters are Km and Vmax (either estimated or scaled from in vitro data). The kcat value used in the simulation is scaled from the input Vmax value by normalization to the transporter concentration. The default value for Km is 1 μmol/l. It may be manually changed. | Transporter concentration; Vmax; Km (measured with liver tissue or fitted)|
-|Specific active transport - Hill| A transporter mediated unidirectional transfer of a compound across a cellular membrane is described as saturable process displaying a cooperativity which is characterized by the Hill equation. The corresponding kcat value is calculated from a specific Vmax as input value.|
-|In vitro active transport (vesicular assay) - Michaelis-Menten |A transporter mediated unidirectional transfer of a compound across a cellular membrane is described as saturable process following Michaelis-Menten type kinetics. The corresponding kcat value is calculated from a specific Vmax normalized to the amount of transporter as input value which was determined in a vesicular transport assay. |In vitro Vmax / transporter; Km (measured with cellular in vitro system or fitted)|
+| Process Type                                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Necessary Input Parameter                                                          |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Intrinsic active transport - Michaelis-Menten                  | A transporter-mediated unidirectional transfer of a compound across a cellular membrane is described as saturable process following the Michaelis-Menten type kinetics. The specific Vmax value used in the simulation (referring to the cellular volume) is scaled from the Vmax in liver tissue using the following calculation parameters: <br>• Fraction interstitial (liver) <br>• Fraction intracellular (liver) <br>The default value for Km is 1 μmol/l. It may be manually changed. | Km; Vmax (measured with liver tissue or fitted)                                    |
+| Specific active transport - Michaelis-Menten                   | Here a Michaelis-Menten type saturable transport process is defined. The input parameters are Km and Vmax (either estimated or scaled from in vitro data). The kcat value used in the simulation is scaled from the input Vmax value by normalization to the transporter concentration. The default value for Km is 1 μmol/l. It may be manually changed.                                                                                                                                    | Transporter concentration; Vmax; Km (measured with liver tissue or fitted)         |
+| Specific active transport - Hill                               | A transporter mediated unidirectional transfer of a compound across a cellular membrane is described as saturable process displaying a cooperativity which is characterized by the Hill equation. The corresponding kcat value is calculated from a specific Vmax as input value.                                                                                                                                                                                                            |
+| In vitro active transport (vesicular assay) - Michaelis-Menten | A transporter mediated unidirectional transfer of a compound across a cellular membrane is described as saturable process following Michaelis-Menten type kinetics. The corresponding kcat value is calculated from a specific Vmax normalized to the amount of transporter as input value which was determined in a vesicular transport assay.                                                                                                                                              | In vitro Vmax / transporter; Km (measured with cellular in vitro system or fitted) |
 
 ##### Renal Clearances
 
-|Process Type |Description | Necessary Input Parameter|
-|--- |--- |--- |
-|Kidney Plasma Clearance| When choosing this process type experimental values for kidney plasma clearance can be used as input parameters. The specific clearance used in the simulation is then automatically calculated on the basis of the following parameters: <br>• Body weight <br>• Volume (kidney) <br>• Hematocrit <br>• Blood flow rate (kidney) <br>• Fraction unbound in plasma <br>• Plasma clearance <br>The default value for fraction unbound (experiment) is 0.5 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound.| Plasma clearance; Fraction unbound (plasma)|
-|Glomerular Filtration | Filtration fractions are used in the case that the renal clearance differs from the GFR according to the properties of the individual. Please note that for small molecules this observation indicates that the compound is either actively reabsorbed or secreted, respectively. The GFR fraction can be used as a surrogate to compensate for active re-absorption (GFR fraction <1) or secretion (GFR fraction >1). The calculation of the resulting "GFR" is done when setting up the simulation. | GFR fraction |
-|Tubular Secretion – First Order | For definition of a first order tubular secretion process you can use tubular secretion rates (either estimated or scaled from in vitro data). The specific tubular secretion rate is then calculated on the basis of the kidney volume. | Tubular secretion |
-| Tubular Secretion – Michaelis-Menten | You can also define a saturable tubular secretion process by specifying Km and TSmax values (either estimated or scaled from in vitro data). The specific tubular secretion rate is then calculated taking into account the kidney volume. | TSmax; Km|
+| Process Type                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Necessary Input Parameter                   |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| Kidney Plasma Clearance              | When choosing this process type experimental values for kidney plasma clearance can be used as input parameters. The specific clearance used in the simulation is then automatically calculated on the basis of the following parameters: <br>• Body weight <br>• Volume (kidney) <br>• Hematocrit <br>• Blood flow rate (kidney) <br>• Fraction unbound in plasma <br>• Plasma clearance <br>The default value for fraction unbound (experiment) is 0.5 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound. | Plasma clearance; Fraction unbound (plasma) |
+| Glomerular Filtration                | Filtration fractions are used in the case that the renal clearance differs from the GFR according to the properties of the individual. Please note that for small molecules this observation indicates that the compound is either actively reabsorbed or secreted, respectively. The GFR fraction can be used as a surrogate to compensate for active re-absorption (GFR fraction <1) or secretion (GFR fraction >1). The calculation of the resulting "GFR" is done when setting up the simulation.                                                     | GFR fraction                                |
+| Tubular Secretion – First Order      | For definition of a first order tubular secretion process you can use tubular secretion rates (either estimated or scaled from in vitro data). The specific tubular secretion rate is then calculated on the basis of the kidney volume.                                                                                                                                                                                                                                                                                                                  | Tubular secretion                           |
+| Tubular Secretion – Michaelis-Menten | You can also define a saturable tubular secretion process by specifying Km and TSmax values (either estimated or scaled from in vitro data). The specific tubular secretion rate is then calculated taking into account the kidney volume.                                                                                                                                                                                                                                                                                                                | TSmax; Km                                   |
 
 {% hint style="note" %}
 Kidney Plasma Clearance is a systemic process that does not have to be linked to properties defined in an individual/species in a simulation. In the case of the Glomerular Filtration, the individual/ species-dependent GFR represents a default value defined in the Individual building block.
@@ -360,9 +358,9 @@ Kidney Plasma Clearance is a systemic process that does not have to be linked to
 
 ##### Biliary Clearance
 
-|Process Type |Description | Necessary Input Parameter|
-|--- |--- |--- |
-|Biliary Plasma Clearance| If you have experimental biliary plasma clearance data you can use them by choosing this process type. The specific clearance used in the simulation is then calculated automatically on the basis of the following parameters: <br>• Body weight <br>• Volume (liver) <br>• Hematocrit <br>• Blood flow rate (liver) <br>• Blood flow rate (portal vein) <br>• Blood/Plasma concentration ratio <br>• Fraction intracellular (liver) <br>• Fraction unbound in plasma <br>• Plasma clearance <br>The default value for fraction unbound (experiment) is 0.5 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound. The amount secreted as bile flow is subsequently split into two fractions: The fraction of hepatic bile that flows into the gallbladder for storage and the fraction that flows straight into the duodenum. | Plasma clearance; Fraction unbound (plasma)|
+| Process Type             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Necessary Input Parameter                   |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| Biliary Plasma Clearance | If you have experimental biliary plasma clearance data you can use them by choosing this process type. The specific clearance used in the simulation is then calculated automatically on the basis of the following parameters: <br>• Body weight <br>• Volume (liver) <br>• Hematocrit <br>• Blood flow rate (liver) <br>• Blood flow rate (portal vein) <br>• Blood/Plasma concentration ratio <br>• Fraction intracellular (liver) <br>• Fraction unbound in plasma <br>• Plasma clearance <br>The default value for fraction unbound (experiment) is 0.5 in PK-Sim®. Please change this parameter if you have experimental data for the fraction unbound. The amount secreted as bile flow is subsequently split into two fractions: The fraction of hepatic bile that flows into the gallbladder for storage and the fraction that flows straight into the duodenum. | Plasma clearance; Fraction unbound (plasma) |
 
 {% hint style="note" %}
 Biliary clearance is systemic process that does not have to be linked to properties defined for an individual/species when establishing a simulation.
@@ -370,13 +368,13 @@ Biliary clearance is systemic process that does not have to be linked to propert
 
 ### Definition of a metabolite in an enzymatic process‌
 
-A metabolite of a copound can be defined and used either as a "sink" or treated like any other compound. See [How to set up a parent/metabolite simulation](12-pk-sim-simulations.md#how-to-set-up-a-parent-metabolite-simulation) for details.
+A metabolite of a copound can be defined and used either as a "sink" or treated like any other compound. See [How to set up a parent/metabolite simulation](pk-sim-simulations.md#how-to-set-up-a-parent-metabolite-simulation) for details.
 
 ### Advanced Parameters‌
 
 After the biological properties have been specified, further parameters can be defined in the **Advanced Parameters** tab. The **Advanced Parameters** tab can be opened either by clicking **Next** or by clicking on the **Advanced Parameters** tab.
 
-Additional compound-related parameters can be defined here that are needed in case the particle dissolution function (see [Formulations](11-pk-sim-formulations.md)) or the model for proteins and large molecules (see [Modeling of Proteins](../part-1/05-modeling-concepts-modeling-of-proteins.md)) are used in the simulation. In all other cases, the parameters defined in the **Advanced Parameters** tab will not be used in the simulation and can be left unchanged.
+Additional compound-related parameters can be defined here that are needed in case the particle dissolution function (see [Formulations](pk-sim-formulations.md)) or the model for proteins and large molecules (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)) are used in the simulation. In all other cases, the parameters defined in the **Advanced Parameters** tab will not be used in the simulation and can be left unchanged.
 
 **Particle dissolution**
 
@@ -392,7 +390,7 @@ In the **Advanced Parameters** tab the compound-related parameters needed for ca
 
 • and the maximum size of particles that dissolves immediately
 
-Further parameters such as the mean particle size and the particle size distribution, the number of bins and the diffusion layer thickness are considered to be related to the formulation and thus can be defined in the Formulation Building Block (see [Formulations](11-pk-sim-formulations.md)).
+Further parameters such as the mean particle size and the particle size distribution, the number of bins and the diffusion layer thickness are considered to be related to the formulation and thus can be defined in the Formulation Building Block (see [Formulations](pk-sim-formulations.md)).
 
 Model for proteins and large molecules
 
@@ -404,9 +402,9 @@ Four drug-related parameters which are used in the model for proteins and large 
 
 i.e. no binding is assumed.
 
-*   Kd (FcRn) in plasma/interstitial: the dissociation constant for binding to FcRn in plasma and the interstitial space (neutral environment). By default, this value is set to a very high value, i.e. no binding is assumed. For monoclonal antibodies the binding to FcRn in neutral environment is generally very weak or not detectable. In this case the high default value for Kd (FcRn) in plasma/ interstitial space can be kept.
+- Kd (FcRn) in plasma/interstitial: the dissociation constant for binding to FcRn in plasma and the interstitial space (neutral environment). By default, this value is set to a very high value, i.e. no binding is assumed. For monoclonal antibodies the binding to FcRn in neutral environment is generally very weak or not detectable. In this case the high default value for Kd (FcRn) in plasma/ interstitial space can be kept.
 
-*   kass (FcRn): association rate constant for binding to FcRn for the acidic endosomal space as well as for plasma/interstitial space. The default value is a typical value for monoclonal antibodies and can usually be kept.
+- kass (FcRn): association rate constant for binding to FcRn for the acidic endosomal space as well as for plasma/interstitial space. The default value is a typical value for monoclonal antibodies and can usually be kept.
 
 After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** ![Image](../assets/icons/OK.png). The new compound will appear in the **Building Block Explorer** view.
 
@@ -415,7 +413,7 @@ After all information about the compound properties has been entered, the **Crea
 To set or change the properties of an existing compound:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
-    
+
 2.  Select ![Image](../assets/icons/Edit-32x32.png) **Edit...**
 
 or simply double click on the compound in the **Building Block Explorer**.
@@ -427,11 +425,11 @@ A window with the three tabs **Basic Physico-chemistry**, **ADME Properties** an
 To clone a compound in the project:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
-    
+
 2.  Select **Clone...** ![Image](../assets/icons/Clone.png)
-    
+
 3.  Enter an alternative name for the compound clone and enter a description, if desired.
-    
+
 4.  Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.png)
 
 ## Saving Compounds as Templates‌
@@ -441,16 +439,16 @@ For each project, several compounds can be defined. They can be saved as templat
 To save an existing compound as template:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
-    
+
 2.  Select ![Image](../assets/icons/SaveAsTemplate.png) **Save as Template...**
-    
+
 In case a compound with the same name already exists, a warning appears and you have the following options:
 
-*   Override: This action will override the existing template.
-    
-*   Save as: You can save the compound under a different name. In this case, you will be asked to Rename the new template.
-    
-*   Cancel: This action will abort the saving process.
+- Override: This action will override the existing template.
+
+- Save as: You can save the compound under a different name. In this case, you will be asked to Rename the new template.
+
+- Cancel: This action will abort the saving process.
 
 ## Loading Existing Compounds from Templates‌
 
@@ -459,29 +457,29 @@ As mentioned before, the compounds defined in a project can be saved as template
 To load an existing compound from the template database:
 
 1.  Right mouse click on **Compounds** in the **Building Block Explorer**
-    
+
 2.  Select ![Image](../assets/icons/LoadFromTemplate.png) **Load From Template...**
-    
+
 3.  Select the desired compound from the user templates
-    
+
     In case a compound with the same name already exists in the project, a warning pops up and you will have to **Rename** the compound that is to be loaded from template.
-    
+
 4.  Click **OK** ![Image](../assets/icons/OK.png)
-    
+
 The selected compound will appear in the **Building Block Explorer** view.
 
 Compounds can also be directly loaded from the template database within a simulation.
 
 ## Deleting Compounds‌
-    
+
 To delete a compound from the project:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
-    
+
 2.  Select ![Image](../assets/icons/Delete.png) **Delete...**
-    
+
 3.  Confirm by clicking **Yes**
-    
+
 {% hint style="warning" %}
 Please note that a compound that is used in any simulation of the project cannot be deleted.
 {% endhint %}
