@@ -1,6 +1,6 @@
 # MoBi®‌ Model Building and Model Components
 
-After having made yourself familiar in the previous chapters with the building block concept and with the general structure of the program and projects ([“MoBi® \- Window Overview”](02-building-block-concepts.md#window-overview)), this section describes the practical approach how to build MoBi® models by stepwise entering content into the building blocks. Also, this knowledge is of use to upgrade models imported from PK-Sim®, as will be described in [Setting up a Simulation](04-setting-up-simulation.md).
+After having made yourself familiar in the previous chapters with the building block concept and with the general structure of the program and projects ([“MoBi® \- Window Overview”](building-block-concepts.md#window-overview)), this section describes the practical approach how to build MoBi® models by stepwise entering content into the building blocks. Also, this knowledge is of use to upgrade models imported from PK-Sim®, as will be described in [Setting up a Simulation](setting-up-simulation.md).
 
 {% hint style="tip" %}
 Always watch for the helpful tool tips that appear when hovering for a few seconds with the mouse pointer over an input box or its description.
@@ -68,7 +68,7 @@ Within the different building blocks, there are slight differences in the proced
 
 *   Parameters defined as Local can only be used locally, i.e., within the corresponding reaction or for a molecule where a local parameter is defined.
 
-*   Parameters defined as Global can also be used in other formulas, i.e., they appear in the reference lists described in [Working with Formulas](#working-with-formulas). Furthermore, they are located in different places of a simulation hierarchy, as described in [Molecular Properties](04-setting-up-simulation.md#molecular-properties).
+*   Parameters defined as Global can also be used in other formulas, i.e., they appear in the reference lists described in [Working with Formulas](#working-with-formulas). Furthermore, they are located in different places of a simulation hierarchy, as described in [Molecular Properties](setting-up-simulation.md#molecular-properties).
 
 *   Parameters defined as Property are identical to Global parameters except that they will not be listed and set in the parameter start values.
 
@@ -102,7 +102,7 @@ In the bottom part of the **Create** or **Edit** window are several input option
 
 *   Checking ![Image](../assets/icons/Checked.png) **Parameter is state variable** will open additional input fields for the right hand side of a differential equation (explained in detail in [State Variable Parameters](#state-variable-parameters)).
 
-*   Checking ![Image](../assets/icons/Checked.png) **Plot Parameter** will tag this parameter so that it can be visualized in a chart with the simulation results (see [Chart Component](../part-5/02-chart-component.md)).
+*   Checking ![Image](../assets/icons/Checked.png) **Plot Parameter** will tag this parameter so that it can be visualized in a chart with the simulation results (see [Chart Component](../part-5/chart-component.md)).
 
 *   Checking ![Image](../assets/icons/Checked.png) **Advanced Parameter** will hide this parameter from the lists if
 
@@ -221,7 +221,7 @@ Not all entries in the tree are allowed to be moved to the left, depending on th
 5.  Dimensions can be changed by clicking on the displayed dimension and selecting a different one from the combobox.
 
 {% hint style="tip" %}
-A reference path may also contain a global part, like "|MOLECULE", which is recognizable by being written in all capital letters. The reference to "|MOLECULE" means that this part of the path refers to a parameter or property of the currently evaluated molecule, whatever its name. This is useful in formulas that are computed for all molecules present in a container. Compare the formulas in [Observers](03-model-building-components.md#observers) or [Passive Transports](#passive-transports). A global reference is selected automatically by MoBi® where appropriate.
+A reference path may also contain a global part, like "|MOLECULE", which is recognizable by being written in all capital letters. The reference to "|MOLECULE" means that this part of the path refers to a parameter or property of the currently evaluated molecule, whatever its name. This is useful in formulas that are computed for all molecules present in a container. Compare the formulas in [Observers](model-building-components.md#observers) or [Passive Transports](#passive-transports). A global reference is selected automatically by MoBi® where appropriate.
 {% endhint %}
 
 To **remove an object from the reference list**, right-click it and select **Remove**from the context menu.
@@ -316,7 +316,7 @@ Tags are evaluated in fields of observers, transports, or event groups titled "I
 
 3.  Match all tag condition: the condition is fulfilled for all tags (not available for transport processes or sum formulas).
 
-More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](#sum-formulas), [Transport Processes](#transport-processes), [Observers](02-building-block-concepts.md#observers), [Events and Applications](#events-and-applications)).
+More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](#sum-formulas), [Transport Processes](#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](#events-and-applications)).
 
 Models generated in **PK-Sim**® make extensive **use of tags**: For example, open a PK-Sim® model and look under [Passive Transports](#passive-transports) for one part of the blood flow through the organs of an organism called "MassTransferBloodPool2OrgPl". This is a passive transport process that occurs from the arterial plasma compartment to the plasma compartments of all organs except for the lung. Consequently, this transport process is occurring under the following conditions:
 
@@ -330,7 +330,7 @@ Similarly, observers or events can be included or excluded from being created in
 
 A spatial structure can be an organism consisting of organs, cells and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume. Containers of a spatial structure can be defined as Physical, which may contain molecules in the simulation. They can also be defined as Logical, meaning they do not represent a real container with molecules but instead just representing a grouping of sub-containers. Containers are also grouped in categories like Organism, Organ, and others. This way, the physical makeup of an organism is described.
 
-The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation]([Setting up a Simulation](04-setting-up-simulation.md#setting-up-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the ![Image](../assets/icons/LoadFromTemplate.png) **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
+The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation]([Setting up a Simulation](setting-up-simulation.md#setting-up-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the ![Image](../assets/icons/LoadFromTemplate.png) **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
 
 {% hint style="note" %}
 In the process of this and the next sections of this chapter, you will create an example project. An already completed project file named "ManualModel_Sim.mbp3" is automatically installed together with MoBi® in the default program data directory. The entry "Examples" in the program start menu in the "MoBi" group will lead you to the proper path.
@@ -438,7 +438,7 @@ Like the containers, the neighborhood may contain parameters and may carry tags.
 
 The Molecules building block contains all molecules with their default start values, molecule-specific parameters and properties. A molecule has a name, typically the name of the compound. Parameters and properties can be defined by you to describe the physico-chemistry, like solubility or lipophilicity. These parameters may later be used in reactions, passive and active transport processes, or may influence events. Also, active transporter molecules and transport processes are defined for each molecule, if relevant for the model.
 
-Start by opening a Molecules building block for editing. In the **Building Block Explorer**, open the Molecules folder and edit the Molecules building block by either right-clicking it and selecting "Edit", or by double-clicking on it. A new tab with an empty space will open. This is the work space where you can add new molecules or load molecules from other projects. You may notice that the ribbon of the MoBi® window has changed, being tabbed "Edit Molecule", to offer you clickable ribbon buttons for molecule-related actions (compare in [Enter Molecules](01-first-steps.md#enter-molecules)).
+Start by opening a Molecules building block for editing. In the **Building Block Explorer**, open the Molecules folder and edit the Molecules building block by either right-clicking it and selecting "Edit", or by double-clicking on it. A new tab with an empty space will open. This is the work space where you can add new molecules or load molecules from other projects. You may notice that the ribbon of the MoBi® window has changed, being tabbed "Edit Molecule", to offer you clickable ribbon buttons for molecule-related actions (compare in [Enter Molecules](first-steps.md#enter-molecules)).
 
 ### Creating New Molecules‌
     
@@ -460,7 +460,7 @@ At this point, you may already input a value for the "Default Start Amount" whic
     
 Alternatively to newly creating a molecule, **molecules can be loaded from a pkml file**. This file can be    
 
-*   a PK-Sim® export containing molecules (see [Export to \*.pkml file for MoBi®](../part-3/13-importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi), for how to create such a file),
+*   a PK-Sim® export containing molecules (see [Export to \*.pkml file for MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi), for how to create such a file),
 
 *   an entire previously saved MoBi® simulation,
 
@@ -488,7 +488,7 @@ You can **edit the molecule properties** for the molecule in the tree that is cu
 
 *   The **Default Start Amount** determines what default value will be used whenever "Molecule Start Values" are created (see “Molecule Start Values”). The value should be left on 0 for all molecules which only will be created in the process of the simulation. For complex spatial structures, it might be an alternative strategy to set all default start amount values to 0 and set everything manually in the molecule start values for those containers where a molecule is present in known concentrations.
 
-*   The **Used Calculation Methods** at the bottom right of the edit window shows three comboboxes for the selection of calculation methods for the distribution of the molecule within a model exported from PK-Sim®. The calculation method defines which method is used to calculate parameter values of parameters located in the "Spatial Structure" ("MoleculeProperties") which have the **Formula Type Calculation Method**. These selections are only needed if you want to use distribution methods from PK-Sim®. Otherwise, leave them on No Calculation Method. For further information on this subject, please refer to the discussion of the different distribution models in the PK-Sim® manual ([Simulations](../part-3/12-pk-sim-simulations.md)). If you select a certain "Calculation Method" you can get tool tip information on the equations and specific parameters used in the "Calculation Method" by hovering with the mouse over the "Category" entry.
+*   The **Used Calculation Methods** at the bottom right of the edit window shows three comboboxes for the selection of calculation methods for the distribution of the molecule within a model exported from PK-Sim®. The calculation method defines which method is used to calculate parameter values of parameters located in the "Spatial Structure" ("MoleculeProperties") which have the **Formula Type Calculation Method**. These selections are only needed if you want to use distribution methods from PK-Sim®. Otherwise, leave them on No Calculation Method. For further information on this subject, please refer to the discussion of the different distribution models in the PK-Sim® manual ([Simulations](../part-3/pk-sim-simulations.md)). If you select a certain "Calculation Method" you can get tool tip information on the equations and specific parameters used in the "Calculation Method" by hovering with the mouse over the "Category" entry.
 
 To **save a molecule** as pkml file:
 
@@ -546,7 +546,7 @@ As an example, we create the property "Molecular weight" for the molecule create
 
 ![Molecule building window](../assets/images/part-4/molecule-building-window.jpg)
 
-As a second example, load the parameter "Concentration" from a PK-Sim® simulation export (see [Export to \*.pkml file for MoBi®](../part-3/13-importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi) for how to create such a file).
+As a second example, load the parameter "Concentration" from a PK-Sim® simulation export (see [Export to \*.pkml file for MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi) for how to create such a file).
 
 1.  Click the **Load Parameter** button or select it from the context menu.
 
@@ -576,11 +576,11 @@ Like in the Molecules section, you first need to select a reaction building bloc
 
 2.  A new tab with an empty diagram area will open. This is the work space where you can add new reactions and molecules or load reactions from other projects. Again, the ribbon of the MoBi® window changes to a reaction-related view, named "Edit Reaction".
 
-Working with reactions is done mostly using the Reaction Diagram. We describe the most important features in this section, for more details see [Diagrams Overview](06-diagrams-overview.md)
+Working with reactions is done mostly using the Reaction Diagram. We describe the most important features in this section, for more details see [Diagrams Overview](diagrams-overview.md)
 
 ### Reactions and Molecules‌
 
-When creating a simulation (see [Setting up a Simulation](04-setting-up-simulation.md)) the reactions defined in this building block are combined with the molecules from the Molecules building block. When we use the term **Molecule** in this section we refer to Molecule names only, which define the relationship between the Reactions to the Molecules from the Molecules building block.
+When creating a simulation (see [Setting up a Simulation](setting-up-simulation.md)) the reactions defined in this building block are combined with the molecules from the Molecules building block. When we use the term **Molecule** in this section we refer to Molecule names only, which define the relationship between the Reactions to the Molecules from the Molecules building block.
 
 {% hint style="warning" %}
 If you insert a molecule that has not yet been defined in the Molecules building block, this may cause an error later when setting up a simulation. Remember to define that molecule later.
@@ -690,7 +690,7 @@ The following steps describe how to enter a **kinetic equation** to the reaction
     
 6.  Besides reaction and molecule parameters, parameters of other building blocks, like the volume of a spatial structure, might be needed. They have to be defined first, so look up the corresponding sections in this chapter to see how to do that.
 
-7.  Finally, enter your kinetic equation into the empty input box below the references; for our example, enter "k1\*A". This will let the error symbol ![Image](../assets/icons/ErrorCross.png) disappear, if everything is properly defined and if all parameters are defined in the references. Compare your results to the series of screen shots of the Quick guide in [Enter a Reaction](01-first-steps.md#enter-a-reaction).
+7.  Finally, enter your kinetic equation into the empty input box below the references; for our example, enter "k1\*A". This will let the error symbol ![Image](../assets/icons/ErrorCross.png) disappear, if everything is properly defined and if all parameters are defined in the references. Compare your results to the series of screen shots of the Quick guide in [Enter a Reaction](first-steps.md#enter-a-reaction).
 
 {% hint style="tip" %}
 To complete reaction R2 (created above, see [Reactions and Molecules](#reactions-and-molecules)) which you will need for continuing with the model building, connect molecule "B" as educt to R2, then "C" as product, as done for R1 in the previous section. Then define another k1 parameter for R2, this time set it to 0.005. Note that the name k1 appears twice, but is assigned to different reactions - thus they can both be separated. Next drag k1 to the references list, then enter k1\*B as reaction kinetics formula. We will need a working reaction system if we move on to setting up a simulation later on.
@@ -708,7 +708,7 @@ There are more features available to handle reaction building. Some of which are
 
 *   different layout features like usage of templates and auto layout mechanisms are available.
 
-To get more details on which techniques are available in all diagrams, see [Diagrams Overview](06-diagrams-overview.md).
+To get more details on which techniques are available in all diagrams, see [Diagrams Overview](diagrams-overview.md).
 
 Instead of the diagram area, the graphical display of all reactions, you can switch to a list view by clicking the **List tab** in the upper part of the edit window. Reactions are listed by name with their stoichiometry and kinetic equations. Right-clicking the lines allows you to edit, rename, save, and remove any reaction by selecting the corresponding entry in the context menu.
 
@@ -844,13 +844,13 @@ If two molecules compete for the same transporter, you can add inhibition terms 
 
 ## Observers‌
 
-An observer which can be displayed in a chart (see [Simulation Results](05-simulation-results.md)) is an output derived from one or several molecules or parameters by a defined formula. There are two classes of observers: **molecule observers** and **container observers**; creating and editing of both classes will be explained in this section. The main difference between those two classes is that a container observer can be computed for every molecule in every container (or for a selectable subset of both), whereas an molecule observer can be used to compute a value from one or more molecules specified in its formula, but for all or a selectable subset of containers.
+An observer which can be displayed in a chart (see [Simulation Results](simulation-results.md)) is an output derived from one or several molecules or parameters by a defined formula. There are two classes of observers: **molecule observers** and **container observers**; creating and editing of both classes will be explained in this section. The main difference between those two classes is that a container observer can be computed for every molecule in every container (or for a selectable subset of both), whereas an molecule observer can be used to compute a value from one or more molecules specified in its formula, but for all or a selectable subset of containers.
 
 In our **example project**, a spatial structure named "Observer" has already been created by initially executing the **New Project** command. To proceed further, click on the + sign to the left of "Observers" in the building block explorer, and then open the "Observer" for editing by double-clicking on it or by using the **Edit** command of the context menu that appears after right-clicking on "Observer". In the edit window, you can choose between the tabs "molecule observer" (the default selection on opening) and "Container Observer".
 
 For **creating a new observer** or loading one from a previously saved file, select the corresponding button ![Image](../assets/icons/Create.png) **New** or ![Image](../assets/icons/LoadObserver.png) **Load** from the context-dependent ribbon and there select the proper observer type. Alternatively, you may right-click into the empty white space of the edit window and select **Create Molecule (resp. Container) Observer** or **Load Molecule (resp. Container) Observer** from the context menu. If you choose **New** or **Create**, a window named "New Molecule (resp. Container) Observer" opens.
 
-Each **observer class has a conditions** attached to it that determines for which molecules and in which parts of the spatial structure an observer is calculated. Observers can be selected by inclusion or exclusion criteria based on their tags by selecting New match tag condition or New not match tag condition. Tags are either the name of a container or they can be manually added (compare “Creating a Spatial Structure”). All conditions entered for one observer are connected by a logical "and". Make sure you have entered proper data into these fields, or otherwise an observer is not generated in a simulation and warnings will be reported when creating a simulation (see [Create a Simulation](#part-4/04-setting-up-simulation.md#create-a-simulation)). As a further option, you may select the Add match all tag condition, which selects all containers.
+Each **observer class has a conditions** attached to it that determines for which molecules and in which parts of the spatial structure an observer is calculated. Observers can be selected by inclusion or exclusion criteria based on their tags by selecting New match tag condition or New not match tag condition. Tags are either the name of a container or they can be manually added (compare “Creating a Spatial Structure”). All conditions entered for one observer are connected by a logical "and". Make sure you have entered proper data into these fields, or otherwise an observer is not generated in a simulation and warnings will be reported when creating a simulation (see [Create a Simulation](#part-4/setting-up-simulation.md#create-a-simulation)). As a further option, you may select the Add match all tag condition, which selects all containers.
 
 All conditions, parameters, formulas, names, and paths that have been defined for any observer may later be edited, renamed, or deleted. Use the corresponding context menus, or override the entries in input boxes, comboboxes, or checkboxes.
 
@@ -1084,7 +1084,7 @@ The descriptions at the bottom section of each parameter gives you more informat
 
 More complex changes, like changing complex dosing schemes or changing dissolution patterns are much easier to achieve using the user interface of PK- Sim® and then exporting the corresponding simulation. Within a MoBi®project, you may then combine drug applications from several PK-Sim® exports. The following describes the workflow for this operation:
 
-1.  Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/13-importing-exporting-project-data-models.md#export-to-mobi)).
+1.  Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi)).
 
 2.  Load your MoBi® project.
 
@@ -1092,7 +1092,7 @@ More complex changes, like changing complex dosing schemes or changing dissoluti
 
 4.  Enter the name and location of your pkml file. You may be asked for a new building block name. A new Events building block is created.
 
-5.  When creating a simulation ([Create a Simulation](04-setting-up-simulation.md#create-a-simulation)), you can now select between several possible application building blocks.
+5.  When creating a simulation ([Create a Simulation](setting-up-simulation.md#create-a-simulation)), you can now select between several possible application building blocks.
 
 {% hint style="tip" %}
 A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the MoBi program group will lead you to the proper path.
@@ -1107,7 +1107,7 @@ Descriptive names for each of these applications building blocks could be helpfu
 Molecule start values are needed to define the initial amounts of all molecules present in the molecules building block used in a simulation for all containers. These values are either imported when loading a simulation, or they can be created automatically and edited manually, if needed.
 
 {% hint style="tip" %}
-Molecule and Parameter Start Values can also be created within the Simulation Creation Wizard (compare [Create a Simulation](#part-4/04-setting-up-simulation.md#create-a-simulation)).
+Molecule and Parameter Start Values can also be created within the Simulation Creation Wizard (compare [Create a Simulation](#part-4/setting-up-simulation.md#create-a-simulation)).
 {% endhint %}
 
 To automatically create molecule start values by MoBi®:
@@ -1205,7 +1205,7 @@ To edit a parameter start value building block, double-click on it or use the co
 Again, cloning and manual parameter changes at this level allow for quickly switching among different simulation scenarios.
 
 {% hint style="tip" %}
-The example model is now ready for setting up a simulation which is described in the next chapter (see [Create a Simulation](#part-4/04-setting-up-simulation.md#create-a-simulation)).
+The example model is now ready for setting up a simulation which is described in the next chapter (see [Create a Simulation](#part-4/setting-up-simulation.md#create-a-simulation)).
 {% endhint %}
 
 ## Import Molecule and Parameter Start Values from Excel‌

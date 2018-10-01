@@ -14,7 +14,7 @@ The LLOQ value is stored at the data column and is not editable. All LLOQ values
 
 **File Selection Dialog**
 
-In the Parameter Identification those LLOQ values can be handled differently (see [Handling of LLOQ values](04-parameter-identification.md#handling-of-lloq-values)).
+In the Parameter Identification those LLOQ values can be handled differently (see [Handling of LLOQ values](parameter-identification.md#handling-of-lloq-values)).
 
 To import data you should do the following:
 

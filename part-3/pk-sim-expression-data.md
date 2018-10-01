@@ -30,7 +30,7 @@ Notably, there are only two types of parameters in this reformulation of the org
 
 Relative protein abundance can be set according to available expression data while catalytic parameters are described by a global kinetic rate constant that is adjusted during model setup. On the one hand, this method enables direct estimation of _in vivo_ enzyme and transporter activity based on data-based inclusion of tissue-specific protein abundance which represents first-hand experimental- measurements. On the other hand, the number of free model parameters, which would have to be measured or adjusted in case of an exhaustive mechanistic representation in multiple organs, is reduced significantly. Later, we will describe, how such information can be included in PBPK models.
 
-The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building \[[46](../references.md#46)\]. The database needs to be referenced in the PK-Sim® options, see [Options](02-pk-sim-options.md). Public database which were imported are
+The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building \[[46](../references.md#46)\]. The database needs to be referenced in the PK-Sim® options, see [Options](pk-sim-options.md). Public database which were imported are
 
 *   whole genome expression arrays from ArrayExpress (ArrayExpress, 2010)
 
@@ -97,7 +97,7 @@ In addition, for the vascular endothelium, proteins can either be located in the
 
 ## The workflow‌
 
-If you want to use the gene expression databases, ensure that they are correctly installed and linked to the application, see [Options](02-pk-sim-options.md).
+If you want to use the gene expression databases, ensure that they are correctly installed and linked to the application, see [Options](pk-sim-options.md).
 
 The workflow of integrating protein data with PBPK models comprises the following steps:
 
@@ -111,7 +111,7 @@ The workflow of integrating protein data with PBPK models comprises the followin
 
 ## Modeling protein/drug interactions in PK-Sim®‌
 
-Proteins are added to a PBPK model as part of the building block individual. Proteins are added as binding partners, as metabolizing enzymes or as transporters for “compound”. The specifics of the interaction is adjusted in the compounds building block, see [PK-Sim® Compounds: Definition and Work Flows](07-pk-sim-compounds-definition-and-work-flow.md), while the quantities and localization of proteins is parameterized in the individual building block. There are two ways of adding proteins to the building block “ individual”, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein quantities to a list of organs and tissues. In either case, a protein is added either as “Metabolising Enzyme”, as “Transport Protein” or as “Protein Binding Partners”. Below the tab “Expression”, you find an area that lists all possible protein ‘types’. For each type, it is possible to select via right click a context menu with two entries, **Add type… (Default)** or **Add type… (Database Query)** with type being one of “Metabolising Enzyme”, “Transport Protein” or “Protein Binding Partners”.
+Proteins are added to a PBPK model as part of the building block individual. Proteins are added as binding partners, as metabolizing enzymes or as transporters for “compound”. The specifics of the interaction is adjusted in the compounds building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md), while the quantities and localization of proteins is parameterized in the individual building block. There are two ways of adding proteins to the building block “ individual”, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein quantities to a list of organs and tissues. In either case, a protein is added either as “Metabolising Enzyme”, as “Transport Protein” or as “Protein Binding Partners”. Below the tab “Expression”, you find an area that lists all possible protein ‘types’. For each type, it is possible to select via right click a context menu with two entries, **Add type… (Default)** or **Add type… (Database Query)** with type being one of “Metabolising Enzyme”, “Transport Protein” or “Protein Binding Partners”.
 
 ![Expression Input Form](../assets/images/part-3/ExpressionInputForm.PNG)
 
@@ -126,7 +126,7 @@ Right click on this type, and select the first entry in the context menu: **Add 
 Next, you will be required to choose a name for your protein. After doing so, an area to configure properties of this protein will appear. It is divided into an upper and a lower panel.
 
 {% hint style="info" %}
-To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](02-pk-sim-options.md).
+To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md).
 {% endhint %}
 
 ![Expression Data Input Form For Manually Data Input](../assets/images/part-3/ExpressionDataInputManually.PNG)

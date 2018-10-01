@@ -6,33 +6,33 @@ In the building block **Formulation** the properties of the dosage form that is 
 
 To create a new formulation, do one of the following:
 
-*   Click on ![Image](../assets/icons/Formulation-32x32.png) **Formulation** in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+- Click on ![Image](../assets/icons/Formulation-32x32.png) **Formulation** in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
-*   Right mouse click on **Formulations** in the **Building Block Explorer** and select **Add Formulation...**
+- Right mouse click on **Formulations** in the **Building Block Explorer** and select **Add Formulation...**
 
-*   Use the short cut **Ctrl+Alt+F**
+- Use the short cut **Ctrl+Alt+F**
 
 A dialog will open where the properties of the formulation can be selected and/ or defined.
 
 The formulation is initialized by giving it a **Name** in the respective input field. The name is used to identify the formulation when its parameters are saved in the project and/or as a template. The name is also used for identification of the formulation in the simulation.
 
-For the different types of empirical or user-defined release functions, the dissolution curve will be depicted in the adjacent graph as fraction of dose dissolved _vs._ time. To zoom into the plot either use the mouse wheel or keep your finger pressed on the left mouse button and move the cursor down to where you want the bottom right-hand corner to be. For **Particle Dissolution**, the dissolution function represents the result of the mechanistic dissolution model of the Noyes- Whitney type in combination with the physiological conditions, rather than an input function. Thus, the dissolution properties do not only change as a function of the physico-chemical properties of the drug and the formulation characteristic, but also with the physiological conditions of the individual or animal. The resulting fraction dissolved as a function of time within the intestinal segments represents a simulation output that can be displayed in the **Results Window** of the simulation (see [Shared Tools - Chart Component](../part-5/02-chart-component.md)).
+For the different types of empirical or user-defined release functions, the dissolution curve will be depicted in the adjacent graph as fraction of dose dissolved _vs._ time. To zoom into the plot either use the mouse wheel or keep your finger pressed on the left mouse button and move the cursor down to where you want the bottom right-hand corner to be. For **Particle Dissolution**, the dissolution function represents the result of the mechanistic dissolution model of the Noyes- Whitney type in combination with the physiological conditions, rather than an input function. Thus, the dissolution properties do not only change as a function of the physico-chemical properties of the drug and the formulation characteristic, but also with the physiological conditions of the individual or animal. The resulting fraction dissolved as a function of time within the intestinal segments represents a simulation output that can be displayed in the **Results Window** of the simulation (see [Shared Tools - Chart Component](../part-5/chart-component.md)).
 
 From the drop-down menu you can choose from the following predefined formulations:
 
-*   Dissolved
+- Dissolved
 
-*   Weibull
+- Weibull
 
-*   Lint80
+- Lint80
 
-*   Particle Dissolution
+- Particle Dissolution
 
-*   Table
+- Table
 
-*   Zero Order
+- Zero Order
 
-*   First Order
+- First Order
 
 In the following sections, the different formulation functions are described in more detail.
 
@@ -53,58 +53,58 @@ When applied to drug dissolution and release from pharmaceutical dosage forms, t
 ![Image](../assets/images/part-3/equation-19-1.png)
 
 where a is the scale parameter, defining the time scale of the process, the location parameter Tlag characterizes the lag time before the onset of the dissolution or release process, and the shape parameter b characterizes the curve as either exponential (b = 1), sigmoid (b > 1), or parabolic (b < 1).
-    
+  
 The following parameters have to be defined when choosing the Weibull function:
-    
-*   Dissolution shape corresponding to the shape parameter b and, thus, characterizing the curve as either exponential (b = 1), sigmoid (b > 1), or parabolic (b < 1).
 
-*   Dissolution time (50% dissolved) defining the time after the start of dissolution, when 50% of the administered dose is dissolved and, thus, corresponding to the scale parameter of the Weibull function.
+- Dissolution shape corresponding to the shape parameter b and, thus, characterizing the curve as either exponential (b = 1), sigmoid (b > 1), or parabolic (b < 1).
 
-*   Lag time characterizing the time after which dissolution begins.
+- Dissolution time (50% dissolved) defining the time after the start of dissolution, when 50% of the administered dose is dissolved and, thus, corresponding to the scale parameter of the Weibull function.
+
+- Lag time characterizing the time after which dissolution begins.
 
 Please note that the Weibull function can only be combined with the Administration type **Oral**.
 
 ### Lint80‌
-    
+
 The Lint80 is an empirical function assuming linear release until 80% of the administered dose is dissolved. This type of formulation can also only be combined with the Administration type **Oral**.
 
 The following parameters have to be defined when choosing the Lint80 function:
 
-*   The **Dissolution time (80% dissolved)**, defining the time, after the start of dissolution, when 80% of the administered dose is dissolved.
+- The **Dissolution time (80% dissolved)**, defining the time, after the start of dissolution, when 80% of the administered dose is dissolved.
 
-*   The **Lag time** characterizing the time after which dissolution starts.
+- The **Lag time** characterizing the time after which dissolution starts.
 
 ### Particle Dissolution‌
-    
+
 Particle Dissolution calculates the dissolution kinetics of spherical particles with a predefined particle size distribution based on the Noyes-Whitney approach. The details of the mechanistic dissolution model have been described by Willmann et al 102. In PK-Sim®, the particle dissolution can only be combined with the Administration type **Oral**. To simulate the particle size dependent dissolution, the following formulation-dependent parameters have to be defined in the **Formulation Building Block**.
-    
-*   Thickness of the unstirred water layer (thickness of the diffusion layer).
 
-*   Particle size distribution (either normal or log normal, for polydisperse particle size distribution only).
+- Thickness of the unstirred water layer (thickness of the diffusion layer).
 
-*   Type of particle size distribution (either monodisperse or polydisperse).
+- Particle size distribution (either normal or log normal, for polydisperse particle size distribution only).
 
-*   Mean particle radius.
+- Type of particle size distribution (either monodisperse or polydisperse).
 
-*   Standard deviation of the particle radius (for polydisperse, normal particle size distribution only) or the coefficient of variation of the particle radius (for polydisperse, log normal particle size distribution only).
+- Mean particle radius.
 
-*   Number of bins (for polydisperse particle size distribution only).
+- Standard deviation of the particle radius (for polydisperse, normal particle size distribution only) or the coefficient of variation of the particle radius (for polydisperse, log normal particle size distribution only).
 
-*   Minimum particle radius, i.e. the lower limit for the particle radius (for polydisperse particle size distribution only).
+- Number of bins (for polydisperse particle size distribution only).
 
-*   Maximum particle radius, i.e. the upper limit for the particle radius (for polydisperse particle size distribution only).
+- Minimum particle radius, i.e. the lower limit for the particle radius (for polydisperse particle size distribution only).
+
+- Maximum particle radius, i.e. the upper limit for the particle radius (for polydisperse particle size distribution only).
 
 In addition, in order to use the Particle Dissolution function, the drug-related parameters have to be defined in the **Compound Building Block**. These include the aqueous diffusion coefficient, density of the drug material and the threshold for immediate dissolution. Further, you will have to indicate how the precipitated amount should be treated (either as soluble or insoluble).
 
 ### Table‌
-    
+
 Table defines the amount of drug applied per unit time as a continuous function. You can either manually specify time and fraction of the applied dose values or import dissolution data from Excel®.
 
 In order to manually enter values:
-    
-*   Click on **Add Point** ![Image](../assets/icons/Add.png) to add a new row to the table
 
-*   Enter appropriate values for **Time** and **Fraction (dose)** dissolved
+- Click on **Add Point** ![Image](../assets/icons/Add.png) to add a new row to the table
+
+- Enter appropriate values for **Time** and **Fraction (dose)** dissolved
 
 {% hint style="tip" %}
 The origin (0, 0) is always present. Values must be monotonically increasing in the **Time** column. The resulting function will be represented in the adjacent graphic. The absolute dose will be taken from the respective **Administration Protocol Building Block** that will later be used in the simulation.
@@ -113,21 +113,21 @@ The origin (0, 0) is always present. Values must be monotonically increasing in 
 In order to **import** experimental dissolution data from Excel®:
 
 1.  Click ![Image](../assets/icons/Load.png) **Import Formulation**
-    
+
 2.  Select and open the Excel® file
-    
+
 3.  Import and transfer the appropriate Excel® sheet
 
 {% hint style="tip" %}
-For additional information about the import data and mapping workflow see [Import and Edit of Observed Data](../part-5/06-import-edit-observed-data.md).
+For additional information about the import data and mapping workflow see [Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
 {% endhint %}
 
 ### Zero Order‌
-    
+
 Zero Order defines the application as occurring in a dose-dependent manner. The required input is the time at which the entire application has been input **(End time)**.
 
 ### First Order‌
-    
+
 First Order defines the application as a first order input. The required input is the half-life of application value **(t1/2)**.
 
 ## Setting or Changing Formulation Properties‌
@@ -154,7 +154,7 @@ To clone a formulation in the project:
 
 4.  Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.png).
 
-3.  ### Saving Formulations as Templates‌
+5.  ### Saving Formulations as Templates‌
 
 For each project, a number of formulations can be defined. They can be saved as a template and then be shared among several projects and users.
 
@@ -166,11 +166,11 @@ To save an existing formulation as template:
 
 In case a formulation with the same name already exists, a warning appears and you have the following opportunities:
 
-*   Override: This action will override the existing template.
-    
-*   Save as: You can save the formulation under a different name. In this case, you will be asked to Rename the new template.
-   
-*   Cancel: This action will abort the saving process.
+- Override: This action will override the existing template.
+
+- Save as: You can save the formulation under a different name. In this case, you will be asked to Rename the new template.
+
+- Cancel: This action will abort the saving process.
 
 ## Loading existing Formulations from Templates‌
 
@@ -188,7 +188,7 @@ In case a formulation with the same name already exists in the project, a warnin
 
 The selected formulation will appear in the **Building Block Explorer** view.
 
-In addition, formulations can be directly loaded from the template database within a simulation (see [Simulations](12-pk-sim-simulations.md)).
+In addition, formulations can be directly loaded from the template database within a simulation (see [Simulations](pk-sim-simulations.md)).
 
 ## Deleting Formulations‌
 

@@ -66,7 +66,7 @@ Alternatively, you can create a new individual which serves as a basis individua
 
 *   Click on **Create** ![Image](../assets/icons/Create.png)
 
-*   Define the properties of the **Individual**. For details see [PK-Sim® - Creating Individuals](04-pk-sim-creating-individuals.md).
+*   Define the properties of the **Individual**. For details see [PK-Sim® - Creating Individuals](pk-sim-creating-individuals.md).
 
 In the following line, information about the population that will be used based on the selected basis individual is given. For the different animal species no alternative populations are provided, but for humans, the following populations are available:
 
@@ -199,7 +199,7 @@ Populations generated in PK-Sim® can be exported to a CSV format. The file, whi
 4.  Click **Save**. The file is saved and can be subsequently opened with excel
 
 {% hint style="tip" %}
-In addition to the export of the population parameters to CSV, population simulations can be exported to CSV via the Simulation Explorer. Then, the population parameters file (.CSV), the respective model file (.xml) as well as an information file (.txt) with the relevant information about the PK-Sim® version number will be generated. For details please see (see [PK-Sim® - Importing and Exporting Project Data and Models](13-importing-exporting-project-data-models.md).
+In addition to the export of the population parameters to CSV, population simulations can be exported to CSV via the Simulation Explorer. Then, the population parameters file (.CSV), the respective model file (.xml) as well as an information file (.txt) with the relevant information about the PK-Sim® version number will be generated. For details please see (see [PK-Sim® - Importing and Exporting Project Data and Models](importing-exporting-project-data-models.md).
 {% endhint %}
 
 ### Cloning of Populations‌
@@ -249,7 +249,7 @@ To load an existing population from the template database:
 
 The selected population will appear in the **Building Block Explorer** view.
 
-In addition, populations can be directly loaded from the template database within a simulation (see [PK-Sim® - Simulations](12-pk-sim-simulations.md).
+In addition, populations can be directly loaded from the template database within a simulation (see [PK-Sim® - Simulations](pk-sim-simulations.md).
 
 ### Deleting Populations‌
     

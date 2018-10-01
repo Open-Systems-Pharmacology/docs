@@ -76,7 +76,7 @@ The simulation settings can be managed separately from the actual simulations an
 
 *   Output Selection: outputs that will be available for plots; cannot be edited in this view but will be listed in the **Output Selection** tab after a successful simulation run in the **Simulation Creation Wizard**.
 
-*   Chart Templates: a set of chart templates can be managed in the **Chart Editor** as described in [Tools](07-tools.md); is part of the simulation settings, but not visible in this view.
+*   Chart Templates: a set of chart templates can be managed in the **Chart Editor** as described in [Tools](tools.md); is part of the simulation settings, but not visible in this view.
 
 ## Molecule Start Values‌
 

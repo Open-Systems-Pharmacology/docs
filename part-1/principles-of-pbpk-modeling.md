@@ -18,7 +18,7 @@ The pharmacokinetics of a substance can be understood by considering its (libera
 
 ### Liberation‌
 
-Depending on the formulation of a substance, it might not be directly available for absorption processes. Certain formulations liberate the substance in a more or less controlled fashion and these processes can be included in PBPK models. Further details on modeling liberation in PK-Sim® [are described in [PK-Sim® - Formulations](../part-3/11-pk-sim-formulations.md).
+Depending on the formulation of a substance, it might not be directly available for absorption processes. Certain formulations liberate the substance in a more or less controlled fashion and these processes can be included in PBPK models. Further details on modeling liberation in PK-Sim® [are described in [PK-Sim® - Formulations](../part-3/pk-sim-formulations.md).
 
 ### Absorption‌
 
@@ -44,13 +44,13 @@ The products of such biotransformation steps are referred to as metabolites. If 
 
 Generally, the liver is considered as the most relevant organ for biotransformation. However, most metabolizing enzymes are also expressed in various other organs, even though often to a lower extent. Nevertheless, extra-hepatic metabolization can be very important. Mucosal clearance in the intestinal wall is just one prominent example. Together with first pass clearance in the liver this process also influences the bioavailability of a substance [77](../references.md#77).
 
-Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance which enzymes are relevant. Further details on modeling metabolization in PK-Sim® [are described in [ADME Properties](../part-3/07-pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance which enzymes are relevant. Further details on modeling metabolization in PK-Sim® [are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
 
 ### Excretion/Elimination‌
 
 Compounds and their metabolites are generally removed from the body via excretion or elimination processes. The two most prominent routes of excretion are via the kidney into urine and via biliary excretion into the intestine and further into the feces. During the latter process, re-absorption can lead to entero-hepatic circulation of a substance. While biliary secretion is generally mediated via active transport, urinary secretion can be passive (glomerular filtration) or also due to active transport (tubular secretion). Other special routes of elimination can include exhalation via the lungs.
 
-Just as the metabolization processes, the transporter "equipment" is a property of each individual organism. It has to be considered for each substance which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/07-pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Just as the metabolization processes, the transporter "equipment" is a property of each individual organism. It has to be considered for each substance which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
 
 ## PBPK model parameterization‌
 
