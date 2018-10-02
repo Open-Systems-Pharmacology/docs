@@ -4,18 +4,18 @@
   "description": "This manual describes the Open Systems Pharmacology Suite. This includes technical descriptions of the different software elements together with examples and brief introductions to relevant scientific aspects including references for further reading. Naturally, the science described is selected based on our experience and judgment of relevance in the given context. Further, our “philosophy” is largely reflected in the software platform, and, vice versa, the software platform influences how we work and think.",
   "main": "markdown-pdf.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node markdown-pdf.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/msevestre/docs.git"
+    "url": "git+https://github.com/open-systems-pharmacology/docs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/msevestre/docs/issues"
+    "url": "https://github.com/open-systems-pharmacology/docs/issues"
   },
-  "homepage": "https://github.com/msevestre/docs#readme",
+  "homepage": "https://github.com/open-systems-pharmacology/docs#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "markdown": "^0.5.0",

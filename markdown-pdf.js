@@ -19,7 +19,7 @@ function parsingMD(data) {
     re = /\(([^)]+)\)/,
     reBrackets = /\[([^)]+)\]/,
     mdDocs = new Array(),
-    bookPath = 'open-systems-pharmacology.pdf';
+    bookPath = 'Open Systems Pharmacology Suite.pdf';
 
   mdDocs.push(basePath);
   mdDocs.push('core-separator.md');
