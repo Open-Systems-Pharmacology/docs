@@ -17,9 +17,11 @@ The only requirement to contribute to the documentation is to have a GitHub acco
 Each page available on the docs website corresponds to a file hosted on GitHub that can be edited.
 
 Clicking on the `Edit on GitHub` button will take you to the source file on GitHub.
+
 ![Edit on GitHub](../assets/images/edit-github.png)
 
 Next, click the pencil icon, as shown in the following figure to edit the article.
+
 ![Edit](../assets/images/editicon.png)
 
 {% hint style="note" %}
@@ -27,10 +29,12 @@ If the pencil icon is grayed out, you need to login to your GitHub account. Make
 {% endhint %}
 
 Once you are done with your changes, scroll to the bottom of the page. Enter a title and description for your edits and click `Propose file change` as shown in the following figure:
+
 ![Propose file change](../assets/images/submit-pull-request.png)
 
 Now that you have proposed your changes, you need to ask the documentation core team to incorporate them into the documentation.
 This is done using something called a **pull request**. When you clicked on `Propose file change` in the figure above, you should have been taken to a new page that looks like the following figure:
+
 ![Open pull request](../assets/images/open-pull-request.png)
 
 Review the title and the description for the pull request, and then click `Create pull request`.
