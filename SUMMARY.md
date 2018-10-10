@@ -1,80 +1,80 @@
 # Table of Contents
 
-*   [Open Systems Pharmacology Suite Manual & Copyright](copyright.md)
+- [Open Systems Pharmacology Suite Manual & Copyright](copyright.md)
+- [How to Contribute](how-to-contribute.md)
 
-##   Mechanistic Modeling of Pharmacokinetics and Dynamics
-    
-*  Modeling Concepts
-    
-    *   [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
-    
-    *   [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
-    
-    *   [Principles of PBPK Modeling](part-1/principles-of-pbpk-modeling.md)
-        
-    *   [Expression Data for PBPK Modeling](part-1/modeling-concepts-expression-data-for-pbpk-modeling.md)
-    
-    *   [Modeling of Proteins](part-1/modeling-concepts-modeling-of-proteins.md)
-    
-    *   [PD and Reaction Network Modeling](part-1/modeling-concepts-pd-and-reaction-network-modeling.md)
+## Mechanistic Modeling of Pharmacokinetics and Dynamics
 
-##   Open Systems Pharmacology Suite
+- Modeling Concepts
 
-*  [Modules, Philosophy, and Building Blocks](part-2/modules-philsophy-building-blocks.md)
-                
-*  [Getting Started](part-2/getting-started.md)
+  - [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
 
-##   Working with PK-Sim®
+  - [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
 
-*   PK-Sim® Documentation
+  - [Principles of PBPK Modeling](part-1/principles-of-pbpk-modeling.md)
 
-    *   [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
+  - [Expression Data for PBPK Modeling](part-1/modeling-concepts-expression-data-for-pbpk-modeling.md)
 
-    *   [Options](part-3/pk-sim-options.md)
+  - [Modeling of Proteins](part-1/modeling-concepts-modeling-of-proteins.md)
 
-    *   [Projects](part-3/pk-sim-projects.md)
+  - [PD and Reaction Network Modeling](part-1/modeling-concepts-pd-and-reaction-network-modeling.md)
 
-    *   [Creating Individuals](part-3/pk-sim-creating-individuals.md)
+## Open Systems Pharmacology Suite
 
-    *   [Creating Populations](part-3/pk-sim-creating-populations.md)
+- [Modules, Philosophy, and Building Blocks](part-2/modules-philsophy-building-blocks.md)
+- [Getting Started](part-2/getting-started.md)
 
-    *   [Expression Data](part-3/pk-sim-expression-data.md)
+## Working with PK-Sim®
 
-    *   [Compounds: Definition and Work Flows](part-3/pk-sim-compounds-definition-and-work-flow.md)
+- PK-Sim® Documentation
 
-    *   [Compounds: Defining Inhibition/Induction Processes](part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)
+  - [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
 
-    *   [Administration Protocols](part-3/pk-sim-administration-protocols.md)
+  - [Options](part-3/pk-sim-options.md)
 
-    *   [Events](part-3/pk-sim-events.md)
+  - [Projects](part-3/pk-sim-projects.md)
 
-    *   [Formulations](part-3/pk-sim-formulations.md)
+  - [Creating Individuals](part-3/pk-sim-creating-individuals.md)
 
-    *   [Simulations](part-3/pk-sim-simulations.md)
+  - [Creating Populations](part-3/pk-sim-creating-populations.md)
 
-    *   [Importing and Exporting Project Data and Models](part-3/importing-exporting-project-data-models.md)
+  - [Expression Data](part-3/pk-sim-expression-data.md)
 
-    *   [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
+  - [Compounds: Definition and Work Flows](part-3/pk-sim-compounds-definition-and-work-flow.md)
 
-##   Working with MoBi®‌
+  - [Compounds: Defining Inhibition/Induction Processes](part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)
 
-*   MoBi®‌ Documentation
+  - [Administration Protocols](part-3/pk-sim-administration-protocols.md)
 
-    *   [First Steps](part-4/first-steps.md)
+  - [Events](part-3/pk-sim-events.md)
 
-    *   [The Building Block Concept](part-4/building-block-concepts.md)
+  - [Formulations](part-3/pk-sim-formulations.md)
 
-    *   [Model Building and Model Components](part-4/model-building-components.md)
+  - [Simulations](part-3/pk-sim-simulations.md)
 
-    *   [Setting up a Simulation](part-4/setting-up-simulation.md)
+  - [Importing and Exporting Project Data and Models](part-3/importing-exporting-project-data-models.md)
 
-    *   [Simulation Results](part-4/simulation-results.md)
+  - [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
 
-    *   [Diagrams Overview](part-4/diagrams-overview.md)
+## Working with MoBi®‌
 
-    *   [Tools](part-4/tools.md)
+- MoBi®‌ Documentation
 
-    *   [Reuse of Project Information from Previous Versions](part-4/reuse-of-project-information-from-previous-versions.md)
+  - [First Steps](part-4/first-steps.md)
+
+  - [The Building Block Concept](part-4/building-block-concepts.md)
+
+  - [Model Building and Model Components](part-4/model-building-components.md)
+
+  - [Setting up a Simulation](part-4/setting-up-simulation.md)
+
+  - [Simulation Results](part-4/simulation-results.md)
+
+  - [Diagrams Overview](part-4/diagrams-overview.md)
+
+  - [Tools](part-4/tools.md)
+
+  - [Reuse of Project Information from Previous Versions](part-4/reuse-of-project-information-from-previous-versions.md)
 
 ## Shared Tools and Example Workflows
 
@@ -103,13 +103,13 @@
     *   [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
 
 ## Working with Matlab® and R‌
-    
+
     *   [Matlab® - Introduction](part-6/matlab-introduction.md)
 
     *   [R - Introduction](part-6/r-introduction.md)
 
 ## Appendix
-    
+
     *   [Appendix](appendix.md)
 
 ## References
