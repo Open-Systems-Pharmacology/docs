@@ -46,3 +46,26 @@ That's it! The documentation core team will be notified and review your changes.
 ## Adding new content
 
 The process is slightly more complicated as you need to create a new content file and incorporate it into the existing documentation. We would be happy to help you do that if you need some support. Simply open an issue in the docs repo describing what you want to add and where and we'll get in touch with you.
+
+## Rich Content
+
+### Note, hints and callout
+
+Provides a great way to bring the reader's attention to specific elements. 
+
+By surrounding your text with `{% hint style="xxx" %}` and `{% endhint %}`, a visual clue will be created for your content, making it pop out
+
+For example: using the style `note`, we can create the following visual element
+
+{% hint style="note" %}
+This is a note
+{% endhint %}
+
+Available styles are:
+ * tip
+ * note
+ * warning
+ * info
+
+
+
