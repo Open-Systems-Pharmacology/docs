@@ -25,7 +25,13 @@ Next, click the pencil icon, as shown in the following figure to edit the articl
 ![Edit](../assets/images/editicon.png)
 
 {% hint style="note" %}
-If the pencil icon is grayed out, you need to login to your GitHub account. Make your changes in the web editor. You can click the Preview changes tab to check formatting of your change.
+If the pencil icon is grayed out, you need to login to your GitHub account.
+{% endhint %}
+
+{% hint style="note" %}
+Make your changes in the web editor. Formatting of the documentation is based on the so called **Markdown** syntax. 
+The description of this lightweight and easy-to-use syntax can be found [here](https://guides.github.com/features/mastering-markdown/).
+You can click the Preview changes tab to check formatting of your change.
 {% endhint %}
 
 Once you are done with your changes, scroll to the bottom of the page. Enter a title and description for your edits and click `Propose file change` as shown in the following figure:
