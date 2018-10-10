@@ -1,16 +1,16 @@
-# Open Systems Parmacology - Docs contributor guide overview
+# Open Systems Parmacology - Documentation contributor guide overview
 
 Welcome to the [docs.open-systems-pharmacology.org](http://docs.open-systems-pharmacology.org) Contributor guide!
 
-The documentation for the open systems pharmacology suite is open source and hosted on GitHub. Despite all the efforts to maintain and update the documentation, there will always be small grammar and spelling errors sliding through the cracks as well as sections of the documentation that are not clear enough or missing.
+The documentation for the Open Systems Pharmacology Suite is open source and hosted on GitHub. Despite all the efforts to maintain and update the documentation, there will always be small grammar and spelling errors sliding through the cracks as well as sections of the documentation that are not clear enough, missing or outdated.
 
 While you can create issues in the [docs repository](https://github.com/Open-Systems-Pharmacology/docs/issues) to report those errors or omissions, it will often be faster and easier to submit your edits directly to be reviewed by the documentation core team.
 
-This guide aims at describing the worflow to contribute to the documentation.
+This guide aims at describing the workflow to contribute to the documentation.
 
 ## Requirements
 
-The only requirement to contribute to the documentation is to have a GitHub account. If you do not have an account, you can create one for free in a few seconds.
+The only requirement to contribute to the documentation is to have a GitHub account. If you do not have an account, you can [create one](https://github.com/join) for free in a few seconds.
 
 ## Edit of existing documents
 
