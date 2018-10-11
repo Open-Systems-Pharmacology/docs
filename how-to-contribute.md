@@ -32,7 +32,7 @@ Once you are done with your changes, scroll to the bottom of the page. Enter a t
 
 ![Propose file change](.gitbook/assets/submit-pull-request.png)
 
-Now that you have proposed your changes, you need to ask the documentation core team to incorporate them into the documentation. This is done using something called a **pull request**. When you clicked on `Propose file change` in the figure above, click on `Create pull request` button. Now you should have been taken to a new page that looks like the following figure:
+Now that you have proposed your changes, you need to ask the documentation core team to incorporate them into the documentation. This is done using something called a **pull request**. When you clicked on `Propose file change` in the figure above, you should have been taken to a new page that looks like the following figure:
 
 ![Open pull request](.gitbook/assets/open-pull-request.png)
 
