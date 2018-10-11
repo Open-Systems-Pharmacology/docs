@@ -1,4 +1,4 @@
-# Open Systems Parmacology - Documentation contributor guide overview
+# How to Contribute
 
 Welcome to the [docs.open-systems-pharmacology.org](http://docs.open-systems-pharmacology.org) Contributor guide!
 
@@ -16,28 +16,25 @@ The only requirement to contribute to the documentation is to have a GitHub acco
 
 Each page available on the docs website corresponds to a file hosted on GitHub that can be edited.
 
-Clicking on the `Edit on GitHub` button will take you to the source file on GitHub.![Edit on GitHub](/assets/images/edit-github.png)
+Clicking on the `Edit on GitHub` button will take you to the source file on GitHub.![Edit on GitHub](.gitbook/assets/edit-github.png)
 
-Next, click the pencil icon, as shown in the following figure to edit the article.![Edit](/assets/images/editicon.png)
+Next, click the pencil icon, as shown in the following figure to edit the article.![Edit](.gitbook/assets/editicon.png)
 
-{% hint style="note" %}
+{% hint style="info" %}
 If the pencil icon is grayed out, you need to login to your GitHub account.
 {% endhint %}
 
-{% hint style="note" %}
-Make your changes in the web editor. Formatting of the documentation is based on the so called **Markdown** syntax. 
-The description of this lightweight and easy-to-use syntax can be found [here](https://guides.github.com/features/mastering-markdown/).
-You can click the Preview changes tab to check formatting of your change.
+{% hint style="info" %}
+Make your changes in the web editor. Formatting of the documentation is based on the so called **Markdown** syntax. The description of this lightweight and easy-to-use syntax can be found [here](https://guides.github.com/features/mastering-markdown/). You can click the Preview changes tab to check formatting of your change.
 {% endhint %}
 
 Once you are done with your changes, scroll to the bottom of the page. Enter a title and description for your edits and click `Propose file change` as shown in the following figure:
 
-![Propose file change](/assets/images/submit-pull-request.png)
+![Propose file change](.gitbook/assets/submit-pull-request.png)
 
-Now that you have proposed your changes, you need to ask the documentation core team to incorporate them into the documentation.
-This is done using something called a **pull request**. When you clicked on `Propose file change` in the figure above, click on `Create pull request` button. Now you should have been taken to a new page that looks like the following figure:
+Now that you have proposed your changes, you need to ask the documentation core team to incorporate them into the documentation. This is done using something called a **pull request**. When you clicked on `Propose file change` in the figure above, you should have been taken to a new page that looks like the following figure:
 
-![Open pull request](/assets/images/open-pull-request.png)
+![Open pull request](.gitbook/assets/open-pull-request.png)
 
 Review the title and the description for the pull request, and then click `Create pull request`.
 
@@ -51,23 +48,19 @@ The process is slightly more complicated as you need to create a new content fil
 
 ### Note, hints and callout
 
-Provides a great way to bring the reader's attention to specific elements. 
+Provides a great way to bring the reader's attention to specific elements.
 
-By surrounding your text with `{\% hint style="xxx" %}` and `{\% endhint %}`, a visual clue will be created for your content, making it pop out 
+By surrounding your text with `{% hint style="xxx" %}` and `{% endhint %}`, a visual clue will be created for your content, making it pop out
 
 For example: using the style `note`, we can create the following visual element
 
-{% hint style="note" %}
+{% hint style="info" %}
 This is a note
 {% endhint %}
 
-
-
 Available styles are:
- * tip
- * note
- * warning
- * info
 
-
-
+- tip
+- note
+- warning
+- info
