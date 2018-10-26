@@ -226,10 +226,6 @@ A reference path may also contain a global part, like "|MOLECULE", which is reco
 
 To **remove an object from the reference list**, right-click it and select **Remove**from the context menu.
 
-{% hint style="tip" %}
-You will find several useful examples for adding references within this section and within ???.
-{% endhint %}
-
 Clicking on the **Formulas tab** in the edit window will show a list of all formulas used in the reaction building block. This list is a quick overview of formula names within one building block. Clicking on a formula in the list will show the references and the equation for the selected formula. Right-clicking on a formula in the list opens a context menu that allows you to **Rename**, **Clone** and **Remove** formulas.
 
 ### Sum Formulas
