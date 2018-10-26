@@ -70,13 +70,13 @@ An important distinction is whether an event only occurs once or repeatedly when
 
 The simulation settings can be managed separately from the actual simulations and can hence be used in different simulations in a project. When a new project is created, a default simulation settings building block is created. Simulation settings are divided into four distinct groups:
 
-*   Output Intervals: start and end time point of a simulation and resolution of a simulation; can be edited in this view in the **Output Intervals** tab.
+- Output Intervals: start and end time point of a simulation and resolution of a simulation; can be edited in this view in the **Output Intervals** tab.
 
-*   Solver Settings: solver parameters such as tolerance, use of Jacobian etc.; can also be edited in this view in the **Solver Settings** tab.
+- Solver Settings: solver parameters such as tolerance, use of Jacobian etc.; can also be edited in this view in the **Solver Settings** tab.
 
-*   Output Selection: outputs that will be available for plots; cannot be edited in this view but will be listed in the **Output Selection** tab after a successful simulation run in the **Simulation Creation Wizard**.
+- Output Selection: outputs that will be available for plots; cannot be edited in this view but will be listed in the **Output Selection** tab after a successful simulation run in the **Simulation Creation Wizard**.
 
-*   Chart Templates: a set of chart templates can be managed in the **Chart Editor** as described in [Tools](tools.md); is part of the simulation settings, but not visible in this view.
+- Chart Templates: a set of chart templates can be managed in the **Chart Editor** as described in [Tools](tools.md); is part of the simulation settings, but not visible in this view.
 
 ## Molecule Start Values‌
 
@@ -85,10 +85,6 @@ This building block defines the start values of the molecules in the model. Thes
 ## Parameter Start Values‌
 
 This building block defines the start values of the parameters in the model. This allows for the setting of specific physiological parameters if different individuals, species or patient subgroups are to be considered.
-
-{% hint style="tip" %}
-The size of the organs of a species, i.e., the containers, are defined in this building block. This means that scaling from one species to another or scaling from adults to children can be done by exchanging the parameter start values of the organs, blood flows etc..
-{% endhint %}
 
 ## Observed Data‌
 
