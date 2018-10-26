@@ -105,7 +105,7 @@ Simulation Settings allow you to specify the resolution of the results as well a
 ## Output Intervals‌
 
 Output Intervals specify the simulation times at which simulation results are stored. In MoBi® you can specify a variable number of Output Intervals (as depicted below).
-  
+
 ![Simulation Creation Wizard: Output Intervals](../assets/images/part-4/SimCW_OI.png)
 
 Each Output Interval is defined by the following options:
@@ -138,6 +138,8 @@ Additional output intervals can be defined and added to the list by clicking on 
 The solution will be produced at the following time points for a number of _k_ Output Intervals:
 
 ![Image](../assets/images/part-4/equation-26-1.png)
+
+## ODE Solver Properties
 
 Special points (e.g. times of Events such as Applications) will be added automatically.
 
@@ -201,7 +203,7 @@ After changing a parameter value, the parameter can be reset to its original val
 
 {% hint style="tip" %}
 If you need to change formulas, edit the corresponding building block and create a new simulation instead of editing the simulation.
-  
+
 In the following sections, a brief overview is given on where you can find the parameters that are specified in the building blocks from which the simulation was created. The examples given in some cases refer to a standard PK-Sim® simulation which was exported to MoBi®.
 {% endhint %}
 
@@ -242,7 +244,7 @@ The Container layout of a simulation is based on the layout of the Spatial Struc
 ## Update and Commit Changes Between Simulations and Building Blocks‌
 
 Within the **Simulation Explorer**, each building block item of the **Configuration** tree is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consitent with the corresponing general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
-  
+
 A right click on the red traffic lights in the **Simulation** window allows for two actions:
 
 ![Image](../assets/images/part-4/MoBi_UpdateCommit.png)
