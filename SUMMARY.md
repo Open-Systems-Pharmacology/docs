@@ -24,9 +24,9 @@
 - [Modules, Philosophy, and Building Blocks](part-2/modules-philsophy-building-blocks.md)
 - [Getting Started](part-2/getting-started.md)
 
-## Working with PK-Sim®
+## Working with PK-Sim
 
-- PK-Sim® Documentation
+- PK-Sim Documentation
 
   - [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
 
@@ -56,9 +56,9 @@
 
   - [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
 
-## Working with MoBi®‌
+## Working with MoBi
 
-- MoBi®‌ Documentation
+- MoBi‌ Documentation
 
   - [First Steps](part-4/first-steps.md)
 
@@ -102,9 +102,9 @@
 
     *   [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
 
-## Working with Matlab® and R‌
+## Working with Matlab and R‌
 
-    *   [Matlab® - Introduction](part-6/matlab-introduction.md)
+    *   [Matlab - Introduction](part-6/matlab-introduction.md)
 
     *   [R - Introduction](part-6/r-introduction.md)
 
