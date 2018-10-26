@@ -676,7 +676,7 @@ The following steps describe how to enter a **kinetic equation** to the reaction
 
 1.  Click the **Properties** tab again, and notice the red error sign ![Image](../assets/icons/ErrorCross.png) left of the empty input box (see lower left). Hovering with the mouse over this warning symbol will show you a tool tip with information on the validity of the equation - currently the problem is that it is still empty. Examples for kinetic equations are a irreversible term, like "k1\*A", an equilibrium like "k1\*A- k2\*B", or a Michaelis-Menten type of equation.
     
-2.  If you want to use relative paths (compare ??? for a discussion of the rationale behind the paths), select the corresponding radio button on the right hand side, and then the corresponding reference point in the tree window that pops up.
+2.  If you want to use relative paths, select the corresponding radio button on the right hand side, and then the corresponding reference point in the tree window that pops up.
     
 3.  All variables you use in the kinetic equation will have to be present in the reference list. The molecules that were previously drawn to the reaction (educts, products, or modifiers) are already present with their corresponding amount parameters.
     
