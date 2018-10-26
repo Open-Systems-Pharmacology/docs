@@ -226,10 +226,6 @@ A reference path may also contain a global part, like "|MOLECULE", which is reco
 
 To **remove an object from the reference list**, right-click it and select **Remove**from the context menu.
 
-{% hint style="tip" %}
-You will find several useful examples for adding references within this section and within ???.
-{% endhint %}
-
 Clicking on the **Formulas tab** in the edit window will show a list of all formulas used in the reaction building block. This list is a quick overview of formula names within one building block. Clicking on a formula in the list will show the references and the equation for the selected formula. Right-clicking on a formula in the list opens a context menu that allows you to **Rename**, **Clone** and **Remove** formulas.
 
 ### Sum Formulas
@@ -528,7 +524,7 @@ A molecule parameter needs to have a name, a parameter type (Local, Property, or
 
 *   A description can be added into the input box a the bottom, like for giving a literature reference from where you obtained this value.
 
-More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. If you enter a formula-defined or a state variable parameter, please refer to the general section defining how to use this functionality (???).
+More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. If you enter a formula-defined or a state variable parameter, please refer to the [general section](#parameters-formulas-and-tags) defining how to use this functionality.
 
 As an example, we create the property "Molecular weight" for the molecule created above.
 
@@ -680,7 +676,7 @@ The following steps describe how to enter a **kinetic equation** to the reaction
 
 1.  Click the **Properties** tab again, and notice the red error sign ![Image](../assets/icons/ErrorCross.png) left of the empty input box (see lower left). Hovering with the mouse over this warning symbol will show you a tool tip with information on the validity of the equation - currently the problem is that it is still empty. Examples for kinetic equations are a irreversible term, like "k1\*A", an equilibrium like "k1\*A- k2\*B", or a Michaelis-Menten type of equation.
     
-2.  If you want to use relative paths (compare ??? for a discussion of the rationale behind the paths), select the corresponding radio button on the right hand side, and then the corresponding reference point in the tree window that pops up.
+2.  If you want to use relative paths, select the corresponding radio button on the right hand side, and then the corresponding reference point in the tree window that pops up.
     
 3.  All variables you use in the kinetic equation will have to be present in the reference list. The molecules that were previously drawn to the reaction (educts, products, or modifiers) are already present with their corresponding amount parameters.
     
