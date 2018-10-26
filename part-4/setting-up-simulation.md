@@ -133,7 +133,8 @@ Additional output intervals can be defined and added to the list by clicking on 
 - The _total_ time of simulation is from t = 0 to the highest specified End Time.
 
 - The changes made to the Output Intervals during simulation creation will become the default settings for the next simulation created.
-  {% endhint %}
+
+{% endhint %}
 
 The solution will be produced at the following time points for a number of _k_ Output Intervals:
 
@@ -146,7 +147,7 @@ Special points (e.g. times of Events such as Applications) will be added automat
 MoBi® uses the CVODE differential equation solver. The solver settings can be accessed and edited either in the Simulation Wizard when creating a simulation (as depicted below) or in the simulation edit mode in the Settings tab.
 
 {% hint style="warning" %}
-For more information on the solver, please refer to the documentation of the CVODE solver: [CV_Guide.pdf] https://computation.llnl.gov/casc/sundials/documentation/cv_guide.pdf.
+For more information on the solver, please refer to the documentation of the CVODE solver: [CVODE] https://computation.llnl.gov/projects/sundials/sundials-software.
 {% endhint %}
 
 ![Simulation Creation Wizard: ODE Solver Properties](../assets/images/part-4/SimCW_SimS.png)
