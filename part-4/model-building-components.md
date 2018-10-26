@@ -524,7 +524,7 @@ A molecule parameter needs to have a name, a parameter type (Local, Property, or
 
 *   A description can be added into the input box a the bottom, like for giving a literature reference from where you obtained this value.
 
-More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. If you enter a formula-defined or a state variable parameter, please refer to the general section defining how to use this functionality (???).
+More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. If you enter a formula-defined or a state variable parameter, please refer to the [general section](#parameters-formulas-and-tags) defining how to use this functionality.
 
 As an example, we create the property "Molecular weight" for the molecule created above.
 
