@@ -49,6 +49,8 @@ In the first drop-down menu you can choose from the following species:
 
 - Mouse
 
+- Rabbit
+
 **Human**
 
 If **Human** is selected, you can select one of the following populations from the next drop-down menu:
@@ -66,6 +68,8 @@ If **Human** is selected, you can select one of the following populations from t
 - Japanese (2015) \[[67](../references.md#67)\]
 
 - Preterm
+
+- Pregnant (Dallmann et al. 2017)
 
 In the following drop-down menu, the gender is specified.
 
@@ -173,7 +177,7 @@ The background colors that indicate the different types of parameters (1.-3.) ca
 
 For some parameters, reasonable ranges are defined. For example pH values should be less than or equal to 14. In case a value outside this range is defined, a warning appears and the window cannot be closed without setting the parameters to a reasonable value.
 
-From PK-Sim 5.6.2 onwards, the **Advanced** view offers the implementation of a zonated liver into an individual. Metabolic pathways in the liver are spatially separated along the liver sinusoids 29. Splitting the liver into more than one zone will improve simulation accuracy. As shown below, the liver is not zonated per default (only periportal zone). Upon zonation, the liver is split into a periportal and a pericentral zone. The parameter **Fraction of periportal zone** defines the ratio of the zone volumes and the surface areas and is set to 50% per default.
+The **Advanced** view offers the implementation of a zonated liver into an individual. Metabolic pathways in the liver are spatially separated along the liver sinusoids \[[29](../references.md#29)\]. Splitting the liver into more than one zone will improve simulation accuracy. As shown below, the liver is not zonated per default (only periportal zone). Upon zonation, the liver is split into a periportal and a pericentral zone. The parameter **Fraction of periportal zone** defines the ratio of the zone volumes and the surface areas and is set to 50% per default.
 
 ![The Advanced view in the Anatomy/Physiology tab offers the use of a zonated
 liver.](../assets/images/part-3/LiverZonation.png)
@@ -234,9 +238,9 @@ In order to **scale** an existing individual:
 
 2.  **Use default value**: The modification made in the base individual will not be transferred to the scaled individual. Instead, the default value of the parameter in the scaled individual according to the database underlying PK- Sim® will be used.
 
-3.  Use source value: If a modification was made in the base individual the identical parameter value will be used in the scaled individual. Please note that for most parameters this is only a reasonable option if the biometrics (race, age, gender) of the base and the scaled individual are identical or at least similar.
+3.  **Use source value**: If a modification was made in the base individual the identical parameter value will be used in the scaled individual. Please note that for most parameters this is only a reasonable option if the biometrics (race, age, gender) of the base and the scaled individual are identical or at least similar.
 
-4.  Same ratio: The ratio of the source value divided by the source default value is multiplied by the default value of the scaled individual.
+4.  **Same ratio**: The ratio of the source value divided by the source default value is multiplied by the default value of the scaled individual.
 
 The line **Target weight**, which appears only on the top of this window if modifications in organ volumes were made in the base individual, indicates the body weight of the scaled individual. A modification of organ volumes will automatically lead to a change in total body weight, which is the sum of all organ weights. Thus, if the default value of an organ weight is changed, the new body weight, which is no longer in agreement with the body weight previously selected on the biometrics tab, will be shown.
 
