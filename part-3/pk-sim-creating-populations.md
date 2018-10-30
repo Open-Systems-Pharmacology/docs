@@ -84,11 +84,13 @@ In the following line, information about the population that will be used based 
 
 *   Preterm
 
+*   Pregnant (Dallmann et al. 2017)
+
 In the **Population Properties** the number of individuals can be selected. For humans the individual's gender is defined additionally. You can define a female (proportion of females 100%), male (proportion of females 0%), or a mixed gender (proportion of females 1-99%) virtual population.
 
 Further below, the **Population Parameters Ranges** can be set i.e. the anthropometry of the individuals can be constrained at the lower and/or upper end of the range.
 
-If one of the animal species, i.e. **Monkey, Beagle, Dog, Minipig, Rat** or **Mouse** is selected, solely the minimum and maximum body weight in units of g or kg can be set.
+If one of the animal species, i.e. **Monkey, Beagle, Dog, Minipig, Rat, Rabbit** or **Mouse** is selected, solely the minimum and maximum body weight in units of g or kg can be set.
 
 
 {% hint style="tip" %}
