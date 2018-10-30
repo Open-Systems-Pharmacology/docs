@@ -6,7 +6,7 @@ The Open Systems Pharmacology Suite offers a convenient handling of experimental
 
 ## Importing Individual and Population Simulation‌
 
-A new feature of PK-Sim® that was launched with version 5.3 is the **Import** function of individual and population simulations. It allows you to use simulations that have been modified outside of PK-Sim® - most likely using MoBi® - in the PK-Sim® environment. This has several advantages:
+The **Import** function of individual and population simulations allows you to use simulations that have been modified outside of PK-Sim® - most likely using MoBi® - in the PK-Sim® environment. This has several advantages:
 
 - Simulations are handled in the well-known PK-Sim® environment.
 
@@ -141,10 +141,10 @@ The following PK-Sim entities are not yet supported:
 
 To export a project to snapshot, select **File** :arrow_right:  **Export to Snapshot**
 
-:warning: Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect. :warning:
+{% hint style="warning" %} Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect. 
 In this case PK-Sim will warn you. If exported anyway, the new project created from this snapshot may have some undesired deviations from the original projects, which must be corrected manually by the user.
 
-![Snapshot export warning](../assets/images/part-3/Snapshot_Export_Warning.png)
+![Snapshot export warning](../assets/images/part-3/Snapshot_Export_Warning.png){% endhint %}
 
 To load a project from snapshot, select **File** :arrow_right:  **Load from Snapshot**
 
