@@ -42,7 +42,7 @@ To install the Open Systems Pharmacology Suite core components:
 
 1.  Obtain installation packages from http://setup.open-systems-pharmacology.org/
 
-2.  Start the Setup.exe from the menu Start -> Run or from Windows Explorer.
+2.  Start the **OSPSuite-Full.X.Y.Z.exe*** (where X.Y.Z is a program version, e.g. 7.4.0) from the menu Start -> Run or from Windows Explorer.
 
 3.  Follow the instructions of the installation program. In most cases, the installation should be carried out with the default settings.
 
@@ -50,7 +50,7 @@ To install the Open Systems Pharmacology Suite core components:
 
 5.  Download PK-Sim® gene expression databases and copy it to a folder accessible for all users.
 
-6.  Configure PK-Sim® gene expression databases (for details see [PK-Sim® - Options](../part-3/pk-sim-options.md).
+6.  Configure PK-Sim® gene expression databases (for details see [PK-Sim® - Options](../part-3/pk-sim-options.md)).
 
 ### Third Party Tools
 
@@ -60,4 +60,4 @@ Besides the core components of the Open Systems Pharmacology Suite including PK-
 
 Additional information on the software is available on http://www.open-systems-pharmacology.org/.
 
-For additional support, please contact http://forum.open-systems-pharmacology.org/. The help you are currently reading is available embedded in the software in PDF-format.
+For support, bug reports, etc. please contact http://forum.open-systems-pharmacology.org/. The help you are currently reading is available embedded in the software in PDF-format.
