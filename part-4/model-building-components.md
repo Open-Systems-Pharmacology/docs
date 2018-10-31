@@ -172,9 +172,9 @@ In a formula, the following characters may be used:
 
 *   the random number generator functions **RND** and **SRND**, both to be used with the dummy argument **()**
 
-*   if conditions, using the notation <\condition> **?** <\formula string for true> **:** <\formula string for false>
+*   if conditions, using the notation `<condition> ? <formula string for true> : <formula string for false>`
 
-*   in the conditions, the operators **<**, **>**, **<>**, **>=**, **<=**, **=** ; alternatively: **LT**, **GT**, **NEQ**, **GEQ**, **LEQ**, **EQ**, for which the use is <\function>(<\expression1>;<\expression2>)
+*   in the conditions, the operators **<**, **>**, **<>**, **>=**, **<=**, **=** ; alternatively: **LT**, **GT**, **NEQ**, **GEQ**, **LEQ**, **EQ**, for which the use is `<function>(<expression1>;<expression2>)`
 
 *   conditions can be composed out of sub-conditions that are logically connected by **AND**, **OR**, or inverted by **NOT**. An alternative symbol for **AND** is **&**; an alternative symbol for **OR** is **|**. Besides logical conditions, the numbers 0 and 1 can be used as arguments.
 
