@@ -16,7 +16,7 @@ The history manager is available both in PK-Sim® and MoBi®, with only minor di
 
 The history manager itself presents a table view of the history. Each line of the history describes a specific _state_ of the project that was arrived at after a user interaction. The topmost state in the list is the current state of the project. Each line has several columns that describe the state, with small differences between PK-Sim® and MoBi®:
 
-*   PK-Sim®
+### PK-Sim®
 
 *   State After Action: The number of the state of this history line
 
@@ -34,7 +34,7 @@ The history manager itself presents a table view of the history. Each line of th
 
 *   Time: Date and time of the action
 
-*   MoBi®
+### MoBi®
 
 *   State After Action: The number of the state of this history line
 
