@@ -87,7 +87,7 @@ In the following screenshot, an example of an advanced protocol is given. The pr
 ![The Create Administration Protocol dialog. Here, the example of an individually created advanced protocol is shown.](../assets/images/part-3/PKSim_Protocol_AdvancedEx.png)
 
 {% hint style="tip" %}
-Please note that the combination of the Administration type **User defined** and the **Advanced protocol** is not available in PK-Sim® 5.
+Please note that the combination of the Administration type **User defined** and the **Advanced protocol** is not available.
 {% endhint %}
 
 ## Setting or Changing Administration Protocol properties‌
