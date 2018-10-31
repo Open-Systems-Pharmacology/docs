@@ -120,7 +120,7 @@ First estimates can be made using water solubility. However, especially for lipo
 #### Intestinal solubility as table function of pH
 Intestinal solubility can also be defined as a linear interpolation of measured (pH, Solubility) data pairs.
 
-<img width="187" alt="phsol" src="https://user-images.githubusercontent.com/25061876/41295523-4ca5f886-6e4a-11e8-8899-16bf8181de76.png">  :arrow_right: <img width="400" alt="phsol2" src="https://user-images.githubusercontent.com/25061876/41295416-141e885c-6e4a-11e8-9930-2d51288a27af.png">
+<img width="187" src="../assets/images/part-3/CreateSolubilityAsTable.png">  :arrow_right: <img width="400" src="../assets/images/part-3/EditSolubilityTable.png">
 
 
 ### ADME Properties‌
