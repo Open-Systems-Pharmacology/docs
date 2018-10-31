@@ -274,9 +274,7 @@ Data points cannot be edited, but have to be deleted and newly entered. Data poi
 
 ### Working with Table Formulas with Offset‌
 
-A table described in [Working with Tables](#working-with-tables) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare PK-Sim®
-
-*   Administration Protocols). To enter a table formula with offset:
+A table described in [Working with Tables](#working-with-tables) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)). To enter a table formula with offset:
     
     1.  Select Table Formula with Offset as **Formula Type**.
         
