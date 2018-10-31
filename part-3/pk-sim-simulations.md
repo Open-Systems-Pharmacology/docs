@@ -2,12 +2,13 @@
 
 Simulations can easily be performed in PK-Sim® after having defined at least one building block for **Individuals**, **Compounds** and **Administration Protocols** in the **Building Block** panel. Optionally, populations, formulations, events and observed data may be defined. Details on these building blocks can be found in the respective sections of this manual:
 
-- PK-Sim® - _Creating Individuals_
-- PK-Sim® - Compounds: Definition and Work _Flows_
-- PK-Sim® - Administration Protocols\_
-- PK-Sim® - Creating Populations
-- PK-Sim® - Formulations
-- PK-Sim® - Events
+- [PK-Sim® - Creating Individuals](../part-3/pk-sim-creating-individuals.md)
+- [PK-Sim® - Creating Populations](../part-3/pk-sim-creating-populations.md)
+- [PK-Sim®- Compounds: Definition and Work Flows](../part-3/pk-sim-compounds-definition-and-work-flow.md)
+- [PK-Sim® - Formulations](../part-3/pk-sim-formulations.md)
+- [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)
+- [PK-Sim® - Events](../part-3/pk-sim-events.md)
+- [Shared Tools - Import and Edit of Observed Data](../part-5/import-edit-observed-data.md)
 
 Even if not all required building blocks are defined you may still set up a simulation. You will then be systematically led through each missing building block where you can specify data or parameters. For details on each building block please refer to the respective chapters of this manual.
 
