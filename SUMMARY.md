@@ -56,6 +56,8 @@
 
   - [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
 
+  - [Command Line Interface (CLI)](part-3/pk-sim-command-line-interface.md)
+  
 ## Working with MoBi
 
 - MoBi‌ Documentation
