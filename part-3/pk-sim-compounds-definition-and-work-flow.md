@@ -53,7 +53,7 @@ As lipophicity input, the partition coefficient between lipid membranes and wate
 {% endhint %}
 
 {% hint style="tip" %}
-Lipids in organ tissue are predominantly present in the form of phospholipid membranes. The best descriptor for lipophilicity is the partition coefficient between lipid membranes and water, as determined at physiological pH 43. This is called membrane affinity and the value to be entered is the logMA. Therefore, it is recommended to use these membrane affinities as input parameters for PK-Sim®. With their use, it is very likely that specific organ and intestinal permeability coefficients are obtained that require no or only marginal adjustment.
+Lipids in organ tissue are predominantly present in the form of phospholipid membranes. The best descriptor for lipophilicity is the partition coefficient between lipid membranes and water, as determined at physiological pH \[[43](../references.md#43)\]. This is called membrane affinity and the value to be entered is the logMA. Therefore, it is recommended to use these membrane affinities as input parameters for PK-Sim®. With their use, it is very likely that specific organ and intestinal permeability coefficients are obtained that require no or only marginal adjustment.
 {% endhint %}
 
 {% hint style="tip" %}
@@ -133,6 +133,8 @@ Five kinds of processes can be defined in the ADME tab depending on the type of 
 
 - Inhibition
 
+- Induction
+
 For each of these items one or more ADME processes can be defined in order to systematically collect all available information on absorption, degradation, transport and binding processes from e.g. _in vitro_ assays and use this information to obtain specific kinetic rates used in the simulation.
 
 A general workflow for defining a specific process in _Protein Binding Partners_, _Metabolizing Enzymes_, _Total Hepatic Clearances_, _Transport Proteins_, _Renal Clearances_, _Biliary Clearances_ is as follows:
@@ -184,11 +186,11 @@ In contrast to the procedure for permeability of organ membranes, the relation b
 {% endhint %}
 
 {% hint style="tip" %}
-In the simulation parameters, the calculated specific intestinal permeability (transcellular) cannot be modified under the compound properties of the simulation. The appropriate simulation parameter can be found under the tree header "permeability". Please note that if the (calculated or manually entered) intestinal permeability (transcellular) is modified in the simulation, the permeability between the intracellular and interstitial space within the mucosa (P (intracellular -> interstitial)) will also automatically be scaled by the same factor. Otherwise, a disproportion between in the permeability of the apical and basolateral side of the enterocytes could be produced, leading to an accumulation of drug in the enterocytes. Likewise, a factor between the calculated intestinal permeability (transcellular) and an optional manual entry will be calculated to scale the permeability of the basolateral side of the enterocytes (P (intracellular -> interstitial)) appropriately.
+In the simulation parameters, the calculated specific intestinal permeability (transcellular) cannot be modified under the compound properties of the simulation. The appropriate simulation parameter can be found under the tree header "permeability". Please note that if the (calculated or manually entered) intestinal permeability (transcellular) is modified in the simulation, the permeability between the intracellular and interstitial space within the mucosa (`P (intracellular -> interstitial)`) will also automatically be scaled by the same factor. Otherwise, a disproportion between in the permeability of the apical and basolateral side of the enterocytes could be produced, leading to an accumulation of drug in the enterocytes. Likewise, a factor between the calculated intestinal permeability (transcellular) and an optional manual entry will be calculated to scale the permeability of the basolateral side of the enterocytes (`P (intracellular -> interstitial)`) appropriately.
 {% endhint %}
 
 {% hint style="tip" %}
-If experimental values for intestinal permeability are available, e.g. from Caco2-cell permeability assays, a calibration of these _in vitro_ values has to be performed for a defined set of compounds before they can be used as input parameters. This is due to the high inter-laboratory variability in absolute permeability values. In this calibration the fractions of dose absorbed of the set of substances are correlated with the measured permeabilities. For new compounds, the corresponding intestinal permeability used in PK- Sim® is automatically calculated based on the Caco2 permeability value input. If you require an expert calibration of a defined set of experimentally determined permeabilities derived from _in vitro_ assays, please contact your PK-Sim® support (support@systems-biology.com).
+If experimental values for intestinal permeability are available, e.g. from Caco2-cell permeability assays, a calibration of these _in vitro_ values has to be performed for a defined set of compounds before they can be used as input parameters. This is due to the high inter-laboratory variability in absolute permeability values. In this calibration the fractions of dose absorbed of the set of substances are correlated with the measured permeabilities. For new compounds, the corresponding intestinal permeability used in PK- Sim® is automatically calculated based on the Caco2 permeability value input. If you require an expert calibration of a defined set of experimentally determined permeabilities derived from _in vitro_ assays, please contact your PK-Sim® support (http://forum.open-systems-pharmacology.org/).
 {% endhint %}
 
 #### Distribution
