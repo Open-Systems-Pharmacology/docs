@@ -89,7 +89,7 @@ Click **Next** in order to assign the relevant biological processes. Note that y
 
 ![The Create Simulation dialog. Here, the Processes tab is shown, in which the proteins, i.e. the enzymes, transporters and binding proteins, expressed in the Individual can be linked to the corresponding active processes defined in the Compound.](../assets/images/part-3/ProcessesSimulation.png)
 
-In the **Processes** tab of the **Create Simulation** window, processes like e.g. metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed descripton of how to set up interaction of a drug with enzymes/transporters (e.g. via a drug-drug interaction or induction) can be found in PK-Sim®\- Compounds: Defining inhibition/induction _processes_.
+In the **Processes** tab of the **Create Simulation** window, processes like e.g. metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed descripton of how to set up interaction of a drug with enzymes/transporters (e.g. via a drug-drug interaction or induction) can be found in [PK-Sim® Compounds: Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
 
 {% hint style="warning" %}
 If, and only if, processes in individuals are linked to properties of the compounds, these processes are modeled in the simulation.
@@ -136,7 +136,7 @@ To insert an administration do one of the following:
 
 - Load an administration from the template data base by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
 
-In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation name is not necessary, because the drug is always assumed to be given in solution. For these administration types, therefore, no match with formulations has to be made. For further information please see _PK-Sim® - Administration Protocols_
+In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation name is not necessary, because the drug is always assumed to be given in solution. For these administration types, therefore, no match with formulations has to be made. For further information please see [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md).
 
 {% hint style="note" %}
 None or exactly one administration protocol can be assigned to every compound used in the simulation. Each administration protocol can be assigned to maximally one compound.
@@ -168,7 +168,7 @@ The green check marks indicate that the building blocks used in the simulation h
 
 ## How to set up a parent/metabolite simulation‌
 
-From version 5.6.2 onwards, PK-Sim® offers two alternatives to define drug metabolites. First, metabolites can be a "sink" which means that not actively or passively transported. They possess no physico-chemical or ADME properties and cannot be used as compounds in a simulation. Second, one of the compounds in a simulation can be assigned to be a metabolite or another compound. The metabolite possesses physico-chemical and ADME properties and be transported. In addition, the metabolite can be used in further metabolizations and thus a metabolic network can be built.
+PK-Sim® offers two alternatives to define drug metabolites. First, metabolites can be a "sink" which means that not actively or passively transported. They possess no physico-chemical or ADME properties and cannot be used as compounds in a simulation. Second, one of the compounds in a simulation can be assigned to be a metabolite or another compound. The metabolite possesses physico-chemical and ADME properties and be transported. In addition, the metabolite can be used in further metabolizations and thus a metabolic network can be built.
 
 ![The name of the metabolite can be defined in specifying the metabolic processes.](../assets/images/part-3/Metabolite1.png)
 
