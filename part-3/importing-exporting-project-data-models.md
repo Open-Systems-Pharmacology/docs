@@ -6,7 +6,7 @@ The Open Systems Pharmacology Suite offers a convenient handling of experimental
 
 ## Importing Individual and Population Simulation‌
 
-A new feature of PK-Sim® that was launched with version 5.3 is the **Import** function of individual and population simulations. It allows you to use simulations that have been modified outside of PK-Sim® - most likely using MoBi® - in the PK-Sim® environment. This has several advantages:
+The **Import** function of individual and population simulations allows you to use simulations that have been modified outside of PK-Sim® - most likely using MoBi® - in the PK-Sim® environment. This has several advantages:
 
 - Simulations are handled in the well-known PK-Sim® environment.
 
@@ -113,3 +113,38 @@ and select **Export To CSV...**
 - If you have created a population simulation you can also export the population data by right mouse click on the simulation name within the **Simulations Explorer** and select **Export To CSV...**
 
 A window opens where you can choose the directory and enter the \*.csv file name.
+
+## Exporting Project to Snapshot / Loading Project from Snapshot
+
+PK-Sim includes various structural models together with relevant physiological and molecular databases for PBPK modeling of small and large molecules in different animal species and human populations. Relatively few inputs from the user are required to setup a complete PBPK model.
+
+Model and/or data information stored in PK-Sim databases may change over time (e.g. in order to reflect the newest scientific findings) and be incorporated into newer PK-Sim versions. It may be of interest to the user to incorporate those changes into existing projects.
+
+If an old project is simply opened with a new PK-Sim version, it will contain **old** model information, **old** anatomical/physiological data etc. and will not make use of improvements in the new version. The most appropriate way to incorporate the new knowledge would be to recreate, from scratch, the existing project in the new PK-Sim version.
+
+To simplify this task, a concept of **project snapshot** is introduced in PK-Sim 7.3.
+
+A project snapshot contains the **minimal amount of information** required to recreate the project from scratch. This includes the information on primary substance specific input parameters (e.g. molecular properties like _molecular weight_, _lipophilicity_, etc.) and required inputs (e.g. demographic characteristics) for defining the system parameters. Further, any changes made in the existing model, such as a change in liver volume, that is not a default value, will be stored in the snapshot and included in the new model once recreated from the snapshot. 
+
+Project snapshots are human-readable text files in [JSON format](https://en.wikipedia.org/wiki/JSON)
+
+![Snapshot example](../assets/images/part-3/Snapshot_Example.jpg)
+
+The following PK-Sim entities are currently supported by snapshots and will be recreated when a project is loaded from snapshot:
+* All building block types (incl. observed data)
+* Simulations
+* Parameter Identifications
+* Simulation comparisons
+
+The following PK-Sim entities are not yet supported:
+* Sensitivity Analyses
+
+To export a project to snapshot, select **File** :arrow_right:  **Export to Snapshot**
+
+{% hint style="warning" %} Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect. 
+In this case PK-Sim will warn you. If exported anyway, the new project created from this snapshot may have some undesired deviations from the original projects, which must be corrected manually by the user.
+
+![Snapshot export warning](../assets/images/part-3/Snapshot_Export_Warning.png){% endhint %}
+
+To load a project from snapshot, select **File** :arrow_right:  **Load from Snapshot**
+

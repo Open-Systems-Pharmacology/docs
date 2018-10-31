@@ -2,12 +2,13 @@
 
 Simulations can easily be performed in PK-Sim® after having defined at least one building block for **Individuals**, **Compounds** and **Administration Protocols** in the **Building Block** panel. Optionally, populations, formulations, events and observed data may be defined. Details on these building blocks can be found in the respective sections of this manual:
 
-- PK-Sim® - _Creating Individuals_
-- PK-Sim® - Compounds: Definition and Work _Flows_
-- PK-Sim® - Administration Protocols\_
-- PK-Sim® - Creating Populations
-- PK-Sim® - Formulations
-- PK-Sim® - Events
+- [PK-Sim® - Creating Individuals](../part-3/pk-sim-creating-individuals.md)
+- [PK-Sim® - Creating Populations](../part-3/pk-sim-creating-populations.md)
+- [PK-Sim®- Compounds: Definition and Work Flows](../part-3/pk-sim-compounds-definition-and-work-flow.md)
+- [PK-Sim® - Formulations](../part-3/pk-sim-formulations.md)
+- [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)
+- [PK-Sim® - Events](../part-3/pk-sim-events.md)
+- [Shared Tools - Import and Edit of Observed Data](../part-5/import-edit-observed-data.md)
 
 Even if not all required building blocks are defined you may still set up a simulation. You will then be systematically led through each missing building block where you can specify data or parameters. For details on each building block please refer to the respective chapters of this manual.
 
@@ -17,7 +18,7 @@ Simulations are performed in 3 steps: Creating a simulation (see [Creating new s
 
 To create a new simulation:
 
-- Click **Create** ![Image](../assets/icons/Simulation-32x32.png) in the **Simulation** Group of the **Modeling & Simulation** Tab or
+- Click **Simulation** ![Image](../assets/icons/Simulation-32x32.png) in the **Create** Group of the **Modeling** Tab or
 
 - Use the short cut **Ctrl+Alt+S**
 
@@ -29,11 +30,11 @@ In order to create a new simulation, you are guided through five tabs of the **C
 
 - The **Model Structure** tab to define model properties
 
-- The **Compound** tab to select the compounds used for the simulation
+- The **Compounds** tab to select the compounds used for the simulation
 
 - The **Processes** tab to assign the relevant biological processes
 
-- The **Application** tab to select between different predefined applications
+- The **Administration** tab to select between different predefined applications
 
 - The **Events** tab to choose a specific event defined in the **Event** Building Block
 
@@ -41,29 +42,29 @@ In order to create a new simulation, you are guided through five tabs of the **C
 
 In the **Model Structure** tab of the **Create Simulation** window you need to:
 
-• Enter a name for the simulation
+* Enter a name for the simulation
 
-• Specify an individual or population by doing one of the following:
+* Specify an individual or population by doing one of the following:
 
-• Select a previously defined individual or population from the drop-down menu
+  * Select a previously defined individual or population from the drop-down menu
 
-• Define a new individual or population by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions of the dialog windows
+  * Define a new individual or population by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions of the dialog windows
 
-• Load a new individual or population from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
+  * Load a new individual or population from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
 
 **Allow aging**: If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when5 choosing this option. Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to
 
 e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle. Please note that the use of the growth function will need additional simulation time so that it is recommended to use this option only if really needed.
 
-- Specify a compound by doing one of the following:
+* Specify compound(s) by doing one of the following:
 
-- Select a compound from the list of previously created compounds in the Building Block window.
+  * Select a compound from the list of previously created compounds in the Building Block window.
 
-- Create a new compound by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions in the dialog windows.
+  * Create a new compound by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions in the dialog windows.
 
-- Load a new compound from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions in the dialog windows.
+  * Load a new compound from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions in the dialog windows.
 
-- Select the model settings, i.e. either select the standard model for small molecules or the model for proteins and large molecules
+* Select the model settings, i.e. either select the standard model for small molecules or the model for proteins and large molecules
 
 #### Model settings‌
 
@@ -88,7 +89,7 @@ Click **Next** in order to assign the relevant biological processes. Note that y
 
 ![The Create Simulation dialog. Here, the Processes tab is shown, in which the proteins, i.e. the enzymes, transporters and binding proteins, expressed in the Individual can be linked to the corresponding active processes defined in the Compound.](../assets/images/part-3/ProcessesSimulation.png)
 
-In the **Processes** tab of the **Create Simulation** window, processes like e.g. metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed descripton of how to set up interaction of a drug with enzymes/transporters (e.g. via a drug-drug interaction or induction) can be found in PK-Sim®\- Compounds: Defining inhibition/induction _processes_.
+In the **Processes** tab of the **Create Simulation** window, processes like e.g. metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed descripton of how to set up interaction of a drug with enzymes/transporters (e.g. via a drug-drug interaction or induction) can be found in [PK-Sim® Compounds: Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
 
 {% hint style="warning" %}
 If, and only if, processes in individuals are linked to properties of the compounds, these processes are modeled in the simulation.
@@ -135,7 +136,7 @@ To insert an administration do one of the following:
 
 - Load an administration from the template data base by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
 
-In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation name is not necessary, because the drug is always assumed to be given in solution. For these administration types, therefore, no match with formulations has to be made. For further information please see _PK-Sim® - Administration Protocols_
+In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation name is not necessary, because the drug is always assumed to be given in solution. For these administration types, therefore, no match with formulations has to be made. For further information please see [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md).
 
 {% hint style="note" %}
 None or exactly one administration protocol can be assigned to every compound used in the simulation. Each administration protocol can be assigned to maximally one compound.
@@ -167,7 +168,7 @@ The green check marks indicate that the building blocks used in the simulation h
 
 ## How to set up a parent/metabolite simulation‌
 
-From version 5.6.2 onwards, PK-Sim® offers two alternatives to define drug metabolites. First, metabolites can be a "sink" which means that not actively or passively transported. They possess no physico-chemical or ADME properties and cannot be used as compounds in a simulation. Second, one of the compounds in a simulation can be assigned to be a metabolite or another compound. The metabolite possesses physico-chemical and ADME properties and be transported. In addition, the metabolite can be used in further metabolizations and thus a metabolic network can be built.
+PK-Sim® offers two alternatives to define drug metabolites. First, metabolites can be a "sink" which means that not actively or passively transported. They possess no physico-chemical or ADME properties and cannot be used as compounds in a simulation. Second, one of the compounds in a simulation can be assigned to be a metabolite or another compound. The metabolite possesses physico-chemical and ADME properties and be transported. In addition, the metabolite can be used in further metabolizations and thus a metabolic network can be built.
 
 ![The name of the metabolite can be defined in specifying the metabolic processes.](../assets/images/part-3/Metabolite1.png)
 
@@ -223,12 +224,20 @@ You may change the parameter settings for your simulation in order to e.g. achie
 It is recommended to select all parameters under consideration as **Favorites** and to document the source of all parameter values changed from the default in the column **Value Description**. Then you have a comprehensive overview about the essential input of your simulation, which you can document by copying just the Favorites table.
 {% endhint %}
 
+{% hint style="tip" %}
+**User Defined** parameter node shows an overview of all parameters changed by the user in the simulation.
+![User defined parameters.](../assets/images/part-3/UserDefinedParameters.png)
+{% endhint %}
+
 {% hint style="warning" %}
 If you change the parameter settings in the **Parameter** tab, the green check marks (traffic lights) on the Results tab will turn red indicating that the displayed simulation results were not performed with the current settings:<br> ![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results3.png)<br> Press the **Run** simulation button in the **Modeling & Simulation** ribbon or press the **F5** key again to re-run the simulation with the current settings and display the results.
 {% endhint %}
 
 {% hint style="warning" %}
-If parameter settings were changed in the simulation, the red traffic lights in the **Simulation** window indicate that the **local settings** in the simulation are different from the settings in the **Building Block**, i.e. the **global settings**:<br>![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results4.png) <br>A right click on the red traffic lights in the simulation window allows for two possibilities:<br> ![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Update-Commit.png)<br> _ Update from building block: The simulation settings (local) will be updated with the (global) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block.<br> _ Commit to building block: The (local) settings of the simulation will be committed to the building block (global settings). This is useful if you want to make these settings available in other simulations.<br> \* Configure: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
+If parameter settings were changed in the simulation, the red traffic lights in the **Simulation** window indicate that the **local settings** in the simulation are different from the settings in the **Building Block**, i.e. the **global settings**:<br>![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results4.png) <br>A right click on the red traffic lights in the simulation window allows for two possibilities:<br> ![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Update-Commit.png)<br> 
+* Update from building block: The simulation settings (local) will be updated with the (global) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block.<br> 
+* Commit to building block: The (local) settings of the simulation will be committed to the building block (global settings). This is useful if you want to make these settings available in other simulations.<br> 
+* Configure: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
 {% endhint %}
 
 ## Analyzing results for a simulation in an individual‌
@@ -282,7 +291,7 @@ The calculated pharmacokinetic parameters are:
 | PK parameter         | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | AUC_tEnd             | Area under curve from tstart to tend of the simulation. <br>![Image](../assets/images/part-3/equation-20-1-3.png)                                                                                                                                                                                                                                                                                                                    |
-| AUC_inf              | Area under curve extrapolated to infinity (using the terminal 10% of data points).<br>![Image](../assets/images/part-3/equation-20-4-6.png) <br>, where # is the terminal elimination rate (calculated from the terminal 10% of simulated points).                                                                                                                                                                                   |
+| AUC_inf              | Area under curve extrapolated to infinity (using the terminal 10% of data points).<br>![Image](../assets/images/part-3/equation-20-4-6.png) <br>, where `λ` is the terminal elimination rate (calculated from the terminal 10% of simulated points).                                                                                                                                                                                   |
 | %AUC(tlast-inf)      | Percentage of AUCinf after end of simulation time. <br>![Image](../assets/images/part-3/equation-20-7.png)                                                                                                                                                                                                                                                                                                                           |
 | AUC_tEnd_norm        | Area under curve extrapolated to infinity and normalized to the dose dose in drug mass per body weight. <br>![Image](../assets/images/part-3/equation-20-8.png)                                                                                                                                                                                                                                                                      |
 | AUC_inf_norm         | Area under curve extrapolated to infinity and normalized to the dose \[dose in drug mass per body weight\]. <br>![Image](../assets/images/part-3/equation-20-9.png)                                                                                                                                                                                                                                                                  |
@@ -292,8 +301,8 @@ The calculated pharmacokinetic parameters are:
 | C_max Ratio (Cmax_R) | C_max_I/C_max (Maximum concentration of the plasma concentration-time curve of the substrate in the presence of the inhibitor / Maximum concentration of the plasma concentration-time curve of the substrate in the absence of the inhibitor)                                                                                                                                                                                       |
 | C_tEnd               | concentration at the end of simulation                                                                                                                                                                                                                                                                                                                                                                                               |
 | t_max                | Time at which the maximum concentration is assumed                                                                                                                                                                                                                                                                                                                                                                                   |
-| Half-Life            | Terminal half life time (calculated from the terminal 10% of data points). <br>![Image](../assets/images/part-3/equation-20-10.png) <br>, where # is the terminal elimination rate (calculated from the terminal 10% of simulated points).                                                                                                                                                                                           |
-| MRT                  | Mean residence time is calculated by:<br>![Image](../assets/images/part-3/equation-20-11.png)<br>The infusion time is set to 0 for non intravenous administrations. The AUMCs are calculated according to: <br>![Image](../assets/images/part-3/equation-20-12-13.png)<br>![Image](../assets/images/part-3/equation-20-14.png)<br>, where # is the terminal elimination rate (calculated from the terminal 10% of simulated points). |
+| Half-Life            | Terminal half life time (calculated from the terminal 10% of data points). <br>![Image](../assets/images/part-3/equation-20-10.png) <br>, where `λ` is the terminal elimination rate (calculated from the terminal 10% of simulated points).                                                                                                                                                                                           |
+| MRT                  | Mean residence time is calculated by:<br>![Image](../assets/images/part-3/equation-20-11.png)<br>The infusion time is set to 0 for non intravenous administrations. The AUMCs are calculated according to: <br>![Image](../assets/images/part-3/equation-20-12-13.png)<br>![Image](../assets/images/part-3/equation-20-14.png)<br>, where `λ` is the terminal elimination rate (calculated from the terminal 10% of simulated points). |
 
 |
 
@@ -302,7 +311,7 @@ The calculated pharmacokinetic parameters are:
 | PK parameter              | Description                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | VSS(plasma)               | Volume of distribution at steady state calculated from the plasma curve according to: <br>![Image](../assets/images/part-3/equation-20-15.png)                                                                                                                                                                                                                                                              |
-| Vd(plasma)                | Apparent volume of distribution is calculated from the plasma curve according to: ![Image](../assets/images/part-3/equation-vd-cl.png) , where # is the terminal elimination rate (calculated from the terminal 10% of simulated points). If simulation time is short, the distribution volume may be incorrect. Run a longer simulation (to approach steady state) and reevaluate the distribution volume. |
+| Vd(plasma)                | Apparent volume of distribution is calculated from the plasma curve according to: ![Image](../assets/images/part-3/equation-vd-cl.png) , where `λ` is the terminal elimination rate (calculated from the terminal 10% of simulated points). If simulation time is short, the distribution volume may be incorrect. Run a longer simulation (to approach steady state) and reevaluate the distribution volume. |
 | Vss(phys-chem)            | Predicted volume of distribution = Volume-weighted mean organ to plasma partition coefficient calculated from physico- chemical compound data.                                                                                                                                                                                                                                                              |
 | Total plasma clearance CL | Total clearance calculated from plasma curve according to: <br> ![Image](../assets/images/part-3/equation-20-16.png)                                                                                                                                                                                                                                                                                        |
 | Total body clearance      | D/AUC - Total body clearance of drug or apparent clearance (CL/F for extravascular application), dimension is ml/min/kg                                                                                                                                                                                                                                                                                     |
@@ -337,14 +346,14 @@ By clicking on **Export to Excel**®**...** the calculated PK-parameters (includ
 
 ### The population simulation analysis‌
 
-PK-Sim® version 5.3 offers a completely redesigned population simulation analysis that is both extremely flexible and user friendly. This new module is directly integrated in PK-Sim® and does not rely on the Matlab®-based toolbox of MoBi® to run as in previous versions. The original first step of choosing the organ and compartment in which time profiles and PK-parameters will be simulated did not change. The new analysis function offers a variety of analyses and graphical displays: Time Profile, Box Whisker, Scatter and Range Analysis that will be explained in detail in the following sections of the manual.
+Population simulation analysis function offers a variety of analyses and graphical displays: Time Profile, Box Whisker, Scatter and Range Analysis that will be explained in detail in the following sections of the manual.
 
 ### Running a population simulation‌
 
 Unlike for simulations in single individuals, additional variability for parameters in population simulations may be defined. In the **User Defined Variability** tab, parameters from all building blocks that need to be varied may be selected and specific distributions/variabilities can be set. In the **Distribution** tab, these settings are graphically visualized.
 
 {% hint style="tip" %}
-For more information on adding variability to a defined population, go to PK-Sim® - Creating Populations.
+For more information on adding variability to a defined population, go to [PK-Sim® - Creating Populations](../part-3/pk-sim-creating-populations.md).
 {% endhint %}
 
 Once all parameters are set, click the **Run** simulation button ![Image](../assets/icons/RunSimulation.png) in the **Modeling & Simulation** group or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
@@ -551,7 +560,7 @@ To create a comparison plot for simulation in individuals proceed in the followi
 To rename a comparison chart, right mouse click on the respective summary chart in the Simulation window, select **Rename** and enter the new name of the chart.
 {% endhint %}
 
-In contrast to previous versions, PK-Sim® version 5.3 offers a comparison chart also for population simulations. To create a comparison plot for simulations in populations proceed in the following way:
+PK-Sim® offers a comparison chart also for population simulations. To create a comparison plot for simulations in populations proceed in the following way:
 
 - Click on the **Comparison Chart** button ![Image](../assets/icons/Comparison-chart.png) in the Ribbon group **Simulation** and select **For Population Simulations**. A new window **Select simulations to use in comparison** opens up. Select the simulations you want to compare by ticking the respective boxes. In addition, you can select a population as a reference population and specify labeling, symbol and color for plotting.
 

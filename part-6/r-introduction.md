@@ -10,9 +10,6 @@ Details are available in the build-in help of R upon loading the R package.
 
 ## Installing the R Toolbox‌
 
-The R Toolbox is provided to the user as a zip file. This zip file can be found in the download section http://www.systems-biology.com/uc/download.html of our web site. The standard package install via zip files is used.
-
-On Windows, **install.packages** can install a binary package from a local zip file by setting argument repos to NULL.
-
-Rgui.exe has a menu Packages with a GUI interface to **install.packages** that may be used.
+The R Toolbox is provided to the user as a zip file. This zip file can be found under **"C:\Program Files (x86)\Open Systems Pharmacology\MoBi Toolbox for R _X.Y_\MoBiToolboxForR__X.Y.Z_.zip"** . The standard package install via zip files is used. On Windows, **_install.packages_** can install a binary package from a local zip file by setting argument _repos_ to NULL.
+Rgui.exe has a menu Packages with a GUI interface to **_install.packages_** that may be used.
 

@@ -2,7 +2,7 @@
 
 Simulation results are stored during a simulation when observers are defined as described in “Observers”. The results are available for display once an existing simulation has been run. The simulation results of a simulation are listed in the simulation explorer tree below the corresponding simulation. To display the simulation results, either double-click on the results or right-click ![Image](../assets/icons/mouse_select.png) on them and select ![Image](../assets/icons/SummaryChart.png) **Show Data** in the context menu. The results can then be accessed in a new tab in the main window. The most recent results are also shown in the "Results" tab which can be accessed in the simulation edit mode.
 
-To display the simulation results in a chart window use the Chart Editor as described in detail in Shared Tools - Chart Component.
+To display the simulation results in a chart window use the Chart Editor as described in detail in [Shared Tools - Chart Component](../part-5/chart-component.md).
 
 {% hint style="tip" %}
 Results of different simulations can be displayed in the same chart. Simply drag&drop a simulation result node from the Simulation Explorer into an existing chart. The corresponding repository is displayed in the data browser. For better overview you can select the column Repository in the data browser table using the **Column Chooser**. Then you can select data from both result repositories for display.

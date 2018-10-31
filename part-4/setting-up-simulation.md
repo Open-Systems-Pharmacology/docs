@@ -6,7 +6,7 @@ After having made yourself familiar with the processes of building model compone
 
 - Create a new simulation from existing model components (building blocks). These two workflows of setting up simulations will be described in the following.
 
-1.  ### Load a Simulation‌
+## Load a Simulation‌
 
 Existing simulations can be loaded by either:
 
@@ -78,7 +78,8 @@ Errors and warning messages are shown in a notification viewer at the bottom of 
 
 The list of warnings and errors is constantly updated, i.e. if a warning is resolved, the entry is removed from the list. Likewise the viewer can be hidden or shown by pressing the **Notification** button in the _Views_ section of the _Building block_ section of the page.
 
-Warning Non-fatal inconsistency. Warnings are generated, for example, in these cases:
+#### Warning: Non-fatal inconsistency. 
+Warnings are generated, for example, in these cases:
 
 - References in formulas for non-essential objects like observers are faulty. In this case, the affected observer is simply omitted in the created simulation.
 
@@ -86,7 +87,8 @@ Warning Non-fatal inconsistency. Warnings are generated, for example, in these c
 
 - An empty condition is present in an event.
 
-Error Fatal inconsistencies. In this case, the simulation cannot be created. Errors are generated, for example, in case of:
+#### Error: Fatal inconsistency. 
+In this case, the simulation cannot be created. Errors are generated, for example, in case of:
 
 - Missing or wrong references in formulas for essential objects like Molecule Start Values.
 
@@ -182,7 +184,7 @@ This vector is used in all error and convergence tests, which use a weighted roo
 
 |             |                                                                                                                                                                                                                                                                                                                                 |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| UseJacobian | If the Jacobian matrix of the ODE system should be supplied to the solver, use the value '1', otherwise use '0'. The default value is '1'. Using the Jacobian usually speeds up the simulation. However, for large-scale problems, it might be necessary to switch off this feature (depending also on hardware configuration). |
+| UseJacobian | If the Jacobian matrix of the ODE system should be supplied to the solver, use the value '1', otherwise use '0'. The default value is '1'. Using the Jacobian speeds up the simulation. |
 
 ## Editing Simulations‌
 

@@ -38,23 +38,23 @@ In the following, we explain the mathematical background of the sensitivity anal
 
 To calculate the sensitivity of a PK Parameter of a certain output = PKj  to an input parameter = \[ pi \]
 
-*   the input parameter is varied/perturbed around the value in the simulation by a (small) change = \[ # pi \] ,
+*   the input parameter is varied/perturbed around the value in the simulation by a (small) change = \[ Δpi \] ,
 
 *   a new simulation is performed for the changed input parameter value (all other input values remain unchanged)
 
-*   the change of the PK Parameter \[ = # PKj \]  is calculated as the difference between the values in the new simulation and the original simulation.
+*   the change of the PK Parameter \[ = ΔPKj \]  is calculated as the difference between the values in the new simulation and the original simulation.
 
-The sensitivity for the PK Parameter to that input parameter is then calculated as the ratio of the relative change of that PK Parameter \[ = (# PKj) / PKj \] and the relative variation of the input parameter \[ = (# pi) / pi \]:
+The sensitivity for the PK Parameter to that input parameter is then calculated as the ratio of the relative change of that PK Parameter \[ = (ΔPKj) / PKj \] and the relative variation of the input parameter \[ = (Δpi) / pi \]:
 
 ![Image](../assets/images/part-5/sij.png)
 
 Thus, the sensitivities are dimensionless quantities. As an example, a sensitivity of -1.0 implies that a 10% increase of the parameters leads to a 10% decrease of the PK parameter value, and a sensitivity of +0.5 implies that a 10% increase of the parameters leads to a 5% increase of the PK parameter value.
 
-For reasons of numerical stability, a sensitivity is calculated as the average of several sensitivities based on different variations #k :
+For reasons of numerical stability, a sensitivity is calculated as the average of several sensitivities based on different variations Δk :
 
 ![Image](../assets/images/part-5/sij-e.png)
 
-The relative variations #k are defined by multiplication of the value in the simulation with variation factors. These variation factors are defined by setting two configuration parameters "Number of Steps” \[ = n \] and “Variation Range” \[ = a \] in the following way :
+The relative variations Δk are defined by multiplication of the value in the simulation with variation factors. These variation factors are defined by setting two configuration parameters "Number of Steps” \[ = n \] and “Variation Range” \[ = a \] in the following way :
 
 For each value of k = 1 ... n, two factors are used: ![Image](../assets/images/part-5/1-a-k-n.png) and ![Image](../assets/images/part-5/1-1-a-kn.png)
 
@@ -184,7 +184,7 @@ Here, the matrix of all calculated sensitivites is shown. See Warnings in “Sel
 Sensitivity values in -1.0e-4 .. 1.0e-4 are displayed as 0 for reasons of clarity.
 {% endhint %}
 
-Rows correspond to the selected input parameters (with values # 0).
+Rows correspond to the selected input parameters (with values <> 0).
 
 Columns correspond to the outputs of the simulation - for each output the reasonable PK Parameters are shown with exception of normalized PK parameters, as they have the same sensitivity as the corresponding non normalized PK parameters. (For example for Fraction excreted outputs Clearance PK Parameters are not reasonable.)
 

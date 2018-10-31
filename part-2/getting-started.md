@@ -2,11 +2,15 @@
 
 ## Software and Hardware Requirements
 
-| OS         | Windows 7®, Windows 8®, Windows 10®    |     |     |     |
-| ---------- | -------------------------------------- | --- | --- | --- |
-| Processor  | minimum 1 GHz (the faster, the better) |     |     |     |
-| Memory     | 2 GB RAM, 3+ GB recommended            |     |     |     |
-| Disk space | minimum 2 GB                           |     |     |     |
+| OS         | Windows 7®, Windows 8®, Windows 10®, Windows Server 2008 R2®, Windows Server 2012 R2®, Windows Server 2016®    |
+| ---------- | -------------------------------------- |
+| Processor  | minimum 1 GHz (the faster, the better) |
+| Memory     | 2 GB RAM, 3+ GB recommended            |
+| Disk space | minimum 2 GB                           |
+||              **Optional software**                 ||
+| Matlab®    | version 2013b or later - 32bit         |
+| R®         | versions 3.3 or later - 32bit          |
+
 
 Information provided above refers to the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®. Both, PK-Sim® and MoBi® can be installed as stand-alone software packages to reduce the disk space required.
 
@@ -36,11 +40,9 @@ MoBi® Toolbox for Matlab® is currently only working with the 32- bit version o
 
 To install the Open Systems Pharmacology Suite core components:
 
-1.  Obtain installation packages, either distributed via USB flash drive or to be downloaded from https://github.com/Open-Systems-Pharmacology
+1.  Download installation packages from http://setup.open-systems-pharmacology.org/
 
-    An internet connection is required as software components such as .NET Framework (in case the required version is not installed on the computer) may need to be downloaded from server.
-
-2.  Start the Setup.exe from the menu Start -> Run or from Windows Explorer.
+2.  Start the **OSPSuite-Full.X.Y.Z.exe*** (where X.Y.Z is a program version, e.g. 7.4.0) from the menu Start -> Run or from Windows Explorer.
 
 3.  Follow the instructions of the installation program. In most cases, the installation should be carried out with the default settings.
 
@@ -48,14 +50,14 @@ To install the Open Systems Pharmacology Suite core components:
 
 5.  Download PK-Sim® gene expression databases and copy it to a folder accessible for all users.
 
-6.  Configure PK-Sim® gene expression databases (for details see [PK-Sim® - Options](../part-3/pk-sim-options.md).
+6.  Configure PK-Sim® gene expression databases (for details see [PK-Sim® - Options](../part-3/pk-sim-options.md)).
 
 ### Third Party Tools
 
-Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, as well as a compiled Matlab® runtime environment, interfaces are available for MS Excel®, Matlab® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.
+Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, interfaces are available for MS Excel®, Matlab® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.
 
 ## Help: Contact, discussion forum, bug reporting, ...
 
-Additional information on the software is available on http://www.systems-biology.com/products.html and https://www.github.com/Open-Systems-Pharmacology.
+Additional information on the software is available on http://www.open-systems-pharmacology.org/.
 
-For additional technical support, please contact [support@systems-biology.com](mailto:support@systems-biology.com). For additional general information, please contact [info@systems-biology.com](mailto:info@systems-biology.com). The help you are currently reading is available embedded in the software in HTML-format as well as PDF-format.
+For support, bug reports, etc. please contact http://forum.open-systems-pharmacology.org/. The help you are currently reading is available embedded in the software in PDF-format.
