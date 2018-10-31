@@ -40,7 +40,7 @@ MoBi® Toolbox for Matlab® is currently only working with the 32- bit version o
 
 To install the Open Systems Pharmacology Suite core components:
 
-1.  Obtain installation packages from http://setup.open-systems-pharmacology.org/
+1.  Download installation packages from http://setup.open-systems-pharmacology.org/
 
 2.  Start the **OSPSuite-Full.X.Y.Z.exe*** (where X.Y.Z is a program version, e.g. 7.4.0) from the menu Start -> Run or from Windows Explorer.
 
