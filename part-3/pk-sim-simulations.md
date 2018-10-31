@@ -555,7 +555,7 @@ To create a comparison plot for simulation in individuals proceed in the followi
 To rename a comparison chart, right mouse click on the respective summary chart in the Simulation window, select **Rename** and enter the new name of the chart.
 {% endhint %}
 
-In contrast to previous versions, PK-Sim® version 5.3 offers a comparison chart also for population simulations. To create a comparison plot for simulations in populations proceed in the following way:
+PK-Sim® offers a comparison chart also for population simulations. To create a comparison plot for simulations in populations proceed in the following way:
 
 - Click on the **Comparison Chart** button ![Image](../assets/icons/Comparison-chart.png) in the Ribbon group **Simulation** and select **For Population Simulations**. A new window **Select simulations to use in comparison** opens up. Select the simulations you want to compare by ticking the respective boxes. In addition, you can select a population as a reference population and specify labeling, symbol and color for plotting.
 
