@@ -224,6 +224,11 @@ You may change the parameter settings for your simulation in order to e.g. achie
 It is recommended to select all parameters under consideration as **Favorites** and to document the source of all parameter values changed from the default in the column **Value Description**. Then you have a comprehensive overview about the essential input of your simulation, which you can document by copying just the Favorites table.
 {% endhint %}
 
+{% hint style="tip" %}
+**User Defined** parameter node shows an overview of all parameters changed by the user in the simulation.
+![User defined parameters.](../assets/images/part-3/UserDefinedParameters.png)
+{% endhint %}
+
 {% hint style="warning" %}
 If you change the parameter settings in the **Parameter** tab, the green check marks (traffic lights) on the Results tab will turn red indicating that the displayed simulation results were not performed with the current settings:<br> ![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results3.png)<br> Press the **Run** simulation button in the **Modeling & Simulation** ribbon or press the **F5** key again to re-run the simulation with the current settings and display the results.
 {% endhint %}
