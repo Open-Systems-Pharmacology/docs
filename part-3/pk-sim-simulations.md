@@ -18,7 +18,7 @@ Simulations are performed in 3 steps: Creating a simulation (see [Creating new s
 
 To create a new simulation:
 
-- Click **Create** ![Image](../assets/icons/Simulation-32x32.png) in the **Simulation** Group of the **Modeling & Simulation** Tab or
+- Click **Simulation** ![Image](../assets/icons/Simulation-32x32.png) in the **Create** Group of the **Modeling** Tab or
 
 - Use the short cut **Ctrl+Alt+S**
 
@@ -30,11 +30,11 @@ In order to create a new simulation, you are guided through five tabs of the **C
 
 - The **Model Structure** tab to define model properties
 
-- The **Compound** tab to select the compounds used for the simulation
+- The **Compounds** tab to select the compounds used for the simulation
 
 - The **Processes** tab to assign the relevant biological processes
 
-- The **Application** tab to select between different predefined applications
+- The **Administration** tab to select between different predefined applications
 
 - The **Events** tab to choose a specific event defined in the **Event** Building Block
 
@@ -56,7 +56,7 @@ In the **Model Structure** tab of the **Create Simulation** window you need to:
 
 e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle. Please note that the use of the growth function will need additional simulation time so that it is recommended to use this option only if really needed.
 
-* Specify a compound by doing one of the following:
+* Specify compound(s) by doing one of the following:
 
   * Select a compound from the list of previously created compounds in the Building Block window.
 
@@ -229,7 +229,7 @@ If you change the parameter settings in the **Parameter** tab, the green check m
 {% endhint %}
 
 {% hint style="warning" %}
-If parameter settings were changed in the simulation, the red traffic lights in the **Simulation** window indicate that the **local settings** in the simulation are different from the settings in the **Building Block**, i.e. the **global settings**:<br>![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results4.png) <br>A right click on the red traffic lights in the simulation window allows for two possibilities:<br> ![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Update-Commit.png)<br> _ Update from building block: The simulation settings (local) will be updated with the (global) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block.<br> _ Commit to building block: The (local) settings of the simulation will be committed to the building block (global settings). This is useful if you want to make these settings available in other simulations.<br> \* Configure: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
+If parameter settings were changed in the simulation, the red traffic lights in the **Simulation** window indicate that the **local settings** in the simulation are different from the settings in the **Building Block**, i.e. the **global settings**:<br>![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results4.png) <br>A right click on the red traffic lights in the simulation window allows for two possibilities:<br> ![Image](../assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Update-Commit.png)<br> * Update from building block: The simulation settings (local) will be updated with the (global) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block.<br> * Commit to building block: The (local) settings of the simulation will be committed to the building block (global settings). This is useful if you want to make these settings available in other simulations.<br> * Configure: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
 {% endhint %}
 
 ## Analyzing results for a simulation in an individual‌
@@ -338,14 +338,14 @@ By clicking on **Export to Excel**®**...** the calculated PK-parameters (includ
 
 ### The population simulation analysis‌
 
-PK-Sim® version 5.3 offers a completely redesigned population simulation analysis that is both extremely flexible and user friendly. This new module is directly integrated in PK-Sim® and does not rely on the Matlab®-based toolbox of MoBi® to run as in previous versions. The original first step of choosing the organ and compartment in which time profiles and PK-parameters will be simulated did not change. The new analysis function offers a variety of analyses and graphical displays: Time Profile, Box Whisker, Scatter and Range Analysis that will be explained in detail in the following sections of the manual.
+Population simulation analysis function offers a variety of analyses and graphical displays: Time Profile, Box Whisker, Scatter and Range Analysis that will be explained in detail in the following sections of the manual.
 
 ### Running a population simulation‌
 
 Unlike for simulations in single individuals, additional variability for parameters in population simulations may be defined. In the **User Defined Variability** tab, parameters from all building blocks that need to be varied may be selected and specific distributions/variabilities can be set. In the **Distribution** tab, these settings are graphically visualized.
 
 {% hint style="tip" %}
-For more information on adding variability to a defined population, go to PK-Sim® - Creating Populations.
+For more information on adding variability to a defined population, go to [PK-Sim® - Creating Populations](../part-3/pk-sim-creating-populations.md).
 {% endhint %}
 
 Once all parameters are set, click the **Run** simulation button ![Image](../assets/icons/RunSimulation.png) in the **Modeling & Simulation** group or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
