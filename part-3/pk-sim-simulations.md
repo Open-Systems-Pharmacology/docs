@@ -42,29 +42,29 @@ In order to create a new simulation, you are guided through five tabs of the **C
 
 In the **Model Structure** tab of the **Create Simulation** window you need to:
 
-• Enter a name for the simulation
+* Enter a name for the simulation
 
-• Specify an individual or population by doing one of the following:
+* Specify an individual or population by doing one of the following:
 
-• Select a previously defined individual or population from the drop-down menu
+  * Select a previously defined individual or population from the drop-down menu
 
-• Define a new individual or population by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions of the dialog windows
+  * Define a new individual or population by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions of the dialog windows
 
-• Load a new individual or population from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
+  * Load a new individual or population from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
 
 **Allow aging**: If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when5 choosing this option. Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to
 
 e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle. Please note that the use of the growth function will need additional simulation time so that it is recommended to use this option only if really needed.
 
-- Specify a compound by doing one of the following:
+* Specify a compound by doing one of the following:
 
-- Select a compound from the list of previously created compounds in the Building Block window.
+  * Select a compound from the list of previously created compounds in the Building Block window.
 
-- Create a new compound by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions in the dialog windows.
+  * Create a new compound by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions in the dialog windows.
 
-- Load a new compound from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions in the dialog windows.
+  * Load a new compound from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions in the dialog windows.
 
-- Select the model settings, i.e. either select the standard model for small molecules or the model for proteins and large molecules
+* Select the model settings, i.e. either select the standard model for small molecules or the model for proteins and large molecules
 
 #### Model settings‌
 
