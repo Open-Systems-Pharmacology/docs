@@ -117,6 +117,12 @@ The solubility of the compound is only needed for the oral administration route.
 First estimates can be made using water solubility. However, especially for lipophilic compounds this value might underestimate the solubility in the intestine so that it is better to use a value obtained under bio-relevant conditions (e.g. in Fasted State Simulated Intestinal Fluid, FaSSIF). If different values are available for one compound (e.g. in FaSSIF and in Fed State Simulated Intestinal Fluid, FeSSIF), several alternative solubility values can specified and the appropriate value can then chosen in the **Simulation**.
 {% endhint %}
 
+#### Intestinal solubility as table function of pH
+Intestinal solubility can also be defined as a linear interpolation of measured (pH, Solubility) data pairs.
+
+<img width="187" alt="phsol" src="https://user-images.githubusercontent.com/25061876/41295523-4ca5f886-6e4a-11e8-8899-16bf8181de76.png">  :arrow_right: <img width="400" alt="phsol2" src="https://user-images.githubusercontent.com/25061876/41295416-141e885c-6e4a-11e8-9930-2d51288a27af.png">
+
+
 ### ADME Properties‌
 
 After having defined the basic physico-chemical properties of the compound, processes known to be involved in its distribution and elimination can be specified in the **ADME** tab. The **ADME** tab is accessible either by clicking Next or by directly clicking on the respective tab in the **Create Compound** window.
