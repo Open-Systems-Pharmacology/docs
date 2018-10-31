@@ -18,7 +18,7 @@ L.Z. Benet. _Basic Principles and Its Use as a Tool in Drug Metabolism_. in: Dru
 L.M. Berezhkovskiy. _Volume of distribution at steady state for a linear pharmacokinetic system with peripheral elimination_. Journal of Pharmaceutical Sciences. 93(6). 1628-40. 2004.
 
 #### 6
-S. D. Cohen and A. C. Hindmarsh. _CVODE, a stiff/nonstiff ODE solver in C_. Comput. Phys. 10. 138-143. 1996.
+A. C. Hindmarsh, P. N. Brown, K. E. Grant, S. L. Lee, R. Serban, D. E. Shumaker, and C. S. Woodward. _[SUNDIALS: Suite of Nonlinear and Differential/Algebraic Equation Solvers](https://computation.llnl.gov/projects/sundials/toms_sundials.pdf)_. ACM Transactions on Mathematical Software, 31(3), pp. 363-396, 2005.
 
 #### 7
 P. Costa and J. M. Sousa Lobo. _Modeling and comparison of dissolution profiles_. Eur J Pharm Sci. 13(2). 123-33. 2001.
