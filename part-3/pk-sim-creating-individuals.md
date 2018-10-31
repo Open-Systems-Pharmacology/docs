@@ -190,6 +190,10 @@ The relative expressions for enzymes, transporters and binding proteins can be s
 Please note that when switching to another species on the Biometrics tab all parameters of the individual defined in the **Anatomy & Physiology** tab and in the **Expression** tabs, including applied changes (e.g. active processes), are overwritten.
 {% endhint %}
 
+{% hint style="tip" %}
+**User Defined** parameter node shows an overview of all parameters changed by the user in the individual.
+{% endhint %}
+
 #### Expression‌
 
 In the **Expression** tab, all relevant enzymes, transport proteins and protein binding partners can be defined for the selected individual.
