@@ -226,25 +226,25 @@ In order to **scale** an existing individual:
 
     The following six columns appear in the **Scaling configuration** tab:
 
-- Parameter: The name of the parameter modified in the base individual used for scaling.
+  * **Parameter**: The name of the parameter modified in the base individual used for scaling.
 
-- **Source default value**: The original value of the parameter in the base individual according to the database underlying PK-Sim®. The source default value depends on the biometrics (race, age, and gender) of the base individual.
+  * **Source default value**: The original value of the parameter in the base individual according to the database underlying PK-Sim®. The source default value depends on the biometrics (race, age, and gender) of the base individual.
 
-- Source value: The modified value of the parameter in the base individual.
+  * **Source value**: The modified value of the parameter in the base individual.
 
-- **Default value**: The default value of the parameter in the scaled individual according to the database underlying PK-Sim®. This value will differ from the source default value if the scaled individual is characterized by different biometrics (race, age, and/or gender).
+  * **Default value**: The default value of the parameter in the scaled individual according to the database underlying PK-Sim®. This value will differ from the source default value if the scaled individual is characterized by different biometrics (race, age, and/or gender).
 
-- Scaled value: The modified value of the parameter in the scaled individual. This value depends on the scaling method selected in the last column (Scaling method):
+  * **Scaled value**: The modified value of the parameter in the scaled individual. This value depends on the scaling method selected in the last column (Scaling method):
 
-- Scaling method: Select between four options for the scaling method from the drop-down menu:
+  * **Scaling method**: Select between four options for the scaling method from the drop-down menu:
 
-1.  **Same percentile**: This method is only available in the case of distributed parameters such as organ weights and blood flow rates in human populations. If a modification was made in the base individual the parameter value will not represent an average value anymore, i.e. it will not lie on the 50th percentile of the distributed parameters for the given population (characterized by race, age, and gender). Choosing this option, the same percentile will be used for your scaled individual of the selected population based on the PK-Sim® database.
+    1.  **Same percentile**: This method is only available in the case of distributed parameters such as organ weights and blood flow rates in human populations. If a modification was made in the base individual the parameter value will not represent an average value anymore, i.e. it will not lie on the 50th percentile of the distributed parameters for the given population (characterized by race, age, and gender). Choosing this option, the same percentile will be used for your scaled individual of the selected population based on the PK-Sim® database.
 
-2.  **Use default value**: The modification made in the base individual will not be transferred to the scaled individual. Instead, the default value of the parameter in the scaled individual according to the database underlying PK- Sim® will be used.
+    2.  **Use default value**: The modification made in the base individual will not be transferred to the scaled individual. Instead, the default value of the parameter in the scaled individual according to the database underlying PK- Sim® will be used.
 
-3.  **Use source value**: If a modification was made in the base individual the identical parameter value will be used in the scaled individual. Please note that for most parameters this is only a reasonable option if the biometrics (race, age, gender) of the base and the scaled individual are identical or at least similar.
+    3.  **Use source value**: If a modification was made in the base individual the identical parameter value will be used in the scaled individual. Please note that for most parameters this is only a reasonable option if the biometrics (race, age, gender) of the base and the scaled individual are identical or at least similar.
 
-4.  **Same ratio**: The ratio of the source value divided by the source default value is multiplied by the default value of the scaled individual.
+    4.  **Same ratio**: The ratio of the source value divided by the source default value is multiplied by the default value of the scaled individual.
 
 The line **Target weight**, which appears only on the top of this window if modifications in organ volumes were made in the base individual, indicates the body weight of the scaled individual. A modification of organ volumes will automatically lead to a change in total body weight, which is the sum of all organ weights. Thus, if the default value of an organ weight is changed, the new body weight, which is no longer in agreement with the body weight previously selected on the biometrics tab, will be shown.
 
