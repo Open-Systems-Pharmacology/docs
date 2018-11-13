@@ -1,6 +1,6 @@
-# About this Manual‌
+# About this Manual
 
-This manual describes the Open Systems Pharmacology Suite. This includes technical descriptions of the different software elements together with examples and brief introductions to relevant scientific aspects including references for further reading. Naturally, the science described is selected based on our experience and judgment of relevance in the given context. Further, our “philosophy” is largely reflected in the software platform, and, vice versa, the software platform influences how we work and think.
+This manual describes the [Open Systems Pharmacology Suite](www.open-systems-pharmacology.org). This includes technical descriptions of the different software elements together with examples and brief introductions to relevant scientific aspects including references for further reading. Naturally, the science described is selected based on our experience and judgment of relevance in the given context. Further, our “philosophy” is largely reflected in the software platform, and, vice versa, the software platform influences how we work and think.
 
 The handbook is divided into the following parts:
 
