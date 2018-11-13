@@ -1,0 +1,10 @@
+*.bmp binary
+*.gif binary
+*.jpg binary
+*.png binary
+*.snk binary
+*.exe binary
+*.TIF binary
+*.ico binary
+
+*.md text
