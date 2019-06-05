@@ -9,7 +9,7 @@
 | Disk space | minimum 2 GB                           |
 ||              **Optional software**                 ||
 | Matlab®    | version 2017b or later                 |
-| R®         | versions 3.5 or later - 64bit          |
+| R®         | version  3.5 or later - 64bit          |
 
 
 Information provided above refers to the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®. Both, PK-Sim® and MoBi® can be installed as stand-alone software packages to reduce the disk space required.
