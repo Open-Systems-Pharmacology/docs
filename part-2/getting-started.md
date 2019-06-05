@@ -8,14 +8,14 @@
 | Memory     | 2 GB RAM, 3+ GB recommended            |
 | Disk space | minimum 2 GB                           |
 ||              **Optional software**                 ||
-| Matlab®    | version 2013b or later - 32bit         |
-| R®         | versions 3.3 or later - 32bit          |
+| Matlab®    | version 2017b or later                 |
+| R®         | version  3.5 or later - 64bit          |
 
 
 Information provided above refers to the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®. Both, PK-Sim® and MoBi® can be installed as stand-alone software packages to reduce the disk space required.
 
 {% hint style="warning" %}
-The Open Systems Pharmacology Suite includes interfaces to MS Excel®, Matlab® (version 2013b or later - 32 bit ) and R (version 3.3 or later, 32 bit). These are separate programs that are not available within the Open Systems Pharmacology Suite. You need to have these programs installed in order to use their interfaces!
+The Open Systems Pharmacology Suite includes interfaces to MS Excel®, Matlab® (version 2017b or later) and R (version 3.5 or later, 64 bit). These are separate programs that are not available within the Open Systems Pharmacology Suite. You need to have these programs installed in order to use their interfaces!
 {% endhint %}
 
 ### Trademark Information
@@ -32,10 +32,6 @@ To correctly install the software, administrator rights are necessary. If you do
 
 {% hint style="info" %}
 The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed stand-alone. However, to obtain full modeling and simulation capabilities, we recommend that both programs are installed.
-{% endhint %}
-
-{% hint style="warning" %}
-MoBi® Toolbox for Matlab® is currently only working with the 32- bit version of Matlab®.
 {% endhint %}
 
 To install the Open Systems Pharmacology Suite core components:
