@@ -113,6 +113,7 @@
 ## Appendix
 
     *   [Appendix](appendix.md)
+	*   [Fact sheet](factsheet.md)
 
 ## References
 
