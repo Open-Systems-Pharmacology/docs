@@ -113,6 +113,7 @@
 ## Appendix
 
     *   [Appendix](appendix.md)
+    *   [OSP Suite Fact Sheet](factsheet.md)
 
 ## References
 
