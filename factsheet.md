@@ -1,6 +1,6 @@
-Open Systems Pharmacology Suite - Fact Sheet
+# Open Systems Pharmacology Suite - Fact Sheet
 
-Main modeling and simulation features:
+### Main modeling and simulation features:
 
   - PBPK modeling of small molecules and biologics
 
