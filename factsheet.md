@@ -149,10 +149,10 @@ Main modeling and simulation features:
 <tr class="even">
 <td style="vertical-align:top"><p>Parameter identification (PI)</p></td>
 <td><p>A fully integrated PI Toolbox provides a straightforward means to adjust key model parameters automatically within user-defined ranges. It is possible to optimize multiple simulations, for example with different dose levels, and multiple observed data sets, simultaneously. A clear visualization of the optimization process and of the optimization results gives you full control and direct feedback whether the identification process was successful.</p>
-<p><img src="media/image001.png" /></p>
-<p><img src="media/image003.png"  /></p>
-<p><img src="media/image005.png" /></p>
-<p><img src="media/image007.png" /></p>
+<p><img src="assets/images/factsheet/image001.png" /></p>
+<p><img src="assets/images/factsheet/image003.png"  /></p>
+<p><img src="assets/images/factsheet/image005.png" /></p>
+<p><img src="assets/images/factsheet/image007.png" /></p>
 <ul>
 <li><p>Simultaneous optimization of multiple simulations</p></li>
 <li><p>Simultaneous optimization of multiple observed data sets</p></li>
@@ -199,15 +199,15 @@ Main modeling and simulation features:
 <li><p><strong>Confidence Interval:</strong> Corresponds to the model error, which is based on the uncertainty of estimated parameters. This uncertainty is based on an estimation of the difference between the mean value of used observed data compared with the mean value of the (unknown) total data.</p></li>
 </ul></li>
 </ul>
-<p><img src="media/image009.png"  /></p>
+<p><img src="assets/images/factsheet/image009.png"  /></p>
 <ul>
 <li><p><strong>Visual Predictive Check Interval:</strong> Corresponds to the uncertainty based on the data error. The data error is the standard deviation of the distribution of the used observed data.</p></li>
 </ul>
-<p><img src="media/image011.png" /></p>
+<p><img src="assets/images/factsheet/image011.png" /></p>
 <ul>
 <li><p><strong>Prediction Interval:</strong> Corresponds to the combination of the model error and the data error. It shows how much future measured data are expected to differ from the model predictions.</p></li>
 </ul>
-<p><img src="media/image013.png" /></p></td>
+<p><img src="assets/images/factsheet/image013.png" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top"><p>Sensitivity analysis</p></td>
@@ -217,11 +217,11 @@ Main modeling and simulation features:
 <ul>
 <li><p>Sensitivity table:</p></li>
 </ul>
-<p><img src="media/image015.png" /></p>
+<p><img src="assets/images/factsheet/image015.png" /></p>
 <ul>
 <li><p>Ranking of most sensitive simulation parameters. Most sensitive parameters comprise all parameters that contribute to 90% of total sensitivity.</p></li>
 </ul>
-<p><img src="media/image017.png" /></p></td>
+<p><img src="assets/images/factsheet/image017.png" /></p></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top"><p>Lab Journal</p></td>
@@ -230,8 +230,8 @@ Main modeling and simulation features:
 <li><p>built-in working journal for manual annotation of models and simulations</p></li>
 <li><p>roll-back / undo functionality</p></li>
 </ul>
-<p><img src="media/image019.png" /></p>
-<p><img src="media/image021.png" /></p></td>
+<p><img src="assets/images/factsheet/image019.png" /></p>
+<p><img src="assets/images/factsheet/image021.png" /></p></td>
 </tr>
 <tr class="odd">
 <td>Model editor</td>
@@ -266,19 +266,19 @@ Main modeling and simulation features:
 </ul></li>
 </ul></li>
 </ul>
-<p><img src="media/image023.png"  /></p>
+<p><img src="assets/images/factsheet/image023.png"  /></p>
 <ul>
 <li><p>Box-Whisker plots</p></li>
 </ul>
-<p><img src="media/image025.png" /></p>
+<p><img src="assets/images/factsheet/image025.png" /></p>
 <ul>
 <li><p>Range plots</p></li>
 </ul>
-<p><img src="media/image027.png" /></p>
+<p><img src="assets/images/factsheet/image027.png" /></p>
 <ul>
 <li><p>Scatter plots</p></li>
 </ul>
-<p><img src="media/image029.png"  /></p>
+<p><img src="assets/images/factsheet/image029.png"  /></p>
 <ul>
 <li><p>Multiple plots per simulation</p></li>
 <li><p>Export of plotted/simulated results to Excel/CSV/PDF/Image</p></li>
@@ -343,11 +343,11 @@ Main modeling and simulation features:
 <li><p>Comparison between simulations</p></li>
 <li><p>Comparison between building blocks and simulations</p></li>
 </ul>
-<p><img src="media/image031.png" /></p>
+<p><img src="assets/images/factsheet/image031.png" /></p>
 <ul>
 <li><p>Comparison of building blocks can also be done between two simulations on the same kind of building block</p></li>
 </ul>
-<p><img src="media/image033.png" /></p>
+<p><img src="assets/images/factsheet/image033.png" /></p>
 <ul>
 </ul></td>
 </tr>
