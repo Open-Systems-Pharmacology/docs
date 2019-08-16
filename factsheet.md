@@ -78,7 +78,7 @@
 </tr>
 <tr class="odd">
 <td style="vertical-align:top"><p>Compounds</p></td>
-<td><p>full ADME characterization of small and large therapeutic molecules including</p>
+<td><p>Full ADME characterization of drugs including</p>
 <ul>
 <li><p>molecular weight</p></li>
 <li><p>lipophilicity</p></li>
@@ -91,7 +91,13 @@
 <li><p>transporter specific transport kinetics</p></li>
 <li><p>inhibition and induction parameters</p></li>
 </ul>
-<p>including a set of pre-parameterized standard compounds</p></td>
+<p>and for large therapeutic molecules (e.g. antibodies)</p>
+<ul>
+<li><p>solute radius (calculated for molecular weight as per default)</p></li>
+<li><p>dissociation constant for binding to FcRn</p></li>
+</ul>
+  <br>
+<p>Including a set of pre-parameterized standard compounds</p></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top"><p>Partition Coefficients</p></td>
