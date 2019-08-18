@@ -37,7 +37,7 @@
 <li><p>mouse</p></li>
 <li><p>rabbit</p></li>
 </ul>
-<p>with full flexibility for parameterization of (anthro)metrics, anatomical and physiological properties, protein expression levels ETC.</p>
+<p>with full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.</p>
 <p>Most important organs included. For each organ:</p>
 <ul>
 <li><p>metabolizing pathways</p></li>
@@ -139,6 +139,7 @@
 <li><p>Single</p></li>
 <li><p>once daily, bi-daily, …</p></li>
 <li><p>complex (multi-)periodic schemas</p></li>
+  <p><assets/images/part-3/PKSim_Protocol_AdvancedEx.png"/></p>
 </ul></td>
 </tr>
 <tr class="even">
