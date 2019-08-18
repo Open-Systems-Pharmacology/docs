@@ -139,8 +139,8 @@
 <li><p>Single</p></li>
 <li><p>once daily, bi-daily, …</p></li>
 <li><p>complex (multi-)periodic schemas</p></li>
+<p><img src="assets/images/part-3/PKSim_Protocol_AdvancedEx.png" /></p>
 </ul>
-<p><assets/images/part-3/PKSim_Protocol_AdvancedEx.png"/></p>
 </td>
 </tr>
 <tr class="even">
