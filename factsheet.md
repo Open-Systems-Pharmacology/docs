@@ -22,8 +22,7 @@
 <table>
 <tbody>
 <tr class="odd">
-<td>Model building blocks</td>
-<td></td>
+<td colspan="2" align="center"><b>Model building blocks</b></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top"><p>Organisms</p></td>
@@ -151,8 +150,7 @@
 </ul></td>
 </tr>
 <tr class="odd">
-<td>Modeling tools</td>
-<td></td>
+<td colspan="2" align="center"><b>Modeling tools</b></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top"><p>Parameter identification (PI)</p></td>
@@ -242,8 +240,7 @@
 <td>full transparency and full edit access to all structural model properties</td>
 </tr>
 <tr class="even">
-<td>Simulation tools</td>
-<td></td>
+<td colspan="2" align="center"><b>Simulation tools</b></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -360,8 +357,7 @@
 <td></td>
 </tr>
 <tr class="odd">
-<td>Data</td>
-<td></td>
+<td colspan="2" align="center"><b>Data</br></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top">Data import</td>
@@ -390,7 +386,7 @@
 <tr class="even">
 <td>Non-compartmental analysis</td>
 <td>
-<p>NCA calculation for</p>
+<p>NCA calculation for TODO</p>
 </td>
 </tr>
 </tbody>
