@@ -205,17 +205,13 @@
 <li><p>Calculation of time profile confidence intervals</p>
 <ul>
 <li><p><strong>Confidence Interval:</strong> Corresponds to the model error, which is based on the uncertainty of estimated parameters. This uncertainty is based on an estimation of the difference between the mean value of used observed data compared with the mean value of the (unknown) total data.</p></li>
-</ul></li>
-</ul>
 <p><img src="assets/images/factsheet/image009.png"  /></p>
-<ul>
+</li>
 <li><p><strong>Visual Predictive Check Interval:</strong> Corresponds to the uncertainty based on the data error. The data error is the standard deviation of the distribution of the used observed data.</p></li>
-</ul>
 <p><img src="assets/images/factsheet/image011.png" /></p>
-<ul>
 <li><p><strong>Prediction Interval:</strong> Corresponds to the combination of the model error and the data error. It shows how much future measured data are expected to differ from the model predictions.</p></li>
-</ul>
 <p><img src="assets/images/factsheet/image013.png" /></p></td>
+</ul>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top"><p>Sensitivity analysis</p></td>
