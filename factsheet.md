@@ -15,7 +15,7 @@
 
   - Formulations / Meal effects
 
-  - PBPK/PD, Disease and Pathway Modeling
+  - PBPK/PD, QSP as well as pathway, network and disease modeling
 
   - … (TODO) to be continued
 
@@ -68,11 +68,11 @@
 <td style="vertical-align:top"><p>Protein expression</p></td>
 <td><p>The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building. Public database which were imported are</p>
 <ul>
-<li><p>whole genome expression arrays from ArrayExpress (ArrayExpress, 2010)</p></li>
+<li><p>whole genome expression arrays from ArrayExpress (European Informatics Institute, 2010, http://www.ebi.ac.uk/microarray-as/ae/)</p></li>
 </ul>
 <ul>
-<li><p>RT-PCR derived gene expression estimates from literature</p></li>
-<li><p>expressed sequence tags (EST) from UniGene.</p></li>
+<li><p>RT-PCR derived gene expression (Nishimura et al., 2003; Nishimura and Naito, 2005, 2006)</p></li>
+<li><p>expressed sequence tags (EST) from UniGene (National Center for Biotechnology Information, 2010, http://www.ncbi.nlm.nih.gov/unigene).</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -133,11 +133,11 @@
 <li><p>Oral</p></li>
 <li><p>User defined (free choice of target organ/compartment)</p></li>
 </ul>
-<p>Administration Schemas:</p>
+<p>Administration Schemes:</p>
 <ul>
 <li><p>Single</p></li>
 <li><p>once daily, bi-daily, …</p></li>
-<li><p>complex (multi-)periodic schemas</p></li>
+<li><p>complex (multi-)periodic schemes</p></li>
 <p><img src="assets/images/part-3/PKSim_Protocol_AdvancedEx.png" /></p>
 </ul>
 </td>
@@ -168,7 +168,7 @@
 <li><p>Lin/Log scaling of residuals</p></li>
 <li><p>Multiple optimizations with randomized start values</p></li>
 <li><p>Combining parameter identification with optimization for best suited partition coefficients/permeability methods</p></li>
-<li><p>Available optimization algorithms</p></li>
+<li><p>Available optimization algorithms: </p></li>
 </ul>
 <ul>
 <li><p>Nelder-Mead</p></li>
@@ -408,6 +408,6 @@
 | Export        | Export of simulated results as Excel file                                                                                    |
 |               | Various formats of model exports and listings, like XML, Excel                                                               |
 | Import        | Import of model parameters from Excel files                                                                                  |
-|               | Import of model files in SBML format                                                                                         |
+|               | Import of model files in SBML format for QSP model building                                                                                         |
 | Building      | Building models from scratch, like reaction pathways into a user-built spatial structure or for compartmental modeling       |
 |               | Option to select frequently accessed parameters as favorites                                                                 |
