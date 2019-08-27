@@ -26,7 +26,7 @@
 </tr>
 <tr class="even">
 <td style="vertical-align:top"><p>Organisms</p></td>
-<td><p>pre-parameterized whole-body PBPK models including detailed integrated GI tract for</p>
+<td><p>Pre-parameterized whole-body PBPK models including detailed integrated GI tract for</p>
 <ul>
 <li><p>human</p></li>
 <li><p>monkey</p></li>
@@ -37,10 +37,11 @@
 <li><p>rabbit</p></li>
 </ul>
 <p>with full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.</p>
-<p>Most important organs included. For each organ:</p>
+<p>Most important organs included. For each organ optional processes can be added:</p>
 <ul>
 <li><p>metabolizing pathways</p></li>
 <li><p>different active transporter types(influx, efflux, Pgp-like)</p></li>
+<li><p>protein binding partners</p></li>
 </ul>
 <p>Biliary tract included, enables enterohepatic cycling</p>
 <ul>
@@ -52,7 +53,7 @@
 </tr>
 <tr class="odd">
 <td style="vertical-align:top"><p>Populations</p></td>
-<td><p>database for population simulations with distributions of anatomical and physiological parameters for</p>
+<td><p>Database for population simulations with distributions of anatomical and physiological parameters for</p>
 <ul>
 <li><p>European Caucasians (ICRP, 2002)</p></li>
 <li><p>US Caucasian (NHANES, 1997)</p></li>
@@ -100,7 +101,7 @@
 </tr>
 <tr class="even">
 <td style="vertical-align:top"><p>Partition Coefficients</p></td>
-<td><p>prediction models for tissue partition coefficients</p>
+<td><p>Prediction models for tissue partition coefficients</p>
 <ul>
 <li><p>PK-Sim 2003</p></li>
 <li><p>Rodgers &amp; Rowland</p></li>
@@ -111,13 +112,13 @@
 </tr>
 <tr class="odd">
 <td>Permeability</td>
-<td>prediction models for cellular permeabilities and intestinal permeability</td>
+<td>Prediction models for cellular permeabilities and intestinal permeability</td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top"><p>Formulations</p></td>
 <td><ul>
 <li><p>Dissolved</p></li>
-<li><p>Particles</p></li>
+<li><p>Particle distribution</p></li>
 <li><p>Weibull</p></li>
 <li><p>Lint80</p></li>
 <li><p>Table</p></li>
@@ -169,13 +170,11 @@
 <li><p>Multiple optimizations with randomized start values</p></li>
 <li><p>Combining parameter identification with optimization for best suited partition coefficients/permeability methods</p></li>
 <li><p>Available optimization algorithms: </p></li>
-</ul>
 <ul>
 <li><p>Nelder-Mead</p></li>
 <li><p>Levenberg-Marquardt</p></li>
 <li><p>Monte-Carlo</p></li>
-</ul>
-<ul>
+</ul></li>
 <li><p>Visual feedback during optimization</p>
 <ul>
 <li><p>Time profile</p></li>
@@ -237,7 +236,7 @@
 </tr>
 <tr class="odd">
 <td>Model editor</td>
-<td>full transparency and full edit access to all structural model properties</td>
+<td>Full transparency and full edit access to all structural model properties</td>
 </tr>
 <tr class="even">
 <td colspan="2" align="center"><b>Simulation tools</b></td>
@@ -247,7 +246,6 @@
 <td><ul>
 <li><p>Simulation creation by simple combining of previously defined building blocks</p></li>
 <li><p>Simulation of individuals and populations</p></li>
-<li><p>(Optional) Aging</p></li>
 </ul>
 <p style="padding-left: 2em;">If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when choosing this option.</p>
 <p style="padding-left: 2em;">Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle.</p>
@@ -325,9 +323,8 @@
 <li><p>AUC_inf_tD1_n</p></li>
 <li><p>...tDi-tDj</p></li>
 </ul></li>
-</ul></li>
 </ul>
-<p style="padding-left: 4em;">Respective PK parameter from the administration time of the first dose until the administration time of the second dose</p>
+<li><p>Respective PK parameter from the administration time of the first dose until the administration time of the second dose</p>
 <ul>
 <li><p>...tDlast-tDEnd</p></li>
 <li><p>...tDlast-1- tDlast</p></li>
@@ -335,7 +332,7 @@
 <li><p>C_trough_dlast</p></li>
 </ul>
 <ul>
-<li><p>Comparisons of calculated simulation results over multiple simulations (both individual and population simulations)</p></li>
+<p style="padding-left: 4em;">Comparisons of calculated simulation results over multiple simulations (both individual and population simulations)</p></li>
 <li><p>Cloning of simulation</p></li>
 </ul>
 <ul>
@@ -362,7 +359,7 @@
 <tr class="even">
 <td style="vertical-align:top">Data import</td>
 <td>
-<p>import filters for</p>
+<p>Import filters for</p>
 <ul>
 <li><p>MS Excel</p></li>
 <li><p>csv file</p></li>
