@@ -17,8 +17,6 @@
 
   - PBPK/PD, QSP as well as pathway, network and disease modeling
 
-  - … (TODO) to be continued
-
 <table>
 <tbody>
 <tr class="odd">
@@ -250,7 +248,7 @@
 <p style="padding-left: 2em;">If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when choosing this option.</p>
 <p style="padding-left: 2em;">Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle.</p>
 <ul>
-<li><p>Calculation of drug time courses in the most important organs (TODO - full list) for every subcompartment (Plasma, Endosome, Interstitial, Intracellular, Blood Cells)</p></li>
+<li><p>Calculation of drug time courses in the most important organs for every subcompartment (Plasma, Endosome, Interstitial, Intracellular, Blood Cells)</p></li>
 <li><p>Calculation of the fraction of dose metabolized/excreted</p></li>
 <li><p>Plotting of all calculated time courses</p>
 <ul>
