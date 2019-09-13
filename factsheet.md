@@ -537,16 +537,16 @@
     <li><p>AUC_inf_tD1_n</p></li>
     <li><p>...tDi-tDj</p></li>
     </ul></li>
-    </ul>
-    <li><p>Respective PK parameter from the administration time of the first dose until the administration time of the second dose</p>
     <ul>
     <li><p>...tDlast-tDEnd</p></li>
     <li><p>...tDlast-1- tDlast</p></li>
     <li><p>C_trough_dDi</p></li>
     <li><p>C_trough_dlast</p></li>
     </ul>
+    </ul>
+    </ul>
     <ul>
-    <p style="padding-left: 4em;">Comparisons of calculated simulation results over multiple simulations (both individual and population simulations)</p></li>
+    <li>Comparisons of calculated simulation results over multiple simulations (both individual and population simulations)</p></li>
     <li><p>Cloning of simulation</p></li>
     </ul>
     <ul>
