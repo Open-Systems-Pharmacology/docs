@@ -378,12 +378,6 @@
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
-<td>Non-compartmental analysis</td>
-<td>
-<p>NCA calculation for TODO</p>
-</td>
-</tr>
 </tbody>
 </table>
 
