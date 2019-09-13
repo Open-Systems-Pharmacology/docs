@@ -60,7 +60,7 @@
 <li><p>Asian (Tanaka, 1996)</p></li>
 <li><p>Japanese (2015)</p></li>
 <li><p>Preterms (2015)</p></li>
-<li><p>Pregnant (Dallmann et al. 2017) (*)</p></li>
+<li><p>Pregnant (Dallmann et al. 2017)</p></li>
 </ul></td>
 </tr>
 <tr class="even">
