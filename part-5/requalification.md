@@ -104,7 +104,7 @@ There are 2 kinds of observed data sets:
     * "**Type**": type of an observed data set. Can be one of:
        * "*TimeProfile*". Corresponding observed data set must have the columns with time values, measurement values and (optionally) error values with units (s. also [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/import-edit-observed-data)). [Example](https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/7ab7c59dfce9201845ebcd8247b2a5cad344bc03/examples/minimal/reporting%20engine%20input/ObservedData/Itraconazole%20600mg%20MD.csv)
        * "*PKRatio*". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: TODO
-       * "*DDIRatio*". TODO
+       * "*DDIRatio*". Example: TODO Mandatory columns are: TODO
 
 ### Sections
 
@@ -121,6 +121,7 @@ Defines the chapter structure of the report. Every chapter (section) has:
 
   ![Sections](../assets/images/part-5/QualificationPlan_05_Sections.png)
 
+{% hint style="tip" %}
 #### Markdown
 
 Markdown files are text files in Markdown format (file extension: **.md**).
@@ -134,6 +135,7 @@ Good introductions into the markdown format can be found here:
 Ø  https://help.github.com/en/articles/basic-writing-and-formatting-syntax 
 
 You can use any plain text editor for creating and modification of markdown files. However it's much faster and easier to use dedicated markdown editors, e.g. *Typora* (https://www.typora.io/)
+{% endhint %}
 
 ### Intro
 
@@ -294,7 +296,8 @@ Combines data from several simulations; every simulation data can be displayed i
 
     * "**Output**": path of the simulated output curve of interest. This must be the path **internally used by PK-Sim** (without the leading simulation name)
 
-      TIP: if you are not sure how such a path is defined:
+      {% hint style="tip" %}
+      If you are not sure how such a path is defined:
 
       1. Open project in PK-Sim
 
@@ -312,6 +315,7 @@ Combines data from several simulations; every simulation data can be displayed i
         Observer: Blood Cells
         	Path: S1_diss|Organism|PeripheralVenousBlood|Theophylline|Blood Cells
         ```
+      {% endhint %}
       
     * "**ObservedData**": Id of an observed data set (s. [Observed data sets](#observed-data-sets) for details)
     
@@ -357,7 +361,7 @@ Creates comparison time profile plots similar to [Comparison Charts in PK-Sim](h
 
 #### DDIRatioPlots
 
-Creates DDI Ratio plots (as described e.g. in Hanke et. al) TODO Ref
+Creates DDI Ratio plots as described e.g. in Hanke et. al ([[106](../references.md#106)])
 
 ![DDI Ratio](../assets/images/part-5/QualificationPlan_20_PlotDDIRatio.png)
 
