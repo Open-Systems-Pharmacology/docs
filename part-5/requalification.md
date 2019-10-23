@@ -81,7 +81,7 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
   * "**TargetSimulations**": Simulation name(s) within child project
 
-  Then *<ChildProject>.<ChildSimulation_i>.<ParameterPath>.Value* will be replaced with    *<ParentProject>.<ParentSimulation>.<ParameterPath>.Value*
+  Then `ChildProject.ChildSimulation_i.ParameterPath.Value` will be replaced with    `ParentProject.ParentSimulation.ParameterPath.Value`
   
   ![Projects - simulation parameters](../assets/images/part-5/QualificationPlan_03_Projects.png)
 
