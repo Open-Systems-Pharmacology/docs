@@ -678,3 +678,7 @@ Execute Workflow.m.
 This will create a report in markdown format in the *Evaluation/report* subfolder.
 
 For any new qualification report: just create a new copy of *Workflow.m* and adjust it for the new report.
+
+### Converting Markdown report to pdf.
+Different (commercial and free) markdown to pdf converters are available.
+We recommend to use Typora (https://www.typora.io/) for this task.
