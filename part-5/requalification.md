@@ -210,7 +210,7 @@ This section defines the type of plots (and some additional related information 
     ],
   ```
 
-- "**AllPlots**"; "**GOFMergedPlots**"; ...: different kinds of plots, explained in detail below.
+- "**AllPlots**"; "**GOFMergedPlots**"; ... : different kinds of plots, explained in detail below.
 
 #### AllPlots
 
