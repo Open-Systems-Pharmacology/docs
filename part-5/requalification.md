@@ -22,7 +22,7 @@ The qualification plan consists of:
 - Detailed report settings related to the generation of charts and qualification measures.
 
 {% hint style="tip" %}
-Any file used in the qualification plan (e.g PK-Sim projects, observed data sets, text modules etc...) can also be saved in an external repository and then conveniently referenced by the qualification plan.
+Any file used in the qualification plan (e.g. PK-Sim projects, observed data sets, text modules etc...) can also be saved in an external repository and then conveniently referenced by the qualification plan.
 {% endhint %}
 
 ![Repositries](../assets/images/part-5/QualificationWorkflowRepositories.png)
@@ -54,14 +54,14 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
 - "**Id**": Whenever a project is referenced within a qualification plan: it happens via its project id. Any non-empty string can be defined by the author of a qualification plan as a project id (the only restriction: a project id must be _unique_ within one qualification plan).
 
-- "**Path**": path to a project **snapshot** . Can be defined:
+- "**Path**": path to a project **snapshot**. Can be defined:
 
   - Either in form of an URL of remote file (e.g. "_https://github.com/Open-Systems-Pharmacology/Sufentanil-Model/releases/download/v1.1/Sufentanil.json_"
   - or in form of a path to a LOCAL file (given **relative to the location of current qualification plan**), e.g. "_Input/Itraconazole-Model.json_")
 
 - "**BuildingBlocks**": OPTIONAL, may be empty. List of inherited building blocks.
 
-  The idea behind is: The use-case requires some building blocks (e.g. compound, individual, ...) to ne exactly **the same in one or more projects**. Instead of modifing those projects by hand, the qualificaton plan can automate this action and ensure that building blocks are used consistently.
+  The idea behind is: The use-case requires some building blocks (e.g. compound, individual, ...) to be exactly **the same in one or more projects**. Instead of modifying those projects by hand, the qualification plan can automate this action and ensure that building blocks are used consistently.
 
   - "**Type**": type of a building block (one of: "_Compound_", "_Event_", "_Formulation_", "_Individual_", "_ObserverSet_", "_Population_", "_Protocol_")
   - "**Name**": name of a building block (must be the same in both parent and child project)
@@ -95,7 +95,7 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
 Similar to a project, an observed data set is identified by its Id, which must be unique within a qualification plan.
 
-There are 2 kinds of observed data set:
+There are two kinds of observed data set:
 
 1. Observed data set which is included into one project used by the qualification plan.
 
@@ -140,7 +140,7 @@ Good introductions into the markdown format can be found here:
 
 - https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 
-You can use any plain text editor for creating and modification of markdown files. However it iss much faster and easier to use a dedicated markdown editor, e.g. _Typora_ (https://www.typora.io/)
+You can use any plain text editor for creating and modification of markdown files. However it is much faster and easier to use a dedicated markdown editor, e.g. _Typora_ (https://www.typora.io/)
 {% endhint %}
 
 ### Intro
@@ -179,12 +179,12 @@ This section defines the type of plots (and some additional related information 
 
 ![Plots](../assets/images/part-5/QualificationPlan_10_PlotOverview.png)
 
-- "**PlotSettings**": OPTIONAL _Global_ plot settings (pictures size, font properties). In addition every plot can define its _local_ plot settings.
+- "**PlotSettings**": OPTIONAL _Global_ plot settings (pictures size, font properties). In addition, every plot can define its _local_ plot settings.
 
   - If both (global and local) plot settings are defined for some plot: local settings will be used.
   - If neither global nor local plot settings are defined for some plot: program defaults will be used.
 
-- "**AxesSettings**": OPTIONAL _Global_ axes settings **per plot type**. In addition every plot can define its _local_ axes settings.
+- "**AxesSettings**": OPTIONAL _Global_ axes settings **per plot type**. In addition, every plot can define its _local_ axes settings.
 
   - If both (global and local) axes settings are defined for some plot: local settings will be used.
   - If neither global nor local axes settings are defined for some plot: program defaults will be used.
@@ -210,7 +210,7 @@ This section defines the type of plots (and some additional related information 
     ],
   ```
 
-- "AllPlots" / "GOFMergedPlots" / ... different kinds of plots, explained in detail below.
+- "**AllPlots**"; "**GOFMergedPlots**"; ...: different kinds of plots, explained in detail below.
 
 #### AllPlots
 
@@ -228,7 +228,6 @@ All plots defined in the PK-Sim project _Project_ under simulation _Simulation_ 
     "Project": "Midazolam",
     "Simulation": "iv 0.05 mg/kg (2 min)"
   },
-  ...
 ```
 
 NOTE: at the moment, only Time Profile Plots (Individual and Population) will be exported.
@@ -255,7 +254,7 @@ NOTE: at the moment, only Time Profile Plots (Individual and Population) will be
               },
               ...
 
-2 types of plots are supported here:
+Two types of plots are supported here:
 
 - Predicted vs. Observed
 
@@ -377,7 +376,7 @@ Creates DDI Ratio plots as described e.g. in Hanke et. al ([[106](../references.
 
 ![DDI Ratio](../assets/images/part-5/QualificationPlan_20_PlotDDIRatio.png)
 
-2 types of plots are supported here:
+Two types of plots are supported here:
 
 - Predicted vs. Observed (generates plots like in the example above)
 
@@ -461,7 +460,7 @@ Creates DDI Ratio plots as described e.g. in Hanke et. al ([[106](../references.
   * "**DDIRatios**": list of DDI ratios belonging to the group. Each DDI Ratio is defined by:
     - "**Output**": path of the simulated output curve for which DDI ratio of interest will be calculated. This must be the path **internally used by PK-Sim** (without the leading simulation name) (s. [GOFMergedPlots](#gofmergedplots) for details!).
     - "**ObservedData**": Id of an observed data set (s. [Observed data sets](#observed-data-sets) for details)
-    - "**ObservedDataRecordId**": Id of the data record (line) within the given observed data set. (corresponds to the the **Id**-column of the data set)
+    - "**ObservedDataRecordId**": Id of the data record (line) within the given observed data set. (corresponds to the **Id**-column of the data set)
     * "**SimulationControl**": description of the Control/Placebo simulation, given by:
       - "**Project**": Id of the project
       * "**Simulation**": name of the simulation
@@ -530,7 +529,7 @@ Creates plots of predicted/observed ratios for PK parameters of interest
     - "**Simulation**": name of the simulation
     - "**Output**": path of the simulated output curve for which DDI ratio of interest will be calculated. This must be the path **internally used by PK-Sim** (without the leading simulation name) (s. [GOFMergedPlots](#gofmergedplots) for details!).
     - "**ObservedData**": Id of an observed data set (s. [Observed data sets](#observed-data-sets) for details)
-    - "**ObservedDataRecordId**": Id of the data record (line) within the given observed data set. (corresponds to the the **Id**-column of the data set)
+    - "**ObservedDataRecordId**": Id of the data record (line) within the given observed data set. (corresponds to the **Id**-column of the data set)
 
 ## How generated artifacts are combined into a report
 
@@ -612,7 +611,7 @@ All static and dynamic elements described in a qualification plan are compiled i
 | apkrg    | <sub>Adds a PKRatioPlot group entry</sub>                                                                                                | <sub>&bull;Plots/PKRatioPlots{i}/Groups</sub>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | apkrr    | <sub>Adds a PKRatioPlot ratio entry (to be used within a PKRatioPlot)</sub>                                                              | <sub>&bull;Plots/PKRatioPlots{i}/Groups{j}/PKRatios</sub>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-- If you don't remember the shortcut of a snippet:
+- If you do not remember the shortcut of a snippet:
   _ either start typing: the list of all snippets starting with this shortcut will be shown via Intellisense
   _ or press CTRL+SPACE: the list of ALL snippets will be shown. Then just navigate to the right snippet and select it
   ![grafik](../assets/images/part-5/QualificationPlan_Tools_01.png)
@@ -625,10 +624,10 @@ All static and dynamic elements described in a qualification plan are compiled i
 - If a Dimension/Unit pair has to be defined: select the dimension first (CTRL+SPACE), AFTER that select the unit
   ![GetImage3](../assets/images/part-5/QualificationPlan_Tools_04.png)
 
-- Every time when a new elment of a qualification plan was entered via snippet (or manually) and filled out: immediately check errors and warnings and correct them asap.
+- Every time when a new element of a qualification plan was entered via snippet (or manually) and filled out: immediately check errors and warnings and correct them as soon as possible.
   ![GetImage4](../assets/images/part-5/QualificationPlan_Tools_05.png)
 
-- When adding a new element of NON-EMPTY array, don't forget a comma before or after inserted element. (Before when inserted as last element, after otherwise).
+- When adding a new element of NON-EMPTY array, do not forget a comma before or after inserted element. (Before when inserted as last element, after otherwise).
 
 5. Some helpful links for editing json files with VSCode:
    - Getting started with VSCode: https://code.visualstudio.com/docs/getstarted/introvideos
@@ -648,7 +647,7 @@ https://github.com/Open-Systems-Pharmacology/QualificationPlan/releases/latest
 
   1. In case you have a Matlab license: install as a source code. For this: download `Reporting.Engine.X.Y.Z.zip` and unzip it into any folder on your hard disc.
 
-  2. In case you have no Matlab license. install as compiled library.
+  2. In case you have no Matlab license: install as compiled library.
 
      1. Prerequisite: download and install free Matlab Compiler Runtime version 2017b
 
@@ -672,9 +671,9 @@ Execute Workflow.m.
 
 - If you have no Matlab license:
 
-  1. start command prompt (_cmd_). In the command prompt:
+  1. Start command prompt (_cmd_). In the command prompt:
 
-     1. switch to the folder where _Reporting.Engine.Compiled.X.Y.Z.zip_ was unzipped.
+     1. Switch to the folder where _Reporting.Engine.Compiled.X.Y.Z.zip_ was unzipped.
 
      2. Execute _CreateQualificationReport.bat "<full-path-to-Workflow.m>"_. E.g.
 
