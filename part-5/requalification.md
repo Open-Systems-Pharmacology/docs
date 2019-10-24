@@ -27,18 +27,18 @@ Any file used in the qualification plan (e.g. PK-Sim projects, observed data set
 
 ![Repositries](../assets/images/part-5/QualificationWorkflowRepositories.png)
 
-In the next step, the **Qualification Runner** (stand-alone tool) processes the qualification plan, i.e. all project parts are exported and prepared for the **Reporting Engine**. The Reporting Engine provides a validated environment (currently implemented in MATLAB®, a transfer to R is in development) for model execution and generates tables and figures for the final qualification report. This report contains the evaluation of the individual PBPK models with observed data (i.e. standard goodness of fit plots, visual predictive checks) and a comprehensive qualification of the specific use case assessing the predictive performance of the OSP suite by means of a predefined set of qualification measures and charts.
+In the next step, the **Qualification Runner** (stand-alone tool) processes the qualification plan, i.e. all project parts are exported and prepared for the **Reporting Engine**. The Reporting Engine provides a validated environment (currently implemented in MATLAB®, a transfer to R is in development) for model execution and generates tables and figures for the final qualification report. This report contains the evaluation of the individual PBPK models with observed data (i.e. standard goodness of fit plot, residuals-vs-time plot, visual predictive checks) and a comprehensive qualification of the specific use case assessing the predictive performance of the OSP suite by means of a predefined set of qualification measures and charts.
 The automated execution of the described workflow can be triggered to assess re-qualification, for example, when new data is available, after changes in model structure or parameterization, or when releasing a new version of the OSP Suite.
 
 # Creating a (re-)qualification plan part I
 
-Creating a qualification report is similar to writing a scientific article: you write some text, structure it in chapters, insert some figures and tables.
+Creating a qualification report is similar to writing a scientific article: A report is written and structured in chapters, for example beginning with a short description of the scientific background of the scenario (use-case), followed by a brief methodological description (e.g. modeling strategy, available data used during model building and underlying main assumptions) and the presentation of the qualification workflow results in the third section of the report.
 
 The qualification plan orchestrates this process and defines how all the _static_ and _dynamic_ content will be combined into the final report document.
 
 - “_Static content_”: Will be taken AS IS and inserted into the report without any further modifications.
 
-- “_Dynamic content_”: Software must actively do something to produce expected results (e.g. create plots)
+- “_Dynamic content_”: Software must actively do something to produce expected results (e.g. create plots). This content may change between OSP versions in case of differences between the previous and new model structures/parameterizations.
 
 Technically, a qualification plan is nothing more than a text file in [JSON format](https://en.wikipedia.org/wiki/JSON) (file extension: **.json**). You can use any plain text editor for creating and modification of such a file. However, it is much faster and easier to use a json editor (e.g. the free _Visual Studio Code_ (_VSCode_); s. the section [**Creating a (re-)qualification plan part II: Tools**](#creating-a-re-qualification-plan-part-ii-tools) for details). Note that many scripting environments (Matlab, R, etc...) also allow for the comfortable editing of JSON files.
 
@@ -75,7 +75,7 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
   ![Project building blocks](../assets/images/part-5/QualificationPlan_02_Projects.png)
 
-- "**SimulationParameters**": OPTIONAL: List of inherited simulation parameters. Same principle as in case of inherited building blocks: simulation parameters can be inherited between projects. Each inherited simulation parameter description consists of:
+- "**SimulationParameters**": OPTIONAL: List of inherited simulation parameters (i.e. parameters that are not specified in building blocks, but in the simulation, e.g. `blood/plasma concentration ratio` or `P (interstitial->intracellular)`). Same principle as in case of inherited building blocks: simulation parameters can be inherited between projects. Each inherited simulation parameter description consists of:
 
   - "**Project**": Id of the parent project
 
