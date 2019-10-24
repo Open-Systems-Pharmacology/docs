@@ -38,7 +38,8 @@ The qualification plan orchestrates this process and defines how all the _static
 
 - “_Static content_”: Will be taken AS IS and inserted into the report without any further modifications.
 
-- “_Dynamic content_”: Software must actively do something to produce expected results (e.g. create plots). This content may change between OSP versions in case of differences between the previous and new model structures/parameterizations.
+- “_Dynamic content_”: Software must actively do something to produce expected results (e.g. create plots). 
+This content may change between OSP versions in case of differences between the previous and new model structures/parameterizations.
 
 Technically, a qualification plan is nothing more than a text file in [JSON format](https://en.wikipedia.org/wiki/JSON) (file extension: **.json**). You can use any plain text editor for creating and modification of such a file. However, it is much faster and easier to use a json editor (e.g. the free _Visual Studio Code_ (_VSCode_); s. the section [**Creating a (re-)qualification plan part II: Tools**](#creating-a-re-qualification-plan-part-ii-tools) for details). Note that many scripting environments (Matlab, R, etc...) also allow for the comfortable editing of JSON files.
 
