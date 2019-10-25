@@ -135,7 +135,7 @@ There are two kinds of observed data set:
        * the time frame of the simulation with perpetrator, from which the simulated AUC and C_max should be calculated ('*t_treatment_0*' ; '*t_treatment_end*')
        * and the unit of the respective time definitions ('*t Unit*'). 
        
-       Note that observed clearance ratios need to be transformed to AUC ratios before (adding a comment in the '*Comment*' column is recommended).
+         Note that observed clearance ratios need to be transformed to AUC ratios before (adding a comment in the '*Comment*' column is recommended).
 
 ### Sections
 
