@@ -7,11 +7,11 @@ The qualification framework enables an automated validation of various scenarios
 A qualification scenario can be performed after an evaluation of the involved PBPK models has been done. A PBPK model evaluation only contains the healthy adult model development, and is divided into the following steps:
 
 - PBPK model **development and verification** with observed data
-- Model evaluation plan generation (evaluation plan = qualification plan for 1 model)
-- Evaluation report generation (evaluation report = qualification report for 1 model)
+- Model evaluation plan generation ("*evaluation* plan" = "*qualification* plan **for one model**")
+- Evaluation report generation ("*evaluation* report" = "*qualification* report **for one model**")
 
 The workflow of a PBPK model evaluation is similar to that of a PBPK model scenario qualification. A qualification scenario can be based on a single PBPK model or several models and is divided into the following steps:
-  
+
 - Scenario qualification (**pure predictions**) with observed data (e.g. DDI scenario, Enzyme ontogeny scenario)
 - Qualification plan generation
 - Qualification report generation
@@ -116,7 +116,7 @@ There are two kinds of observed data set:
    - "**Path**": path to an observed data set file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details).
    - "**Type**": type of an observed data set. Can be one of:
      - "_TimeProfile_". Corresponding observed data set must have the columns with time values, measurement values and (optionally) error values with units (s. also [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/import-edit-observed-data)). [Example](https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/7ab7c59dfce9201845ebcd8247b2a5cad344bc03/examples/minimal/reporting%20engine%20input/ObservedData/Itraconazole%20600mg%20MD.csv)
-     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: an ID number to reference to ('ID'), PK-parameter value (e.g. AUC or CL) and its unit (e.g 'AUC Avg' ; 'AUC AvgUnit' ), and the simulation duration ('t0' ; 'tend' ; 't Unit').
+     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: an ID number to reference to ('*ID*'), PK-parameter value and its unit (e.g '*AUC Avg*' and '*AUC AvgUnit*' for AUC; '*CL Avg*' and '*CL AvgUnit*' for CL etc.), and the simulation duration ('*t0*' ; '*tend*' ; '*t Unit*').
      - "_DDIRatio_". Example: TODO Mandatory columns are: TODO
 
 ### Sections
