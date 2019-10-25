@@ -116,11 +116,11 @@ There are two kinds of observed data set:
    - "**Path**": path to an observed data set file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details).
    - "**Type**": type of an observed data set. Can be one of:
      - "_TimeProfile_". Corresponding observed data set must have the columns with time values, measurement values and (optionally) error values with units (s. also [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/import-edit-observed-data)). [Example](https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/7ab7c59dfce9201845ebcd8247b2a5cad344bc03/examples/minimal/reporting%20engine%20input/ObservedData/Itraconazole%20600mg%20MD.csv)
-     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: 
+     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv). Mandatory columns are: 
        * an ID number to reference to ('*ID*')
        * PK-parameter value and its unit (e.g '*AUC Avg*' and '*AUC AvgUnit*' for AUC; '*CL Avg*' and '*CL AvgUnit*' for CL etc.)
        * the simulation duration ('*t0*' ; '*tend*' ; '*t Unit*').
-     - "_DDIRatio_". Example: TODO Mandatory columns are: 
+     - "_DDIRatio_". [Example](../assets/images/part-5/DDIRatio.csv). Mandatory columns are: 
        * a unique ID number to reference to ('*ID*')
        * a unique descriptive name (i.e. Author Year) ('*Study ID*')
        * the corresponding victim drug ('*Victim*')
