@@ -130,7 +130,7 @@ There are two kinds of observed data set:
        * the compartment (i.e. plasma, whole blood, etc.),  from which the victim drug PK parameters should be assessed ('*Compartment*')
        * the dose of the perpetrator ('*Dose*') and its unit ('*Dose Unit*')
        * the observed AUC ratio of the victim expressed as AUC with perpetrator divided by AUC without perpetrator ('*AUCR Avg*')
-       * the observed C_{max} ratio of the victim expressed as C_max with perpetrator divided by C_max without perpetrator ('*CmaxR Avg*')
+       * the observed C_max ratio of the victim expressed as C_max with perpetrator divided by C_max without perpetrator ('*CmaxR Avg*')
        * the time frame of the simulation without perpetrator, from which the simulated AUC and C_max of the victim should be calculated ('*t_placebo_0*' ; '*t_placebo_end*')
        * the time frame of the simulation with perpetrator, from which the simulated AUC and C_max should be calculated ('*t_treatment_0*' ; '*t_treatment_end*')
        * and the unit of the respective time definitions ('*t Unit*'). 
