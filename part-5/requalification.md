@@ -4,15 +4,21 @@
 
 The qualification framework enables an automated validation of various scenarios (use-cases) supported by the OSP platform. This technical framework is used, for example, to release, in full confidence, a new version of the OSP Suite by verifying automatically that an ever-growing list of scenarios is performing as expected.
 
-A qualification scenario is divided into the following steps:
+A qualification scenario can be performed after an evaluation of the involved PBPK models has been done. A PBPK model evaluation only contains the healthy adult model development, and is divided into the following steps:
 
-- PBPK model development and verification with observed data
+- PBPK model **development and verification** with observed data
+- Model evaluation plan generation (evaluation plan = qualification plan for 1 model)
+- Evaluation report generation (evaluation report = qualification report for 1 model)
+
+The workflow of a PBPK model evaluation is similar to that of a PBPK model scenario qualification. A qualification scenario can be based on a single PBPK model or several models and is divided into the following steps:
+  
+- Scenario qualification (**pure predictions**) with observed data (e.g. DDI scenario, Enzyme ontogeny scenario)
 - Qualification plan generation
 - Qualification report generation
 
 ![Overview](../assets/images/part-5/QualificationWorkflowOverview.png)
 
-In a first step, the qualification scenario is saved to a dedicated qualification repository on GitHub. This repository contains a detailed qualification plan that links and combines respective models and data describing the use case to qualify.
+As a PBPK model evaluation workflow is similar to that of a qualification scenario, with the difference beeing model development and model application, respectively, the focus here will be on the scenario qualification workflow. In a first step, the qualification scenario is saved to a dedicated qualification repository on GitHub. This repository contains a detailed qualification plan that links and combines respective models and data describing the use case to qualify.
 The qualification plan consists of:
 
 - PK-Sim project files (more precisely: PK-Sim project file [**snapshots**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/importing-exporting-project-data-models#exporting-project-to-snapshot-loading-project-from-snapshot))
@@ -32,7 +38,7 @@ The automated execution of the described workflow can be triggered to assess re-
 
 # Creating a (re-)qualification plan part I
 
-Creating a qualification report is similar to writing a scientific article: A report is written and structured in chapters, for example beginning with a short description of the scientific background of the scenario (use-case), followed by a brief methodological description (e.g. modeling strategy, available data used during model building and underlying main assumptions) and the presentation of the qualification workflow results in the third section of the report.
+Creating a qualification report is similar to writing a scientific article: A report is written and structured in chapters, for example beginning with a short description of the scientific background of the scenario (use-case), followed by a brief methodological description (e.g. modeling strategy, available data used during model building (for model evaluation report), and underlying main assumptions) and the presentation of the qualification workflow results in the third section of the report.
 
 The qualification plan orchestrates this process and defines how all the _static_ and _dynamic_ content will be combined into the final report document.
 
@@ -110,7 +116,7 @@ There are two kinds of observed data set:
    - "**Path**": path to an observed data set file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details).
    - "**Type**": type of an observed data set. Can be one of:
      - "_TimeProfile_". Corresponding observed data set must have the columns with time values, measurement values and (optionally) error values with units (s. also [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/import-edit-observed-data)). [Example](https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/7ab7c59dfce9201845ebcd8247b2a5cad344bc03/examples/minimal/reporting%20engine%20input/ObservedData/Itraconazole%20600mg%20MD.csv)
-     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: TODO
+     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: an ID number to reference to ('ID'), PK-parameter value (e.g. AUC or CL) and its unit (e.g 'AUC Avg' ; 'AUC AvgUnit' ), and the simulation duration ('t0' ; 'tend' ; 't Unit').
      - "_DDIRatio_". Example: TODO Mandatory columns are: TODO
 
 ### Sections
