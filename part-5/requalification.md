@@ -116,8 +116,26 @@ There are two kinds of observed data set:
    - "**Path**": path to an observed data set file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details).
    - "**Type**": type of an observed data set. Can be one of:
      - "_TimeProfile_". Corresponding observed data set must have the columns with time values, measurement values and (optionally) error values with units (s. also [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/import-edit-observed-data)). [Example](https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/7ab7c59dfce9201845ebcd8247b2a5cad344bc03/examples/minimal/reporting%20engine%20input/ObservedData/Itraconazole%20600mg%20MD.csv)
-     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: an ID number to reference to ('*ID*'), PK-parameter value and its unit (e.g '*AUC Avg*' and '*AUC AvgUnit*' for AUC; '*CL Avg*' and '*CL AvgUnit*' for CL etc.), and the simulation duration ('*t0*' ; '*tend*' ; '*t Unit*').
-     - "_DDIRatio_". Example: TODO Mandatory columns are: a unique ID number to reference to ('*ID*'), a unique descriptive name (i.e. Author Year) ('*Study ID*'), the corresponding victim drug ('*Victim*'), the corresponding perpetrator drug ('*Perpetrator*'), the route of administration (e.g. PO, IV, ...) of the victim ('*Route Victim*'), the route of administration (e.g. PO, IV, ...) of the perpetrator ('*Route Perpetrator*'), the compartment (i.e. plasma, whole blood, etc.),  from which the victim drug PK parameters should be assessed ('*Compartment*'), the dose of the perpetrator ('*Dose*'), the unit of the dose of the perpetrator ('*Dose Unit*'), the observed AUC ratio of the victim expressed as AUC with perpetrator divided by AUC without perpetrator ('*AUCR Avg*'), the observed C_{max} ratio of the victim expressed as C_max with perpetrator divided by C_max without perpetrator ('*CmaxR Avg*'), the time frame of the simulation without perpetrator, from which the simulated AUC and C_max of the victim should be calculated ('*t_placebo_0*' ; '*t_placebo_end*'), the time frame of the simulation with perpetrator, from which the simulated AUC and C_max should be calculated ('*t_treatment_0*' ; '*t_treatment_end*'), and the unit of the respective time definitions ('*t Unit*'). Note that observed clearance ratios need to be transformed to AUC ratios before (adding a comment in a '*Comment*' columns is recommended).
+     - "_PKRatio_". [Example](https://github.com/Open-Systems-Pharmacology/Pediatric_Qualification_Package_GFR_Ontogeny/blob/4e905c62f348a107e3cb96b7fe44c5f8e201da75/input/PK-Parameters.csv) Mandatory columns are: 
+       * an ID number to reference to ('*ID*')
+       * PK-parameter value and its unit (e.g '*AUC Avg*' and '*AUC AvgUnit*' for AUC; '*CL Avg*' and '*CL AvgUnit*' for CL etc.)
+       * the simulation duration ('*t0*' ; '*tend*' ; '*t Unit*').
+     - "_DDIRatio_". Example: TODO Mandatory columns are: 
+       * a unique ID number to reference to ('*ID*')
+       * a unique descriptive name (i.e. Author Year) ('*Study ID*')
+       * the corresponding victim drug ('*Victim*')
+       * the corresponding perpetrator drug ('*Perpetrator*')
+       * the route of administration (e.g. PO, IV, ...) of the victim ('*Route Victim*')
+       * the route of administration (e.g. PO, IV, ...) of the perpetrator ('*Route Perpetrator*')
+       * the compartment (i.e. plasma, whole blood, etc.),  from which the victim drug PK parameters should be assessed ('*Compartment*')
+       * the dose of the perpetrator ('*Dose*') and its unit ('*Dose Unit*')
+       * the observed AUC ratio of the victim expressed as AUC with perpetrator divided by AUC without perpetrator ('*AUCR Avg*')
+       * the observed C_{max} ratio of the victim expressed as C_max with perpetrator divided by C_max without perpetrator ('*CmaxR Avg*')
+       * the time frame of the simulation without perpetrator, from which the simulated AUC and C_max of the victim should be calculated ('*t_placebo_0*' ; '*t_placebo_end*')
+       * the time frame of the simulation with perpetrator, from which the simulated AUC and C_max should be calculated ('*t_treatment_0*' ; '*t_treatment_end*')
+       * and the unit of the respective time definitions ('*t Unit*'). 
+       
+       Note that observed clearance ratios need to be transformed to AUC ratios before (adding a comment in the '*Comment*' column is recommended).
 
 ### Sections
 
