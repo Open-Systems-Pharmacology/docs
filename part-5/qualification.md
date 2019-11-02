@@ -717,7 +717,7 @@ Execute Workflow.m.
 
         `CreateQualificationReport.bat "C:\Evaluation-plan-template\Evaluation\Workflow.m"`
 
-        ![cmd](../assets/images/part-5/CreateQualificationReport_CMD.PNG)
+        <img src="../assets/images/part-5/CreateQualificationReport_CMD.PNG" width="1419">
 
 This will create a report in markdown format in the _Evaluation/report_ subfolder.
 
