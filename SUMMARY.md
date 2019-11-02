@@ -57,7 +57,7 @@
   - [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
 
   - [Command Line Interface - CLI](part-3/pk-sim-command-line-interface.md)
-  
+
 ## Working with MoBi
 
 - MoBi‌ Documentation
@@ -80,43 +80,43 @@
 
 ## Shared Tools and Example Workflows
 
-    *   [Features of Tables](part-5/features-of-tables.md)
+- [Features of Tables](part-5/features-of-tables.md)
 
-    *   [Chart Component](part-5/chart-component.md)
+- [Chart Component](part-5/chart-component.md)
 
-    *   [Comparison of Building Blocks](part-5/comparison-building-blocks.md)
+- [Comparison of Building Blocks](part-5/comparison-building-blocks.md)
 
-    *   [Parameter Identification](part-5/parameter-identification.md)
+- [Parameter Identification](part-5/parameter-identification.md)
 
-    *   [Sensitivity Analysis](part-5/sensitivity-analysis.md)
+- [Sensitivity Analysis](part-5/sensitivity-analysis.md)
 
-    *   [Import and Edit of Observed Data](part-5/import-edit-observed-data.md)
+- [Import and Edit of Observed Data](part-5/import-edit-observed-data.md)
 
-    *   [Default, Display and Base Units](part-5/default-display-base-units.md)
+- [Default, Display and Base Units](part-5/default-display-base-units.md)
 
-    *   [Reporting](part-5/reporting.md)
+- [Reporting](part-5/reporting.md)
 
-    *   [Working Journal](part-5/working-journal.md)
+- [Working Journal](part-5/working-journal.md)
 
-    *   [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
+- [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
 
-    *   [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
+- [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
 
-    *   [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
-	
-	*   [(Re-)Qualification‌](part-5/requalification‌.md)
+- [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
+
+- [Qualification‌](part-5/qualification.md)
 
 ## Working with Matlab and R‌
 
-    *   [Matlab - Introduction](part-6/matlab-introduction.md)
+- [Matlab - Introduction](part-6/matlab-introduction.md)
 
-    *   [R - Introduction](part-6/r-introduction.md)
+- [R - Introduction](part-6/r-introduction.md)
 
 ## Appendix
 
-    *   [Appendix](appendix.md)
-    *   [OSP Suite Fact Sheet](factsheet.md)
+- [Appendix](appendix.md)
+- [OSP Suite Fact Sheet](factsheet.md)
 
 ## References
 
-    *   [References](references.md)
+- [References](references.md)
