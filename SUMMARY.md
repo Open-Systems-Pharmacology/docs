@@ -103,6 +103,8 @@
     *   [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
 
     *   [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
+	
+	*   [(Re-)Qualification‌](part-5/requalification‌.md)
 
 ## Working with Matlab and R‌
 

@@ -316,3 +316,6 @@ J. Yang, M. Jamei, and K. Rowland Yeo. _Theoretical assessment of a new experime
 
 #### 105
 H. Zischka, C. J. Gloeckner, C. Klein, S. Willmann, M. Swiatek-de Lange, and M. Ueffing. _Improved mass spectrometric identification of gel- separated hydrophobic membrane proteins after sodium dodecyl sulfate removal by ion-pair extraction_. Proteomics. 3776-82. 4(12). 2004.
+
+#### 106
+[Hanke N, Frechen S, Moj D, Britz H, Eissing T, Wendl T, Lehr T. *PBPK models for  CYP3A4 and P‐gp DDI prediction: a modeling network of rifampicin,  itraconazole, clarithromycin, midazolam, alfentanil and digoxin.*](https://www.ncbi.nlm.nih.gov/pubmed/30091221)
