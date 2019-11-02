@@ -1,4 +1,4 @@
-# (Re-)Qualification framework
+# Qualification framework
 
 ## Introduction
 
