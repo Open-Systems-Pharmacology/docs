@@ -80,7 +80,7 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
   - Compound building block "_Midazolam_" in the project "_Itraconazole-Midazolam-DDI_" will be overwritten by the Compound building block **with the same name** from the project "_Midazolam_" (if there is no Compound with the same name in the "_Midazolam_" project: execution of the qualification plan will stop with an error)
 
-  ![Project building blocks](../assets/images/part-5/QualificationPlan_02_Projects.png)
+![Project building blocks](../assets/images/part-5/QualificationPlan_02_Projects.png)
 
 - "**SimulationParameters**": OPTIONAL: List of inherited simulation parameters (i.e. parameters that are not specified in building blocks, but in the simulation, e.g. `blood/plasma concentration ratio` or `P (interstitial->intracellular)`). Same principle as in case of inherited building blocks: simulation parameters can be inherited between projects. Each inherited simulation parameter description consists of:
 
@@ -162,7 +162,7 @@ Defines the chapter structure of the report. A `section` consists of:
 
 - "**Sections**": OPTIONAL list of sub-sections. Every sub-section is built in the same way (thus report structure can be defined with an arbitrary chapter depth level).
 
-  ![Sections](../assets/images/part-5/QualificationPlan_05_Sections.png)
+![Sections](../assets/images/part-5/QualificationPlan_05_Sections.png)
 
 {% hint style="tip" %}
 
@@ -193,7 +193,7 @@ The introduction is defined by:
 
 - "**Path**": Path to the **static** content file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details). Static content files must be written in [Markdown](#Markdown) format.
 
-  ![Intro](../assets/images/part-5/QualificationPlan_06_Intro.png)
+![Intro](../assets/images/part-5/QualificationPlan_06_Intro.png)
 
 ### Inputs
 
@@ -296,7 +296,7 @@ Two types of plots are supported here:
 
 - Predicted vs. Observed
 
-  ![](../assets/images/part-5/001_plotGOFMergedPredictedVsObserved.png)
+![](../assets/images/part-5/001_plotGOFMergedPredictedVsObserved.png)
 
 - Residuals over time
 
@@ -326,7 +326,7 @@ Combines data from several simulations; every simulation data can be displayed i
 
   - "_GMFE_": geometric mean fold error
 
-    ![GMFE](../assets/images/part-5/GMFE.png)
+![GMFE](../assets/images/part-5/GMFE.png)
 
 - "**Groups**": several simulations can be grouped All simulations from the same group have the same symbol in the plot
 
@@ -652,18 +652,18 @@ All static and dynamic elements described in a qualification plan are compiled i
 - If you do not remember the shortcut of a snippet:
   _ either start typing: the list of all snippets starting with this shortcut will be shown via Intellisense
   _ or press CTRL+SPACE: the list of ALL snippets will be shown. Then just navigate to the right snippet and select it
-  ![grafik](../assets/images/part-5/QualificationPlan_Tools_01.png)
+![grafik](../assets/images/part-5/QualificationPlan_Tools_01.png)
 - After you inserted a skeleton via snippet: fill all the placeholders with correct information. Just start typing (don't click with the mouse!) into the first entry; once finished - press TAB to switch to the next input
-  ![GetImage](../assets/images/part-5/QualificationPlan_Tools_02.png)
+![GetImage](../assets/images/part-5/QualificationPlan_Tools_02.png)
 
 - If a value to be entered is an enumeration: click between double quotes and press CTRL+SPACE, then select from the list
-  ![GetImage2](../assets/images/part-5/QualificationPlan_Tools_03.png)
+![GetImage2](../assets/images/part-5/QualificationPlan_Tools_03.png)
 
 - If a Dimension/Unit pair has to be defined: select the dimension first (CTRL+SPACE), AFTER that select the unit
-  ![GetImage3](../assets/images/part-5/QualificationPlan_Tools_04.png)
+![GetImage3](../assets/images/part-5/QualificationPlan_Tools_04.png)
 
 - Every time when a new element of a qualification plan was entered via snippet (or manually) and filled out: immediately check errors and warnings and correct them as soon as possible.
-  ![GetImage4](../assets/images/part-5/QualificationPlan_Tools_05.png)
+![GetImage4](../assets/images/part-5/QualificationPlan_Tools_05.png)
 
 - When adding a new element of NON-EMPTY array, do not forget a comma before or after inserted element. (Before when inserted as last element, after otherwise).
 
@@ -717,7 +717,7 @@ Execute Workflow.m.
 
         `CreateQualificationReport.bat "C:\Evaluation-plan-template\Evaluation\Workflow.m"`
 
-        <img src="../assets/images/part-5/CreateQualificationReport_CMD.PNG" width="720" height="82" />
+![cmd](../assets/images/part-5/CreateQualificationReport_CMD.PNG)
 
 This will create a report in markdown format in the _Evaluation/report_ subfolder.
 
