@@ -92,7 +92,7 @@ In the same way, create a second molecule, name it "B". Also, uncheck the box ![
 
 6.  Enter "R" into the **Name** input box.
 
-7.  Click the ![Image](../assets/icons/AddToJournalButton.png) **Add Formula** button. You will be asked for a reaction formula name. Enter "R" into the New Name input box, and the circular red error symbol ![Image](../assets/icons/ErrorCross.png) will vanish. Press **Enter** or click **OK**.
+7.  Click the ![Image](../assets/icons/AddAction.ico) **Add Formula** button. You will be asked for a reaction formula name. Enter "R" into the New Name input box, and the circular red error symbol ![Image](../assets/icons/ErrorCross.png) will vanish. Press **Enter** or click **OK**.
 
 8.  Back in the "New Reaction" window, the circular red error symbol ![Image](../assets/icons/ErrorCross.png) in the Formula Name combobox has now vanished. Press again **Enter** or click **OK**. A reaction triangle symbol ![Image](../assets/icons/Reaction-32x32.png) with the name "R" underneath will now appear in the Diagram Area in addition to the molecules "A" and "B".
 
