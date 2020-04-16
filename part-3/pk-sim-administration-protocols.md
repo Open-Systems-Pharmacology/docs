@@ -6,11 +6,11 @@ An administration protocol is a set of data describing administration type, dose
 
 To create a new administration protocol, do one of the following:
 
-*   Click **Administration Protocol** ![Image](../assets/icons/Protocol-32x32.png) in the **Create New Building Blocks** Group of the **Modeling & Simulation** Tab
+*   Click **Administration Protocol** ![Image](../assets/icons/Protocol.ico) in the **Create New Building Blocks** Group of the **Modeling & Simulation** Tab
 
 *   Right mouse click on **Administration Protocols** in the **Building Block Explorer**
 
-and select ![Image](../assets/icons/Protocol-32x32.png) **Add Administration Protocol...**
+and select ![Image](../assets/icons/Protocol.ico) **Add Administration Protocol...**
 
 *   Use the short cut **Ctrl+Alt+A**
 
@@ -30,9 +30,9 @@ In order to define a simple protocol in the **Protocol Properties** field of the
 
 |Administration Type|Description|
 |--- |--- |
-|![Image](../assets/icons/Intravenous.png) Intravenous Bolus | 1.  Select the administration type **Intravenous Bolus** from the drop-down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu <br>3.  Select the appropriate dosing interval from the drop-down menu <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Confirm and close window by clicking **OK** ![Image](../assets/icons/OK.png)|
-|![Image](../assets/icons/Intravenous.png) Intravenous Infusion | 1.  Select the administration type **Intravenous Infusion** from the drop-down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu <br>3.  Select the appropriate dosing interval from the drop-down menu <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Enter the infusion time and select the appropriate time unit from the drop-down menu <br>6.  Confirm and close window by clicking **OK** ![Image](../assets/icons/OK.png)|
-|![Image](../assets/icons/Oral.png) Oral | 1. Select the administration type **Oral** from the drop-down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu. <br>3.  Select the appropriate dosing interval from the drop-down menu. <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Enter the volume of water co-administered. The default is 3.5 mL/kg body weight, which corresponds to a volume of 250 mL (8-9 fl. oz.) of water for an average human. This volume is also considered appropriate in animal dosing 103. However, if desired, the liquid volume can be adjusted according to the protocol of the (pre)clinical study. <br>6.  Confirm and close window by clicking **OK** ![Image](../assets/icons/OK.png)|
+|![Image](../assets/icons/IntravenousBolus.ico) Intravenous Bolus | 1.  Select the administration type **Intravenous Bolus** from the drop-down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu <br>3.  Select the appropriate dosing interval from the drop-down menu <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Confirm and close window by clicking **OK** ![Image](../assets/icons/OK.ico)|
+|![Image](../assets/icons/Intravenous.ico) Intravenous Infusion | 1.  Select the administration type **Intravenous Infusion** from the drop-down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu <br>3.  Select the appropriate dosing interval from the drop-down menu <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Enter the infusion time and select the appropriate time unit from the drop-down menu <br>6.  Confirm and close window by clicking **OK** ![Image](../assets/icons/ok.ico)|
+|![Image](../assets/icons/Oral.ico) Oral | 1. Select the administration type **Oral** from the drop-down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu. <br>3.  Select the appropriate dosing interval from the drop-down menu. <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Enter the volume of water co-administered. The default is 3.5 mL/kg body weight, which corresponds to a volume of 250 mL (8-9 fl. oz.) of water for an average human. This volume is also considered appropriate in animal dosing 103. However, if desired, the liquid volume can be adjusted according to the protocol of the (pre)clinical study. <br>6.  Confirm and close window by clicking **OK** ![Image](../assets/icons/OK.ico)|
 
 {% hint style="note" %}
 Please note that if the administration type **Oral** is selected this will require the definition of a **Formulation** in the **Formulation** building block for the Simulation.
@@ -40,7 +40,7 @@ Please note that if the administration type **Oral** is selected this will requi
 
 |Administration Type|Description|
 |--- |--- |
-|![Image](../assets/icons/User.png) User Defined |1. Select the administration type **User Defined** from the drop- down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu. <br>3.  Select the appropriate dosing interval from the drop-down menu. <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Enter the target organ into which the drug is to be administered, e.g. **Muscle** in the case of intramuscular administration. <br>6.  Enter the target compartment within the target organ into which the drug is to be administered, e.g. "Interstitial" in the case of intramuscular administration. <br>7.  Confirm and close window by clicking **OK** ![Image](../assets/icons/OK.png)|
+|![Image](../assets/icons/Individual.ico) User Defined |1. Select the administration type **User Defined** from the drop- down menu <br>2.  Enter the dose and select the appropriate dose unit from the drop-down menu. <br>3.  Select the appropriate dosing interval from the drop-down menu. <br>4.  In case a multiple dosing regimen is selected, the protocol end time has to be defined. <br>5.  Enter the target organ into which the drug is to be administered, e.g. **Muscle** in the case of intramuscular administration. <br>6.  Enter the target compartment within the target organ into which the drug is to be administered, e.g. "Interstitial" in the case of intramuscular administration. <br>7.  Confirm and close window by clicking **OK** ![Image](../assets/icons/OK.ico)|
 
 {% hint style="tip" %} 
 Please note that in case that the administration type **User Defined** is selected this will require the definition of a **Formulation** in the **Formulation** building block for the Simulation.
@@ -70,11 +70,11 @@ In the secondary table, which can be opened by clicking ![Image](../assets/icons
 
 3.  The **Administration type**. You can choose from the following administration types from the drop-down menu:
 
-	*	![Image](../assets/icons/Intravenous.png) Intravenous Bolus
+	*	![Image](../assets/icons/IntravenousBolus.ico) Intravenous Bolus
 
-	*	![Image](../assets/icons/Intravenous.png) Intravenous Infusion: requires the input of the **Infusion time** in units min, h, or s
+	*	![Image](../assets/icons/Intravenous.ico) Intravenous Infusion: requires the input of the **Infusion time** in units min, h, or s
 
-	*	![Image](../assets/icons/Oral.png) Oral: requires the input of the **Volume of water/body weight** co- administered, which is 3.5 mL/kg BW per default (see PK- Sim® - _Formulations_) and, additionally, the definition of a **Placeholder for formulation** in column 4.
+	*	![Image](../assets/icons/Oral.ico) Oral: requires the input of the **Volume of water/body weight** co- administered, which is 3.5 mL/kg BW per default (see PK- Sim® - _Formulations_) and, additionally, the definition of a **Placeholder for formulation** in column 4.
 
 4.  The **Placeholder for formulation**. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation placeholder is not necessary, because the drug is always assumed to be dissolved when given intravenously (see [PK-Sim® - Formulations](pk-sim-formulations.md)). However, in case of oral and user defined administration, you should add a note on the type of formulation. Later, in the simulation, the formulation placeholder can be matched with the corresponding **Formulation** building block. This may sound trivial in case only one formulation is given repeatedly at the given times. However, consider that you can set up sophisticated dosing schedules, in which various administration types and formulations are administered at various times. Then, the formulation type should already be signified in the administration protocol in order to be able to appropriately match the schedules with the various formulations. For further information please see [PK-Sim® - Simulations](pk-sim-simulations.md).
 
@@ -96,7 +96,7 @@ To set or change the properties of an existing administration protocol:
 
 1.  Right mouse click on the respective administration protocol in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Edit-32x32.png) **Edit...**
+2.  Select ![Image](../assets/icons/Edit.ico) **Edit...**
 
 or double click on the administration protocol in the **Building Block Explorer**
 
@@ -112,11 +112,11 @@ To clone a protocol in the project:
 
 1.  Right mouse click on the respective protocol in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Clone.png) **Clone...**
+2.  Select ![Image](../assets/icons/SimulationClone.ico) **Clone...**
 
 3.  Set an alternative name for the protocol clone and, if desired, enter a description
 
-4.  Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.png)
+4.  Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.ico)
 
 ## Saving an Administration Protocols as templates‌
 
@@ -126,7 +126,7 @@ To save an existing administration protocol as template:
 
 1.  Right mouse click on the respective administration protocol in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SaveAsTemplate.png) **Save as Template...**. In case a protocol with the same name already exists, a warning appears and you have the following options:
+2.  Select ![Image](../assets/icons/SaveAction.ico) **Save as Template...**. In case a protocol with the same name already exists, a warning appears and you have the following options:
 
 *   Override: This action will override the existing template.
     
@@ -140,11 +140,11 @@ To load an existing administration protocol from the template database:
 
 1.  Right mouse click on **Administration protocols** in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/LoadFromTemplate.png) **Load From Template...**
+2.  Select ![Image](../assets/icons/LoadAction.ico) **Load From Template...**
 
 3.  Select the desired administration protocol from the user templates. In case a protocol with the same name already exists in the project, a warning appears and you will have to **Rename** the protocol that is to be loaded from template.
 
-4.  Click **OK** ![Image](../assets/icons/OK.png)
+4.  Click **OK** ![Image](../assets/icons/OK.ico)
 
 The selected administration protocol will appear in the **Building Block Explorer**.
 
@@ -156,7 +156,7 @@ To delete an administration protocol from the project:
 
 1.  Right mouse click on the respective administration protocol in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Delete.png) **Delete...**
+2.  Select ![Image](../assets/icons/Delete.ico) **Delete...**
 
 3.  Confirm by clicking **Yes**
 

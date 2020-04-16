@@ -2,7 +2,7 @@
 
 PK-Sim® can be customized using several options. To do this click on the **Options**
     
-Button ![Image](../assets/icons/Settings-32x32.png) within the **Utilities** Ribbon Tab.
+Button ![Image](../assets/icons/settings.ico) within the **Utilities** Ribbon Tab.
 
 Within the **User** Tab, you can specify the following user specific options:
     
