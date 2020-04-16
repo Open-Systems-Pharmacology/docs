@@ -40,7 +40,7 @@ Selecting the input parameters of interest as **Favorites** makes it much easier
     
 ### Create a Parameter Identification‌
     
-A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select ![Image](../assets/icons/ParameterIdentification.ico) **Start Parameter Identification ...** from the context menu.
+A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Start Parameter Identification ...** from the context menu.
 
 ### Map outputs to observed data‌
     
@@ -116,11 +116,11 @@ You can transfer the optimized values for the parameters to the simulations by c
 
 To create a new Parameter Identification, do one of the following
 
-*   Mark one ore more simulations for the Parameter Identification in the Simulation Explorer and select ![Image](../assets/icons/ParameterIdentification.ico)**Start Parameter Identification ...** from the context menu.
+*   Mark one ore more simulations for the Parameter Identification in the Simulation Explorer and select <img width="32" src="../assets/icons/ParameterIdentification.ico">**Start Parameter Identification ...** from the context menu.
 
-*   In the ribbon bar **Parameter Identification** click ![Image](../assets/icons/ParameterIdentification.ico) **Create** .
+*   In the ribbon bar **Parameter Identification** click <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Create** .
 
-*   In the Simulation Explorer right click the Parameter Identification root node and select ![Image](../assets/icons/ParameterIdentification.ico) **Add Parameter Identification** from the context menu.
+*   In the Simulation Explorer right click the Parameter Identification root node and select <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Add Parameter Identification** from the context menu.
 
 The Parameter Identification view is displayed and the tab **Data** is opened.
 

@@ -2,7 +2,7 @@
 
 ## Importing Observed data‌
 
-The Open Systems Pharmacology Suite offers a convenient handling of experimental data that you wish to compare with your simulations, e.g. observed data. The dialogues that cover this feature are called by clicking on the ![Image](../assets/icons/ObservedData.ico) **Observed Data** button in the **Import/Export** ribbon bar. The following steps are described in detail in Shared Tools - Import and edit of Observed _Data_.
+The Open Systems Pharmacology Suite offers a convenient handling of experimental data that you wish to compare with your simulations, e.g. observed data. The dialogues that cover this feature are called by clicking on the <img width="32" src="../assets/icons/ObservedData.ico"> **Observed Data** button in the **Import/Export** ribbon bar. The following steps are described in detail in Shared Tools - Import and edit of Observed _Data_.
 
 ## Importing Individual and Population Simulation‌
 
@@ -50,14 +50,14 @@ A window opens where you can enter the Excel® file name and the file type (\*.x
 
 You can export a PK-Sim® simulation to MoBi® by one of the following steps:
 
-- Click on the **MoBi** icon ![Image](../assets/icons/MoBi.ico) in the **Export** group of the **Modeling & Simulation** tab
+- Click on the **MoBi** icon <img width="32" src="../assets/icons/MoBi.ico"> in the **Export** group of the **Modeling & Simulation** tab
 
-- Right mouse click on the simulation name within the **Simulations Explorer** and select **Export To MoBi...** ![Image](../assets/icons/MoBi.ico)
+- Right mouse click on the simulation name within the **Simulations Explorer** and select **Export To MoBi...** <img width="32" src="../assets/icons/MoBi.ico">
 
 The program MoBi® will open with the exported simulation. You can then save the exported simulation within MoBi® in MoBi® format (\*.mbp3 file).
 
 {% hint style="note" %}
-Please note that if the active window in PK-Sim® corresponds to a building block rather than a simulation, the **MoBi** icon ![Image](../assets/icons/MoBi.ico) in the **Export** group of the **Modeling & Simulation** is deactivated.
+Please note that if the active window in PK-Sim® corresponds to a building block rather than a simulation, the **MoBi** icon <img width="32" src="../assets/icons/MoBi.ico"> in the **Export** group of the **Modeling & Simulation** is deactivated.
 {% endhint %}
 
 ## Export to \*.pkml file for MoBi®‌
@@ -76,7 +76,7 @@ Via exporting the simulation to PDF format a report will be generated. For detai
 
 ## Export for Matlab / R‌
 
-A \*.xml file can be used to access a PK-Sim® model from within Matlab® ![Image](../assets/icons/Matlab.ico)  (cf. [Working with Matlab® and R](../part-6/r-introduction.md)) or the software R (cf. [R Toolbox for MoBi®](../part-6/r-introduction.md)). To export a PK-Sim® model to a \*.xml file:
+A \*.xml file can be used to access a PK-Sim® model from within Matlab® <img width="32" src="../assets/icons/Matlab.ico">  (cf. [Working with Matlab® and R](../part-6/r-introduction.md)) or the software R (cf. [R Toolbox for MoBi®](../part-6/r-introduction.md)). To export a PK-Sim® model to a \*.xml file:
 
 - Right mouse click on the simulation name within the **Simulations Explorer** and select **Export for Matlab / R ...**
 
@@ -98,7 +98,7 @@ A window opens where you can choose the directory and enter the file name. The f
 
 You can export the project history that contains any user action to an Excel® file. In order to do so:
 
-- Click on the **Create Report** icon ![Image](../assets/icons/History.ico) in the **Export** group of the **Modeling & Simulation** tab
+- Click on the **Create Report** icon <img width="32" src="../assets/icons/History.ico"> in the **Export** group of the **Modeling & Simulation** tab
 
 A window opens where you can choose the directory and enter the \*.xls file name.
 
