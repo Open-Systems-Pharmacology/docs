@@ -10,13 +10,13 @@ Please note that the **Event** Building Block does not represent an essential bu
 
 To create a new event, do one of the following:
 
-*   Click **Event** ![Image](../assets/icons/Event.ico) in the **Create New Building Blocks** Group of the **Modeling & Simulation** Tab
+- Click **Event** <img width="32" src="../assets/icons/Event.ico"> in the **Create New Building Blocks** Group of the **Modeling & Simulation** Tab
 
-*   Right mouse click on **Events** ![Image](../assets/icons/EventFolder.ico)in the **Building Block Explorer**
+- Right mouse click on **Events** <img width="32" src="../assets/icons/EventFolder.ico">in the **Building Block Explorer**
 
 and select **Add Event...**
 
-*   Use the short cut **Ctrl+Alt+E**
+- Use the short cut **Ctrl+Alt+E**
 
 The following dialog will open in which the properties of the event can be selected and/or defined:
 
@@ -26,42 +26,41 @@ First the event is initialized by giving it a **Name** in the respective input f
 
 From the drop-down menu you can currently choose from the following predefined events:
 
-*   Meal: Standard (Human)
+- Meal: Standard (Human)
 
-*   Meal: High-fat breakfast (Human)
+- Meal: High-fat breakfast (Human)
 
-*   Meal: Ensure Plus® (Human)
+- Meal: Ensure Plus® (Human)
 
-*   Meal: High-fat soup (Human)
+- Meal: High-fat soup (Human)
 
-*   Meal: Mixed solid/liquid meal (Human)
+- Meal: Mixed solid/liquid meal (Human)
 
-*   Meal: Dextrose solution (Human)
+- Meal: Dextrose solution (Human)
 
-*   Meal: Egg sandwich (Human)
+- Meal: Egg sandwich (Human)
 
-*   Gallbladder emptying
+- Gallbladder emptying
 
 In the case of the meals, the typical composition of the selected meal is provided below the drop-down menu.
 
 The following model-relevant parameters of the meal are given:
 
-*   Meal energy content in units of kcal or cal.
+- Meal energy content in units of kcal or cal.
 
-*   Meal volume in units of L or mL.
+- Meal volume in units of L or mL.
 
-*   Meal fraction solid (value between 0 and 1), characterizing the composition of the meal with respect to solid and liquid components.
+- Meal fraction solid (value between 0 and 1), characterizing the composition of the meal with respect to solid and liquid components.
 
 Finally, the following two parameters can be defined:
 
-*   The decision on whether the discrete gallbladder emptying should be enabled or disabled. Enabling gallbladder emptying will activate discrete mass flow from the gallbladder into the duodenum.
+- The decision on whether the discrete gallbladder emptying should be enabled or disabled. Enabling gallbladder emptying will activate discrete mass flow from the gallbladder into the duodenum.
 
-*   The gallbladder emptying lag time, i.e. the lag time between the ingestion of meal and gallbladder emptying
+- The gallbladder emptying lag time, i.e. the lag time between the ingestion of meal and gallbladder emptying
 
 {% hint style="note" %}
 Please note that enabling gallbladder emptying does not automatically imply active secretion of the compound into the bile! In order to simulate enterohepatic circulation of the compound, an active transport process from the liver into the bile is needed, i.e. the definition of an efflux or P-gp like efflux transport process at the apical side of the hepatocytes or a biliary clearance process, which‌ can be defined in the **Compound** Building Block, is required.
 {% endhint %}
-
 
 {% hint style="tip" %}
 Please note that the rat lacks a gallbladder. The combination of discrete gallbladder emptying with the species rat, thus, is not possible! However, continuous bile flow from the hepatocytes into the duodenum can now be simulated in the rat as well as in all other species.
@@ -83,7 +82,7 @@ To set or change the properties of an existing event:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Edit.ico) **Edit...**
+2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**
 
 or simply double click on the existing event in the **Building Block Explorer**
 
@@ -95,11 +94,11 @@ To clone an event in the project:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SimulationClone.ico) **Clone...**
+2.  Select <img width="32" src="../assets/icons/SimulationClone.ico"> **Clone...**
 
 3.  Set an alternative name for the event clone and enter a description if desired.
 
-4.  Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.ico)
+4.  Confirm and close the window by clicking **OK** <img width="32" src="../assets/icons/OK.ico">
 
 ## Saving Events as Templates‌
 
@@ -109,27 +108,27 @@ To save an existing event as template:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SaveAction.ico) **Save as Template...**
+2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**
 
 In case an event with the same name already exists, a warning appears and you have the following options:
 
-*   Override: This action will override the existing template.
+- Override: This action will override the existing template.
 
-*   Save as: You can save the event under a different name. In this case, you will be asked to Rename the new template.
+- Save as: You can save the event under a different name. In this case, you will be asked to Rename the new template.
 
-*   Cancel: This action will abort the saving process.
+- Cancel: This action will abort the saving process.
 
 To load an existing formulation from the template database:‌‌
 
 1.  Right mouse click on **Events** in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/LoadAction.ico) **Load From Template...**
+2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
 
 3.  Select the desired event from the user templates
 
 In case an event with the same name already exists in the project, a warning appears and you will have to **Rename** the event that is to be loaded from template.
 
-4.  Click **OK** ![Image](../assets/icons/OK.ico)
+4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
 
 The selected event will appear in the **Building Block Explorer** view.
 
@@ -141,7 +140,7 @@ To delete an event from the project:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Delete.ico) **Delete...**
+2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
 
 3.  Confirm to delete the event by clicking **Yes**
 

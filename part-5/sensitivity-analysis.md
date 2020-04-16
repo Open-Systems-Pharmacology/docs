@@ -18,31 +18,31 @@ Or from the perspective of PK parameters for outputs: It is calculated how sensi
 
 The general workflow to perform a **Sensitivity Analysis** for a chosen simulation consists of the following steps:
 
-1.  Open the simulation and define the interesting outputs in the simulation setting. ![Image](../assets/icons/SimulationSettings.ico)
-    
+1.  Open the simulation and define the interesting outputs in the simulation setting. <img width="32" src="../assets/icons/SimulationSettings.ico">
+
 2.  Create a Sensitivity Analysis for that simulation.
-    
+
 3.  Select the input parameters of interest (can be all parameters) in tab Parameters.
-    
+
 4.  If necessary adjust their variation range to appropriate values.
-    
-5.  Start the Sensitivity Analysis. ![Image](../assets/icons/run.ico).
-    
+
+5.  Start the Sensitivity Analysis. <img width="32" src="../assets/icons/run.ico">.
+
 6.  View the sensitivity rankings in tab **Sensitivity Analysis** for the outputs to identify those input parameters with the highest impact.
-    
+
 7.  View the sensitivity matrix in tab **Results** for all output-PK Parameter combinations and all input parameters for details.
-    
+
 In the following, we explain the mathematical background of the sensitivity analysis provided.
 
 ## Mathematical background‌
 
-To calculate the sensitivity of a PK Parameter of a certain output = PKj  to an input parameter = \[ pi \]
+To calculate the sensitivity of a PK Parameter of a certain output = PKj to an input parameter = \[ pi \]
 
-*   the input parameter is varied/perturbed around the value in the simulation by a (small) change = \[ Δpi \] ,
+- the input parameter is varied/perturbed around the value in the simulation by a (small) change = \[ Δpi \] ,
 
-*   a new simulation is performed for the changed input parameter value (all other input values remain unchanged)
+- a new simulation is performed for the changed input parameter value (all other input values remain unchanged)
 
-*   the change of the PK Parameter \[ = ΔPKj \]  is calculated as the difference between the values in the new simulation and the original simulation.
+- the change of the PK Parameter \[ = ΔPKj \] is calculated as the difference between the values in the new simulation and the original simulation.
 
 The sensitivity for the PK Parameter to that input parameter is then calculated as the ratio of the relative change of that PK Parameter \[ = (ΔPKj) / PKj \] and the relative variation of the input parameter \[ = (Δpi) / pi \]:
 
@@ -64,52 +64,52 @@ For the default setting n = 2 and a = 0.1, we get 4 variation factors: 1/1.1, 1/
 
 Outputs of a simulation cannot be changed while creating or configuring the Sensitivity Analysis, you need to decide on the outputs before you create a Sensitivity Analysis.
 
-To select the outputs of interest for a simulation, open that simulation and click ![Image](../assets/icons/settings.ico) Define Settings and Run to display the Curve Selection Dialog.
+To select the outputs of interest for a simulation, open that simulation and click <img width="32" src="../assets/icons/settings.ico"> Define Settings and Run to display the Curve Selection Dialog.
 
 ## Creating a Sensitivity Analysis‌
 
 To create a new Sensitivity Analysis, do one of the following
 
-*   Mark a simulation for the Sensitivity Analysis in the Simulation Explorer and select ![Image](../assets/icons/SensitivityAnalysis.ico) **Start Sensitivity Analysis ...** from the context menu.
+- Mark a simulation for the Sensitivity Analysis in the Simulation Explorer and select <img width="32" src="../assets/icons/SensitivityAnalysis.ico"> **Start Sensitivity Analysis ...** from the context menu.
 
-*   Click ![Image](../assets/icons/AddAction.ico) **Create** in the ribbon bar **Sensitivity Analysis**.
+- Click <img width="32" src="../assets/icons/AddAction.ico"> **Create** in the ribbon bar **Sensitivity Analysis**.
 
-*   In the Simulation Explorer, right click the Sensitivity Analysis root node and select ![Image](../assets/icons/SensitivityAnalysis.ico) **Add Sensitivity Analysis** from the context menu.
+- In the Simulation Explorer, right click the Sensitivity Analysis root node and select <img width="32" src="../assets/icons/SensitivityAnalysis.ico"> **Add Sensitivity Analysis** from the context menu.
 
 The Sensitivity Analysis view is displayed and the tab **Parameters** is opened.
 
 For a hands on example, open the example project Theophylline.pksim5. You can open the folder with the example projects from the Start menu by selecting All Programs/Open Systems Pharmacology/PK-Sim/Examples.
 
-In the Simulation Explorer, mark the simulation "_Kaumeier IV 208 mg fit_" and select ![Image](../assets/icons/SensitivityAnalysis.ico) **Start Sensitivity Analysis ...** from the context menu.
+In the Simulation Explorer, mark the simulation "_Kaumeier IV 208 mg fit_" and select <img width="32" src="../assets/icons/SensitivityAnalysis.ico"> **Start Sensitivity Analysis ...** from the context menu.
 
 ![Sensitivity Analysis - Tab Parameters](../assets/images/part-5/SA_Parameters1.png)
 
 In the Simulation Explorer, the Sensitivity Analyses are also displayed in a tree. Using the context menu, you can
 
-*   rename a Sensitivity Analysis,
+- rename a Sensitivity Analysis,
 
-*   clone it in order to reuse the Sensitivity Analysis configuration,
+- clone it in order to reuse the Sensitivity Analysis configuration,
 
-*   add a Sensitivity Analysis to a Journal page,
+- add a Sensitivity Analysis to a Journal page,
 
-*   delete a Sensitivity Analysis.
+- delete a Sensitivity Analysis.
 
 ## Tab Parameters‌
 
 ### Selection of interesting input parameters‌
-    
+
 You can select the input parameters that are of interest to you and that you want to test in the Sensitivity Analysis in two ways:
 
 1.  You can select all input parameters by clicking Add All Constants. Depending on the selection Simple or Advanced in the lower selection list, all parameters in the left list (not only the filtered ones) are tested in the Sensitivity Analysis. You can then remove single parameters by clicking ![Image](../assets/icons/SA_Delete.png).
-    
+
 2.  You can select specific input parameter by manually selecting them (multiple selection is possible) and clicking Add. To identify the parameters of interest it can be helpful to reorganize the parameter list view on the left and use column filters or the Find field.
-    
+
 ![Selection of interesting input parameters](../assets/images/part-5/SA_Parameters2.png)
 
 {% hint style="tip" %}
 Be aware that only independent input parameters are displayed and selectable for Sensitivity Analysis, input parameters calculated by a formula cannot be selected.
 {% endhint %}
-  
+
 {% hint style="warning" %}
 Sensitivities are not calculated for input parameters with initial value = 0 (to prevent accidental structural model changes during sensitivity calculations); if such parameters are selected, they are ignored and not displayed in the results.
 
@@ -126,16 +126,16 @@ See “Mathematical background” for the description of the variation concept i
 
 On the right side of the tab Parameters, you can adjust the variation parameters **Number of steps** and **Variation range**. You can change the parameters by doing one of the following:
 
-*   change the parameters individually in each row,
+- change the parameters individually in each row,
 
-*   change the parameters in the top area and set the value for all input parameters by clicking ![Image](../assets/icons/RefreshAll.ico)**All**,
+- change the parameters in the top area and set the value for all input parameters by clicking <img width="32" src="../assets/icons/RefreshAll.ico">**All**,
 
-*   change the parameters in the top area, select multiple input parameters and set the value for the selected parameters only by clicking **Selection**.
+- change the parameters in the top area, select multiple input parameters and set the value for the selected parameters only by clicking **Selection**.
 
 {% hint style="tip" %}
 Be aware that the time to compute the Sensitivity Analysis is proportional to the number of simulations
 
-= number of input parameters * number of steps.
+= number of input parameters \* number of steps.
 
 So in case of performance problems, think about restricting the tested input parameters or reducing the number of steps.
 {% endhint %}
@@ -144,19 +144,19 @@ So in case of performance problems, think about restricting the tested input par
 
 In the ribbon bar **Sensitivity Analysis**, you can start and stop the calculation of the sensitivities.
 
-Click ![Image](../assets/icons/SensitivityAnalysisVisualFeedback.ico) **Show Visual Feedback** to see a progress bar of the simulations calculation.
+Click <img width="32" src="../assets/icons/SensitivityAnalysisVisualFeedback.ico"> **Show Visual Feedback** to see a progress bar of the simulations calculation.
 
 ![Visual Feedback - Progress bar of calculated simulations](../assets/images/part-5/SA_ProgressBar.png)
 
 After the calculation is finished, you can:
 
-*   switch to the tab **Sensitivity Analysis** to see for a selected PK Parameter a ranking of the input parameters by their impact on that PK parameter.
+- switch to the tab **Sensitivity Analysis** to see for a selected PK Parameter a ranking of the input parameters by their impact on that PK parameter.
 
-*   add additional **Sensitivity Analysis** tabs for other PK parameters by clicking
+- add additional **Sensitivity Analysis** tabs for other PK parameters by clicking
 
 Sensitivity Analysis in the ribbon bar Analyses.
 
-*   switch to the tab **Results** to see a tabular overview of all calculated sensitivites.
+- switch to the tab **Results** to see a tabular overview of all calculated sensitivites.
 
 ## Tab Sensitivity Analysis‌
 
@@ -169,13 +169,13 @@ Then a list of the input parameters with the most impact on that PK Parameter is
 For some outputs not all PK Parameters are reasonable, for instance clearance parameters for Fraction excreted outputs. Then no ranking is calculated and displayed.
 
 {% hint style="note" %}
-For display in the chart, the parameters which contribute 90% of the cumulated sensitivity are determined. To do this the sensitivities are sorted by the absolute values and then they are cumulated in order of their sorting, according to 
+For display in the chart, the parameters which contribute 90% of the cumulated sensitivity are determined. To do this the sensitivities are sorted by the absolute values and then they are cumulated in order of their sorting, according to
 
 ![Image](../assets/images/part-5/scum-lj.jpg)
 
 with l=1,…,nP (number of parameters) and j index of PK parameter. The cumulated sensitivities as defined above include normalization to the absolute total sensitivity. Therefore, the normalized total sensitivity Stotal = SCum, nP j = 1. The cut-off is defined so that the above cut-off parameter sensitivities capture 90% of the total sensitivity.
 {% endhint %}
-  
+
 ## Tab Results‌
 
 Here, the matrix of all calculated sensitivites is shown. See Warnings in “Selection of interesting input parameters” for remarks which sensitivities are calculated.
@@ -190,13 +190,13 @@ Columns correspond to the outputs of the simulation - for each output the reason
 
 You can sort and filter rows and columns to restrict the view to the sensitivites of interest in different ways:
 
-*   Sort rows and columns by just clicking the sort triangle symbol at the right of the header.
+- Sort rows and columns by just clicking the sort triangle symbol at the right of the header.
 
-*   For simple filtering just move the cursor right to the sort symbol of the headers **Parameter**, **Output**, **PK Parameter** and click the filter symbol which shows up. You can select the values of interest in the filter list.
+- For simple filtering just move the cursor right to the sort symbol of the headers **Parameter**, **Output**, **PK Parameter** and click the filter symbol which shows up. You can select the values of interest in the filter list.
 
 ![Image](../assets/images/part-5/SA_Filter.png)
 
-*   For more sophisticated filtering, right click the header and select **Show Prefilter**. A dialog shows up, click the + symbol and enter more complex conditions.
+- For more sophisticated filtering, right click the header and select **Show Prefilter**. A dialog shows up, click the + symbol and enter more complex conditions.
 
 ![Image](../assets/images/part-5/SA_Prefilter.png)
 

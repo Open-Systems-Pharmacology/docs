@@ -37,7 +37,7 @@ Click on the **Observed Data** button to start the import component and specify 
 {% hint style="warning" %}
 Both excel file formats (xls and xlsx) are supported and it is **not** required to have Microsoft Excel® installed on your computer.
 {% endhint %}
-  
+
 {% hint style="tip" %}
 By switching the file type combo box value it is possible to import a comma separated values file (csv) or a NonMem file (NMdat). For csv files, the used separator is determined automatically. Supported separators are semicolon, comma, tabulator, period or colon. Values can be enclosed in quotes.
 {% endhint %}
@@ -56,7 +56,7 @@ Clicking on the **Preview Original Data** button allows the user to quickly revi
 **Deselecting Sheets**
 You can deselect a complete source sheet from being imported by closing the tab page (clicking the ![Image](../assets/icons/CloseTabPageButton.png) button). This can increase clarity and has a direct influence on the **Import All** button (see Import All).
 {% endhint %}
-  
+
 {% hint style="tip" %}
 **Sheet Navigation**
 If you have a large number of sheets you may need to scroll through your preview pages. This can be done by using the mouse wheel or by using the navigator buttons on the right side. To select a specific page from a list you can use the page select button.
@@ -67,15 +67,15 @@ If you have a large number of sheets you may need to scroll through your preview
 The mapping table on the right in the **Import Observed Data** window shows the automatically generated mapping of the columns of the source sheet to the targets columns. Automatic mapping of source columns onto the target columns takes the following criteria into account:
 
 1.  Equality of names.
-    
+
     The target column has the same name as the source column.
-    
+
 2.  The target column supports the unit of the source column.
-    
+
 3.  If several target columns match the above criteria, the ones that have not been used in mapping are preferred to avoid multiple mapping.
-    
+
 4.  If no matching target column can be found, proceed as for meta data information on table level.
-    
+
 The mapping of source and target columns can be changed manually by using the buttons on the right hand side of each target column cell.
 
 The predefined data types are time, concentration and error of concentrations and are available from a drop down menu. Similarly, imported data can be classified as meta data. Meta data is additional information on the imported data that applies to one or more data repository. The following meta data categories are available from the dropdown menu: molecule, species, organ, compartment, study ID, gender, dose, route and patient ID. For further information on handling and entering meta data see, “Entering Meta Data”. Units can be specified after clicking on ![Image](../assets/icons/IconUnitInformation.png).
@@ -83,7 +83,7 @@ The predefined data types are time, concentration and error of concentrations an
 {% hint style="warning" %}
 A source column can only be mapped to a target column if the data types are compatible. This means, for example, that you cannot map a source column of data type 'date' to a target column of data type 'number'. Source columns of data type text can be mapped to all target column data types.
 {% endhint %}
-  
+
 {% hint style="tip" %}
 **Clinical Data Import**
 You may have a large number of columns in your sheet when importing clinically observed data. In this case it might be a good idea to clear the default mapping and map manually only those columns you are interested in. Alternatively, use the Preview of the Original Data to select the data range that you wish to import. Use the Group By Mapping (see Using Group By in the mapping) to split the data into several parts (for example: Group By treatment to get a table for each treatment).
@@ -91,17 +91,17 @@ You may have a large number of columns in your sheet when importing clinically o
 
 The icons to the left of each target entry in the mapping dialog have the following meaning:
 
-*   The ![Image](../assets/icons/IconMetaData.png) icon indicates that meta data are requested.
+- The ![Image](../assets/icons/IconMetaData.png) icon indicates that meta data are requested.
 
-*   The ![Image](../assets/icons/IconMetaDataMissing.png) icon indicates that meta data are requested which are not entered right now.
+- The ![Image](../assets/icons/IconMetaDataMissing.png) icon indicates that meta data are requested which are not entered right now.
 
-*   The ![Image](../assets/icons/IconUnitInformation.png) icon indicates that unit information are requested.
+- The ![Image](../assets/icons/IconUnitInformation.png) icon indicates that unit information are requested.
 
-*   The ![Image](../assets/icons/IconUnitInformationMissing.png) icon indicates that unit information are requested which are not explicitly entered right now.
+- The ![Image](../assets/icons/IconUnitInformationMissing.png) icon indicates that unit information are requested which are not explicitly entered right now.
 
-*   The ![Image](../assets/icons/IconMetaDataAndUnitInformation.png) icon indicates that meta data and unit information are requested.
+- The ![Image](../assets/icons/IconMetaDataAndUnitInformation.png) icon indicates that meta data and unit information are requested.
 
-*   The ![Image](../assets/icons/IconGroupBy.png) icon indicates that the data will be split into several tables by distinct values of source column (see Using Group By in the mapping).
+- The ![Image](../assets/icons/IconGroupBy.png) icon indicates that the data will be split into several tables by distinct values of source column (see Using Group By in the mapping).
 
 ![Mapping](../assets/images/part-5/Mapping.png)
 
@@ -135,7 +135,7 @@ You can go through each source sheet, map the columns and import the sheet as ne
 {% hint style="warning" %}
 Each required target column must be mapped onto at least one source column to enable the import buttons.
 {% endhint %}
-  
+
 {% hint style="note" %}
 **Remapping And Table Replacement**
 If you click the import button for a sheet that you have already imported you will be asked whether the already imported tables should be replaced by the newly imported ones, (see below).
@@ -144,7 +144,7 @@ If you click the import button for a sheet that you have already imported you wi
 
 By overwriting existing tables it does not matter how many tables have been imported by the previous mapping. If you confirm the replacement all previously imported tables which are based on the current sheet are replaced. If you dis-confirm the replacement the new tables are appended. The tables get serially numbered to get unique names.
 {% endhint %}
-  
+
 {% hint style="tip" %}
 **Import All**
 If your source sheets are well mapped, you can use the **Import All** button to import all sheets by one mouse click.
@@ -159,7 +159,7 @@ Meta data are additional information that the calling application might request 
 {% hint style="note" %}
 All required meta data are indicated by a yellow background color and missing or invalid values are indicated by a preceding icon. In the tool tips you can get more information on the value which is requested. Optional meta data have a white background color.
 {% endhint %}
-  
+
 {% hint style="tip" %}
 **OK To All and Apply to All**
 Meta data and unit information can be copied to other columns or tables either during the mapping or upon import in the preview. Depending on the context, this is done by pressing the **OK To All** or **Apply To All** button. Individual meta data can be applied to other imported sheets by using the button next to the combo box, the whole set of metadata is applied to all other tables using the Apply to All.
@@ -193,24 +193,24 @@ To complete the import of data tables to the calling application press the **OK*
 Missing User Input
 All required meta data and units need to be defined before finalizing the import. Each table in which meta data and/or unit information is missing, is labelled by a ![Image](../assets/icons/IconMissingData.png) icon preceeding the table name. Use the page select button ![Image](../assets/icons/PageSelectorButton.png) to get a list of all tables and identify those with missing information.
 {% endhint %}
-  
+
 {% hint style="tip" %}
 Deselecting Tables
 You can deselect an imported table from being transferred by closing its tab (clicking the ![Image](../assets/icons/CloseTabPageButton.png) button).
 {% endhint %}
-  
+
 {% hint style="tip" %}
 Collect From Different Sources
 Before you transfer the imported tables to the calling application (and complete the import), you are free to go back to the source page and continue selecting more tables for import even from different source files.
 {% endhint %}
-  
+
 {% hint style="note" %}
 The PKExcelImporter component determines the data type of a column by the first data rows. If there are values in the following rows that cannot be converted into the determined data type, those rows are skipped. If this results in an empty imported table, this table is deleted straight away and cannot be transferred.
 {% endhint %}
 
 ## Editing Observed Data‌
 
-Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing meta data. Changes are reversible through ![Image](../assets/icons/Undo.ico) and will be tracked in the project history. Numerically changing a value is reflected in real time in the preview graph below and will result in moving the data point in the data grid to the new settings
+Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing meta data. Changes are reversible through <img width="32" src="../assets/icons/Undo.ico"> and will be tracked in the project history. Numerically changing a value is reflected in real time in the preview graph below and will result in moving the data point in the data grid to the new settings
 
 The new editing window can be accessed through double clicking the observed data in the building block view or through the context menu.
 

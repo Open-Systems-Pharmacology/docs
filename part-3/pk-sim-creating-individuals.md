@@ -18,7 +18,7 @@ Please note that the volume of fat tissue is not optimized by the algorithm as t
 
 ### Definition of new Individual in PK-Sim®‌
 
-- Click on **Individual** ![Image](../assets/icons/Individual.ico) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+- Click on **Individual** <img width="32" src="../assets/icons/Individual.ico"> in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
 - Right mouse click on **Individuals** in the **Building Block Explorer** and select Add Individual...
 
@@ -35,31 +35,25 @@ The **Create Individual** building block window is subdivided into three tabs: *
 
 In the first drop-down menu you can choose from the following species:
 
-- Human ![Image](../assets/icons/human.ico)
+- Human <img width="32" src="../assets/icons/human.ico">
 
-- Monkey ![Image](../assets/icons/monkey.ico)
+- Monkey <img width="32" src="../assets/icons/monkey.ico">
 
-- Beagle ![Image](../assets/icons/beagle.ico)
+- Beagle <img width="32" src="../assets/icons/beagle.ico">
 
+* Dog <img width="32" src="../assets/icons/dog.ico">
 
-- Dog ![Image](../assets/icons/dog.ico)
+- Minipig <img width="32" src="../assets/icons/minipig.ico">
 
+* Rat <img width="32" src="../assets/icons/rat.ico">
 
-- Minipig ![Image](../assets/icons/minipig.ico)
+- Mouse <img width="32" src="../assets/icons/mouse.ico">
 
+* Rabbit <img width="32" src="../assets/icons/rabbit.ico">
 
-- Rat ![Image](../assets/icons/rat.ico)
+**Human**
 
-
-- Mouse ![Image](../assets/icons/mouse.ico)
-
-
-- Rabbit ![Image](../assets/icons/rabbit.ico)
-
-
-**Human** 
-
-If **Human**  ![Image](../assets/icons/human.ico)  is selected, you can select one of the following populations from the next drop-down menu:
+If **Human** <img width="32" src="../assets/icons/human.ico"> is selected, you can select one of the following populations from the next drop-down menu:
 
 - Asian (Tanaka, 1996) \[[74](../references.md#74)\]
 
@@ -130,7 +124,7 @@ Significant breed-specific differences exist for some animal species. For exampl
   {% endhint %}
 
 Irrespective of the species chosen, the **Calculation Method** for the estimation of the surface area of the capillary endothelium has to be selected. The endothelial surface area is needed for calculation of the rate of permeation through the endothelial barrier between plasma and interstitial space, which is determined by the permeability - surface area product. The drug dependent specific organ permeability can be defined in the **Compound** building block (see [PK-Sim® - Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md)).
-  
+
 Literature for capillary surface areas for the different organs and species is rather limited. Therefore, PK-Sim® provides two heuristics to estimate the capillary surface area of the organs, which can be selected from the drop-down menu
 
 1.  **Organ vascularization (default method)**. The capillary surface area (SA) is estimated by ![Image](../assets/images/part-3/sa-k.png) , with the constant of proportionality k, the fraction of vascular space of an organ ![Image](../assets/images/part-3/fvas-organ.png), and the organ volume ![Image](../assets/images/part-3/vorgan.png). The idea behind this heuristics is the following: with the assumption that the morphology of the vascular tree is similar in each organ, the specific surface area per organ volume can be estimated by the capillary density of an organ, which in turn can be estimated by the fraction of vascular space of an organ.
@@ -140,7 +134,7 @@ Literature for capillary surface areas for the different organs and species is r
 #### Anatomy & Physiology‌
 
 Anatomical and physiological properties in PK-Sim® are set at default values for a mean representative of a species. These default values were carefully selected from literature. In the human species module, also the mean values for children of all age groups are included. For some purposes, e.g. to simulate pathological disorders, it is desirable to change these values. This can be done in the **Anatomy & Physiology** tab, in which the parameters are, using the default settings, displayed in a tree structure on the left hand side.
-  
+
 By default, a **Simple** view of the various properties is displayed, in which only the most relevant parameters are shown. Using the drop-down menu at the bottom of the window, you can switch to the **Advanced** tree view or to the **Hierarchy** view. In the **Simple** and the **Advanced** view, the parameters are grouped based on function whereas in the **Hierarchy** view, they are listed according to the internal model structure. Please note that only containers comprising visible parameters are displayed. There are additional parameters in the model which are not displayed in PK-Sim®. They are, however, displayed in MoBi®. For details please see [Working with MoBi®](../part-4/first-steps.md). The tree view shows only drawings that are currently open. To access the various parameters,
 
 1.  Click on the light grey arrow to open the respective tree view node
@@ -154,8 +148,8 @@ Use the **Filter** function above the tree view to find parameters more quickly.
 {% endhint %}
 
 In the window on the right hand side, the details of the respective parameter group will be shown.
-  
-Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** ![Image](../assets/icons/Favorites.ico) in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
+
+Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** <img width="32" src="../assets/icons/Favorites.ico"> in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
 
 {% hint style="tip" %}
 The order of the columns can be changed manually. Drag the column header to the desired position to change the sequence of columns.
@@ -212,7 +206,7 @@ To edit properties of existing individuals:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Edit.ico) **Edit...**
+2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**
 
 or simply double click on the existing individual in the **Building Block Explorer**.
 
@@ -224,7 +218,7 @@ In order to **scale** an existing individual:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/IndividualScaling.ico) **Scale...**
+2.  Select <img width="32" src="../assets/icons/IndividualScaling.ico"> **Scale...**
 
     The **Scale Individual** dialog opens, which is divided into four tabs: **Biometrics**, **Scaling configuration**, **Anatomy & Physiology**, and **Expression**. Details about the three tabs **Biometrics**, **Anatomy & Physiology**, and **Expression** have already been described for the **Create Individual** dialog (please see above). Here, only details about the tab **Scaling configuration** are given:
 
@@ -232,25 +226,25 @@ In order to **scale** an existing individual:
 
     The following six columns appear in the **Scaling configuration** tab:
 
-  * **Parameter**: The name of the parameter modified in the base individual used for scaling.
+- **Parameter**: The name of the parameter modified in the base individual used for scaling.
 
-  * **Source default value**: The original value of the parameter in the base individual according to the database underlying PK-Sim®. The source default value depends on the biometrics (race, age, and gender) of the base individual.
+- **Source default value**: The original value of the parameter in the base individual according to the database underlying PK-Sim®. The source default value depends on the biometrics (race, age, and gender) of the base individual.
 
-  * **Source value**: The modified value of the parameter in the base individual.
+- **Source value**: The modified value of the parameter in the base individual.
 
-  * **Default value**: The default value of the parameter in the scaled individual according to the database underlying PK-Sim®. This value will differ from the source default value if the scaled individual is characterized by different biometrics (race, age, and/or gender).
+- **Default value**: The default value of the parameter in the scaled individual according to the database underlying PK-Sim®. This value will differ from the source default value if the scaled individual is characterized by different biometrics (race, age, and/or gender).
 
-  * **Scaled value**: The modified value of the parameter in the scaled individual. This value depends on the scaling method selected in the last column (Scaling method):
+- **Scaled value**: The modified value of the parameter in the scaled individual. This value depends on the scaling method selected in the last column (Scaling method):
 
-  * **Scaling method**: Select between four options for the scaling method from the drop-down menu:
+- **Scaling method**: Select between four options for the scaling method from the drop-down menu:
 
-    1.  **Same percentile**: This method is only available in the case of distributed parameters such as organ weights and blood flow rates in human populations. If a modification was made in the base individual the parameter value will not represent an average value anymore, i.e. it will not lie on the 50th percentile of the distributed parameters for the given population (characterized by race, age, and gender). Choosing this option, the same percentile will be used for your scaled individual of the selected population based on the PK-Sim® database.
+  1.  **Same percentile**: This method is only available in the case of distributed parameters such as organ weights and blood flow rates in human populations. If a modification was made in the base individual the parameter value will not represent an average value anymore, i.e. it will not lie on the 50th percentile of the distributed parameters for the given population (characterized by race, age, and gender). Choosing this option, the same percentile will be used for your scaled individual of the selected population based on the PK-Sim® database.
 
-    2.  **Use default value**: The modification made in the base individual will not be transferred to the scaled individual. Instead, the default value of the parameter in the scaled individual according to the database underlying PK- Sim® will be used.
+  2.  **Use default value**: The modification made in the base individual will not be transferred to the scaled individual. Instead, the default value of the parameter in the scaled individual according to the database underlying PK- Sim® will be used.
 
-    3.  **Use source value**: If a modification was made in the base individual the identical parameter value will be used in the scaled individual. Please note that for most parameters this is only a reasonable option if the biometrics (race, age, gender) of the base and the scaled individual are identical or at least similar.
+  3.  **Use source value**: If a modification was made in the base individual the identical parameter value will be used in the scaled individual. Please note that for most parameters this is only a reasonable option if the biometrics (race, age, gender) of the base and the scaled individual are identical or at least similar.
 
-    4.  **Same ratio**: The ratio of the source value divided by the source default value is multiplied by the default value of the scaled individual.
+  4.  **Same ratio**: The ratio of the source value divided by the source default value is multiplied by the default value of the scaled individual.
 
 The line **Target weight**, which appears only on the top of this window if modifications in organ volumes were made in the base individual, indicates the body weight of the scaled individual. A modification of organ volumes will automatically lead to a change in total body weight, which is the sum of all organ weights. Thus, if the default value of an organ weight is changed, the new body weight, which is no longer in agreement with the body weight previously selected on the biometrics tab, will be shown.
 
@@ -260,11 +254,11 @@ To clone an individual in the project:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SimulationClone.ico) **Clone...**
+2.  Select <img width="32" src="../assets/icons/SimulationClone.ico"> **Clone...**
 
 3.  Set an alternative name for the clone and enter a description if desired
 
-4.  Confirm and close the window by clicking ![Image](../assets/icons/OK.ico) **OK**
+4.  Confirm and close the window by clicking <img width="32" src="../assets/icons/OK.ico"> **OK**
 
 ### Saving of Individuals as Templates‌
 
@@ -274,7 +268,7 @@ To save an existing individual as template:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SaveAction.ico) **Save as Template...**
+2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**
 
 A message will appear confirming that the Individual was successfully saved in the template database.
 
@@ -292,11 +286,11 @@ To load existing individuals from the template database:
 
 1.  Right mouse click on **Individuals** in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/LoadAction.ico) **Load From Template...**
+2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
 
 3.  Select the desired individual from the user templates. In case an individual with the same name already exists in the project, a warning appears and you will have to **Rename** the individual that is to be loaded from template.
 
-4.  Click **OK** ![Image](../assets/icons/OK.ico)
+4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
 
 The selected individual will appear in the **Building Block Explorer** view.
 
@@ -308,7 +302,7 @@ To delete individuals from a project:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/delete.ico) **Delete...**
+2.  Select <img width="32" src="../assets/icons/delete.ico"> **Delete...**
 
 3.  Confirm to delete the individual by clicking **Yes**
 

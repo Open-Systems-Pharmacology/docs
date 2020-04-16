@@ -10,9 +10,9 @@ After having made yourself familiar with the processes of building model compone
 
 Existing simulations can be loaded by either:
 
-- Clicking on the ![Image](../assets/icons/Simulation.ico) **Load Simulation into Project** button in the Import Ribbon Group.
+- Clicking on the <img width="32" src="../assets/icons/Simulation.ico"> **Load Simulation into Project** button in the Import Ribbon Group.
 
-- Right-click on an existing simulation in the Simulations Explorer and select ![Image](../assets/icons/Simulation.ico)
+- Right-click on an existing simulation in the Simulations Explorer and select <img width="32" src="../assets/icons/Simulation.ico">
 
 Load Simulation in the context menu.
 
@@ -28,9 +28,9 @@ To create a simulation, a full set of building blocks is needed. All building bl
 
 A simulation can be created by:
 
-- Clicking on the ![Image](../assets/icons/Simulation.ico) **Create** button in the Simulation Ribbon Group.
+- Clicking on the <img width="32" src="../assets/icons/Simulation.ico"> **Create** button in the Simulation Ribbon Group.
 
-- Right-clicking on an existing simulation in the Simulations Explorer and select ![Image](../assets/icons/Simulation.ico) Create Simulation in the context menu.
+- Right-clicking on an existing simulation in the Simulations Explorer and select <img width="32" src="../assets/icons/Simulation.ico"> Create Simulation in the context menu.
 
 Creating a simulation opens the **Simulation Creation Wizard** in a new window as shown below
 
@@ -38,13 +38,13 @@ Creating a simulation opens the **Simulation Creation Wizard** in a new window a
 
 In the first step of the simulation creation you can choose the building blocks from which the simulation will be created. Using the combobox you can browse through the existing building blocks and select the desired item. You also need to specify a unique name for the new simulation. which you may also do later in the simulation creation process.
 
-In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the ![Image](../assets/icons/AddAction.ico) button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Molecule Start Values](building-block-concepts.md#molecule-start-values) and [Parameter Start Values](building-block-concepts.md#parameter-start-values).
+In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the <img width="32" src="../assets/icons/AddAction.ico"> button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Molecule Start Values](building-block-concepts.md#molecule-start-values) and [Parameter Start Values](building-block-concepts.md#parameter-start-values).
 
-Clicking on **Next** ![Image](../assets/icons/Next.ico) will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the ![Image](../assets/icons/Save.ico) **Save Changes as new building block** button.
+Clicking on **Next** <img width="32" src="../assets/icons/Next.ico"> will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the <img width="32" src="../assets/icons/Save.ico"> **Save Changes as new building block** button.
 
 ![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW_MSV.png)
 
-Clicking on **Next** ![Image](../assets/icons/Next.ico) will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
+Clicking on **Next** <img width="32" src="../assets/icons/Next.ico"> will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
 
 {% hint style="note" %}
 Changes of start values will affect newly created simulations. Adding them to the project, will leave the original start values building blocks unaffected. **Save Changes as new building block** will create a new building block under a different name.
@@ -53,20 +53,20 @@ Changes of start values will affect newly created simulations. Adding them to th
 ![Simulation Creation Wizard: Edit Parameter Start Values](../assets/images/part-4/SimCW_PSV.png)
 
 {% hint style="warning" %}
-Newly created Molecule and Parameter Start Value building blocks in step one, or Start Values building blocks saved in steps two and three during the simulation creation process will only be added to the project when the simulation creation is completed by clicking **Finish** ![Image](../assets/icons/OK.ico) and not cancelled prematurely.
+Newly created Molecule and Parameter Start Value building blocks in step one, or Start Values building blocks saved in steps two and three during the simulation creation process will only be added to the project when the simulation creation is completed by clicking **Finish** <img width="32" src="../assets/icons/OK.ico"> and not cancelled prematurely.
 {% endhint %}
 
-The third and fourth steps after clicking **Next** ![Image](../assets/icons/next.ico) allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
+The third and fourth steps after clicking **Next** <img width="32" src="../assets/icons/next.ico"> allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
 
 In the last step, you can choose to immediately run the simulation upon completion of the simulation creation process by selecting the checkbox ![Image](../assets/icons/Checked.png) **Run Simulation** as depicted.
 
 ![Simulation Creation Wizard: Finish](../assets/images/part-4/SimCW_Finish.png)
 
-Finish the simulation creation by clicking on **OK** ![Image](../assets/icons/OK.ico). MoBi® now generates the new simulation, the progress of which is visualized by a progress bar. During this process the simulation is also checked for consistency, and possible issues will be reported.
+Finish the simulation creation by clicking on **OK** <img width="32" src="../assets/icons/OK.ico">. MoBi® now generates the new simulation, the progress of which is visualized by a progress bar. During this process the simulation is also checked for consistency, and possible issues will be reported.
 
 ### Warnings and Errors‌
 
-If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as ![Image](../assets/icons/Warning.ico) Warning or ![Image](../assets/icons/Error.ico) Error depending on their severity.
+If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img width="32" src="../assets/icons/Warning.ico"> Warning or <img width="32" src="../assets/icons/Error.ico"> Error depending on their severity.
 
 Errors and warning messages are shown in a notification viewer at the bottom of the page similar to the history viewer. Warnings and error notifications are described in more detail in the viewer as such describing
 
@@ -78,7 +78,8 @@ Errors and warning messages are shown in a notification viewer at the bottom of 
 
 The list of warnings and errors is constantly updated, i.e. if a warning is resolved, the entry is removed from the list. Likewise the viewer can be hidden or shown by pressing the **Notification** button in the _Views_ section of the _Building block_ section of the page.
 
-#### Warning: Non-fatal inconsistency. 
+#### Warning: Non-fatal inconsistency.
+
 Warnings are generated, for example, in these cases:
 
 - References in formulas for non-essential objects like observers are faulty. In this case, the affected observer is simply omitted in the created simulation.
@@ -87,18 +88,19 @@ Warnings are generated, for example, in these cases:
 
 - An empty condition is present in an event.
 
-#### Error: Fatal inconsistency. 
+#### Error: Fatal inconsistency.
+
 In this case, the simulation cannot be created. Errors are generated, for example, in case of:
 
 - Missing or wrong references in formulas for essential objects like Molecule Start Values.
 
 - General syntax errors in formulas.
 
-You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the ![Image](../assets/icons/Error.ico) Errors and ![Image](../assets/icons/Warning.ico) Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
+You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the <img width="32" src="../assets/icons/Error.ico"> Errors and <img width="32" src="../assets/icons/Warning.ico"> Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
 
 ![Notifications View: Warnings](../assets/images/part-4/SimCW_Warnings.png)
 
-The ![Image](../assets/icons/Warning.ico) Warnings and ![Image](../assets/icons/Error.ico) Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the ![Image](../assets/icons/Save.ico) **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error mesage or the warning directly opens the editor in the corresponding building block.
+The <img width="32" src="../assets/icons/Warning.ico"> Warnings and <img width="32" src="../assets/icons/Error.ico"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img width="32" src="../assets/icons/Save.ico"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error mesage or the warning directly opens the editor in the corresponding building block.
 
 ## Simulation Settings‌
 
@@ -182,8 +184,8 @@ This vector is used in all error and convergence tests, which use a weighted roo
 
 ![Image](../assets/images/part-4/equation-26-3.png)
 
-|             |                                                                                                                                                                                                                                                                                                                                 |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|             |                                                                                                                                                                                         |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | UseJacobian | If the Jacobian matrix of the ODE system should be supplied to the solver, use the value '1', otherwise use '0'. The default value is '1'. Using the Jacobian speeds up the simulation. |
 
 ## Editing Simulations‌
@@ -201,7 +203,7 @@ If you change the value of a parameter defined by an explicit formula, the Formu
 {% endhint %}
 
 {% hint style="note" %}
-After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![Image](../assets/icons/Reset.png), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![Image](../assets/icons/Warning.ico) appears.
+After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![Image](../assets/icons/Reset.png), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign <img width="32" src="../assets/icons/Warning.ico"> appears.
 {% endhint %}
 
 {% hint style="tip" %}
@@ -262,17 +264,17 @@ The Update and Commit logic in MoBi is slightly different from the one used in P
 
 ## Running a Simulation‌
 
-To run a simulation, use the simulation edit mode by either double clicking ![Image](../assets/icons/mouse_select.png) on the simulation in the Simulation Explorer or by right-clicking ![Image](../assets/icons/mouse_select_right.png) on the simulation and select ![Image](../assets/icons/Edit.ico) **Edit** from the context menu.
+To run a simulation, use the simulation edit mode by either double clicking ![Image](../assets/icons/mouse_select.png) on the simulation in the Simulation Explorer or by right-clicking ![Image](../assets/icons/mouse_select_right.png) on the simulation and select <img width="32" src="../assets/icons/Edit.ico"> **Edit** from the context menu.
 
 Now you can run the simulation by one of the following options:
 
-- Click the ![Image](../assets/icons/Run.ico) **Run** button in the Simulation Ribbon Group
+- Click the <img width="32" src="../assets/icons/Run.ico"> **Run** button in the Simulation Ribbon Group
 
 - Press the function key **F5**
 
-Alternatively, select the ![Image](../assets/icons/Run.ico) **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ). Selecting the ![Image](../assets/icons/undo.ico) **Undo** option from the menu bar discards all changes made in the simulation and resets settings to those of the original Building Blocks.
+Alternatively, select the <img width="32" src="../assets/icons/Run.ico"> **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ). Selecting the <img width="32" src="../assets/icons/undo.ico"> **Undo** option from the menu bar discards all changes made in the simulation and resets settings to those of the original Building Blocks.
 
-The progress of a simulation run is shown by the progress bar in the lower right corner of the MoBi® window. A running simulation can be stopped by clicking the ![Image](../assets/icons/Stop.ico) **Stop** button in the Simulation Ribbon Group which will become active during a run.
+The progress of a simulation run is shown by the progress bar in the lower right corner of the MoBi® window. A running simulation can be stopped by clicking the <img width="32" src="../assets/icons/Stop.ico"> **Stop** button in the Simulation Ribbon Group which will become active during a run.
 
 The results of all simulation runs are accessible through the Simulation Explorer and the edit window. After a successful simulation run, the most recent results can be displayed in the **Results** tab in the simulation edit mode as described in MoBi® _- Simulation Results_.
 
@@ -282,35 +284,35 @@ Once a simulation is created, a number of options besides simply running the sim
 
 The context menu that opens when right-clicking on the simulation in the Simulation Explorer offers the following options:
 
-- ![Image](../assets/icons/Simulation.ico) Create Simulation \- opens the Simulation Creation Wizard (see [Create a Simulation](#create-a-simulation)).
+- <img width="32" src="../assets/icons/Simulation.ico"> Create Simulation \- opens the Simulation Creation Wizard (see [Create a Simulation](#create-a-simulation)).
 
-- ![Image](../assets/icons/Simulationload.ico) Load Simulation \- loads a new simulation into the project (see [Load a Simulation](#load-a-simulation)).
+- <img width="32" src="../assets/icons/Simulationload.ico"> Load Simulation \- loads a new simulation into the project (see [Load a Simulation](#load-a-simulation)).
 
-- ![Image](../assets/icons/run.ico) Run \- runs the simulation.
+- <img width="32" src="../assets/icons/run.ico"> Run \- runs the simulation.
 
-- ![Image](../assets/icons/Undo.ico) Refresh \- discard all changes made in the simulation.
+- <img width="32" src="../assets/icons/Undo.ico"> Refresh \- discard all changes made in the simulation.
 
-- ![Image](../assets/icons/Edit.ico) Edit \- opens the simulation in the edit window (same as double-clicking).
+- <img width="32" src="../assets/icons/Edit.ico"> Edit \- opens the simulation in the edit window (same as double-clicking).
 
-- ![Image](../assets/icons/Rename.ico) Rename \- renames the simulation.
+- <img width="32" src="../assets/icons/Rename.ico"> Rename \- renames the simulation.
 
 - ![Image](../assets/icons/Cancel.png) Remove \- deletes the simulation from the project.
 
-- ![Image](../assets/icons/Saveas.ico) Save As \- saves the simulation as pkml file.
+- <img width="32" src="../assets/icons/Saveas.ico"> Save As \- saves the simulation as pkml file.
 
-- ![Image](../assets/icons/Population.ico) Start Population Simulation \- calls the Population Simulation Analysis in PK-Sim®, loads the simulation and runs the population simulation (see “Running and analyzing a population simulation” for description).
+- <img width="32" src="../assets/icons/Population.ico"> Start Population Simulation \- calls the Population Simulation Analysis in PK-Sim®, loads the simulation and runs the population simulation (see “Running and analyzing a population simulation” for description).
 
 - Start Parameter Identification \- calls Parameter Identification tool (see [Parameter Identification](tools.md#parameter-indentification) for description).
 
-- ![Image](../assets/icons/Matlab.ico) Export simulation for Matlab®/R \- generates an xml file for use with the MoBi® toolbox developed for Matlab® and R (see [Matlab® - Introduction](../part-6/matlab-introduction.md) and [R - Introduction](../part-6/r-introduction.md) for its use).
+- <img width="32" src="../assets/icons/Matlab.ico"> Export simulation for Matlab®/R \- generates an xml file for use with the MoBi® toolbox developed for Matlab® and R (see [Matlab® - Introduction](../part-6/matlab-introduction.md) and [R - Introduction](../part-6/r-introduction.md) for its use).
 
-- ![Image](../assets/icons/ObservedData.ico) Export results to Excel® \- generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).
+- <img width="32" src="../assets/icons/ObservedData.ico"> Export results to Excel® \- generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).
 
-- ![Image](../assets/icons/PDF.ico) Export to PDF \- generates a PDF report of the model (see [Reporting](../part-5/reporting.md)).
+- <img width="32" src="../assets/icons/PDF.ico"> Export to PDF \- generates a PDF report of the model (see [Reporting](../part-5/reporting.md)).
 
-- ![Image](../assets/icons/Report.ico) Create Simulation Report \- generates a plain text (txt) file containing all simulation information.
+- <img width="32" src="../assets/icons/Report.ico"> Create Simulation Report \- generates a plain text (txt) file containing all simulation information.
 
-- Export Simulation as Matlab® Differential Equations ![Image](../assets/icons/Matlab.ico)  ... \- exports the system of ordinary differential equations (ODE) of the simulation to m-files for MATLAB®. Into the output directory defined, several m-files defining the ODE system are written. The most important files are:
+- Export Simulation as Matlab® Differential Equations <img width="32" src="../assets/icons/Matlab.ico"> ... \- exports the system of ordinary differential equations (ODE) of the simulation to m-files for MATLAB®. Into the output directory defined, several m-files defining the ODE system are written. The most important files are:
 
   - _ODEMain.m_. This is the main function. Calling this function from the MATLAB® command window by typing _tout, yout = ODEMain_ will provide the numerical solution to the ODE system, whereby _tout_ is the time- point vector and _yout_ the solution matrix, containing the time-dependent changes of the modeled species. The matrix entry ordering is as specified and explained in the file _ODEInitialValues.m_.
 
@@ -320,7 +322,7 @@ The context menu that opens when right-clicking on the simulation in the Simulat
 
   - _ODEoptions.m_. This file contains numerical settings as chosen in MoBi®. The ode15s solver is used within MATLAB® (cf. _ODEMain.m_) . Please consult the MATLAB® help for additional information.
 
-- ![Image](../assets/icons/ObservedData.ico)Export Model as Tables \- exports Reactions, Parameters and Molecule Start Values into separate worksheets of an Excel® file.
+- <img width="32" src="../assets/icons/ObservedData.ico">Export Model as Tables \- exports Reactions, Parameters and Molecule Start Values into separate worksheets of an Excel® file.
 
 ### Workflow - Merging simulations into a project‌
 

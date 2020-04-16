@@ -2,7 +2,7 @@
 
 ## Importing Observed data‌
 
-The Open Systems Pharmacology Suite offers a convenient handling of experimental data that you wish to compare with your simulations, e.g. observed data. The dialogues that cover this feature are called by clicking on the ![Image](../assets/icons/ObservedData.ico) **Observed Data** button in the **Import/Export** ribbon bar. The following steps are described in detail in Shared Tools - Import and edit of Observed _Data_.
+The Open Systems Pharmacology Suite offers a convenient handling of experimental data that you wish to compare with your simulations, e.g. observed data. The dialogues that cover this feature are called by clicking on the <img width="32" src="../assets/icons/ObservedData.ico"> **Observed Data** button in the **Import/Export** ribbon bar. The following steps are described in detail in Shared Tools - Import and edit of Observed _Data_.
 
 ## Importing Individual and Population Simulation‌
 
@@ -50,14 +50,14 @@ A window opens where you can enter the Excel® file name and the file type (\*.x
 
 You can export a PK-Sim® simulation to MoBi® by one of the following steps:
 
-- Click on the **MoBi** icon ![Image](../assets/icons/MoBi.ico) in the **Export** group of the **Modeling & Simulation** tab
+- Click on the **MoBi** icon <img width="32" src="../assets/icons/MoBi.ico"> in the **Export** group of the **Modeling & Simulation** tab
 
-- Right mouse click on the simulation name within the **Simulations Explorer** and select **Export To MoBi...** ![Image](../assets/icons/MoBi.ico)
+- Right mouse click on the simulation name within the **Simulations Explorer** and select **Export To MoBi...** <img width="32" src="../assets/icons/MoBi.ico">
 
 The program MoBi® will open with the exported simulation. You can then save the exported simulation within MoBi® in MoBi® format (\*.mbp3 file).
 
 {% hint style="note" %}
-Please note that if the active window in PK-Sim® corresponds to a building block rather than a simulation, the **MoBi** icon ![Image](../assets/icons/MoBi.ico) in the **Export** group of the **Modeling & Simulation** is deactivated.
+Please note that if the active window in PK-Sim® corresponds to a building block rather than a simulation, the **MoBi** icon <img width="32" src="../assets/icons/MoBi.ico"> in the **Export** group of the **Modeling & Simulation** is deactivated.
 {% endhint %}
 
 ## Export to \*.pkml file for MoBi®‌
@@ -76,7 +76,7 @@ Via exporting the simulation to PDF format a report will be generated. For detai
 
 ## Export for Matlab / R‌
 
-A \*.xml file can be used to access a PK-Sim® model from within Matlab® ![Image](../assets/icons/Matlab.ico)  (cf. [Working with Matlab® and R](../part-6/r-introduction.md)) or the software R (cf. [R Toolbox for MoBi®](../part-6/r-introduction.md)). To export a PK-Sim® model to a \*.xml file:
+A \*.xml file can be used to access a PK-Sim® model from within Matlab® <img width="32" src="../assets/icons/Matlab.ico"> (cf. [Working with Matlab® and R](../part-6/r-introduction.md)) or the software R (cf. [R Toolbox for MoBi®](../part-6/r-introduction.md)). To export a PK-Sim® model to a \*.xml file:
 
 - Right mouse click on the simulation name within the **Simulations Explorer** and select **Export for Matlab / R ...**
 
@@ -98,7 +98,7 @@ A window opens where you can choose the directory and enter the file name. The f
 
 You can export the project history that contains any user action to an Excel® file. In order to do so:
 
-- Click on the **Create Report** icon ![Image](../assets/icons/History.ico) in the **Export** group of the **Modeling & Simulation** tab
+- Click on the **Create Report** icon <img width="32" src="../assets/icons/History.ico"> in the **Export** group of the **Modeling & Simulation** tab
 
 A window opens where you can choose the directory and enter the \*.xls file name.
 
@@ -124,27 +124,28 @@ If an old project is simply opened with a new PK-Sim version, it will contain **
 
 To simplify this task, a concept of **project snapshot** is introduced in PK-Sim 7.3.
 
-A project snapshot contains the **minimal amount of information** required to recreate the project from scratch. This includes the information on primary substance specific input parameters (e.g. molecular properties like _molecular weight_, _lipophilicity_, etc.) and required inputs (e.g. demographic characteristics) for defining the system parameters. Further, any changes made in the existing model, such as a change in liver volume, that is not a default value, will be stored in the snapshot and included in the new model once recreated from the snapshot. 
+A project snapshot contains the **minimal amount of information** required to recreate the project from scratch. This includes the information on primary substance specific input parameters (e.g. molecular properties like _molecular weight_, _lipophilicity_, etc.) and required inputs (e.g. demographic characteristics) for defining the system parameters. Further, any changes made in the existing model, such as a change in liver volume, that is not a default value, will be stored in the snapshot and included in the new model once recreated from the snapshot.
 
 Project snapshots are human-readable text files in [JSON format](https://en.wikipedia.org/wiki/JSON)
 
 ![Snapshot example](../assets/images/part-3/Snapshot_Example.jpg)
 
 The following PK-Sim entities are currently supported by snapshots and will be recreated when a project is loaded from snapshot:
-* All building block types (incl. observed data)
-* Simulations
-* Parameter Identifications
-* Simulation comparisons
+
+- All building block types (incl. observed data)
+- Simulations
+- Parameter Identifications
+- Simulation comparisons
 
 The following PK-Sim entities are not yet supported:
-* Sensitivity Analyses
 
-To export a project to snapshot, select **File** :arrow_right:  **Export to Snapshot**
+- Sensitivity Analyses
 
-{% hint style="warning" %} Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect. 
+To export a project to snapshot, select **File** :arrow_right: **Export to Snapshot**
+
+{% hint style="warning" %} Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect.
 In this case PK-Sim will warn you. If exported anyway, the new project created from this snapshot may have some undesired deviations from the original projects, which must be corrected manually by the user.
 
 ![Snapshot export warning](../assets/images/part-3/Snapshot_Export_Warning.png){% endhint %}
 
-To load a project from snapshot, select **File** :arrow_right:  **Load from Snapshot**
-
+To load a project from snapshot, select **File** :arrow_right: **Load from Snapshot**

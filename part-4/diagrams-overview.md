@@ -4,11 +4,11 @@ In this chapter you find an overview and details of the diagrams usage.
 
 For the three building blocks **Reactions**, **Spatial Structure**, and **Simulation**, diagrams (also known as flow charts) are available in addition to the structure by lists or trees for the following reasons:
 
-*   Reactions and molecules form networks, which are much easier to comprehend from a graphical representation.
+- Reactions and molecules form networks, which are much easier to comprehend from a graphical representation.
 
-*   The spatial structure consists of hierarchical containers, which are connected by so called neighborhoods; a two dimensional diagram can represent the structure much more naturally than a one dimensional list or tree.
+- The spatial structure consists of hierarchical containers, which are connected by so called neighborhoods; a two dimensional diagram can represent the structure much more naturally than a one dimensional list or tree.
 
-*   The simulation is built from a spatial structure and reaction networks within each compartment; so here the most complex graphical representation is required.
+- The simulation is built from a spatial structure and reaction networks within each compartment; so here the most complex graphical representation is required.
 
 These diagrams are used for three purposes: visualization, navigation and editing of complex models.
 
@@ -22,23 +22,23 @@ You may zoom and scroll within the diagram, if the whole model cannot be display
 
 To scroll the diagram, use one of the following options:
 
-*   Use the scrollbars.
+- Use the scrollbars.
 
-*   Use the mouse wheel to scroll vertically or press the **Shift** key while using the mouse wheel to scroll horizontally.
+- Use the mouse wheel to scroll vertically or press the **Shift** key while using the mouse wheel to scroll horizontally.
 
-*   For the spatial structure and simulation, there is a **Diagram Overview** to the left of the diagram and above the model tree. Here, the current clipping is marked by a rectangular frame. You can pick this frame at its edge and move it to select the displayed clipping of the diagram, i.e., to scroll the diagram.
+- For the spatial structure and simulation, there is a **Diagram Overview** to the left of the diagram and above the model tree. Here, the current clipping is marked by a rectangular frame. You can pick this frame at its edge and move it to select the displayed clipping of the diagram, i.e., to scroll the diagram.
 
-	![Image](../assets/images/part-4/DiagramOverviewScroll.png)
+  ![Image](../assets/images/part-4/DiagramOverviewScroll.png)
 
 To zoom the diagram, use one of the following options:
 
-*   Press the **Ctrl** key and use the mouse wheel to zoom in and out.
+- Press the **Ctrl** key and use the mouse wheel to zoom in and out.
 
-*   Press the **Shift** key and drag the mouse to select a rectangle to zoom into the selected area.
+- Press the **Shift** key and drag the mouse to select a rectangle to zoom into the selected area.
 
-*   Right-click in the diagram to open the **context menu** and select a zoom command from the submenu **Diagram**.
+- Right-click in the diagram to open the **context menu** and select a zoom command from the submenu **Diagram**.
 
-*   In the **Diagram Overview** (see above), use the mouse to grab the frame at the corner and resize it to zoom the diagram.
+- In the **Diagram Overview** (see above), use the mouse to grab the frame at the corner and resize it to zoom the diagram.
 
 ![Image](../assets/icons/DiagramOverviewZooml.png)
 
@@ -56,17 +56,17 @@ Alternatively, you can navigate to some entity in the diagram, double click it, 
 
 In the spatial structure and simulation view, you can navigate into subcontainers and return to the parent container by expanding and collapsing a container. Do one of the following:
 
-*   Click the **expand** symbol ![Image](../assets/icons/ExpandSymbol.png) in the top left corner of a container to expand the container. Except for the parent containers, the superstructure is often masked out for clarity.
+- Click the **expand** symbol ![Image](../assets/icons/ExpandSymbol.png) in the top left corner of a container to expand the container. Except for the parent containers, the superstructure is often masked out for clarity.
 
-*   Click the **collapse** symbol ![Image](../assets/icons/CollapseSymbol.png) to collapse a container. A possibly hidden superstructure is redisplayed.
+- Click the **collapse** symbol ![Image](../assets/icons/CollapseSymbol.png) to collapse a container. A possibly hidden superstructure is redisplayed.
 
-*   At anytime you can right-click into the diagram to open the context menu and select **Show all children** to show all hidden children of a container.
+- At anytime you can right-click into the diagram to open the context menu and select **Show all children** to show all hidden children of a container.
 
-*   Press **Shift** and click ![Image](../assets/icons/ExpandSymbol.png) to expand a container without hiding other containers.
+- Press **Shift** and click ![Image](../assets/icons/ExpandSymbol.png) to expand a container without hiding other containers.
 
-*   Press **Shift** and click ![Image](../assets/icons/CollapseSymbol.png) to collapse a container without redisplaying hidden structures.
+- Press **Shift** and click ![Image](../assets/icons/CollapseSymbol.png) to collapse a container without redisplaying hidden structures.
 
-*   Press **Ctrl** and click ![Image](../assets/icons/ExpandSymbol.png) / ![Image](../assets/icons/CollapseSymbol.png) to expand resp. collapse a container recursively.
+- Press **Ctrl** and click ![Image](../assets/icons/ExpandSymbol.png) / ![Image](../assets/icons/CollapseSymbol.png) to expand resp. collapse a container recursively.
 
 ![Expanded Kidney Structure](../assets/images/part-4/Kidney.png)
 
@@ -74,11 +74,11 @@ In the spatial structure and simulation view, you can navigate into subcontainer
 
 Editing is a more complex topic than navigating. You can make three kinds of changes:
 
-*   Model changes by adding or removing entities
+- Model changes by adding or removing entities
 
-*   Diagram changes for example by changing or fixing the location of nodes
+- Diagram changes for example by changing or fixing the location of nodes
 
-*   Display changes like zooming and scrolling and Diagram options
+- Display changes like zooming and scrolling and Diagram options
 
 The model and diagram state after changes is stored within the project, diagram options are stored within the user settings, zooming and scrolling is not stored.
 
@@ -92,61 +92,61 @@ The different context menu items are described in the sections below.
 
 To edit the model, do one of the following:
 
-*   Select ![Image](../assets/icons/ContainerAdd.ico) **Create Container** from the **context menu** to add a new container (or any other entity type).
+- Select <img width="32" src="../assets/icons/ContainerAdd.ico"> **Create Container** from the **context menu** to add a new container (or any other entity type).
 
-*   Select ![Image](../assets/icons/ContainerLoad.ico) **Load Container** to load a previously saved container (or any other entity type).
+- Select <img width="32" src="../assets/icons/ContainerLoad.ico"> **Load Container** to load a previously saved container (or any other entity type).
 
-*   Select ![Image](../assets/icons/Rename.ico) **Rename** to rename an entity.
+- Select <img width="32" src="../assets/icons/Rename.ico"> **Rename** to rename an entity.
 
-*   Double click the entity or select ![Image](../assets/icons/Edit.ico) **Edit** from the context menu to focus and edit an entity.
+- Double click the entity or select <img width="32" src="../assets/icons/Edit.ico"> **Edit** from the context menu to focus and edit an entity.
 
-*   Select ![Image](../assets/icons/Save.ico) **Save** to save an entity separate from the project. You can load such entities in the same or into other projects.
+- Select <img width="32" src="../assets/icons/Save.ico"> **Save** to save an entity separate from the project. You can load such entities in the same or into other projects.
 
-*   Select ![Image](../assets/icons/Cancel.ico) **Remove** to remove an entity.
+- Select <img width="32" src="../assets/icons/Cancel.ico"> **Remove** to remove an entity.
 
 ### Diagram Changes‌
 
 You can rearrange the position of nodes or hide nodes in order to get a better visualization in general or for publishing (you can export diagrams as bitmaps, see [More Actions](#more-actions)).
 
 #### Selection of Nodes
-    
+
 First select a single diagram node or a collection of diagram nodes you want to change. Do one of the following:
-    
-*   Click a node to select it.
 
-*   Press the **Ctrl** key and click a node to add it to the selection
+- Click a node to select it.
 
-*   Press the **Ctrl** key and drag a rectangle to add all nodes inside the rectangle to the selection
+- Press the **Ctrl** key and click a node to add it to the selection
 
-*   Select **Select / All Children** from the **context menu** to select all children of a container.
+- Press the **Ctrl** key and drag a rectangle to add all nodes inside the rectangle to the selection
 
-*   Select **Select / Visible linked nodes** to select all visible nodes, which are linked to nodes in the current selection.
+- Select **Select / All Children** from the **context menu** to select all children of a container.
 
-*   Select **Select / Invert selection** to invert the selection within a container.
+- Select **Select / Visible linked nodes** to select all visible nodes, which are linked to nodes in the current selection.
+
+- Select **Select / Invert selection** to invert the selection within a container.
 
 #### Basic Actions‌
 
 Now you can move, hide or resize the selected nodes:
 
-*   Drag the mouse to move the selected nodes. After moving a container, its neighborhood node positions are automatically adjusted.
+- Drag the mouse to move the selected nodes. After moving a container, its neighborhood node positions are automatically adjusted.
 
-*   Select **Diagram / Location fixed** from the **context menu** to fix the location of selected nodes and prevent them from automatic movement (neighborhood node adjustment or Auto layout). You can deselect the checkbox, if you want to re-enable automatic movement.
+- Select **Diagram / Location fixed** from the **context menu** to fix the location of selected nodes and prevent them from automatic movement (neighborhood node adjustment or Auto layout). You can deselect the checkbox, if you want to re-enable automatic movement.
 
-*   Select **Hide Selection** to hide the selected nodes.
+- Select **Hide Selection** to hide the selected nodes.
 
-*   Select **Show all children** to show all hidden children of a container.
+- Select **Show all children** to show all hidden children of a container.
 
-*   If your collection contains not only container nodes but also elementary nodes, you can select **Large**, **Middle**, **Small** from the submenu **Nodesize** to change the node size of selected element nodes (neighborhoods, molecules, reactions, observers).
+- If your collection contains not only container nodes but also elementary nodes, you can select **Large**, **Middle**, **Small** from the submenu **Nodesize** to change the node size of selected element nodes (neighborhoods, molecules, reactions, observers).
 
 {% hint style="tip" %}
 You may use different node sizes to emphasize important reactions and molecules or to minimize marginal reactions or molecules.
 {% endhint %}
 
-*   Select ![Image](../assets/icons/Undo.ico) **Undo Diagram Layout change** to undo diagram changes like collapse/expand or auto layout. Model changes break the undo sequence, and also hide/show cannot be undone. Observe that the **History Manager** only stores model changes but not diagram changes.
+- Select <img width="32" src="../assets/icons/Undo.ico"> **Undo Diagram Layout change** to undo diagram changes like collapse/expand or auto layout. Model changes break the undo sequence, and also hide/show cannot be undone. Observe that the **History Manager** only stores model changes but not diagram changes.
 
-*   Select ![Image](../assets/icons/Forward.ico) **Diagram / To front** or ![Image](../assets/icons/Back.ico) **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
+- Select <img width="32" src="../assets/icons/Forward.ico"> **Diagram / To front** or <img width="32" src="../assets/icons/Back.ico"> **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
 
-*   Select ![Image](../assets/icons/Update.ico) **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](#display-changes)).
+- Select <img width="32" src="../assets/icons/Update.ico"> **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](#display-changes)).
 
 #### Layout Actions
 
@@ -169,13 +169,13 @@ You can layout an organ in a simulation with all compartments expanded and react
 To use a container template for layout:
 
 1.  Layout a container manually as described in the previous section.
-    
+
 2.  Right-click in this container and select **Layout / Save Container as named Template** from the **context menu** to save the diagram information of the container and all contained elements as a template.
-    
+
 3.  Select one or more containers, which you want to layout with this template.
-    
+
 4.  Right-click on one of these containers and select **Layout / Apply named Template to Selection** to apply the container template to the selected containers. The diagram settings from the template and its contents will be transferred to the selected containers; the children are identified by their path.
-    
+
 In case of missing information in the template the respective element remains unchanged. In case of template elements not available in the container nothing happens.
 
 {% hint style="warning" %}
@@ -184,19 +184,19 @@ You can use spatial structure templates for a simulation, but not vice versa.
 
 In addition, you may use the following features:
 
-*   To save and load a diagram template, select the analogous items from the diagram context menu (right-click on the diagram pane).
+- To save and load a diagram template, select the analogous items from the diagram context menu (right-click on the diagram pane).
 
-*   Select **Layout / Apply named Template to Container recursive** to apply a template to a container recursively; that means the template is applied to each subcontainer of the container. For example you can apply an organ template to all organs inside an organism by selecting this context menu item at the Organism container.
+- Select **Layout / Apply named Template to Container recursive** to apply a template to a container recursively; that means the template is applied to each subcontainer of the container. For example you can apply an organ template to all organs inside an organism by selecting this context menu item at the Organism container.
 
-*   Select **Layout / AutoLayout children** to apply a force-based auto layout.
+- Select **Layout / AutoLayout children** to apply a force-based auto layout.
 
 #### More Actions‌
 
 You can export a container as bitmap:
 
-*   Select **Diagram / Copy as bitmap** from the container or diagram context menu to copy the selected container or diagram as bitmap into the clipboard, from which you can insert it into documents or slides.
+- Select **Diagram / Copy as bitmap** from the container or diagram context menu to copy the selected container or diagram as bitmap into the clipboard, from which you can insert it into documents or slides.
 
-*   Select **Diagram / Save as bitmap** from the container or diagram context menu to save the selected container or diagram as bitmap to a file.
+- Select **Diagram / Save as bitmap** from the container or diagram context menu to save the selected container or diagram as bitmap to a file.
 
 ### Display Changes‌
 
@@ -204,7 +204,7 @@ We have already explained in “General Visualization, Scrolling and Zooming” 
 
 You can change the general appearance of the diagrams in the **Diagram Options**
 
-tab within the **User Settings** dialog (click ![Image](../assets/icons/Settings.ico) **Options** in the Utilities ribbon tab).
+tab within the **User Settings** dialog (click <img width="32" src="../assets/icons/Settings.ico"> **Options** in the Utilities ribbon tab).
 
 All these options are stored in the user settings and apply to newly opened diagram tabs. Refresh a diagram to apply the diagram options to an existing diagram tab (see “Basic Actions”).
 
@@ -214,36 +214,36 @@ Here you can change the **diagram colors** for nodes and links.
 
 You can change the **default node size** for reaction, molecule and observer nodes. You can show or hide
 
-*   the snap grid of the diagram pane,
+- the snap grid of the diagram pane,
 
-*   the molecule properties container in the spatial structure and simulation diagram,
+- the molecule properties container in the spatial structure and simulation diagram,
 
-*   the observer links in the simulation diagram,
+- the observer links in the simulation diagram,
 
-*   Molecule nodes, which are unused in the simulation diagram containers.
+- Molecule nodes, which are unused in the simulation diagram containers.
 
 ## Reactions Diagram‌
 
 ### Visualization‌
-    
+
 The Reaction building block consists of a list of reactions. Each reaction has educts and products, which are listed in the stoichiometry tab of the reaction properties editor. In the reactions diagram the reaction is represented by a triangle with a blue educts port, a green products port and a red modifiers port.
 
 Modifiers are molecules which influence the reaction, but which are neither consumed nor produced, e.g., enzymes. Modifiers, like educts and products, are listed in the properties tab of the reaction properties editor, so they can be used within formulas.
 
 Besides these reaction nodes, the reaction diagram can contain molecule nodes. The molecule nodes themselves do not represent any model objects (neither from the reactions building block nor from the molecules building block), they only represent molecule names. Instead, an educt is represented by the connection between the educts port of a reaction node and a molecule node with the educt name. Products and modifiers are represented analogously by connections to the corresponding ports.
-    
+
 ![Example Reaction Diagram](../assets/images/part-4/ReactionDiagram.png)
-    
+
 In the reaction diagram, no containers are used, so the remarks from “General Navigation, Expand and Collapse” do not apply here.
-    
+
 {% hint style="tip" %}
 The diagram colors can be changed in the diagram options (see [Display Changes](#display-changes)).
 {% endhint %}
 
 ### Model Changes‌
-    
+
 You can **insert reactions and molecule nodes** by the context menu as described in “Model Changes”.
-    
+
 To **add an educt, product or modifier to a reaction**, connect a molecule node with its name to the corresponding port of the reaction node by doing one of the following:
 
     1. Move the mouse to the outer circle or the molecule node until the mouse pointer looks like ![Image](../assets/icons/HandCursor.png); now you are in connection mode.
@@ -281,13 +281,13 @@ Most features of spatial structure diagrams have been explained in the general s
 To **insert a neighborhood** between two physical containers:
 
 1.  Move the mouse to the boundary of one of the physical containers you want to connect by a neighborhood until the cursor looks like ![Image](../assets/icons/HandCursor.png); now you are in connection mode.
-    
+
 2.  Click and hold the left mouse button and drag the mouse to the other physical container. A straight connection line is shown when dragging the mouse.
-    
+
 3.  When you reach the vicinity of a physical container, the connection line snaps to that container and turns from a thin red line to a thick black line. Move the mouse to the vicinity of the intended container.
-    
+
 4.  Release the mouse. A **New Neighborhood** dialog appears.
-    
+
 5.  Enter a unique name and click **OK**. A new neighborhood is generated.
 
 ## Simulation Diagram‌
@@ -300,8 +300,8 @@ If you have opened (and possibly edited) the spatial structure diagram before yo
 
 In the **Diagram Options** of the User Settings ([Display Changes](#display-changes)) you can show or hide
 
-*   the molecule properties container in the spatial structure and simulation diagram,
+- the molecule properties container in the spatial structure and simulation diagram,
 
-*   the observer links in the simulation diagram,
+- the observer links in the simulation diagram,
 
-*   molecule nodes, which are unused in the simulation diagram containers.
+- molecule nodes, which are unused in the simulation diagram containers.
