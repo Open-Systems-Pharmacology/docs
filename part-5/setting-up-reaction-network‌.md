@@ -14,7 +14,7 @@ This workflow will be described in detail below.
 
 *   Start MoBi®
 
-*   Click on the **File** tab and select ![Image](../assets/icons/NewProject.png) **New Project** 
+*   Click on the **File** tab and select ![Image](../assets/icons/ProjectNew.ico) **New Project** 
 
     or
 
@@ -28,15 +28,15 @@ Creating a new project automatically creates new building blocks for molecules, 
 
 To open a building block, extend its tree view in the building block explorer and either:
 
-*   Double-click on the appearing building block.
+*   Double-click on the appearing building block ![Image](../assets/icons/MoleculeFolder.ico).
 
-*   Right-click on the appearing building block and select ![Image](../assets/icons/Edit-32x32.png) **Edit** from the context menu.
+*   Right-click on the appearing building block and select ![Image](../assets/icons/Edit.ico) **Edit** from the context menu.
 
 The building block is now opened in the main window and the ribbon view changed to the building block specific ribbon tab (Edit Molecules).
 
 ### Step 3: Create three new Molecules named "Educt", "Product" and "Drug":
 
-*   Click ![Image](../assets/icons/NewMolecule.png) **New** in the building block specific ribbon tab or right-click on the empty space in the building block (_Molecule List Tree View_) in the main window and select ![Image](../assets/icons/NewMolecule.png) **Create Molecule**.
+*   Click ![Image](../assets/icons/addaction.ico) **New** in the building block specific ribbon tab or right-click on the empty space in the building block (_Molecule List Tree View_) in the main window and select ![Image](../assets/icons/addaction.ico) **Create Molecule**.
 
 *   In the appearing window, select a name for the molecule and enter a **Constant** default start amount with the value set to 1 µmol.
 
@@ -52,15 +52,15 @@ In the main window, the molecules building block should now contain three list e
 
 *   Select the **Properties** tab in the lower half of the main window and using the right combobox of **Container Type**. Select: _Logical Container ..._.
 
-*   In the diagram area, right-click anywhere and select ![Image](../assets/icons/Update.png) **Refresh** in the context menu: the color of the green container named "Organism" should change to _blue_, which characterizes logical containers.
+*   In the diagram area, right-click anywhere and select ![Image](../assets/icons/Refresh.ico) **Refresh** in the context menu: the color of the green container named "Organism" should change to _blue_, which characterizes logical containers.
 
-*   In the diagram area, right-click on the container named "Organism" and select ![Image](../assets/icons/NewContainer.png) Create Container in the context menu.
+*   In the diagram area, right-click on the container named "Organism" and select ![Image](../assets/icons/ContainerAdd.ico) Create Container in the context menu.
 
 *   In the appearing "New Container" window, choose a new name for the container (here: liver), set the **Container Type** to _Logical Container ..._, and click **OK**.
 
 *   Right-click on the new "Liver" container. Again, create a new container named "Plasma" with **Container Type** set to _Physical Container ..._ and click **OK**.
 
-*   Double-click on the new "Plasma" container. In the parameters tab below the diagram area click on the ![Image](../assets/icons/Create.png) **Add Parameter** button.
+*   Double-click on the new "Plasma" container. In the parameters tab below the diagram area click on the ![Image](../assets/icons/AddAction.ico) **Add Parameter** button.
 
 *   In the appearing "New Parameter" window, specify a name for the parameter (here: Volume), verify that the **Dimension** is set to _Volume_ and **Formula Type** to _Constant_, and set the Value to 1 liter.
 
@@ -68,9 +68,9 @@ In the main window, the molecules building block should now contain three list e
 
 *   Open the reaction building block for editing.
 
-*   To create a reaction, either click on ![Image](../assets/icons/NewReaction.png) **New** in the building block specific ribbon tab or right-click on the empty space in the diagram area of the building block edit window and select ![Image](../assets/icons/NewReaction.png) **Create Reaction**.
+*   To create a reaction, either click on ![Image](../assets/icons/reactionadd.ico) **New** in the building block specific ribbon tab or right-click on the empty space in the diagram area of the building block edit window and select ![Image](../assets/icons/ReactionAdd.ico) **Create Reaction**.
 
-*   Add the molecules created in **Step 3**  by either clicking on ![Image](../assets/icons/NewMolecule.png) **Insert Molecule** in the building block specific ribbon tab or right-clicking on the diagram area of the building block edit window and select ![Image](../assets/icons/NewMolecule.png) **Insert Molecule**.
+*   Add the molecules created in **Step 3**  by either clicking on ![Image](../assets/icons/MoleculeAdd.ico) **Insert Molecule** in the building block specific ribbon tab or right-clicking on the diagram area of the building block edit window and select ![Image](../assets/icons/MoleculeAdd.ico) **Insert Molecule**.
 
 *   A new window appears: select the molecules displayed in the list (select all three while holding down the **Ctrl** key) and click **OK**.
 
@@ -90,7 +90,7 @@ To edit the reaction "Re" and define its kinetics:
 
 *   Double-click on the reaction symbol in the diagram area;
 
-*   or right-click on the reaction symbol in the diagram area and select ![Image](../assets/icons/Edit-32x32.png) **Edit** from the context menu.
+*   or right-click on the reaction symbol in the diagram area and select ![Image](../assets/icons/Edit.ico) **Edit** from the context menu.
 
 Select the properties tab in the window below the diagram area.
 
@@ -106,7 +106,7 @@ We will now define the reaction kinetics as a reversible reaction in which the m
 
 By default, the **Formula Type** of the kinetics is set to **Formula** (an explicit formula). You can change this selection by use of the combobox, if needed.
 
-Now select the formula string input box to the right of the yellow warning sign with the exclamation mark ![Image](../assets/icons/Warning.png) and enter the chosen reaction rate:
+Now select the formula string input box to the right of the yellow warning sign with the exclamation mark ![Image](../assets/icons/warning.ico) and enter the chosen reaction rate:
 
 *   k1\*Drug/V\*((Educt/V)/(Km+Educt/V))-k2\*Product/V
 
@@ -120,13 +120,13 @@ The color of the circles of the reaction symbol determines the sign of the kinet
 
 In the properties tab, two essential inputs are still missing:
 
-*   An explicit formula requires a name as indicated by the symbol ![Image](../assets/icons/ErrorCross.png).
+*   An explicit formula requires a name as indicated by the symbol ![Image](../assets/icons/ErrorProvider.ico).
 
-*   The specified formula cannot be parsed due to the unknown entities: _k1_, _k2_, _Km_ and _V_ as indicated by the symbol ![Image](../assets/icons/Warning.png).
+*   The specified formula cannot be parsed due to the unknown entities: _k1_, _k2_, _Km_ and _V_ as indicated by the symbol ![Image](../assets/icons/Warning.ico).
 
-First, a new formula has to be created. To create a new formula, click on the ![Image](../assets/icons/Create.png) **Add Formula** button. A new window appears, where you can define a new name for the formula. Type in "r1" and confirm the name by clicking **OK**. The formula is also listed in the formula list in the formula tab located above the diagram area.
+First, a new formula has to be created. To create a new formula, click on the ![Image](../assets/icons/AddAction.ico) **Add Formula** button. A new window appears, where you can define a new name for the formula. Type in "r1" and confirm the name by clicking **OK**. The formula is also listed in the formula list in the formula tab located above the diagram area.
 
-The yellow warning sign ![Image](../assets/icons/Warning.png) indicates that the construction of our kinetic rate equation is not yet complete. To get a consistent formula, you need to assign the missing parameters to the reaction and add them to the referenced objects list.
+The yellow warning sign ![Image](../assets/icons/Warning.ico) indicates that the construction of our kinetic rate equation is not yet complete. To get a consistent formula, you need to assign the missing parameters to the reaction and add them to the referenced objects list.
 
 {% hint style="note" %}
 As depicted above, molecules are automatically added to the referenced objects list of an _explicit Formula_ when connected to the reaction. The referenced objects are by default listed by the following properties:
@@ -136,7 +136,7 @@ _The table below belongs to note above._
 
 |   |   |
 |--- |--- |
-| Alias | Defines the name by which the referenced objects are used in the Formula. If the name in the formula does not correspond to the Alias of the respective reference, a warning sign ![Image](../assets/icons/Warning.png) appears. |
+| Alias | Defines the name by which the referenced objects are used in the Formula. If the name in the formula does not correspond to the Alias of the respective reference, a warning sign ![Image](../assets/icons/Warning.ico) appears. |
 | Path | Path where the referenced object is located within the project. |
 | Dimension | Dimension (e.g., _Volume_ l or _Concentration_ µmol/l) of the referenced object. |
 
@@ -149,7 +149,7 @@ Formulas are automatically stored _even if incomplete_! However, they can be com
 
 Select the parameters tab next to the properties tab. To create a new parameter:
 
-*   Click on the ![Image](../assets/icons/Create.png) **Add Parameter** button.
+*   Click on the ![Image](../assets/icons/AddAction.ico) **Add Parameter** button.
 
 In the new window
 
@@ -177,9 +177,9 @@ To add the volume parameter "V" to the list, select the bullet Relative Path. A 
 
 Before we can create a simulation, we need to define start values. To create new molecule and parameter start values:
 
-*   Right-click on the molecule start values building block group in the building block explorer and select ![Image](../assets/icons/Create.png) **Create Molecule Start Value Building Block** from the context menu.
+*   Right-click on the molecule start values building block group in the building block explorer and select ![Image](../assets/icons/AddAction.ico) **Create Molecule Start Value Building Block** from the context menu.
 
-*   In the appearing "Create new Start Values" window, define a name (here: "MSV") for the molecule start values building block and confirm by clicking **OK** ![Image](../assets/icons/OK.png).
+*   In the appearing "Create new Start Values" window, define a name (here: "MSV") for the molecule start values building block and confirm by clicking **OK** ![Image](../assets/icons/OK.ico).
 
 *   Repeat the procedure for a new parameter start values building block using the name "PSV".
 
@@ -187,11 +187,11 @@ Before we can create a simulation, we need to define start values. To create new
 
 Before we can simulate, the reactions network of a simulation has to be created from the building blocks. To create a simulation:
 
-*   Click on ![Image](../assets/icons/Simulation-32x32.png) **Create** in the _Simulation_ Group the _Modeling & Simulation_ ribbon tab.
+*   Click on ![Image](../assets/icons/Simulation.ico) **Create** in the _Simulation_ Group the _Modeling & Simulation_ ribbon tab.
 
 *   In the appearing "Simulation Creation Wizard" window, specify a name for the simulation. Here: "RN".
 
-*   Confirm the simulation creation process by clicking **Finish** ![Image](../assets/icons/OK.png).
+*   Confirm the simulation creation process by clicking **Finish** ![Image](../assets/icons/OK.ico).
 
 A new simulation "RN" is added to the simulations explorer and automatically opened in edit mode in the main window. Your MoBi® program user interface should now look like depicted in below.
 
@@ -203,7 +203,7 @@ A new simulation "RN" is added to the simulations explorer and automatically ope
 
 *   In the top half of the Settings tab set the **EndTime** to 0.25 h and the **Resolution** to 600.00 pts/h.
 
-Now we can run the simulation. To run the simulation, click ![Image](../assets/icons/Run-32x32.png) **Run** in the simulation group of the modeling & simulation ribbon.
+Now we can run the simulation. To run the simulation, click ![Image](../assets/icons/run.ico) **Run** in the simulation group of the modeling & simulation ribbon.
 
 To view the simulation results:
 

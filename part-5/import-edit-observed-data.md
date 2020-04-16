@@ -210,7 +210,7 @@ The PKExcelImporter component determines the data type of a column by the first 
 
 ## Editing Observed Data‌
 
-Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing meta data. Changes are reversible through ![Image](../assets/icons/Undo-32x32.png) and will be tracked in the project history. Numerically changing a value is reflected in real time in the preview graph below and will result in moving the data point in the data grid to the new settings
+Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing meta data. Changes are reversible through ![Image](../assets/icons/Undo.ico) and will be tracked in the project history. Numerically changing a value is reflected in real time in the preview graph below and will result in moving the data point in the data grid to the new settings
 
 The new editing window can be accessed through double clicking the observed data in the building block view or through the context menu.
 
