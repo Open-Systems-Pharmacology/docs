@@ -36,7 +36,7 @@ The building block is now opened in the main window and the ribbon view changed 
 
 ### Step 3: Create three new Molecules named "Educt", "Product" and "Drug":
 
-*   Click <img width="32" src="../assets/icons/addaction.ico"> **New** in the building block specific ribbon tab or right-click on the empty space in the building block (_Molecule List Tree View_) in the main window and select <img width="32" src="../assets/icons/addaction.ico"> **Create Molecule**.
+*   Click <img width="32" src="../assets/icons/AddAction.ico"> **New** in the building block specific ribbon tab or right-click on the empty space in the building block (_Molecule List Tree View_) in the main window and select <img width="32" src="../assets/icons/AddAction.ico"> **Create Molecule**.
 
 *   In the appearing window, select a name for the molecule and enter a **Constant** default start amount with the value set to 1 µmol.
 
@@ -68,7 +68,7 @@ In the main window, the molecules building block should now contain three list e
 
 *   Open the reaction building block for editing.
 
-*   To create a reaction, either click on <img width="32" src="../assets/icons/reactionadd.ico"> **New** in the building block specific ribbon tab or right-click on the empty space in the diagram area of the building block edit window and select <img width="32" src="../assets/icons/ReactionAdd.ico"> **Create Reaction**.
+*   To create a reaction, either click on <img width="32" src="../assets/icons/ReactionAdd.ico"> **New** in the building block specific ribbon tab or right-click on the empty space in the diagram area of the building block edit window and select <img width="32" src="../assets/icons/ReactionAdd.ico"> **Create Reaction**.
 
 *   Add the molecules created in **Step 3**  by either clicking on <img width="32" src="../assets/icons/MoleculeAdd.ico"> **Insert Molecule** in the building block specific ribbon tab or right-clicking on the diagram area of the building block edit window and select <img width="32" src="../assets/icons/MoleculeAdd.ico"> **Insert Molecule**.
 
@@ -106,7 +106,7 @@ We will now define the reaction kinetics as a reversible reaction in which the m
 
 By default, the **Formula Type** of the kinetics is set to **Formula** (an explicit formula). You can change this selection by use of the combobox, if needed.
 
-Now select the formula string input box to the right of the yellow warning sign with the exclamation mark <img width="32" src="../assets/icons/warning.ico"> and enter the chosen reaction rate:
+Now select the formula string input box to the right of the yellow warning sign with the exclamation mark <img width="32" src="../assets/icons/Warning.ico"> and enter the chosen reaction rate:
 
 *   k1\*Drug/V\*((Educt/V)/(Km+Educt/V))-k2\*Product/V
 
@@ -203,7 +203,7 @@ A new simulation "RN" is added to the simulations explorer and automatically ope
 
 *   In the top half of the Settings tab set the **EndTime** to 0.25 h and the **Resolution** to 600.00 pts/h.
 
-Now we can run the simulation. To run the simulation, click <img width="32" src="../assets/icons/run.ico"> **Run** in the simulation group of the modeling & simulation ribbon.
+Now we can run the simulation. To run the simulation, click <img width="32" src="../assets/icons/Run.ico"> **Run** in the simulation group of the modeling & simulation ribbon.
 
 To view the simulation results:
 

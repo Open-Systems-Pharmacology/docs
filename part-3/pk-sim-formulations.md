@@ -196,7 +196,7 @@ To delete a formulation from the project:
 
 1.  Right mouse click on the respective formulation in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/delete.ico"> **Delete...**
+2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
 
 3.  Confirm to by clicking **Yes**
 

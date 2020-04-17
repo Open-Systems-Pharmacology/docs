@@ -35,31 +35,31 @@ The **Create Individual** building block window is subdivided into three tabs: *
 
 In the first drop-down menu you can choose from the following species:
 
-- Human <img width="32" src="../assets/icons/human.ico">
+- Human <img width="32" src="../assets/icons/Human.ico">
 
-- Monkey <img width="32" src="../assets/icons/monkey.ico">
+- Monkey <img width="32" src="../assets/icons/Monkey.ico">
 
-- Beagle <img width="32" src="../assets/icons/beagle.ico">
-
-
-- Dog <img width="32" src="../assets/icons/dog.ico">
+- Beagle <img width="32" src="../assets/icons/Beagle.ico">
 
 
-- Minipig <img width="32" src="../assets/icons/minipig.ico">
+- Dog <img width="32" src="../assets/icons/Dog.ico">
 
 
-- Rat <img width="32" src="../assets/icons/rat.ico">
+- Minipig <img width="32" src="../assets/icons/Minipig.ico">
 
 
-- Mouse <img width="32" src="../assets/icons/mouse.ico">
+- Rat <img width="32" src="../assets/icons/Rat.ico">
 
 
-- Rabbit <img width="32" src="../assets/icons/rabbit.ico">
+- Mouse <img width="32" src="../assets/icons/Mouse.ico">
+
+
+- Rabbit <img width="32" src="../assets/icons/Rabbit.ico">
 
 
 **Human** 
 
-If **Human**  <img width="32" src="../assets/icons/human.ico">  is selected, you can select one of the following populations from the next drop-down menu:
+If **Human**  <img width="32" src="../assets/icons/Human.ico">  is selected, you can select one of the following populations from the next drop-down menu:
 
 - Asian (Tanaka, 1996) \[[74](../references.md#74)\]
 
@@ -308,7 +308,7 @@ To delete individuals from a project:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/delete.ico"> **Delete...**
+2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
 
 3.  Confirm to delete the individual by clicking **Yes**
 

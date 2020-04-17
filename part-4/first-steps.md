@@ -204,7 +204,7 @@ If you want to run a simulation in MoBi® that you have already created in PK- S
 
 3.  In the Simulations Explorer, double-click the <img width="32" src="../assets/icons/Simulation.ico"> **Simulation Icon** or the name of your simulation left to it.
 
-4.  Click the run <img width="32" src="../assets/icons/run.ico"> ribbon button of press the **F5** key. Wait until the calculation is done.
+4.  Click the run <img width="32" src="../assets/icons/Run.ico"> ribbon button of press the **F5** key. Wait until the calculation is done.
 
 5.  Select the **Results** tab.
 

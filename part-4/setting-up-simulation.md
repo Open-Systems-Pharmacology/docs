@@ -56,7 +56,7 @@ Changes of start values will affect newly created simulations. Adding them to th
 Newly created Molecule and Parameter Start Value building blocks in step one, or Start Values building blocks saved in steps two and three during the simulation creation process will only be added to the project when the simulation creation is completed by clicking **Finish** <img width="32" src="../assets/icons/OK.ico"> and not cancelled prematurely.
 {% endhint %}
 
-The third and fourth steps after clicking **Next** <img width="32" src="../assets/icons/next.ico"> allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
+The third and fourth steps after clicking **Next** <img width="32" src="../assets/icons/Next.ico"> allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
 
 In the last step, you can choose to immediately run the simulation upon completion of the simulation creation process by selecting the checkbox ![Image](../assets/icons/Checked.png) **Run Simulation** as depicted.
 
@@ -270,7 +270,7 @@ Now you can run the simulation by one of the following options:
 
 - Press the function key **F5**
 
-Alternatively, select the <img width="32" src="../assets/icons/Run.ico"> **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ). Selecting the <img width="32" src="../assets/icons/undo.ico"> **Undo** option from the menu bar discards all changes made in the simulation and resets settings to those of the original Building Blocks.
+Alternatively, select the <img width="32" src="../assets/icons/Run.ico"> **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ). Selecting the <img width="32" src="../assets/icons/Undo.ico"> **Undo** option from the menu bar discards all changes made in the simulation and resets settings to those of the original Building Blocks.
 
 The progress of a simulation run is shown by the progress bar in the lower right corner of the MoBi® window. A running simulation can be stopped by clicking the <img width="32" src="../assets/icons/Stop.ico"> **Stop** button in the Simulation Ribbon Group which will become active during a run.
 
@@ -284,9 +284,9 @@ The context menu that opens when right-clicking on the simulation in the Simulat
 
 - <img width="32" src="../assets/icons/Simulation.ico"> Create Simulation \- opens the Simulation Creation Wizard (see [Create a Simulation](#create-a-simulation)).
 
-- <img width="32" src="../assets/icons/Simulationload.ico"> Load Simulation \- loads a new simulation into the project (see [Load a Simulation](#load-a-simulation)).
+- <img width="32" src="../assets/icons/SimulationLoad.ico"> Load Simulation \- loads a new simulation into the project (see [Load a Simulation](#load-a-simulation)).
 
-- <img width="32" src="../assets/icons/run.ico"> Run \- runs the simulation.
+- <img width="32" src="../assets/icons/Run.ico"> Run \- runs the simulation.
 
 - <img width="32" src="../assets/icons/Undo.ico"> Refresh \- discard all changes made in the simulation.
 
@@ -294,9 +294,9 @@ The context menu that opens when right-clicking on the simulation in the Simulat
 
 - <img width="32" src="../assets/icons/Rename.ico"> Rename \- renames the simulation.
 
-- ![Image](../assets/icons/Cancel.png) Remove \- deletes the simulation from the project.
+- ![Image](../assets/icons/Cancel.ico) Remove \- deletes the simulation from the project.
 
-- <img width="32" src="../assets/icons/Saveas.ico"> Save As \- saves the simulation as pkml file.
+- <img width="32" src="../assets/icons/SaveAs.ico"> Save As \- saves the simulation as pkml file.
 
 - <img width="32" src="../assets/icons/Population.ico"> Start Population Simulation \- calls the Population Simulation Analysis in PK-Sim®, loads the simulation and runs the population simulation (see “Running and analyzing a population simulation” for description).
 

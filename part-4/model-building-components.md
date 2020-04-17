@@ -46,7 +46,7 @@ Close a project by selecting **Close Project** in the **File** tab. A confirmati
 
 To save the current project select **Save Project (Ctrl+S)** in the File tab or use the quick action button <img width="32" src="../assets/icons/Save.ico">.
 
-You can then choose either <img width="32" src="../assets/icons/Save.ico"> **Save Project**, which saves the project under the name already given or <img width="32" src="../assets/icons/Saveas.ico"> **Save As** to save the project with a new name in another file. The currently opened project will be saved with all information.
+You can then choose either <img width="32" src="../assets/icons/Save.ico"> **Save Project**, which saves the project under the name already given or <img width="32" src="../assets/icons/SaveAs.ico"> **Save As** to save the project with a new name in another file. The currently opened project will be saved with all information.
 
 ## Parameters, Formulas, and Tags‌
 
@@ -282,11 +282,11 @@ A table described in [Working with Tables](#working-with-tables) may need to be 
         
     3.  In the **Formula Name** _combobox_, you may select an existing table formula with offset.
         
-    4.  In the box below the formula name, there is a selection to a **path with a table object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter, a transport or a reaction defined by a table defined as described in [Working with Tables](#working-with-tables). Only when you select a valid object, the <img width="32" src="../assets/icons/ok.ico"> **OK** button will become active, and you can successfully continue.
+    4.  In the box below the formula name, there is a selection to a **path with a table object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter, a transport or a reaction defined by a table defined as described in [Working with Tables](#working-with-tables). Only when you select a valid object, the <img width="32" src="../assets/icons/OK.ico"> **OK** button will become active, and you can successfully continue.
         
     5.  Below the table object path, there is a selection to a **path with an offset object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter containing a time, i.e., its dimension has to be Time.
     
-    Only when you select a valid object, the <img width="32" src="../assets/icons/ok.ico"> **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
+    Only when you select a valid object, the <img width="32" src="../assets/icons/OK.ico"> **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
 
 ### State Variable Parameters‌
 
@@ -368,7 +368,7 @@ After this step, the top container "BigVial" has expanded in the Diagram Area, a
 
 ![Spatial Structure with two child containers](../assets/images/part-4/Vial1Vial2.png)
 
-The spatial structure can be handled in a similar way as the reactions diagram area. You can zoom in and out using the mouse wheel and the **Ctrl** key, through the context menu or the ribbon icons, and you can move structures around by dragging and dropping. Structures can be expanded by clicking on the + sign in the upper right, or they can be collapsed by clicking on the - sign. Templates can be saved or applied, and a **Layout** function can be applied using the context menu after right-clicking. Sometimes the display needs to be refreshed, using the <img width="32" src="../assets/icons/update.ico"> **Refresh** entry in the context menu.
+The spatial structure can be handled in a similar way as the reactions diagram area. You can zoom in and out using the mouse wheel and the **Ctrl** key, through the context menu or the ribbon icons, and you can move structures around by dragging and dropping. Structures can be expanded by clicking on the + sign in the upper right, or they can be collapsed by clicking on the - sign. Templates can be saved or applied, and a **Layout** function can be applied using the context menu after right-clicking. Sometimes the display needs to be refreshed, using the <img width="32" src="../assets/icons/Update.ico"> **Refresh** entry in the context menu.
 
 Any container or sub-container may have parameters associated with it. They can describe physical or biological properties of the container that are required for processes like transports or reactions. What is needed in our practice model is the volume parameter which is used to calculate concentrations required for kinetic equations or for plotting concentrations after a simulation has been performed.‌‌
 
@@ -712,7 +712,7 @@ In MoBi®, passive and active transport processes use common logics in their set
 
 ### Passive Transports‌
    
-Passive transports which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports"  in the Building Block Explorer <img width="32" src="../assets/icons/passivetransport.ico">  and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
+Passive transports which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports"  in the Building Block Explorer <img width="32" src="../assets/icons/PassiveTransport.ico">  and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
 
 For **creating a new transport** or loading one from a previously saved file:
 
@@ -936,7 +936,7 @@ To add events or applications to the project, you need to open the events buildi
     
 To **create a new event group**, either    
 
-*   use the <img width="32" src="../assets/icons/event.ico">   **New** ribbon button,
+*   use the <img width="32" src="../assets/icons/Event.ico">   **New** ribbon button,
 
 *   or right-click into the white space in the event edit window and select the <img width="32" src="../assets/icons/AddAction.ico"> Create Event Group command.
 
@@ -1136,7 +1136,7 @@ Instead of creating molecule start values, you may load them from a previously s
     
 Molecule start values can also be imported from Excel-files which is detailed below.
 
-To edit a molecule start value building block, double-click on it or use the context menu in the Building Block Explorer and select **Edit**  <img width="32" src="../assets/icons/edit.ico">. An edit window opens, analogue to the one used when creating new start values. You can now
+To edit a molecule start value building block, double-click on it or use the context menu in the Building Block Explorer and select **Edit**  <img width="32" src="../assets/icons/Edit.ico">. An edit window opens, analogue to the one used when creating new start values. You can now
 
 *   manually override the start concentrations or dimensions for every molecule in every container;
 

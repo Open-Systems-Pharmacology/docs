@@ -28,7 +28,7 @@ To display the dataset in an existing chart window, simply drag&drop the dataset
 
 ### Deleting imported Observed Data‌
 
-To delete imported observed data from the project right-click ![Image](../assets/icons/mouse_select_right.png) on the data and select ![Image](../assets/icons/Cancel.png) **Remove** in the context menu (or simply press the **Delete** key on your keyboard to delete the selected data). This also removes the data from the chart and the data browser of the chart editor.
+To delete imported observed data from the project right-click ![Image](../assets/icons/mouse_select_right.png) on the data and select ![Image](../assets/icons/Cancel.ico) **Remove** in the context menu (or simply press the **Delete** key on your keyboard to delete the selected data). This also removes the data from the chart and the data browser of the chart editor.
 
 ## Exporting Simulation Results and Parts of a Simulation Model‌
 

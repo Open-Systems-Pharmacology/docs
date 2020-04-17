@@ -26,7 +26,7 @@ The general workflow to perform a **Sensitivity Analysis** for a chosen simulati
     
 4.  If necessary adjust their variation range to appropriate values.
     
-5.  Start the Sensitivity Analysis. <img width="32" src="../assets/icons/run.ico">.
+5.  Start the Sensitivity Analysis. <img width="32" src="../assets/icons/Run.ico">.
     
 6.  View the sensitivity rankings in tab **Sensitivity Analysis** for the outputs to identify those input parameters with the highest impact.
     
@@ -64,7 +64,7 @@ For the default setting n = 2 and a = 0.1, we get 4 variation factors: 1/1.1, 1/
 
 Outputs of a simulation cannot be changed while creating or configuring the Sensitivity Analysis, you need to decide on the outputs before you create a Sensitivity Analysis.
 
-To select the outputs of interest for a simulation, open that simulation and click <img width="32" src="../assets/icons/settings.ico"> Define Settings and Run to display the Curve Selection Dialog.
+To select the outputs of interest for a simulation, open that simulation and click <img width="32" src="../assets/icons/Settings.ico"> Define Settings and Run to display the Curve Selection Dialog.
 
 ## Creating a Sensitivity Analysis‌
 

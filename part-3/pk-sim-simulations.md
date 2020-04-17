@@ -18,7 +18,7 @@ Simulations are performed in 3 steps: Creating a simulation (see [Creating new s
 
 To create a new simulation:
 
-- Click **Simulation** <img width="32" src="../assets/icons/simulation.ico"> in the **Create** Group of the **Modeling** Tab or
+- Click **Simulation** <img width="32" src="../assets/icons/Simulation.ico"> in the **Create** Group of the **Modeling** Tab or
 
 - Use the short cut **Ctrl+Alt+S**
 
@@ -152,7 +152,7 @@ Events are optional for creating a simulation. Possible predefined events are cu
 
 - Select a previously defined event from the <img width="32" src="../assets/icons/Event.ico"> **Event** drop-down menu
 
-- Define a new event by clicking **Create** <img width="32" src="../assets/icons/event.ico"> and follow the instructions of the appearing dialog windows
+- Define a new event by clicking **Create** <img width="32" src="../assets/icons/Event.ico"> and follow the instructions of the appearing dialog windows
 
 - Load an event from the template data base by clicking <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the appearing dialog windows
 
