@@ -18,7 +18,7 @@ Please note that the volume of fat tissue is not optimized by the algorithm as t
 
 ### Definition of new Individual in PK-Sim®‌
 
-- Click on **Individual** ![Image](../assets/icons/Individual-32x32.png) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+- Click on **Individual** <img width="32" src="../assets/icons/Individual.ico"> in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
 - Right mouse click on **Individuals** in the **Building Block Explorer** and select Add Individual...
 
@@ -35,25 +35,31 @@ The **Create Individual** building block window is subdivided into three tabs: *
 
 In the first drop-down menu you can choose from the following species:
 
-- Human
+- Human <img width="32" src="../assets/icons/Human.ico">
 
-- Monkey
+- Monkey <img width="32" src="../assets/icons/Monkey.ico">
 
-- Beagle
+- Beagle <img width="32" src="../assets/icons/Beagle.ico">
 
-- Dog
 
-- Minipig
+- Dog <img width="32" src="../assets/icons/Dog.ico">
 
-- Rat
 
-- Mouse
+- Minipig <img width="32" src="../assets/icons/Minipig.ico">
 
-- Rabbit
 
-**Human**
+- Rat <img width="32" src="../assets/icons/Rat.ico">
 
-If **Human** is selected, you can select one of the following populations from the next drop-down menu:
+
+- Mouse <img width="32" src="../assets/icons/Mouse.ico">
+
+
+- Rabbit <img width="32" src="../assets/icons/Rabbit.ico">
+
+
+**Human** 
+
+If **Human**  <img width="32" src="../assets/icons/Human.ico">  is selected, you can select one of the following populations from the next drop-down menu:
 
 - Asian (Tanaka, 1996) \[[74](../references.md#74)\]
 
@@ -149,7 +155,7 @@ Use the **Filter** function above the tree view to find parameters more quickly.
 
 In the window on the right hand side, the details of the respective parameter group will be shown.
   
-Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** ![Image](../assets/icons/Favorites_old.png) in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
+Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** <img width="32" src="../assets/icons/Favorites.ico"> in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
 
 {% hint style="tip" %}
 The order of the columns can be changed manually. Drag the column header to the desired position to change the sequence of columns.
@@ -206,7 +212,7 @@ To edit properties of existing individuals:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Edit-32x32.png) **Edit...**
+2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**
 
 or simply double click on the existing individual in the **Building Block Explorer**.
 
@@ -218,7 +224,7 @@ In order to **scale** an existing individual:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/IndividualScaling.png) **Scale...**
+2.  Select <img width="32" src="../assets/icons/IndividualScaling.ico"> **Scale...**
 
     The **Scale Individual** dialog opens, which is divided into four tabs: **Biometrics**, **Scaling configuration**, **Anatomy & Physiology**, and **Expression**. Details about the three tabs **Biometrics**, **Anatomy & Physiology**, and **Expression** have already been described for the **Create Individual** dialog (please see above). Here, only details about the tab **Scaling configuration** are given:
 
@@ -254,11 +260,11 @@ To clone an individual in the project:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Clone.png) **Clone...**
+2.  Select <img width="32" src="../assets/icons/SimulationClone.ico"> **Clone...**
 
 3.  Set an alternative name for the clone and enter a description if desired
 
-4.  Confirm and close the window by clicking ![Image](../assets/icons/OK.png) **OK**
+4.  Confirm and close the window by clicking <img width="32" src="../assets/icons/OK.ico"> **OK**
 
 ### Saving of Individuals as Templates‌
 
@@ -268,7 +274,7 @@ To save an existing individual as template:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SaveAsTemplate.png) **Save as Template...**
+2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**
 
 A message will appear confirming that the Individual was successfully saved in the template database.
 
@@ -286,11 +292,11 @@ To load existing individuals from the template database:
 
 1.  Right mouse click on **Individuals** in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Load.png) **Load From Template...**
+2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
 
 3.  Select the desired individual from the user templates. In case an individual with the same name already exists in the project, a warning appears and you will have to **Rename** the individual that is to be loaded from template.
 
-4.  Click **OK** ![Image](../assets/icons/OK.png)
+4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
 
 The selected individual will appear in the **Building Block Explorer** view.
 
@@ -302,7 +308,7 @@ To delete individuals from a project:
 
 1.  Right mouse click on the respective individual in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Cancel.png) **Delete...**
+2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
 
 3.  Confirm to delete the individual by clicking **Yes**
 

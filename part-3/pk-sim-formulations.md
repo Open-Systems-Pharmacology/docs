@@ -6,7 +6,7 @@ In the building block **Formulation** the properties of the dosage form that is 
 
 To create a new formulation, do one of the following:
 
-- Click on ![Image](../assets/icons/Formulation-32x32.png) **Formulation** in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+- Click on <img width="32" src="../assets/icons/Formulation.ico"> **Formulation** in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
 - Right mouse click on **Formulations** in the **Building Block Explorer** and select **Add Formulation...**
 
@@ -136,7 +136,7 @@ To set or change the properties of an existing formulation:
 
 1.  Right mouse click on the respective formulation in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Edit-32x32.png) **Edit...**
+2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**
 
 or simply double click on the formulation in the **Building Block Explorer**
 
@@ -148,11 +148,11 @@ To clone a formulation in the project:
 
 1.  Right mouse click on the respective formulation in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Clone.png) **Clone...**
+2.  Select <img width="32" src="../assets/icons/SimulationClone.ico"> **Clone...**
 
 3.  Set an alternative name for the formulation clone and enter a description, if desired.
 
-4.  Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.png).
+4.  Confirm and close the window by clicking **OK** <img width="32" src="../assets/icons/OK.ico">.
 
 5.  ### Saving Formulations as Templates‌
 
@@ -162,7 +162,7 @@ To save an existing formulation as template:
 
 1.  Right mouse click on the respective formulation in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SaveAsTemplate.png) **Save as Template...**
+2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**
 
 In case a formulation with the same name already exists, a warning appears and you have the following opportunities:
 
@@ -178,13 +178,13 @@ To load an existing formulation from the template database:
 
 1.  Right mouse click on **Formulations** in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/LoadFromTemplate.png) **Load From Template...**
+2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
 
 3.  Select the desired formulation from the user templates
 
 In case a formulation with the same name already exists in the project, a warning appears and you will have to **Rename** the formulation that is to be loaded from template.
 
-4.  Click **OK** ![Image](../assets/icons/OK.png)
+4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
 
 The selected formulation will appear in the **Building Block Explorer** view.
 
@@ -196,7 +196,7 @@ To delete a formulation from the project:
 
 1.  Right mouse click on the respective formulation in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Cancel.png) **Delete...**
+2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
 
 3.  Confirm to by clicking **Yes**
 

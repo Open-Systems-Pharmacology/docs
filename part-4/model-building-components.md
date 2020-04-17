@@ -44,9 +44,9 @@ Close a project by selecting **Close Project** in the **File** tab. A confirmati
 
 3.  Save a Project       
 
-To save the current project select **Save Project (Ctrl+S)** in the File tab or use the quick action button ![Image](../assets/icons/Save-32x32.png).
+To save the current project select **Save Project (Ctrl+S)** in the File tab or use the quick action button <img width="32" src="../assets/icons/Save.ico">.
 
-You can then choose either ![Image](../assets/icons/Save-32x32.png) **Save Project**, which saves the project under the name already given or ![Image](../assets/icons/Save-32x32.png) **Save As** to save the project with a new name in another file. The currently opened project will be saved with all information.
+You can then choose either <img width="32" src="../assets/icons/Save.ico"> **Save Project**, which saves the project under the name already given or <img width="32" src="../assets/icons/SaveAs.ico"> **Save As** to save the project with a new name in another file. The currently opened project will be saved with all information.
 
 ## Parameters, Formulas, and Tags‌
 
@@ -58,7 +58,7 @@ For improved readability, two categories of parameters exist: "regular" and "adv
 
 Parameters can be newly created, copied, moved, edited, or loaded from a pkml file:
 
-*   A parameter is added by clicking on the ![Image](../assets/icons/Create.png) **Add Parameter** button that is present in a parameter tab view, or by right-clicking the building block item's name (molecule, reaction, etc.) in the tree, list, or diagram view and choose **Create Parameter** from the context menu that appears.
+*   A parameter is added by clicking on the <img width="32" src="../assets/icons/AddAction.ico"> **Add Parameter** button that is present in a parameter tab view, or by right-clicking the building block item's name (molecule, reaction, etc.) in the tree, list, or diagram view and choose **Create Parameter** from the context menu that appears.
 
 *   Instead of newly creating a parameter, you may also load it from a file. Use the **Load Parameter** button or context menu entry for this purpose and select a pkml file (e.g., a previously saved building block or simulation) that already contains a suitable parameter.
 
@@ -146,13 +146,13 @@ If you use one of the different distributions, a **percentile** will be automati
 
 A parameter can be defined by a formula that may also use other parameters. A formula string defines the formula. Additionally to parameters, formulas are used in the kinetics equations of reactions and transport processes as well as in the monitor equation of observers. See the corresponding sections for a description. To define a formula, select Formula in the combobox **Formula Type**.
 
-Each formula needs a formula name. The combobox **Formula Name** allows you to select from already existing formulas or to enter a new name. A new formula can be entered by clicking the ![Image](../assets/icons/Create.png) **Add Formula** button and you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
+Each formula needs a formula name. The combobox **Formula Name** allows you to select from already existing formulas or to enter a new name. A new formula can be entered by clicking the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button and you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
 
 {% hint style="tip" %}
 It is a good idea to use a name related to the object where the formula is used (e.g., parameter, reaction, observer) - you may even use identical names here.
 {% endhint %}
 
-To enter or edit a **formula string**, click into the unnamed input box above the **Description** field and then use your keyboard. This formula string will be evaluated by the solver once the simulation is run. It is written as a mathematical term that comprises numeric values, arithmetic operation signs, and names of parameters or their alias names. As long as the formula has errors or is incomplete, a red error sign ![Image](../assets/icons/ErrorCross.png) is displayed left of the empty input box. Hovering the mouse over this warning symbol will show you a tool tip on the validity of the equation (e.g., missing references or syntax errors).
+To enter or edit a **formula string**, click into the unnamed input box above the **Description** field and then use your keyboard. This formula string will be evaluated by the solver once the simulation is run. It is written as a mathematical term that comprises numeric values, arithmetic operation signs, and names of parameters or their alias names. As long as the formula has errors or is incomplete, a red error sign <img width="32" src="../assets/icons/ErrorProvider.ico"> is displayed left of the empty input box. Hovering the mouse over this warning symbol will show you a tool tip on the validity of the equation (e.g., missing references or syntax errors).
 
 {% hint style="tip" %}
 Useful workflows with parameter aliases or with reference paths to aliases are described below, see [Reaction Kinetics](#reaction-kinetics) and [Passive Transports](#passive-transports).
@@ -164,7 +164,7 @@ In a formula, the following characters may be used:
 
 *   the arithmetic operation signs **+**, **-**, *****, **/**, **^** (for exponents)
 
-*   round brackets **(**, **)**
+*   round brackets **(**   **)**
 
 *   the constants **pi** and **e**
 
@@ -236,7 +236,7 @@ To define a parameter or a reaction by a sum formula, use the following procedur
 
 1.  Select Sum Formula in **Formula Type** combobox.
     
-2.  To create a new sum formula, click the ![Image](../assets/icons/Create.png) **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
+2.  To create a new sum formula, click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
     
 3.  In the **Formula Name** combobox, you may alternatively select an existing sum formula name.
     
@@ -250,7 +250,7 @@ A parameter can be defined by a table that is made up out of pairs of simulation
 
 1.  Select Table as **Formula Type**. A table layout will open below the Formula Type combobox.
     
-2.  To create a new table formula, click the ![Image](../assets/icons/Create.png) **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
+2.  To create a new table formula, click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
 
 3.  In the **Formula Name** combobox, you may alternatively select an existing table formula name.
 
@@ -278,15 +278,15 @@ A table described in [Working with Tables](#working-with-tables) may need to be 
     
     1.  Select Table Formula with Offset as **Formula Type**.
         
-    2.  To create a new table formula with offset, click the ![Image](../assets/icons/Create.png) **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
+    2.  To create a new table formula with offset, click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
         
     3.  In the **Formula Name** _combobox_, you may select an existing table formula with offset.
         
-    4.  In the box below the formula name, there is a selection to a **path with a table object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter, a transport or a reaction defined by a table defined as described in [Working with Tables](#working-with-tables). Only when you select a valid object, the ![Image](../assets/icons/OK.png) **OK** button will become active, and you can successfully continue.
+    4.  In the box below the formula name, there is a selection to a **path with a table object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter, a transport or a reaction defined by a table defined as described in [Working with Tables](#working-with-tables). Only when you select a valid object, the <img width="32" src="../assets/icons/OK.ico"> **OK** button will become active, and you can successfully continue.
         
     5.  Below the table object path, there is a selection to a **path with an offset object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter containing a time, i.e., its dimension has to be Time.
     
-    Only when you select a valid object, the ![Image](../assets/icons/OK.png) **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
+    Only when you select a valid object, the <img width="32" src="../assets/icons/OK.ico"> **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
 
 ### State Variable Parameters‌
 
@@ -324,7 +324,7 @@ Similarly, observers or events can be included or excluded from being created in
 
 A spatial structure can be an organism consisting of organs, cells and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume. Containers of a spatial structure can be defined as Physical, which may contain molecules in the simulation. They can also be defined as Logical, meaning they do not represent a real container with molecules but instead just representing a grouping of sub-containers. Containers are also grouped in categories like Organism, Organ, and others. This way, the physical makeup of an organism is described.
 
-The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation]([Setting up a Simulation](setting-up-simulation.md#setting-up-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the ![Image](../assets/icons/LoadFromTemplate.png) **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
+The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation]([Setting up a Simulation](setting-up-simulation.md#setting-up-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the <img width="32" src="../assets/icons/LoadAction.ico"> **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
 
 {% hint style="note" %}
 In the process of this and the next sections of this chapter, you will create an example project. An already completed project file named "ManualModel_Sim.mbp3" is automatically installed together with MoBi® in the default program data directory. The entry "Examples" in the program start menu in the "MoBi" group will lead you to the proper path.
@@ -348,13 +348,13 @@ Edit Reactions mode, which is used here to display the physical and logical arra
 
 For continuing with our example project, construct a simple spatial structure which consists of a surrounding top level container having two interconnected sub-containers. A common tag will be added to both sub-containers which will be used later for restricting some computations (e.g., observers) to be only done for the two sub-containers. Tags are also used for restricting events or selecting source and target for transport processes. Check the corresponding sections for their use.
 
-1.  First, **rename the top level container** from its default name that was initially created. Right-click the greenish oval symbol with the name "Organism" inside. A context menu will come up; select ![Image](../assets/icons/Rename-32x32.png) Rename from it.
+1.  First, **rename the top level container** from its default name that was initially created. Right-click the greenish oval symbol with the name "Organism" inside. A context menu will come up; select <img width="32" src="../assets/icons/Rename.ico"> Rename from it.
 
 2.  You will be asked for a new name. Enter "BigVial" and press **Enter** or click OK.
 
 3.  A new window named "Rename also" will open, where a list of object references to the renamed spatial structure will appear. Leave all the checkboxes checked ![Image](../assets/icons/Checked.png), and continue by clicking **OK**. The names in the Diagram Area and in the tree views will now show "BigVial".
     
-4.  Now create two sub-containers. Right-click again into the light green oval symbol in the Diagram Area, but this time select ![Image](../assets/icons/NewContainer.png) **Create Container**.
+4.  Now create two sub-containers. Right-click again into the light green oval symbol in the Diagram Area, but this time select <img width="32" src="../assets/icons/ContainerAdd.ico"> **Create Container**.
     
 5.  A new window named "New Container" opens, similar to the creation of molecules or reactions. Enter "Vial1" as name, and leave the Container Type on Organ. Select Physical Container in the right combobox below the name input box.
     
@@ -368,7 +368,7 @@ After this step, the top container "BigVial" has expanded in the Diagram Area, a
 
 ![Spatial Structure with two child containers](../assets/images/part-4/Vial1Vial2.png)
 
-The spatial structure can be handled in a similar way as the reactions diagram area. You can zoom in and out using the mouse wheel and the **Ctrl** key, through the context menu or the ribbon icons, and you can move structures around by dragging and dropping. Structures can be expanded by clicking on the + sign in the upper right, or they can be collapsed by clicking on the - sign. Templates can be saved or applied, and a **Layout** function can be applied using the context menu after right-clicking. Sometimes the display needs to be refreshed, using the ![Image](../assets/icons/Update.png) **Refresh** entry in the context menu.
+The spatial structure can be handled in a similar way as the reactions diagram area. You can zoom in and out using the mouse wheel and the **Ctrl** key, through the context menu or the ribbon icons, and you can move structures around by dragging and dropping. Structures can be expanded by clicking on the + sign in the upper right, or they can be collapsed by clicking on the - sign. Templates can be saved or applied, and a **Layout** function can be applied using the context menu after right-clicking. Sometimes the display needs to be refreshed, using the <img width="32" src="../assets/icons/Update.ico"> **Refresh** entry in the context menu.
 
 Any container or sub-container may have parameters associated with it. They can describe physical or biological properties of the container that are required for processes like transports or reactions. What is needed in our practice model is the volume parameter which is used to calculate concentrations required for kinetic equations or for plotting concentrations after a simulation has been performed.‌‌
 
@@ -378,7 +378,7 @@ As for molecules or reactions, parameters become accessible after clicking the "
     
 2.  Click the "Parameters" tab.
     
-3.  Click the button ![Image](../assets/icons/Create.png) **Add Parameter**, upon which a window named "New Parameter" opens.
+3.  Click the button <img width="32" src="../assets/icons/AddAction.ico"> **Add Parameter**, upon which a window named "New Parameter" opens.
     
 4.  Enter "Volume" into the Name input box, select Volume in the Dimension input box, then enter "1" into the Value input box. The Formula Type remains on "Constant".
     
@@ -438,7 +438,7 @@ Start by opening a Molecules building block for editing. In the **Building Block
     
 To create a new molecule:
 
-1.  Click in the newly visible ribbon **Add** on the button ![Image](../assets/icons/NewMolecule.png) **New**, or right-click into the Diagram area (the empty space below the tab "Molecules") and choose **Create Molecule** from the context menu that appears. A new window titled "New Molecule" will open.
+1.  Click in the newly visible ribbon **Add** on the button <img width="32" src="../assets/icons/AddAction.ico"> **New**, or right-click into the Diagram area (the empty space below the tab "Molecules") and choose **Create Molecule** from the context menu that appears. A new window titled "New Molecule" will open.
     
 2.  Enter a molecule name into the "Name" input box.
     
@@ -468,7 +468,7 @@ A collection of template files with predefined building blocks is automatically 
 
 Use one of such files an proceed in the following way:
 
-1.  Click the ![Image](../assets/icons/LoadMolecule.png) **Load** ribbon button, or right-click into the empty space below the tab "Molecules" and choose **Load Molecule** from the context menu that appears.
+1.  Click the <img width="32" src="../assets/icons/PKMLLoad.ico"> **Load** ribbon button, or right-click into the empty space below the tab "Molecules" and choose **Load Molecule** from the context menu that appears.
 
 2.  Select a folder and then a pkml file from the file browser window that will open.
 
@@ -478,7 +478,7 @@ You can **edit the molecule properties** for the molecule in the tree that is cu
 
 *   Within the properties window, the checkbox ![Image](../assets/icons/Unchecked.png) **Stationary** determines if the corresponding molecule will be transported by [Passive Transports](#passive-transports) processes described below (see [Passive Transports](#passive-transports)) - this box should thus be checked ![Image](../assets/icons/Checked.png) only for immobile molecules, like membrane-bound receptors or transporters.
 
-*   Select the **Molecule Type** specification from the combobox. This has only influence on the icon depicted in front of the molecules in the molecules tree view to the right. Selectable options are ![Image](../assets/icons/Drug.png) Drug, ![Image](../assets/icons/Enzyme.png) Enzyme, ![Image](../assets/icons/Transporter.png) Transporter, Complex, Metabolite, ![Image](../assets/icons/Protein.png) Protein, and Other Protein.
+*   Select the **Molecule Type** specification from the combobox. This has only influence on the icon depicted in front of the molecules in the molecules tree view to the right. Selectable options are <img width="32" src="../assets/icons/Molecule.ico"> Drug, <img width="32" src="../assets/icons/Enzyme.ico"> Enzyme, <img width="32" src="../assets/icons/Transporter.ico"> Transporter, <img width="32" src="../assets/icons/complex.ico"> Complex,<img width="32" src="../assets/icons/Metabolite.ico"> Metabolite  , <img width="32" src="../assets/icons/Protein.ico"> Protein, and Other Protein.
 
 *   The **Default Start Amount** determines what default value will be used whenever "Molecule Start Values" are created (see “Molecule Start Values”). The value should be left on 0 for all molecules which only will be created in the process of the simulation. For complex spatial structures, it might be an alternative strategy to set all default start amount values to 0 and set everything manually in the molecule start values for those containers where a molecule is present in known concentrations.
 
@@ -526,7 +526,7 @@ More examples for molecule parameters can be found by looking at a molecule in a
 
 As an example, we create the property "Molecular weight" for the molecule created above.
 
-1.  Click ![Image](../assets/icons/Create.png) **Add Parameter**, and a "New Parameter" window will open.
+1.  Click <img width="32" src="../assets/icons/AddAction.ico"> **Add Parameter**, and a "New Parameter" window will open.
 
 2.  Enter "Molecular weight" as parameter name.
 
@@ -582,7 +582,7 @@ If you insert a molecule that has not yet been defined in the Molecules building
 
 To have access to molecules as reaction partners for the reactions you want to create, it is advisable to first insert the molecules that you need into the Diagram Area, our work space. Alternatively, you may insert the molecules after reactions are created. To insert molecules:
 
-1.  Click the newly visible ribbon button ![Image](../assets/icons/NewMolecule.png) **Insert Molecule**, or right-click into the Diagram Area and choose **Insert Molecule** from the context menu that appears. A box listing all molecules available in this project will appear.
+1.  Click the newly visible ribbon button <img width="32" src="../assets/icons/MoleculeAdd.ico"> **Insert Molecule**, or right-click into the Diagram Area and choose **Insert Molecule** from the context menu that appears. A box listing all molecules available in this project will appear.
     
 2.  You can either enter a name manually into the "Molecule Name" input box, or select as many as you wish from the list below this input box. Multi-select is done in the standard Windows® way by keeping the **Shift** key (for a contiguous part of the list) or the **Ctrl** key pressed (for individual selection) followed by clicking with the mouse on the desired molecule range or molecule names.
     
@@ -592,7 +592,7 @@ The added **molecules can be moved** by the mouse within the diagram area. To do
 
 To **create a new reaction**:
 
-1.  Click the ribbon button ![Image](../assets/icons/NewReaction.png) **New**, or right-click into the diagram area at the position where you want to have the new reaction, then choose **Create Reaction** from the context menu that appears. A new window titled "New Reaction" will open with the "Properties" tab selected.
+1.  Click the ribbon button <img width="32" src="../assets/icons/ReactionAdd.ico"> **New**, or right-click into the diagram area at the position where you want to have the new reaction, then choose **Create Reaction** from the context menu that appears. A new window titled "New Reaction" will open with the "Properties" tab selected.
     
 2.  Enter a reaction name into the "Name" input box, e.g. "R1".
     
@@ -600,7 +600,7 @@ To **create a new reaction**:
     
 4.  Next, you can choose the Formula Type from a combobox - by default, Formula is selected.
     
-5.  If you want to use a formula that has already been defined, you may select it from the "Formula Name" combobox. To create a new formula, click the ![Image](../assets/icons/Create.png) **Add Formula** button. You will be asked for a reaction formula name. It is a good idea to use a related name for the reaction and for the reaction's formula - you may even use the same names here. Then press **Enter** or click **OK** to return to the "New Reaction" window.
+5.  If you want to use a formula that has already been defined, you may select it from the "Formula Name" combobox. To create a new formula, click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button. You will be asked for a reaction formula name. It is a good idea to use a related name for the reaction and for the reaction's formula - you may even use the same names here. Then press **Enter** or click **OK** to return to the "New Reaction" window.
     
 6.  You may then continue to create reaction parameters (like rate constants) and the reaction formula, but that can be done later as well.
     
@@ -612,7 +612,7 @@ To **create a new reaction**:
 For completing our example and to get more practice, repeat steps 1 to 6 to enter a second reaction that you name "R2".
 {% endhint %}
 
-A **reaction triangle** symbol showing the reaction name "R1" underneath will be created in the Diagram area. This triangle ![Image](../assets/icons/Reaction-32x32.png) has differently colored circles on its corners:
+A **reaction triangle** symbol showing the reaction name "R1" underneath will be created in the Diagram area. This triangle <img width="32" src="../assets/icons/Reaction.ico"> has differently colored circles on its corners:
 
 *   The blue circle, by default on the left, is where the educts are to be connected (see where already two reactions are present).
 
@@ -648,11 +648,11 @@ Now, continue and check the **reaction's stoichiometry**. If you have connected 
 
 ### Reaction Kinetics‌
 
-You are now ready to define **reaction parameters**, like kinetic rate constants, Michaelis-Menten parameters (kcat or KM), or binding constants. These parameters will then be used for the equation that defines the reaction kinetics. A new reaction parameter is defined by the following procedure:
+You are now ready to define **Reaction Parameters**, like kinetic rate constants, Michaelis-Menten parameters (kcat or KM), or binding constants. These parameters will then be used for the equation that defines the reaction kinetics. A new reaction parameter is defined by the following procedure:
 
 1.  Click the Parameters tab in the edit reactions window.
     
-2.  Click the ![Image](../assets/icons/Create.png) **Add Parameter** button. A "New Parameter" window opens (compare molecule parameter creation, “Molecule Parameters”).
+2.  Click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Parameter** button. A "New Parameter" window opens (compare molecule parameter creation, “Molecule Parameters”).
     
 3.  Enter a parameter name, like "k1" as a first order rate constant in our example.
     
@@ -672,7 +672,7 @@ Alternatively to entering it manually, you may also load it from a file or copy 
 
 The following steps describe how to enter a **kinetic equation** to the reaction:
 
-1.  Click the **Properties** tab again, and notice the red error sign ![Image](../assets/icons/ErrorCross.png) left of the empty input box (see lower left). Hovering with the mouse over this warning symbol will show you a tool tip with information on the validity of the equation - currently the problem is that it is still empty. Examples for kinetic equations are a irreversible term, like "k1\*A", an equilibrium like "k1\*A- k2\*B", or a Michaelis-Menten type of equation.
+1.  Click the **Properties** tab again, and notice the red error sign <img width="32" src="../assets/icons/ErrorProvider.ico"> left of the empty input box (see lower left). Hovering with the mouse over this warning symbol will show you a tool tip with information on the validity of the equation - currently the problem is that it is still empty. Examples for kinetic equations are a irreversible term, like "k1\*A", an equilibrium like "k1\*A- k2\*B", or a Michaelis-Menten type of equation.
     
 2.  If you want to use relative paths, select the corresponding radio button on the right hand side, and then the corresponding reference point in the tree window that pops up.
     
@@ -684,7 +684,7 @@ The following steps describe how to enter a **kinetic equation** to the reaction
     
 6.  Besides reaction and molecule parameters, parameters of other building blocks, like the volume of a spatial structure, might be needed. They have to be defined first, so look up the corresponding sections in this chapter to see how to do that.
 
-7.  Finally, enter your kinetic equation into the empty input box below the references; for our example, enter "k1\*A". This will let the error symbol ![Image](../assets/icons/ErrorCross.png) disappear, if everything is properly defined and if all parameters are defined in the references. Compare your results to the series of screen shots of the Quick guide in [Enter a Reaction](first-steps.md#enter-a-reaction).
+7.  Finally, enter your kinetic equation into the empty input box below the references; for our example, enter "k1\*A". This will let the error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> disappear, if everything is properly defined and if all parameters are defined in the references. Compare your results to the series of screen shots of the Quick guide in [Enter a Reaction](first-steps.md#enter-a-reaction).
 
 {% hint style="tip" %}
 To complete reaction R2 (created above, see [Reactions and Molecules](#reactions-and-molecules)) which you will need for continuing with the model building, connect molecule "B" as educt to R2, then "C" as product, as done for R1 in the previous section. Then define another k1 parameter for R2, this time set it to 0.005. Note that the name k1 appears twice, but is assigned to different reactions - thus they can both be separated. Next drag k1 to the references list, then enter k1\*B as reaction kinetics formula. We will need a working reaction system if we move on to setting up a simulation later on.
@@ -712,11 +712,11 @@ In MoBi®, passive and active transport processes use common logics in their set
 
 ### Passive Transports‌
    
-Passive transports which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports" in the Building Block Explorer, and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
+Passive transports which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports"  in the Building Block Explorer <img width="32" src="../assets/icons/PassiveTransport.ico">  and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
 
 For **creating a new transport** or loading one from a previously saved file:
 
-1.  Select the corresponding ribbon button ![Image](../assets/icons/Create.png) **New** or ![Image](../assets/icons/Load.png) **Load**. Alternatively, you may right-click into the empty white space in the left part of the edit window and select **Create Passive Transport** or **Load Passive Transport** from the context menu. If you choose **New** or **Create**, a window named "New Passive Transport" opens.
+1.  Select the corresponding ribbon button <img width="32" src="../assets/icons/AddAction.ico"> **New** or <img width="32" src="../assets/icons/LoadAction.ico"> **Load**. Alternatively, you may right-click into the empty white space in the left part of the edit window and select **Create Passive Transport** or **Load Passive Transport** from the context menu. If you choose **New** or **Create**, a window named "New Passive Transport" opens.
 
 ![New Passive Transport Window](../assets/images/part-4/NewPassiveTransport.png)
 
@@ -732,13 +732,13 @@ For **creating a new transport** or loading one from a previously saved file:
         
     *   The arrangement of neighborhood connections set up in the spatial structure (see [Creating Neighborhoods](#creating-neighborhoods)) will restrict the pattern of transport streams.
        
-4.  Define which molecules are transported. Per default, the checkbox ![Image](../assets/icons/Checked.png) **All** is selected, which means that all molecules which are present in the corresponding compartments are transported. Exceptions can be defined in the Exclude List. In order to add a molecule to the Exclude List, click the ![Image](../assets/icons/Create.png) **Add Molecule** button within the section Exclude List. Molecules listed in the Exclude List will not be transported. If the checkbox **All** is un-checked, you can add molecules to the Include List. Then, only molecules listed in the Include List are transported.
+4.  Define which molecules are transported. Per default, the checkbox ![Image](../assets/icons/Checked.png) **All** is selected, which means that all molecules which are present in the corresponding compartments are transported. Exceptions can be defined in the Exclude List. In order to add a molecule to the Exclude List, click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Molecule** button within the section Exclude List. Molecules listed in the Exclude List will not be transported. If the checkbox **All** is un-checked, you can add molecules to the Include List. Then, only molecules listed in the Include List are transported.
     
 5.  If the box ![Image](../assets/icons/Unchecked.png) **Create process rate parameter** is checked, a parameter which equals the transport rate equation is automatically generated when a simulation is build. You can use this parameter to refer to the transport rate in any equation. It can also be used to plot the transport rate (additionally check the box **Plot Process Rate Parameter**) .
     
 6.  In order to define a transport rate, go to the Tab **Kinetic**. Select Formula in the Formula Type combobox.
     
-7.  Click the ![Image](../assets/icons/Create.png) **Add Formula** button. You will be asked for a reaction formula name. Name the formula "Diffusion". Press **Enter** or click **OK**.
+7.  Click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button. You will be asked for a reaction formula name. Name the formula "Diffusion". Press **Enter** or click **OK**.
     
 8.  Next you need to compile the referenced values for the diffusion formula. To have more space for easier navigation, you may either click **OK** and edit the formula in the larger space of the edit window, or you may increase the size of the window by pulling on its rims with the left mouse button pressed.
         
@@ -772,7 +772,7 @@ Continuing with our example, let us enter a simple diffusion equation based on a
 
 6.  Compare your screen to to the images below. If you want to change the aliases manually, you can do so by clicking on any name input box and replace the corresponding name with another.
 
-7.  Now enter the formula "0.001\*(Concentration-Concentration1)" into the formula input box below the references. The error symbol ![Image](../assets/icons/ErrorCross.png) that was displayed to the left of this input box should now disappear, if everything is typed correctly. Compare your result again with the images below.
+7.  Now enter the formula "0.001\*(Concentration-Concentration1)" into the formula input box below the references. The error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> that was displayed to the left of this input box should now disappear, if everything is typed correctly. Compare your result again with the images below.
 
 {% hint style="note" %}
 The resulting formula is a generic formula. The example model has 3 different molecules, "A", "B", and "C". Each of them will be transported by the above passive transport, as long as they are all present in the compartments "Vial1" and "Vial2" and the checkbox "All" is selected, which is the case in our example.
@@ -822,7 +822,7 @@ First, an active transporter molecule needs to be defined:
 
 8.  Enter a name into the Name input box, like "PGP Transport". Then, follow the steps described in the previous section “Passive Transports” for selecting source and target, define a transport rate parameter and entering a transport kinetics formula.
 
-9.  The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol ![Image](../assets/icons/ErrorCross.png) will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a KM value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
+9.  The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a KM value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
 
 Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which runs in the opposite direction of the above passive transport, i.e., from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to "C\_PGP", and that of molecule "A" to "C\_A" by just overriding the default names. The equation to be entered is "0.001\*C\_PGP\*C\_A". The figure below shows what the screen should look like after everything is properly set up.
 
@@ -842,7 +842,7 @@ An observer which can be displayed in a chart (see [Simulation Results](simulati
 
 In our **example project**, a spatial structure named "Observer" has already been created by initially executing the **New Project** command. To proceed further, click on the + sign to the left of "Observers" in the building block explorer, and then open the "Observer" for editing by double-clicking on it or by using the **Edit** command of the context menu that appears after right-clicking on "Observer". In the edit window, you can choose between the tabs "molecule observer" (the default selection on opening) and "Container Observer".
 
-For **creating a new observer** or loading one from a previously saved file, select the corresponding button ![Image](../assets/icons/Create.png) **New** or ![Image](../assets/icons/LoadObserver.png) **Load** from the context-dependent ribbon and there select the proper observer type. Alternatively, you may right-click into the empty white space of the edit window and select **Create Molecule (resp. Container) Observer** or **Load Molecule (resp. Container) Observer** from the context menu. If you choose **New** or **Create**, a window named "New Molecule (resp. Container) Observer" opens.
+For **creating a new observer** or loading one from a previously saved file, select the corresponding button <img width="32" src="../assets/icons/AddAction.ico"> **New** or <img width="32" src="../assets/icons/PKMLLoad.ico"> **Load** from the context-dependent ribbon and there select the proper observer type. Alternatively, you may right-click into the empty white space of the edit window and select **Create Molecule (resp. Container) Observer** or **Load Molecule (resp. Container) Observer** from the context menu. If you choose **New** or **Create**, a window named "New Molecule (resp. Container) Observer" opens.
 
 Each **observer class has a conditions** attached to it that determines for which molecules and in which parts of the spatial structure an observer is calculated. Observers can be selected by inclusion or exclusion criteria based on their tags by selecting New match tag condition or New not match tag condition. Tags are either the name of a container or they can be manually added (compare “Creating a Spatial Structure”). All conditions entered for one observer are connected by a logical "and". Make sure you have entered proper data into these fields, or otherwise an observer is not generated in a simulation and warnings will be reported when creating a simulation (see [Create a Simulation](#part-4/setting-up-simulation.md#create-a-simulation)). As a further option, you may select the Add match all tag condition, which selects all containers.
 
@@ -856,7 +856,7 @@ To work with molecule observers, make sure the tab "Molecule Observer" in the ed
     
 2.  Check the box "All" in the section "Calculated For Molecules".
     
-3.  Check the box **All** in the section "Calculated for following molecules". If this checkbox is selected, the observer is defined for all existing molecules. Exceptions can be defined in the Exclude List. In order to add a molecule to the Exclude List, click the ![Image](../assets/icons/Create.png) **Add Molecule** button within the section Exclude List. The observer is not defined for molecules listed in the Exclude List. If the checkbox **All** is un-checked, you can add molecules to the Include List. Then, the observer is defined only for molecules listed in the Include List.
+3.  Check the box **All** in the section "Calculated for following molecules". If this checkbox is selected, the observer is defined for all existing molecules. Exceptions can be defined in the Exclude List. In order to add a molecule to the Exclude List, click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Molecule** button within the section Exclude List. The observer is not defined for molecules listed in the Exclude List. If the checkbox **All** is un-checked, you can add molecules to the Include List. Then, the observer is defined only for molecules listed in the Include List.
     
 4.  Then right-click into the white space below "In Container with", and select New match tag condition from the context menu.
     
@@ -866,7 +866,7 @@ To work with molecule observers, make sure the tab "Molecule Observer" in the ed
     
 6.  The next step is to create the Monitor formula which defines how the value of the observer is calculated from the molecule or parameters. At this point, at least a formula **name** is required for the observer creation; all other data like the observer formula can be defined at a later point, if needed. Click on the "Monitor" tab in the "New Molecule Observer" window.
     
-7.  Click the ![Image](../assets/icons/Create.png) **Add Formula** button. You will be asked for a reaction formula name; enter the name "MolarConcentration"; if this formula name is already existing, you may select it in the combobox instead of adding a new formula. In any case, the error symbol ![Image](../assets/icons/ErrorCross.png) will disappear from the "Formula Name" line as well as from the "Monitor" tab, and the **OK** button becomes active.
+7.  Click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button. You will be asked for a reaction formula name; enter the name "MolarConcentration"; if this formula name is already existing, you may select it in the combobox instead of adding a new formula. In any case, the error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> will disappear from the "Formula Name" line as well as from the "Monitor" tab, and the **OK** button becomes active.
     
 8.  • You can now continue to create the formula in the "New Molecule Observer" window. In this case, it is advisable to enhance the size of this window to have more work space.
 
@@ -886,7 +886,7 @@ To work with molecule observers, make sure the tab "Molecule Observer" in the ed
     
 13.  Drag and drop exactly this "Volume" to the left, below the "M". The alias "Volume", the path "..|..|Volume", and the dimension "Volume" should appear. Compare the screen shot below with your monitor window.
     
-14.  Finally, enter the formula "M/Volume" into the input box below the references (showing a red symbol ![Image](../assets/icons/ErrorCross.png) next to it before the formula is entered), and all should look like in this image.
+14.  Finally, enter the formula "M/Volume" into the input box below the references (showing a red symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> next to it before the formula is entered), and all should look like in this image.
     
 	![Molar Concentration Molecule Observer formula including references completed](../assets/images/part-4/AmountObserverComplete.png)
     
@@ -908,7 +908,7 @@ To work with container observers, make sure the tab "Container Observer" in the 
 
 4.  You need to select a target container tag in the "In Container with" field in the same way as described in [Molecule Observers](#molecule-observers) or for "Source" or "Target" in [Transport Processes](#transport-processes). For our example project, use the same condition as for the example molecule observer: select New match tag condition from the context menu and then Obs from the combobox.
 
-5.  Click on the "Monitor" tab, then click the ![Image](../assets/icons/Create.png) **Add Formula** button. Enter "SumMetabolites" as Formula Name. Then click **OK** or press **Enter**. (As described above for the molecule observers, you may also continue the formula work in the "New Container Observer" window.)
+5.  Click on the "Monitor" tab, then click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button. Enter "SumMetabolites" as Formula Name. Then click **OK** or press **Enter**. (As described above for the molecule observers, you may also continue the formula work in the "New Container Observer" window.)
 
 6.  Since the display returns to the properties tab, you need to click the "Monitor" tab again. Set the relative path as described for the Molecule Observer to "Vial1".
 
@@ -916,7 +916,7 @@ To work with container observers, make sure the tab "Container Observer" in the 
 
 8.  Drag and drop both of them successively to the reference list.
 
-9.  Enter "Concentration + Concentration1" into the formula input box left of the red symbol ![Image](../assets/icons/ErrorCross.png), which should disappear upon completion.
+9.  Enter "Concentration + Concentration1" into the formula input box left of the red symbol <img width="32" src="../assets/icons/ErrorProvider.ico">, which should disappear upon completion.
 
 The screen should look like in the screen shot below:
 
@@ -936,9 +936,9 @@ To add events or applications to the project, you need to open the events buildi
     
 To **create a new event group**, either    
 
-*   use the ![Image](../assets/icons/NewEvent.png) **New** ribbon button,
+*   use the <img width="32" src="../assets/icons/Event.ico">   **New** ribbon button,
 
-*   or right-click into the white space in the event edit window and select the ![Image](../assets/icons/Create.png) Create Event Group command.
+*   or right-click into the white space in the event edit window and select the <img width="32" src="../assets/icons/AddAction.ico"> Create Event Group command.
 
 A window named "New Event Group" will open. Then proceed with:
 
@@ -996,9 +996,9 @@ To create an event, click the Create Event option. A window named "New Event" wi
 
 5.  Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
 
-6.  There is still a Condition equation to be entered, as indicated by the red error sign ![Image](../assets/icons/ErrorCross.png) in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time > 500", which would execute the event at 500 minutes. The use of "> 500" instead of "= 500" is advantageous since it might well be that during the simulation, the exact value of 500 will never be assumed, depending on the time step. If you plan to quickly test different values for this time, it is advantageous to define this execution time as a parameter which can be altered in the simulation.
+6.  There is still a Condition equation to be entered, as indicated by the red error sign <img width="32" src="../assets/icons/ErrorProvider.ico"> in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time > 500", which would execute the event at 500 minutes. The use of "> 500" instead of "= 500" is advantageous since it might well be that during the simulation, the exact value of 500 will never be assumed, depending on the time step. If you plan to quickly test different values for this time, it is advantageous to define this execution time as a parameter which can be altered in the simulation.
 
-7.  Define a time parameter as an event parameter (alternatively, it can be set as an event group parameter if it is needed in several events of this group). Click the "Parameters" tab, then the button ![Image](../assets/icons/Create.png) **Add Parameter**. A "New Parameter" window opens.
+7.  Define a time parameter as an event parameter (alternatively, it can be set as an event group parameter if it is needed in several events of this group). Click the "Parameters" tab, then the button <img width="32" src="../assets/icons/AddAction.ico"> **Add Parameter**. A "New Parameter" window opens.
 
 8.  Enter "E1Time" as parameter name.
 
@@ -1010,7 +1010,7 @@ To create an event, click the Create Event option. A window named "New Event" wi
 
 12.  Click the "Properties" tab. Drag and drop the newly created parameter "E1Time" from the Possible Referenced Objects list on the right into the white space below the already added "Time" reference. To find this parameter, you need to look below the E1 event, so click on the + sign to open that part of the reference tree. In case you have defined the parameter under the event group, you will find it below the event group.
 
-13.  Enter "Time > E1Time" into the formula input box, after which the error sign ![Image](../assets/icons/ErrorCross.png) to the left of it should disappear.
+13.  Enter "Time > E1Time" into the formula input box, after which the error sign <img width="32" src="../assets/icons/ErrorProvider.ico"> to the left of it should disappear.
 
 14.  What is still needed is the assignment which determines what will happen when the event condition is fulfilled. As an example, we will set the amount of molecule "A" in the container "Vial1". To proceed, click the button **Add Assignment**. A window named "New Event Assignment" will open.
 
@@ -1020,7 +1020,7 @@ To create an event, click the Create Event option. A window named "New Event" wi
 
 	![Select Changed Entity window](../assets/images/part-4/SetA.png)
 
-17.  Click the **OK** button. The red error symbol ![Image](../assets/icons/ErrorCross.png) to the left of the "Changed Entity" input box should now be gone, and a path to molecule A, "BigVial| Vial1|A", should be visible.
+17.  Click the **OK** button. The red error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> to the left of the "Changed Entity" input box should now be gone, and a path to molecule A, "BigVial| Vial1|A", should be visible.
 
 18.  Check the box ![Image](../assets/icons/Checked.png) **Use Assignment As Value**, then enter "50" into the Value input box. This will set the amount of molecules to 50 µmol in "Vial1" when the event is executed. Finally, click the **OK** button or press **Enter**. The screen should look like in the following image, and the event is now completed.
 
@@ -1082,7 +1082,7 @@ More complex changes, like changing complex dosing schemes or changing dissoluti
 
 2.  Load your MoBi® project.
 
-3.  Right-click the Events entry in the building block explorer, select ![Image](../assets/icons/Load.png) **Load Event Group Building Block**.
+3.  Right-click the Events entry in the building block explorer, select <img width="32" src="../assets/icons/LoadAction.ico"> **Load Event Group Building Block**.
 
 4.  Enter the name and location of your pkml file. You may be asked for a new building block name. A new Events building block is created.
 
@@ -1093,7 +1093,7 @@ A collection of template files with predefined building blocks is automatically 
 {% endhint %}
 
 {% hint style="tip" %}
-Descriptive names for each of these applications building blocks could be helpful. Use the ![Image](../assets/icons/Rename-32x32.png) **Rename** function from the building block context menu for this purpose.
+Descriptive names for each of these applications building blocks could be helpful. Use the <img width="32" src="../assets/icons/Rename.ico"> **Rename** function from the building block context menu for this purpose.
 {% endhint %}
 
 ## Molecule Start Values‌
@@ -1136,15 +1136,15 @@ Instead of creating molecule start values, you may load them from a previously s
     
 Molecule start values can also be imported from Excel-files which is detailed below.
 
-To edit a molecule start value building block, double-click on it or use the context menu in the Building Block Explorer and select **Edit**. An edit window opens, analogue to the one used when creating new start values. You can now
+To edit a molecule start value building block, double-click on it or use the context menu in the Building Block Explorer and select **Edit**  <img width="32" src="../assets/icons/Edit.ico">. An edit window opens, analogue to the one used when creating new start values. You can now
 
 *   manually override the start concentrations or dimensions for every molecule in every container;
 
 *   manually change the "IsPresent" state for each molecule;
 
-*   use the ![Image](../assets/icons/ExtendParameterStartValues.png) **Extend** ribbon button to automatically add new molecules in case more of them have been created or loaded in the molecules building block after initially creating the start values or executing the last **Extend** command;
+*   use the <img width="32" src="../assets/icons/ExtendParameterStartValues.ico"> **Extend** ribbon button to automatically add new molecules in case more of them have been created or loaded in the molecules building block after initially creating the start values or executing the last **Extend** command;
 
-*   use the combobox "Is Present" in the upper right to make global selections for the "IsPresent" state for all molecules, where you can check or uncheck it for all molecules or selected molecules, giving you a high degree of flexibility in defining the presence of molecules only in desired organs. The ![Image](../assets/icons/OK.png) **Apply** button has to be pressed after a global selection. Manual changes (see second bullet) are still possible afterwards.
+*   use the combobox "Is Present" in the upper right to make global selections for the "IsPresent" state for all molecules, where you can check or uncheck it for all molecules or selected molecules, giving you a high degree of flexibility in defining the presence of molecules only in desired organs. The <img width="32" src="../assets/icons/OK.ico"> **Apply** button has to be pressed after a global selection. Manual changes (see second bullet) are still possible afterwards.
 
 {% hint style="tip" %}
 Restricting the presence of molecules to certain organs may improve your computing performance, but use it carefully to keep your model valid!
@@ -1174,13 +1174,13 @@ Parameter Start Values are needed to define the values of various parameters pre
 
 To automatically create Parameter Start Values by MoBi®:
 
-1.  Right-click the entry **Parameter Start Values** in the Building Block Explorer.
+1.  Right-click the entry **Parameter Start Values** <img width="32" src="../assets/icons/ExtendParameterStartValues.ico">  in the Building Block Explorer.
     
 2.  Select **Create Parameter Start Values Building Block** from the context menu that opens.
     
 3.  A window called "Create new start values" opens. Enter a unique name for the building block.
     
-4.  In the comboboxes below, you can select between different molecules or spatial structure building blocks from which the start values are calculated.
+4.  In the combo boxes below, you can select between different molecules or spatial structure building blocks from which the start values are calculated.
     
 5.  Click **OK** or press **Enter**.
     
@@ -1194,7 +1194,7 @@ To edit a parameter start value building block, double-click on it or use the co
 
 *   manually override the displayed values or dimensions.
 
-*   use the ![Image](../assets/icons/ExtendParameterStartValues.png) **Extend** ribbon button at the top to automatically add new parameters in case more of them have been created or loaded in the selected building blocks after initially creating the start values or executing the last **Extend** command.
+*   use the <img width="32" src="../assets/icons/ExtendParameterStartValues.ico">  **Extend** ribbon button at the top to automatically add new parameters in case more of them have been created or loaded in the selected building blocks after initially creating the start values or executing the last **Extend** command.
 
 Again, cloning and manual parameter changes at this level allow for quickly switching among different simulation scenarios.
 

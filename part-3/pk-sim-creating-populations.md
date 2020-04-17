@@ -36,11 +36,11 @@ to the NHANES study](../assets/images/part-3/BW_vs_age.png)
     
 To create a new population, do one of the following:    
 
-*   Click on **Population** ![Image](../assets/icons/Population-32x32.png) in the **Create New Building Blocks** Group of the
+*   Click on **Population** <img width="32" src="../assets/icons/Population.ico"> in the **Create New Building Blocks** Group of the
 
 Modeling & Simulation Tab
 
-*   Right mouse click on **Populations** in the **Building Block Explorer** and select
+*   Right mouse click on **Populations** <img width="32" src="../assets/icons/Population.ico">in the **Building Block Explorer** and select
 
 Add Population...
 
@@ -54,7 +54,7 @@ The population is initialized by giving it a **Name** in the respective input fi
 
 In the first drop-down menu (**Based on individual**) you can specify an **Individual** that you previously defined in this project. A **Population** can then be created based on any **Individual** already defined. You need to specify the number of individuals in your populations comprises and the percentage of females therein. In the tab **User Defined Variability**, changes in anatomical and physiological properties of the population you chose may be specified, i.e. anatomy and physiology including expression and ontogeny information about metabolizing enzymes, transport proteins and protein binding partners. Likewise, the distribution of the property may specified and results are visualized in the next tab **Distribution**. A population can be based on an individual saved as template:
 
-*   Click on **Load** ![Image](../assets/icons/Load.png)
+*   Click on **Load** <img width="32" src="../assets/icons/LoadAction.ico">
 
 *   Select the individual from **User Templates** or **Predefined Templates**
 
@@ -64,7 +64,7 @@ In the first drop-down menu (**Based on individual**) you can specify an **Indiv
 
 Alternatively, you can create a new individual which serves as a basis individual for the population:
 
-*   Click on **Create** ![Image](../assets/icons/Create.png)
+*   Click on **Create** <img width="32" src="../assets/icons/AddAction.ico">
 
 *   Define the properties of the **Individual**. For details see [PK-Sim® - Creating Individuals](pk-sim-creating-individuals.md).
 
@@ -141,7 +141,7 @@ The tree view shows only drawings that are currently open. To select a parameter
 Use the **Filter** function above the tree view to find parameters more quickly.
 {% endhint %}
 
-Selected parameters can be added to the box on the right hand side by clicking ![Image](../assets/icons/Forward.png) **Add**. Accordingly, parameters can be removed from the box by clicking ![Image](../assets/icons/Back.png) **Remove**. Parameters added to the box on the right hand side can be varied within the population simulation. For each parameter, a type of distribution and associated parameters can be chosen. Four types of distributions are available:
+Selected parameters can be added to the box on the right hand side by clicking <img width="32" src="../assets/icons/Forward.ico"> **Add**. Accordingly, parameters can be removed from the box by clicking <img width="32" src="../assets/icons/Back.ico"> **Remove**. Parameters added to the box on the right hand side can be varied within the population simulation. For each parameter, a type of distribution and associated parameters can be chosen. Four types of distributions are available:
     
 
 *   Normal: The parameter is normally (Gaussian-like) distributed. Mean and standard deviation must be given. Select the unit accordingly.
@@ -178,7 +178,7 @@ To set or edit the properties of an existing population:
 
 1.  Right mouse click on the respective population in the **Building Block Explorer**
     
-2.  Select ![Image](../assets/icons/Edit-32x32.png) **Edit...**    
+2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**    
 
 or simply double click on the existing population in the **Building Block Explorer**.
 
@@ -210,11 +210,11 @@ To clone populations in the project:
 
 1.  Right mouse click on the respective population in the **Building Block Explorer**
     
-2.  Select ![Image](../assets/icons/Clone.png) **Clone...**
+2.  Select <img width="32" src="../assets/icons/SimulationClone.ico"> **Clone...**
     
 3.  Set an alternative name for the population clone and enter a description, if desired
     
-4.  Confirm and close the window with **OK** ![Image](../assets/icons/OK.png)
+4.  Confirm and close the window with **OK** <img width="32" src="../assets/icons/OK.ico">
 
 ### Saving Populations as Templates‌
 
@@ -224,7 +224,7 @@ To save an existing population as template:
 
 1.  Right mouse click on the respective population in the **Building Block Explorer**
     
-2.  Select  ![Image](../assets/icons/SaveAsTemplate.png) **Save as Template...**
+2.  Select  <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**
     
     In case a population with the same name already exists, a warning message will pop up and you have the following options:
     
@@ -240,13 +240,13 @@ To load an existing population from the template database:
 
 1.  Right mouse click on **Populations** in the **Building Block Explorer**
     
-2.  Select ![Image](../assets/icons/LoadFromTemplate.png) **Load From Template...**
+2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
     
 3.  Select the desired population from the user templates
     
     In case a population with the same name already exists in the project, a warning message will pop up and you will have to **Rename** the population that is to be loaded from the template.
     
-4.  Click **OK** ![Image](../assets/icons/OK.png)
+4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
     
 
 The selected population will appear in the **Building Block Explorer** view.
@@ -260,7 +260,7 @@ To delete a population from the project:
 
 1.  Right mouse click on the respective population in the **Building Block Explorer**
     
-2.  Select ![Image](../assets/icons/Cancel.png) **Delete...**
+2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
     
 3.  Confirm to delete the population by clicking on **Yes**
 

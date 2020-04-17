@@ -18,7 +18,7 @@ Simulations are performed in 3 steps: Creating a simulation (see [Creating new s
 
 To create a new simulation:
 
-- Click **Simulation** ![Image](../assets/icons/Simulation-32x32.png) in the **Create** Group of the **Modeling** Tab or
+- Click **Simulation** <img width="32" src="../assets/icons/Simulation.ico"> in the **Create** Group of the **Modeling** Tab or
 
 - Use the short cut **Ctrl+Alt+S**
 
@@ -48,9 +48,9 @@ In the **Model Structure** tab of the **Create Simulation** window you need to:
 
   * Select a previously defined individual or population from the drop-down menu
 
-  * Define a new individual or population by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions of the dialog windows
+  * Define a new individual or population by clicking **Create** <img width="32" src="../assets/icons/AddAction.ico"> and follow the instructions of the dialog windows
 
-  * Load a new individual or population from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
+  * Load a new individual or population from template by clicking **Load** <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the dialog windows
 
 **Allow aging**: If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when5 choosing this option. Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to
 
@@ -60,9 +60,9 @@ e.g. preterm and term neonates, for which the rapid changes in anatomical and ph
 
   * Select a compound from the list of previously created compounds in the Building Block window.
 
-  * Create a new compound by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions in the dialog windows.
+  * Create a new compound by clicking **Create** <img width="32" src="../assets/icons/Molecule.ico"> and follow the instructions in the dialog windows.
 
-  * Load a new compound from template by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions in the dialog windows.
+  * Load a new compound from template by clicking **Load** <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions in the dialog windows.
 
 * Select the model settings, i.e. either select the standard model for small molecules or the model for proteins and large molecules
 
@@ -132,9 +132,9 @@ To insert an administration do one of the following:
 
 - Select a previously defined protocol from the **Administration Protocol** drop- down menu
 
-- Define a new administration by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions of the dialog windows
+- Define a new administration by clicking **Create** <img width="32" src="../assets/icons/Protocol.ico"> and follow the instructions of the dialog windows
 
-- Load an administration from the template data base by clicking **Load** ![Image](../assets/icons/Load.png) and follow the instructions of the dialog windows
+- Load an administration from the template data base by clicking **Load** <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the dialog windows
 
 In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation name is not necessary, because the drug is always assumed to be given in solution. For these administration types, therefore, no match with formulations has to be made. For further information please see [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md).
 
@@ -150,13 +150,13 @@ In the **Events** tab of the **Create Simulation** window, events such as the ad
 
 Events are optional for creating a simulation. Possible predefined events are currently the application of a meal to simulate fed conditions for an oral administration and gallbladder emptying independent from meal administration. To insert an event do one of the following:
 
-- Select a previously defined event from the **Event** drop-down menu
+- Select a previously defined event from the <img width="32" src="../assets/icons/Event.ico"> **Event** drop-down menu
 
-- Define a new event by clicking **Create** ![Image](../assets/icons/Create.png) and follow the instructions of the appearing dialog windows
+- Define a new event by clicking **Create** <img width="32" src="../assets/icons/Event.ico"> and follow the instructions of the appearing dialog windows
 
-- Load an event from the template data base by clicking ![Image](../assets/icons/Load.png) and follow the instructions of the appearing dialog windows
+- Load an event from the template data base by clicking <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the appearing dialog windows
 
-Click **OK** ![Image](../assets/icons/OK.png) to finish the **Create Simulation** process and to close the window.
+Click **OK** <img width="32" src="../assets/icons/OK.ico"> to finish the **Create Simulation** process and to close the window.
 
 If you have successfully created a simulation, it will appear in the simulation window with its name and its components:
 
@@ -182,7 +182,7 @@ If you click on **Show Diagram**, a reaction network of all reactions in the sim
 
 ## Running a simulation in an individual‌
 
-If a simulation was successfully created, press the **Run** simulation button ![Image](../assets/icons/Run-arrow.png) in the Modeling & Simulation ribbon or press the F5 key. If the simulation is run for the first time, ths following window will appear in which the simulation curves that will be generated in the simulation can be selected:
+If a simulation was successfully created, press the **Run** simulation button <img width="32" src="../assets/icons/Run.ico"> in the Modeling & Simulation ribbon or press the F5 key. If the simulation is run for the first time, ths following window will appear in which the simulation curves that will be generated in the simulation can be selected:
 
 ![The Individual Simulation Settings window. Here, the organs and compartments for which concentration time curves are generated in the individual simulation can be selected.](../assets/images/part-3/IndividualSimulationSettingsCurveSelection.png)
 
@@ -254,7 +254,7 @@ Generally, two different views are available and switching between these view ca
 
 - Chart view ![Image](../assets/icons/Chart.png) (default): The simulated curves and the observed data are displayed
 
-- PK-Analysis view ![Image](../assets/icons/PKAnalysis-32x32.png): The calculated PK parameters for the selected simulated curves are displayed.
+- PK-Analysis view <img width="32" src="../assets/icons/PKAnalysis.ico">: The calculated PK parameters for the selected simulated curves are displayed.
 
 ### Chart view‌
 
@@ -272,11 +272,11 @@ For more information on how to load observed data and compare them to your simul
 
 Multiple results windows
 
-If you wish to display different curves or use different settings for the same simulation, you can add new results charts windows by clicking on the **Results** button ![Image](../assets/icons/ResultsChart.png) in the Ribbon group **Simulation**.
+If you wish to display different curves or use different settings for the same simulation, you can add new results charts windows by clicking on the **Results** button <img width="32" src="../assets/icons/TimeProfileAnalysis.ico"> in the Ribbon group **Simulation**.
 
 Special features for population simulations
 
-If you wish to display other percentiles or other curves without simulating again, click on the **Results** button ![Image](../assets/icons/ResultsChart.png) in the ribbon group **Simulation**. You will be directed to the **Curve selection for chart** window (see above).
+If you wish to display other percentiles or other curves without simulating again, click on the **Results** button <img width="32" src="../assets/icons/TimeProfileAnalysis.ico"> in the ribbon group **Simulation**. You will be directed to the **Curve selection for chart** window (see above).
 
 ### PK-Analysis view‌
 
@@ -356,7 +356,7 @@ Unlike for simulations in single individuals, additional variability for paramet
 For more information on adding variability to a defined population, go to [PK-Sim® - Creating Populations](../part-3/pk-sim-creating-populations.md).
 {% endhint %}
 
-Once all parameters are set, click the **Run** simulation button ![Image](../assets/icons/RunSimulation.png) in the **Modeling & Simulation** group or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
+Once all parameters are set, click the **Run** simulation button <img width="32" src="../assets/icons/Run.ico"> in the **Modeling & Simulation** group or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
   
 ![The Population Simulation Settings: Curve Selection window. Time profiles and PK-parameters will be calculated in the selected organs and compartments.](../assets/images/part-3/population-simulation-20-18.jpg)
 
@@ -442,9 +442,9 @@ There are several ways to visualize stratified results:
 
 For each curve PK parameters are calculated and can be shown by clicking on the **Show PK-Analysis** button.
 
-- Chart view ![Image](../assets/icons/Chart.png) (default): The calculated curves and the observed data are displayed
+- Chart view <img width="32" src="../assets/icons/TimeProfileAnalysis.ico"> (default): The calculated curves and the observed data are displayed
 
-- PK-Analysis view ![Image](../assets/icons/PKAnalysis-32x32.png): The calculated PK parameters for the selected calculated curves are displayed. See “PK- Analysis view”.
+- PK-Analysis view <img width="32" src="../assets/icons/PKAnalysis.ico">: The calculated PK parameters for the selected calculated curves are displayed. See “PK- Analysis view”.
 
 ![Display simulated concentration-/fraction-time profiles stratified by Population Parameters and/or PK-parameters.](../assets/images/part-3/PK-Sim_CreateSimulation_PopSim_TimeProfile_Plot1.png)
 
@@ -458,7 +458,7 @@ Details of your grouping can be changed:
 
 - Right mouse click on the name of the grouping and select **Edit** from the menu.
 
-- Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.png)
+- Confirm and close the window by clicking **OK** <img width="32" src="../assets/icons/OK.ico">
 
 {% hint style="tip" %}
 Use the magnifying glass to zoom into an area that you wish to enlarge.
@@ -522,13 +522,13 @@ To clone a simulation in the project:
 
 1.  Right mouse click on the respective simulation in the Simulations Explorer
 
-2.  Select **Clone...** ![Image](../assets/icons/Clone.png)
+2.  Select **Clone...** <img width="32" src="../assets/icons/SimulationClone.ico">
 
 3.  The **Cloning Simulation dialog**, which is identical to the **Create Simulation dialog** for new simulations, will open. You will have to enter an alternative name for the simulation clone.
 
 4.  You can now go through the **Cloning Simulation dialog** and exchange parameters and/or entire building blocks of your simulation clone. To update the settings of the simulation select the appropriate building block from the drop-down menus.
 
-5.  Once all parameters and building blocks are appropriate confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.png)
+5.  Once all parameters and building blocks are appropriate confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.ico/)
 
 {% hint style="note" %}
 Please note that a simulation can only be cloned if the local simulation settings are in agreement with the global settings of the building blocks, as indicated by **green check marks**.
@@ -540,7 +540,7 @@ The comparison chart function allows for comparison of results of different indi
 
 To create a comparison plot for simulation in individuals proceed in the following way:
 
-- Click on the **Comparison Chart** button ![Image](../assets/icons/Comparison-chart.png) in the Ribbon group **Simulation** and select **For Individual Simulations**. A new entry in the Simulation window will appear, **Comparison Chart 1**.
+- Click on the **Comparison Chart** button <img width="32" src="../assets/icons/IndividualSimulationComparison.ico"> in the Ribbon group **Simulation** and select **For Individual Simulations**. A new entry in the Simulation window will appear, **Comparison Chart 1**.
 
 ![The Comparison chart for comparing simulations in individuals.](../assets/images/part-3/PK-Sim_CreateSimulation_ComparisonIndiv.png)
 
@@ -562,7 +562,7 @@ To rename a comparison chart, right mouse click on the respective summary chart 
 
 PK-Sim® offers a comparison chart also for population simulations. To create a comparison plot for simulations in populations proceed in the following way:
 
-- Click on the **Comparison Chart** button ![Image](../assets/icons/Comparison-chart.png) in the Ribbon group **Simulation** and select **For Population Simulations**. A new window **Select simulations to use in comparison** opens up. Select the simulations you want to compare by ticking the respective boxes. In addition, you can select a population as a reference population and specify labeling, symbol and color for plotting.
+- Click on the **Comparison Chart** button <img width="32" src="../assets/icons/IndividualSimulationComparison.ico"> in the Ribbon group **Simulation** and select **For Population Simulations**. A new window **Select simulations to use in comparison** opens up. Select the simulations you want to compare by ticking the respective boxes. In addition, you can select a population as a reference population and specify labeling, symbol and color for plotting.
 
 ![Select population simulations that you want to compare.](../assets/images/part-3/PK-Sim_CreateSimulation_ComparisonPopulations.png)
 

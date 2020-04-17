@@ -6,9 +6,9 @@ A Compound is a set of data that describes the properties of the substance whose
 
 To create a new compound, do one of the following:
 
-- Click on **Compound** ![Image](../assets/images/part-3/Compound-2.png) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+- Click on **Compound** <img width="32" src="../assets/icons/Molecule.ico"> in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
-- Right mouse click on **Compounds** in the **Building Block Explorer** and select ![Image](../assets/images/part-3/Compound_trans.png) **Add Compound...**
+- Right mouse click on **Compounds** in the **Building Block Explorer** and select <img width="32" src="../assets/icons/Molecule.ico"> **Add Compound...**
 
 - Use the short cut **Ctrl+Alt+C**
 
@@ -26,17 +26,17 @@ Then, the basic physico-chemical properties have to be specified in the **Basic 
 
 To enter an additional value:
 
-1.  Click **Add** ![Image](../assets/icons/Add.png) at the end of a row.
+1.  Click **Add** <img width="32" src="../assets/icons/AddAction.ico"> at the end of a row.
 
 2.  Enter the alternative name
 
 3.  If desired, enter a short description in the respective input field
 
-4.  Click **OK** ![Image](../assets/icons/OK.png)
+4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
 
 To delete a value:
 
-1.  Click **Delete** ![Image](../assets/icons/Delete.png)
+1.  Click **Delete** <img width="32" src="../assets/icons/Delete.ico">
 
 2.  Click **Yes**
 
@@ -120,7 +120,9 @@ First estimates can be made using water solubility. However, especially for lipo
 #### Intestinal solubility as table function of pH
 Intestinal solubility can also be defined as a linear interpolation of measured (pH, Solubility) data pairs.
 
-<img width="187" src="../assets/images/part-3/CreateSolubilityAsTable.png">  :arrow_right: <img width="400" src="../assets/images/part-3/EditSolubilityTable.png">
+<img width="187" src="../assets/images/part-3/CreateSolubilityAsTable.png">  
+
+:arrow_right: <img width="400" src="../assets/images/part-3/EditSolubilityTable.png">
 
 
 ### ADME Properties‌
@@ -164,7 +166,7 @@ A general workflow for defining a specific process in _Protein Binding Partners_
 After definition of the required parameters the specific clearance or kinetic rate constant used in the simulation is automatically calculated taking into account the parameters listed under **Calculation parameters**.
 
 {% hint style="note" %}
-Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol ![Image](../assets/icons/Warning.png). The formula can be reset by clicking on ![Image](../assets/icons/Reset.png)
+Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol <img width="32" src="../assets/icons/Warning.ico">. The formula can be reset by clicking on ![Image](../assets/icons/Reset.png)
 {% endhint %}
 
 After having defined the biological properties of the compound, you will have to link specific processes to enzymatic, transport, and binding settings defined for the selected individual/species in the Simulation. This is described in [Select relevant biological processes](pk-sim-simulations.md#select-relevant-biological-processes).
@@ -414,7 +416,7 @@ i.e. no binding is assumed.
 
 - kass (FcRn): association rate constant for binding to FcRn for the acidic endosomal space as well as for plasma/interstitial space. The default value is a typical value for monoclonal antibodies and can usually be kept.
 
-After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** ![Image](../assets/icons/OK.png). The new compound will appear in the **Building Block Explorer** view.
+After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img width="32" src="../assets/icons/OK.ico">. The new compound will appear in the **Building Block Explorer** view.
 
 ## Setting or Changing Compound Properties‌
 
@@ -422,7 +424,7 @@ To set or change the properties of an existing compound:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Edit-32x32.png) **Edit...**
+2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**
 
 or simply double click on the compound in the **Building Block Explorer**.
 
@@ -434,11 +436,11 @@ To clone a compound in the project:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select **Clone...** ![Image](../assets/icons/Clone.png)
+2.  Select **Clone...** <img width="32" src="../assets/icons/SimulationClone.ico">
 
 3.  Enter an alternative name for the compound clone and enter a description, if desired.
 
-4.  Confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.png)
+4.  Confirm and close the window by clicking **OK** <img width="32" src="../assets/icons/OK.ico">
 
 ## Saving Compounds as Templates‌
 
@@ -448,7 +450,7 @@ To save an existing compound as template:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/SaveAsTemplate.png) **Save as Template...**
+2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**
 
 In case a compound with the same name already exists, a warning appears and you have the following options:
 
@@ -466,13 +468,13 @@ To load an existing compound from the template database:
 
 1.  Right mouse click on **Compounds** in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/LoadFromTemplate.png) **Load From Template...**
+2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
 
 3.  Select the desired compound from the user templates
 
     In case a compound with the same name already exists in the project, a warning pops up and you will have to **Rename** the compound that is to be loaded from template.
 
-4.  Click **OK** ![Image](../assets/icons/OK.png)
+4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
 
 The selected compound will appear in the **Building Block Explorer** view.
 
@@ -484,7 +486,7 @@ To delete a compound from the project:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select ![Image](../assets/icons/Delete.png) **Delete...**
+2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
 
 3.  Confirm by clicking **Yes**
 
