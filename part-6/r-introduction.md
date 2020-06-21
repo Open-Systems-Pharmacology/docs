@@ -18,15 +18,15 @@ The general workflow with the **ospsuite** package can be summarized in followin
 
 The workflow steps are described in the following sections:
 
--   [Loading a simulation and accessing entities](load-get.html)
--   [Changing parameter and molecule start values](set-values.html)
--   [Running a simulation](run-simulation.html)
--   [Creating individuals](create-individual.html)
--   [Population simulations](create-run-population.html)
--   [PK Analysis](pk-analysis.html)
--   [Sensitivity analysis](sensitivity-analysis.html)
--   [Table parameters](table-parameters.html)
--   [Dimensions and Units](unit-conversion.html)
+-   [Loading a simulation and accessing entities](#loading-a-simulation-and-accessing-entities)
+-   [Changing parameter and molecule start values](#changing-parameter-and-molecule-start-values)
+-   [Running a simulation](#running-a-simulation)
+-   [Creating individuals](#creating-individuals)
+-   [Population simulations](#population-simulations)
+-   [PK Analysis](#calculating-pk-parameters-of-simulation-outputs)
+-   [Sensitivity analysis](#sensitivity-analysis)
+-   [Table parameters](#table-parameters)
+-   [Dimensions and Units](#dimensions-and-units)
 
 Some aspects of the ospsuite package may appear uncommon for the users not familiar with the object-oriented approach. It is recommended to read the following section to better understand some semantics and to get the most of the flexibility and efficiency of the package.
 
@@ -63,7 +63,7 @@ Definition of the output intervals of the simulation. The `OutputSchema `defines
 List of quantities (parameters and molecules) for which the outputs will be generated. Can be accessed as property of a `Simulation`-object.
 
 `SimulationResults`  
-Results of a simulation, either individual or population. Holds the simulated values for all quantities defined in the `OutputSelections`. See [Running a simulation](run-simulation.html) for more information.
+Results of a simulation, either individual or population. Holds the simulated values for all quantities defined in the `OutputSelections`. See [Running a simulation](#running-a-simulation) for more information.
 
 `Entity`  
 Every accessible distinct part of the model. Most prominent entities are `Molecule`, `Parameter`, `Container`. Every `Entity` has properties `$path` representing the path within the model structure and `$parentContainer` being the container this entity is located in.
@@ -73,7 +73,7 @@ A `Container` is an element of model structure that contains other entities (e.g
 
 `Quantity`  
 An `Entity` in the simulation that has a value - namely `Molecule` and `Parameter`. Every `Quantity` has a `$value` and a `dimension`. Further important fields are `$unit`, which is the base unit of the dimension.
-See [Dimensions and Units](unit-conversion.html) for more information.
+See [Dimensions and Units](#dimensions-and-units) for more information.
 
 `Molecule`  
 A molecule located in a `Container`. The `$value`-property refers to the initial value in the simulation. Inherits from `Quantity`.
@@ -82,16 +82,16 @@ A molecule located in a `Container`. The `$value`-property refers to the initial
 A parameter. The `$value`-property refers to the initial value in the simulation. Inherits from `Quantity`.
 
 `Formula`  
-The value of each `Quantity` is described by a `Formula`. There are different types of formulae, see [Changing parameter and molecule start values](set-values.html) for more information.
+The value of each `Quantity` is described by a `Formula`. There are different types of formulae, see [Changing parameter and molecule start values](#changing-parameter-and-molecule-start-values) for more information.
 
 `IndividualCharacteristics`  
-An object used for creating of individual parameter sets with the `createIndividual`-method. See [Creating individuals](create-individual.html) for more information.
+An object used for creating of individual parameter sets with the `createIndividual`-method. See [Creating individuals](#creating-individuals) for more information.
 
 `Population`  
-An object describing a virtual population. Can be either loaded from a \*.csv-file created by PK-Sim or created with the `createPopulation`-method. See [Population simulations](create-run-population.html) for more information.
+An object describing a virtual population. Can be either loaded from a \*.csv-file created by PK-Sim or created with the `createPopulation`-method. See [Population simulations](#population-simulations) for more information.
 
 `PopulationCharacteristics`  
-An object used for creating of population parameter sets with the`createPopulation`-method. See [Population simulations](create-run-population.html) for more information.
+An object used for creating of population parameter sets with the`createPopulation`-method. See [Population simulations](#population-simulations) for more information.
 
 `SimulationPKAnalyses`  
 PK analyses for a simulations result.
@@ -100,13 +100,13 @@ PK analyses for a simulations result.
 A certain PK parameter for an output quantity. Has the fields `$name` which is the name of the PK parameter (e.g. “C\_max”), `$quantityPath` the path of the output the parameter has been calculated for, and `$values` the value (or list of values for a population simulation).
 
 `SensitivityAnalysis`  
-A class defining the analysis of which input parameters have most impact on the output curves of a simulation. See [Sensitivity analysis](sensitivity-analysis.html) for more information.
+A class defining the analysis of which input parameters have most impact on the output curves of a simulation. See [Sensitivity analysis](#sensitivity-analysis) for more information.
 
 `SensitivityAnalysisResults`  
 Resuls of running the `SensitivityAnalysis`
 
 `PKParameterSensitivity`  
-The sensitivity (field `$value`) of a PK-Parameter (`$pkParameterName`) for the output `$outputPath` calculated for the varied parameter `$parameterName`. See [Sensitivity analysis](sensitivity-analysis.html) for more information.
+The sensitivity (field `$value`) of a PK-Parameter (`$pkParameterName`) for the output `$outputPath` calculated for the varied parameter `$parameterName`. See [Sensitivity analysis](#sensitivity-analysis) for more information.
 
 # Loading a simulation and accessing entities
 
@@ -300,7 +300,7 @@ Every (initial) value is described either by a constant or by a formula. If the 
 
 If the value is not constant, it is described by one of the formula types:
 
-**Distributed**: Distributed parameters describe a variation around a constant value or between two numerical limits. In the simulation, the behavior equals that of constant values. See [OSPS documentation](https://docs.open-systems-pharmacology.org/working-with-mobi/mobi-documentation/model-building-components#working-with-constant-and-distributed-parameters) for more information.
+**Distributed**: Distributed parameters describe a variation around a constant value or between two numerical limits. In the simulation, the behavior equals that of constant values. See [Working with Constant and Distributed Parameters‌](https://docs.open-systems-pharmacology.org/working-with-mobi/mobi-documentation/model-building-components#working-with-constant-and-distributed-parameters) for more information.
 
     #Get the parameter "Volume" of the Liver
     liverVolume <- getParameter("Organism|Liver|Volume", sim)
@@ -329,7 +329,7 @@ If the value is not constant, it is described by one of the formula types:
     liverIntVolume$formulaString
     #> [1] "f_int*V"
 
-**Table formula**: The value of the parameter is given by a table with x-y value pairs. X values usually refer to the simulation time. See [Table parameters](table-parameters.html) for additional information on how to retrieve or change the table values.
+**Table formula**: The value of the parameter is given by a table with x-y value pairs. X values usually refer to the simulation time. See [Table parameters](#table-parameters) for additional information on how to retrieve or change the table values.
 
     #Get the parameter defined by a table.
     tableParam <- getParameter("Organism|TableParameter", sim)
@@ -530,7 +530,7 @@ An example how to set the initial values of molecules in all containers to a cer
 
 ## Running individual simulation and retrieving the results
 
-Once the simulation is loaded (see [Loading a simulation and accessing entities](load-get.html)), it can be run to produce an object of the class `SimulationResults`.
+Once the simulation is loaded (see [Loading a simulation and accessing entities](#loading-a-simulation-and-accessing-entities)), it can be run to produce an object of the class `SimulationResults`.
 
     library(ospsuite)
     
@@ -852,11 +852,11 @@ to the value of the ontogeny of a CYP3A4 enzyme for the specified individual. Th
 ## Population simulations
 
 Population simulations can be easily performed in R by combining the simulation loaded from a \*.pkml file with the population information created in PK-Sim and exported to CSV format (for details, please refer
-to [OSPS online documentation](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-creating-populations)) or created directly in R (see [Creating simulations](#SectionCreatePopulation)).
+to [Creating Populations](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-creating-populations)) or created directly in R (see [Creating populations](#creating-populations)).
 
 ### Loading population file
 
-The method `loadPopulation` creates an object of the `Population` class that can be passed to the `runSimulation` method (see [Running simulations and retrieving the results](run-simulation.html)).
+The method `loadPopulation` creates an object of the `Population` class that can be passed to the `runSimulation` method (see [Running simulations and retrieving the results](#running-a-simulation)).
 
     library(ospsuite)
     # Load population information from csv
@@ -868,9 +868,9 @@ The method `loadPopulation` creates an object of the `Population` class that can
 
 ## Creating populations
 
-Similar to creating individual parameter sets (see [Creating individuals](create-individual.html)), a population is created from
+Similar to creating individual parameter sets (see [Creating individuals](#creating-individuals)), a population is created from
 *population characteristics* created by calling the method `createPopulationCharacteristics`. To see the list of available values for the arguments `species` and `population` (only for human), use the enums `Species` and `HumanPopulation`, respectively. The returned object of type `PopulationCharacteristics` is then passed to the function `createPopulation` to generate a set of parameter values. The algoritghm
-behind is the same used in PK-Sim when creating an population. Molecule ontogenies can be added as described in the vignette [Creating individuals](create-individual.html).
+behind is the same used in PK-Sim when creating an population. Molecule ontogenies can be added as described in the vignette [Creating individuals](#creating-individuals).
 
     library(ospsuite)
     
@@ -997,13 +997,12 @@ To get the results for a specific individual or a set of individuals, the argume
 
 ![](data:image/png;base64,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)
 
-For more information about running simulations, please refer to [Running simulations and retrieving the results](run-simulation.html).
+For more information about running simulations, please refer to [Running simulations and retrieving the results](#running-a-simulation).
 
 # Calculating PK parameters of simulation outputs
 
 PK parameters such as AUC, C\_max, etc., can be calculated for all outputs of a simulation. First, simulation results must be calculated, and the `SimulationResults` object is then passed to the method
-`calculatePKAnalyses`. For the list of calculated PK parameters and their description, please refer to [OSPS
-documentation](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations#pk-analysis-view).
+`calculatePKAnalyses`. For the list of calculated PK parameters and their description, please refer to [PK-Analysis view‌](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations#pk-analysis-view).
 
     library(ospsuite)
     
@@ -1141,7 +1140,7 @@ Population analysis calculated in R can be exported to a \*.csv file and loaded 
 
 # Sensitivity analysis
 
-The models built with OSPS depend on a lot of input parameters which are based on literature values, measurements, databases, assumptions. For a given set of input parameters a number of output curves is computed in a simulation. To assess which input parameters have most impact on the output curves, a sensitivity analysis of the simulation can be performed. For more information about theoretical background, see [OSPS documentation](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/sensitivity-analysis).
+The models built with OSPS depend on a lot of input parameters which are based on literature values, measurements, databases, assumptions. For a given set of input parameters a number of output curves is computed in a simulation. To assess which input parameters have most impact on the output curves, a sensitivity analysis of the simulation can be performed. For more information about theoretical background, see [Sensitivity Analysis](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/sensitivity-analysis).
 
 In brief, the values of the chosen parameters are changed by a certain percentage and the impact of these changes on PK parameters of model outputs is assessed.
 
@@ -1202,7 +1201,7 @@ calling `addParameterPaths` will only vary the newly added parameters.
     #> [1] "Organism|Q"      "Organism|Volume" "R1|k1"
 
 To run the specified `SensitivityAnalysis`, call the method `runSensitivityAnalysis`. The method returns an object of the class `SensitivityAnalysisResults`. The impact of the defined parameters is
-calculated for PK-Parameters (see [PK Analysis](pk-analysis.html) for more information) of all model outputs.
+calculated for PK-Parameters (see [PK Analysis](#calculating-pk-parameters-of-simulation-outputs) for more information) of all model outputs.
 
     # Load simulation
     simFilePath <- file.path(getwd(), "..", "tests", "data", "simple.pkml", fsep = .Platform$file.sep)
