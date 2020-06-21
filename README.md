@@ -34,8 +34,8 @@ Tools shared between PK-Sim® and MoBi® and some workflow examples are presente
 
 [Go to: Shared Tools and Example Workflows](part-5/features-of-tables.md)
 
-## Working with Matlab® and R
+## Working with R
 
-After that, the interfaces to the common computing environments Matlab® and R are described in "Working with Matlab® and R" and "R Toolbox for MoBi®", respectively.
+After that, the interface to the common computing environment R is described in "R Toolbox".
 
-[Go to: Working with Matlab® and R](part-6/matlab-introduction.md)
+[Go to: Working with R](part-6/r-introduction.md)

@@ -302,8 +302,6 @@ The context menu that opens when right-clicking on the simulation in the Simulat
 
 - Start Parameter Identification \- calls Parameter Identification tool (see [Parameter Identification](tools.md#parameter-indentification) for description).
 
-- <img width="32" src="../assets/icons/Matlab.ico"> Export simulation for Matlab®/R \- generates an xml file for use with the MoBi® toolbox developed for Matlab® and R (see [Matlab® - Introduction](../part-6/matlab-introduction.md) and [R - Introduction](../part-6/r-introduction.md) for its use).
-
 - <img width="32" src="../assets/icons/ObservedData.ico"> Export results to Excel® \- generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).
 
 - <img width="32" src="../assets/icons/PDF.ico"> Export to PDF \- generates a PDF report of the model (see [Reporting](../part-5/reporting.md)).

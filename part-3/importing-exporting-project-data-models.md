@@ -74,18 +74,6 @@ A window opens where you can choose the directory and enter the \*.pkml file nam
 
 Via exporting the simulation to PDF format a report will be generated. For details please see [Reporting](../part-5/reporting.md).
 
-## Export for Matlab / R‌
-
-A \*.xml file can be used to access a PK-Sim® model from within Matlab® <img width="32" src="../assets/icons/Matlab.ico">  (cf. [Working with Matlab® and R](../part-6/r-introduction.md)) or the software R (cf. [R Toolbox for MoBi®](../part-6/r-introduction.md)). To export a PK-Sim® model to a \*.xml file:
-
-- Right mouse click on the simulation name within the **Simulations Explorer** and select **Export for Matlab / R ...**
-
-A window opens where you can choose the directory and enter the \*.xml file name. The file is saved and can be subsequently opened from Matlab® or R.
-
-{% hint style="note" %}
-Matlab® is not included in any PK-Sim® license. This software must be purchased separately.
-{% endhint %}
-
 ## Exporting Simulation Structures To File‌
 
 You can export a PK-Sim® simulation to a text file that contains all model and simulation details: model structure, rate equations and parameter values. You can export the simulation by

@@ -2,25 +2,24 @@
 
 ## Software and Hardware Requirements
 
-| OS         | Windows 7®, Windows 8®, Windows 10®, Windows Server 2008 R2®, Windows Server 2012 R2®, Windows Server 2016®    |
+| OS         | Windows 7®, Windows 8®, Windows 10®, Windows Server 2008 R2®, Windows Server 2012 R2®, Windows Server 2016®, Windows Server 2019® |
 | ---------- | -------------------------------------- |
 | Processor  | minimum 1 GHz (the faster, the better) |
-| Memory     | 2 GB RAM, 3+ GB recommended            |
+| Memory     | 2 GB RAM, 4+ GB recommended            |
 | Disk space | minimum 2 GB                           |
-||              **Optional software**                 ||
-| Matlab®    | version 2017b or later                 |
-| R®         | version  3.5 or later - 64bit          |
+||              **Optional software**                 |
+| R®         | version  3.5 or 3.6 - 64bit        |
 
 
 Information provided above refers to the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®. Both, PK-Sim® and MoBi® can be installed as stand-alone software packages to reduce the disk space required.
 
 {% hint style="warning" %}
-The Open Systems Pharmacology Suite includes interfaces to MS Excel®, Matlab® (version 2017b or later) and R (version 3.5 or later, 64 bit). These are separate programs that are not available within the Open Systems Pharmacology Suite. You need to have these programs installed in order to use their interfaces!
+The Open Systems Pharmacology Suite includes interfaces to MS Excel® and R (version 3.5 or 3.6, 64 bit). These are separate programs that are not available within the Open Systems Pharmacology Suite. You need to have these programs installed in order to use their interfaces!
 {% endhint %}
 
 ### Trademark Information
 
-Excel® is a registered trademark of Microsoft Inc., Redmond, USA; R is a product of the R Foundation for Statistical Computing, Vienna, Austria; Matlab® is a registered trademark of The MathWorks, Inc., Natick, USA.
+Excel® is a registered trademark of Microsoft Inc., Redmond, USA; R is a product of the R Foundation for Statistical Computing, Vienna, Austria.
 
 ## Installation and Update
 
@@ -48,9 +47,15 @@ To install the Open Systems Pharmacology Suite core components:
 
 6.  Configure PK-Sim® gene expression databases (for details see [PK-Sim® - Options](../part-3/pk-sim-options.md)).
 
+### (Re-)Qualification Framework
+
+Optional OSP Suite components which are only required for the [creation of qualification reports](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification).
+
+Installation instructions are provided [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification#tools)
+
 ### Third Party Tools
 
-Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, interfaces are available for MS Excel®, Matlab® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.
+Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, interfaces are available for MS Excel® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.
 
 ## Help: Contact, discussion forum, bug reporting, ...
 
