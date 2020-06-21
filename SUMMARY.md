@@ -106,9 +106,7 @@
 
 - [Qualification‌](part-5/qualification.md)
 
-## Working with Matlab and R‌
-
-- [Matlab - Introduction](part-6/matlab-introduction.md)
+## Working with R‌
 
 - [R - Introduction](part-6/r-introduction.md)
 

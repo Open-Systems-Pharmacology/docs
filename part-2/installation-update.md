@@ -10,10 +10,6 @@ To correctly install the software, administrator rights are necessary. If you do
 The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed stand-alone. However, to obtain full modeling and simulation capabilities, we recommend that both programs are installed.
 {% endhint %}
 
-{% hint style="warning" %}
-MoBi® Toolbox for Matlab® is currently only working with the 32- bit version of Matlab®.
-{% endhint %}
-
 To install the Open Systems Pharmacology Suite core components:
 
 1.  Obtain installation packages, either distributed via USB flash drive or to be https://github.com/Open-Systems-Pharmacology downloaded from https://github.com/Open-Systems-Pharmacology
@@ -32,4 +28,4 @@ To install the Open Systems Pharmacology Suite core components:
 
 ## Third Party Tools
 
-Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, as well as a compiled Matlab® runtime environment, interfaces are available for MS Excel®, Matlab® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.
+Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, interfaces are available for MS Excel® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.

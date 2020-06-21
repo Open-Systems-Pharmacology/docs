@@ -3,7 +3,7 @@
 ## Introduction
 
 The Open Systems Pharmacology Suite contains different software tools and has been designed using a modular concept to allow efficient multi-scale modeling and simulation. The overall platform with its various software tools is implemented in a modular way as will be explained in more detail in “Modular Structure”. The central software tools PK-Sim® and MoBi® make use of building blocks as introduced in [PK-Sim® and its building blocks](#pk-sim) and [MoBi® and its building blocks](#mobi).
-  
+
 While PK-Sim® is based on a whole-body concept, the focus of its counterpart, MoBi®, is at the molecular level. However, both tools extend to additional physiological scales as illustrated below.
 
 ![Multiscale modeling and simulation (taken from [[18](../references.md#18)])](../assets/images/part-2/Eissing_et_al_Frontiers_2011_Figure1.jpg)
@@ -38,8 +38,8 @@ The common core components consist of a specification of the mathematical model 
 
 ### Toolboxes‌
 
-The MoBi® toolboxes for R and Matlab® are interfaces to the common statistical and technical computing environments, respectively. Basically, the toolboxes can be used to access and modify model parameters as well as to execute simulations and retrieve results. That way, the toolboxes can be used to script or code batch simulations, analysis tasks, or customized workflows to any complexity. Results can be visualized using the options available in the respective environment.
+The MoBi® toolboxes for R is an interface to the common statistical computing environment. Basically, the R-toolbox can be used to access and modify model parameters as well as to execute simulations and retrieve results. That way, the R-toolbox can be used to script or code batch simulations, analysis tasks, or customized workflows to any complexity. Results can be visualized using the options available in the respective environment.
 
 ### Import and Export‌
 
-Apart from the communication and exchange via Matlab®, PK-Sim® and MoBi® have import and export functions for MS Excel® that allow for the import of experimental data or the export of simulation results, for example. The SBML and SCAMP import functionalities for MoBi® are currently being updated to new versions and will soon be integrated.
+Apart from the communication and exchange via R, PK-Sim® and MoBi® have import and export functions for MS Excel® that allow for the import of experimental data or the export of simulation results, for example. Import of SBML models is also possible with some restrictions.
