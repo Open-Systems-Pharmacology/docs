@@ -1,12 +1,12 @@
 # PK-Sim® - Administration Protocols
 
-An administration protocol is a set of data describing administration type, dose and dosing regimen. These properties can be specified within the building block **Administration Protocol**. For each project, a number of administration protocols can be defined. They can be saved as templates and then be shared among several projects and users.
+An administration protocol is a set of data describing administration type, dose and dosing regimen. These properties can be specified within the building block **Administration Protocol**  <img width="32" src="../assets/icons/ProtocolFolder.ico"> . A number of administration protocols can be defined and saved as templates.These can be shared among other projects and users.
 
 ## Definition of new Administration Protocols in PK-Sim®‌
 
 To create a new administration protocol, do one of the following:
 
-*   Click **Administration Protocol** <img width="32" src="../assets/icons/Protocol.ico"> in the **Create New Building Blocks** Group of the **Modeling & Simulation** Tab
+*   Click **Administration Protocol** <img width="32" src="../assets/icons/Protocol.ico"> in the **Create New Building Blocks**  Group of the **Modeling & Simulation** Tab
 
 *   Right mouse click on **Administration Protocols** in the **Building Block Explorer**
 
@@ -14,19 +14,25 @@ and select <img width="32" src="../assets/icons/Protocol.ico"> **Add Administrat
 
 *   Use the short cut **Ctrl+Alt+A**
 
-A dialog will open in which the properties of the administration protocol can be defined. You can choose between **Simple protocol** and **Advanced protocol**. To switch between these two views select the respective protocol type in the uppermost checkboxes of the window.
+ A new window will open where you can define your adminstration protocol.  You can choose between **Simple protocol** and **Advanced protocol**. To switch between these two views select the respective protocol type in the uppermost checkboxes of the window.
 
 {% hint style="warning" %}
-Note that when switching between simple and advanced protocol several of the already defined parameters will be reset. When switching from simple to advanced protocol, the dosing schedule will be transferred. This is not true for the opposite direction.
+Note that when switching between simple and advanced protocol several of the already defined parameters will be **reset**. When switching from simple to advanced protocol, the dosing schedule will be transferred. This is not true for the opposite direction.
 {% endhint %}
 
-Using the **Simple protocol**, drug administration via different routes can be defined by means of a single or predefined multiple dosing scheme. Using the **Advanced protocol**, multiple dosing regimens and treatment cycles of any scheme and combination can be defined. By default, the **Simple protocol** is activated. In either case, dose and dosing scheme are visualized in the lower panel of the window. Depending on the dose unit selected, the Y-axis description will change accordingly.
+**Simple protocol**, drug administration via different routes can be defined by means of a single or predefined multiple dosing scheme. 
 
-The administration protocol is initialized by giving it a **Name** in the respective input field. The name is used to identify the protocol when its parameters are saved in the project and/or as a template. Then, choose between **Simple protocol** and **Advanced protocol** and set the properties of the protocol.
+**Advanced protocol**, multiple dosing regimens and treatment cycles of any scheme and combination can be defined.
+
+ The default is the **Simple Protocol** . In both options, the dose and dosing scheme are visualized in the lower panel of the window. Depending on the dose unit selected, the Y-axis description will change accordingly.
+
+The administration protocol is initialized by providing it a **Name** in the respective input field. The name is used to identify the protocol when its parameters are saved in the project and/or as a template. Then, choose between **Simple protocol** and **Advanced protocol** and set the properties of the protocol.
 
 ### Simple Protocol‌
 
-In order to define a simple protocol in the **Protocol Properties** field of the Simple protocol template please follow the instructions summarized in the following table. Depending on the choice of administration protocol the required input parameters change.
+To create a **Simple Protocol** follow the the instructions in the table below.  
+
+Depending on the choice of administration protocol the required input parameters change.
 
 |Administration Type|Description|
 |--- |--- |
@@ -48,7 +54,9 @@ Please note that in case that the administration type **User Defined** is select
 
 ### Advanced Protocol‌
 
-In order to define an advanced protocol, activate **Advanced protocol** in the **Create Administration Protocol** window. In the uppermost drop-down menu, the time unit for visualization of dose and dosing scheme in the lower panel of the window can be selected. Depending on the dose unit(s) selected, the Y-axis label(s) will change appropriately.
+Activate **Advanced protocol** in the **Create Administration Protocol** window. 
+
+In the uppermost drop-down menu, the time unit for visualization of dose and dosing scheme in the lower panel of the window can be selected. Depending on the dose unit(s) selected, the Y-axis label(s) will change appropriately.
 
 The table used to defined the advanced protocol consists of the following five columns:
 
@@ -62,7 +70,7 @@ The table used to defined the advanced protocol consists of the following five c
 
 5.  In the last column, additional protocol schemata can be added by clicking ![Image](../assets/icons/Add.png) or deleted by clicking ![Image](../assets/icons/Delete.png). Please note that at least one protocol schema needs to be defined. The various protocol schemata will automatically be re-sorted according to the protocol schema start time.
 
-In the secondary table, which can be opened by clicking ![Image](../assets/icons/Add.png) in the column **Start Time**, a number of individual schema items can be defined for the given protocol schema. Here, the following five columns can be found:
+The secondary table,  can be opened by clicking ![Image](../assets/icons/Add.png) in the column **Start Time**, a number of individual schema items can be defined for the given protocol schema.  The following five columns can be found:
 
 1.  The **Start Time** of schema items in relation to the start time of the protocol schema. If the start time of the schema items is **0**, the administration time equals the start time of the protocol schema.
 
@@ -76,9 +84,12 @@ In the secondary table, which can be opened by clicking ![Image](../assets/icons
 
 	*	<img width="32" src="../assets/icons/Oral.ico"> Oral: requires the input of the **Volume of water/body weight** co- administered, which is 3.5 mL/kg BW per default (see PK- Sim® - _Formulations_) and, additionally, the definition of a **Placeholder for formulation** in column 4.
 
-4.  The **Placeholder for formulation**. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation placeholder is not necessary, because the drug is always assumed to be dissolved when given intravenously (see [PK-Sim® - Formulations](pk-sim-formulations.md)). However, in case of oral and user defined administration, you should add a note on the type of formulation. Later, in the simulation, the formulation placeholder can be matched with the corresponding **Formulation** building block. This may sound trivial in case only one formulation is given repeatedly at the given times. However, consider that you can set up sophisticated dosing schedules, in which various administration types and formulations are administered at various times. Then, the formulation type should already be signified in the administration protocol in order to be able to appropriately match the schedules with the various formulations. For further information please see [PK-Sim® - Simulations](pk-sim-simulations.md).
+4.  **Placeholder for Formulation**.  
+For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation placeholder is not necessary, because the drug is always assumed to be dissolved when given intravenously (see [PK-Sim® - Formulations](pk-sim-formulations.md)). 
 
-5.  In the last column, additional dosing schedules can be added by clicking or deleted by clicking . Please note that at least one dosing schedule needs to be defined for each protocol scheme. The various schema items will automatically be re-sorted according to the schema item start time.
+In case of oral and user defined administration, you should add a note on the type of formulation. Later, in the simulation, the formulation placeholder can be matched with the corresponding **Formulation** building block. This may sound trivial in the case of only one formulation given repeatedly at the given times. However, consider that you can set up sophisticated dosing schedules, in which various administration types and formulations are administered at various times. Then, the formulation type should already be signified in the administration protocol in order to be able to appropriately match the schedules with the various formulations. For further information please see [PK-Sim® - Simulations](pk-sim-simulations.md).
+
+5.  In the last column, additional dosing schedules can be added or deleted by clicking. Please note that at least one dosing schedule needs to be defined for each protocol scheme. The various schema items will automatically be re-sorted according to the schema item start time.
 
 **Example**
 
@@ -90,7 +101,7 @@ In the following screenshot, an example of an advanced protocol is given. The pr
 Please note that the combination of the Administration type **User defined** and the **Advanced protocol** is not available.
 {% endhint %}
 
-## Setting or Changing Administration Protocol properties‌
+## Setting or Changing Administration Protocol Properties‌
 
 To set or change the properties of an existing administration protocol:
 
@@ -98,7 +109,7 @@ To set or change the properties of an existing administration protocol:
 
 2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**
 
-or double click on the administration protocol in the **Building Block Explorer**
+or **Double click** on the administration protocol in the **Building Block Explorer**
 
 A window with the current settings will open where properties can be set appropriately. The changes are saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 
@@ -118,7 +129,7 @@ To clone a protocol in the project:
 
 4.  Confirm and close the window by clicking **OK** <img width="32" src="../assets/icons/OK.ico">
 
-## Saving an Administration Protocols as templates‌
+## Saving an Administration Protocols as Templates‌
 
 For each project, a number of administration protocols can be defined. They can be saved as a template and then be shared among several projects and users.
 
@@ -126,19 +137,19 @@ To save an existing administration protocol as template:
 
 1.  Right mouse click on the respective administration protocol in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**. In case a protocol with the same name already exists, a warning appears and you have the following options:
+2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**. If a protocol with the same name already exists, a warning appears and you have the following options:
 
-*   Override: This action will override the existing template.
+*   **Override**: This action will override the existing template.
     
-*   Save as: You can save the protocol under a different name. In this case, you will be asked to Rename the new template.
+*   **Save as**: You can save the protocol under a different name. In this case, you will be asked to **Rename** the new template.
     
-*   Cancel: This action will abort the saving process.
+*   **Cancel**: This action will abort the saving process.
 
-## Loading Existing Administration Protocols from templates‌
+## Loading Existing Administration Protocols from Templates‌
 
 To load an existing administration protocol from the template database:
 
-1.  Right mouse click on **Administration protocols** in the **Building Block Explorer**
+1.  Right mouse click on **Administration Protocols** <img width="32" src="../assets/icons/ProtocolFolder.ico"> in the **Building Block Explorer**
 
 2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
 

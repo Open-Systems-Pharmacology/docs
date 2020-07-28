@@ -1,6 +1,6 @@
 # PK-Sim Compounds: Definition and Work Flows
 
-A Compound is a set of data that describes the properties of the substance whose behavior is to be simulated. These properties are defined within the building block **Compound**. For each project, several compounds may be defined. The compounds defined can be saved as a templates and then be shared among several projects and users.
+A **Compound** is a set of data that describes the properties of the substance whose behavior is to be simulated. These properties are defined within the building block **Compound**. For each project, several compounds may be defined. The compounds defined can be saved as a templates and then be shared among several projects and users.
 
 ## Definition of new Compounds in PK- Sim®‌
 
@@ -18,13 +18,13 @@ A dialog will open, where the properties of the compound can be defined. The com
 
 The **Create Compound** building block is subdivided into three tabs: Basic Physico-chemistry, ADME Properties, and Advanced Properties.
 
-### Basic Physico-chemistry‌
+### Basic Physico-Chemistry‌
 
-In the uppermost checkbox one can define the compound as being a small or a large molecule, such as a protein. If **Is small molecule** is de-selected, the permeability for passive diffusion into blood cells and into the intracellular space of the organs as well as the intestinal permeability will be set to zero. If the drug is a small molecule and is used in a **Model for proteins and large molecules**, the drug will not enter the endosomal space (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)).
+The first checkbox one can define the compound as being a small or a large molecule, such as a protein. If **Is small molecule** is de-selected, the permeability for passive diffusion into blood cells and into the intracellular space of the organs as well as the intestinal permeability will be set to zero. If the drug is a small molecule and is used in a **Model for proteins and large molecules**, the drug will not enter the endosomal space (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)).
 
-Then, the basic physico-chemical properties have to be specified in the **Basic Physico-chemistry** Tab. For drug properties in many cases numerous values, determined using various methods or assays, are available (e.g. logMA, logP, clogP for lipophilicity). You can therefore specify several alternative values. Later, in the simulation, you can choose the most appropriate value from the list.
+The basic physico-chemical properties have to be specified in the **Basic Physico-chemistry** tab. Drug properties in many cases, have numerous values, determined using various methods or assays, the following are available (logMA, logP, clogP for lipophilicity). You are able to specify several alternative values. Later, in the simulation, you can choose the most appropriate value from the list.
 
-To enter an additional value:
+### To Enter an additional value:
 
 1.  Click **Add** <img width="32" src="../assets/icons/AddAction.ico"> at the end of a row.
 
@@ -34,13 +34,13 @@ To enter an additional value:
 
 4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
 
-To delete a value:
+### To delete a value:
 
 1.  Click **Delete** <img width="32" src="../assets/icons/Delete.ico">
 
 2.  Click **Yes**
 
-If several alternative values have been defined, you can select a default one by ticking the respective check box. When setting up the simulation, a value set as default will be ranked first. The alternative values can still be selected, if desired.
+If several alternative values have been defined, you can select a default one by ticking the check box. When setting up the simulation, a value set as default will be ranked first. The alternative values can still be selected, if desired.
 
 {% hint style="tip" %}
 Please note that a value set as default cannot be deleted. In order to delete the value, define another default value.
@@ -53,7 +53,7 @@ As lipophicity input, the partition coefficient between lipid membranes and wate
 {% endhint %}
 
 {% hint style="tip" %}
-Lipids in organ tissue are predominantly present in the form of phospholipid membranes. The best descriptor for lipophilicity is the partition coefficient between lipid membranes and water, as determined at physiological pH \[[43](../references.md#43)\]. This is called membrane affinity and the value to be entered is the logMA. Therefore, it is recommended to use these membrane affinities as input parameters for PK-Sim®. With their use, it is very likely that specific organ and intestinal permeability coefficients are obtained that require no or only marginal adjustment.
+Lipids in organ tissue are predominantly present in the form of phospholipid membranes. The best descriptor for lipophilicity is the partition coefficient between lipid membranes and water, as determined at physiological pH \[[43](../references.md#43)\]. This is called membrane affinity and the value to be entered is the logMA. It is recommended to use these membrane affinities as input parameters for PK-Sim®. With their use, it is very likely that specific organ and intestinal permeability coefficients are obtained that require no or only marginal adjustment.
 {% endhint %}
 
 {% hint style="tip" %}
@@ -62,7 +62,7 @@ If the membrane affinity is not available, other lipophilicity values can be use
 For this reason it is recommended to use a lipophilicity value for the neutral form, e.g. logP, as a replacement for membrane affinity if membrane affinity is not available. A reasonable variation around the logP value should be allowed since this parameter is not 1:1 correlated with membrane affinity.
 {% endhint %}
 
-**Fraction unbound (plasma, reference value)**
+**Fraction Unbound (plasma, reference value)**
 
 The free fraction of drug in plasma (fu) is a mixed parameter depending on both the species and the drug. Thus, it might be necessary to define several values for one compound, namely one for each species to be simulated. The respective species can be selected in the **Species** column from the drop-down menu.
 
