@@ -2,12 +2,12 @@
 
 PK-Sim® can be customized using several options. To do this click on the **Options**
     
-Button <img width="32" src="../assets/icons/Settings.ico"> within the **Utilities** Ribbon Tab.
+Button <img width="32" src="../assets/icons/settings.ico"> within the **Utilities** Ribbon Tab.
 
 Within the **User** Tab, you can specify the following user specific options:
     
 ## Numerical Properties
-
+    
 *   Allows scientific notation: You can specify if parameter values and results are displayed in scientific notation and if they are very small or very large.
     
 *   Decimal place: You can specify the number of decimal places displayed for parameter values and results.
@@ -46,6 +46,10 @@ Setting tolerances lower than default values (absolute tolerance: 1.0E-10; relat
 
 You can change the size of the icons displayed within the **Tree view**, the **Tabs** and the **Context menu**
 
+## Template Database Path
+
+You can change the path to the template database or create a new template database by clicking on <img width="32" src="../assets/icons/AddAction.ico">
+
 ## Colors
 
 *   Formula parameter: Changes the background color for parameters which are calculated by a formula.
@@ -56,10 +60,6 @@ You can change the size of the icons displayed within the **Tree view**, the **T
     
 *   Disabled: Changes the background color of all boxes with non-editable content.
     
-## Template Database Path
-
-You can change the path to the template database or create a new template database by clicking on <img width="32" src="../assets/icons/AddAction.ico">
-
 Within the **Application** Tab, you can specify the path to a species-specific **Expression Database** you would like to use. To do so, click on the three dots in the **Expression Database** column in the row of the species you require.
 
 ![Linking a species-specific expression database to an individual.](../assets/images/part-3/expression-database-options.png)

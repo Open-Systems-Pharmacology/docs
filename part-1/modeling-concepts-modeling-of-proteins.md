@@ -1,6 +1,6 @@
 # Modeling Concepts - Modeling of Proteins‌
 
-Therapeutic proteins are an increasingly important class of drugs. Particularly, monoclonal antibodies are used for different indications including cancer, inflammatory and autoimmune diseases \[[88](../references.md#88)\]. Engineered antibody fragments with tailored pharmacokinetic properties have potential as diagnostic and therapeutic agents \[[34](../references.md#34)\].
+Therapeutic proteins are an increasingly important class of drugs. Particularly, monoclonal antibodies which are used for different indications including cancer, inflammatory and autoimmune diseases \[[88](../references.md#88)\]. Engineered antibody fragments with tailored pharmacokinetic properties have potential as diagnostic and therapeutic agents \[[34](../references.md#34)\].
 
 The pharmacokinetics of protein therapeutics are governed by a number of unspecific and specific processes, most of which play either no or only a minor role in small molecule drug kinetics. Processes which have to be covered in order to describe the pharmacokinetics of protein therapeutics include \[[42](../references.md#42)\]:
 

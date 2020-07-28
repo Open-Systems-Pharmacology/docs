@@ -106,7 +106,7 @@
 
 - [Qualification‌](part-5/qualification.md)
 
-## Working with R‌
+## Working R‌
 
 - [R - Introduction](part-6/r-introduction.md)
 
