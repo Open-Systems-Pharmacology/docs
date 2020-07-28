@@ -1,6 +1,6 @@
 # About this Manual
 
-This manual describes the [Open Systems Pharmacology Suite](www.open-systems-pharmacology.org). This includes technical descriptions of the different software elements together with examples and brief introductions to relevant scientific aspects including references for further reading. Naturally, the science described is selected based on our experience and judgment of relevance in the given context. Further, our “philosophy” is largely reflected in the software platform, and, vice versa, the software platform influences how we work and think.
+This manual describes the [Open Systems Pharmacology Suite](www.open-systems-pharmacology.org). It includes a technical description of each software element with examples and references for further reading. The aim of the manual is to assist users in effectively developing PBPK models.
 
 The handbook is divided into the following parts:
 
@@ -18,7 +18,7 @@ The handbook is divided into the following parts:
 
 ## Working with PK-Sim®
 
-Thereafter, a technical description of the different software elements is presented starting with PK-Sim® focusing on physiologically-based pharmacokinetics in "Working with PK-Sim®".
+A technical description of the different software elements is presented starting with PK-Sim® focusing on physiologically-based pharmacokinetics in "Working with PK-Sim®".
 
 [Go to: Working with PK-Sim®](part-3/pk-sim-quick-guide‌.md)
 
@@ -36,6 +36,6 @@ Tools shared between PK-Sim® and MoBi® and some workflow examples are presente
 
 ## Working with R
 
-After that, the interface to the common computing environment R is described in "R Toolbox".
+The interfaces to the common computing environment R is described in "R Toolbox".
 
 [Go to: Working with R](part-6/r-introduction.md)

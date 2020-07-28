@@ -206,10 +206,10 @@ function preProcessHtml(basePath) {
       $ = stylingElements($);
 
       // Enable this to debug in html document and inspect with the browser
-        fs.writeFile(path.resolve(__dirname, 'debugger.html'), $.html(), function(err) {
-          if (err) console.log(err);
-          console.log('*** debugger.html written ***');
-        });
+      //   fs.writeFile(path.resolve(__dirname, 'debugger.html'), $.html(), function(err) {
+      //     if (err) console.log(err);
+      //     console.log('*** debugger.html written ***');
+      //   });
 
       this.push($.html());
 

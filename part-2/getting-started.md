@@ -46,19 +46,17 @@ To install the Open Systems Pharmacology Suite core components:
 5.  Download PK-Sim® gene expression databases and copy it to a folder accessible for all users.
 
 6.  Configure PK-Sim® gene expression databases (for details see [PK-Sim® - Options](../part-3/pk-sim-options.md)).
-
 ### (Re-)Qualification Framework
 
 Optional OSP Suite components which are only required for the [creation of qualification reports](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification).
 
 Installation instructions are provided [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification#tools)
-
 ### Third Party Tools
 
-Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, interfaces are available for MS Excel® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.
+Besides the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®, interfaces are available for MS Excel®, Matlab® and R. For purchasing and installation options, please contact the suppliers indicated in section, “Trademark information”.
 
-## Help: Contact, discussion forum, bug reporting, ...
+## Help: Contact, Discussion Forum, Bug Reporting, ...
 
 Additional information on the software is available on http://www.open-systems-pharmacology.org/.
 
-For support, bug reports, etc. please contact http://forum.open-systems-pharmacology.org/. The help you are currently reading is available embedded in the software in PDF-format.
+For support, bug reports, etc. please contact http://forum.open-systems-pharmacology.org/. 

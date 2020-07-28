@@ -7,7 +7,7 @@ To correctly install the software, administrator rights are necessary. If you do
 {% endhint %}
 
 {% hint style="info" %}
-The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed stand-alone. However, to obtain full modeling and simulation capabilities, we recommend that both programs are installed.
+The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed stand-alone. However, to obtain full modeling and simulation capabilities, we recommend installing both programs.
 {% endhint %}
 
 To install the Open Systems Pharmacology Suite core components:

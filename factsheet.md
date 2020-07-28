@@ -32,44 +32,44 @@
         <p>Pre-parameterized whole-body PBPK models including detailed integrated GI tract for</p>
         <ul>
           <li>
-            <p>human</p>
+            <p>Human</p>
           </li>
           <li>
-            <p>monkey</p>
+            <p>Monkey</p>
           </li>
           <li>
-            <p>dog (beagle and mongrale)</p>
+            <p>Dog (beagle and mongrale)</p>
           </li>
           <li>
-            <p>minipig</p>
+            <p>Minipig</p>
           </li>
           <li>
-            <p>rat</p>
+            <p>Rat</p>
           </li>
           <li>
-            <p>mouse</p>
+            <p>Mouse</p>
           </li>
           <li>
-            <p>rabbit</p>
+            <p>Rabbit</p>
           </li>
         </ul>
-        <p>with full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.</p>
+        <p>Allowing for full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.</p>
         <p>Most important organs included. For each organ optional processes can be added:</p>
         <ul>
           <li>
-            <p>metabolizing pathways</p>
+            <p>Metabolizing pathways</p>
           </li>
           <li>
-            <p>different active transporter types(influx, efflux, Pgp-like)</p>
+            <p>Different active transporter types(influx, efflux, Pgp-like)</p>
           </li>
           <li>
-            <p>protein binding partners</p>
+            <p>Protein binding partners</p>
           </li>
         </ul>
         <p>Biliary tract included, enables enterohepatic cycling</p>
         <ul>
           <li>
-            <p>Scaling of individuals</p>
+            <p>Scaling of Individuals</p>
           </li>
         </ul>
         <p style="padding-left: 2em;"> Scaling can be used to change the biometrics of an existing individual, i.e. an adult model may be scaled to an infant model while maintaining/scaling all specific modifications </p>
@@ -112,13 +112,13 @@
     </tr>
     <tr class="even">
       <td style="vertical-align:top">
-        <p>Protein expression</p>
+        <p>Protein Expression</p>
       </td>
       <td>
         <p>The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building. Public database which were imported are</p>
         <ul>
           <li>
-            <p>whole genome expression arrays from ArrayExpress (European Informatics Institute, 2010, http://www.ebi.ac.uk/microarray-as/ae/)</p>
+            <p>Whole genome expression arrays from ArrayExpress (European Informatics Institute, 2010, http://www.ebi.ac.uk/microarray-as/ae/)</p>
           </li>
         </ul>
         <ul>
@@ -126,7 +126,7 @@
             <p>RT-PCR derived gene expression (Nishimura et al., 2003; Nishimura and Naito, 2005, 2006)</p>
           </li>
           <li>
-            <p>expressed sequence tags (EST) from UniGene (National Center for Biotechnology Information, 2010, http://www.ncbi.nlm.nih.gov/unigene).</p>
+            <p>Expressed sequence tags (EST) from UniGene (National Center for Biotechnology Information, 2010, http://www.ncbi.nlm.nih.gov/unigene).</p>
           </li>
         </ul>
       </td>
@@ -139,43 +139,43 @@
         <p>Full ADME characterization of drugs including</p>
         <ul>
           <li>
-            <p>molecular weight</p>
+            <p>Molecular weight</p>
           </li>
           <li>
-            <p>lipophilicity</p>
+            <p>Lipophilicity</p>
           </li>
           <li>
-            <p>protein binding</p>
+            <p>Protein binding</p>
           </li>
           <li>
-            <p>acid/base pKa</p>
+            <p>Acid/base pKa</p>
           </li>
           <li>
-            <p>solubility</p>
+            <p>Solubility</p>
           </li>
           <li>
-            <p>intestinal permeability</p>
+            <p>Intestinal permeability</p>
           </li>
           <li>
-            <p>specific protein binding kinetics</p>
+            <p>Specific protein binding kinetics</p>
           </li>
           <li>
-            <p>enzyme specific metabolization kinetics</p>
+            <p>Enzyme specific metabolization kinetics</p>
           </li>
           <li>
-            <p>transporter specific transport kinetics</p>
+            <p>Transporter specific transport kinetics</p>
           </li>
           <li>
-            <p>inhibition and induction parameters</p>
+            <p>Inhibition and induction parameters</p>
           </li>
         </ul>
         <p>and for large therapeutic molecules (e.g. antibodies)</p>
         <ul>
           <li>
-            <p>solute radius (calculated for molecular weight as per default)</p>
+            <p>Solute radius (calculated for molecular weight as per default)</p>
           </li>
           <li>
-            <p>dissociation constant for binding to FcRn</p>
+            <p>Dissociation constant for binding to FcRn</p>
           </li>
         </ul>
         <br>
@@ -423,7 +423,7 @@
       </ul>
     </tr>
     <tr class="odd">
-    <td style="vertical-align:top"><p>Sensitivity analysis</p></td>
+    <td style="vertical-align:top"><p>Sensitivity Analysis</p></td>
     <td><p><strong>Sensitivity of PK-Parameters (AUC, C<sub>Max</sub>, …) vs. simulation parameters.</strong></p>
     <p>Because PBPK models can be complex and contain numerous input parameters, it would be useful to know which input parameters have the most impact on the output curves. The Sensitivity Analysis tool provides an answer to this question.</p>
     <p>For a chosen simulation, the relative impact of selected - or all - input parameters on the PK parameters of the output curves is calculated and displayed. In addition, the input parameters can be ranked by their impact on a certain PK parameter of an output. Results of Sensitivity Analysis can be shown as:</p>
@@ -439,19 +439,19 @@
     <tr class="even">
     <td style="vertical-align:top"><p>Lab Journal</p></td>
     <td><ul>
-    <li><p>automated documentation of modeling work in model history working journal documenting including labeling and commenting function</p></li>
-    <li><p>built-in working journal for manual annotation of models and simulations</p></li>
-    <li><p>roll-back / undo functionality</p></li>
+    <li><p>Automated documentation of modeling work in model history working journal documenting including labeling and commenting function</p></li>
+    <li><p>Built-in working journal for manual annotation of models and simulations</p></li>
+    <li><p>Roll-back / undo functionality</p></li>
     </ul>
     <p><img src="assets/images/factsheet/image019.png" /></p>
     <p><img src="assets/images/factsheet/image021.png" /></p></td>
     </tr>
     <tr class="odd">
-    <td>Model editor</td>
+    <td>Model Editor</td>
     <td>Full transparency and full edit access to all structural model properties</td>
     </tr>
     <tr class="even">
-    <td colspan="2" align="center"><b>Simulation tools</b></td>
+    <td colspan="2" align="center"><b>Simulation Tools</b></td>
     </tr>
     <tr class="odd">
     <td></td>
@@ -466,7 +466,7 @@
     <li><p>Calculation of the fraction of dose metabolized/excreted</p></li>
     <li><p>Plotting of all calculated time courses</p>
     <ul>
-    <li><p>plot settings (axes, styles, blabla)</p></li>
+    <li><p>Plot settings (axes, styles, blabla)</p></li>
     <li><p>Individual simulations:</p>
     <ul>
     <li><p>Time profile plots</p></li>
