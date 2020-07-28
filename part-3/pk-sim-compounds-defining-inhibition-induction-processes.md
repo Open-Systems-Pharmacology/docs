@@ -2,7 +2,7 @@
 
 Drugs may influence a broad variety of ADME processes that in turn will then affect the PK of the drug and possibly also other drugs. A specific and very common case of this very generic description of a drug-drug-interaction is the inhibition of a metabolizing enzyme or transporter by a drug. Most metabolizing enzyme are highly expressed in the liver and therefore drug clearance and the first pass metabolisms will be affected. Inhibition of a transporter may change the rate of absorption of a drug or the amount absorbed of a drug. If an inhibited transporter is expressed in the kidney or liver, drug excretion will be altered.
 
-In order to set up an inhibition by a compound, do the following:
+To set up an inhibition by a compound, do the following:
 
 *   Right mouse click on _Inhibition_ in the **ADME** tab of the compound that acts as an inhibitor and select _Add Inhibition Process_.
 
@@ -16,17 +16,14 @@ Inhibition changes reaction rates and/or the kinteics of active transports by mo
 
 *   the Specific Clearance for first order kinetics
 
-In a setting without inhibition, the reaction velocity is given by
+In a setting without inhibition, the reaction velocity is given by:
 
 ![Reaction velocity of a process with Michaelis-Menten kinetics](../assets/images/part-3/equation-16-1.png)
-
-with ![Image](../assets/images/part-3/equation-16-1b.png) = maximum velocity which is the product of kcat and E, the amount of enzyme/transporter, _S_ = free substrate concentration.
+ with ![Image](../assets/images/part-3/equation-16-1b.png) = maximum velocity which is the product of kcat and E, the amount of enzyme/transporter, _S_ = free substrate concentration.
 
 In an inhibition scenario, both, the turnover number kcat and the Michaelis- Menten constant are modified to new apparent values.
 
-![Reaction velocity of an inhibited process with Michaelis-Menten kinetics](../assets/images/part-3/equation-16-2.png)
-
-with ![Image](../assets/images/part-3/equation-16-1b.png) = apparent maximum velocity which is the product of apparent kcat and E, the amount of enzyme/transporter, _S_ = free substrate concentration.
+![Reaction velocity of an inhibited process with Michaelis-Menten kinetics](../assets/images/part-3/equation-16-2.png) with ![Image](../assets/images/part-3/equation-16-1b.png) = apparent maximum velocity which is the product of apparent kcat and E, the amount of enzyme/transporter, _S_ = free substrate concentration.
 
 PK-Sim® calculates the apparent kcat and apparent Michaelis-Menten constant for the specified inhibition scenario. In case of a simple setting with just one inhibitor per process, the equations are listed in the next section.
 
@@ -74,7 +71,7 @@ _S_ = free substrate concentration,
 
 ![Image](../assets/images/part-3/k-m-app.png) = apparent Michaelis-Menten constant,
 
-The apparent maximum reaction velocity is decreased depending on the concentration of the inhibitor and its affinity to the enzyme-substrate complex.
+The apparent maximum reaction velocity is decreased depending on the concentration of the inhibitor, and its affinity to the enzyme-substrate complex.
 
 ![Apparent maximum reaction velocity for inhibition of the enzyme E by inhibitor I in an uncompetitive inhibition](../assets/images/part-3/equation-vmax-app.png)
 
@@ -88,7 +85,7 @@ _I_ = free inhibitor concentration
 
 with the variables as defined above.
 
-## Mixed inhibition - simple setting with one inhibitor‌
+## Mixed Inhibition : Simple Setting with One Inhibitor‌
     
 In a mixed inhibition, the inhibitor binds reversibly to the enzyme or the enzyme/ substrate complex with different affinities (and different dissociation constants). The inhibitor binding site is different from the substrate binding site on the enzyme molecule. The apparent Michaelis-Menten constant is changed and the apparent maximum velocity is decreased.
 
@@ -121,11 +118,11 @@ _I_ = free inhibitor concentration,
 with    
 ![Image](../assets/images/part-3/k-ic.png) = dissociation constant of the enzyme-inhibitor complex and the variables defined as above.
 
-## Non-competitive inhibition - simple setting with one inhibitor‌
+## Non-Competitive Inhibition : Simple Setting with One Inhibitor‌
     
 The non-competitive inhibtion is a special case of a mixed inhibition in which an inhibitor binds reversibly to the enzyme and/or to the enzyme/substrate complex with the same inhibition constant (KI=KIu=KIc). The reaction velocity is described by the same equation as in a mixed inhibition and the apparent maximum velocity is described by the same equation as in an uncompetitive inhibition.
 
-## Irreversible inhibition‌
+## Irreversible Inhibition‌
     
 Principally, an irreversible inhibition is a time-dependent inhibition (TDI) in which recovery is only due to de novo protein, e.g. enzyme synthesis. Thus, the in vivo production and degradation of enzyme has to be taken into account by PK- Sim®. Turnover of any protein inherently is a function of both, protein synthesis (a zero-order process) and protein degradation (a first-order rate process). In view of the kinetic nature of these processes, the rate constant of degradation frequently is the sole determinant of the "steady-state" concentration of each protein as it oscillates between the basal and the induced/repressed state. The natural enzyme turnover in PK-Sim® is represented as shown below.
 
@@ -141,8 +138,8 @@ A common model for mechanism-based inactivation is illustrated below:
 
 According to Silvermann et al. \[[72](../references.md#72)\], a mechanism-based enzyme inactivator (MBEI) requires a step to convert the compound to the inactivating species (k2). This step, which is generally responsible for the observed time dependence of the enzyme inactivation, usually is irreversible and forms a new complex (EI') which can have two disctinctive fates:
 
-*   the EI' is a reactive species and forms a covalent complex with the enzyme (Einact) (k4).
-*   the species generated is released from the enzyme as a product/metabolite P of the inactivator and the enzyme is again available as active enzyme (k3).
+*   The EI' is a reactive species and forms a covalent complex with the enzyme (Einact) (k4).
+*   The species generated is released from the enzyme as a product/metabolite P of the inactivator and the enzyme is again available as active enzyme (k3).
 
 The ratio of product release to inactivation is termed the partition ratio and represents the efficiency of the mechanism-based inactivator: the partition ratio is described by k3/k4.
 
@@ -193,11 +190,11 @@ Implementation of induction in PK-Sim® uses the following parameters:
 
 *   EC50: concentration of the inducer to reach half the maximal in vivo induction effect (Dimension: concentration)
 
-In an induction, EMax ranges from 0 (=no induction) to infinity. A value of 1 means that the effect is twice the effect without induction. Modelling of suppressed de novo synthesis (suppression) (as seen for example in some cytokines) is also possible with PKSim using the induction specification of a compound. In a suppression, EMax ranges from 0 (=no suppression) to -1 (full suppression, no synthesis anymore).
+In an induction, EMax ranges from 0 (=no induction) to infinity. A value of 1 means that the effect is twice the effect without induction. Modelling of suppressed de novo synthesis (suppression) (for example in some cytokines) is also possible with PKSim using the induction specification of a compound. In a suppression, EMax ranges from 0 (=no suppression) to -1 (full suppression, no synthesis anymore).
 
 If the reaction of the enzyme Ex and the substrate Sj follows a Michaelis-Menten kinetics, the rate of the enzyme Ex degradation/production and the substrate Sj degradation are given by:
 
-## Multiple Inhibitors - Equations used by PK-Sim®‌
+## Multiple Inhibitors : Equations Used by PK-Sim®‌
 
 
 The enzyme turnover for Enzyme X in the presence of n competitive (CI), m uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND) is given by:
