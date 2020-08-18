@@ -197,21 +197,21 @@ If the reaction of the enzyme Ex and the substrate Sj follows a Michaelis-Menten
 ## Multiple Inhibitors : Equations Used by PK-Sim®‌
 
 
-The enzyme turnover for Enzyme X in the presence of n competitive (CI), m uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND) is given by:
+The enzyme turnover for Enzyme X in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND) is given by:
 
-![Enzyme Ex turnover (dEx/dt) at steady state in the presence of n competitive (CI), m uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/eq-16-10.png)
+![Enzyme Ex turnover (dEx/dt) at steady state in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/eq-16-10.png)
 
 If the reaction of the enzyme Ex and the substrate Sj follows a Michaelis-Menten kinetics, the rate of the substrate Sj degradation is given by:
 
-![Substrate Sj degradation dSj/dt) at steady state in the presence of n competitive (CI), m uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/InductionSubstrateMM.png)
+![Substrate Sj degradation dSj/dt) at steady state in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/InductionSubstrateMM.png)
 
 In the above equation, the substrate Sj may also be an inhibitor of all kind, e.g. CI, UI, NI, MI, TDI or IND.
 
 Similarly, if the reaction of the enzyme Ex and the substrate Sj follows a first order kinetics, the rate of the enzyme Ex degradation/production and the substrate Sj degradation are given by:
 
-![Enzyme Ex turnover (dEx/dt) at steady state in the presence of n competitive (CI), m uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/InductionEnzymeFirstOrder.png)
+![Enzyme Ex turnover (dEx/dt) at steady state in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/InductionEnzymeFirstOrder.png)
 
-![Substrate Sj degradation dSj/dt) at steady state in the presence of n competitive (CI), m uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/InductionSubstrateFirstOrder.png)
+![Substrate Sj degradation dSj/dt) at steady state in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/InductionSubstrateFirstOrder.png)
 
 In the above equation, the substrate Sj may also be an inhibitor of all kind, e.g. CI, UI, NI, MI, TDI or IND.
 
