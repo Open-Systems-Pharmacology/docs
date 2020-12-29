@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    - uses: gaurav-nelson/github-action-markdown-link-check@2a60e0fe41b5361f446ccace6621a1a2a5c324cf
       with:
         use-quiet-mode: 'yes'
         use-verbose-mode: 'yes'
