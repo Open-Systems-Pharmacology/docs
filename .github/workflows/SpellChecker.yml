@@ -1,0 +1,15 @@
+name: Spellcheck
+
+on: 
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  Spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - uses: rojopolis/spellcheck-github-actions@afd46913df0b193a491614cd461be098a05b0a87
