@@ -18,7 +18,7 @@ The workflow of a PBPK model evaluation is similar to that of a PBPK model scena
 
 ![](../assets/images/part-5/QualificationWorkflowOverview.png)
 
-As a PBPK model evaluation workflow is similar to that of a qualification scenario, with the difference beeing model development and model application, respectively, the focus here will be on the scenario qualification workflow. In a first step, the qualification scenario is saved to a dedicated qualification repository on GitHub. This repository contains a detailed qualification plan that links and combines respective models and data describing the use case to qualify.
+As a PBPK model evaluation workflow is similar to that of a qualification scenario, with the difference being model development and model application, respectively, the focus here will be on the scenario qualification workflow. In a first step, the qualification scenario is saved to a dedicated qualification repository on GitHub. This repository contains a detailed qualification plan that links and combines respective models and data describing the use case to qualify.
 The qualification plan consists of:
 
 - PK-Sim project files (more precisely: PK-Sim project file [**snapshots**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/importing-exporting-project-data-models#exporting-project-to-snapshot-loading-project-from-snapshot))

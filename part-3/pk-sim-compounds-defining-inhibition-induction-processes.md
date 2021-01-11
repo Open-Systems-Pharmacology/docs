@@ -10,7 +10,7 @@ To set up an inhibition by a compound, do the following:
 
 *   Specify the type of inhibition from the Process type list (competitive, uncompetitive, non-competitive, mixed).
 
-Inhibition changes reaction rates and/or the kinteics of active transports by modifying reaction and/or transport paramters:
+Inhibition changes reaction rates and/or the kinteics of active transports by modifying reaction and/or transport parameters:
 
 *   the Michaelis-Menten constant Km and the turnover number kcat for Michaelis-Menten kinetics
 
@@ -120,7 +120,7 @@ with
 
 ## Non-Competitive Inhibition : Simple Setting with One Inhibitor‌
     
-The non-competitive inhibtion is a special case of a mixed inhibition in which an inhibitor binds reversibly to the enzyme and/or to the enzyme/substrate complex with the same inhibition constant (KI=KIu=KIc). The reaction velocity is described by the same equation as in a mixed inhibition and the apparent maximum velocity is described by the same equation as in an uncompetitive inhibition.
+The non-competitive inhibition is a special case of a mixed inhibition in which an inhibitor binds reversibly to the enzyme and/or to the enzyme/substrate complex with the same inhibition constant (KI=KIu=KIc). The reaction velocity is described by the same equation as in a mixed inhibition and the apparent maximum velocity is described by the same equation as in an uncompetitive inhibition.
 
 ## Irreversible Inhibition‌
     
@@ -136,7 +136,7 @@ A common model for mechanism-based inactivation is illustrated below:
 
 ![Schematic representation of a enzyme inhibition by a mechanism-based enzyme inactivator](../assets/images/part-3/IrreversibleInhibition_woSubstrate.png)
 
-According to Silvermann et al. \[[72](../references.md#72)\], a mechanism-based enzyme inactivator (MBEI) requires a step to convert the compound to the inactivating species (k2). This step, which is generally responsible for the observed time dependence of the enzyme inactivation, usually is irreversible and forms a new complex (EI') which can have two disctinctive fates:
+According to Silvermann et al. \[[72](../references.md#72)\], a mechanism-based enzyme inactivator (MBEI) requires a step to convert the compound to the inactivating species (k2). This step, which is generally responsible for the observed time dependence of the enzyme inactivation, usually is irreversible and forms a new complex (EI') which can have two distinctive fates:
 
 *   The EI' is a reactive species and forms a covalent complex with the enzyme (Einact) (k4).
 *   The species generated is released from the enzyme as a product/metabolite P of the inactivator and the enzyme is again available as active enzyme (k3).
@@ -166,7 +166,7 @@ This model could be represented in PK-Sim® as follows
 Note that substrate protection can only be modeled by specifying a reversible inhibition process for the substrate (enter a Ki value).
 
 {% hint style="note" %}
-Given the variability and uncertainity associated with experimental determination of enzyme turnover rates, a sensitivity analysis for the enzyme half life should be considered in the modeling approach.
+Given the variability and uncertainty associated with experimental determination of enzyme turnover rates, a sensitivity analysis for the enzyme half life should be considered in the modeling approach.
 {% endhint %}
 
 {% hint style="note" %}
@@ -175,7 +175,7 @@ Please note that for the mechanism-based inactivator no clearance process is def
 
 ## Enzyme Induction‌
 
-Enzyme induction can occur as a result of either increased **de novo synthesis of enzyme** or (in very rare cases and currently not implemented in PK-Sim®) a decrease in degradation following protein stabilisation induction. Some examples of induction proccesses are:
+Enzyme induction can occur as a result of either increased **de novo synthesis of enzyme** or (in very rare cases and currently not implemented in PK-Sim®) a decrease in degradation following protein stabilisation induction. Some examples of induction processes are:
 
 
 *   CYPs 1A1, 1A2 and 1B1 induced by aryl hydrocarbon receptor (AHR) that is activated by binding of e.g. dioxin, benzoapyrene, omeprazole (in vitro), tobacco smoke

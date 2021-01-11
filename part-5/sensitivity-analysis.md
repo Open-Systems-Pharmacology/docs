@@ -156,7 +156,7 @@ After the calculation is finished, you can:
 
 Sensitivity Analysis in the ribbon bar Analyses.
 
-*   switch to the tab **Results** to see a tabular overview of all calculated sensitivites.
+*   switch to the tab **Results** to see a tabular overview of all calculated sensitivities.
 
 ## Tab Sensitivity Analysis‌
 
@@ -178,7 +178,7 @@ with l=1,…,nP (number of parameters) and j index of PK parameter. The cumulate
   
 ## Tab Results‌
 
-Here, the matrix of all calculated sensitivites is shown. See Warnings in “Selection of interesting input parameters” for remarks which sensitivities are calculated.
+Here, the matrix of all calculated sensitivities is shown. See Warnings in “Selection of interesting input parameters” for remarks which sensitivities are calculated.
 
 {% hint style="note" %}
 Sensitivity values in -1.0e-4 .. 1.0e-4 are displayed as 0 for reasons of clarity.
@@ -188,7 +188,7 @@ Rows correspond to the selected input parameters (with values <> 0).
 
 Columns correspond to the outputs of the simulation - for each output the reasonable PK Parameters are shown with exception of normalized PK parameters, as they have the same sensitivity as the corresponding non normalized PK parameters. (For example for Fraction excreted outputs Clearance PK Parameters are not reasonable.)
 
-You can sort and filter rows and columns to restrict the view to the sensitivites of interest in different ways:
+You can sort and filter rows and columns to restrict the view to the sensitivities of interest in different ways:
 
 *   Sort rows and columns by just clicking the sort triangle symbol at the right of the header.
 

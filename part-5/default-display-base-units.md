@@ -1,6 +1,6 @@
 # Shared Tools - Default, Display and Base Units
 
-The modeling tools PK-Sim® and MoBi® deal with a variety of physical quantities. Each quantity is related to a physical dimension. This dimension is displayed in a display unit, the preferred diplay unit is called default unit.
+The modeling tools PK-Sim® and MoBi® deal with a variety of physical quantities. Each quantity is related to a physical dimension. This dimension is displayed in a display unit, the preferred display unit is called default unit.
 
 Display units can be chosen for a dimension in a project and for a user. In addition, a default display unit for each dimension can be defined.
 

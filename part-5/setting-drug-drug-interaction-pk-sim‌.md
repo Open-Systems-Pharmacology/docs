@@ -1,6 +1,6 @@
 # Workflow - Setting up a Drug-Drug Interaction in PK-Sim‌
 
-Inhibition of a metabolizing enzyme or transporter by a drug can be defined directly in PK-Sim® in a simple and user-friendly manner. In the example workflow below, a drug-drug-interaction (DDI) model is set up using preconfigured templates compounds, e.g. the drug itroconazole, its metabolite hydroxy-itraconazole, and midazolam.
+Inhibition of a metabolizing enzyme or transporter by a drug can be defined directly in PK-Sim® in a simple and user-friendly manner. In the example workflow below, a drug-drug-interaction (DDI) model is set up using preconfigured templates compounds, e.g. the drug itraconazole, its metabolite hydroxy-itraconazole, and midazolam.
 
 Load the predefined compound from templates into PK-Sim® by clicking on the **Compound** icon in the **Load Building Blocks** menu of the **Import/Export** tab.
 

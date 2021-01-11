@@ -265,16 +265,16 @@ The following options are available for managing templates:
 
 In addition, a template can be loaded as .xml file using the <img width="32" src="../assets/icons/LoadAction.ico"> button.
 
-In the right panel, the user can specify which curve will be selected as output and how it will be diplayed.
+In the right panel, the user can specify which curve will be selected as output and how it will be displayed.
 
 An automated algorithm is implemented that decides which curves are selected when a certain template is chosen. Decision criteria are based on the output path (Y-Path) and the output type (Y-Type). The following decision scenarios are feasible:
 
 *   If a selected output matches both, Y-Path and Y-Type, it will be selected and the curve name will be used as is.
 
-*   A selected output matches the Y-type, but not the Y-Path of a template. The Y- Path of the ouput is for example **Organism|Venous|Blood|Plasma|Diclofenac**. The algorithm will then try to find all output located in the container **Organism| Venous|Blood|Plasma**. If only one output is found, the curve name will be used as is. If two or more outputs are found, the curve name will be ignored and a new unique name will be generated based on the actual path of the ouput. Sometimes, this heuristic approach might result in many selected curves at once. If more than ten curves will be selected, the user will be asked whether be wants to proceed or choose a different template for display of the selected output curves.
+*   A selected output matches the Y-type, but not the Y-Path of a template. The Y- Path of the output is for example **Organism|Venous|Blood|Plasma|Diclofenac**. The algorithm will then try to find all output located in the container **Organism| Venous|Blood|Plasma**. If only one output is found, the curve name will be used as is. If two or more outputs are found, the curve name will be ignored and a new unique name will be generated based on the actual path of the ouput. Sometimes, this heuristic approach might result in many selected curves at once. If more than ten curves will be selected, the user will be asked whether be wants to proceed or choose a different template for display of the selected output curves.
 
 {% hint style="note" %}
-All changes to a template or selection of output are made at the level of an individual simulation. The simulation settings for the project remain unchanged, until the user expicitly updates the changes to the project simulation settings building block using the context menu as shown below.
+All changes to a template or selection of output are made at the level of an individual simulation. The simulation settings for the project remain unchanged, until the user explicitly updates the changes to the project simulation settings building block using the context menu as shown below.
 {% endhint %}
 
 ![Changes in the simulation setting can be committed to the settings at the project level](../assets/images/part-5/Aufnahme8.png)

@@ -320,7 +320,7 @@ Nelder, John A.; R. Mead (1965). "A simplex method for function minimization". C
 |   |   |
 |--- |--- |
 | Convergence tolerance | Relative convergence tolerance |
-| Maximum evalutions | Termination occurs when the number of calls to objective function is greater or equal this value |
+| Maximum evaluations | Termination occurs when the number of calls to objective function is greater or equal this value |
 
 ### Variation of calculation methods and multiple optimizations‌
 

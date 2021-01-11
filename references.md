@@ -216,7 +216,7 @@ L. F. Shampine and S. Willmann. _Solving ODEs and DDEs with residual control_. A
 P. Sidhu, H. T. Peng, B. Cheung, and A. Edginton. _Simulation of differential drug pharmacokinetics under heat and exercise stress using a physiologically based pharmacokinetic modeling approach_. Can J Physiol Pharmacol. 365-82. 89(5). 2011.
 
 #### 72
-R.B. Silvermann. _Mechanism-based enzyme imhibitors_. Methods in Enzymology. 249. 1995.
+R.B. Silvermann. _Mechanism-based enzyme inhibitors_. Methods in Enzymology. 249. 1995.
 
 #### 73
 A. Strougo, T. Eissing, A. Yassen, S. Willmann, M. Danhof, and J. Freijer. _First dose in children: physiological insights into pharmacokinetic scaling approaches and their implications in paediatric drug development_. J Pharmacokinet Pharmacodyn. 2012.

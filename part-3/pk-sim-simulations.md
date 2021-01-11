@@ -89,7 +89,7 @@ Click **Next** in order to assign the relevant biological processes. Note that y
 
 ![The Create Simulation dialog. Here, the Processes tab is shown, in which the proteins, i.e. the enzymes, transporters and binding proteins, expressed in the Individual can be linked to the corresponding active processes defined in the Compound.](../assets/images/part-3/ProcessesSimulation.png)
 
-In the **Processes** tab of the **Create Simulation** window, processes like e.g. metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed descripton of how to set up interaction of a drug with enzymes/transporters (e.g. via a drug-drug interaction or induction) can be found in [PK-Sim® Compounds: Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
+In the **Processes** tab of the **Create Simulation** window, processes like e.g. metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed description of how to set up interaction of a drug with enzymes/transporters (e.g. via a drug-drug interaction or induction) can be found in [PK-Sim® Compounds: Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
 
 {% hint style="warning" %}
 If, and only if, processes in individuals are linked to properties of the compounds, these processes are modeled in the simulation.
@@ -334,7 +334,7 @@ The calculated pharmacokinetic parameters are:
 | AUC_inf_tD1_n        | oArmrea under the concentration vs. time curve from the first data point extrapolated to infinity (further administrations are not considered!) normalized to dose, with dose in drug mass per body weight |
 | ....tDi-tDj          | Respective PK parameter from the administration time of the first dose until the administration time of the second dose                                                                                    |
 | ....tDlast-tDEnd     | Respective PK parameter following the last application                                                                                                                                                     |
-| ....tDlast-1- tDlast | Respective PK parameter in the intervall between the (last -1) application and the last application                                                                                                        |
+| ....tDlast-1- tDlast | Respective PK parameter in the interval between the (last -1) application and the last application                                                                                                         |
 | C_trough_dDi         | Trough concentration just before the i-th dose is administered                                                                                                                                             |
 | C_trough_dlast       | Trough concentration just before the last dose is administered                                                                                                                                             |
 
@@ -508,7 +508,7 @@ In the **Scatter Plot Analysis** population parameters and PK-parameters can als
 
 #### The Range Plot Analysis
 
-Similar to the **Scatter Plot Analysis**, the **Range Plot Analysis** offers continuous plotting of parameters on both axis. Grouping by **Population Parameters** and/or **PK-Parameters** is done as decribed above. The range plot displays the median of the parameter as a thick line and the parameter range that comprises 5-95% of individuals of the population.
+Similar to the **Scatter Plot Analysis**, the **Range Plot Analysis** offers continuous plotting of parameters on both axis. Grouping by **Population Parameters** and/or **PK-Parameters** is done as described above. The range plot displays the median of the parameter as a thick line and the parameter range that comprises 5-95% of individuals of the population.
 
 ![Display simulated parameters in a range plot that displays the median and parameter range covered by 5-95% of individuals of that population.](../assets/images/part-3/PK-Sim_CreateSimulation_PopSim_ChangeAnalysis.png)
 
@@ -570,7 +570,7 @@ PK-Sim® offers a comparison chart also for population simulations. To create a 
 
 ![The Distribution tab of the Comparison Chart displays the distribution of population parameters in all populations.](../assets/images/part-3/PK-Sim_CreateSimulation_ComparisonPopulations_Distribution.png)
 
-- You can then select the analysis type for your comparison from the **Analysis** button and then proceed with selection output and grouping criteria as secribed above.
+- You can then select the analysis type for your comparison from the **Analysis** button and then proceed with selection output and grouping criteria as described above.
 
 {% hint style="note" %}
 For a comparison of populations, only the intersecting set of output appears, e.g. if you selected venous plasma concentrations as output in all populations, it appears in the list of **Outputs** in the time profile analysis tab.

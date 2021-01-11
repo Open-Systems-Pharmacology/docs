@@ -14,7 +14,7 @@ and select <img width="32" src="../assets/icons/Protocol.ico"> **Add Administrat
 
 *   Use the short cut **Ctrl+Alt+A**
 
- A new window will open where you can define your adminstration protocol.  You can choose between **Simple protocol** and **Advanced protocol**. To switch between these two views select the respective protocol type in the uppermost checkboxes of the window.
+ A new window will open where you can define your administration protocol.  You can choose between **Simple protocol** and **Advanced protocol**. To switch between these two views select the respective protocol type in the uppermost checkboxes of the window.
 
 {% hint style="warning" %}
 Note that when switching between simple and advanced protocol several of the already defined parameters will be **reset**. When switching from simple to advanced protocol, the dosing schedule will be transferred. This is not true for the opposite direction.

@@ -466,7 +466,7 @@
     <li><p>Calculation of the fraction of dose metabolized/excreted</p></li>
     <li><p>Plotting of all calculated time courses</p>
     <ul>
-    <li><p>Plot settings (axes, styles, blabla)</p></li>
+    <li><p>Plot settings (axes, styles, etc.)</p></li>
     <li><p>Individual simulations:</p>
     <ul>
     <li><p>Time profile plots</p></li>

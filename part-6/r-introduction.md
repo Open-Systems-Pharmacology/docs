@@ -103,7 +103,7 @@ A certain PK parameter for an output quantity. Has the fields `$name` which is t
 A class defining the analysis of which input parameters have most impact on the output curves of a simulation. See [Sensitivity analysis](#sensitivity-analysis) for more information.
 
 `SensitivityAnalysisResults`  
-Resuls of running the `SensitivityAnalysis`
+Results of running the `SensitivityAnalysis`
 
 `PKParameterSensitivity`  
 The sensitivity (field `$value`) of a PK-Parameter (`$pkParameterName`) for the output `$outputPath` calculated for the varied parameter `$parameterName`. See [Sensitivity analysis](#sensitivity-analysis) for more information.
@@ -493,7 +493,7 @@ This function is one-way only! It is not possible to re-activate the RHS formula
     #>   isFormula: TRUE
     #>   formula: Time * 2
     
-    # Setting its value only changes the intitial value
+    # Setting its value only changes the initial value
     setParameterValues(stateVariableParam, 10)
     print(stateVariableParam)
     #> Parameter: 
@@ -543,7 +543,7 @@ Once the simulation is loaded (see [Loading a simulation and accessing entities]
     #> SimulationResults: 
     #>   Number of individuals: 1
 
-The advantage of storing the results in a object is the option to keep different resutls of the same simulation produced with different settings (e.g., model parameters).
+The advantage of storing the results in a object is the option to keep different results of the same simulation produced with different settings (e.g., model parameters).
 
 Simulated time-value pairs for a specific output from the `SimulationResults`-object can be accessed with the method `getOutputValues`. The user can provide either the path(s) of the output (which can be a molecule, a parameter, or an observer), or the object(s) of the type `Molecule`, `Parameter`, or `Quantity` (for observers) with the argument `quantitiesOrPaths`. If no output is specified, all outputs available in the simulation results are returned.
 
@@ -598,7 +598,7 @@ The results can be stored in and imported from a \*.csv file with the methods `e
 ## Adding new outputs
 
 By default, only outputs that were selected in PK-Sim or MoBi prior to the export of the simulation to `pkml` are generated. The user can add new outputs to the simulation with the method `addOutputs`. The outputs
-can be provided either as objects of the type(s) `Molecule`, Parameter`, or `Quantity`, or as path strings. The ouput list is a property of the `simulation`. After adding or removing outputs, the
+can be provided either as objects of the type(s) `Molecule`, Parameter`, or `Quantity`, or as path strings. The output list is a property of the `simulation`. After adding or removing outputs, the
 corresponding simulation needs to be re-run in order to generate updated results.
 
     # Clear the list of generated outputs
@@ -610,7 +610,7 @@ corresponding simulation needs to be re-run in order to generate updated results
     
     addOutputs(c(molecule, observer), simulation = sim)
     
-    # Add new ouputs as path strings
+    # Add new outputs as path strings
     addOutputs(c("Organism|Lumen|Stomach|Aciclovir", 
                  "Organism|PeripheralVenousBlood|Aciclovir|Whole Blood (Peripheral Venous Blood)"),
                simulation = sim)
@@ -869,7 +869,7 @@ The method `loadPopulation` creates an object of the `Population` class that can
 ## Creating populations
 
 Similar to creating individual parameter sets (see [Creating individuals](#creating-individuals)), a population is created from
-*population characteristics* created by calling the method `createPopulationCharacteristics`. To see the list of available values for the arguments `species` and `population` (only for human), use the enums `Species` and `HumanPopulation`, respectively. The returned object of type `PopulationCharacteristics` is then passed to the function `createPopulation` to generate a set of parameter values. The algoritghm
+*population characteristics* created by calling the method `createPopulationCharacteristics`. To see the list of available values for the arguments `species` and `population` (only for human), use the enums `Species` and `HumanPopulation`, respectively. The returned object of type `PopulationCharacteristics` is then passed to the function `createPopulation` to generate a set of parameter values. The algorithm
 behind is the same used in PK-Sim when creating an population. Molecule ontogenies can be added as described in the vignette [Creating individuals](#creating-individuals).
 
     library(ospsuite)
@@ -940,7 +940,7 @@ Population simulations are run in parallel on multi-core machines - one core sim
     simRunOptions$numberOfCores <- 3
     simRunOptions$showProgress <- TRUE
     
-    # Run population simulation with cutom options
+    # Run population simulation with custom options
     populationResults <- runSimulation(simulation = sim, population = myPopulation, simulationRunOptions = simRunOptions)
     print(populationResults)
     #> SimulationResults: 
@@ -1207,7 +1207,7 @@ calculated for PK-Parameters (see [PK Analysis](#calculating-pk-parameters-of-si
     simFilePath <- file.path(getwd(), "..", "tests", "data", "simple.pkml", fsep = .Platform$file.sep)
     sim <- loadSimulation(simFilePath)
     
-    # Create a `SensitivityAnalysis` with all constant and suitable for sensitivity calculations parametersand suitable for sensitivity calculations parameters
+    # Create a `SensitivityAnalysis` with all constant and suitable for sensitivity calculations parameters and suitable for sensitivity calculations parameters
     sa <- SensitivityAnalysis$new(simulation = sim)
     
     # Run the sensitivity analysis
@@ -1240,8 +1240,8 @@ If no value is provided, a default value is used.
     
     # Get sensitivities for the parameter "AUC_inf" of the simulated output with a threshold of 0.8
     outputPath <- sim$outputSelections$allOutputs[[1]]$path
-    sensitivites <- saResult$allPKParameterSensitivitiesFor(pkParameterName = "AUC_inf", outputPath = outputPath, totalSensitivityThreshold = 0.8)
-    print(sensitivites)
+    sensitivities <- saResult$allPKParameterSensitivitiesFor(pkParameterName = "AUC_inf", outputPath = outputPath, totalSensitivityThreshold = 0.8)
+    print(sensitivities)
     #> [[1]]
     #> PKParameterSensitivity: 
     #>   Parameter name: Aciclovir-Lipophilicity
