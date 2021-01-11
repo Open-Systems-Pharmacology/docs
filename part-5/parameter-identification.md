@@ -68,7 +68,7 @@ During the Parameter Identification Run you can get visual feedback about the cu
 
 For a hands on exercise, open the example project Theophylline.pksim5. You can open the folder with the example projects from the Start menu by selecting All Programs/Open Systems Pharmacology/PK-Sim/Examples.
 
-1.  In the Simulation Explorer mark the two simulations "_Kaumeier IV 208 mg fit_" and "_Kaumeier oral solution 185mg_" and select ![Image](../assets/images/part-5/ParameterIdentification.png)**Start Parameter Identification ...** from the context menu.
+1.  In the Simulation Explorer mark the two simulations "_Kaumeier IV 208 mg fit_" and "_Kaumeier oral solution 185mg_" and select <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Start Parameter Identification ...** from the context menu.
     
 2.  A new view for _Parameter Identification 1_ is displayed and the tab **Data** is opened. On the left, the simulations with the assigned observed data are displayed. On the right, a list of mappings from outputs to observed data is displayed. For each observed data set for concentrations and fractions the corresponding output is mapped automatically (based on the Organ, Compartment, Molecule meta data).
 
@@ -291,7 +291,7 @@ This iteration is performed until the break condition holds.
 
 For a description of this algorithm see
 
-Henri P. Gavin: "The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems" (May 2016) http://www.people.duke.edu/~hpgavin/(http://www.people.duke.edu/%7Ehpgavin/ce281/lm.pdf) ce281/lm.pdf
+Henri P. Gavin: "The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems" (May 2016) (https://people.duke.edu/~hpgavin/ce281/lm.pdf)
 
 K. Madsen, H.B. Nielsen, O. Tingleff: „METHODS FOR NON-LINEAR LEAST SQUARES PROBLEMS” (2nd Edition, April 2004) http://(http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3215/pdf/imm3215.pdf) www2.imm.dtu.dk/pubdb/views/edoc_download.php/3215/pdf/imm3215.pdf
 

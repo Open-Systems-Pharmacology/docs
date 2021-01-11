@@ -81,7 +81,7 @@ E. Galia, E. Nicolaides, D. Härter, R. Läbenberg, C. Reppas, and J. B. Dressma
 A. Garg and J. Balthasar. _Physiologically-based pharmacokinetic (PBPK) model to predict IgG tissue kinetics in wild-type and FcRn-knockout mice_. Journal of Pharmacokinetics and Pharmacodynamics.. 34. 687-709. 2007.
 
 #### 27
-Henri P. Gavin. _The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems_. http://www.people.duke.edu/%7Ehpgavin/ http://www.people.duke.edu/~hpgavin/ce281/lm.pdf. . . 2016.
+Henri P. Gavin. _The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems_. https://people.duke.edu/%7Ehpgavin/ https://people.duke.edu/~hpgavin/ce281/lm.pdf. . . 2016.
 
 #### 28
 X. Ge, S. Yamamoto, S. Tsutsumi, Y. Midorikawa, S. Ihara, S. M. Wang, and H. Aburatani. _Interpreting expression profiles of cancers by genome- wide survey of breadth of expression in normal tissues_. Genomics.. 86(2). 127-41. 2005.
@@ -249,7 +249,7 @@ K. Thelen, K. Coboeken, J. B. Dressman, and S. Willmann. _Dynamically simulating
 Third National Health and Nutrition Examination Survey, (NHANES III). 1997\. National Center for Health Statistics Hyattsville, MD 20782 http://www.cdc.gov/nchs/nhanes.htm
 
 #### 83
-Expressed Sequence Tags (EST) from UniGene. 2010\. National Center for Biotechnology Information (NCBI) http://www.ncbi.nlm.nih.gov/unigene
+Expressed Sequence Tags (EST) from UniGene. 2010\. National Center for Biotechnology Information (NCBI) https://ftp.ncbi.nlm.nih.gov/repository/UniGene/
 
 #### 84
 Annals of the ICRP. Basic Anatomical and Physiological Data for Use in Radiological Protection: Reference Values. J. Valentin. Vol. 32 (3-4). 2002.
