@@ -1,6 +1,6 @@
 # About this Manual
 
-This manual describes the [Open Systems Pharmacology Suite](www.open-systems-pharmacology.org). It includes a technical description of each software element with examples and references for further reading. The aim of the manual is to assist users in effectively developing PBPK models.
+This manual describes the [Open Systems Pharmacology Suite](https://www.open-systems-pharmacology.org). It includes a technical description of each software element with examples and references for further reading. The aim of the manual is to assist users in effectively developing PBPK models.
 
 The handbook is divided into the following parts:
 

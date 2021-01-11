@@ -22,7 +22,7 @@ Loading an individual simulation
 
 - Click on the **Import/Export** tab then click on the  **Individual Simulation** icon <img width="32" src="../assets/icons/IndividualSimulationLoad.ico"> and specify the file to be imported. The simulation will be imported into the project and will be available from the Simulation Explorer.
 
-- Any imported simulation behaves exactly like any standard PK-Sim® simulation with the exception that its structure cannot be altered. That means that it is not possible to swap parts of the simulation using the building block concept described in [Modules, Philosophy, and Building Blocks](../part-2/odules-philsophy-building-blocks.md).
+- Any imported simulation behaves exactly like any standard PK-Sim® simulation with the exception that its structure cannot be altered. That means that it is not possible to swap parts of the simulation using the building block concept described in [Modules, Philosophy, and Building Blocks](../part-2/modules-philsophy-building-blocks.md).
 
 - If an imported simulation contains parameters that are unknown in PK-Sim®, they can be found in the simulation parameter tree under the node MoBi®.
 

@@ -22,7 +22,7 @@ MoBi® is a systems biology software tool for multiscale physiological modeling 
 
 De novo model establishment and simulation is supported by graphical tools and building blocks to support expert users. MoBi® [uses building blocks that are grouped into Molecules, Reactions, Spatial Structures, Passive Transports, Observers, Events, Molecule Start Values, Parameter Start Values, and Observed Data. The different building blocks are described in detail in Part IV, “Working with MoBi®”. Building blocks out of the above-mentioned groups can be combined to generate models. The advantage of building blocks is that they can be reused. For example, a different set of starting values may define a new scenario, situation, or individual. Refine a Reaction(s) network and update it in all tissues where it should be considered.
 
-MoBi® will be described in detail in [Working with MoBi®](../part-4/irst-steps.md).
+MoBi® will be described in detail in [Working with MoBi®](../part-4/first-steps.md).
 
 ## Modular Structure‌
 
