@@ -194,7 +194,7 @@ In the data transfer overview tab the data to be transferred are compiled for re
 ![Expression Data Transfer](../assets/images/part-3/ExpressionDataTransfer.PNG)
 
 {% hint style="tip" %}
-The Array Database is best in terms of the number of genes covered (essentially the complete genome), RT-PCR provides the most accurate measurements, and EST data in some cases covers unusual types of tissue. Use the data soures that has the most appropriate coverage of tissues for your purpose. Array data is usually a good choice.
+The Array Database is best in terms of the number of genes covered (essentially the complete genome), RT-PCR provides the most accurate measurements, and EST data in some cases covers unusual types of tissue. Use the data sources that has the most appropriate coverage of tissues for your purpose. Array data is usually a good choice.
 {% endhint %}
 
 {% hint style="tip" %}

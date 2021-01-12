@@ -81,7 +81,7 @@ E. Galia, E. Nicolaides, D. Härter, R. Läbenberg, C. Reppas, and J. B. Dressma
 A. Garg and J. Balthasar. _Physiologically-based pharmacokinetic (PBPK) model to predict IgG tissue kinetics in wild-type and FcRn-knockout mice_. Journal of Pharmacokinetics and Pharmacodynamics.. 34. 687-709. 2007.
 
 #### 27
-Henri P. Gavin. _The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems_. http://www.people.duke.edu/%7Ehpgavin/ http://www.people.duke.edu/~hpgavin/ce281/lm.pdf. . . 2016.
+Henri P. Gavin. _The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems_. https://people.duke.edu/%7Ehpgavin/ https://people.duke.edu/~hpgavin/ce281/lm.pdf. . . 2016.
 
 #### 28
 X. Ge, S. Yamamoto, S. Tsutsumi, Y. Midorikawa, S. Ihara, S. M. Wang, and H. Aburatani. _Interpreting expression profiles of cancers by genome- wide survey of breadth of expression in normal tissues_. Genomics.. 86(2). 127-41. 2005.
@@ -216,7 +216,7 @@ L. F. Shampine and S. Willmann. _Solving ODEs and DDEs with residual control_. A
 P. Sidhu, H. T. Peng, B. Cheung, and A. Edginton. _Simulation of differential drug pharmacokinetics under heat and exercise stress using a physiologically based pharmacokinetic modeling approach_. Can J Physiol Pharmacol. 365-82. 89(5). 2011.
 
 #### 72
-R.B. Silvermann. _Mechanism-based enzyme imhibitors_. Methods in Enzymology. 249. 1995.
+R.B. Silvermann. _Mechanism-based enzyme inhibitors_. Methods in Enzymology. 249. 1995.
 
 #### 73
 A. Strougo, T. Eissing, A. Yassen, S. Willmann, M. Danhof, and J. Freijer. _First dose in children: physiological insights into pharmacokinetic scaling approaches and their implications in paediatric drug development_. J Pharmacokinet Pharmacodyn. 2012.
@@ -249,7 +249,7 @@ K. Thelen, K. Coboeken, J. B. Dressman, and S. Willmann. _Dynamically simulating
 Third National Health and Nutrition Examination Survey, (NHANES III). 1997\. National Center for Health Statistics Hyattsville, MD 20782 http://www.cdc.gov/nchs/nhanes.htm
 
 #### 83
-Expressed Sequence Tags (EST) from UniGene. 2010\. National Center for Biotechnology Information (NCBI) http://www.ncbi.nlm.nih.gov/unigene
+Expressed Sequence Tags (EST) from UniGene. 2010\. National Center for Biotechnology Information (NCBI) https://ftp.ncbi.nlm.nih.gov/repository/UniGene/
 
 #### 84
 Annals of the ICRP. Basic Anatomical and Physiological Data for Use in Radiological Protection: Reference Values. J. Valentin. Vol. 32 (3-4). 2002.

@@ -98,7 +98,7 @@ You can choose if only errors, only warnings or both are displayed by clicking (
 
 ![Notifications View: Warnings](../assets/images/part-4/SimCW_Warnings.png)
 
-The <img width="32" src="../assets/icons/Warning.ico"> Warnings and <img width="32" src="../assets/icons/Error.ico"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img width="32" src="../assets/icons/Save.ico"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error mesage or the warning directly opens the editor in the corresponding building block.
+The <img width="32" src="../assets/icons/Warning.ico"> Warnings and <img width="32" src="../assets/icons/Error.ico"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img width="32" src="../assets/icons/Save.ico"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
 
 ## Simulation Settings‌
 
@@ -246,7 +246,7 @@ The Container layout of a simulation is based on the layout of the Spatial Struc
 
 ## Update and Commit Changes Between Simulations and Building Blocks‌
 
-Within the **Simulation Explorer**, each building block item of the **Configuration** tree is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consitent with the corresponing general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
+Within the **Simulation Explorer**, each building block item of the **Configuration** tree is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consistent with the corresponding general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
 
 A right click on the red traffic lights in the **Simulation** window allows for two actions:
 
