@@ -1,6 +1,6 @@
 # MoBi®‌ Model Building and Model Components
 
-After having made yourself familiar in the previous chapters with the building block concept and with the general structure of the program and projects ([“MoBi® \- Window Overview”](building-block-concepts.md#window-overview)), this section describes the practical approach how to build MoBi® models by stepwise entering content into the building blocks. Also, this knowledge is of use to upgrade models imported from PK-Sim®, as will be described in [Setting up a Simulation](setting-up-simulation.md).
+After having made yourself familiar in the previous chapters with the building block concept and with the general structure of the program and projects ([“MoBi® \- Window Overview”](first-steps.md#mobi---window-overview)), this section describes the practical approach how to build MoBi® models by stepwise entering content into the building blocks. Also, this knowledge is of use to upgrade models imported from PK-Sim®, as will be described in [Setting up a Simulation](setting-up-simulation.md).
 
 {% hint style="tip" %}
 Always watch for the helpful tool tips that appear when hovering for a few seconds with the mouse pointer over an input box or its description.
@@ -324,7 +324,7 @@ Similarly, observers or events can be included or excluded from being created in
 
 A spatial structure can be an organism consisting of organs, cells and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume. Containers of a spatial structure can be defined as Physical, which may contain molecules in the simulation. They can also be defined as Logical, meaning they do not represent a real container with molecules but instead just representing a grouping of sub-containers. Containers are also grouped in categories like Organism, Organ, and others. This way, the physical makeup of an organism is described.
 
-The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation]([Setting up a Simulation](setting-up-simulation.md#setting-up-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the <img width="32" src="../assets/icons/LoadAction.ico"> **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
+The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the <img width="32" src="../assets/icons/LoadAction.ico"> **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
 
 {% hint style="note" %}
 In the process of this and the next sections of this chapter, you will create an example project. An already completed project file named "ManualModel_Sim.mbp3" is automatically installed together with MoBi® in the default program data directory. The entry "Examples" in the program start menu in the "MoBi" group will lead you to the proper path.
@@ -844,7 +844,7 @@ In our **example project**, a spatial structure named "Observer" has already bee
 
 For **creating a new observer** or loading one from a previously saved file, select the corresponding button <img width="32" src="../assets/icons/AddAction.ico"> **New** or <img width="32" src="../assets/icons/PKMLLoad.ico"> **Load** from the context-dependent ribbon and there select the proper observer type. Alternatively, you may right-click into the empty white space of the edit window and select **Create Molecule (resp. Container) Observer** or **Load Molecule (resp. Container) Observer** from the context menu. If you choose **New** or **Create**, a window named "New Molecule (resp. Container) Observer" opens.
 
-Each **observer class has a conditions** attached to it that determines for which molecules and in which parts of the spatial structure an observer is calculated. Observers can be selected by inclusion or exclusion criteria based on their tags by selecting New match tag condition or New not match tag condition. Tags are either the name of a container or they can be manually added (compare “Creating a Spatial Structure”). All conditions entered for one observer are connected by a logical "and". Make sure you have entered proper data into these fields, or otherwise an observer is not generated in a simulation and warnings will be reported when creating a simulation (see [Create a Simulation](#part-4/setting-up-simulation.md#create-a-simulation)). As a further option, you may select the Add match all tag condition, which selects all containers.
+Each **observer class has a conditions** attached to it that determines for which molecules and in which parts of the spatial structure an observer is calculated. Observers can be selected by inclusion or exclusion criteria based on their tags by selecting New match tag condition or New not match tag condition. Tags are either the name of a container or they can be manually added (compare “Creating a Spatial Structure”). All conditions entered for one observer are connected by a logical "and". Make sure you have entered proper data into these fields, or otherwise an observer is not generated in a simulation and warnings will be reported when creating a simulation (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)). As a further option, you may select the Add match all tag condition, which selects all containers.
 
 All conditions, parameters, formulas, names, and paths that have been defined for any observer may later be edited, renamed, or deleted. Use the corresponding context menus, or override the entries in input boxes, comboboxes, or checkboxes.
 
@@ -1101,7 +1101,7 @@ Descriptive names for each of these applications building blocks could be helpfu
 Molecule start values are needed to define the initial amounts of all molecules present in the molecules building block used in a simulation for all containers. These values are either imported when loading a simulation, or they can be created automatically and edited manually, if needed.
 
 {% hint style="tip" %}
-Molecule and Parameter Start Values can also be created within the Simulation Creation Wizard (compare [Create a Simulation](#part-4/setting-up-simulation.md#create-a-simulation)).
+Molecule and Parameter Start Values can also be created within the Simulation Creation Wizard (compare [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
 {% endhint %}
 
 To automatically create molecule start values by MoBi®:
@@ -1199,7 +1199,7 @@ To edit a parameter start value building block, double-click on it or use the co
 Again, cloning and manual parameter changes at this level allow for quickly switching among different simulation scenarios.
 
 {% hint style="tip" %}
-The example model is now ready for setting up a simulation which is described in the next chapter (see [Create a Simulation](#part-4/setting-up-simulation.md#create-a-simulation)).
+The example model is now ready for setting up a simulation which is described in the next chapter (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
 {% endhint %}
 
 ## Import Molecule and Parameter Start Values from Excel‌

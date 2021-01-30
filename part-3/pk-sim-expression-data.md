@@ -237,7 +237,7 @@ The gene expression that is used in the simulation incorporates the age- depende
 
 *   Transporter Type can be set to efflux, influx, or Pgp-like.
     
-In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins‌](#the-cellular-and-tissue-specific-location-of-active-proteins‌) for explanation of the various parameters).
+In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins‌](#the-cellular-and-tissue-specific-location-of-active-proteins) for explanation of the various parameters).
 
 ## Reference Concentration‌
         

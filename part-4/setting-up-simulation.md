@@ -300,7 +300,7 @@ The context menu that opens when right-clicking on the simulation in the Simulat
 
 - <img width="32" src="../assets/icons/Population.ico"> Start Population Simulation \- calls the Population Simulation Analysis in PK-Sim®, loads the simulation and runs the population simulation (see “Running and analyzing a population simulation” for description).
 
-- Start Parameter Identification \- calls Parameter Identification tool (see [Parameter Identification](tools.md#parameter-indentification) for description).
+- Start Parameter Identification \- calls Parameter Identification tool (see [Parameter Identification](tools.md#parameter-identification) for description).
 
 - <img width="32" src="../assets/icons/ObservedData.ico"> Export results to Excel® \- generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).
 
