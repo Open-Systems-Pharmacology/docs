@@ -1,6 +1,6 @@
 # MoBi®‌ Model Building and Model Components
 
-After having made yourself familiar in the previous chapters with the building block concept and with the general structure of the program and projects ([“MoBi® \- Window Overview”](first-steps.md#mobi---window-overview)), this section describes the practical approach how to build MoBi® models by stepwise entering content into the building blocks. Also, this knowledge is of use to upgrade models imported from PK-Sim®, as will be described in [Setting up a Simulation](setting-up-simulation.md).
+After having made yourself familiar in the previous chapters with the building block concept and with the general structure of the program and projects ([“MoBi® \- First Steps”](first-steps.md)), this section describes the practical approach how to build MoBi® models by stepwise entering content into the building blocks. Also, this knowledge is of use to upgrade models imported from PK-Sim®, as will be described in [Setting up a Simulation](setting-up-simulation.md).
 
 {% hint style="tip" %}
 Always watch for the helpful tool tips that appear when hovering for a few seconds with the mouse pointer over an input box or its description.
