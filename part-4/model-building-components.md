@@ -554,10 +554,9 @@ For a detailed description of the creation and use of formulas see below, [React
 For **continuing our test project**, enter three molecules and name them "A", "B", and "C". Uncheck the checkbox ![Image](../assets/icons/Unchecked.png) **Stationary** for each molecule to allow transport processes. Set the **Default Start Amount** for molecule "A" to 50 µmol and leave "B" and "C" at the default, 0 µmol. It will be needed to practice in the next sections.
 {% endhint %}
 
-### Active Transporter Molecules‌
+### Active Transporter
 
-In addition to the molecules described so far, active transporter molecules and transport processes related to them can be created. Since their use requires
-
+In addition to the molecules described so far, active transporter molecules and transport processes related to them can be created. Since their use requires 
 that a spatial structure and neighborhoods have been created, they and the dependent active transport processes are described below in [Active Transporter Molecules](#active-transporter-molecules).
 
 ## Reactions‌
