@@ -378,7 +378,7 @@ Biliary clearance is systemic process that does not have to be linked to propert
 
 ### Definition of a metabolite in an enzymatic process‌
 
-A metabolite of a compound can be defined and used either as a "sink" or treated like any other compound. See [How to set up a parent/metabolite simulation](pk-sim-simulations.md#how-to-set-up-a-parent-metabolite-simulation) for details.
+A metabolite of a compound can be defined and used either as a "sink" or treated like any other compound. See [How to set up a parent/metabolite simulation](pk-sim-simulations.md#how-to-set-up-a-parentmetabolite-simulation) for details.
 
 ### Advanced Parameters‌
 

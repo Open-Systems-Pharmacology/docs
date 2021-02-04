@@ -7,7 +7,7 @@ Installation instructions are provided here:
 https://github.com/Open-Systems-Pharmacology/OSPSuite-R/blob/develop/README.md#installation 
 ## General information
 
-In order to load a simulation in R, it must be present in the **\*.pkml** file format. Every simulation in PK-Sim or MoBi can be exported to the \*.pkml file. The examples shown in the vignettes are based on the _Aciclovir_ example model, until stated otherwise. The model can be found in the PK-Sim examples folder of the OSPS installation.
+In order to load a simulation in R, it must be present in the **\*.pkml** file format. Every simulation in PK-Sim or MoBi can be exported to the \*.pkml file. The examples shown are based on the _Aciclovir_ example model, until stated otherwise. The model can be found in the PK-Sim examples folder of the OSPS installation.
 
 The general workflow with the **ospsuite** package can be summarized in following steps:
 
@@ -21,8 +21,8 @@ The workflow steps are described in the following sections:
 -   [Loading a simulation and accessing entities](#loading-a-simulation-and-accessing-entities)
 -   [Changing parameter and molecule start values](#changing-parameter-and-molecule-start-values)
 -   [Running a simulation](#running-a-simulation)
--   [Creating individuals](#creating-individuals)
--   [Population simulations](#population-simulations)
+-   [Working with individuals](#working-with-individuals)
+-   [Working with population simulations](#working-with-population-simulations)
 -   [PK Analysis](#calculating-pk-parameters-of-simulation-outputs)
 -   [Sensitivity analysis](#sensitivity-analysis)
 -   [Table parameters](#table-parameters)
@@ -88,10 +88,10 @@ The value of each `Quantity` is described by a `Formula`. There are different ty
 An object used for creating of individual parameter sets with the `createIndividual`-method. See [Creating individuals](#creating-individuals) for more information.
 
 `Population`  
-An object describing a virtual population. Can be either loaded from a \*.csv-file created by PK-Sim or created with the `createPopulation`-method. See [Population simulations](#population-simulations) for more information.
+An object describing a virtual population. Can be either loaded from a \*.csv-file created by PK-Sim or created with the `createPopulation`-method. See [Creating populations](#creating-populations) for more information.
 
 `PopulationCharacteristics`  
-An object used for creating of population parameter sets with the`createPopulation`-method. See [Population simulations](#population-simulations) for more information.
+An object used for creating of population parameter sets with the`createPopulation`-method. See [Creating populations](#creating-populations) for more information.
 
 `SimulationPKAnalyses`  
 PK analyses for a simulations result.
@@ -707,7 +707,7 @@ To change the simulation interval, the user can use one of the functions
     #>   End time: 2000.00 [min]
     #>   Resolution: 4.00 [pts/min]
 
-# Creating individuals
+# Working with individuals
 
 The ospsuite-R package provides an interface to the PK-Sim physiology database to create parameter sets describing a certain **individual**.
 By applying these parameter values to a simulation, it is possible to simulate different individuals based on one exported \*.pkml simulation. This functionality is only available when PK-Sim is installed on the
@@ -847,7 +847,7 @@ to the value of the ontogeny of a CYP3A4 enzyme for the specified individual. Th
     
     individual <- createIndividual(individualCharacteristics = individualCharacterstics)
 
-# Population simulations
+# Working with population simulations
 
 ## Population simulations
 
@@ -870,7 +870,7 @@ The method `loadPopulation` creates an object of the `Population` class that can
 
 Similar to creating individual parameter sets (see [Creating individuals](#creating-individuals)), a population is created from
 *population characteristics* created by calling the method `createPopulationCharacteristics`. To see the list of available values for the arguments `species` and `population` (only for human), use the enums `Species` and `HumanPopulation`, respectively. The returned object of type `PopulationCharacteristics` is then passed to the function `createPopulation` to generate a set of parameter values. The algorithm
-behind is the same used in PK-Sim when creating an population. Molecule ontogenies can be added as described in the vignette [Creating individuals](#creating-individuals).
+behind is the same used in PK-Sim when creating an population. Molecule ontogenies can be added as described in [Creating individuals](#creating-individuals).
 
     library(ospsuite)
     

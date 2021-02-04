@@ -153,7 +153,7 @@ Now, you need to create the Molecules and Parameters Start Values. In our exampl
 4.  Repeat the procedure with the next building block, <img width="32" src="../assets/icons/ParameterStartValuesFolder.ico"> **Parameter Start Values**: Right-click ![Image](../assets/icons/mouse_select_right.png) it, select <img width="32" src="../assets/icons/AddAction.ico"> **Create Parameter Start Values Building Block** from the menu, enter "1" as name in the "Create new start values" window, and click **OK**. This building block, however, should not show any values since our simple model does not contain any relevant parameters.
 
 {% hint style="tip" %}
-Start values can also be created during the next step (Simulation Creation Wizard window) by using the <img width="32" src="../assets/icons/AddAction.ico"> icons which start the same parameter generation procedure. Compare and [Create a Simulation](setting-up-simulation.md#creating-a-simulation).
+Start values can also be created during the next step (Simulation Creation Wizard window) by using the <img width="32" src="../assets/icons/AddAction.ico"> icons which start the same parameter generation procedure. Compare and [Create a Simulation](setting-up-simulation.md#create-a-simulation).
 {% endhint %}
 
 ## Create and Run a Simulation‌

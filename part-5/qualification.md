@@ -158,7 +158,7 @@ Defines the chapter structure of the report. A `section` consists of:
 
 - "**Title**": Chapter title
 
-- "**Content**": Path to the **static** content file which will be inserted at the beginning of the chapter. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details). Static content files must be written in [Markdown](#Markdown) format (s. below).
+- "**Content**": Path to the **static** content file which will be inserted at the beginning of the chapter. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details). Static content files must be written in [Markdown](#markdown) format (s. below).
 
 - "**Sections**": OPTIONAL list of sub-sections. Every sub-section is built in the same way (thus report structure can be defined with an arbitrary chapter depth level).
 
@@ -191,7 +191,7 @@ An (optional) introduction can be added to the report. The differences between i
 
 The introduction is defined by:
 
-- "**Path**": Path to the **static** content file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details). Static content files must be written in [Markdown](#Markdown) format.
+- "**Path**": Path to the **static** content file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details). Static content files must be written in [Markdown](#markdown) format.
 
 ![](../assets/images/part-5/QualificationPlan_06_Intro.png)
 

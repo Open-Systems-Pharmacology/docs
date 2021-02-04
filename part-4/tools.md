@@ -4,7 +4,7 @@
 
 MoBi® contains a powerful search function to find parameters, molecules, reactions, or other elements in a project or simulation. This function is useful to locate parameters or elements of building blocks or simulations (e.g., molecules, parameters, container) within the current project.
 
-To perform a search, make sure that the search window at the right side of the MoBi®window is expanded; like the Chart Editor or History window, the Search window can be collapsed by clicking **auto hide** ![Image](../assets/icons/AutoHideDock.png) (see [MoBi® - Window Overview](first-steps.md#window-overview)) and made again visible by clicking the **Search** bar. If in collapsible mode, the search window can be switched to the permanently visible mode by clicking **dock** ![Image](../assets/icons/AutoHideHide.png).
+To perform a search, make sure that the search window at the right side of the MoBi®window is expanded; like the Chart Editor or History window, the Search window can be collapsed by clicking **auto hide** ![Image](../assets/icons/AutoHideDock.png) (see [MoBi® - Window Overview](first-steps.md#mobi-window-overview)) and made again visible by clicking the **Search** bar. If in collapsible mode, the search window can be switched to the permanently visible mode by clicking **dock** ![Image](../assets/icons/AutoHideHide.png).
 
 A search text can then be entered into the **Search** input box. This may be the name of an element of a building block or simulation or a part of a description.
 
