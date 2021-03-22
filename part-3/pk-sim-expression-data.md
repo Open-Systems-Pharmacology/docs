@@ -169,20 +169,25 @@ By default, an added enzyme is localized only in the intracellular space of the 
 
 * **Blood Cells**: Enzymes expressed in blood cells of all organs; the specified relative expression refers to blood cell volume. These enzymes can be located either within blood cells or in the cell membrane, facing blood plasma. The relative distribution of the enzyme between cellular space and plasma membrane is defined by the parameters:
 
-  *  “Fraction expressed in blood cells” defines the amount of protein within the cell and acts on educts located in the cell,
+  *  “*Fraction expressed in blood cells*” defines the amount of protein within the cell and acts on educts located in the cell,
 
-  *  “Fraction expressed in blood cell membrane” is added to the expression in plasma and acts on educts located in blood plasma.
+  *  “*Fraction expressed in blood cell membrane*” is added to the expression in plasma and acts on educts located in blood plasma.
 
 * **Vascular endothelium**: Enzymes expressed in arteries, veins, and capillaries. The relative expression refers to the volume of vascular endothelium of the organ. Due to the specificity of implementation in PK-Sim, vascular endothelium is not explicitly modeled in the organs “Arterial Blood”, “Venous Blood”, and “Portal Vein”.
 
-  * “Fraction expressed in endosome”: The enzyme is located in the endosomes of the vasculature. Please keep in mind that the endosomal compartment is not present in the model for small molecules.
+  * “*Fraction expressed in endosome*”: The enzyme is located in the endosomes of the vasculature. Please keep in mind that the endosomal compartment is not present in the model for small molecules.
 
-  * “Fraction expressed on apical membrane of vascular endothelium”: the enzyme is located in the membrane of endothelial cells facing blood plasma and acts on educts in plasma. The fraction of the relative expression is added to the expression in plasma.
+  * “*Fraction expressed on apical membrane of vascular endothelium*”: the enzyme is located in the membrane of endothelial cells facing blood plasma and acts on educts in plasma. The fraction of the relative expression is added to the expression in plasma.
 
-  * “Fraction expressed on basolateral membrane of vascular endothelium”: the enzyme is located in the membrane of endothelial cells facing the interstitial space and acts on educts in the interstitial space of the organ. The fraction of the relative expression is added to the expression in interstitial space.
+  * “*Fraction expressed on basolateral membrane of vascular endothelium*”: the enzyme is located in the membrane of endothelial cells facing the interstitial space and acts on educts in the interstitial space of the organ. The fraction of the relative expression is added to the expression in interstitial space.
 
-The relative expressions (and the fractions expressed at different sites) of the enzyme in the vascular system are equal for all organs. The expression values for the organ tissue (excluding
-the vascular system) can be defined per organ and refer to the amount of the protein in whole organ (including plasma and blood cells). The **“Fraction expressed intracellular”** defines the concentration of the enzyme located intracellularly as fraction of total amount and acts on educts located intracellularly. The **“Fraction expressed interstitial”** defines the amount of the enzyme that is available in the interstitial space. Usually this refers to the enzymes located in the cellular membrane facing the interstitial space. NOTE: As per construction, it’s always **“Fraction expressed interstitial” = 1 - “Fraction expressed intracellular”**
+{% hint style="tip" %}
+
+The relative expressions (and the fractions expressed at different sites) of the enzyme in the vascular system are equal for all organs. 
+
+{% endhint %}
+
+* **Tissue**: The expression values for the organ tissue (excluding the vascular system) can be defined per organ and refer to the amount of the protein in whole organ (including plasma and blood cells). The “*Fraction expressed intracellular*” defines the concentration of the enzyme located intracellularly as fraction of total amount and acts on educts located intracellularly. The “*Fraction expressed interstitial*” defines the amount of the enzyme that is available in the interstitial space. Usually this refers to the enzymes located in the cellular membrane facing the interstitial space. NOTE: As per construction, it’s always `Fraction expressed interstitial = 1 - Fraction expressed intracellular`
 
 **Initial concentrations** of the enzymes in the different compartments within the model are combined from the relative expression values of organs having direct access to this compartment.
 The name “initial concentration” refers to the fact that these concentrations may change during simulation course e.g. through mechanism based inactivation. The concentration of the enzyme in the compartment ultimately defines the rate of the reaction catalyzed by this enzyme.
