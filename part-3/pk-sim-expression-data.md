@@ -224,16 +224,13 @@ The name “initial concentration” refers to the fact that these concentration
 
 * **Intracellular:** `RC * rel_exp_org * f_exp_org_cell * 1 / f_cell`
   * *RC*: Reference concentration
-  *  *rel_exp_org*: Relative expression in organ
+  * *rel_exp_org*: Relative expression in organ
   * *f_exp_org_cell*: Fraction expressed intracellular
   * *f_cell*: Fraction intracellular(of total organ volume)
 
 * **Endosome:** `RC * rel_exp_vasend * f_exp_vasend_endo * 1 / f_endo`
-
   * *RC*: Reference concentration
-
   * *rel_exp_vasend*: Relative expression in vascular endothelium
-
   * *f_exp_vasend_endo*: Fraction expressed in endosomes
   * *f_endo*: Fraction endosomal (of total organ volume)
 
@@ -258,7 +255,7 @@ Following localizations are available:
   Initial concentration: `RC * rel_exp_bc`
   
   * *RC*: Reference concentration
-* *rel_exp_bc*: Relative expression in blood cells
+  * *rel_exp_bc*: Relative expression in blood cells
   
 * **Vascular endothelium**: Transport between blood plasma and the interstitial space of all organs. The transporter is placed in blood plasma with initial concentration given by the equation `RC * rel_exp_vasend * V_vasend / V_pls`
   
