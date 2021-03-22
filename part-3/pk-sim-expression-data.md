@@ -16,6 +16,13 @@ Assuming that kcat is not influenced by _in vivo_ factors, the tissue-specific m
 
 ![Equation 14.2. Vmax, Organ](../assets/images/part-3/equation-14-2-vmax.png)
 
+### Protein expression data
+
+Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ   as a fraction of a defined **reference concentration** value.
+
+<details><summary>DELETED OLD BLOCK</summary>
+# DELETED BEGIN
+
 By replacing E0, organ by relative expression values erel,organ - times a scaling factor _SF_ µmol/l the absolute _in vivo_ protein concentration is corrected for such that organ specific activity can be rewritten to obtain:
 
 ![Equation 14.3. Vmax, organ, E0, organ replaced by relative expression values](../assets/images/part-3/equation-14-3-vmax.png)
@@ -43,11 +50,11 @@ The consolidated expression data was stored in a database with three sections te
 It should be noted that the current version of the database only describes spatial distribution of active processes in PBPK models. Temporal aspects such as circadian rhythms underlying chronogenetics are not included in the current version of the database. If necessary, such effects may be considered in a corresponding MoBi® model. Also, the current version of the database is restricted to human expression data. Extensions to other organism are currently under development and will be become available in future versions of PK-Sim®.
 
 ### The cellular and tissue specific location of active proteins‌
-    
+
 A key feature of biological cells is polarity. Cellular polarity leads to functional differentiation of different sides of a cell. Organs have a spatial organization that reflects function. Active proteins (binding partners, transporters, enzymes that interact with a pharmacologically active enzyme) have to be correctly placed in the context of the cell and the organ. In addition, active transporters have a directionality of the transport, i.e. substance is transported into or out of a cell.
 
 #### Epithelial polarity: Apical, basolateral
-        
+
 Organs in PK-Sim® may be covered by an epithelial cell sheet. Epithelial cell membranes have three distinct domains. The apical domain is exposed as 'free' surface. Basolateral surfaces are opposite to the apical surface and interface the 'interior' of an organ. The lateral cell membrane connects epithelial cells to a two dimensional sheet. Tight junctions separate basal and apical membrane domains.
         
 If active processes are part of a PK-Sim® project, the localization (apical or basolateral) of transporters have to be set for key organs:
@@ -70,7 +77,7 @@ If active processes are part of a PK-Sim® project, the localization (apical or 
 *   Brain (Blood Brain Barrier): Transport between blood plasma and cytosol of brain cells.
 
 #### Transport type: Influx, Efflux, P-gp like‌
-    
+
 Transporters are located in the cell membrane, partly restricted to certain areas of the membrane. In general, active transports move a substance against the concentration gradient and the direction is specific for the transporter. In PK- Sim®, three transport directions are distinguished and need to be specified:    
 
 *   Influx: The substance is transported from the interstitial space or lumen to the intracellular space.
@@ -94,6 +101,9 @@ In addition, for the vascular endothelium, proteins can either be located in the
 *   Location in vasc. endothelium: Endosomal
 
 *   Location in vasc. endothelium: Interstitial as surrogate for cytosolic space
+
+# DELETED END
+</details>
 
 ## The workflow‌
 
@@ -142,7 +152,7 @@ Start by selecting the type of protein you have, enzyme, transporter or binding 
 Next, a database query wizard will open. This is discussed in more detail in, “[Advanced Analysis](#advanced-analysis)”. Here we walk you through the simplest possible process.
 
 ### Adding search criteria‌
-        
+
 The first panel of the database search wizard allows you to enter a search term in the search bar
 
 ![Expression Protein Selection](../assets/images/part-3/ExpressionProteinSelection.PNG)
@@ -212,7 +222,7 @@ You can rename a defined protein within your PK-Sim® project by selecting the *
 {% endhint %}
 
 ## Settings in the protein expression tab‌
-    
+
 In the upper section, the following entries can be adjusted:
     
 *   Reference concentration: Enter the molar concentration of the protein in the organ with the highest enzyme concentration (typically the liver). This is useful as you will later solely enter relative enzyme concentrations. If you do not know the absolute concentration in the organ with the highest expression level you can leave this entry at its default value of 1.00 pmol/mg and adjust the active process, e.g. via the Vmax value.
@@ -237,10 +247,11 @@ The gene expression that is used in the simulation incorporates the age- depende
 
 *   Transporter Type can be set to efflux, influx, or Pgp-like.
     
+
 In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins‌](#the-cellular-and-tissue-specific-location-of-active-proteins) for explanation of the various parameters).
 
 ## Reference Concentration‌
-        
+
 Internally, PK-Sim represents the protein expression relative to the expression in the organ with highest concentration of the respective enzyme. This corresponds to 100%. Whenever active processes are used, this relative amount is converted to an actual enzyme concentration by multiplying the relative expression with a reference concentration, i.e. the concentration that is equivalent to 100% in molar units.
 
 For example, CYP3A4 is mainly expressed in the liver of human adults, some in the gastro intestinal tract, and minor amounts are expressed in almost all other tissues. Hence, the relative expression of CYP3A4 in the liver is 100%. A reference concentration can be entered in the protein expression tab which will refer to the expression in liver, while expression in other organs is scaled by the relative expression.
@@ -290,7 +301,7 @@ You can reset all fields back to their default position by double clicking on a 
 {% endhint %}
 
 ## Filtering Data‌
-            
+
 Each field can be used for filtering. To open the filter dialog click on the filter symbol ![Image](../assets/images/part-3/ExpressionFieldFilterSymbol.png) which is shown in the field header when hovering over a field.
 
 ![Field Filter Dialog](../assets/images/part-3/ExpressionFieldFilteringDialog.png)
