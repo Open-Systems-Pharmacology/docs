@@ -16,11 +16,8 @@ Assuming that kcat is not influenced by _in vivo_ factors, the tissue-specific m
 
 ![Equation 14.2. Vmax, Organ](../assets/images/part-3/equation-14-2-vmax.png)
 
-### Protein expression data
-
-Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ   as a fraction of a defined **reference concentration** value.
-
 <details><summary>DELETED OLD BLOCK</summary>
+
 # DELETED BEGIN
 
 By replacing E0, organ by relative expression values erel,organ - times a scaling factor _SF_ µmol/l the absolute _in vivo_ protein concentration is corrected for such that organ specific activity can be rewritten to obtain:
@@ -103,7 +100,12 @@ In addition, for the vascular endothelium, proteins can either be located in the
 *   Location in vasc. endothelium: Interstitial as surrogate for cytosolic space
 
 # DELETED END
+
 </details>
+
+### Protein expression data
+
+Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ   as a fraction of a defined **reference concentration** value.
 
 ## The workflow‌
 
