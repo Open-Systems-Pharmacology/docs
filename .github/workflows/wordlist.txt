@@ -1134,3 +1134,13 @@ hematocrit
 pka
 periportal
 uncompetitive
+basolat
+bbb
+brn
+intracellularly
+IVIVE
+localizations
+Localizations
+luminal
+vasculature
+vmax

@@ -2,7 +2,7 @@
 
 ## Background: Active Processes in PK-SIM
 
-### The role of proteins in PBPK modeling‌
+### The role of proteins in PBPK modeling
 
 Small molecules frequently interact with proteins. All aspects of ADME may be influenced to a varying extent by protein/compound interaction. Metabolic and transport processes are of particular importance in this context. Most proteins concentrations vary spatially as well as temporally. PK-Sim® allows the user to model proteins and compound/protein interactions.
 
@@ -46,11 +46,11 @@ The consolidated expression data was stored in a database with three sections te
 
 It should be noted that the current version of the database only describes spatial distribution of active processes in PBPK models. Temporal aspects such as circadian rhythms underlying chronogenetics are not included in the current version of the database. If necessary, such effects may be considered in a corresponding MoBi® model. Also, the current version of the database is restricted to human expression data. Extensions to other organism are currently under development and will be become available in future versions of PK-Sim®.
 
-### The cellular and tissue specific location of active proteins‌
+### __The cellular and tissue specific location of active proteins
 
 A key feature of biological cells is polarity. Cellular polarity leads to functional differentiation of different sides of a cell. Organs have a spatial organization that reflects function. Active proteins (binding partners, transporters, enzymes that interact with a pharmacologically active enzyme) have to be correctly placed in the context of the cell and the organ. In addition, active transporters have a directionality of the transport, i.e. substance is transported into or out of a cell.
 
-#### Epithelial polarity: Apical, basolateral
+#### __Epithelial polarity: Apical, basolateral
 
 Organs in PK-Sim® may be covered by an epithelial cell sheet. Epithelial cell membranes have three distinct domains. The apical domain is exposed as 'free' surface. Basolateral surfaces are opposite to the apical surface and interface the 'interior' of an organ. The lateral cell membrane connects epithelial cells to a two dimensional sheet. Tight junctions separate basal and apical membrane domains.
         
@@ -73,7 +73,7 @@ If active processes are part of a PK-Sim® project, the localization (apical or 
 
 *   Brain (Blood Brain Barrier): Transport between blood plasma and cytosol of brain cells.
 
-#### Transport type: Influx, Efflux, P-gp like‌
+#### __Transport type: Influx, Efflux, P-gp like‌
 
 Transporters are located in the cell membrane, partly restricted to certain areas of the membrane. In general, active transports move a substance against the concentration gradient and the direction is specific for the transporter. In PK- Sim®, three transport directions are distinguished and need to be specified:    
 
@@ -83,7 +83,7 @@ Transporters are located in the cell membrane, partly restricted to certain area
 
 *   P-gp like: The substance is transported from intracellular space and interstitial space to the interstitial space.
 
-#### Location in tissue: Intracellular, Extracellular membrane, Interstitial
+#### __Location in tissue: Intracellular, Extracellular membrane, Interstitial
 
 The location of protein binding partners and enzymes has to be defined. In PK- Sim®, three distinct locations are available:
 
@@ -108,8 +108,6 @@ In addition, for the vascular endothelium, proteins can either be located in the
 Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ   as a fraction of a defined **reference concentration** value.
 
 ![Protein expressions overview](../assets/images/part-3/ProteinExpressionsOverview.png)
-
-
 
 The **reference concentration** can be measured *in vitro* and allow direct *in vitro - in vivo* extrapolation (IVIVE). The concentration of the protein in the organ with the **relative expression = 1** will equal to that measured concentration. The concentrations in all other organs will be set relative to that value. In case no *in vitro* protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g. metabolism of a compound) through the relative expressions.
 
@@ -146,7 +144,7 @@ The consolidated expression data was stored in a database with three sections te
 
 It should be noted that the current version of the database only describes spatial distribution of active processes in PBPK models. Temporal aspects such as circadian rhythms underlying chronogenetics are not included in the current version of the database. If necessary, such effects may be considered in a corresponding MoBi® model. Also, the current version of the database is restricted to human expression data. Extensions to other organism are currently under development and will be become available in future versions of PK-Sim®.
 
-### The cellular and tissue specific location of active proteins‌
+### The cellular and tissue specific location of active proteins
 
 Proteins involved in metabolism or transport of compounds are located in different organ sub-compartments. While enzymes usually reside inside organ cells, transport proteins are located in membranes. Another important feature of biological cells that has to be considered is polarity.
 
@@ -322,7 +320,7 @@ Be aware that depending on how the expression values for the organs have been ob
     * *f_exp_org_apical*: Fraction expressed basolateral
     * *f_cell*: Fraction intracellular (of total organ volume)
 
-## The workflow‌
+## The workflow
 
 If you want to use the gene expression databases, ensure that they are correctly installed and linked to the application, see [Options](pk-sim-options.md).
 
@@ -465,7 +463,7 @@ The gene expression that is used in the simulation incorporates the age- depende
 *   Transporter Type can be set to efflux, influx, or Pgp-like.
     
 
-In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins‌](#the-cellular-and-tissue-specific-location-of-active-proteins) for explanation of the various parameters).
+In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins](#the-cellular-and-tissue-specific-location-of-active-proteins) for explanation of the various parameters).
 
 ## Reference Concentration‌
 
