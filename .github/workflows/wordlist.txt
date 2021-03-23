@@ -1144,3 +1144,9 @@ Localizations
 luminal
 vasculature
 vmax
+pls
+vasend
+bc
+endo
+PortalVein
+BloodCells
