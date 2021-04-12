@@ -71,6 +71,8 @@ The user has the option to close one or more tabs thus preventing the viewing an
 
 The left hand side window displays the mapping of imported column identifiers with the predefined data types. The initial mapping is performed automatically upon selection of file and identification of the format, but can be overridden by adjusting the controls. 
 
+For the molecule mapping an excel column can be selected. Alternatively the user can select from a a dropdown menu of the available molecules from the project or even specify a not yet existing molecule manually. 
+
 
 ## The NaN indicator
 
@@ -84,17 +86,21 @@ If some sheets have already been loaded, this state is also part of the configur
 
 
 
-
-
-
 ## Confirmation Tab
 
-When at least one sheet has been successfully loaded, the confirmation tab becomes also present in the importer. This is the tab where the user can preview the data sets that will be imported in Pk-Sim if the import is to be finalized b clicking the "Import" button. Both a table and a chart view are available. To the left, the user can use the existing keys and combine them with a seperator or/and hardcoded text (EXPLAIN A BIT FURTHER) to create naming patterns for the observed data that will be imported. 
+When at least one dataset has been imported, the confirmation tab gets activated. 
 
 
-## the mapping panel
+![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png")
 
-The mapping panel is available throughout the import process. If the user cahnges the mapping, the changes are automatically applied and the result of the modifed mapping is automatically updated. Likewise, if the updated mapping would lead to an error because it would not pass validation, the result of modifying the mapping is a validation error.
+
+There the user can see what datasets have already been loaded. On selecting a data set the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified in the left side of the panel. This can either be done by manually typing in the "Naming Pattern" input box or by selecting a mapping, then a seperator and then cllicking the "Add Keys" button. The import can be finalized by clicking on the **Import** button.
+
+
+
+## Mapping panel
+
+The mapping panel is available throughout the import process. If the user changes the mapping, the changes are automatically applied and the result of the modifed mapping is automatically updated. Likewise, if the updated mapping would lead to an error because it would not pass validation, the result of modifying the mapping is a validation error.
 
 As shown in the screenshot underneath, the user gets a view of all the available mappings and can map a an excel column to them. A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
@@ -130,15 +136,6 @@ The units of the error have to be consistent with the units of the corresponding
 When trying to load a sheet and the error and measurement unit come from a column, they are checked for consistency. If the data in the excel columns are of different dimensions, the data cannot be imoprted.
 
 
-## Confirmation Tab
-
-When at least one dataset has been imported, the confirmation tab gets activated. 
-
-
-![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png")
-
-
-There the user can see what datasets have already been loaded. On selecting a data set the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified in the left side of the panel. This can either be done by manually typing in the "Naming Pattern" input box or by selecting a mapping, then a seperator and then cllicking the "Add Keys" button. 
 
 
 
@@ -188,7 +185,7 @@ The PKExcelImporter component determines the data type of a column by the first 
 
 
 
-!!!!!! THIS HERE ACTUALLY REMAINS THE SAME
+!!!!!! THIS HERE ACTUALLY REMAINS THE SAME - probably add moleweight
 
 ## Editing Observed Data‌
 
