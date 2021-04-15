@@ -115,6 +115,9 @@ By clicking this button the user can save the settings that he has configured to
 The saved configuration can then be used to either save and later resume the configuring and importing of a file or to import a different file that should be imported with exactly the same configuration.
 If some sheets have already been loaded, this state is also part of the configuration. 
 
+## Loading from configuration (WIP)
+
+When you have a configuration saved in an xml file you can use it to load observed data with this configuration. Right click on the Observed Data folder and select **Add observed data from configuration...**. A file dialog woll open where you can select the xml file where the configuration has been saved. Afterwards the usual importer view opens with all the data from the configuration loaded. Currently the data file to be loaded is hard-coded to the configuration and the user can only use the configured settings to load this specific file. A possible use case would be fe having started a load process for a specific file and then having to interupt it. The user can then save what he has already configured and resume the import later.
 
 
 ## Confirmation Tab
