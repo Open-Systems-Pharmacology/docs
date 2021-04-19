@@ -40,18 +40,18 @@ By switching the file type combo box value it is possible to import a comma sepa
 
 After selection of the file to be imported, a split window appears (see screenshot below). The right hand side shows a preview of the imported data file, each tab representing one sheet. 
 
-![Importer Window](../assets/images/part-5/ImporterInitialWindow.png")
+![Importer Window](../assets/images/part-5/ImporterInitialWindow.png)
 
 Every tab is closeable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the cofniguration in any way.
 
-![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png")
+![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
 
 
 The data preview table offers various possibilities of filtering and sorting of the data. One can use the filter symbol on a column of the data to open the filter menu (see screenshot underneath). Also by right clicking the column name the user can sort the data according to a specific column or also open the filter editor to create more complicated filters.
 
-![Importer Data Table Column Filter](../assets/images/part-5/ImporterTableColumnFilter.png")
+![Importer Data Table Column Filter](../assets/images/part-5/ImporterTableColumnFilter.png)
 
-![Importer Filter Editor](../assets/images/part-5/ImporterFilterEditor.png")
+![Importer Filter Editor](../assets/images/part-5/ImporterFilterEditor.png)
 
 
 The defined filters changes the viewing of the data. The user can choose to restrict the filters only to the viewing of the data or import only the filtered data by checking the checkbox "Use the filters for importing the data" under the data preview table.  
@@ -71,7 +71,7 @@ The mapping panel is available throughout the import process. If the user change
 
 As shown in the screenshot underneath, the user gets a view of all the available mappings and can map a an excel column to them. A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
-![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png")
+![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png)
 
 
 There are some mappings that are mandatory. The minimum set of them is that a Time and a Measurement mapping are defined. 
@@ -84,10 +84,10 @@ A column can be selected to a mapping only once, so when an excel column is sele
 
 The units for the mapped columns can either be a specified value or come from a column. When the units come from a column each data point can have a distinct unit. In the unit dialog, there is a toggle to select which mode of unit definition the user wants. When being set to a specified value, if this value is also specified as part of the header name  (eg Time[h]) is automatically recognized by the importer. The user can edit the unit (when a unit is available) by opening the dialog in the column "Edit extra fields" of the corresponding mapping row.
 
-![Setting the units manually](../assets/images/part-5/ImporterSetUnits.png")
+![Setting the units manually](../assets/images/part-5/ImporterSetUnits.png)
 
 
-![Setting the units from a column](../assets/images/part-5/ImporterSelectUnitFromColumn.png")
+![Setting the units from a column](../assets/images/part-5/ImporterSelectUnitFromColumn.png)
 
 ## LLOQ
 
@@ -100,7 +100,7 @@ The error can be set to Standard arithmetic Deviation or Geometric Deviation. In
 The units of the error have to be consistent with the units of the corresponding measurement. So if the unit of the measurement come from a column, then the units of the error also have to come from a column. 
 
 
-![Selecting Error Type](../assets/images/part-5/ImporterSlectingErrorType.png")
+![Selecting Error Type](../assets/images/part-5/ImporterSlectingErrorType.png)
 
 When trying to load a sheet and the error and measurement unit come from a column, they are checked for consistency. If the data in the excel columns are of different dimensions, the data cannot be imoprted.
 
@@ -125,7 +125,7 @@ When you have a configuration saved in an xml file you can use it to load observ
 When at least one dataset has been imported, the confirmation tab gets activated. 
 
 
-![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png")
+![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png)
 
 
 There the user can see what datasets have already been loaded. On selecting a data set the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified in the left side of the panel. This can either be done by manually typing in the "Naming Pattern" input field: The user can type keys that represent the name of a mapping inside of curly brackets {}, that will be then replaced by the value of each mapping for very individual data set. The user is also free to write text that will then be the same for all the data sets names. Additionally a drop down with presets for the naming is also available. 
