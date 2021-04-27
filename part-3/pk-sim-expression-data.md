@@ -4,31 +4,31 @@
 
 ### The role of proteins in PBPK modeling‌
 
-Small molecules frequently interact with proteins. All aspects of ADME may be influenced to a varying extent by protein/compound interaction. Metabolic and transport processes are of particular importance in this context. Most proteins concentrations vary spatially as well as temporally. PK-Sim® allows the user to model proteins and compound/protein interactions.
+Small molecules frequently interact with proteins. All aspects of ADME may be influenced to a varying extent by protein/compound interaction. Metabolic and transport processes are of particular importance in this context. Most protein concentrations vary spatially as well as temporally. PK-Sim® allows the user to model proteins and compound/protein interactions.
 
-Active, protein-mediated processes involved in drug ADME generally occur simultaneously in various organs. A quantitative description of active processes, however, is difficult due to limited experimental accessibility of tissue-specific protein activity _in vivo_. PK-Sim® uses gene expression data as a surrogate for protein abundance to estimate _in vivo_ activity of such enzymes or transporters which have an influence on drug pharmacokinetics. This concept implies that protein availability and catalytic rate constants, which ultimately underlie enzyme and transporter activity, are decoupled. For more detail, please see \[[46](../references.md#46)\].
+Active, protein-mediated processes involved in drug ADME generally occur simultaneously in various organs. A quantitative description of active processes, however, is difficult due to limited experimental accessibility of tissue-specific protein activity _in vivo_. PK-Sim® uses gene expression data as a surrogate for protein abundance to estimate _in vivo_ activity of such enzymes or transporters which have an influence on drug pharmacokinetics. This concept implies that protein availability and catalytic rate constants, which ultimately underlie enzyme and transporter activity, are decoupled. For more details, please see \[[46](../references.md#46)\].
 
-In brief, the concept of using gene expression data as proxy for protein abundance is based on the definition of the maximum velocity _Vmax_ _µ_mol/l/min. According to the Michaelis-Menten equation, _Vmax_ depends on both the total enzyme or transporter concentration E0 µmol/l and the catalytic rate constant _kcat_ 1/min:
+In brief, the concept of using gene expression data as proxy for protein abundance is based on the definition of the maximum velocity _Vmax_ [µ_mol/l/min]. According to the Michaelis-Menten equation, _Vmax_ depends on both the total enzyme or transporter concentration _E0_ [µmol/l] and the catalytic rate constant _kcat_ [1/min]:
 
 ![Equation 14.1. Vmax](../assets/images/part-3/equation-14-1-vmax.png)
 
-Assuming that kcat is not influenced by _in vivo_ factors, the tissue-specific maximum velocity _Vmax,organ_ is defined as:
+Assuming that _kcat_ is not influenced by _in vivo_ factors, the tissue-specific maximum velocity _Vmax,organ_ is defined as:
 
 ![Equation 14.2. Vmax, Organ](../assets/images/part-3/equation-14-2-vmax.png)
 
-By replacing E0, organ by relative expression values erel,organ - times a scaling factor _SF_ µmol/l the absolute _in vivo_ protein concentration is corrected for such that organ specific activity can be rewritten to obtain:
+By replacing _E0, organ_ by relative expression values _erel,organ_ - times a scaling factor _SF_ the absolute _in vivo_ protein concentration is corrected such that organ specific activity can be rewritten to obtain:
 
 ![Equation 14.3. Vmax, organ, E0, organ replaced by relative expression values](../assets/images/part-3/equation-14-3-vmax.png)
 
-This reformulation enables automatic quantification of the organ specific activity Vmax,organ for each protein-mediated process at the whole-body scale.
+This reformulation enables automatic quantification of the organ specific activity _Vmax,organ_ for each protein-mediated process at the whole-body scale.
         
-Notably, there are only two types of parameters in this reformulation of the organ- specific activity:
+Notably, there are only two types of parameters in this reformulation of the organ-specific activity:
 
 *   _erel,organ_, which is a tissue specific parameter. This value can be directly taken from the PK-Sim® expression database
 
-*   kcat,s, represents an apparent catalytic rate constant µmol/l/min. kcat,s is a global parameter that implicitly considers translational efficacy and post- transcriptional modifications for a particular protein.
+*   _kcat,s_ represents an apparent catalytic rate constant [µmol/l/min]. _kcat,s_ is a global parameter that implicitly considers translational efficacy and post- transcriptional modifications for a particular protein.
 
-Relative protein abundance can be set according to available expression data while catalytic parameters are described by a global kinetic rate constant that is adjusted during model setup. On the one hand, this method enables direct estimation of _in vivo_ enzyme and transporter activity based on data-based inclusion of tissue-specific protein abundance which represents first-hand experimental- measurements. On the other hand, the number of free model parameters, which would have to be measured or adjusted in case of an exhaustive mechanistic representation in multiple organs, is reduced significantly. Later, we will describe, how such information can be included in PBPK models.
+Relative protein abundance can be set according to available expression data while catalytic parameters are described by a global kinetic rate constant that is adjusted during model setup. On the one hand, this method enables direct estimation of _in vivo_ enzyme and transporter activity based on data-based inclusion of tissue-specific protein abundance which represents first-hand experimental measurements. On the other hand, the number of free model parameters, which would have to be measured or adjusted in case of an exhaustive mechanistic representation in multiple organs, is reduced significantly. Later, we will describe how such information can be included in PBPK models.
 
 The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building \[[46](../references.md#46)\]. The database needs to be referenced in the PK-Sim® options, see [Options](pk-sim-options.md). Public database which were imported are
 
@@ -44,13 +44,13 @@ It should be noted that the current version of the database only describes spati
 
 ### The cellular and tissue specific location of active proteins‌
     
-A key feature of biological cells is polarity. Cellular polarity leads to functional differentiation of different sides of a cell. Organs have a spatial organization that reflects function. Active proteins (binding partners, transporters, enzymes that interact with a pharmacologically active enzyme) have to be correctly placed in the context of the cell and the organ. In addition, active transporters have a directionality of the transport, i.e. substance is transported into or out of a cell.
+A key feature of biological cells is polarity. Cellular polarity leads to functional differentiation of different sides of a cell. Organs have a spatial organization that reflects function. Active proteins (binding partners, transporters, enzymes that interact with a pharmacologically active compound) have to be correctly placed in the context of the cell and the organ. In addition, active transporters have a directionality of the transport, i.e. substance is transported into or out of a cell.
 
 #### Epithelial polarity: Apical, basolateral
         
-Organs in PK-Sim® may be covered by an epithelial cell sheet. Epithelial cell membranes have three distinct domains. The apical domain is exposed as 'free' surface. Basolateral surfaces are opposite to the apical surface and interface the 'interior' of an organ. The lateral cell membrane connects epithelial cells to a two dimensional sheet. Tight junctions separate basal and apical membrane domains.
+Organs in PK-Sim® may be covered by an epithelial cell layer. Epithelial cell membranes have three distinct domains. The apical domain is exposed as 'free' surface. Basolateral surfaces are opposite to the apical surface and interface the 'interior' of an organ. The lateral cell membrane connects epithelial cells to a two dimensional sheet. Tight junctions separate basal and apical membrane domains.
         
-If active processes are part of a PK-Sim® project, the localization (apical or basolateral) of transporters have to be set for key organs:
+If active processes are part of a PK-Sim® project, the localization (apical or basolateral) of transporters has to be set for key organs:
         
 
 *   Liver (Basolateral): Transport between cytosol of liver cells and interstitial space
