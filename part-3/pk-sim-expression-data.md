@@ -203,7 +203,7 @@ The name “initial concentration” refers to the fact that these concentration
   * *f_exp_bc_membrane*: Fraction expressed in blood cells membrane
   * *HCT*: Hematocrit
 
-* **Plasma (except for ArterialBlood, VenousBlood, PortalVein):** Combination of the expression in plasma, in blood cells in the membrane facing plasma, and in vascular endothelium in the membrane facing plasma.
+* **Plasma (in organs except for ArterialBlood, VenousBlood, PortalVein):** Combination of the expression in plasma, in blood cells in the membrane facing plasma, and in vascular endothelium in the membrane facing plasma.
     `RC * (rel_exp_pls + rel_exp_bc * f_exp_bc_membrane * HCT / (1 - HCT) + rel_exp_vasend * f_exp_vasend_apical * V_vasend / V_pls)`
   * *RC*: Reference concentration
   * *rel_exp_pls*: Relative expression in plasma
