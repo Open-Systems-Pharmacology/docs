@@ -6,6 +6,14 @@ A generic tool for handling of observed data within the Open Systems Pharmacolog
 
 2.  Column headers are in the first non-empty row.
 
+The file selected to be imported should conform to at least one of th supported formats
+
+## Supported Formats
+
+1. Nonmem like format: here we have a dependent variable (DV), and the accordingly named columns (DVID, DVNAME, DVUNIT), where the information concerning this variable are stored.   
+
+2. The units of measurement, error and so on exist on a separate column, ideally with the columns named according to the information they contain (eg Measurement, Error, Error_Unit, MeasurementUnit etc). This also means that the unit fe can be different for each row of the data. If there are information missing the user can input them manually. 
+
 
 **File Selection Dialog**
 
@@ -15,9 +23,11 @@ To import data you should do the following:
 
 2.  Specify the column mapping (see [Column Mapping in Import of Observed Data](#column-mapping-in-import-of-observed-data)) and enter all required meta data and set unit information.
 
-3.  You can continue importing data sheets/data files by adding or changing the column mapping or selecting another data sheet. Upon editing the column mapping the data are re-interpreted und updated automatically. The configured mapping remains the same for a whole import process, meaning that all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in seperate imports.
+3. You can then load one or more sheets. The sheets that you close through the "x" or the context menu on the sheets tab are no longer available for import.
 
-4.  Complete the transfer of the imported data sheets to the calling application by confirming your settings.
+3.  You can continue loading data sheets/data files by changing the column mapping or selecting another data sheet. Upon editing the column mapping the data are re-interpreted und updated automatically. The configured mapping remains the same for a whole import process, meaning that all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in seperate imports.
+
+4.  Complete the transfer of the imported data sheets to the calling application by clicking the import button.
 
 ## File Selection‌
 
@@ -32,7 +42,7 @@ The first step of importing is to select the file from which to import. Both exc
 {% endhint %}
   
 {% hint style="tip" %}
-By switching the file type combo box value it is possible to import a comma separated values file (csv). For csv files, the used separator is determined automatically. Supported separators are semicolon, comma, tabulator, period or colon. Values can be enclosed in quotes.
+By switching the file type combo box value it is possible to import a comma separated values file (csv or nmdat). For those file the user is prompted to select the separator used for their parsing. Supported separators are semicolon, comma, tabulator, period or colon. Values can be enclosed in quotes.
 {% endhint %}
 
 
@@ -42,7 +52,7 @@ After selection of the file to be imported, a split window appears (see screensh
 
 ![Importer Window](../assets/images/part-5/ImporterInitialWindow.png)
 
-Every tab is closeable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the cofniguration in any way.
+Every tab is closeable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the configuration in any way.
 
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
 
@@ -62,7 +72,6 @@ On the top-right part of the window one can see the path of the selected excel s
 
 
 
-
 ## Mapping panel
 
 The left hand side window displays the mapping of imported column identifiers with the predefined data types. The initial mapping is performed automatically upon selection of file and identification of the format, but can be overridden by adjusting the controls. 
@@ -76,7 +85,7 @@ As shown in the screenshot underneath, the user gets a view of all the available
 
 There are some mappings that are mandatory. The minimum set of them is that a Time and a Measurement mapping are defined. 
 
-For the molecule mapping an excel column can be selected. Alternatively the user can select from a a dropdown menu of the available molecules from the project or even specify a not yet existing molecule manually. 
+For the molecule mapping an excel column can be selected. Alternatively the user can select from a a dropdown menu of the available molecules from the project or even specify a not yet existing molecule manually, by clicking "Edit manually" under "Edit extra fields". 
 
 A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
@@ -98,6 +107,7 @@ The Lloq can either come from the column of the measurement excel column or from
 
 The error can be set to Standard arithmetic Deviation or Geometric Deviation. In the case of geometric deviation, the error is dimensionless, thus there is no possibility to select a unit. Otherwise, the user can select the unit either manually or from a column.
 The units of the error have to be consistent with the units of the corresponding measurement. So if the unit of the measurement come from a column, then the units of the error also have to come from a column. 
+When the unit is configured as a manual input, the user must first select the desired "Dimension" from the dropdown, and then the corresponding units to this dimension will become available in the "units" dropdown.
 
 
 ![Selecting Error Type](../assets/images/part-5/ImporterSlectingErrorType.png)
@@ -117,7 +127,7 @@ If some sheets have already been loaded, this state is also part of the configur
 
 ## Loading from configuration (WIP)
 
-When you have a configuration saved in an xml file you can use it to load observed data with this configuration. Right click on the Observed Data folder and select **Add observed data from configuration...**. A file dialog woll open where you can select the xml file where the configuration has been saved. Afterwards the usual importer view opens with all the data from the configuration loaded. Currently the data file to be loaded is hard-coded to the configuration and the user can only use the configured settings to load this specific file. A possible use case would be fe having started a load process for a specific file and then having to interupt it. The user can then save what he has already configured and resume the import later.
+When you have a configuration saved in an xml file you can use it to load observed data with this configuration. Right click on the Observed Data folder and select **Add observed data from configuration...**. A file dialog will open where you can select the xml file where the configuration has been saved. Afterwards the usual importer view opens with all the data from the configuration loaded. Currently the data file to be loaded is hard-coded to the configuration and the user can only use the configured settings to load this specific file. A possible use case would be fe having started a load process for a specific file and then having to interupt it. The user can then save what he has already configured and resume the import later.
 
 
 ## Confirmation Tab
