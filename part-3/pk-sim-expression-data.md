@@ -105,7 +105,7 @@ In addition, for the vascular endothelium, proteins can either be located in the
 
 ### Protein expression data
 
-Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ   as a fraction of a defined **reference concentration** value.
+Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ as a fraction of a defined **reference concentration** value.
 
 ![Protein expressions overview](../assets/images/part-3/ProteinExpressionsOverview.png)
 
@@ -175,9 +175,9 @@ By default, an added enzyme is localized only in the intracellular space of the 
 
   * “*Fraction expressed in endosome*”: The enzyme is located in the endosomes of the vasculature. Please keep in mind that the endosomal compartment is not present in the model for small molecules.
 
-  * “*Fraction expressed on apical membrane of vascular endothelium*”: the enzyme is located in the membrane of endothelial cells facing blood plasma and acts on educts in plasma. The fraction of the relative expression is added to the expression in plasma.
+  * “*Fraction expressed on plasma-side membrane of vascular endothelium*”: the enzyme is located in the membrane of endothelial cells facing blood plasma and acts on educts in plasma. The fraction of the relative expression is added to the expression in plasma.
 
-  * “*Fraction expressed on basolateral membrane of vascular endothelium*”: the enzyme is located in the membrane of endothelial cells facing the interstitial space and acts on educts in the interstitial space of the organ. The fraction of the relative expression is added to the expression in interstitial space.
+  * “*Fraction expressed on tissue-side membrane of vascular endothelium*”: the enzyme is located in the membrane of endothelial cells facing the interstitial space and acts on educts in the interstitial space of the organ. The fraction of the relative expression is added to the expression in interstitial space.
 
 {% hint style="tip" %}
 
@@ -211,17 +211,17 @@ The name “initial concentration” refers to the fact that these concentration
   * *f_exp_bc_membrane*: Fraction expressed in blood cells membrane
   * *HCT*: Hematocrit
   * *rel_exp_vasend*: Relative expression in vascular endothelium
-  * *f_exp_vasend_apical*: Fraction expressed on apical membrane of vascular endothelium
+  * *f_exp_vasend_plasma*: Fraction expressed on membrane of vascular endothelium facing blood plasma
   * *V_vasend*: Volume (endothelium)
   * *V_pls*: Volume plasma 
 
-* **Interstitial:** Combination of the expression in organ and in vascular endothelium in the membrane facing interstitial space. Be aware that depending on how the expression values for the organs have been obtained, explicit addition of the expression in vascular endothelium may result in higher calculated effective concentration.                                                                                                                                  `RC * (rel_exp_org * f_exp_org_int * 1 / f_int + rel_exp_vasend * f_exp_vasend_basolat * V_vasend / V_int)`
+* **Interstitial:** Combination of the expression in organ and in vascular endothelium in the membrane facing interstitial space. Be aware that depending on how the expression values for the organs have been obtained, explicit addition of the expression in vascular endothelium may result in higher calculated effective concentration.                                                                                                                                  `RC * (rel_exp_org * f_exp_org_int * 1 / f_int + rel_exp_vasend * f_exp_vasend_tissue * V_vasend / V_int)`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in organ
     * *f_exp_org_int*: Fraction expressed interstitial
     * *f_int*: Fraction interstitial (of total organ volume)
     * *rel_exp_vasend*: Relative expression in vascular endothelium
-    * *f_exp_vasend_basolat*: Fraction expressed on basolateral membrane of vascular endothelium
+    * *f_exp_vasend_tissue*: Fraction expressed on membrane of vascular endothelium facing tissue
     * *V_vasend*: Volume (endothelium)
     * *V_int*: Volume (organ interstitial) 
 
@@ -231,10 +231,10 @@ The name “initial concentration” refers to the fact that these concentration
   * *f_exp_org_cell*: Fraction expressed intracellular
   * *f_cell*: Fraction intracellular(of total organ volume)
 
-* **Endosome:** `RC * rel_exp_vasend * f_exp_vasend_endo * 1 / f_endo`
+* **Endosome:** `RC * rel_exp_vasend * f_exp_vasend_endosomes * 1 / f_endo`
   * *RC*: Reference concentration
   * *rel_exp_vasend*: Relative expression in vascular endothelium
-  * *f_exp_vasend_endo*: Fraction expressed in endosomes
+  * *f_exp_vasend_endosomes*: Fraction expressed in endosomes
   * *f_endo*: Fraction endosomal (of total organ volume)
 
 ### Localizations, directions, and initial concentrations of transport proteins
@@ -245,7 +245,7 @@ Transporters are located in the cell membranes, connecting two neighbor compartm
 
 * **Influx**: The substance is transported from the interstitial space or lumen to the intracellular space.
 * **Efflux**: The substance is transported from intracellular space to interstitial space or lumen.
-* **Bi-directional**: Facilitated transport along the concentration gradient. It is assumed that Vmax and Km values are equal for both directions.
+* **Bi-directional**: Facilitated transport along the concentration gradient. It is assumed that Vmax and Km values are equal for both directions. Only Michaelis-Menten kinetics can be used with this direction.
 * **Plasma to interstitial space** across endothelial border
 * **Interstitial space to plasma** across endothelial border
 * **P-gp like**: The substance is transported from intracellular space and interstitial space to the interstitial space.
@@ -280,12 +280,12 @@ Be aware that depending on how the expression values for the organs have been ob
   * *f_int*: Fraction interstitial (of total organ volume)
 
 * **Brain**: Transporter proteins in brain tissue are usually located in endothelial cells, transporting molecules across the blood-brain-barrier. This distinct nature of the brain tissue is captured in PK-Sim by locating the transport proteins by default into plasma compartment for the transport between plasma and interstitial space. The user can enforce expression of the transporter in interstitial compartment for the transport between interstitial and intracellular by setting the “Fraction expressed at blood brain barrier” and “Fraction expressed in brain tissue”. The concentrations in the respective compartments are calculated such that the total concentration in brain is `RC * rel_exp_org`.
-  * The concentration in **plasma** is given by the equation `RC * rel_exp_brn * f_exp_brn_bbb * 1 / (f_vasc * (1 - HCT))`
+  * The concentration in **plasma** is given by the equation `RC * rel_exp_brn * f_exp_brn_bbb * 1 / (f_vas * (1 - HCT))`
 
     * *RC*: Reference concentration
     * *rel_exp_brn*: Relative expression in brain
     * *f_exp_brn_bbb*: Fraction expressed at blood brain barrier
-    * *f_vasc*: Fraction vascular (of total organ volume)
+    * *f_vas*: Fraction vascular (of total organ volume)
     * *HCT*: Hematocrit
 
   * The concentration in **interstitial space** is given by the equation `RC * rel_exp_brn * f_exp_brn_tissue * 1 / f_int`
@@ -294,30 +294,30 @@ Be aware that depending on how the expression values for the organs have been ob
     * *f_int*: Fraction interstitial
 
 * **Kidney** and **Liver**: In kidney and liver, transport proteins can be located between interstitial and intracellular spaces (defined by “Fraction expressed basolateral” and modeled in interstitial space) and/or on the apical site of renal tubule and hepatic bile duct cells (defined by “Fraction expressed apical” and modeled in intracellular space), respectively. Transporters located on the apical site are responsible for active excretion of the compounds into urine and bile in kidney and liver, respectively.
-  * Initial concentration in **interstitial space** is given by the equation `RC * rel_exp_org * f_exp_org_basolat * 1 / f_int`
+  * Initial concentration in **interstitial space** is given by the equation `RC * rel_exp_org * f_exp_org_tissue * 1 / f_int`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in organ
-    * *f_exp_org_basolat*: Fraction expressed basolateral
+    * *f_exp_org_tissue*: Fraction expressed on the membrane between cellular and interstitial spaces
     * *f_int*: Fraction interstitial (of total organ volume)
 
-  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_apical * 1 / f_cell`
+  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_epithelial * 1 / f_cell`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in apical
-    * *f_exp_org_apical*: Fraction expressed basolateral
+    * *f_exp_org_epithelial*: Fraction expressed on epithelial membrane
     * *f_cell*: Fraction intracellular (of total organ volume)
 
 * **Mucosal tissue**: The apical site of mucosal cells is facing the gastrointestinal lumen and facilitates the absorption or active excretion, while the basolateral site connects the intracellular and interstitial spaces. 
 
-  * Initial concentration in **interstitial space** is given by the equation  `RC * rel_exp_org * f_exp_org_basolat * 1 / f_int`
+  * Initial concentration in **interstitial space** is given by the equation  `RC * rel_exp_org * f_exp_org_tissue * 1 / f_int`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in organ
-    * *f_exp_org_basolat*: Fraction expressed basolateral
+    * *f_exp_org_tissue*: Fraction expressed on the membrane between cellular and interstitial spaces
     * *f_int*: Fraction interstitial (of total organ volume)
 
-  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_apical * 1 / f_cell`
+  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_epithelial * 1 / f_cell`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in apical
-    * *f_exp_org_apical*: Fraction expressed basolateral
+    * *f_exp_org_epithelial*: Fraction expressed on epithelial membrane
     * *f_cell*: Fraction intracellular (of total organ volume)
 
 ## The workflow
@@ -468,6 +468,9 @@ In the lower section, values of relative expression can be edited for individual
 ## Reference Concentration‌
 
 Internally, PK-Sim represents the protein expression relative to the expression in the organ with highest concentration of the respective enzyme. This corresponds to 100%. Whenever active processes are used, this relative amount is converted to an actual enzyme concentration by multiplying the relative expression with a reference concentration, i.e. the concentration that is equivalent to 100% in molar units.
+
+
+**DUPLICATE**
 
 For example, CYP3A4 is mainly expressed in the liver of human adults, some in the gastro intestinal tract, and minor amounts are expressed in almost all other tissues. Hence, the relative expression of CYP3A4 in the liver is 100%. A reference concentration can be entered in the protein expression tab which will refer to the expression in liver, while expression in other organs is scaled by the relative expression.
 
