@@ -207,30 +207,30 @@ Be aware that depending on how the expression values for the organs have been ob
     * *f_int*: Fraction interstitial
 
 * **Kidney** and **Liver**: In kidney and liver, transport proteins can be located between interstitial and intracellular spaces (defined by “Fraction expressed basolateral” and modeled in interstitial space) and/or on the apical site of renal tubule and hepatic bile duct cells (defined by “Fraction expressed apical” and modeled in intracellular space), respectively. Transporters located on the apical site are responsible for active excretion of the compounds into urine and bile in kidney and liver, respectively.
-  * Initial concentration in **interstitial space** is given by the equation `RC * rel_exp_org * f_exp_org_tissue * 1 / f_int`
+  * Initial concentration in **interstitial space** is given by the equation `RC * rel_exp_org * f_exp_org_basolatateral * 1 / f_int`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in organ
-    * *f_exp_org_tissue*: Fraction expressed on the membrane between cellular and interstitial spaces
+    * *f_exp_org_basolatateral*: Fraction expressed on the membrane between cellular and interstitial spaces
     * *f_int*: Fraction interstitial (of total organ volume)
 
-  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_epithelial * 1 / f_cell`
+  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_apical * 1 / f_cell`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in apical
-    * *f_exp_org_epithelial*: Fraction expressed on epithelial membrane
+    * *f_exp_org_apical*: Fraction expressed on epithelial membrane
     * *f_cell*: Fraction intracellular (of total organ volume)
 
 * **Mucosal tissue**: The apical site of mucosal cells is facing the gastrointestinal lumen and facilitates the absorption or active excretion, while the basolateral site connects the intracellular and interstitial spaces. 
 
-  * Initial concentration in **interstitial space** is given by the equation  `RC * rel_exp_org * f_exp_org_tissue * 1 / f_int`
+  * Initial concentration in **interstitial space** is given by the equation  `RC * rel_exp_org * f_exp_org_basolatateral * 1 / f_int`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in organ
-    * *f_exp_org_tissue*: Fraction expressed on the membrane between cellular and interstitial spaces
+    * *f_exp_org_basolatateral*: Fraction expressed on the membrane between cellular and interstitial spaces
     * *f_int*: Fraction interstitial (of total organ volume)
 
-  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_epithelial * 1 / f_cell`
+  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_apical * 1 / f_cell`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in apical
-    * *f_exp_org_epithelial*: Fraction expressed on epithelial membrane
+    * *f_exp_org_apical*: Fraction expressed on epithelial membrane
     * *f_cell*: Fraction intracellular (of total organ volume)
 
 ## The workflow
