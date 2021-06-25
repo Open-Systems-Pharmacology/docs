@@ -22,6 +22,8 @@ Following from **Equation 14.2**, the effective rate of a protein-mediated proce
 
 ![Protein expressions overview](../assets/images/part-3/ProteinExpressionsOverview.png)
 
+### Reference Concentration
+
 The **reference concentration** can be measured *in vitro* and allow direct *in vitro - in vivo* extrapolation (IVIVE). The concentration of the protein in the organ with the **relative expression = 1** will equal to that measured concentration. The concentrations in all other organs will be set relative to that value. In case no *in vitro* protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g. metabolism of a compound) through the relative expressions.
 
 For example, CYP3A4 is mainly expressed in the liver of human adults, some in the gastrointestinal tract, and minor amounts in almost all other tissues. The concentration of CYP3A4 in the liver is 108 pmol/mg microsomal protein \[[63](../references.md#63)\]. The concentration of microsomal protein in the liver is 40 mg per g liver. Assuming a specific tissue density of 1 g/mL the concentration of CYP3A4 in whole liver is 4.32 µmol/L . This number can be used as a reference concentration with relative expression of 1 in the liver.
@@ -377,37 +379,6 @@ The gene expression that is used in the simulation incorporates the age- depende
     
 
 In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins](#the-cellular-and-tissue-specific-location-of-active-proteins) for explanation of the various parameters).
-
-## Reference Concentration‌
-
-Internally, PK-Sim represents the protein expression relative to the expression in the organ with highest concentration of the respective enzyme. This corresponds to 100%. Whenever active processes are used, this relative amount is converted to an actual enzyme concentration by multiplying the relative expression with a reference concentration, i.e. the concentration that is equivalent to 100% in molar units.
-
-
-**DUPLICATE**
-
-For example, CYP3A4 is mainly expressed in the liver of human adults, some in the gastro intestinal tract, and minor amounts are expressed in almost all other tissues. Hence, the relative expression of CYP3A4 in the liver is 100%. A reference concentration can be entered in the protein expression tab which will refer to the expression in liver, while expression in other organs is scaled by the relative expression.
-
-In this example, the concentration of CYP3A4 in the liver is 108 pmol/mg microsomal protein 63. The concentration of microsomal protein in the liver is 40 mg microsomal protein/g Liver. Simple multiplications (and assuming a specific density of 1 g/mL for the liver) results in 4.32 µmol CYP3A4/L liver tissue. This number can be used as reference concentration for the protein expression tab.
-
-The following table shows reference concentrations from a selection of CYP enzymes. The values were derived from measurements of human microsomal samples, see \[[63](../references.md#63)\].
-
-Table: Reference concentration of CYP enzymes
-
-|Enzyme |pmol/mg human liver microsomes |µmol CYP/L liver tissue (Reference concentration)|
-|--- |--- |---|
-|CYP1A2|45|1.8 |
-|CYP2A6|68|2.72|
-|CYP2B6|39|1.56|
-|CYP2C18|<2.5|<0.1|
-|CYP2C19|19|0.76|
-|CYP2C8|64|2.56|
-|CYP2C9|96|3.84|
-|CYP2D6|10|0.4|
-|CYP2E1|49|1.96|
-|CYP3A4|108|4.32|
-|CYP3A5|1|0.04|
-
-Special attention has to be paid when using ontogeny information together with the reference concentration. The reference concentration is subject to an age depending ontogeny, and the underlying implementation assumes that the reference concentration refers to an ontogeny factor of 1. For example: if it is known that for a 0.5 year old individual the ontogeny factor of a particular enzyme is 0.1, and the concentration of the enzyme in individuals of that age is 0.13 µmol/ L, the reference concentration (of an adult) is 1.3 µmol/L (that is 0.13/0.1).
 
 ## Advanced Analysis‌
 
