@@ -16,98 +16,13 @@ Assuming that kcat is not influenced by _in vivo_ factors, the tissue-specific m
 
 ![Equation 14.2. Vmax, Organ](../assets/images/part-3/equation-14-2-vmax.png)
 
-<details><summary>DELETED OLD BLOCK</summary>
-
-# DELETED BEGIN
-
-By replacing E0, organ by relative expression values erel,organ - times a scaling factor _SF_ µmol/l the absolute _in vivo_ protein concentration is corrected for such that organ specific activity can be rewritten to obtain:
-
-![Equation 14.3. Vmax, organ, E0, organ replaced by relative expression values](../assets/images/part-3/equation-14-3-vmax.png)
-
-This reformulation enables automatic quantification of the organ specific activity Vmax,organ for each protein-mediated process at the whole-body scale.
-        
-Notably, there are only two types of parameters in this reformulation of the organ- specific activity:
-
-*   _erel,organ_, which is a tissue specific parameter. This value can be directly taken from the PK-Sim® expression database
-
-*   kcat,s, represents an apparent catalytic rate constant µmol/l/min. kcat,s is a global parameter that implicitly considers translational efficacy and post- transcriptional modifications for a particular protein.
-
-Relative protein abundance can be set according to available expression data while catalytic parameters are described by a global kinetic rate constant that is adjusted during model setup. On the one hand, this method enables direct estimation of _in vivo_ enzyme and transporter activity based on data-based inclusion of tissue-specific protein abundance which represents first-hand experimental- measurements. On the other hand, the number of free model parameters, which would have to be measured or adjusted in case of an exhaustive mechanistic representation in multiple organs, is reduced significantly. Later, we will describe, how such information can be included in PBPK models.
-
-The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building \[[46](../references.md#46)\]. The database needs to be referenced in the PK-Sim® options, see [Options](pk-sim-options.md). Public database which were imported are
-
-*   whole genome expression arrays from ArrayExpress (ArrayExpress, 2010)
-
-*   RT-PCR derived gene expression estimates from literature \[[49](../references.md#49)\], \[[50](../references.md#50)\], \[[51](../references.md#51)\]
-
-*   expressed sequence tags (EST) from UniGene.
-
-The consolidated expression data was stored in a database with three sections termed EST (UniGene), Array (ArrayExpress), and RT-PCR (literature cited above), respectively.
-
-It should be noted that the current version of the database only describes spatial distribution of active processes in PBPK models. Temporal aspects such as circadian rhythms underlying chronogenetics are not included in the current version of the database. If necessary, such effects may be considered in a corresponding MoBi® model. Also, the current version of the database is restricted to human expression data. Extensions to other organism are currently under development and will be become available in future versions of PK-Sim®.
-
-### __The cellular and tissue specific location of active proteins
-
-A key feature of biological cells is polarity. Cellular polarity leads to functional differentiation of different sides of a cell. Organs have a spatial organization that reflects function. Active proteins (binding partners, transporters, enzymes that interact with a pharmacologically active enzyme) have to be correctly placed in the context of the cell and the organ. In addition, active transporters have a directionality of the transport, i.e. substance is transported into or out of a cell.
-
-#### __Epithelial polarity: Apical, basolateral
-
-Organs in PK-Sim® may be covered by an epithelial cell sheet. Epithelial cell membranes have three distinct domains. The apical domain is exposed as 'free' surface. Basolateral surfaces are opposite to the apical surface and interface the 'interior' of an organ. The lateral cell membrane connects epithelial cells to a two dimensional sheet. Tight junctions separate basal and apical membrane domains.
-        
-If active processes are part of a PK-Sim® project, the localization (apical or basolateral) of transporters have to be set for key organs:
-        
-
-*   Liver (Basolateral): Transport between cytosol of liver cells and interstitial space
-
-*   Liver (Apical): Transport between cytosol of liver cells and bile
-
-*   Kidney (Basolateral): Transport between cytosol of kidney cells and interstitial space
-
-*   Kidney (Apical): Transport between cytosol of kidney cells and urine
-
-*   Intestinal mucosa (Basolateral): Transport between cytosol of mucosa cells and the interstitial space
-
-*   Intestinal mucosa (Apical): Transport between cytosol of mucosa cells and the intestinal lumen
-
-*   Brain (Tissue): Transport between cytosol of brain cells and the brain interstitial space
-
-*   Brain (Blood Brain Barrier): Transport between blood plasma and cytosol of brain cells.
-
-#### __Transport type: Influx, Efflux, P-gp like‌
-
-Transporters are located in the cell membrane, partly restricted to certain areas of the membrane. In general, active transports move a substance against the concentration gradient and the direction is specific for the transporter. In PK- Sim®, three transport directions are distinguished and need to be specified:    
-
-*   Influx: The substance is transported from the interstitial space or lumen to the intracellular space.
-
-*   Efflux: The substance is transported from intracellular space to interstitial space or lumen.
-
-*   P-gp like: The substance is transported from intracellular space and interstitial space to the interstitial space.
-
-#### __Location in tissue: Intracellular, Extracellular membrane, Interstitial
-
-The location of protein binding partners and enzymes has to be defined. In PK- Sim®, three distinct locations are available:
-
-*   Intracellular: Protein is located within the cell, the cytosol.
-
-*   Extracellular Membrane: Protein is located within the extracellular membrane.
-
-*   Interstitial: Protein is located between cells, in the interstitial space.
-
-In addition, for the vascular endothelium, proteins can either be located in the cytosol or in endosomes. In PK-Sim®, only the endosomal space of the vascular endothelium is explicitly represented by respective compartments. Since the cytosol of the vascular endothelium is not explicitly represented, cytosolic proteins of the vascular endothelium are technically implemented in the interstitial space of the organs. To account for the true cytosolic location, the respective protein activities are calculated on the basis of an expression value corrected by the ratio of the volumes of vascular endothelium and interstitial space. For this reason, the following selections are possible in the drop-down menu:
-
-*   Location in vasc. endothelium: Endosomal
-
-*   Location in vasc. endothelium: Interstitial as surrogate for cytosolic space
-
-# DELETED END
-
-</details>
-
 ### Protein expression data
 
 Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ as a fraction of a defined **reference concentration** value.
 
 ![Protein expressions overview](../assets/images/part-3/ProteinExpressionsOverview.png)
+
+### Reference Concentration
 
 The **reference concentration** can be measured *in vitro* and allow direct *in vitro - in vivo* extrapolation (IVIVE). The concentration of the protein in the organ with the **relative expression = 1** will equal to that measured concentration. The concentrations in all other organs will be set relative to that value. In case no *in vitro* protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g. metabolism of a compound) through the relative expressions.
 
@@ -294,30 +209,30 @@ Be aware that depending on how the expression values for the organs have been ob
     * *f_int*: Fraction interstitial
 
 * **Kidney** and **Liver**: In kidney and liver, transport proteins can be located between interstitial and intracellular spaces (defined by “Fraction expressed basolateral” and modeled in interstitial space) and/or on the apical site of renal tubule and hepatic bile duct cells (defined by “Fraction expressed apical” and modeled in intracellular space), respectively. Transporters located on the apical site are responsible for active excretion of the compounds into urine and bile in kidney and liver, respectively.
-  * Initial concentration in **interstitial space** is given by the equation `RC * rel_exp_org * f_exp_org_tissue * 1 / f_int`
+  * Initial concentration in **interstitial space** is given by the equation `RC * rel_exp_org * f_exp_org_basolatateral * 1 / f_int`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in organ
-    * *f_exp_org_tissue*: Fraction expressed on the membrane between cellular and interstitial spaces
+    * *f_exp_org_basolatateral*: Fraction expressed on the membrane between cellular and interstitial spaces
     * *f_int*: Fraction interstitial (of total organ volume)
 
-  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_epithelial * 1 / f_cell`
+  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_apical * 1 / f_cell`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in apical
-    * *f_exp_org_epithelial*: Fraction expressed on epithelial membrane
+    * *f_exp_org_apical*: Fraction expressed on epithelial membrane
     * *f_cell*: Fraction intracellular (of total organ volume)
 
 * **Mucosal tissue**: The apical site of mucosal cells is facing the gastrointestinal lumen and facilitates the absorption or active excretion, while the basolateral site connects the intracellular and interstitial spaces. 
 
-  * Initial concentration in **interstitial space** is given by the equation  `RC * rel_exp_org * f_exp_org_tissue * 1 / f_int`
+  * Initial concentration in **interstitial space** is given by the equation  `RC * rel_exp_org * f_exp_org_basolatateral * 1 / f_int`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in organ
-    * *f_exp_org_tissue*: Fraction expressed on the membrane between cellular and interstitial spaces
+    * *f_exp_org_basolatateral*: Fraction expressed on the membrane between cellular and interstitial spaces
     * *f_int*: Fraction interstitial (of total organ volume)
 
-  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_epithelial * 1 / f_cell`
+  * Initial concentration in **intracellular space** is given by the equation `RC * rel_exp_org * f_exp_org_apical * 1 / f_cell`
     * *RC*: Reference concentration
     * *rel_exp_org*: Relative expression in apical
-    * *f_exp_org_epithelial*: Fraction expressed on epithelial membrane
+    * *f_exp_org_apical*: Fraction expressed on epithelial membrane
     * *f_cell*: Fraction intracellular (of total organ volume)
 
 ## The workflow
@@ -464,37 +379,6 @@ The gene expression that is used in the simulation incorporates the age- depende
     
 
 In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins](#the-cellular-and-tissue-specific-location-of-active-proteins) for explanation of the various parameters).
-
-## Reference Concentration‌
-
-Internally, PK-Sim represents the protein expression relative to the expression in the organ with highest concentration of the respective enzyme. This corresponds to 100%. Whenever active processes are used, this relative amount is converted to an actual enzyme concentration by multiplying the relative expression with a reference concentration, i.e. the concentration that is equivalent to 100% in molar units.
-
-
-**DUPLICATE**
-
-For example, CYP3A4 is mainly expressed in the liver of human adults, some in the gastro intestinal tract, and minor amounts are expressed in almost all other tissues. Hence, the relative expression of CYP3A4 in the liver is 100%. A reference concentration can be entered in the protein expression tab which will refer to the expression in liver, while expression in other organs is scaled by the relative expression.
-
-In this example, the concentration of CYP3A4 in the liver is 108 pmol/mg microsomal protein 63. The concentration of microsomal protein in the liver is 40 mg microsomal protein/g Liver. Simple multiplications (and assuming a specific density of 1 g/mL for the liver) results in 4.32 µmol CYP3A4/L liver tissue. This number can be used as reference concentration for the protein expression tab.
-
-The following table shows reference concentrations from a selection of CYP enzymes. The values were derived from measurements of human microsomal samples, see \[[63](../references.md#63)\].
-
-Table: Reference concentration of CYP enzymes
-
-|Enzyme |pmol/mg human liver microsomes |µmol CYP/L liver tissue (Reference concentration)|
-|--- |--- |---|
-|CYP1A2|45|1.8 |
-|CYP2A6|68|2.72|
-|CYP2B6|39|1.56|
-|CYP2C18|<2.5|<0.1|
-|CYP2C19|19|0.76|
-|CYP2C8|64|2.56|
-|CYP2C9|96|3.84|
-|CYP2D6|10|0.4|
-|CYP2E1|49|1.96|
-|CYP3A4|108|4.32|
-|CYP3A5|1|0.04|
-
-Special attention has to be paid when using ontogeny information together with the reference concentration. The reference concentration is subject to an age depending ontogeny, and the underlying implementation assumes that the reference concentration refers to an ontogeny factor of 1. For example: if it is known that for a 0.5 year old individual the ontogeny factor of a particular enzyme is 0.1, and the concentration of the enzyme in individuals of that age is 0.13 µmol/ L, the reference concentration (of an adult) is 1.3 µmol/L (that is 0.13/0.1).
 
 ## Advanced Analysis‌
 

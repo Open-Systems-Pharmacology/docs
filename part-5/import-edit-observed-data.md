@@ -12,7 +12,7 @@ The file selected to be imported should conform to at least one of th supported 
 
 1. Nonmem like format: here we have a dependent variable (DV), and the accordingly named columns (DVID, DVNAME, DVUNIT), where the information concerning this variable are stored.   
 
-2. The units of measurement, error and so on exist on a separate column, ideally with the columns named according to the information they contain (eg Measurement, Error, Error_Unit, MeasurementUnit etc). This also means that the unit fe can be different for each row of the data. If there are information missing the user can input them manually. 
+2. The units of measurement, error and so on exist on a separate column, ideally with the columns named according to the information they contain (e.g. Measurement, Error, Error_Unit, Measurement_Unit etc.). This also means that the unit can be different for each row of the data. If there are information missing the user can input them manually. 
 
 
 **File Selection Dialog**
@@ -21,11 +21,11 @@ To import data you should do the following:
 
 1.  Select the input file (see [File Selection](#file-selection)).
 
-2.  Specify the column mapping (see [Column Mapping in Import of Observed Data](#column-mapping-in-import-of-observed-data)) and enter all required meta data and set unit information.
+2.  Specify the column mapping (see [Mapping panel](#mapping-panel)) and enter all required meta data and set unit information.
 
 3. You can then load one or more sheets. The sheets that you close through the "x" or the context menu on the sheets tab are no longer available for import.
 
-3.  You can continue loading data sheets/data files by changing the column mapping or selecting another data sheet. Upon editing the column mapping the data are re-interpreted und updated automatically. The configured mapping remains the same for a whole import process, meaning that all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in seperate imports.
+3.  You can continue loading data sheets/data files by changing the column mapping or selecting another data sheet. Upon editing the column mapping the data are re-interpreted und updated automatically. The configured mapping remains the same for a whole import process, meaning that all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in separate imports.
 
 4.  Complete the transfer of the imported data sheets to the calling application by clicking the import button.
 
@@ -38,9 +38,9 @@ To import a new set of data from an excel file, click on the **Add observed Data
 The input file must comply with the allowed formats. If even one sheet does not comply to any of the allowed formats, then the file is considered invalid and cannot be imported. The import process is stopped. 
 
 {% hint style="warning" %}
-The first step of importing is to select the file from which to import. Both excel file formats (xls and xlsx) as well as .csfv files are supported and it is **not** required to have Microsoft Excel® installed on your computer.
+The first step of importing is to select the file from which to import. Both excel file formats (xls and xlsx) as well as csv files are supported and it is **not** required to have Microsoft Excel® installed on your computer.
 {% endhint %}
-  
+
 {% hint style="tip" %}
 By switching the file type combo box value it is possible to import a comma separated values file (csv or nmdat). For those file the user is prompted to select the separator used for their parsing. Supported separators are semicolon, comma, tabulator, period or colon. Values can be enclosed in quotes.
 {% endhint %}
@@ -52,7 +52,7 @@ After selection of the file to be imported, a split window appears (see screensh
 
 ![Importer Window](../assets/images/part-5/ImporterInitialWindow.png)
 
-Every tab is closeable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the configuration in any way.
+Every tab is closable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the configuration in any way.
 
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
 
@@ -76,7 +76,7 @@ On the top-right part of the window one can see the path of the selected excel s
 
 The left hand side window displays the mapping of imported column identifiers with the predefined data types. The initial mapping is performed automatically upon selection of file and identification of the format, but can be overridden by adjusting the controls. 
 
-The mapping panel is available throughout the import process. If the user changes the mapping, the changes are automatically applied and the result of the modifed mapping is automatically updated. Likewise, if the updated mapping would lead to an error because it would not pass validation, the result of modifying the mapping is a validation error.
+The mapping panel is available throughout the import process. If the user changes the mapping, the changes are automatically applied and the result of the modified mapping is automatically updated. Likewise, if the updated mapping would lead to an error because it would not pass validation, the result of modifying the mapping is a validation error.
 
 As shown in the screenshot underneath, the user gets a view of all the available mappings and can map a an excel column to them. A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
@@ -91,7 +91,7 @@ A column can be selected to a mapping only once, so when an excel column is sele
 
 ## Selection of units
 
-The units for the mapped columns can either be a specified value or come from a column. When the units come from a column each data point can have a distinct unit. In the unit dialog, there is a toggle to select which mode of unit definition the user wants. When being set to a specified value, if this value is also specified as part of the header name  (eg Time[h]) is automatically recognized by the importer. The user can edit the unit (when a unit is available) by opening the dialog in the column "Edit extra fields" of the corresponding mapping row.
+The units for the mapped columns can either be a specified value or come from a column. When the units come from a column each data point can have a distinct unit. In the unit dialog, there is a toggle to select which mode of unit definition the user wants. When being set to a specified value, if this value is also specified as part of the header name  (e.g. Time[h]) is automatically recognized by the importer. The user can edit the unit (when a unit is available) by opening the dialog in the column "Edit extra fields" of the corresponding mapping row.
 
 ![Setting the units manually](../assets/images/part-5/ImporterSetUnits.png)
 
@@ -100,7 +100,7 @@ The units for the mapped columns can either be a specified value or come from a 
 
 ## LLOQ
 
-The Lloq can either come from the column of the measurement excel column or from a seperate column. In the first case the Lloq values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value.
+The LLOQ can either come from the column of the measurement excel column or from a separate column. In the first case the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value.
 
 
 ## Configuring the error
@@ -112,12 +112,12 @@ When the unit is configured as a manual input, the user must first select the de
 
 ![Selecting Error Type](../assets/images/part-5/ImporterSlectingErrorType.png)
 
-When trying to load a sheet and the error and measurement unit come from a column, they are checked for consistency. If the data in the excel columns are of different dimensions, the data cannot be imoprted.
+When trying to load a sheet and the error and measurement unit come from a column, they are checked for consistency. If the data in the excel columns are of different dimensions, the data cannot be imported.
 
 
 ## The NaN indicator
 
-There exists the possibility that a specific number (eg 99999) is being used in the data as an equivalent of NaN. In this case the menu on the left bottom of the window gives the user the possibility to configure the importer's response to such values. On the input field "NaN indicator" the user can specify the value that should be identified as NaN. This value has to be a **numeric** value - it cannot be ab alphanumeric string. Next the dropdown menu underneath specifies if the user wants to ignore the whole row where the NaN value is situated ("Ignore the row"), or if upon finding a NaN value in the data that is to be imported the user wants to prevent the import with an error. In the second case ("Prevent the import") , if a NaN value is found, when clicking "Load sheet" there will be a pop -up that will inform the user of the existence of a NaN value, prompting him to clean up his data and preventing him from importing. 
+There exists the possibility that a specific number (e.g. 99999) is being used in the data as an equivalent of NaN. In this case the menu on the left bottom of the window gives the user the possibility to configure the importer's response to such values. On the input field "NaN indicator" the user can specify the value that should be identified as NaN. This value has to be a **numeric** value - it cannot be ab alphanumeric string. Next the dropdown menu underneath specifies if the user wants to ignore the whole row where the NaN value is situated ("Ignore the row"), or if upon finding a NaN value in the data that is to be imported the user wants to prevent the import with an error. In the second case ("Prevent the import") , if a NaN value is found, when clicking "Load sheet" there will be a pop -up that will inform the user of the existence of a NaN value, prompting him to clean up his data and preventing him from importing. 
 
 ## Saving the configuration
 
@@ -127,7 +127,7 @@ If some sheets have already been loaded, this state is also part of the configur
 
 ## Loading from configuration (WIP)
 
-When you have a configuration saved in an xml file you can use it to load observed data with this configuration. Right click on the Observed Data folder and select **Add observed data from configuration...**. A file dialog will open where you can select the xml file where the configuration has been saved. Afterwards the usual importer view opens with all the data from the configuration loaded. Currently the data file to be loaded is hard-coded to the configuration and the user can only use the configured settings to load this specific file. A possible use case would be fe having started a load process for a specific file and then having to interupt it. The user can then save what he has already configured and resume the import later.
+When you have a configuration saved in an xml file you can use it to load observed data with this configuration. Right click on the Observed Data folder and select **Add observed data from configuration...**. A file dialog will open where you can select the xml file where the configuration has been saved. Afterwards the usual importer view opens with all the data from the configuration loaded. Currently the data file to be loaded is hard-coded to the configuration and the user can only use the configured settings to load this specific file. A possible use case would be e.g. having started a load process for a specific file and then having to interrupt it. The user can then save what he has already configured and resume the import later.
 
 
 ## Confirmation Tab
@@ -140,7 +140,7 @@ When at least one dataset has been imported, the confirmation tab gets activated
 
 There the user can see what datasets have already been loaded. On selecting a data set the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified in the left side of the panel. This can either be done by manually typing in the "Naming Pattern" input field: The user can type keys that represent the name of a mapping inside of curly brackets {}, that will be then replaced by the value of each mapping for very individual data set. The user is also free to write text that will then be the same for all the data sets names. Additionally a drop down with presets for the naming is also available. 
 
-Alternatively the "Create naming pattern" collapsible panel can be used. One or more Naming elements can be selected from the list and also a seperator that will be used between them in the naming pattern. By clicking "Add keys" they are added to the naming pattern. 
+Alternatively the "Create naming pattern" collapsible panel can be used. One or more Naming elements can be selected from the list and also a separator that will be used between them in the naming pattern. By clicking "Add keys" they are added to the naming pattern. 
 
 The import can be finalized by clicking on the **Import** button.
 
