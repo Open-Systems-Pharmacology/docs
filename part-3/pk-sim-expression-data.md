@@ -263,7 +263,7 @@ Right click on this type, and select the first entry in the context menu: **Add 
 
 ![Expression Input Form Context Menu](../assets/images/part-3/ExpressionInputFormContextMenu.PNG)
 
-Next, you will be required to choose a name for your protein. After doing so, an area to configure properties of this protein will appear. It is divided into an upper and a lower panel.
+Next, you will be required to choose a name for your protein. After doing so, an area to configure properties of this protein will appear. 
 
 {% hint style="info" %}
 To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md).
@@ -271,7 +271,7 @@ To be able to query expression data from a database you have to select a databas
 
 ![Expression Data Input Form For Manually Data Input](../assets/images/part-3/ExpressionDataInputManually.PNG)
 
-We will explain the upper panel in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab). In the lower panel relative protein quantities per organ are specified. When adding protein quantities manually values for all organ/tissue for which estimates are available should be given as the default values are simply zero. For transporters, more options are available in the lower panel which are explained in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab).
+We will explain settings in detail in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab). 
 
 ## Adding protein quantities by querying the internal database‌
 
@@ -361,24 +361,85 @@ See [Reference Concentration](#reference-concentration) for a more detailed disc
 
 *   Ontogeny like: A list of typical enzymes and locations is shown for which the PK-Sim® software already knows ontogenies. Ontogenies are age-depending changes of enzyme concentrations in the respective organ or tissue.
 
-Currently, ontogeny information is only available for the liver and restricted to a selection of important cytochromes.
+Currently, ontogeny information is only available for the liver and for the intestine and restricted to a selection of important enzymes.
 
 If the selected enzyme is recognised and ontogeny information is available, that enzyme is preselected. Otherwise, from this list the ontogeny of an enzyme/ protein may be selected. The button to the right of the list can be used to visualise the ontogeny. The fraction of adult protein content in a specific organ is plotted against age.
 
 The gene expression that is used in the simulation incorporates the age- dependency of the ontogeny.
 
-*   For metabolizing enzymes and protein binding partners:
+In the lower section, values of relative expression can be edited for individual tissues, vascular system and GIT - Lumen. Additionally:
 
-*   The localization in tissue can be used to specify the localization, in either intra-, extracellular or interstitial space
+* For metabolizing enzymes and protein binding partners:
+
+  * The localization in tissue, blood cells and vascular endothelium can be modified (see [Localizations and initial concentrations of enzymes](#localizations-and-initial-concentrations-of-enzymes) for explanation of the various parameters).
+
+    ![Localization groups](../assets/images/part-3/LocalizationGroups.png)
+
+    Activating/deactivating checkboxes in each of these 3 localization groups changes some parameter values and shows/hides parameters following the following logic:
+
+    - If only one option in a group is activated: corresponding ```fraction expressed``` parameter will be set to 1; other ```fraction expressed``` parameter(s) of this group will be set to 0; all ```fraction expressed``` parameters of the group will be hidden. E.g. activating the checkboxes as in the screenshot above will result in:
+      - **Tissue** localization parameters:
+        - `Fraction expressed intracellular = 1` (parameter is hidden)
+        - `Fraction expressed interstitial = 0` (parameter is hidden)
+      - **Blood Cells** localization parameters:
+        - `Fraction expressed in blood cells = 1` (parameter is hidden)
+        - `Fraction expressed in blood cells membrane = 0` (parameter is hidden)
+      - **Vascular Endothelium** localization parameters:
+        - `Fraction expressed in endosomes = 1` (parameter is hidden)
+        - `Fraction expressed on plasma-side membrane of vascular endothelium = 0` (parameter is hidden)
+        - `Fraction expressed on tissue-side membrane of vascular endothelium = 0` (parameter is hidden)
+      
+    - If more than one option in a group is activated: corresponding ```fraction expressed``` parameters are shown and can be edited by user. E.g. for the selection below:
     
-*   The localization in vascular endothelium can be set to endosomal or interstitial
+      ![Localization groups](../assets/images/part-3/LocalizationGroups2.png)
+      - **Tissue** localization parameters:
+        - `Fraction expressed intracellular` is shown and can be edited by user
+        
+        - `Fraction expressed interstitial` is shown 
+        
+          (not editable; always set as `1 - Fraction expressed intracellular`)
+      - **Blood Cells** localization parameters:
+        - `Fraction expressed in blood cells ` is shown and can be edited by user
+        
+        - `Fraction expressed in blood cells membrane` is shown 
+      
+          (not editable; always set as `1 - Fraction expressed in blood cells`)
+      - **Vascular Endothelium** localization parameters:
+        
+        - `Fraction expressed in endosomes ` is shown and can be edited by user
+        - `Fraction expressed on plasma-side membrane of vascular endothelium ` is shown and can be edited by user
+        - `Fraction expressed on tissue-side membrane of vascular endothelium ` is hidden and always set to `1 - (Fraction expressed in endosomes + Fraction expressed on plasma-side membrane of vascular endothelium)`
     
+      ![Localization groups](../assets/images/part-3/FractionExpressed2.png)
+    
+    - If all options in a group are deactivated: all corresponding `Fraction expressed` parameters are hidden AND all corresponding relative expressions are automatically set to 0. E.g. deactivating both options "*Blood cells intracellular*" and "*Blood cells membrane*" will not only hide the parameters `Fraction expressed in blood cells ` and `Fraction expressed in blood cells membrane` but also set `Relative expression in blood cells ` to 0 and hide it.
+    
+      In such a case, before setting relative expressions to zero a warning is shown to the user to avoid the loss of information:
+    
+      ![Localization groups](../assets/images/part-3/WarningResetExpressions.png)
+    
+      
+
 *   For transport proteins:
 
-*   Transporter Type can be set to efflux, influx, or Pgp-like.
+  *   Transporter direction can be set to **Efflux**, **Influx**, **Bi-Directional** or **Pgp-Like**.
     
+    * Transporter direction can be set **for each organ independently**. In order to change the direction in all organs simultaneously, change the selected value in the "Default Transporter Direction" selection box.
+    
+      {% hint style="warning" %}
+    
+      The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
+    
+      ![Localization groups](../assets/images/part-3/TransporterDirection.png)
+    
+      {% endhint %}
+  *   For some organs, apical or basolateral can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
+*   For all proteins:
+  
+  * Initial concentration in every compartment (which is calculated based on the reference concentration, relative expression values and localization settings as described above) is hidden as per default. To show and **to edit** it (if required), the *Show initial concentration* checkbox must be activated:
+  
+    ![Show/Edit initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
 
-In the lower section, values of relative expression can be edited for individual tissues. For transport proteins and some organs, apical or basolateral can be set (see [The cellular and tissue specific location of active proteins](#the-cellular-and-tissue-specific-location-of-active-proteins) for explanation of the various parameters).
 
 ## Advanced Analysis‌
 
