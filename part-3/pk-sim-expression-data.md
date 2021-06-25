@@ -10,15 +10,15 @@ Active, protein-mediated processes involved in drug ADME generally occur simulta
 
 In brief, the concept of using gene expression data as proxy for protein abundance is based on the definition of the maximum velocity _Vmax_ _µ_mol/l/min. According to the Michaelis-Menten equation, _Vmax_ depends on both the total enzyme or transporter concentration E0 µmol/l and the catalytic rate constant _kcat_ 1/min:
 
-![Equation 14.1. Vmax](../assets/images/part-3/equation-14-1-vmax.png)
+![Equation 1](../assets/images/part-3/equation-14-1-vmax.png)
 
 Assuming that kcat is not influenced by _in vivo_ factors, the tissue-specific maximum velocity _Vmax,organ_ is defined as:
 
-![Equation 14.2. Vmax, Organ](../assets/images/part-3/equation-14-2-vmax.png)
+![Equation 2](../assets/images/part-3/equation-14-2-vmax.png)
 
 ### Protein expression data
 
-Following from **Equation 14.2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ as a fraction of a defined **reference concentration** value.
+Following from **Equation 2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ as a fraction of a defined **reference concentration** value.
 
 ![Protein expressions overview](../assets/images/part-3/ProteinExpressionsOverview.png)
 
@@ -356,10 +356,9 @@ You can rename a defined protein within your PK-Sim® project by selecting the *
 In the upper section, the following entries can be adjusted:
     
 *   **Reference concentration**: Enter the molar concentration of the protein in the organ with the highest enzyme concentration (typically the liver). This is useful as you will later solely enter relative enzyme concentrations. If you do not know the absolute concentration in the organ with the highest expression level you can leave this entry at its default value of 1.00 pmol/mg and adjust the active process, e.g. via the Vmax value.
-
 See [Reference Concentration](#reference-concentration) for a more detailed discussion of the Reference concentration.
 
-*   **t1/2 (liver)** and **t1/2 (intestine)**: Half life of the protein in the liver and in the intestine.
+*   **t1/2 (liver)** and **t1/2 (intestine)**: Half-life of the protein turnover in the liver and in the intestine.
 *   **Ontogeny like**: A list of typical enzymes and locations is shown for which the PK-Sim® software already knows ontogenies. Ontogenies are age-depending changes of enzyme concentrations in the respective organ or tissue.
 
 Currently, ontogeny information is only available for the liver and for the intestine and restricted to a selection of important enzymes.
@@ -379,7 +378,7 @@ In the lower section, values of relative expression can be edited for individual
 * For metabolizing enzymes and protein binding partners:
 
   * The localization in tissue, blood cells and vascular endothelium can be modified (see [Localizations and initial concentrations of enzymes](#localizations-and-initial-concentrations-of-enzymes) for explanation of the various parameters).
-![Localization groups](../assets/images/part-3/LocalizationGroups.png)
+![](../assets/images/part-3/LocalizationGroups.png)
 Activating/deactivating checkboxes in each of these 3 localization groups changes some parameter values and shows/hides parameters following the following logic:
     
     - If only one option in a group is activated: corresponding ```fraction expressed``` parameter will be set to 1; other ```fraction expressed``` parameter(s) of this group will be set to 0; all ```fraction expressed``` parameters of the group will be hidden. E.g. activating the checkboxes as in the screenshot above will result in:
@@ -395,7 +394,7 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
         - `Fraction expressed on tissue-side membrane of vascular endothelium = 0` (parameter is hidden)
       
     - If more than one option in a group is activated: corresponding ```fraction expressed``` parameters are shown and can be edited by user. E.g. for the selection below:
-![Localization groups](../assets/images/part-3/LocalizationGroups2.png)
+![](../assets/images/part-3/LocalizationGroups2.png)
       
       - **Tissue** localization parameters:
         - `Fraction expressed intracellular` is shown and can be edited by user
@@ -414,12 +413,12 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
         - `Fraction expressed in endosomes ` is shown and can be edited by user
         - `Fraction expressed on plasma-side membrane of vascular endothelium ` is shown and can be edited by user
         - `Fraction expressed on tissue-side membrane of vascular endothelium ` is hidden and always set to `1 - (Fraction expressed in endosomes + Fraction expressed on plasma-side membrane of vascular endothelium)`
-![Localization groups](../assets/images/part-3/FractionExpressed2.png)
+![](../assets/images/part-3/FractionExpressed2.png)
     - If all options in a group are deactivated: all corresponding `Fraction expressed` parameters are hidden AND all corresponding relative expressions are automatically set to 0. E.g. deactivating both options "*Blood cells intracellular*" and "*Blood cells membrane*" will not only hide the parameters `Fraction expressed in blood cells ` and `Fraction expressed in blood cells membrane` but also set `Relative expression in blood cells ` to 0 and hide it.
     
       In such a case, before setting relative expressions to zero a warning is shown to the user to avoid the loss of information:
 
-![Localization groups](../assets/images/part-3/WarningResetExpressions.png)
+![](../assets/images/part-3/WarningResetExpressions.png)
 
 * For transport proteins:
   * For some organs, `Fraction expressed apical` can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
@@ -429,12 +428,12 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
 The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
 {% endhint %}
 
-![Localization groups](../assets/images/part-3/TransporterDirection.png)
+![Transporter directions](../assets/images/part-3/TransporterDirection.png)
 
 * For all proteins:
   * Initial concentration in every compartment (which is calculated based on the reference concentration, relative expression values and localization settings as described above) is hidden as per default. To show and **to edit** it (if required), the *Show initial concentration* checkbox must be activated:
 
-![Show/Edit initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
+![Show/Edit (effective) initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
 
 
 ## Advanced Analysis‌
