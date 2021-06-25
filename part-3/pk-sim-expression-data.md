@@ -363,6 +363,12 @@ See [Reference Concentration](#reference-concentration) for a more detailed disc
 
 Currently, ontogeny information is only available for the liver and for the intestine and restricted to a selection of important enzymes.
 
+{% hint style="tip" %}
+
+Detailed information on the integrated enzyme ontogenies is available in the separate documentation [PK-Sim® Ontogeny Database](https://github.com/Open-Systems-Pharmacology/OSPSuite.Documentation/blob/master/PK-Sim%20Ontogeny%20Database%20Version%207.3.pdf)
+
+{% endhint %}
+
 If the selected enzyme is recognised and ontogeny information is available, that enzyme is preselected. Otherwise, from this list the ontogeny of an enzyme/ protein may be selected. The button to the right of the list can be used to visualise the ontogeny. The fraction of adult protein content in a specific organ is plotted against age.
 
 The gene expression that is used in the simulation incorporates the age- dependency of the ontogeny.
