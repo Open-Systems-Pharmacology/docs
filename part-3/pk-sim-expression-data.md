@@ -378,11 +378,8 @@ In the lower section, values of relative expression can be edited for individual
 * For metabolizing enzymes and protein binding partners:
 
   * The localization in tissue, blood cells and vascular endothelium can be modified (see [Localizations and initial concentrations of enzymes](#localizations-and-initial-concentrations-of-enzymes) for explanation of the various parameters).
-
 ![Localization groups](../assets/images/part-3/LocalizationGroups.png)
-
     Activating/deactivating checkboxes in each of these 3 localization groups changes some parameter values and shows/hides parameters following the following logic:
-    
     - If only one option in a group is activated: corresponding ```fraction expressed``` parameter will be set to 1; other ```fraction expressed``` parameter(s) of this group will be set to 0; all ```fraction expressed``` parameters of the group will be hidden. E.g. activating the checkboxes as in the screenshot above will result in:
       - **Tissue** localization parameters:
         - `Fraction expressed intracellular = 1` (parameter is hidden)
@@ -396,8 +393,8 @@ In the lower section, values of relative expression can be edited for individual
         - `Fraction expressed on tissue-side membrane of vascular endothelium = 0` (parameter is hidden)
       
     - If more than one option in a group is activated: corresponding ```fraction expressed``` parameters are shown and can be edited by user. E.g. for the selection below:
-
 ![Localization groups](../assets/images/part-3/LocalizationGroups2.png)
+      
       - **Tissue** localization parameters:
         - `Fraction expressed intracellular` is shown and can be edited by user
         
@@ -415,36 +412,21 @@ In the lower section, values of relative expression can be edited for individual
         - `Fraction expressed in endosomes ` is shown and can be edited by user
         - `Fraction expressed on plasma-side membrane of vascular endothelium ` is shown and can be edited by user
         - `Fraction expressed on tissue-side membrane of vascular endothelium ` is hidden and always set to `1 - (Fraction expressed in endosomes + Fraction expressed on plasma-side membrane of vascular endothelium)`
-
 ![Localization groups](../assets/images/part-3/FractionExpressed2.png)
-    
     - If all options in a group are deactivated: all corresponding `Fraction expressed` parameters are hidden AND all corresponding relative expressions are automatically set to 0. E.g. deactivating both options "*Blood cells intracellular*" and "*Blood cells membrane*" will not only hide the parameters `Fraction expressed in blood cells ` and `Fraction expressed in blood cells membrane` but also set `Relative expression in blood cells ` to 0 and hide it.
     
       In such a case, before setting relative expressions to zero a warning is shown to the user to avoid the loss of information:
-
 ![Localization groups](../assets/images/part-3/WarningResetExpressions.png)
-    
-      
-
-*   For transport proteins:
-
-  *   Transporter direction can be set to **Efflux**, **Influx**, **Bi-Directional** or **Pgp-Like**.
-    
+* For transport proteins:
+  * Transporter direction can be set to **Efflux**, **Influx**, **Bi-Directional** or **Pgp-Like**.
     * Transporter direction can be set **for each organ independently**. In order to change the direction in all organs simultaneously, change the selected value in the "Default Transporter Direction" selection box.
-    
 {% hint style="warning" %}
 The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
-
-![Localization groups](../assets/images/part-3/TransporterDirection.png)
 {% endhint %}
-
-  *   For some organs, apical or basolateral can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
-
-*   For all proteins:
-  
+![Localization groups](../assets/images/part-3/TransporterDirection.png)
+  * For some organs, apical or basolateral can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
+* For all proteins:
   * Initial concentration in every compartment (which is calculated based on the reference concentration, relative expression values and localization settings as described above) is hidden as per default. To show and **to edit** it (if required), the *Show initial concentration* checkbox must be activated:
-  
-
 ![Show/Edit initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
 
 
