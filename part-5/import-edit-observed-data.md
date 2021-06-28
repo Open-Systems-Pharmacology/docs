@@ -52,7 +52,8 @@ After selection of the file to be imported, a split window appears (see screensh
 
 ![Importer Window](../assets/images/part-5/ImporterInitialWindow.png)
 
-Every tab is closable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the configuration in any way.
+Every tab is closeable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the configuration in any way. If the user closes an already loaded tab, the tab will be removed from the loaded sheets.
+Additionally through the context menu option "Reopen all sheets" the user can retrieve all the closed sheets of the document.
 
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
 
@@ -78,10 +79,11 @@ The left hand side window displays the mapping of imported column identifiers wi
 
 The mapping panel is available throughout the import process. If the user changes the mapping, the changes are automatically applied and the result of the modified mapping is automatically updated. Likewise, if the updated mapping would lead to an error because it would not pass validation, the result of modifying the mapping is a validation error.
 
-As shown in the screenshot underneath, the user gets a view of all the available mappings and can map a an excel column to them. A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
+As shown in the screenshot underneath, the user gets a view of all the available mappings and can map a an excel/csv column to them. A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
 ![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png)
 
+Additionally for some mappings (like fe Organ, Speciees and others) the user can select one option from the predefined ones that come form PK-Sim/MoBi.
 
 There are some mappings that are mandatory. The minimum set of them is that a Time and a Measurement mapping are defined. 
 
@@ -100,7 +102,7 @@ The units for the mapped columns can either be a specified value or come from a 
 
 ## LLOQ
 
-The LLOQ can either come from the column of the measurement excel column or from a separate column. In the first case the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value.
+The Lloq can either come from the column of the measurement excel column or from a seperate column. In the first case the Lloq values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In case the LLOQ comes from a column, there should be a single LLOQ value for every dataset. In case there are more than one defined, then the user will get a warning about this and in case the user wants to proceed with th import the highest of these LLOQs will be assumed for the whole dataset. 
 
 
 ## Configuring the error
@@ -110,7 +112,7 @@ The units of the error have to be consistent with the units of the corresponding
 When the unit is configured as a manual input, the user must first select the desired "Dimension" from the dropdown, and then the corresponding units to this dimension will become available in the "units" dropdown.
 
 
-![Selecting Error Type](../assets/images/part-5/ImporterSlectingErrorType.png)
+![Selecting Error Type](../assets/images/part-5/ImporterSelectingErrorType.png)
 
 When trying to load a sheet and the error and measurement unit come from a column, they are checked for consistency. If the data in the excel columns are of different dimensions, the data cannot be imported.
 
