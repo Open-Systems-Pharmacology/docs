@@ -163,5 +163,6 @@ Using the context menu of the **Observed Data** folders, the meta data values ca
 
 ## Reload observed data
 
-Using the context menu on a single dataset, the user can update all the data coming from that file. Upon selecting this option, the user is then prompted to select the new file from where the data will be reimported. This offcourse can be the same file used for the original import, just with edited data. Then the user is presented with a window showing her the changes this action will have to the state of observed data: which datasets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload, or abort it.  
+Using the context menu on a single dataset, the user can update all the data coming from that file. Upon selecting this option, the user is then prompted to select the new file from where the data will be reimported. This offcourse can be the same file used for the original import, just with edited data. Then the user is presented with a window showing her the changes this action will have to the state of observed data: which datasets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload, or abort it.
 
+![Reload summary](../assets/images/part-5/ImporterReloadSummary.png)
