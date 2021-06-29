@@ -160,3 +160,8 @@ All values in the time column must be unique in a data repository.
 **Editing All Meta Data**
 Using the context menu of the **Observed Data** folders, the meta data values can be accessed and changed. This is very useful to supplement meta data or in reorganizing data. Changes will be applied to all data tables in that folder.
 {% endhint %}
+
+## Reload observed data
+
+Using the context menu on a single dataset, the user can update all the data coming from that file. Upon selecting this option, the user is then prompted to select the new file from where the data will be reimported. This offcourse can be the same file used for the original import, just with edited data. Then the user is presented with a window showing her the changes this action will have to the state of observed data: which datasets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload, or abort it.  
+
