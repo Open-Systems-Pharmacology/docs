@@ -91,7 +91,7 @@ For the molecule mapping an excel column can be selected. Alternatively the user
 
 A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
-The user can also select one or more group by mappings. Those mappings are used to break down a single data sheet to multiple datasets according to the distinct values of the calumn mapped in the group by.
+The user can also select one or more group by mappings. Those mappings are used to break down a single data sheet to multiple datasets according to the distinct values of the column mapped in the group by.
 
 ## Selection of units
 
