@@ -52,7 +52,7 @@ After selection of the file to be imported, a split window appears (see screensh
 
 ![Importer Window](../assets/images/part-5/ImporterInitialWindow.png)
 
-Every tab is closeable. Additionally, using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the configuration in any way. If the user closes an already loaded tab, the tab will be removed from the loaded sheets.
+Every tab is closeable. Using the right click on the tab names, a context menu appears where the user can close a specified group of tabs. Data coming from closed sheets is not imported or taken into account in the configuration in any way. If the user closes an already loaded tab, the tab will be removed from the loaded sheets.
 Additionally through the context menu option "Reopen all sheets" the user can retrieve all the closed sheets of the document.
 
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
@@ -93,12 +93,15 @@ A column can be selected to a mapping only once, so when an excel column is sele
 
 ## Selection of units
 
-The units for the mapped columns can either be a specified value or come from a column. When the units come from a column each data point can have a distinct unit. In the unit dialog, there is a toggle to select which mode of unit definition the user wants. When being set to a specified value, if this value is also specified as part of the header name  (e.g. Time[h]) is automatically recognized by the importer. The user can edit the unit (when a unit is available) by opening the dialog in the column "Edit extra fields" of the corresponding mapping row.
+The units for the mapped columns can either be a specified value or come from a column. When the units come from a column each data point can have a distinct unit, the dimension of all the units of a dataset should be the same though. In the unit dialog, there is a toggle to select which mode of unit definition the user wants. When being set to a specified value, if this value is also specified as part of the header name  (e.g. Time[h]) is automatically recognized by the importer. The user can edit the unit (when a unit is available) by opening the dialog in the column "Edit extra fields" of the corresponding mapping row.
 
 ![Setting the units manually](../assets/images/part-5/ImporterSetUnits.png)
 
 
 ![Setting the units from a column](../assets/images/part-5/ImporterSelectUnitFromColumn.png)
+
+When setting the unit manually the user can select the dimension and then the dropdown menu with the units will be filled automatically with the units corresponding to that selected dimension.
+
 
 ## LLOQ
 
@@ -108,13 +111,13 @@ The Lloq can either come from the column of the measurement excel column or from
 ## Configuring the error
 
 The error can be set to Standard arithmetic Deviation or Geometric Deviation. In the case of geometric deviation, the error is dimensionless, thus there is no possibility to select a unit. Otherwise, the user can select the unit either manually or from a column.
-The units of the error have to be consistent with the units of the corresponding measurement. So if the unit of the measurement come from a column, then the units of the error also have to come from a column. 
+The units of the error have to be consistent with the units of the corresponding measurement. So if the unit of the measurement come from a column, then the units of the error also have to come from a column. Also in both cases the measurement and the error should have the same dimension. When trying to load a sheet and the error and measurement unit come from a column, they are checked for consistency. If the data in the excel columns are of different dimensions, the data cannot be imported.
+
 When the unit is configured as a manual input, the user must first select the desired "Dimension" from the dropdown, and then the corresponding units to this dimension will become available in the "units" dropdown.
 
 
 ![Selecting Error Type](../assets/images/part-5/ImporterSelectingErrorType.png)
 
-When trying to load a sheet and the error and measurement unit come from a column, they are checked for consistency. If the data in the excel columns are of different dimensions, the data cannot be imported.
 
 
 ## The NaN indicator
@@ -127,10 +130,9 @@ By clicking this button the user can save the settings that he has configured to
 The saved configuration can then be used to either save and later resume the configuring and importing of a file or to import a different file that should be imported with exactly the same configuration.
 If some sheets have already been loaded, this state is also part of the configuration. 
 
-## Loading from configuration (WIP)
+## Loading the configuration
 
-When you have a configuration saved in an xml file you can use it to load observed data with this configuration. Right click on the Observed Data folder and select **Add observed data from configuration...**. A file dialog will open where you can select the xml file where the configuration has been saved. Afterwards the usual importer view opens with all the data from the configuration loaded. Currently the data file to be loaded is hard-coded to the configuration and the user can only use the configured settings to load this specific file. A possible use case would be e.g. having started a load process for a specific file and then having to interrupt it. The user can then save what he has already configured and resume the import later.
-
+The user can also load a saved configuration. Clicking the "Load configuration" button will open a "File Selection" menu where the user can select an .xml file that of a configuration that the user has previously saved. Then the settings of that configuration are applied to the current import process. If something is missing, fe a column was mapped in the configuration but does not exist in the file the user is trying to load when loading the configuration, the user will receive a warning that this mapping could not be found in the file and will be ignored.  
 
 ## Confirmation Tab
 
