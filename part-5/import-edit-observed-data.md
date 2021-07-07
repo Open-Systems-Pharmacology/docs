@@ -91,6 +91,8 @@ For the molecule mapping an excel column can be selected. Alternatively the user
 
 A column can be selected to a mapping only once, so when an excel column is selected for a specific mapping it automatically becomes no longer available on the drop down menus for other mappings. There is only one exception to this rule: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
+The user can also select one or more group by mappings. Those mappings are used to break down a single data sheet to multiple datasets according to the distinct values of the calumn mapped in the group by.
+
 ## Selection of units
 
 The units for the mapped columns can either be a specified value or come from a column. When the units come from a column each data point can have a distinct unit, the dimension of all the units of a dataset should be the same though. In the unit dialog, there is a toggle to select which mode of unit definition the user wants. When being set to a specified value, if this value is also specified as part of the header name  (e.g. Time[h]) is automatically recognized by the importer. The user can edit the unit (when a unit is available) by opening the dialog in the column "Edit extra fields" of the corresponding mapping row.
