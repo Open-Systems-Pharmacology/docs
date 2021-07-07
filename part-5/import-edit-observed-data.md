@@ -83,7 +83,7 @@ As shown in the screenshot underneath, the user gets a view of all the available
 
 ![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png)
 
-Additionally for some mappings (like fe Organ, Speciees and others) the user can select one option from the predefined ones that come form PK-Sim/MoBi.
+Additionally for some mappings (like for example Organ, Species and others) the user can select one option from the predefined ones that come form PK-Sim/MoBi.
 
 There are some mappings that are mandatory. The minimum set of them is that a Time and a Measurement mapping are defined. 
 
@@ -105,7 +105,7 @@ When setting the unit manually the user can select the dimension and then the dr
 
 ## LLOQ
 
-The Lloq can either come from the column of the measurement excel column or from a seperate column. In the first case the Lloq values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In case the LLOQ comes from a column, there should be a single LLOQ value for every dataset. In case there are more than one defined, then the user will get a warning about this and in case the user wants to proceed with th import the highest of these LLOQs will be assumed for the whole dataset. 
+The Lloq can either come from the column of the measurement excel column or from a separate column. In the first case the Lloq values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In case the LLOQ comes from a column, there should be a single LLOQ value for every dataset. In case there are more than one defined, then the user will get a warning about this and in case the user wants to proceed with th import the highest of these LLOQs will be assumed for the whole dataset. 
 
 
 ## Configuring the error
@@ -132,7 +132,8 @@ If some sheets have already been loaded, this state is also part of the configur
 
 ## Loading the configuration
 
-The user can also load a saved configuration. Clicking the "Load configuration" button will open a "File Selection" menu where the user can select an .xml file that of a configuration that the user has previously saved. Then the settings of that configuration are applied to the current import process. If something is missing, fe a column was mapped in the configuration but does not exist in the file the user is trying to load when loading the configuration, the user will receive a warning that this mapping could not be found in the file and will be ignored.  
+The user can also load a saved configuration. Clicking the "Load configuration" button will open a "File Selection" menu where the user can select an .xml file that of a configuration that the user has previously saved. Then the settings of that configuration are applied to the current import process. If something is missing, for example a column was mapped in the configuration but does not exist in the file the user is trying to load when loading the configuration, the user will receive a warning that this mapping could not be found in the file and will be ignored. 
+ 
 
 ## Confirmation Tab
 
@@ -165,6 +166,6 @@ Using the context menu of the **Observed Data** folders, the meta data values ca
 
 ## Reload observed data
 
-Using the context menu on a single dataset, the user can update all the data coming from that file. Upon selecting this option, the user is then prompted to select the new file from where the data will be reimported. This offcourse can be the same file used for the original import, just with edited data. Then the user is presented with a window showing her the changes this action will have to the state of observed data: which datasets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload, or abort it.
+Using the context menu on a single dataset, the user can update all the data coming from that file. Upon selecting this option, the user is then prompted to select the new file from where the data will be re-imported. This of course can be the same file used for the original import, just with edited data. Then the user is presented with a window showing her the changes this action will have to the state of observed data: which datasets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload, or abort it.
 
 ![Reload summary](../assets/images/part-5/ImporterReloadSummary.png)
