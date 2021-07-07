@@ -108,7 +108,7 @@
 
 ## Working with R‌
 
-- [R - Introduction](part-6/r-introduction.md)
+- [R - Introduction](part-6/introduction-ospsuite.md)
 
 ## Appendix
 
