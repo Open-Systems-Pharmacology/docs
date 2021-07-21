@@ -92,7 +92,7 @@ The size of the organs of a species, i.e., the containers, are defined in this b
 
 ## Observed Data‌
 
-This building block includes the imported experimental (observed) data which can be e.g. [displayed in charts](simulation-results#observed-data) or [used for parameter identification](../part-5/parameter-identification.md). 
+This building block includes the imported experimental (observed) data which can be e.g. [displayed in charts](simulation-results.md#observed-data) or [used for parameter identification](../part-5/parameter-identification.md). 
 
 The import process is described in detail in [Shared Tools: Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
 

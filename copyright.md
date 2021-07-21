@@ -4,7 +4,7 @@ Version 10
 
 Publication date July 2021
 
-Copyright © 2021 [Open Systems Pharmacology Community](../references.md#115)
+Copyright © 2021 [Open Systems Pharmacology Community](references.md#115)
 
 The manual is provided “as is” without expressed or implied warranty.
 
