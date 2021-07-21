@@ -1,6 +1,6 @@
 # Open Systems Pharmacology Suite - Fact Sheet
 
-### Main modeling and simulation features:
+## Main modeling and simulation features:
 
   - PBPK modeling of small molecules and biologics
 
@@ -17,604 +17,303 @@
 
   - PBPK/PD, QSP as well as pathway, network and disease modeling
 
+## Model building blocks
 
+### Organisms
 
-<table>
-  <tbody>
-    <tr class="odd">
-      <td colspan="2" align="center"><b>Model building blocks</b></td>
-    </tr>
-    <tr class="even">
-      <td style="vertical-align:top">
-        <p>Organisms</p>
-      </td>
-      <td>
-        <p>Pre-parameterized whole-body PBPK models including detailed integrated GI tract for</p>
-        <ul>
-          <li>
-            <p>Human</p>
-          </li>
-          <li>
-            <p>Monkey</p>
-          </li>
-          <li>
-            <p>Dog (beagle and mongrale)</p>
-          </li>
-          <li>
-            <p>Minipig</p>
-          </li>
-          <li>
-            <p>Rat</p>
-          </li>
-          <li>
-            <p>Mouse</p>
-          </li>
-          <li>
-            <p>Rabbit</p>
-          </li>
-        </ul>
-        <p>Allowing for full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.</p>
-        <p>Most important organs included. For each organ optional processes can be added:</p>
-        <ul>
-          <li>
-            <p>Metabolizing pathways</p>
-          </li>
-          <li>
-            <p>Different active transporter types(influx, efflux, Pgp-like)</p>
-          </li>
-          <li>
-            <p>Protein binding partners</p>
-          </li>
-        </ul>
-        <p>Biliary tract included, enables enterohepatic cycling</p>
-        <ul>
-          <li>
-            <p>Scaling of Individuals</p>
-          </li>
-        </ul>
-        <p style="padding-left: 2em;"> Scaling can be used to change the biometrics of an existing individual, i.e. an adult model may be scaled to an infant model while maintaining/scaling all specific modifications </p>
-        <ul></ul>
-      </td>
-    </tr>
-    <tr class="odd">
-      <td style="vertical-align:top">
-        <p>Populations</p>
-      </td>
-      <td>
-        <p>Database for population simulations with distributions of anatomical and physiological parameters for</p>
-        <ul>
-          <li>
-            <p>European Caucasians (ICRP, 2002)</p>
-          </li>
-          <li>
-            <p>US Caucasian (NHANES, 1997)</p>
-          </li>
-          <li>
-            <p>US Asians (NHANES, 1997)</p>
-          </li>
-          <li>
-            <p>US Africans (NHANES, 1997)</p>
-          </li>
-          <li>
-            <p>Asian (Tanaka, 1996)</p>
-          </li>
-          <li>
-            <p>Japanese (2015)</p>
-          </li>
-          <li>
-            <p>Preterms (2015)</p>
-          </li>
-          <li>
-            <p>Pregnant (Dallmann et al. 2017)</p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr class="even">
-      <td style="vertical-align:top">
-        <p>Protein Expression</p>
-      </td>
-      <td>
-        <p>The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building. Public database which were imported are</p>
-        <ul>
-          <li>
-            <p>Whole genome expression arrays from ArrayExpress (European Informatics Institute, 2010, http://www.ebi.ac.uk/microarray-as/ae/)</p>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <p>RT-PCR derived gene expression (Nishimura et al., 2003; Nishimura and Naito, 2005, 2006)</p>
-          </li>
-          <li>
-            <p>Expressed sequence tags (EST) from UniGene (National Center for Biotechnology Information, 2010, http://www.ncbi.nlm.nih.gov/unigene).</p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr class="odd">
-      <td style="vertical-align:top">
-        <p>Compounds</p>
-      </td>
-      <td>
-        <p>Full ADME characterization of drugs including</p>
-        <ul>
-          <li>
-            <p>Molecular weight</p>
-          </li>
-          <li>
-            <p>Lipophilicity</p>
-          </li>
-          <li>
-            <p>Protein binding</p>
-          </li>
-          <li>
-            <p>Acid/base pKa</p>
-          </li>
-          <li>
-            <p>Solubility</p>
-          </li>
-          <li>
-            <p>Intestinal permeability</p>
-          </li>
-          <li>
-            <p>Specific protein binding kinetics</p>
-          </li>
-          <li>
-            <p>Enzyme specific metabolization kinetics</p>
-          </li>
-          <li>
-            <p>Transporter specific transport kinetics</p>
-          </li>
-          <li>
-            <p>Inhibition and induction parameters</p>
-          </li>
-        </ul>
-        <p>and for large therapeutic molecules (e.g. antibodies)</p>
-        <ul>
-          <li>
-            <p>Solute radius (calculated for molecular weight as per default)</p>
-          </li>
-          <li>
-            <p>Dissociation constant for binding to FcRn</p>
-          </li>
-        </ul>
-        <br>
-        <p>Including a set of pre-parameterized standard compounds</p>
-      </td>
-    </tr>
-    <tr class="even">
-      <td style="vertical-align:top">
-        <p>Partition Coefficients</p>
-      </td>
-      <td>
-        <p>Prediction models for tissue partition coefficients</p>
-        <ul>
-          <li>
-            <p>PK-Sim 2003</p>
-          </li>
-          <li>
-            <p>Rodgers &amp; Rowland</p>
-          </li>
-          <li>
-            <p>Schmitt</p>
-          </li>
-          <li>
-            <p>Poulin &amp; Theil</p>
-          </li>
-          <li>
-            <p>Berezhkovsky</p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr class="odd">
-      <td>Permeability</td>
-      <td>Prediction models for cellular permeabilities and intestinal permeability</td>
-    </tr>
-    <tr class="even">
-      <td style="vertical-align:top">
-        <p>Formulations</p>
-      </td>
-      <td>
-        <ul>
-          <li>
-            <p>Dissolved</p>
-          </li>
-          <li>
-            <p>Particle distribution</p>
-          </li>
-          <li>
-            <p>Weibull</p>
-          </li>
-          <li>
-            <p>Lint80</p>
-          </li>
-          <li>
-            <p>Table</p>
-          </li>
-          <li>
-            <p>1st order</p>
-          </li>
-          <li>
-            <p>Zero order</p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr class="odd">
-      <td style="vertical-align:top">
-        <p>Administration protocols</p>
-      </td>
-      <td>
-        <p>Administration routes:</p>
-        <ul>
-          <li>
-            <p>IV (Bolus and Infusion)</p>
-          </li>
-          <li>
-            <p>Oral</p>
-          </li>
-          <li>
-            <p>User defined (free choice of target organ/compartment)</p>
-          </li>
-        </ul>
-        <p>Administration Schemes:</p>
-        <ul>
-          <li>
-            <p>Single</p>
-          </li>
-          <li>
-            <p>once daily, bi-daily, …</p>
-          </li>
-          <li>
-            <p>complex (multi-)periodic schemes</p>
-          </li>
-          <p><img src="assets/images/part-3/PKSim_Protocol_AdvancedEx.png" /></p>
-        </ul>
-      </td>
-    </tr>
-    <tr class="even">
-      <td>Events</td>
-      <td>
-        <ul>
-          <li>
-            <p>Meals</p>
-          </li>
-          <li>
-            <p>Gallbladder emptying</p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr class="odd">
-      <td colspan="2" align="center"><b>Modeling tools</b></td>
-    </tr>
-    <tr class="even">
-      <td style="vertical-align:top">
-        <p>Parameter identification (PI)</p>
-      </td>
-      <td>
-        <p>A fully integrated PI Toolbox provides a straightforward means to adjust key model parameters automatically within user-defined ranges. It is possible to optimize multiple simulations, for example with different dose levels, and multiple observed data sets, simultaneously. A clear visualization of the optimization process and of the optimization results gives you full control and direct feedback whether the identification process was successful.</p>
-        <p><img src="assets/images/part-5/Tab_Data.png" /></p>
-        <p><img src="assets/images/part-5/Tab_Parameters.png"  /></p>
-        <p><img src="assets/images/part-5/visual-feedback-data.jpg" /></p>
-        <p><img src="assets/images/part-5/Results_Calculation_Methods_Variation.png" /></p>
-        <ul>
-        <li>
-          <p>Simultaneous optimization of multiple simulations</p>
-        </li>
-        <li>
-          <p>Simultaneous optimization of multiple observed data sets</p>
-        </li>
-        <li>
-          <p>LLOQ (Lower Limit of Quantification) values are taken into account</p>
-        </li>
-        <li>
-          <p>Linking of multiple simulation parameters to one identification parameter (as absolute value or as a factor)</p>
-        </li>
-        <li>
-          <p>Lin/Log scaling of identification parameters</p>
-        </li>
-        <li>
-          <p>Lin/Log scaling of residuals</p>
-        </li>
-        <li>
-          <p>Multiple optimizations with randomized start values</p>
-        </li>
-        <li>
-          <p>Combining parameter identification with optimization for best suited partition coefficients/permeability methods</p>
-        </li>
-        <li>
-          <p>Available optimization algorithms: </p>
-        </li>
-        <ul>
-          <li>
-            <p>Nelder-Mead</p>
-          </li>
-          <li>
-            <p>Levenberg-Marquardt</p>
-          </li>
-          <li>
-            <p>Monte-Carlo</p>
-          </li>
-        </ul>
-        </li>
-        <li>
-          <p>Visual feedback during optimization</p>
-          <ul>
-            <li>
-              <p>Time profile</p>
-            </li>
-            <li>
-              <p>Predicted vs. Observed</p>
-            </li>
-            <li>
-              <p>Error history: Total error vs number of evaluations</p>
-            </li>
-            <li>
-              <p>Total error: current/best value</p>
-            </li>
-            <li>
-              <p>Identification parameters: current/best value</p>
-            </li>
-            <li>
-              <p>Export of parameters history to MS-Excel</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>Visualization of optimization results</p>
-          <ul>
-            <li>
-              <p>Time profile</p>
-            </li>
-            <li>
-              <p>Predicted vs. Observed</p>
-            </li>
-            <li>
-              <p>Residuals vs. Time</p>
-            </li>
-            <li>
-              <p>Histogram of Residuals</p>
-            </li>
-            <li>
-              <p>Total error</p>
-            </li>
-            <li>
-              <p>Number of evaluations</p>
-            </li>
-            <li>
-              <p>Identification parameters: min/max/start/best value</p>
-            </li>
-            <li>
-              <p>Warning if best values are "close to" boundaries</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>Easy cloning of PI configuration within a project</p>
-        </li>
-        <li>
-          <p>Replacing simulations in PI configuration without losing the settings</p>
-        </li>
-        <li>
-          <p>Update simulations with optimized parameter values</p>
-        </li>
-        <li>
-          <p>Export of PI to Matlab (optimization problem can be run in Matlab using any built-in algorithm)</p>
-        </li>
-        <li>
-          <p>Calculation of time profile confidence intervals</p>
-          <ul>
-            <li>
-              <p><strong>Confidence Interval:</strong> Corresponds to the model error, which is based on the uncertainty of estimated parameters. This uncertainty is based on an estimation of the difference between the mean value of used observed data compared with the mean value of the (unknown) total data.</p>
-            </li>
-            <p><img src="assets/images/part-5/PI_ConfidenceInterval.png"  /></p>
-            </li>
-            <li>
-              <p><strong>Visual Predictive Check Interval:</strong> Corresponds to the uncertainty based on the data error. The data error is the standard deviation of the distribution of the used observed data.</p>
-            </li>
-            <p><img src="assets/images/part-5/PI_VPCCheckInterval.png" /></p>
-            <li>
-              <p><strong>Prediction Interval:</strong> Corresponds to the combination of the model error and the data error. It shows how much future measured data are expected to differ from the model predictions.</p>
-            </li>
-            <p><img src="assets/images/part-5/PI_PredictionInterval.png" /></p>
-      </td>
-      </ul>
-    </tr>
-    <tr class="odd">
-    <td style="vertical-align:top"><p>Sensitivity Analysis</p></td>
-    <td><p><strong>Sensitivity of PK-Parameters (AUC, C<sub>Max</sub>, …) vs. simulation parameters.</strong></p>
-    <p>Because PBPK models can be complex and contain numerous input parameters, it would be useful to know which input parameters have the most impact on the output curves. The Sensitivity Analysis tool provides an answer to this question.</p>
-    <p>For a chosen simulation, the relative impact of selected - or all - input parameters on the PK parameters of the output curves is calculated and displayed. In addition, the input parameters can be ranked by their impact on a certain PK parameter of an output. Results of Sensitivity Analysis can be shown as:</p>
-    <ul>
-    <li><p>Sensitivity table:</p></li>
-    </ul>
-    <p><img src="assets/images/part-5/SA_Results1.png" /></p>
-    <ul>
-    <li><p>Ranking of most sensitive simulation parameters. Most sensitive parameters comprise all parameters that contribute to 90% of total sensitivity.</p></li>
-    </ul>
-    <p><img src="assets/images/part-5/SA_Ranking1.png" /></p></td>
-    </tr>
-    <tr class="even">
-    <td style="vertical-align:top"><p>Lab Journal</p></td>
-    <td><ul>
-    <li><p>Automated documentation of modeling work in model history working journal documenting including labeling and commenting function</p></li>
-    <li><p>Built-in working journal for manual annotation of models and simulations</p></li>
-    <li><p>Roll-back / undo functionality</p></li>
-    </ul>
-    <p><img src="assets/images/factsheet/image019.png" /></p>
-    <p><img src="assets/images/factsheet/image021.png" /></p></td>
-    </tr>
-    <tr class="odd">
-    <td>Model Editor</td>
-    <td>Full transparency and full edit access to all structural model properties</td>
-    </tr>
-    <tr class="even">
-    <td colspan="2" align="center"><b>Simulation Tools</b></td>
-    </tr>
-    <tr class="odd">
-    <td></td>
-    <td><ul>
-    <li><p>Simulation creation by simple combining of previously defined building blocks</p></li>
-    <li><p>Simulation of individuals and populations</p></li>
-    </ul>
-    <p style="padding-left: 2em;">If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when choosing this option.</p>
-    <p style="padding-left: 2em;">Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle.</p>
-    <ul>
-    <li><p>Calculation of drug time courses in the most important organs for every subcompartment (Plasma, Endosome, Interstitial, Intracellular, Blood Cells)</p></li>
-    <li><p>Calculation of the fraction of dose metabolized/excreted</p></li>
-    <li><p>Plotting of all calculated time courses</p>
-    <ul>
-    <li><p>Plot settings (axes, styles, etc.)</p></li>
-    <li><p>Individual simulations:</p>
-    <ul>
-    <li><p>Time profile plots</p></li>
-    </ul></li>
-      <p><img src="assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results1.png"  /></p>
-    <li><p>Population simulations</p>
-    <ul>
-    <li><p>Time profile plots</p></li>
-    </ul></li>
-    </ul></li>
-    </ul>
-	<p><img src="assets/images/part-3/PK-Sim_CreateSimulation_PopSim_TimeProfile_Outputs.png"  /></p>
-    <p><img src="assets/images/part-3/PK-Sim_CreateSimulation_PopSim_TimeProfile_Plot1.png"  /></p>
-    <ul>
-    <li><p>Box-Whisker plots</p></li>
-    </ul>
-    <p><img src="assets/images/factsheet/image025.png" /></p>
-    <ul>
-    <li><p>Range plots</p></li>
-    </ul>
-    <p><img src="assets/images/factsheet/image027.png" /></p>
-    <ul>
-    <li><p>Scatter plots</p></li>
-    </ul>
-    <p><img src="assets/images/factsheet/image029.png"  /></p>
-    <ul>
-    <li><p>Multiple plots per simulation</p></li>
-    <li><p>Export of plotted/simulated results to Excel/CSV/PDF/Image</p></li>
-    </ul>
-    <ul>
-    <li><p>Calculation of the most important PK-Parameters</p>
-    <ul>
-    <li><p>In all simulations</p>
-    <ul>
-    <li><p>AUC_tEnd</p></li>
-    <li><p>AUC_inf</p></li>
-    <li><p>%AUC(tlast-inf)</p></li>
-    <li><p>AUC_tEnd_norm</p></li>
-    <li><p>AUC_inf_norm</p></li>
-    <li><p>AUC Ratio (AUCR)</p></li>
-    <li><p>C_max</p></li>
-    <li><p>C_max_norm</p></li>
-    <li><p>C_max Ratio (Cmax_R)</p></li>
-    <li><p>C_tEnd</p></li>
-    <li><p>t_max</p></li>
-    <li><p>Half-Life</p></li>
-    <li><p>MRT</p></li>
-    </ul></li>
-    <li><p>In simulations with intravenous administration</p>
-    <ul>
-    <li><p>VSS(plasma)</p></li>
-    <li><p>Vd(plasma)</p></li>
-    <li><p>Vss(phys-chem)</p></li>
-    <li><p>Total plasma clearance CL</p></li>
-    <li><p>Total body clearance</p></li>
-    </ul></li>
-    <li><p>In simulations with oral administration</p>
-    <ul>
-    <li><p>Vss(plasma)/F</p></li>
-    <li><p>Vd(plasma)/F</p></li>
-    <li><p>Total plasma clearance/F</p></li>
-    <li><p>Fraction absorbed</p></li>
-    <li><p>Bioavailability</p></li>
-    </ul></li>
-    <li><p>In simulations with multiple administrations</p>
-    <ul>
-    <li><p>AUC_inf_tD1</p></li>
-    <li><p>AUC_inf_tD1_n</p></li>
-    <li><p>...tDi-tDj</p></li>
-    </ul></li>
-    <ul>
-    <li><p>...tDlast-tDEnd</p></li>
-    <li><p>...tDlast-1- tDlast</p></li>
-    <li><p>C_trough_dDi</p></li>
-    <li><p>C_trough_dlast</p></li>
-    </ul>
-    </ul>
-    </ul>
-    <ul>
-    <li>Comparisons of calculated simulation results over multiple simulations (both individual and population simulations)</p></li>
-    <li><p>Cloning of simulation</p></li>
-    </ul>
-    <ul>
-    <li><p>Replacing of Building Blocks in already created simulations</p></li>
-    <li><p>Synchronization between a building block used to create a simulation and the simulation</p></li>
-    <li><p>Comparison between simulations</p></li>
-    <li><p>Comparison between building blocks and simulations</p></li>
-    </ul>
-    <p><img src="assets/images/factsheet/image031.png" /></p>
-    <ul>
-    <li><p>Comparison of building blocks can also be done between two simulations on the same kind of building block</p></li>
-    </ul>
-    <p><img src="assets/images/factsheet/image033.png" /></p>
-    <ul>
-    </ul></td>
-    </tr>
-    <tr class="even">
-    <td></td>
-    <td></td>
-    </tr>
-    <tr class="odd">
-    <td colspan="2" align="center"><b>Data</br></td>
-    </tr>
-    <tr class="even">
-    <td style="vertical-align:top">Data import</td>
-    <td>
-    <p>Import filters for</p>
-    <ul>
-    <li><p>MS Excel</p></li>
-    <li><p>csv file</p></li>
-    <li><p>Nonmem files</p></li>
-    </ul></td>
-    </tr>
-    <tr class="odd">
-    <td>Model import</td>
-    <td>
-    <p>Import of SBML models</p>
-    </td>
-    </tr>
-    <tr class="even">
-    <td></td>
-    <td></td>
-    </tr>
-    <tr class="odd">
-    <td></td>
-    <td></td>
-    </tr>
-  </tbody>
-</table>
+* Pre-parameterized whole-body PBPK models including detailed integrated GI tract for
+  * Human
+  * Monkey
+  * Dog (beagle and mongrale)
+  * Minipig
+  * Rat
+  * Mouse
+  * Rabbit
+* Allowing for full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.
+* Most important organs included. For each organ optional processes can be added:
+  * Metabolizing pathways
+  * Different active transporter types(influx, efflux, Pgp-like, bi-directional)
+  * Protein binding partners
+* Biliary tract included, enables enterohepatic cycling
+* Scaling of Individuals
+  Scaling can be used to change the biometrics of an existing individual, i.e. an adult model may be scaled to an infant model while maintaining/scaling all specific modifications
+  
+### Populations
 
+* Database for population simulations with distributions of anatomical and physiological parameters for
+  * European Caucasians (ICRP, 2002)
+  * US Caucasian (NHANES, 1997)
+  * US Asians (NHANES, 1997)
+  * US Africans (NHANES, 1997)
+  * Asian (Tanaka, 1996)
+  * Japanese (2015)
+  * Preterms (2015)
+  * Pregnant (Dallmann et al. 2017)
 
+### Protein Expression
 
-|               |                                                                                                                              |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| MoBi          |                                                                                                                              |
-| Editing       | Editing of PK-Sim simulations to the detail of all parameters, structural elements, transports, reactions, events, and more. |
-|               | Adding features to PK-Sim models, like tumors, complex molecular interactions, or non-standard drug applications             |
-|               | Display and editing of a simulation as tree or diagram                                                                       |
-| Comparing     | Result comparison charts                                                                                                     |
-|               | Simulation and building block comparison, exportable list of differences                                                     |
-| Merging       | Merging of building blocks from different simulations                                                                        |
-| Simulating    | Parameter identification and sensitivity analysis                                                                            |
-|               | Re-sending simulations back to PK-Sim for population simulation                                                              |
-| Documentation | Integrated working journal, sharable with PK-Sim, for documentation                                                          |
-|               | Automatic tracking of changes made in a history log file                                                                     |
-| Export        | Export of simulated results as Excel file                                                                                    |
-|               | Various formats of model exports and listings, like XML, Excel                                                               |
-| Import        | Import of model parameters from Excel files                                                                                  |
-|               | Import of model files in SBML format for QSP model building                                                                                         |
-| Building      | Building models from scratch, like reaction pathways into a user-built spatial structure or for compartmental modeling       |
-|               | Option to select frequently accessed parameters as favorites                                                                 |
+The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building. Public database which were imported are
+* Whole genome expression arrays from ArrayExpress (European Informatics Institute, 2010, http://www.ebi.ac.uk/microarray-as/ae/)
+* RT-PCR derived gene expression (Nishimura et al., 2003; Nishimura and Naito, 2005, 2006)
+* Expressed sequence tags (EST) from UniGene (National Center for Biotechnology Information, 2010, http://www.ncbi.nlm.nih.gov/unigene).
+
+### Compounds
+
+* Full ADME characterization of drugs including
+  * Molecular weight
+  * Lipophilicity
+  * Protein binding
+  * Acid/base pKa
+  * Solubility
+  * Intestinal permeability
+  * Specific protein binding kinetics
+  * Enzyme specific metabolization kinetics
+  * Transporter specific transport kinetics
+  * Inhibition and induction parameters
+  * and for large therapeutic molecules (e.g. antibodies)
+    * Solute radius (calculated for molecular weight as per default)
+    * Dissociation constant for binding to FcRn
+* Including a set of pre-parameterized standard compounds
+
+#### Partition Coefficients
+
+Prediction models for tissue partition coefficients
+* PK-Sim 2003
+*  Rodgers & Rowland
+* Schmitt
+* Poulin & Theil
+* Berezhkovsky
+
+#### Permeability
+
+Prediction models for cellular permeabilities and intestinal permeability
+
+### Formulations
+
+* Dissolved
+* Particle distribution
+* Weibull
+* Lint80
+* Table
+* 1st order
+* Zero order
+
+### Administration protocols
+
+* Administration routes:
+  * IV (Bolus and Infusion)
+  * Oral
+  * User defined (free choice of target organ/compartment)
+* Administration Schemes:
+  * Single
+  * once daily, bi-daily, …
+  * complex (multi-)periodic schemes
+<img src="assets/images/part-3/PKSim_Protocol_AdvancedEx.png" />
+
+### Events
+
+* Meals
+* Gallbladder emptying
+
+### Observers
+
+## Modeling tools
+
+### Parameter identification (PI)
+
+A fully integrated PI Toolbox provides a straightforward means to adjust key model parameters automatically within user-defined ranges. It is possible to optimize multiple simulations, for example with different dose levels, and multiple observed data sets, simultaneously. A clear visualization of the optimization process and of the optimization results gives you full control and direct feedback whether the identification process was successful.
+
+<img src="assets/images/part-5/Tab_Data.png" />
+
+<img src="assets/images/part-5/Tab_Parameters.png"  />
+
+<img src="assets/images/part-5/visual-feedback-data.jpg" />
+
+<img src="assets/images/part-5/Results_Calculation_Methods_Variation.png" />
+
+* Simultaneous optimization of multiple simulations
+* Simultaneous optimization of multiple observed data sets
+* LLOQ (Lower Limit of Quantification) values are taken into account
+* Linking of multiple simulation parameters to one identification parameter (as absolute value or as a factor)
+* Lin/Log scaling of identification parameters
+* Lin/Log scaling of residuals
+* Multiple optimizations with randomized start values
+* Combining parameter identification with optimization for best suited partition coefficients/permeability methods
+* Available optimization algorithms:
+  * Nelder-Mead
+  * Levenberg-Marquardt
+  * Monte-Carlo
+* Visual feedback during optimization
+  * Time profile
+  * Predicted vs. Observed
+  * Error history: Total error vs number of evaluations
+  * Total error: current/best value
+  * Identification parameters: current/best value
+  * Export of parameters history to MS-Excel
+* Visualization of optimization results
+  * Time profile
+  * Predicted vs. Observed
+  * Residuals vs. Time
+  * Histogram of Residuals
+  * Total error
+  * Number of evaluations
+  * Identification parameters: min/max/start/best value
+  * Warning if best values are "close to" boundaries
+* Easy cloning of PI configuration within a project
+* Replacing simulations in PI configuration without losing the settings
+* Update simulations with optimized parameter values
+* Calculation of time profile confidence intervals
+    * **Confidence Interval**: Corresponds to the model error, which is based on the uncertainty of estimated parameters. This uncertainty is based on an estimation of the difference between the mean value of used observed data compared with the mean value of the (unknown) total data.
+  <img src="assets/images/part-5/PI_ConfidenceInterval.png"  />
+    * **Visual Predictive Check Interval**: Corresponds to the uncertainty based on the data error. The data error is the standard deviation of the distribution of the used observed data.
+      <img src="assets/images/part-5/PI_VPCCheckInterval.png" />
+    * **Prediction Interval**: Corresponds to the combination of the model error and the data error. It shows how much future measured data are expected to differ from the model predictions.
+      <img src="assets/images/part-5/PI_PredictionInterval.png" />
+
+### Sensitivity Analysis
+
+#### Sensitivity of PK-Parameters (AUC, CMax, …) vs. simulation parameters.
+
+Because PBPK models can be complex and contain numerous input parameters, it would be useful to know which input parameters have the most impact on the output curves. The Sensitivity Analysis tool provides an answer to this question.
+For a chosen simulation, the relative impact of selected - or all - input parameters on the PK parameters of the output curves is calculated and displayed. In addition, the input parameters can be ranked by their impact on a certain PK parameter of an output. Results of Sensitivity Analysis can be shown as:
+
+* Sensitivity table:
+<img src="assets/images/part-5/SA_Results1.png" />
+
+* Ranking of most sensitive simulation parameters. Most sensitive parameters comprise all parameters that contribute to 90% of total sensitivity.
+<img src="assets/images/part-5/SA_Ranking1.png" />
+
+### Lab Journal ("Working Journal")
+
+* Automated documentation of modeling work in model history working journal documenting including labeling and commenting function
+* Built-in working journal for manual annotation of models and simulations
+* Roll-back / undo functionality
+<img src="assets/images/factsheet/image019.png" />
+<img src="assets/images/factsheet/image021.png" />
+
+### Model Editor
+
+Full transparency and full edit access to all structural model properties
+
+## Simulation Tools
+
+* Simulation creation by simple combining of previously defined building blocks
+
+* Simulation of individuals and populations
+
+  If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when choosing this option.
+
+  Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle.
+
+* Calculation of drug time courses in the most important organs for every subcompartment (Plasma, Endosome, Interstitial, Intracellular, Blood Cells)
+
+* Calculation of the fraction of dose metabolized/excreted
+
+* Plotting of all calculated time courses
+
+  * Plot settings (axes, styles, etc.)
+  * Individual simulations:
+    * Time profile plots
+<img src="assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results1.png"  />
+  * Population simulations
+    * Time profile plots
+<img src="assets/images/part-3/PK-Sim_CreateSimulation_PopSim_TimeProfile_Outputs.png"  />
+<img src="assets/images/part-3/PK-Sim_CreateSimulation_PopSim_TimeProfile_Plot1.png"  />
+    * Box-Whisker plots
+<img src="assets/images/factsheet/image025.png" />
+    * Range plots
+<img src="assets/images/factsheet/image027.png" />
+    * Scatter plots
+<img src="assets/images/factsheet/image029.png"  />
+
+* Multiple plots per simulation
+
+* Export of plotted/simulated results to Excel/CSV/PDF/Image
+
+* Calculation of the most important PK-Parameters
+
+  * In all simulations
+    * AUC_tEnd
+    * AUC_inf
+    * %AUC(tlast-inf)
+    * AUC_tEnd_norm
+    * AUC_inf_norm
+    * AUC Ratio (AUCR)
+    * C_max
+    * C_max_norm
+    * C_max Ratio (Cmax_R)
+    * C_tEnd
+    * t_max
+    * Half-Life
+    * MRT
+  * In simulations with intravenous administration
+    * VSS(plasma)
+    * Vd(plasma)
+    * Vss(phys-chem)
+    * Total plasma clearance CL
+    * Total body clearance
+  * In simulations with oral administration
+    * Vss(plasma)/F
+    * Vd(plasma)/F
+    * Total plasma clearance/F
+    * Fraction absorbed
+    * Bioavailability
+  * In simulations with multiple administrations
+    * AUC_inf_tD1
+    * AUC_inf_tD1_n
+    * ...tDi-tDj
+    * ...tDlast-tDEnd
+    * ...tDlast-1- tDlast
+    * C_trough_dDi
+    * C_trough_dlast
+  * In simulations with drug drug interactions
+    * AUC Ratio
+    * C_max Ratio 
+  
+* Comparisons of calculated simulation results over multiple simulations (both individual and population simulations)
+
+* Cloning of simulations
+
+* Replacing of Building Blocks in already created simulations
+
+* Synchronization between a building block used to create a simulation and the simulation
+
+* Comparison between simulations
+
+* Comparison between building blocks and simulations
+<img src="assets/images/factsheet/image031.png" />
+
+* Comparison of building blocks can also be done between two simulations on the same kind of building block
+<img src="assets/images/factsheet/image033.png" />
+
+## Data
+
+* Import of experimental (observed) data from:
+  * MS Excel
+  * CSV
+  * Nonmem
+* Import of SBML models
+
+## MoBi
+
+* Editing
+  * Editing of PK-Sim simulations to the detail of all parameters, structural elements, transports, reactions, events, and more.
+  * Adding features to PK-Sim models, like tumors, complex molecular interactions, or non-standard drug applications
+  * Display and editing of a simulation as tree or diagram
+* Comparing:
+  * Result comparison charts
+  * Simulation and building block comparison, exportable list of differences
+* Merging of building blocks from different simulations
+* Parameter identification and sensitivity analysis
+* Re-sending simulations back to PK-Sim for population simulation
+* Documentation:
+  * Integrated working journal, sharable with PK-Sim, for documentation
+  * Automatic tracking of changes made in a history log file
+* Export
+  * Export of simulated results as Excel file
+  * Various formats of model exports and listings, like XML, Excel
+* Import
+  * Import of model parameters from Excel files
+  * Import of model files in SBML format for QSP model building
+* Building models from scratch, like reaction pathways into a user-built spatial structure or for compartmental modeling
+* Option to select frequently accessed parameters as favorites

@@ -65,7 +65,7 @@ If **Human**  <img width="32" src="../assets/icons/Human.ico">  is selected, you
 
 - Black American (NHANES, 1997) \[[82](../references.md#82)\]
 
-- European (ICRP, 2002) \[[84](../references.md#84)\]
+- European (ICRP, 2002) \[[84](../references.md#84)\], [[113]](../references.md#113)
 
 - Mexican American -White (NHANES, 1997) \[[82](../references.md#82)\]
 
@@ -73,9 +73,9 @@ If **Human**  <img width="32" src="../assets/icons/Human.ico">  is selected, you
 
 - Japanese (2015) \[[67](../references.md#67)\]
 
-- Preterm
+- Preterm [[111]](../references.md#111)
 
-- Pregnant (Dallmann et al. 2017)
+- Pregnant (Dallmann et al. 2017) [[107 - 110]](../references.md#107)
 
 In the following drop-down menu, the gender is specified.
 
@@ -118,19 +118,16 @@ Significant breed-specific differences exist for some animal species. For exampl
 {% endhint %}
 
 - For monkeys, the default values represent an average monkey with a body weight of 5.6 kg. The monkey-specific physiological parameters were derived for macaques such as rhesus and cynomolgus monkeys \[[98](../references.md#98)\].
-
 - The default dog-specific physiological parameters were obtained from literature and represent an average dog with a weight of 13.7 kg. Breed specific differences are not taken into account. Still, for the most popular breed of dogs, the beagle, anatomical and physiological information specifically representing an adult beagle dog that weights 10.5 kg is implemented [1](../references.md#1).
-
 - For minipigs, the default body weight is 40 kg. An important feature of the minipig is the reported delay in gastric emptying. Furthermore, emptying appears to be incomplete, so there may be food present in the stomach for 24 hours a day. The high variability in gastric pH and emptying should be taken into account, particularly when monolithic controlled release and enteric-coated dosage forms are intended to be simulated.
-
 - For the rat-specific physiological parameters affecting oral absorption from the GI tract see \[[93](../references.md#93)\]. An important feature of this species is that the rat lacks a gallbladder. As a result, bile fluid is secreted continuously in dilute form, which has an important effect on biliary clearance and entero-hepatic circulation (see [PK-Sim® - Events](pk-sim-events.md)).
 - If mouse is selected, the anatomical and physiological data are set at default values for a mouse with a mean weight of 20 g.
-
+- For rabbits, the default body weight is 2.5 kg. For the parameter values not found in the literature, the mouse PBPK model parameters were transferred and used, as it is the closest animal species to the rabbit among the species available in the physiology database (e.g., mouse retains a gallbladder unlike the rat). [[112]](../references.md#112)
 - Currently, only for mouse, monkey and human species specific values for the concentration of the FcRn receptor, the concentration of the endogenous IgG and the affinity of the endogenous IgG to the FcRn receptor (needed for the **Model for proteins and large molecules**) are available. For all other animal species, these values are taken from the monkey model.
   {% endhint %}
 
 Irrespective of the species chosen, the **Calculation Method** for the estimation of the surface area of the capillary endothelium has to be selected. The endothelial surface area is needed for calculation of the rate of permeation through the endothelial barrier between plasma and interstitial space, which is determined by the permeability - surface area product. The drug dependent specific organ permeability can be defined in the **Compound** building block (see [PK-Sim® - Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md)).
-  
+
 Literature for capillary surface areas for the different organs and species is rather limited. Therefore, PK-Sim® provides two heuristics to estimate the capillary surface area of the organs, which can be selected from the drop-down menu
 
 1.  **Organ vascularization (default method)**. The capillary surface area (SA) is estimated by ![Image](../assets/images/part-3/sa-k.png) , with the constant of proportionality k, the fraction of vascular space of an organ ![Image](../assets/images/part-3/fvas-organ.png), and the organ volume ![Image](../assets/images/part-3/vorgan.png). The idea behind this heuristics is the following: with the assumption that the morphology of the vascular tree is similar in each organ, the specific surface area per organ volume can be estimated by the capillary density of an organ, which in turn can be estimated by the fraction of vascular space of an organ.
@@ -140,7 +137,7 @@ Literature for capillary surface areas for the different organs and species is r
 #### Anatomy & Physiology‌
 
 Anatomical and physiological properties in PK-Sim® are set at default values for a mean representative of a species. These default values were carefully selected from literature. In the human species module, also the mean values for children of all age groups are included. For some purposes, e.g. to simulate pathological disorders, it is desirable to change these values. This can be done in the **Anatomy & Physiology** tab, in which the parameters are, using the default settings, displayed in a tree structure on the left hand side.
-  
+
 By default, a **Simple** view of the various properties is displayed, in which only the most relevant parameters are shown. Using the drop-down menu at the bottom of the window, you can switch to the **Advanced** tree view or to the **Hierarchy** view. In the **Simple** and the **Advanced** view, the parameters are grouped based on function whereas in the **Hierarchy** view, they are listed according to the internal model structure. Please note that only containers comprising visible parameters are displayed. There are additional parameters in the model which are not displayed in PK-Sim®. They are, however, displayed in MoBi®. For details please see [Working with MoBi®](../part-4/first-steps.md). The tree view shows only drawings that are currently open. To access the various parameters,
 
 1.  Click on the light grey arrow to open the respective tree view node
@@ -154,7 +151,7 @@ Use the **Filter** function above the tree view to find parameters more quickly.
 {% endhint %}
 
 In the window on the right hand side, the details of the respective parameter group will be shown.
-  
+
 Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** <img width="32" src="../assets/icons/Favorites.ico"> in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
 
 {% hint style="tip" %}
