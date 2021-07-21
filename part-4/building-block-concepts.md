@@ -86,10 +86,14 @@ This building block defines the start values of the molecules in the model. Thes
 
 This building block defines the start values of the parameters in the model. This allows for the setting of specific physiological parameters if different individuals, species or patient subgroups are to be considered.
 
-## Observed Data‌
-
-This building block defines the start values of the parameters in the model. This allows for the setting of specific physiological parameters if different individuals, species or patient subgroups are to be considered.
-
 {% hint style="tip" %}
 The size of the organs of a species, i.e., the containers, are defined in this building block. This means that scaling from one species to another or scaling from adults to children can be done by exchanging the parameter start values of the organs, blood flows etc..
 {% endhint %}
+
+## Observed Data‌
+
+This building block includes the imported experimental (observed) data which can be e.g. [displayed in charts](simulation-results.md#observed-data) or [used for parameter identification](../part-5/parameter-identification.md). 
+
+The import process is described in detail in [Shared Tools: Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
+
+

@@ -36,6 +36,8 @@ Any file used in the qualification plan (e.g. PK-Sim projects, observed data set
 In the next step, the **Qualification Runner** (stand-alone tool) processes the qualification plan, i.e. all project parts are exported and prepared for the **Reporting Engine**. The Reporting Engine provides a validated environment (currently implemented in MATLAB®, a transfer to R is in development) for model execution and generates tables and figures for the final qualification report. This report contains the evaluation of the individual PBPK models with observed data (i.e. standard goodness of fit plot, residuals-vs-time plot, visual predictive checks) and a comprehensive qualification of the specific use case assessing the predictive performance of the OSP suite by means of a predefined set of qualification measures and charts.
 The automated execution of the described workflow can be triggered to assess re-qualification, for example, when new data is available, after changes in model structure or parameterization, or when releasing a new version of the OSP Suite.
 
+Example: **Showcase of predicting cytochrome P450 3A4-mediated drug-drug interactions** ([[121]](../references.md#121))
+
 # Creating a (re-)qualification plan part I
 
 Creating a qualification report is similar to writing a scientific article: A report is written and structured in chapters, for example beginning with a short description of the scientific background of the scenario (use-case), followed by a brief methodological description (e.g. modeling strategy, available data used during model building (for model evaluation report), and underlying main assumptions) and the presentation of the qualification workflow results in the third section of the report.

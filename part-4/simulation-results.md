@@ -14,7 +14,7 @@ To compare the simulation results with observed (i.e., experimental) data, e.g.,
 
 ### Importing Observed Data‌
 
-To import observed data either use the <img width="32" src="../assets/icons/ObservedData.ico"> **Observed Data** button in the "Modeling&Simulation" ribbon group "Import" or right-click ![Image](../assets/icons/mouse_select_right.png) on the **Observed Data** building block in the Building Block Explorer and select <img width="32" src="../assets/icons/ObservedData.ico"> **Import Observed Data from Excel** in the context menu. MoBi® supports the import of MS Excel® worksheets in a defined format which is also described in detail in _Shared Tools - Import and edit of Observed Data_.
+To import observed data either use the <img width="32" src="../assets/icons/ObservedData.ico"> **Observed Data** button in the "Modeling&Simulation" ribbon group "Import" or right-click ![Image](../assets/icons/mouse_select_right.png) on the **Observed Data** building block in the Building Block Explorer and select <img width="32" src="../assets/icons/ObservedData.ico"> **Import Observed Data from Excel** in the context menu. MoBi® supports the import of MS Excel® worksheets in a defined format which is also described in detail in [Shared Tools: Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
 
 Once the import has been completed, the imported data are added to the "Observed Data" building block in the Building Block Explorer. The building block that contains the observed data may be renamed by right-clicking <img width="32" src="../assets/icons/Rename.ico"> on it and selecting Rename in the context menu.
 
@@ -37,7 +37,7 @@ MoBi® supports the export of simulation results to MS Excel® as xls or xlsx sp
 ### Export Data‌
 
 To export simulation results, right-click ![Image](../assets/icons/mouse_select_right.png) on the simulation in the simulation explorer and select <img width="32" src="../assets/icons/ObservedData.ico"> **Export results to Excel** in the context menu.
-  
+
 {% hint style="warning" %}
 All existing results of the selected simulation are exported! In case the simulation produces a large number of results (high number of compartments, molecules, or observers), you may reach the limit of MS Excel® file size.
 {% endhint %}
