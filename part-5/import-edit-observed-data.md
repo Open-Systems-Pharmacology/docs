@@ -12,7 +12,7 @@ All files need to fulfil the following pre-requisites:
 
 Each data table:
 
-* **must** have at least 2 data columns with numeric values (one column with **time** values and one column with  **measurement** values). 
+* **must** have at least 2 data columns with numeric values: one column with **time** values and one column with  **measurement** values. 
 * **can** have additional data column with numeric values for measurement **error** values 
 * **can** have additional data column with numeric values for the *lower limit of quantification* (**LLOQ**)
   * It is also possible to provide LLOQ values directly in the measurement column (s. [LLOQ](#lloq) for details)
@@ -39,7 +39,7 @@ Some examples:
   | 10         | 1                     |
   | 20         | 0,01                  |
 
-* Time, measurement and error; units in the same column
+* Time, measurement and error; units in the column header
 
   | Time [min] | Concentration [mg/ml] | Error [mg/ml] |
   | ---------- | --------------------- | ------------- |
@@ -49,7 +49,7 @@ Some examples:
   | 10         | 1                     | 0,8           |
   | 20         | 0,01                  |               |
 
-* Time, measurement, error, LLOQ, additional meta data; units in the same column
+* Time, measurement, error, LLOQ, additional meta data; units in the column header
 
   | Time [min] | Organ | Compartment | Dose | Route | Concentration [mg/ml] | Error | LLOQ |
   | ---------- | ----- | ----------- | ---- | ----- | --------------------- | ----- | ---- |
@@ -83,11 +83,11 @@ Some examples:
 
   | Time [min] | Organ | Compartment   | Measurement | Type          | Measurement_Unit | Error |
   | ---------- | ----- | ------------- | ----------- | ------------- | ---------------- | ----- |
-  | 1          | Brain | Plasma        | 0,1         | Conc          | mg/ml            |       |
-  | 2          | Brain | Plasma        | 12          | Conc          | mg/ml            | 2     |
-  | 3          | Brain | Plasma        | 2           | Conc          | mg/ml            | 0,5   |
-  | 10         | Brain | Plasma        | 1           | Conc          | mg/ml            |       |
-  | 20         | Brain | Plasma        | 0,01        | Conc          | mg/ml            |       |
+  | 1          | Brain | Plasma        | 0,1         | Concentration | mg/ml            |       |
+  | 2          | Brain | Plasma        | 12          | Concentration | mg/ml            | 2     |
+  | 3          | Brain | Plasma        | 2           | Concentration | mg/ml            | 0,5   |
+  | 10         | Brain | Plasma        | 1           | Concentration | mg/ml            |       |
+  | 20         | Brain | Plasma        | 0,01        | Concentration | mg/ml            |       |
   | 1          | Liver | Intracellular | 10          | F_metabolized | %                |       |
   | 2          | Liver | Intracellular | 20          | F_metabolized | %                |       |
   | 3          | Liver | Intracellular | 25          | F_metabolized | %                |       |
@@ -101,17 +101,15 @@ The general process of importing observed data is outlined here. A detailed desc
 To import data, you should do the following:
 
 1.  Select the input file (see [File Selection](#file-selection)).
-
-2.  Specify the column mapping (see [Mapping panel](#mapping-panel)), enter all required metadata and set the unit information.
-
-3. Load one or more sheets. Sheets that should not be imported can be closed by clicking the "x" or the context menu.
-
-3.  Continue loading data sheets or files by changing the column mapping or selecting another datasheet. Upon editing of the column mapping, the data are re-interpreted and updated automatically. The configured mapping remains the same for the whole import process, and all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in separate imports.
-[comment]: # 'Continue loading data by changing the column mapping' is contradicting 'all imported sheets will use the same data mapping', isn't it?
-4.  Complete the transfer of the imported data sheets by clicking the import button.
+2.  Specify the **column mapping** (see [Mapping panel](#mapping-panel)), enter all required metadata and set the unit and LLOQ information.
+3.  [Optionally] Apply **data filters** to exclude some data sets/values from import (see [Data preview](#preview-of-imported-and-original-data)).
+4.  Add one or more sheets to the import preview. Sheets that should not be imported can be closed by clicking the "x" or the context menu.
+5.  [Optionally] Adjust column mapping and/or data filtering. Upon editing of the column mapping, the data preview is re-interpreted and updated automatically. The configured mapping remains the same for the whole import process, and all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in separate imports.
+6.  [Optionally] Adjust the **naming pattern** of the data sets to be imported.
+7.  Complete the transfer of the imported data sheets by clicking the import button.
 
 ### File Selection
-To import a new set of data from an excel file, click on the **Add Observed Data** button in the context menu of the observed data and specify the excel file to be imported.
+To import a new set of data from a file, click on the **Add Observed Data** button in the context menu of the observed data and specify the file to be imported.
 
 ![File Selection Dialog](../assets/images/part-5/FileSelectionDialog.png)
 
@@ -120,17 +118,21 @@ The input file must comply with one of the supported formats. If only one sheet 
 {% endhint %}
 
 {% hint style="warning" %}
-Both excel file formats (.xls and .xlsx), as well as .csv files, are supported, and it is **not** required to have Microsoft Excel® installed on your computer.
+Both excel file formats (.xls and .xlsx), as well as CSV files (.csv, .nmdat), are supported, and it is **not** required to have Microsoft Excel® installed on your computer.
 {% endhint %}
 
 {% hint style="tip" %}
-By switching the file type combo box value, it is possible to import a comma-separated values file (.csv or .nmdat). For such files, the user is prompted to select the separator used for parsing. Supported separators are ';', ',', '.', and tabulator. Values can be enclosed in quotes.
+By switching the file type combo box value, it is possible to import a comma-separated values file (.csv or .nmdat). For such files, the user is prompted to select the column separator used for parsing. Supported separators are ';', ',', '.', and tabulator. Values can be enclosed in double quotes.
 {% endhint %}
 
 
 ### Preview of imported and original data
 
-After selecting the file, a split window appears (see screenshot below). The right panel shows a preview of the imported data file, each tab representing one sheet. 
+After selecting the file, a split window appears (see the screenshot below). 
+
+The left panel ("*Mapping settings*") is described in detail in the next section ([Mapping Panel](#mapping-panel)).
+
+The right panel shows a preview of the imported data file, each tab representing one sheet. 
 
 ![Importer Window](../assets/images/part-5/ImporterInitialWindow.png)
 
@@ -143,19 +145,17 @@ If the user closes an already loaded sheet, it will be removed from the loaded s
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
 
 
-The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters.
+The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters (s. [this tutorial](https://devexpress.github.io/dotnet-eud/interface-elements-for-desktop/articles/filter-editor/examples-of-using-the-filter-editor.html) and [this video tutorial](https://www.youtube.com/watch?v=A6OgNirrPaE#t=27s) for examples).
 
-![Importer Data Table Column Filter](../assets/images/part-5/ImporterTableColumnFilter.png)
-
-![Importer Filter Editor](../assets/images/part-5/ImporterFilterEditor.png)
+![Importer Data Table Column Filter](../assets/images/part-5/ImporterTableColumnFilter.png)![Importer Filter Editor](../assets/images/part-5/ImporterFilterEditor.png)
 
 {% hint style="warning" %}
-By default, the defined filter changes only the viewing of the data. The user can choose to restrict importing to the filtered data by checking the checkbox "Use the filters for importing the data" under the data preview table.  
+By default, the defined filter changes only the **preview** of the data. The user can choose to restrict **importing** to the filtered data by checking the checkbox "Use the filters for importing the data" under the data preview table.  
 {% endhint %}
 
-There are two buttons for loading - one for loading the current sheet that the user is viewing and the other to load all currently open sheets of the file. In the latter case, **all** opened sheets need to comply to the current data mapping.
+There are two buttons for adding data to the import preview - one for adding the current sheet that the user is viewing and the other to add all currently open sheets of the file. In the latter case, **all** opened sheets need to comply to the current data mapping.
 
-On the top-right part of the window, one can see the path of the selected excel source file and also use the "..."-button to select a new file. Selecting a new file, though, will cause the mapping and loaded sheets to be reset, and the work you have done on the current input file will be lost.
+On the top-right part of the window, one can see the path of the selected source file and also use the "..."-button to select a new file. Selecting a new file, though, will cause the mapping and loaded sheets to be reset, and the work you have done on the current input file will be lost.
 
 
 
@@ -166,10 +166,13 @@ The left panel of the window displays the mapping of the imported column identif
 {% hint style="note" %}
 The mapping can be reset by right-clicking on the mapping panel and selecting one of the displayed options.
 {% endhint %}
-[comment]: # the box above does not necessarily need to be a box. but the info is very important and maybe you could also add a screenshot?
 
-The mapping panel is available throughout the whole import process. If the user changes the mapping, the changes are automatically applied to all data sheets, and the result of the modified mapping is automatically updated. If the updated mapping leads to an error because it would not pass validation, the result of modifying the mapping is a validation error.
-[comment]: # I'm not sure what the last sentence means. The error message only occurs when trying to load a sheet.
+![Observed data mapping context menu](../assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
+
+
+//TODO: nächsten Absatz verschieben zu PReview/Naming pattern.
+
+The mapping panel is available throughout the whole import process. If the user changes the mapping, the changes are automatically applied to all data sheets, and the result of the modified mapping is automatically updated. 
 
 As shown in the screenshot below, the user gets a view of all the available mappings and can map a column to them. A column can be selected to a mapping only once and will no longer be available on the drop-down menus for other mappings, with one exception: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
