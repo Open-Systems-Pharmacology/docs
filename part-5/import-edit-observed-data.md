@@ -145,7 +145,7 @@ If the user closes an already loaded sheet, it will be removed from the loaded s
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
 
 
-The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters (s. [this tutorial](https://devexpress.github.io/dotnet-eud/interface-elements-for-desktop/articles/filter-editor/examples-of-using-the-filter-editor.html) and [this video tutorial](https://www.youtube.com/watch?v=A6OgNirrPaE#t=27s) for examples).
+The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters. For examples of filter editor usage s. [this tutorial](https://devexpress.github.io/dotnet-eud/interface-elements-for-desktop/articles/filter-editor/examples-of-using-the-filter-editor.html) and [this video tutorial (up to minute 2:55)](https://www.youtube.com/watch?v=A6OgNirrPaE#t=27s) for examples).
 
 ![Importer Data Table Column Filter](../assets/images/part-5/ImporterTableColumnFilter.png)![Importer Filter Editor](../assets/images/part-5/ImporterFilterEditor.png)
 
@@ -187,7 +187,7 @@ The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' ma
 For the molecule mapping, a column from the sheet can be selected. Alternatively, the user can select from a drop-down menu of the available molecules from the project or specify a new molecule manually by clicking "Edit manually" under "Edit extra fields". 
 
 
-The user can also select one or more 'Group by'-mappings. Those mappings are used to break down a single datasheet into multiple datasets according to the distinct values of the column mapped to the 'Group by'.
+The user can also select one or more 'Group by'-mappings. Those mappings are used to break down a single data sheet into multiple datasets according to the distinct values of the column mapped to the 'Group by'.
 
 
 
@@ -240,8 +240,8 @@ The import can be finalized by clicking on the **Import** button.
 ## Saving the configuration
 
 By clicking the "Save configuration"-button, the user can save the settings that he has configured to an .xml file. This configuration includes the mapping, the NaN preferences, the selected sheets, the path to the selected file and all the other information that can be configured in the importer. 
-[//]: # what is everything else? xD
-The saved configuration can be used to resume the configuring at a later timepoint or to import a different file that should be imported with exactly the same configuration.
+[//]: # what is everything else? 
+The saved configuration can be used to resume the configuring at a later time point or to import a different file that should be imported with exactly the same configuration.
 
 {% hint style="note" %}
 If some sheets have already been loaded, this state is also part of the configuration. 
