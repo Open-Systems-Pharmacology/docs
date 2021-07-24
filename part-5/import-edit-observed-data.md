@@ -100,18 +100,20 @@ The general process of importing observed data is outlined here. A detailed desc
 
 To import data, you should do the following:
 
-1.  Select the input file (see [File Selection](#file-selection)).
-2.  Specify the **column mapping** (see [Mapping panel](#mapping-panel)), enter all required metadata and set the unit and LLOQ information.
-3.  [Optionally] Apply **data filters** to exclude some data sets/values from import (see [Data preview](#preview-of-imported-and-original-data)).
-4.  Add one or more sheets to the import preview. Sheets that should not be imported can be closed by clicking the "x" or the context menu.
-5.  [Optionally] Adjust column mapping and/or data filtering. Upon editing of the column mapping, the data preview is re-interpreted and updated automatically. The configured mapping remains the same for the whole import process, and all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in separate imports.
-6.  [Optionally] Adjust the **naming pattern** of the data sets to be imported.
-7.  Complete the transfer of the imported data sheets by clicking the import button.
+1.  Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®:
+![Add Observed Data](../assets/images/part-5/AddObservedData.png)
+    * In  PK-Sim® you can also preselect for which molecule observed data should be imported. For this, click on "Add Observed Data for" and select a molecule from the dropdown list:
+![Add Observed Data for](../assets/images/part-5/AddObservedDataFor.png)
+2.  Select the input file (see [File Selection](#file-selection)).
+3.  Specify the **column mapping** (see [Mapping panel](#mapping-panel)), enter all required metadata and set the unit and LLOQ information.
+4.  [Optionally] Apply **data filters** to exclude some data sets/values from import (see [Data preview](#preview-of-imported-and-original-data)).
+5.  Add one or more sheets to the import preview. Sheets that should not be imported can be closed by clicking the "x" or the context menu.
+6.  [Optionally] Adjust column mapping and/or data filtering. Upon editing of the column mapping, the data preview is re-interpreted and updated automatically. The configured mapping remains the same for the whole import process, and all the imported sheets will be using the same mapping. If you want to import data with different mappings, you have to do this in separate imports.
+7.  [Optionally] Adjust the **naming pattern** of the data sets to be imported.
+8.  Complete the transfer of the imported data sheets by clicking the import button.
 
 ### File Selection
 To import a new set of data from a file, click on the **Add Observed Data** button in the context menu of the observed data and specify the file to be imported.
-
-![File Selection Dialog](../assets/images/part-5/FileSelectionDialog.png)
 
 {% hint style="warning" %}
 The input file must comply with one of the supported formats. If only one sheet does not comply to any of the supported formats, the file is considered invalid and cannot be imported. The import process is stopped. 
@@ -145,7 +147,7 @@ If the user closes an already loaded sheet, it will be removed from the loaded s
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
 
 
-The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters. For examples of filter editor usage s. [this tutorial](https://devexpress.github.io/dotnet-eud/interface-elements-for-desktop/articles/filter-editor/examples-of-using-the-filter-editor.html) and [this video tutorial (up to minute 2:55)](https://www.youtube.com/watch?v=A6OgNirrPaE#t=27s) for examples).
+The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters (s. [this tutorial](https://devexpress.github.io/dotnet-eud/interface-elements-for-desktop/articles/filter-editor/examples-of-using-the-filter-editor.html) and [this video tutorial (up to minute 2:55)](https://www.youtube.com/watch?v=A6OgNirrPaE#t=27s) for examples).
 
 ![Importer Data Table Column Filter](../assets/images/part-5/ImporterTableColumnFilter.png)![Importer Filter Editor](../assets/images/part-5/ImporterFilterEditor.png)
 
