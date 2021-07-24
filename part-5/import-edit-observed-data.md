@@ -103,6 +103,7 @@ To import data, you should do the following:
 1.  Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®:
 ![Add Observed Data](../assets/images/part-5/AddObservedData.png)
     * In  PK-Sim® you can also preselect for which molecule observed data should be imported. For this, click on "Add Observed Data for" and select a molecule from the dropdown list:
+
 ![Add Observed Data for](../assets/images/part-5/AddObservedDataFor.png)
 2.  Select the input file (see [File Selection](#file-selection)).
 3.  Specify the **column mapping** (see [Mapping panel](#mapping-panel)), enter all required metadata and set the unit and LLOQ information.
