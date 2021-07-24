@@ -105,6 +105,7 @@ To import data, you should do the following:
     * In  PK-Sim® you can also preselect for which molecule observed data should be imported. For this, click on "Add Observed Data for" and select a molecule from the dropdown list:
 
 ![Add Observed Data for](../assets/images/part-5/AddObservedDataFor.png)
+
 2.  Select the input file (see [File Selection](#file-selection)).
 3.  Specify the **column mapping** (see [Mapping panel](#mapping-panel)), enter all required metadata and set the unit and LLOQ information.
 4.  [Optionally] Apply **data filters** to exclude some data sets/values from import (see [Data preview](#preview-of-imported-and-original-data)).
