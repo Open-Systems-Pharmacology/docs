@@ -113,7 +113,7 @@ Example:  let's assume the observed data table looks like below and *Organ*, *Co
 | 10           | 0,5                     | Liver | Plasma      | IV    |
 | 20           | 0,05                    | Liver | Plasma      | IV    |
 
-Then this data will be splitted into 4 data sets corresponding to the available combinations of 
+Then this data will be split into 4 data sets corresponding to the available combinations of 
 
 `{Organ, Compartment, Route}`: 
 
