@@ -16,9 +16,9 @@ Each data table:
 * **can** have additional data column with numeric values for measurement **error** values 
 * **can** have additional data column with numeric values for the *lower limit of quantification* (**LLOQ**)
   * It is also possible to provide LLOQ values directly in the measurement column (s. [LLOQ](#lloq) for details)
-* **can** have arbitrary number of further numeric or non-numeric data columns, which can be interpreted as **meta data** which describes a data set (e.g. "Study Id", "Subject Id", "Organ", "Compartment",  ...)
+* **can** have arbitrary number of further numeric or non-numeric data columns, which can be interpreted as **meta data** which describes a *data set* (e.g. "Study Id", "Subject Id", "Organ", "Compartment",  ...). S. [Data sets](#data-sets) for the explanation how meta data is used to split a data table into different data sets.
 
-The order and the naming of data columns is not important: the proper assignment of data columns to *Time*/*Measurement*/*Error*/*MetaData* will be performed during the [*column mapping*](#mapping-panel) process. However to speed up the mapping process it is advisable to name the columns according to their information (e.g. "Time" for the time column etc.)
+The order and the naming of data columns is not important: the proper assignment of data columns to *Time*/*Measurement*/*Error*/*Meta Data* will be performed during the [*column mapping*](#mapping-panel) process. However to speed up the mapping process it is advisable to name the columns according to their information (e.g. "Time" for the time column etc.)
 
 **Units** of numeric columns (Time/Measurement/Error) can be defined in 2 ways (s. [units](#selection-of-units) for details):
 
@@ -94,6 +94,61 @@ Some examples:
   | 10         | Liver | Intracellular | 30          | F_metabolized | %                |       |
   | 20         | Liver | Intracellular | 39          | F_metabolized | %                |       |
 
+### Data sets
+
+A **data set** describes all observed data which belongs to a combination of all **mapped** meta data columns (s. [Mapping panel](#mapping-panel)). Thus the number of data sets which is created from one observed data table is the same as the number of unique combination of the used meta data.
+
+Example:  let's assume the observed data table looks like below and *Organ*, *Compartment* and *Route* are all used as meta data during the import configuration process.
+
+| Time   [min] | Concentration   [mg/ml] | Organ | Compartment | Route |
+| ------------ | ----------------------- | ----- | ----------- | ----- |
+| 1            | 0,1                     | Brain | Plasma      | Oral  |
+| 2            | 12                      | Brain | Plasma      | Oral  |
+| 3            | 2                       | Brain | Plasma      | IV    |
+| 10           | 1                       | Brain | Plasma      | IV    |
+| 20           | 0,01                    | Brain | Plasma      | IV    |
+| 1            | 0,2                     | Liver | Plasma      | Oral  |
+| 2            | 8                       | Liver | Plasma      | Oral  |
+| 3            | 2                       | Liver | Plasma      | IV    |
+| 10           | 0,5                     | Liver | Plasma      | IV    |
+| 20           | 0,05                    | Liver | Plasma      | IV    |
+
+Then this data will be splitted into 4 data sets corresponding to the available combinations of 
+
+`{Organ, Compartment, Route}`: 
+
+![Import result: Observed data sets](../assets/images/part-5/ImportResult_ObservedDataSets.PNG)
+
+* Data set 1: "`Brain.Plasma.IV`"
+
+  | Time   [min] | Concentration   [mg/ml] |
+  | ------------ | ----------------------- |
+  | 3            | 2                       |
+  | 10           | 1                       |
+  | 20           | 0,01                    |
+
+* Data set 2: "`Brain.Plasma.Oral`"
+
+  | Time   [min] | Concentration   [mg/ml] |
+  | ------------ | ----------------------- |
+  | 1            | 0,1                     |
+  | 2            | 12                      |
+
+* Data set 3: "`Liver.Plasma.IV`"
+
+  | Time   [min] | Concentration   [mg/ml] |
+  | ------------ | ----------------------- |
+  | 3            | 2                       |
+  | 10           | 0,5                     |
+  | 20           | 0,05                    |
+
+* Data set 4: "`Liver.Plasma.Oral`"
+
+  | Time   [min] | Concentration   [mg/ml] |
+  | ------------ | ----------------------- |
+  | 1            | 0,2                     |
+  | 2            | 8                       |
+
 ## Import Workflow
 
 The general process of importing observed data is outlined here. A detailed description is provided in the following subsections.
@@ -161,43 +216,47 @@ There are two buttons for adding data to the import preview - one for adding the
 
 On the top-right part of the window, one can see the path of the selected source file and also use the "..."-button to select a new file. Selecting a new file, though, will cause the mapping and loaded sheets to be reset, and the work you have done on the current input file will be lost.
 
-
-
 ### Mapping panel
 
-The left panel of the window displays the mapping of the imported column identifiers with the predefined data types. The initial mapping is performed automatically upon selection of the file and identification of the format, but it can be overwritten by adjusting the entries. 
+The left panel of the window displays the mapping of the imported data column to the time, measurement, error values and to the meta data of the observed data sets. The initial mapping is performed automatically upon selection of the file and identification of the format, but it can be overwritten by adjusting the entries. 
 
-{% hint style="note" %}
-The mapping can be reset by right-clicking on the mapping panel and selecting one of the displayed options.
-{% endhint %}
-
-![Observed data mapping context menu](../assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
-
-
-//TODO: nächsten Absatz verschieben zu PReview/Naming pattern.
-
+{% hint style="tip" %}
 The mapping panel is available throughout the whole import process. If the user changes the mapping, the changes are automatically applied to all data sheets, and the result of the modified mapping is automatically updated. 
+{% endhint %}
 
 As shown in the screenshot below, the user gets a view of all the available mappings and can map a column to them. A column can be selected to a mapping only once and will no longer be available on the drop-down menus for other mappings, with one exception: the unit column for the measurement can also be mapped as the unit column for the corresponding error. 
 
 ![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png)
 
-Additionally, for some mappings (e.g., Organ, Species and others), the user can select one option from the predefined ones that come from PK-Sim/MoBi.
+
+
+Additionally, for some meta data mappings (e.g., Organ, Species and others), the user can select one option from the predefined ones that come from PK-Sim/MoBi. E.g. for the Organ mapping in the example below user could either map the Organ meta data to the source data column "Organ" or set it to any of predefined values ("*Peripheral venous blood*", ..., "*Spleen*", "*Stomach*"). 
+
+In the latter case: the selected predefined value will be used as "Organ" for ALL imported data sets.
+
+![Import_ListOfValues](../assets/images/part-5/Import_ListOfValues.PNG)
 
 {% hint style="warning" %}
 The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' mapping. 
 {% endhint %}
 
-For the molecule mapping, a column from the sheet can be selected. Alternatively, the user can select from a drop-down menu of the available molecules from the project or specify a new molecule manually by clicking "Edit manually" under "Edit extra fields". 
+For the molecule mapping, a column from the sheet can be selected. Alternatively, the user can select from a drop-down menu of the available molecules from the project or specify a new molecule manually by clicking "Edit manually" under "Edit extra fields".
 
+ ![Import_Map_Molecule](../assets/images/part-5/Import_Map_Molecule.PNG)
 
-The user can also select one or more 'Group by'-mappings. Those mappings are used to break down a single data sheet into multiple datasets according to the distinct values of the column mapped to the 'Group by'.
+The user can also add one or more '**Group by**'-mappings. Those mappings are used to define *additional* meta data and will be used together with the *predefined* meta data ("*Organ*", "*Compartment*", ...) to break down a single data sheet into multiple data sets as described in [Data sets](#data-sets).
 
+// TODO screenshot of the new "AddGRoupBy" 
 
+{% hint style="note" %}
+The mapping can be reset by right-clicking on the mapping panel and selecting one of the displayed options.
+{% endhint %}
+
+![Observed data mapping context menu](C:/SW-Dev/OSPDocuV10/assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
 
 ### Selection of units
 
-The units for the mapped columns can either be manually entered or specified by a column. In the latter case, each data point can have a distinct unit but from the same dimension. In the unit dialog, the mode of unit definition can be selected. If the unit is specified as part of the header name (e.g. Time[h]) it is automatically recognized by the importer. The user can edit the unit by opening the dialog in the column "Edit extra fields" of the corresponding mapping.
+The units for the mapped columns can either be manually entered or specified by a column. In the latter case, each data point can have a distinct unit but from the same dimension. In the unit dialog, the mode of unit definition can be selected. If the unit is specified as part of the header name (e.g. *Time[h]*) it is automatically recognized by the importer. The user can edit the unit by opening the dialog in the column "**Edit extra fields**" of the corresponding mapping.
 
 ![Setting the units manually](../assets/images/part-5/ImporterSetUnits.png)
 
@@ -209,12 +268,12 @@ When setting the unit manually, the user needs to select the dimension first, up
 
 ### LLOQ
 
-The LLOQ can either be specified from the column of the measurement or from a separate column. In the first case, the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In the second case, there can only be one single LLOQ value for every dataset. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole dataset. 
+The LLOQ can either be specified from the column of the measurement or from a separate column. In the first case, the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In the second case, there can only be one single LLOQ value for every data set. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole data set. 
 
 
 ### Configuring the error
 
-The error can be set to 'Arithmetic Standard Deviation' or 'Geometric Deviation'. Since the geometric deviation is dimensionless, it is not possible to specify a unit for it. Otherwise, the user can specify the unit either manually or by a column.
+The error can be set to '**Arithmetic Standard Deviation**' or '**Geometric Deviation**'. Since the geometric deviation is dimensionless, it is not possible to specify a unit for it. Otherwise, the user can specify the unit either manually or by a column.
 The dimension of the measurement and the error unit, as well as their source (manually entered or specified by a column), have to be consistent. This is checked when loading the sheet, and data with inconsistent dimensions cannot be imported.
 
 When the unit is configured as manual input, the user must first select the "Dimension" from the drop-down, and then the corresponding units to this dimension will become available in the "Unit" drop-down menu.
@@ -229,13 +288,16 @@ It is possible to define a specific number (e.g. 99999) as an equivalent of NaN.
 
 ### Confirmation Tab
 
-When at least one dataset has been imported, the confirmation tab gets activated. 
+Data sets can be added to preview by clicking on "**Add current sheet**" or "**Add all sheets**":
+![Add data sheet(s) to preview](../assets/images/part-5/Import_AddDataSheets.PNG)
+
+When at least one data set has been added to the preview, the confirmation tab "**Import preview**" gets activated. 
 
 
 ![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png)
 
 
-Here, the user can see which datasets have already been loaded. On selecting a data set, the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified on the left side of the panel. This can be done by manually typing in the "Naming Pattern" input field: The user can type keys that represent the name of a mapping inside of curly brackets {}. This will be replaced by the corresponding value for every individual data set. The user is also free to write text that will then be the same for all the data sets names. Additionally, a drop-down with presets for naming patterns is also available. 
+Here, the user can see which data sets have already been loaded. On selecting a data set, the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified on the left side of the panel. This can be done by manually typing in the "Naming Pattern" input field: The user can type keys that represent the name of a mapping inside of curly brackets {}. This will be replaced by the corresponding value for every individual data set. The user is also free to write text that will then be the same for all the data sets names. Additionally, a drop-down with presets for naming patterns is also available. 
 
 Alternatively, the "Create naming pattern" collapsible panel can be used. One or more 'Naming Elements' can be selected from the list, along with a separator that will be used between these elements. By clicking "Add keys", they are added to the naming pattern. 
 
@@ -243,9 +305,10 @@ The import can be finalized by clicking on the **Import** button.
 
 ## Saving the configuration
 
-By clicking the "Save configuration"-button, the user can save the settings that he has configured to an .xml file. This configuration includes the mapping, the NaN preferences, the selected sheets, the path to the selected file and all the other information that can be configured in the importer. 
-[//]: # what is everything else? 
+By clicking the "**Save configuration**"-button, the user can save all configuration settings to an .xml file. This configuration includes the mapping, the NaN preferences, the selected sheets, the path to the selected file and all the other information that can be configured in the importer (data filters, naming pattern, ...).
+
 The saved configuration can be used to resume the configuring at a later time point or to import a different file that should be imported with exactly the same configuration.
+![Save/Load configuration](../assets/images/part-5/Import_SaveLoadConfig.PNG)
 
 {% hint style="note" %}
 If some sheets have already been loaded, this state is also part of the configuration. 
@@ -275,8 +338,8 @@ All values in the time column must be unique in an observed data repository.
 Using the context menu of the **Observed Data** folders, the metadata values can be accessed and changed. This is very useful to supplement metadata or to re-organize data. Changes will be applied to all data tables in that folder.
 {% endhint %}
 
-## Reload Observed data
+## Update Observed data
 
-Using the context menu on a single dataset, the user can update all the data coming from that file. Upon selecting this option, the user is prompted to select the file from where the data will be re-imported (This can also be the same file used for the original import, just with edited data.) A window appears, showing the changes this re-import will make to the observed data: which datasets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload or abort it.
+Using the context menu on a single data set, the user can update all the data coming from that file. Upon selecting this option, the user is prompted to select the file from where the data will be re-imported (This can also be the same file used for the original import, just with edited data.) A window appears, showing the changes this re-import will make to the observed data: which data sets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload or abort it.
 
 ![Reload summary](../assets/images/part-5/ImporterReloadSummary.png)
