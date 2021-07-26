@@ -254,7 +254,7 @@ The mapping can be reset by right-clicking on the mapping panel and selecting on
 
 ![Observed data mapping context menu](C:/SW-Dev/OSPDocuV10/assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
 
-### Selection of units
+#### Selection of units
 
 The units for the mapped columns can either be manually entered or specified by a column. In the latter case, each data point can have a distinct unit but from the same dimension. In the unit dialog, the mode of unit definition can be selected. If the unit is specified as part of the header name (e.g. *Time[h]*) it is automatically recognized by the importer. The user can edit the unit by opening the dialog in the column "**Edit extra fields**" of the corresponding mapping.
 
@@ -266,12 +266,12 @@ The units for the mapped columns can either be manually entered or specified by 
 When setting the unit manually, the user needs to select the dimension first, upon which the unit drop-down menu will be filled corresponding units.
 
 
-### LLOQ
+#### LLOQ
 
 The LLOQ can either be specified from the column of the measurement or from a separate column. In the first case, the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In the second case, there can only be one single LLOQ value for every data set. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole data set. 
 
 
-### Configuring the error
+#### Configuring the error
 
 The error can be set to '**Arithmetic Standard Deviation**' or '**Geometric Deviation**'. Since the geometric deviation is dimensionless, it is not possible to specify a unit for it. Otherwise, the user can specify the unit either manually or by a column.
 The dimension of the measurement and the error unit, as well as their source (manually entered or specified by a column), have to be consistent. This is checked when loading the sheet, and data with inconsistent dimensions cannot be imported.
@@ -281,6 +281,36 @@ When the unit is configured as manual input, the user must first select the "Dim
 
 ![Selecting Error Type](../assets/images/part-5/ImporterSelectingErrorType.png)
 
+#### Molecular weight
+
+Concentration data can be imported either in molar units (e.g. [µmol/l]) or in mass units (e.g. [mg/ml]). In order to switch between molar and mass units (e.g. to display the data which was imported in [µmol/l] in [mg/ml]) it is required to specify the **Molecular weight** of a data set.
+
+This can be done either by mapping of the data set to a molecule or by mapping of the molecular weight to a data column.
+
+* If neither **Molecule** nor the **Molecular Weight** are mapped: the molecular weight of all data sets is not set.
+
+* If only the **Molecule** (but not the **Molecular Weight**) is mapped to a data source column or is set to specific value: the software (PK-Sim® /MoBi®) will check for each data set if the **molecule with the name assigned to the data set is available in the project**:
+
+  * If yes: observed data set will be automatically assigned the molecular weight of this compound.
+  * If no: molecular weight of the given data set is undefined. However, if a new molecule with the name assigned to the data set is added to the project later on: observed data set will automatically become the molecular weight of this molecule.  
+![](../assets/images/part-5/Import_MW_Molecule.PNG)
+
+{% hint style="tip" %}
+If molecular weight of the molecule is changed by user: molecular weight of all data sets linked to this molecule via the "Molecule" meta data will be automatically adjusted to the new value. 
+{% endhint %}
+
+{% hint style="tip" %}
+If the "Molecule" meta data was not mapped during the import process - it can be done later by editing the meta data of an observed data set.
+{% endhint %}
+
+* If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
+  * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
+![](../assets/images/part-5/Import_MW_MW.PNG)
+
+* If the **Molecule** is mapped to a data source column or is set to specific value and  the **Molecular Weight** is mapped as well:
+  * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
+  * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
+![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
 
 ### The NaN indicator
 
@@ -340,6 +370,15 @@ Using the context menu of the **Observed Data** folders, the metadata values can
 
 ## Update Observed data
 
-Using the context menu on a single data set, the user can update all the data coming from that file. Upon selecting this option, the user is prompted to select the file from where the data will be re-imported (This can also be the same file used for the original import, just with edited data.) A window appears, showing the changes this re-import will make to the observed data: which data sets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload or abort it.
+Using the context menu on a single data set, the user can update **all data sets which were imported together with the selected one**. 
+
+![Import_UpdateDataSets](../assets/images/part-5/Import_UpdateDataSets.PNG)
+
+Upon selecting this option, the user is prompted to select the file from where the data will be re-imported (This can also be the same file used for the original import, just with edited data.) A window appears, showing the changes this re-import would make to the observed data: which data sets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload or abort it.
 
 ![Reload summary](../assets/images/part-5/ImporterReloadSummary.png)
+
+{% hint style="note" %}
+Reloading previously imported data will always update **all** data sets which belong to the same import process. This also means that data sets which are not available in the new data source anymore will be automatically deleted from the project. If this is not possible (for example because a data set is used in a parameter identification or in a simulation) - the update is not possible and the user is prompted to remove such a data set from all simulations/parameter identifications/... **manually**. 
+After that, the update process can be started again.
+{% endhint %}
