@@ -158,7 +158,7 @@ The general process of importing observed data is outlined here. A detailed desc
 To import data, you should do the following:
 
 1.  Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®:
-    ![Add Observed Data](../assets/images/part-5/AddObservedData.png)
+![Add Observed Data](../assets/images/part-5/AddObservedData.png)
     * In  PK-Sim® you can also preselect for which molecule observed data should be imported. For this, click on "Add Observed Data for" and select a molecule from the dropdown list:
 
 ![Add Observed Data for](../assets/images/part-5/AddObservedDataFor.png)
@@ -372,12 +372,12 @@ If the "Molecule" meta data was not mapped during the import process - it can be
 
 * If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
   * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
-  ![](../assets/images/part-5/Import_MW_MW.PNG)
+![](../assets/images/part-5/Import_MW_MW.PNG)
 
 * If the **Molecule** is mapped to a data source column or is set to specific value and  the **Molecular Weight** is mapped as well:
   * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
   * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
-  ![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
+![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
 
 ### The NaN indicator
 
