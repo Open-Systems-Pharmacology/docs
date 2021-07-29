@@ -1,9 +1,6 @@
-
-
 # Shared Tools - Import and Edit of Observed Data
 
 A generic tool for handling observed data within the Open Systems Pharmacology Suite is used in both applications (PK-Sim® and MoBi®) for importing observed data from Microsoft Excel® or CSV files.
-
 
 ## Supported Formats
 
@@ -157,8 +154,8 @@ The general process of importing observed data is outlined here. A detailed desc
 
 To import data, you should do the following:
 
-1.  Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®:
-![Add Observed Data](../assets/images/part-5/AddObservedData.png)
+1. Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®:
+    ![Add Observed Data](../assets/images/part-5/AddObservedData.png)
     * In  PK-Sim® you can also preselect for which molecule observed data should be imported. For this, click on "Add Observed Data for" and select a molecule from the dropdown list:
 
 ![Add Observed Data for](../assets/images/part-5/AddObservedDataFor.png)
@@ -331,13 +328,13 @@ For the molecule mapping, a column from the sheet can be selected. Alternatively
 
 The user can also add one or more '**Group by**'-mappings. Those mappings are used to define *additional* meta data and will be used together with the *predefined* meta data ("*Organ*", "*Compartment*", ...) to break down a single data sheet into multiple data sets as described in [Data sets](#data-sets).
 
-// TODO screenshot of the new "AddGRoupBy" 
+![Add GroupBy](../assets/images/part-5/Import_AddGroupBy.PNG) 
 
 {% hint style="note" %}
 The mapping can be reset by right-clicking on the mapping panel and selecting one of the displayed options.
 {% endhint %}
 
-![Observed data mapping context menu](C:/SW-Dev/OSPDocuV10/assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
+![Observed data mapping context menu](../assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
 
 #### Selection of units
 
@@ -378,7 +375,7 @@ This can be done either by mapping of the data set to a molecule or by mapping o
 
   * If yes: observed data set will be automatically assigned the molecular weight of this compound.
   * If no: molecular weight of the given data set is undefined. However, if a new molecule with the name assigned to the data set is added to the project later on: observed data set will automatically become the molecular weight of this molecule.  
-![](../assets/images/part-5/Import_MW_Molecule.PNG)
+    ![](../assets/images/part-5/Import_MW_Molecule.PNG)
 
 {% hint style="tip" %}
 If molecular weight of the molecule is changed by user: molecular weight of all data sets linked to this molecule via the "Molecule" meta data will be automatically adjusted to the new value. 
@@ -390,12 +387,12 @@ If the "Molecule" meta data was not mapped during the import process - it can be
 
 * If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
   * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
-  ![](../assets/images/part-5/Import_MW_MW.PNG)
+    ![](../assets/images/part-5/Import_MW_MW.PNG)
 
 * If the **Molecule** is mapped to a data source column or is set to specific value and  the **Molecular Weight** is mapped as well:
   * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
   * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
-  ![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
+    ![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
 
 ### The NaN indicator
 
@@ -404,13 +401,12 @@ It is possible to define a specific number (e.g. 99999) as an equivalent of NaN.
 ### Confirmation Tab
 
 Data sets can be added to preview by clicking on "**Add current sheet**" or "**Add all sheets**":
+
 ![Add data sheet(s) to preview](../assets/images/part-5/Import_AddDataSheets.PNG)
 
 When at least one data set has been added to the preview, the confirmation tab "**Import preview**" gets activated. 
 
-
 ![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png)
-
 
 Here, the user can see which data sets have already been loaded. On selecting a data set, the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified on the left side of the panel. This can be done by manually typing in the "Naming Pattern" input field: The user can type keys that represent the name of a mapping inside of curly brackets {}. This will be replaced by the corresponding value for every individual data set. The user is also free to write text that will then be the same for all the data sets names. Additionally, a drop-down with presets for naming patterns is also available. 
 
@@ -423,6 +419,7 @@ The import can be finalized by clicking on the **Import** button.
 By clicking the "**Save configuration**"-button, the user can save all configuration settings to an .xml file. This configuration includes the mapping, the NaN preferences, the selected sheets, the path to the selected file and all the other information that can be configured in the importer (data filters, naming pattern, ...).
 
 The saved configuration can be used to resume the configuring at a later time point or to import a different file that should be imported with exactly the same configuration.
+
 ![Save/Load configuration](../assets/images/part-5/Import_SaveLoadConfig.PNG)
 
 {% hint style="note" %}
