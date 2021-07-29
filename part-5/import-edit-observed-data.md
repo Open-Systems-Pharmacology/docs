@@ -1,9 +1,6 @@
-
-
 # Shared Tools - Import and Edit of Observed Data
 
 A generic tool for handling observed data within the Open Systems Pharmacology Suite is used in both applications (PK-Sim® and MoBi®) for importing observed data from Microsoft Excel® or CSV files.
-
 
 ## Supported Formats
 
@@ -157,8 +154,8 @@ The general process of importing observed data is outlined here. A detailed desc
 
 To import data, you should do the following:
 
-1.  Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®:
-![Add Observed Data](../assets/images/part-5/AddObservedData.png)
+1. Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®:
+    ![Add Observed Data](../assets/images/part-5/AddObservedData.png)
     * In  PK-Sim® you can also preselect for which molecule observed data should be imported. For this, click on "Add Observed Data for" and select a molecule from the dropdown list:
 
 ![Add Observed Data for](../assets/images/part-5/AddObservedDataFor.png)
@@ -172,6 +169,7 @@ To import data, you should do the following:
 8.  Complete the transfer of the imported data sheets by clicking the import button.
 
 ### File Selection
+
 To import a new set of data from a file, click on the **Add Observed Data** button in the context menu of the observed data and specify the file to be imported.
 
 {% hint style="warning" %}
@@ -185,7 +183,6 @@ Both excel file formats (.xls and .xlsx), as well as CSV files (.csv, .nmdat), a
 {% hint style="tip" %}
 By switching the file type combo box value, it is possible to import a comma-separated values file (.csv or .nmdat). For such files, the user is prompted to select the column separator used for parsing. Supported separators are ';', ',', '.', and tabulator. Values can be enclosed in double quotes.
 {% endhint %}
-
 
 ### Preview of imported and original data
 
@@ -204,7 +201,6 @@ If the user closes an already loaded sheet, it will be removed from the loaded s
 {% endhint %}
 
 ![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
-
 
 The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters (s. [this tutorial](https://devexpress.github.io/dotnet-eud/interface-elements-for-desktop/articles/filter-editor/examples-of-using-the-filter-editor.html) and [this video tutorial (up to minute 2:55)](https://www.youtube.com/watch?v=A6OgNirrPaE#t=27s) for examples).
 
@@ -313,13 +309,11 @@ As shown in the screenshot below, the user gets a view of all the available mapp
 
 ![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png)
 
-
-
 Additionally, for some meta data mappings (e.g., Organ, Species and others), the user can select one option from the predefined ones that come from PK-Sim/MoBi. E.g. for the Organ mapping in the example below user could either map the Organ meta data to the source data column "Organ" or set it to any of predefined values ("*Peripheral venous blood*", ..., "*Spleen*", "*Stomach*"). 
 
 In the latter case: the selected predefined value will be used as "Organ" for ALL imported data sets.
 
-![Import_ListOfValues](../assets/images/part-5/Import_ListOfValues.PNG)
+![List of values](../assets/images/part-5/Import_ListOfValues.PNG)
 
 {% hint style="warning" %}
 The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' mapping. 
@@ -327,17 +321,17 @@ The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' ma
 
 For the molecule mapping, a column from the sheet can be selected. Alternatively, the user can select from a drop-down menu of the available molecules from the project or specify a new molecule manually by clicking "Edit manually" under "Edit extra fields".
 
- ![Import_Map_Molecule](../assets/images/part-5/Import_Map_Molecule.PNG)
+![Mapping molecules](../assets/images/part-5/Import_Map_Molecule.PNG)
 
 The user can also add one or more '**Group by**'-mappings. Those mappings are used to define *additional* meta data and will be used together with the *predefined* meta data ("*Organ*", "*Compartment*", ...) to break down a single data sheet into multiple data sets as described in [Data sets](#data-sets).
 
-// TODO screenshot of the new "AddGRoupBy" 
+![Add GroupBy](../assets/images/part-5/Import_AddGroupBy.PNG) 
 
 {% hint style="note" %}
 The mapping can be reset by right-clicking on the mapping panel and selecting one of the displayed options.
 {% endhint %}
 
-![Observed data mapping context menu](C:/SW-Dev/OSPDocuV10/assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
+![Observed data mapping context menu](../assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
 
 #### Selection of units
 
@@ -350,11 +344,9 @@ The units for the mapped columns can either be manually entered or specified by 
 
 When setting the unit manually, the user needs to select the dimension first, upon which the unit drop-down menu will be filled corresponding units.
 
-
 #### LLOQ
 
 The LLOQ can either be specified from the column of the measurement or from a separate column. In the first case, the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In the second case, there can only be one single LLOQ value for every data set. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole data set. 
-
 
 #### Configuring the error
 
@@ -362,7 +354,6 @@ The error can be set to '**Arithmetic Standard Deviation**' or '**Geometric Devi
 The dimension of the measurement and the error unit, as well as their source (manually entered or specified by a column), have to be consistent. This is checked when loading the sheet, and data with inconsistent dimensions cannot be imported.
 
 When the unit is configured as manual input, the user must first select the "Dimension" from the drop-down, and then the corresponding units to this dimension will become available in the "Unit" drop-down menu.
-
 
 ![Selecting Error Type](../assets/images/part-5/ImporterSelectingErrorType.png)
 
@@ -378,6 +369,7 @@ This can be done either by mapping of the data set to a molecule or by mapping o
 
   * If yes: observed data set will be automatically assigned the molecular weight of this compound.
   * If no: molecular weight of the given data set is undefined. However, if a new molecule with the name assigned to the data set is added to the project later on: observed data set will automatically become the molecular weight of this molecule.  
+
 ![](../assets/images/part-5/Import_MW_Molecule.PNG)
 
 {% hint style="tip" %}
@@ -390,12 +382,14 @@ If the "Molecule" meta data was not mapped during the import process - it can be
 
 * If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
   * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
-  ![](../assets/images/part-5/Import_MW_MW.PNG)
+
+![](../assets/images/part-5/Import_MW_MW.PNG)
 
 * If the **Molecule** is mapped to a data source column or is set to specific value and  the **Molecular Weight** is mapped as well:
   * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
   * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
-  ![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
+
+![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
 
 ### The NaN indicator
 
@@ -404,13 +398,12 @@ It is possible to define a specific number (e.g. 99999) as an equivalent of NaN.
 ### Confirmation Tab
 
 Data sets can be added to preview by clicking on "**Add current sheet**" or "**Add all sheets**":
+
 ![Add data sheet(s) to preview](../assets/images/part-5/Import_AddDataSheets.PNG)
 
 When at least one data set has been added to the preview, the confirmation tab "**Import preview**" gets activated. 
 
-
 ![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png)
-
 
 Here, the user can see which data sets have already been loaded. On selecting a data set, the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified on the left side of the panel. This can be done by manually typing in the "Naming Pattern" input field: The user can type keys that represent the name of a mapping inside of curly brackets {}. This will be replaced by the corresponding value for every individual data set. The user is also free to write text that will then be the same for all the data sets names. Additionally, a drop-down with presets for naming patterns is also available. 
 
@@ -423,6 +416,7 @@ The import can be finalized by clicking on the **Import** button.
 By clicking the "**Save configuration**"-button, the user can save all configuration settings to an .xml file. This configuration includes the mapping, the NaN preferences, the selected sheets, the path to the selected file and all the other information that can be configured in the importer (data filters, naming pattern, ...).
 
 The saved configuration can be used to resume the configuring at a later time point or to import a different file that should be imported with exactly the same configuration.
+
 ![Save/Load configuration](../assets/images/part-5/Import_SaveLoadConfig.PNG)
 
 {% hint style="note" %}
@@ -435,8 +429,6 @@ The user can also load a saved configuration. Clicking the "Load configuration" 
  {% hint style="note" %}
 Missing columns will be ignored.
 {% endhint %}
-
-
 
 ## Editing Observed Data
 
@@ -457,7 +449,7 @@ Using the context menu of the **Observed Data** folders, the metadata values can
 
 Using the context menu on a single data set, the user can update **all data sets which were imported together with the selected one**. 
 
-![Import_UpdateDataSets](../assets/images/part-5/Import_UpdateDataSets.PNG)
+![Update previously imported data sets](../assets/images/part-5/Import_UpdateDataSets.PNG)
 
 Upon selecting this option, the user is prompted to select the file from where the data will be re-imported (This can also be the same file used for the original import, just with edited data.) A window appears, showing the changes this re-import would make to the observed data: which data sets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload or abort it.
 
