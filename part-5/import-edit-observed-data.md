@@ -1,3 +1,5 @@
+
+
 # Shared Tools - Import and Edit of Observed Data
 
 A generic tool for handling observed data within the Open Systems Pharmacology Suite is used in both applications (PK-Sim® and MoBi®) for importing observed data from Microsoft Excel® or CSV files.
@@ -218,7 +220,90 @@ On the top-right part of the window, one can see the path of the selected source
 
 ### Mapping panel
 
-The left panel of the window displays the mapping of the imported data column to the time, measurement, error values and to the meta data of the observed data sets. The initial mapping is performed automatically upon selection of the file and identification of the format, but it can be overwritten by adjusting the entries. 
+The left panel of the window displays the mapping of the imported data column to the time, measurement, error values and to the meta data of the observed data sets. The initial mapping is performed automatically upon selection of the file and identification of the format, but it can be overwritten by adjusting the entries. This initial mapping recognizes the settings automatically if the data is structured properly. The discovery of columns occurs as follows:
+
+1. Target data columns (Time, Measurement, Error) are resolved. If the data contains any column with numerical data and a header starting with the target name, the column is mapped. The search is not case sensitive. The following column headers will be recognized as the "Measurement" target data column for example:
+   - "Measurement"
+   - "Measurement (12.02.2021)"
+   - "MEASUREMENT [MG/ML]"
+   - "  measurement old [old unit] [mg/ml] "
+2. The unit of recognized target data columns are resolved. If the data contains any column with a header starting with the target name followed by "_unit", the column is mapped as the unit. The search is not case sensitive. The following column headers will be recognized as the time unit for example:
+   - "Time_unit"
+   - "Time_unit (12.02.2021)"
+   - "TIME_UNIT [MG/ML]"
+   - "  Time_unit old [old unit]  "
+3. Meta data columns (Species, Organ, Compartment, Molecule, Molecular Weight, Study Id, Subject Id, Gender, Dose, Route) are resolved. If the data contains any column with a header starting with the target name, the column is used for such a mapping. The search is not case sensitive. The following column headers will be recognized as the "Species" mapping for example:
+   - "Species"
+   - "Species (12.02.2021)"
+   - "SPECIES []"
+   - "  species old [old data]  "
+4. All columns on the data containing numerical data has not been used yet and will be used for any still missing target data column in the order they are (e.g., Example file 3).
+
+Consider the following examples:
+
+Example file 1.
+
+| Organ                 | Compartment  | Species | Dose           | Molecule         | Time [min] | Concentration [mg/l] | Error [mg/l] | Route | Group Id | a    | b    |
+| --------------------- | ------------ | ------- | -------------- | ---------------- | ---------- | -------------------- | ------------ | ----- | -------- | ---- | ---- |
+| PeripheralVenousBlood | Arterialized | Human   | 75 [g] glucose | GLP-1_7-36 total | 1          | 2                    | 0,1          | po    | H        | 3    | 3    |
+| PeripheralVenousBlood | Arterialized | Human   | 75 [g] glucose | GLP-1_7-36 total | 2          | 19                   | 0,1          | po    | H        | 3    | 3    |
+| PeripheralVenousBlood | Arterialized | Human   | 75 [g] glucose | GLP-1_7-36 total | 3          | 23                   | 0,1          | po    | H        | 3    | 3    |
+| PeripheralVenousBlood | Arterialized | Human   | 75 [g] glucose | GLP-1_7-36 total | 4          | 19                   | 0,1          | po    | H        | 3    | 3    |
+
+Results in the following mapping:
+
+| Data  Column         | Mapping     |
+| -------------------- | ----------- |
+| Organ                | Organ       |
+| Compartment          | Compartment |
+| Species              | Species     |
+| Dose                 | Dose        |
+| Molecule             | Molecule    |
+| Time [min]           | Time        |
+| Concentration [mg/l] | Measurement |
+| Error [mg/l]         | Error       |
+| Route                | Route       |
+| Group Id             | -           |
+| a                    | -           |
+| b                    | -           |
+
+Example file 2.
+
+| Organ                 | time (old) | time_unit (new) | c    |
+| --------------------- | ---------- | --------------- | ---- |
+| PeripheralVenousBlood | 1          | h               | 75   |
+| PeripheralVenousBlood | 2          | h               | 75   |
+| PeripheralVenousBlood | 3          | h               | 75   |
+| PeripheralVenousBlood | 240        | min             | 75   |
+
+Results in the following mapping:
+
+| Data  Column    | Mapping                        |
+| --------------- | ------------------------------ |
+| Organ           | Organ                          |
+| time (old)      | Time                           |
+| time_unit (new) | Column containing unit of time |
+| c               | Measurement                    |
+
+
+
+Example file 3.
+
+| e    | time (old) | time_unit (new) | c    |
+| ---- | ---------- | --------------- | ---- |
+| 75   | 1          | h               | 1    |
+| 75   | 2          | h               | 1    |
+| 75   | 3          | h               | 1    |
+| 75   | 240        | min             | 1    |
+
+Results in the following mapping:
+
+| Data  Column    | Mapping                        |
+| --------------- | ------------------------------ |
+| time (old)      | Time                           |
+| time_unit (new) | Column containing unit of time |
+| e               | Measurement                    |
+| c               | Error                          |
 
 {% hint style="tip" %}
 The mapping panel is available throughout the whole import process. If the user changes the mapping, the changes are automatically applied to all data sheets, and the result of the modified mapping is automatically updated. 
@@ -305,12 +390,12 @@ If the "Molecule" meta data was not mapped during the import process - it can be
 
 * If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
   * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
-![](../assets/images/part-5/Import_MW_MW.PNG)
+  ![](../assets/images/part-5/Import_MW_MW.PNG)
 
 * If the **Molecule** is mapped to a data source column or is set to specific value and  the **Molecular Weight** is mapped as well:
   * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
   * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
-![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
+  ![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
 
 ### The NaN indicator
 
