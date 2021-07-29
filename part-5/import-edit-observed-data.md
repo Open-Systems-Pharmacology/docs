@@ -369,6 +369,7 @@ This can be done either by mapping of the data set to a molecule or by mapping o
 
   * If yes: observed data set will be automatically assigned the molecular weight of this compound.
   * If no: molecular weight of the given data set is undefined. However, if a new molecule with the name assigned to the data set is added to the project later on: observed data set will automatically become the molecular weight of this molecule.  
+
 ![](../assets/images/part-5/Import_MW_Molecule.PNG)
 
 {% hint style="tip" %}
@@ -381,11 +382,13 @@ If the "Molecule" meta data was not mapped during the import process - it can be
 
 * If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
   * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
+
 ![](../assets/images/part-5/Import_MW_MW.PNG)
 
 * If the **Molecule** is mapped to a data source column or is set to specific value and  the **Molecular Weight** is mapped as well:
   * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
   * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
+
 ![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
 
 ### The NaN indicator
