@@ -4,7 +4,7 @@ Introduction to ospsuite
 The **ospsuite** R-package provides the functionality of loading, manipulating, and simulating the simulations created in the software tools PK-Sim and MoBi. This document
 gives an overview of the general workflow and the most important methods.
 
-Installing the R-Toolbox
+Installing the ospsuite package
 -------------------
 
 Installation instructions are provided here:

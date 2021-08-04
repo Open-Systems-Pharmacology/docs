@@ -46,12 +46,17 @@ Validation and automation tools include for example:
 * **Installation Validator**: enables "1-Click" validation of the OSP Suite installation on a target computer. The validation is performed by execution of the predefined set of simulation scenarios and comparison of the simulated results with the (validated) reference values.
 * **Command Line Interface** (*CLI*): allows batch processing of multiple projects in PK-Sim and is described in [Command Line Interface - CLI](../part-3/pk-sim-command-line-interface.md).
 
-### Toolboxes‌
+### R-packages
 
-The MoBi® toolbox for R is an interface to the common statistical computing environment. Basically, the R-toolbox can be used to access and modify model parameters as well as to execute simulations and retrieve results. That way, the R-toolbox can be used to script or code batch simulations, analysis tasks, or customized workflows to any complexity. Results can be visualized using the options available in the respective environment. The MoBi® toolbox for R is described in detail in [R documentation](../part-6/introduction-ospsuite.md).
+The OSP software suite provides a set of packages for the R computing environment that allow scripted workflows with the models developed in PK-Sim® and MoBi®.
+
+- [ospsuite](https://github.com/Open-Systems-Pharmacology/OSPSuite-R) package provides the functionality of loading, manipulating, and simulating the simulations created in PK-Sim® and MoBi®. It also offers extended workflows such as parameter sensitivity or PK-parameter calculation. The package is described in detail in [R documentation](../part-6/introduction-ospsuite.md).
+- [tlf](https://github.com/Open-Systems-Pharmacology/TLF-Library) package offers a set of functions and methods for creating standardized reporting **T**ables, **L**istings, and **F**igures.
+- [ospsuite.reportingengine](https://github.com/Open-Systems-Pharmacology/OSPSuite.ReportingEngine) for automated generating of model reports.
+- [ospsuite.parameteridentification](https://github.com/Open-Systems-Pharmacology/OSPSuite.ParameterIdentification) provides the functionality of performing parameter identification (i.e., fitting the model to observed data) with simulations. The package is currently under development and everyone is encouraged to contribute. 
 
 {% hint style="info" %}
-OSP Qualification Framework and MoBi® toolbox for R are not included into the main OSP Suite setup and must be installed separately. Installation instructions are provided in the documentation of the tools.
+OSP Qualification Framework and R packages are not included into the main OSP Suite setup and must be installed separately. Installation instructions are provided in the documentation of the tools or on the GitHub download site.
 {% endhint %}
 
 ### OSP Model exchange format
