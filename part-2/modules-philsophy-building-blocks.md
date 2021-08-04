@@ -51,12 +51,12 @@ Validation and automation tools include for example:
 The OSP software suite provides a set of packages for the R computing environment that allow scripted workflows with the models developed in PK-Sim® and MoBi®.
 
 - [ospsuite](https://github.com/Open-Systems-Pharmacology/OSPSuite-R) package provides the functionality of loading, manipulating, and simulating the simulations created in PK-Sim® and MoBi®. It also offers extended workflows such as parameter sensitivity or PK-parameter calculation. The package is described in detail in [R documentation](../part-6/introduction-ospsuite.md).
-- [TLF](https://github.com/Open-Systems-Pharmacology/TLF-Library) package offers a set of functions and methods for creating standardized reporting **T**ables, **L**ists, and **F**igures.
-- [OSPSuite.ReportingEngine](https://github.com/Open-Systems-Pharmacology/OSPSuite.ReportingEngine) for automated generating of model reports.
-- [OSPSuite.ParameterIdentification](https://github.com/Open-Systems-Pharmacology/OSPSuite.ParameterIdentification) provides the functionality of performing parameter identification (i.e., fitting the model to observed data) with simulations. The package is currently under development and everyone is encouraged to contribute. 
+- [tlf](https://github.com/Open-Systems-Pharmacology/TLF-Library) package offers a set of functions and methods for creating standardized reporting **T**ables, **L**istings, and **F**igures.
+- [ospsuite.reportingengine](https://github.com/Open-Systems-Pharmacology/OSPSuite.ReportingEngine) for automated generating of model reports.
+- [ospsuite.parameteridentification](https://github.com/Open-Systems-Pharmacology/OSPSuite.ParameterIdentification) provides the functionality of performing parameter identification (i.e., fitting the model to observed data) with simulations. The package is currently under development and everyone is encouraged to contribute. 
 
 {% hint style="info" %}
-OSP Qualification Framework R packages are not included into the main OSP Suite setup and must be installed separately. Installation instructions are provided in the documentation of the tools or on the GitHub download site.
+OSP Qualification Framework and R packages are not included into the main OSP Suite setup and must be installed separately. Installation instructions are provided in the documentation of the tools or on the GitHub download site.
 {% endhint %}
 
 ### OSP Model exchange format
