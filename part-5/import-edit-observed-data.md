@@ -259,7 +259,6 @@ Results in the following mapping:
 | Concentration [mg/l] | Measurement |
 | Error [mg/l]         | Error       |
 | Route                | Route       |
-| Group Id             | -           |
 | a                    | -           |
 | b                    | -           |
 
