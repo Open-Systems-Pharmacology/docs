@@ -8,7 +8,6 @@ https://www.open-systems-pharmacology.org/OSPSuite-R/
 
 
 ## Installing the ospsuite-R package
-
 Installation instructions are provided here:
 https://www.open-systems-pharmacology.org/OSPSuite-R/#installation
 
