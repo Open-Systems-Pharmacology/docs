@@ -8,7 +8,7 @@
 | Memory     | 2 GB RAM, 4+ GB recommended            |
 | Disk space | minimum 2 GB                           |
 ||              **Optional software**                 |
-| R®         | version  3.5 or 3.6 - 64bit        |
+| R®         | version 3.6 or higher - 64bit        |
 
 
 Information provided above refers to the core components of the Open Systems Pharmacology Suite including PK-Sim®, MoBi®. Both, PK-Sim® and MoBi® can be installed as stand-alone software packages to reduce the disk space required.

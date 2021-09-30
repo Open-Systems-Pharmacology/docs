@@ -110,25 +110,8 @@
 
 - R documentation
 
-  - [R - Introduction](part-6/introduction-ospsuite.md)
-  
-  - [Loading a simulation and accessing entities](part-6/load-get.md)
-  
-  - [Changing parameter and molecule start values](part-6/set-values.md)
-  
-  - [Running a simulation](part-6/run-simulation.md)
-  
-  - [Creating individuals](part-6/create-individual.md)
-  
-  - [Population simulations](part-6/create-run-population.md)
-  
-  - [PK Analysis](part-6/pk-analysis.md)
-  
-  - [Sensitivity analysis](part-6/sensitivity-analysis.md)
-  
-  - [Table parameters](part-6/table-parameters.md)
-  
-  - [Dimensions and Units](part-6/unit-conversion.md)
+  - [R - Introduction](part-6/introduction-ospsuite-r.md)
+
 
 ## Appendix
 
