@@ -12,7 +12,7 @@ https://www.open-systems-pharmacology.org/OSPSuite-R/#installation
 
 
 ## Articles
-Speficic workflows and details regarding the ospsuite-R package can be found here:
+Specific workflows and details regarding the ospsuite-R package can be found here:
 https://www.open-systems-pharmacology.org/OSPSuite-R/articles/
 
 
