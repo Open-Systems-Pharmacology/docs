@@ -103,7 +103,7 @@ The workflow of integrating protein data with PBPK models comprises the followin
 
 1.  Identification of relevant metabolizing enzymes, transport proteins, and protein binding partners for the compound of interest (_your internal research or literature_)
     
-2.  Determination of organ and tissue specific distribution of protein concentrations (PK-Sim® supports this task with an in-built data base)
+2.  Determination of organ and tissue specific distribution of protein concentrations (PK-Sim® supports this task with an in-built database)
     
 3.  Identification of cellular location of proteins (_your internal research or literature_)
     
