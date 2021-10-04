@@ -134,7 +134,7 @@ To insert an administration do one of the following:
 
 - Define a new administration by clicking **Create** <img width="32" src="../assets/icons/Protocol.ico"> and follow the instructions of the dialog windows
 
-- Load an administration from the template data base by clicking **Load** <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the dialog windows
+- Load an administration from the template database by clicking **Load** <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the dialog windows
 
 In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation name is not necessary, because the drug is always assumed to be given in solution. For these administration types, therefore, no match with formulations has to be made. For further information please see [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md).
 
@@ -154,7 +154,7 @@ Events are optional for creating a simulation. Possible predefined events are cu
 
 - Define a new event by clicking **Create** <img width="32" src="../assets/icons/Event.ico"> and follow the instructions of the appearing dialog windows
 
-- Load an event from the template data base by clicking <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the appearing dialog windows
+- Load an event from the template database by clicking <img width="32" src="../assets/icons/LoadAction.ico"> and follow the instructions of the appearing dialog windows
 
 Click **OK** <img width="32" src="../assets/icons/OK.ico"> to finish the **Create Simulation** process and to close the window.
 
