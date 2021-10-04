@@ -120,9 +120,7 @@ First estimates can be made using water solubility. However, especially for lipo
 #### Intestinal solubility as table function of pH
 Intestinal solubility can also be defined as a linear interpolation of measured (pH, Solubility) data pairs.
 
-<img width="187" src="../assets/images/part-3/CreateSolubilityAsTable.png">  
-
-:arrow_right: <img width="400" src="../assets/images/part-3/EditSolubilityTable.png">
+<img width="187" src="../assets/images/part-3/CreateSolubilityAsTable.png"> ==>  <img width="400" src="../assets/images/part-3/EditSolubilityTable.png">
 
 
 ### ADME Properties‌
@@ -235,7 +233,7 @@ Partition coefficients are derived from input data as follows:
 Drug partitioning between plasma and red blood cells is calculated in analogous manner to ![Drug Partitioning](../assets/images/part-3/Eq_Krbc_PKSim.png)
 
 The only exceptions are the Schmitt model that additionally takes into account the amount of acidic and neutral phospholipids as well as neutral lipids, and the Rodgers & Rowland model, if experimental data for blood-to-plasma concentration ratios (B:P) are available.
-  
+
 The equation for the calculation of Krbc in the Schmitt partition model is:
 ![Drug Partitioning Schmitt](../assets/images/part-3/equation-15-4.png)
 
@@ -243,7 +241,7 @@ If a value for B:P is used in the Rodgers & Rowland model, Krbc is calculated as
 ![Drug Partitioning Rodgers & Rowland](../assets/images/part-3/equation-15-5.png)
 
 where HCT is the hematocrit and BPratio is the blood-to-plasma concentration ratio.
-  
+
 Five different methods for the calculation of organ-plasma partition coefficients are available in PK-Sim®. No general rules have emerged to determine which distribution model is best suited based on knowledge about the substance properties. However, some trends are contained within the different model foundations and assumptions as outlined below:
 
 | Partition coefficient calculation method | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |

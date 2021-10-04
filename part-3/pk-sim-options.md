@@ -7,7 +7,7 @@ Button <img width="32" src="../assets/icons/Settings.ico"> within the **Utilitie
 Within the **User** Tab, you can specify the following user specific options:
     
 ## Numerical Properties
-    
+
 *   Allows scientific notation: You can specify if parameter values and results are displayed in scientific notation and if they are very small or very large.
     
 *   Decimal place: You can specify the number of decimal places displayed for parameter values and results.
@@ -60,8 +60,10 @@ You can change the path to the template database or create a new template databa
     
 *   Disabled: Changes the background color of all boxes with non-editable content.
     
+
 Within the **Application** Tab, you can specify the path to a species-specific **Expression Database** you would like to use. To do so, click on the three dots in the **Expression Database** column in the row of the species you require.
 
 ![Linking a species-specific expression database to an individual.](../assets/images/part-3/expression-database-options.png)
 
-The available expression databases can be downloaded from the download section http://www.systems-biology.com/uc/download.html of our web site. More information about the integration of expression data can be found at PK-Sim Express http://www.systems-biology.com/products/preview5/pk-simr-express.html
+The available expression databases can be downloaded from
+http://setup.open-systems-pharmacology.org/ 

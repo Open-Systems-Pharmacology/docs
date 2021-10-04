@@ -36,6 +36,6 @@ Tools shared between PK-Sim® and MoBi® and some workflow examples are presente
 
 ## Working with R
 
-The interfaces to the common computing environment R is described in "R Toolbox".
+The interfaces to the common computing environment R is described in "Working with R".
 
-[Go to: Working with R](part-6/r-introduction.md)
+[Go to: Working with R](part-6/introduction-ospsuite-r.md)

@@ -1,10 +1,10 @@
 # Open Systems Pharmacology Suite Manual
 
-Version 7.4
+Version 10
 
-Publication date October 2018
+Publication date October 2021
 
-Copyright © 2018 Open Systems Pharmacology Suite Community
+Copyright © 2021 [Open Systems Pharmacology Community](references.md#115)
 
 The manual is provided “as is” without expressed or implied warranty.
 
@@ -14,7 +14,7 @@ All trademarks within this manual belong to their legitimate owners.
 
 The Open Systems Pharmacology Suite uses the CVODES solver:
 
-Copyright (c) 2002-2015, Lawrence Livermore National Security.
+Copyright (c) 2002-2021, Lawrence Livermore National Security.
 Produced at the Lawrence Livermore National Laboratory.
 Written by A.C. Hindmarsh, D.R. Reynolds, R. Serban, C.S. Woodward, D. J. Gardner, S.D. Cohen, A.G. Taylor, S. Peles, L.E. Banks, and D. Shumaker.
 UCRL-CODE-155950 (CVODES)
