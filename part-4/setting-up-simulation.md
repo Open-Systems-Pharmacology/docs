@@ -149,7 +149,7 @@ Special points (e.g. times of Events such as Applications) will be added automat
 MoBi® uses the CVODE differential equation solver. The solver settings can be accessed and edited either in the Simulation Wizard when creating a simulation (as depicted below) or in the simulation edit mode in the Settings tab.
 
 {% hint style="warning" %}
-For more information on the solver, please refer to the documentation of the CVODE solver: [CVODE] https://computation.llnl.gov/projects/sundials/sundials-software.
+For more information on the solver, please refer to the documentation of the CVODE solver: [CVODE] https://computing.llnl.gov/projects/sundials.
 {% endhint %}
 
 ![Simulation Creation Wizard: ODE Solver Properties](../assets/images/part-4/SimCW_SimS.png)
