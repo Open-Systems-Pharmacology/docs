@@ -22,8 +22,8 @@ All rights reserved.
 
 Please, refer to the LLNL website for detailed information on licensing:
 
-- https://computation.llnl.gov/projects/sundials/license
-- https://computation.llnl.gov/projects/sundials
+- https://computing.llnl.gov/projects/sundials/license
+- https://computing.llnl.gov/projects/sundials
 
 Internet:
 
