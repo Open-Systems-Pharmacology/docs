@@ -38,7 +38,7 @@
 
   - [Creating Populations](part-3/pk-sim-creating-populations.md)
 
-  - [Expression PRofile](part-3/pk-sim-expression-profile.md)
+  - [Expression Profile](part-3/pk-sim-expression-profile.md)
 
   - [Compounds: Definition and Work Flows](part-3/pk-sim-compounds-definition-and-work-flow.md)
 
