@@ -10,7 +10,7 @@ Please note that the **Event** Building Block does not represent an essential bu
 
 To create a new event, do one of the following:
 
-*   Click **Event** <img width="32" src="../assets/icons/Event.ico"> in the **Create New Building Blocks** Group of the **Modeling & Simulation** Tab
+*   Click **Event** <img width="32" src="../assets/icons/Event.ico"> in the **Create** Group of the **Modeling** Tab
 
 *   Right mouse click on **Events** <img width="32" src="../assets/icons/EventFolder.ico">in the **Building Block Explorer**
 
