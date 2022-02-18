@@ -201,7 +201,7 @@ Please note that when switching to another species on the Biometrics tab all par
 
 In the **Expression** tab, all relevant enzymes, transport proteins and protein binding partners can be defined for the selected individual.
 
-For details please see [PK-Sim® - Expression Data](pk-sim-expression-data.md).
+For details please see [PK-Sim® - Expression Profile](pk-sim-expression-profile.md).
 
 ### Editing and Scaling Individual Properties‌
 

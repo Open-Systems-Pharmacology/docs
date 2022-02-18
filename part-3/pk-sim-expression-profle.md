@@ -1,4 +1,4 @@
-# PK-SIM Expression Data
+# PK-SIM Expression Profile
 
 ## Background: Active Processes in PK-SIM
 
@@ -16,13 +16,13 @@ Assuming that kcat is not influenced by _in vivo_ factors, the tissue-specific m
 
 ![Equation 2](../assets/images/part-3/equation-14-2-vmax.png)
 
-### Protein expression data
+### Protein expression profile
 
 Following from **Equation 2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ as a fraction of a defined **reference concentration** value.
 
-![Protein expressions overview](../assets/images/part-3/ProteinExpressionsOverview.png)
+![Protein expression profile overview](../assets/images/part-3/ProteinExpressionProfileOverview.png)
 
-### Reference Concentration
+### Reference concentration
 
 The **reference concentration** can be measured *in vitro* and allow direct *in vitro - in vivo* extrapolation (IVIVE). The concentration of the protein in the organ with the **relative expression = 1** will equal to that measured concentration. The concentrations in all other organs will be set relative to that value. In case no *in vitro* protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g. metabolism of a compound) through the relative expressions.
 
@@ -104,6 +104,20 @@ The relative expressions (and the fractions expressed at different sites) of the
 
 **Initial concentrations** of the enzymes in the different compartments within the model are combined from the relative expression values of organs having direct access to this compartment.
 The name “initial concentration” refers to the fact that these concentrations may change during simulation course e.g. through mechanism based inactivation. The concentration of the enzyme in the compartment ultimately defines the rate of the reaction catalyzed by this enzyme.
+
+{% hint style="tip" %}
+
+The initial concentration value will be effecitively calculated when the expression profile is linked to an individual e.g. when individual specific parameters such as volumes, hematocrit etc... are defined
+
+{% endhint %}
+
+To set a specific initial concentration value in a given compartment, simply overwrite the value in the expression profile for this specific compartment. This will effectively ensure that all individual using the expression profile will use the same initial concentration.
+
+{% hint style="warning" %}
+
+Do only overwrite initial concentration by hand if absolutely required.
+
+{% endhint %}
 
 * **BloodCells:**  `RC * rel_exp_bc * f_exp_bc_cell`
   * *RC*: Reference concentration
@@ -243,7 +257,7 @@ The workflow of integrating protein data with PBPK models comprises the followin
 
 1.  Identification of relevant metabolizing enzymes, transport proteins, and protein binding partners for the compound of interest (_your internal research or literature_)
     
-2.  Determination of organ and tissue specific distribution of protein concentrations (PK-Sim® supports this task with an in-built database)
+2.  Determination of organ and tissue specific distribution of protein concentrations (PK-Sim® supports this task with a built-in database)
     
 3.  Identification of cellular location of proteins (_your internal research or literature_)
     
@@ -251,35 +265,52 @@ The workflow of integrating protein data with PBPK models comprises the followin
 
 ## Modeling protein/drug interactions in PK-Sim®‌
 
-Proteins are added to a PBPK model as part of the building block individual. Proteins are added as binding partners, as metabolizing enzymes or as transporters for “compound”. The specifics of the interaction is adjusted in the compounds building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md), while the quantities and localization of proteins is parameterized in the individual building block. There are two ways of adding proteins to the building block “ individual”, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein quantities to a list of organs and tissues. In either case, a protein is added either as “Metabolising Enzyme”, as “Transport Protein” or as “Protein Binding Partners”. Below the tab “Expression”, you find an area that lists all possible protein ‘types’. For each type, it is possible to select via right click a context menu with two entries, **Add type… (Default)** or **Add type… (Database Query)** with type being one of “Metabolising Enzyme”, “Transport Protein” or “Protein Binding Partners”.
+Proteins are added to a PBPK model in the building block expression profile. Proteins are defined as binding partners, as metabolizing enzymes or as transporters for “compound”. The specifics of the interaction is adjusted in the compounds building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md), while the quantities and localization of proteins is parameterized in the expression profile building block. An individual or population can then use a predefined expression profile. 
 
-![Expression Input Form](../assets/images/part-3/ExpressionInputForm.PNG)
+## Definition of new Expression Profile in PK-Sim®‌
 
-## Adding protein quantities manually‌
+To create a new expression profile, do one of the following:
 
-If you know quantities of proteins in one or several organs you can define the expression data manually. Start by selecting the type of protein you have, enzyme, transporter or binding partner.
-    
-Right click on this type, and select the first entry in the context menu: **Add Metabolizing Enzyme ... (Default)** (assuming you want to add an enzyme).
+*   Click **Expression Profile** <img width="32" src="../assets/icons/ExpressionProfile.ico"> in the **Create** Group of the **Modeling** Tab and select the protein type (metabolizing enzyme, transport protein or protein binding partner)
 
-![Expression Input Form Context Menu](../assets/images/part-3/ExpressionInputFormContextMenu.PNG)
+*   Right mouse click on **Expression Profiles** <img width="32" src="../assets/icons/ExpressionProfileFolder.ico">in the **Building Block Explorer**
 
-Next, you will be required to choose a name for your protein. After doing so, an area to configure properties of this protein will appear. 
+and select **Add Expression Profile...**
+
+The following dialog will open in which the properties of the expression profile can defined:
+
+![Create Expression Profile (for a metabolizing enzyme)](../assets/images/part-3/CreateExpressionProfile.png)
+
+* Species: Species for which the expression profile will be defined.
+
+* Metabolizing Enzyme: Name of the enzyme. You can select from a predefined list of common proteins or enter a name
+
+* Category: A free text allowing you to describe the expression profile. For example, you might want to create different profile for CYP3A4 in human for poor vs extensive metabolizer. In this case,  **poor** and **extensive** could be used. Alternatively, you might want to create a profile for an healthy vs sick individual etc...
+
+{% hint style="info" %}
+The combination {Species, Protein, Category} needs to be unique in the project. It will define the name of the expression profile building block
+{% endhint %}
+
+## Editing an Expression Profile in PK-Sim®‌
+
+There are two ways of editing an expression profile building block, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein expression to a list of organs and tissues. 
+
+### Editing protein expression manually‌
+
+If you know expression of proteins in one or several organs you can define the expression data manually. 
+
+We will explain settings in detail in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab). 
+
+### Editing protein expression by querying the expression database‌
 
 {% hint style="info" %}
 To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md).
 {% endhint %}
 
-![Expression Data Input Form For Manually Data Input](../assets/images/part-3/ExpressionDataInputManually.PNG)
 
-We will explain settings in detail in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab). 
+PK-Sim® is shipped with an internal gene expression database. Gene expression is experimentally more amenable then actual protein expression, in particular with the wide spread use of micro array chip technology. Then, a proportionality of gene expression and protein quantities across organs and tissues is assumed.
 
-## Adding protein quantities by querying the internal database‌
-
-Use this if you do not know quantities of proteins in all PK relevant organs/tissues. PK-Sim® is shipped with an internal gene expression database. Gene expression is experimentally more amenable then actual protein expression, in particular with the wide spread use of micro array chip technology. Then, a proportionality of gene expression and protein quantities across organs and tissues is assumed.
-
-Start by selecting the type of protein you have, enzyme, transporter or binding partner. Right click on this type, and select the first entry in the context menu: “Add Metabolizing Enzyme (Database query)” (assuming you want to add an enzyme).
-
-Next, a database query wizard will open. This is discussed in more detail in, “[Advanced Analysis](#advanced-analysis)”. Here we walk you through the simplest possible process.
+Click on **Database Query**. A database query wizard will open, using the name of the protein as a default search criteria. This is discussed in more detail in, “[Advanced Analysis](#advanced-analysis)”. Here we walk you through the simplest possible process.
 
 ### Adding search criteria‌
 
@@ -355,7 +386,7 @@ You can rename a defined protein within your PK-Sim® project by selecting the *
 
 In the upper section, the following entries can be adjusted:
     
-*   **Reference concentration**: Enter the molar concentration of the protein in the organ with the highest enzyme concentration (typically the liver). This is useful as you will later solely enter relative enzyme concentrations. If you do not know the absolute concentration in the organ with the highest expression level you can leave this entry at its default value of 1.00 pmol/mg and adjust the active process, e.g. via the Vmax value.
+*   **Reference concentration**: Enter the molar concentration of the protein in the organ with the highest enzyme concentration (typically the liver). This is useful as you will later solely enter relative enzyme concentrations. If you do not know the absolute concentration in the organ with the highest expression level you can leave this entry at its default value of 1.00 μmol/mg and adjust the active process, e.g. via the Vmax value.
 See [Reference Concentration](#reference-concentration) for a more detailed discussion of the Reference concentration.
 
 *   **t1/2 (liver)** and **t1/2 (intestine)**: Half-life of the protein turnover in the liver and in the intestine.

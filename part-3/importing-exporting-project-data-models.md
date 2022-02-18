@@ -50,9 +50,7 @@ A window opens where you can enter the Excel® file name and the file type (\*.x
 
 ## Export To MoBi®‌
 
-You can export a PK-Sim® simulation to MoBi® by one of the following steps:
-
-- Click on the **MoBi** icon <img width="32" src="../assets/icons/MoBi.ico"> in the **Export** group of the **Modeling & Simulation** tab
+You can export a PK-Sim® simulation to MoBi® with the following steps:
 
 - Right mouse click on the simulation name within the **Simulations Explorer** and select **Export To MoBi...** <img width="32" src="../assets/icons/MoBi.ico">
 
@@ -88,7 +86,7 @@ A window opens where you can choose the directory and enter the file name. The f
 
 To export the project history that contains any user action to an Excel® file. In order to do so:
 
-- Click on the **Create Report** icon <img width="32" src="../assets/icons/History.ico"> in the **Export** group of the **Modeling & Simulation** tab
+- Click on the **Export History** icon <img width="32" src="../assets/icons/History.ico"> in the **Export Project** group of the **Import/Export** tab
 
 A window opens where you can choose the directory and enter the \*.xls file name.
 
