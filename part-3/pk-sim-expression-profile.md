@@ -264,7 +264,7 @@ The workflow of integrating protein data with PBPK models comprises the followin
 4.  Devise applicable kinetics and adjust kinetic parameters (_modeling, your internal research or literature_)
 
 ## Modeling protein/drug interactions in PK-Sim®‌
-
+s
 Proteins are added to a PBPK model in the building block expression profile. Proteins are defined as binding partners, as metabolizing enzymes or as transporters for “compound”. The specifics of the interaction is adjusted in the compounds building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md), while the quantities and localization of proteins is parameterized in the expression profile building block. An individual or population can then use a predefined expression profile. 
 
 ## Definition of new Expression Profile in PK-Sim®‌
@@ -285,10 +285,10 @@ The following dialog will open in which the properties of the expression profile
 
 * Metabolizing Enzyme: Name of the enzyme. You can select from a predefined list of common proteins or enter a name
 
-* Category: A free text allowing you to describe the expression profile. For example, you might want to create different profile for CYP3A4 in human for poor vs extensive metabolizer. In this case,  **poor** and **extensive** could be used. Alternatively, you might want to create a profile for an healthy vs sick individual etc...
+* Phenotype: A free text allowing you to describe the expression profile. For example, you might want to create different profile for CYP3A4 in human for poor vs extensive metabolizer. In this case,  **poor** and **extensive** could be used. Alternatively, you might want to create a profile for an **healthy** vs **sick** individual etc...
 
 {% hint style="info" %}
-The combination {Species, Protein, Category} needs to be unique in the project. It will define the name of the expression profile building block
+The combination {Species, Protein, Phenotype} needs to be unique in the project. It will define the name of the expression profile building block
 {% endhint %}
 
 ## Editing an Expression Profile in PK-Sim®‌
@@ -306,7 +306,6 @@ We will explain settings in detail in [Settings in the protein expression tab](#
 {% hint style="info" %}
 To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md).
 {% endhint %}
-
 
 PK-Sim® is shipped with an internal gene expression database. Gene expression is experimentally more amenable then actual protein expression, in particular with the wide spread use of micro array chip technology. Then, a proportionality of gene expression and protein quantities across organs and tissues is assumed.
 
@@ -463,6 +462,10 @@ The value of the "Default Transporter Direction" is only used to reset all organ
 
 * For all proteins:
   * Initial concentration in every compartment (which is calculated based on the reference concentration, relative expression values and localization settings as described above) is hidden as per default. To show and **to edit** it (if required), the *Show initial concentration* checkbox must be activated:
+
+  {% hint style="warning" %}
+  Most initial concentration values can only be computed in the context of an individual. If you enter a specific value, it will be used in all individual using this expression profile and will effectively replace the formula described previously.
+  {% endhint %}
 
 ![Show/Edit (effective) initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
 
