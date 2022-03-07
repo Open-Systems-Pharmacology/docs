@@ -378,7 +378,7 @@ The complete data set is stored within the PK-Sim® project. If you re-enter the
 {% endhint %}
 
 {% hint style="tip" %}
-You can rename a defined protein within your PK-Sim® project by selecting the **Rename...** menu item from the context menu of a defined protein. This name has no impact on the query and is only used to identify the protein within the PK-Sim® project.
+You can rename a defined expression profile within your PK-Sim® project by selecting the **Rename...** menu item from the context menu of a defined expression profile. This name has no impact on the query and is only used to identify the protein within the PK-Sim® project.
 {% endhint %}
 
 ## Settings in the protein expression tab‌
