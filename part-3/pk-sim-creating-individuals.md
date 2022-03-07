@@ -201,7 +201,7 @@ Please note that when switching to another species on the Biometrics tab all par
 
 In the **Expression** tab, all relevant enzymes, transport proteins and protein binding partners can be defined for the selected individual.
 
-To define a protein in the individual, right click on the corresponding protin type in the tree view and select the corresponding action in the context menu
+To define a protein in the individual, right click on the corresponding protein type in the tree view and select the corresponding action in the context menu
 
 ![Add a metabolizing enzyme](../assets/images/part-3/add_metabolizing_enzyme.png)
 
