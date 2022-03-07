@@ -107,7 +107,7 @@ The name “initial concentration” refers to the fact that these concentration
 
 {% hint style="tip" %}
 
-The initial concentration value will be effecitively calculated when the expression profile is linked to an individual e.g. when individual specific parameters such as volumes, hematocrit etc... are defined
+The initial concentration value will be effectively calculated when the expression profile is linked to an individual e.g. when individual specific parameters such as volumes, hematocrit etc... are defined
 
 {% endhint %}
 
