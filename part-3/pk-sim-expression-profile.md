@@ -1,4 +1,4 @@
-# PK-SIM Expression Profile
+# PK-SIM Expression Profiles
 
 ## Background: Active Processes in PK-SIM
 
@@ -264,8 +264,7 @@ The workflow of integrating protein data with PBPK models comprises the followin
 4.  Devise applicable kinetics and adjust kinetic parameters (_modeling, your internal research or literature_)
 
 ## Modeling protein/drug interactions in PK-Sim®‌
-s
-Proteins are added to a PBPK model in the building block expression profile. Proteins are defined as binding partners, as metabolizing enzymes or as transporters for “compound”. The specifics of the interaction is adjusted in the compounds building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md), while the quantities and localization of proteins is parameterized in the expression profile building block. An individual or population can then use a predefined expression profile. 
+The distribution of a protein (metabolizing enzyme, transporter protein, or a protein binding partner) in the modeled organism is defined by an Expression Profile in the "Expression Profiles" building block. The expression profile is then linked to the individual (see [PK-Sim® Creating Individuals](pk-sim-creating-individuals.md)), and the interaction between the protein (e.g., a metabolization reaction) is defined in the "Compounds" building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md).
 
 ## Definition of new Expression Profile in PK-Sim®‌
 
@@ -285,7 +284,7 @@ The following dialog will open in which the properties of the expression profile
 
 * Metabolizing Enzyme: Name of the enzyme. You can select from a predefined list of common proteins or enter a name
 
-* Phenotype: A free text allowing you to describe the expression profile. For example, you might want to create different profile for CYP3A4 in human for poor vs extensive metabolizer. In this case,  **poor** and **extensive** could be used. Alternatively, you might want to create a profile for an **healthy** vs **sick** individual etc...
+* Phenotype: A free text allowing you to specify the expression profile. For example, you might want to create different profiles for the CYP3A4 enzyme in human for poor vs extensive metabolizer. In this case,  **poor** and **extensive** could be used. Alternatively, you might want to create a profile for a **healthy** vs **sick** individual etc...
 
 {% hint style="info" %}
 The combination {Species, Protein, Phenotype} needs to be unique in the project. It will define the name of the expression profile building block
@@ -293,7 +292,7 @@ The combination {Species, Protein, Phenotype} needs to be unique in the project.
 
 ## Editing an Expression Profile in PK-Sim®‌
 
-There are two ways of editing an expression profile building block, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein expression to a list of organs and tissues. 
+There are two ways of editing an expression profile, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein expression to a list of organs and tissues. 
 
 ### Editing protein expression manually‌
 
@@ -408,8 +407,8 @@ In the lower section, values of relative expression can be edited for individual
 * For metabolizing enzymes and protein binding partners:
 
   * The localization in tissue, blood cells and vascular endothelium can be modified (see [Localizations and initial concentrations of enzymes](#localizations-and-initial-concentrations-of-enzymes) for explanation of the various parameters).
-![](../assets/images/part-3/LocalizationGroups.png)
-Activating/deactivating checkboxes in each of these 3 localization groups changes some parameter values and shows/hides parameters following the following logic:
+    ![](../assets/images/part-3/LocalizationGroups.png)
+    Activating/deactivating checkboxes in each of these 3 localization groups changes some parameter values and shows/hides parameters following the following logic:
     
     - If only one option in a group is activated: corresponding ```fraction expressed``` parameter will be set to 1; other ```fraction expressed``` parameter(s) of this group will be set to 0; all ```fraction expressed``` parameters of the group will be hidden. E.g. activating the checkboxes as in the screenshot above will result in:
       - **Tissue** localization parameters:
@@ -424,7 +423,7 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
         - `Fraction expressed on tissue-side membrane of vascular endothelium = 0` (parameter is hidden)
       
     - If more than one option in a group is activated: corresponding ```fraction expressed``` parameters are shown and can be edited by user. E.g. for the selection below:
-![](../assets/images/part-3/LocalizationGroups2.png)
+    ![](../assets/images/part-3/LocalizationGroups2.png)
       
       - **Tissue** localization parameters:
         - `Fraction expressed intracellular` is shown and can be edited by user
@@ -443,7 +442,7 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
         - `Fraction expressed in endosomes ` is shown and can be edited by user
         - `Fraction expressed on plasma-side membrane of vascular endothelium ` is shown and can be edited by user
         - `Fraction expressed on tissue-side membrane of vascular endothelium ` is hidden and always set to `1 - (Fraction expressed in endosomes + Fraction expressed on plasma-side membrane of vascular endothelium)`
-![](../assets/images/part-3/FractionExpressed2.png)
+      ![](../assets/images/part-3/FractionExpressed2.png)
     - If all options in a group are deactivated: all corresponding `Fraction expressed` parameters are hidden AND all corresponding relative expressions are automatically set to 0. E.g. deactivating both options "*Blood cells intracellular*" and "*Blood cells membrane*" will not only hide the parameters `Fraction expressed in blood cells ` and `Fraction expressed in blood cells membrane` but also set `Relative expression in blood cells ` to 0 and hide it.
     
       In such a case, before setting relative expressions to zero a warning is shown to the user to avoid the loss of information:
@@ -454,9 +453,9 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
   * For some organs, `Fraction expressed apical` can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
   * Transporter direction can be set to **Efflux**, **Influx**, **Bi-Directional** or **Pgp-Like**.
     * Transporter direction can be set **for each organ independently**. In order to change the direction in all organs simultaneously, change the selected value in the "Default Transporter Direction" selection box.
-{% hint style="warning" %}
-The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
-{% endhint %}
+    {% hint style="warning" %}
+    The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
+    {% endhint %}
 
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)
 
@@ -464,7 +463,7 @@ The value of the "Default Transporter Direction" is only used to reset all organ
   * Initial concentration in every compartment (which is calculated based on the reference concentration, relative expression values and localization settings as described above) is hidden as per default. To show and **to edit** it (if required), the *Show initial concentration* checkbox must be activated:
 
   {% hint style="warning" %}
-  Most initial concentration values can only be computed in the context of an individual. If you enter a specific value, it will be used in all individual using this expression profile and will effectively replace the formula described previously.
+  Most initial concentration values can only be computed in the context of an individual the expression profile is linked to. If you enter a specific value, it will be used in all individuals that use this expression profile and will effectively replace the formula described previously.
   {% endhint %}
 
 ![Show/Edit (effective) initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
