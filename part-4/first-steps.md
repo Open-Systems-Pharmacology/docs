@@ -60,11 +60,11 @@ The first step to start working with MoBi® is to create a new project. To do th
 
 You now need to create molecules which are later used as reaction partners. Do this by the following steps:
 
-1.  Click the + symbol in front of the <img width="32" src="../assets/icons/MoleculeFolder.ico"> Molecules folder in the **Building Block Explorer**. Alternatively, double-click the <img width="32" src="../assets/icons/MoleculeFolder.ico"> Molecules folder.
+1.  Click the + symbol in front of the <img width="32" src="../assets/icons/MoleculeFolder.svg"> Molecules folder in the **Building Block Explorer**. Alternatively, double-click the <img width="32" src="../assets/icons/MoleculeFolder.svg"> Molecules folder.
 
-2.  Double-click the <img width="32" src="../assets/icons/Molecule.ico"> **Molecules** entry to edit this building block. A new tab with an empty space will open.
+2.  Double-click the <img width="32" src="../assets/icons/Molecule.svg"> **Molecules** entry to edit this building block. A new tab with an empty space will open.
 
-3.  Click the newly visible icon <img width="32" src="../assets/icons/Molecule.ico"> **New** in the context ribbon, or right-click ![Image](../assets/icons/mouse_select_right.png) into the empty space below the **Molecules** tab and choose **Create Molecule** from the context menu. A new window titled "New Molecule" will open.
+3.  Click the newly visible icon <img width="32" src="../assets/icons/Molecule.svg"> **New** in the context ribbon, or right-click ![Image](../assets/icons/mouse_select_right.png) into the empty space below the **Molecules** tab and choose **Create Molecule** from the context menu. A new window titled "New Molecule" will open.
 
 4.  Enter "A" as name and press the **Enter** key, or click **OK**. The molecule "A" appears in the left part of the **Molecules** tab, and a tab on the right shows the properties of the molecule.
 
@@ -80,21 +80,21 @@ In the same way, create a second molecule, name it "B". Also, uncheck the box ![
 
 ## Enter a Reaction‌
 
-1.  Click on the + symbol in front of the <img width="32" src="../assets/icons/ReactionFolder.ico"> Reactions folder in the Building Block Explorer.
+1.  Click on the + symbol in front of the <img width="32" src="../assets/icons/ReactionFolder.svg"> Reactions folder in the Building Block Explorer.
 
 2.  Double-click the newly visible building block name "Reaction" in the Building Block Explorer. A new tab with an empty space will open.
 
-3.  We will now make all needed previously created molecules available for the reactions to be defined. To do this, click the newly visible ribbon button <img width="32" src="../assets/icons/MoleculeAdd.ico"> **Insert Molecule**, or right-click ![Image](../assets/icons/mouse_select_right.png) into the empty white edit space of the Diagram Area and select **Insert Molecule**. A new window titled "Molecule" will open, showing an input box for manual name entry and a list of available molecules.
+3.  We will now make all needed previously created molecules available for the reactions to be defined. To do this, click the newly visible ribbon button <img width="32" src="../assets/icons/MoleculeAdd.svg"> **Insert Molecule**, or right-click ![Image](../assets/icons/mouse_select_right.png) into the empty white edit space of the Diagram Area and select **Insert Molecule**. A new window titled "Molecule" will open, showing an input box for manual name entry and a list of available molecules.
 
 4.  Mark both molecules "A" and "B" by clicking on them with the mouse ![Image](../assets/icons/mouse_select.png) while simultaneously keeping the **Shift** key pressed. Then release the **Shift** key and click the **OK** button. Green circular symbols will appear on the Diagram Area for each molecule.
 
-5.  Click the ribbon button <img width="32" src="../assets/icons/ReactionAdd.ico"> **New**, or click again into the white space of the Diagram Area to get the context menu and select **Create Reaction**. A new window titled "New Reaction" will open.
+5.  Click the ribbon button <img width="32" src="../assets/icons/ReactionAdd.svg"> **New**, or click again into the white space of the Diagram Area to get the context menu and select **Create Reaction**. A new window titled "New Reaction" will open.
 
 6.  Enter "R" into the **Name** input box.
 
-7.  Click the <img width="32" src="../assets/icons/AddAction.ico"> **Add Formula** button. You will be asked for a reaction formula name. Enter "R" into the New Name input box, and the circular red error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> will vanish. Press **Enter** or click **OK**.
+7.  Click the <img width="32" src="../assets/icons/AddAction.svg"> **Add Formula** button. You will be asked for a reaction formula name. Enter "R" into the New Name input box, and the circular red error symbol <img width="32" src="../assets/icons/ErrorProvider.svg"> will vanish. Press **Enter** or click **OK**.
 
-8.  Back in the "New Reaction" window, the circular red error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> in the Formula Name combo box has now vanished. Press again **Enter** or click **OK**. A reaction triangle symbol <img width="32" src="../assets/icons/Reaction.ico"> with the name "R" underneath will now appear in the Diagram Area in addition to the molecules "A" and "B".
+8.  Back in the "New Reaction" window, the circular red error symbol <img width="32" src="../assets/icons/ErrorProvider.svg"> in the Formula Name combo box has now vanished. Press again **Enter** or click **OK**. A reaction triangle symbol <img width="32" src="../assets/icons/Reaction.svg"> with the name "R" underneath will now appear in the Diagram Area in addition to the molecules "A" and "B".
 
 9.  You can now move the reaction triangle or either molecule within the Diagram Area by clicking on them, holding the left mouse button ![Image](../assets/icons/mouse_select.png) and moving the mouse into the desired direction. To move a reaction, its grey center needs to be clicked on. To move a molecule, it needs to be clicked on in its darker green center.
 
@@ -136,7 +136,7 @@ Now start to create a kinetic equation; in this example assuming an irreversible
 
 4.  Click the **Properties** tab in the window. In the lower right of the window, there is a list called "Possible Referenced Objects". Click on the + sign in front of reaction name "R", and the reaction parameter "k1" that was just created will appear. Drag and drop the parameter "k1" into the left part of the window, to the blank space below the list with the molecules "A" and "B" and their corresponding paths and dimensions. "k1" will appear just below both molecules.
 
-5.  Below this list, an input box with a red error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> is present. Enter the following formula into the input box right next to the error symbol: "A\*k1". The error sign will disappear, and the screen should look like in the figure below.
+5.  Below this list, an input box with a red error symbol <img width="32" src="../assets/icons/ErrorProvider.svg"> is present. Enter the following formula into the input box right next to the error symbol: "A\*k1". The error sign will disappear, and the screen should look like in the figure below.
 
 ![Reaction Entered Completely](../assets/images/part-4/Reaction_entered.png)
 
@@ -144,16 +144,16 @@ Now start to create a kinetic equation; in this example assuming an irreversible
 
 Now, you need to create the Molecules and Parameters Start Values. In our example, these are the initial amounts for the two molecules.
 
-1.  In the building block explorer, right-click ![Image](../assets/icons/mouse_select_right.png) the entry <img width="32" src="../assets/icons/MoleculeStartValuesFolder.ico"> **Molecule Start Values**.
+1.  In the building block explorer, right-click ![Image](../assets/icons/mouse_select_right.png) the entry <img width="32" src="../assets/icons/MoleculeStartValuesFolder.svg"> **Molecule Start Values**.
 
 2.  Right-click ![Image](../assets/icons/mouse_select_right.png) it, select ![Image](../assets/icons/AddAction.ico **Create Molecule Start Values Building Block** from the context menu. A new window named "Create new start values" opens.
 
 3.  Enter the name "1" (or any other name you prefer) and click the **OK** button. A window showing the start values for the molecules "A" and "B", 100 and 0 µmol, opens in the edit window of the screen. The values could be edited if other values than the defaults are required for the simulation.
 
-4.  Repeat the procedure with the next building block, <img width="32" src="../assets/icons/ParameterStartValuesFolder.ico"> **Parameter Start Values**: Right-click ![Image](../assets/icons/mouse_select_right.png) it, select <img width="32" src="../assets/icons/AddAction.ico"> **Create Parameter Start Values Building Block** from the menu, enter "1" as name in the "Create new start values" window, and click **OK**. This building block, however, should not show any values since our simple model does not contain any relevant parameters.
+4.  Repeat the procedure with the next building block, <img width="32" src="../assets/icons/ParameterStartValuesFolder.svg"> **Parameter Start Values**: Right-click ![Image](../assets/icons/mouse_select_right.png) it, select <img width="32" src="../assets/icons/AddAction.svg"> **Create Parameter Start Values Building Block** from the menu, enter "1" as name in the "Create new start values" window, and click **OK**. This building block, however, should not show any values since our simple model does not contain any relevant parameters.
 
 {% hint style="tip" %}
-Start values can also be created during the next step (Simulation Creation Wizard window) by using the <img width="32" src="../assets/icons/AddAction.ico"> icons which start the same parameter generation procedure. Compare and [Create a Simulation](setting-up-simulation.md#create-a-simulation).
+Start values can also be created during the next step (Simulation Creation Wizard window) by using the <img width="32" src="../assets/icons/AddAction.svg"> icons which start the same parameter generation procedure. Compare and [Create a Simulation](setting-up-simulation.md#create-a-simulation).
 {% endhint %}
 
 ## Create and Run a Simulation‌
@@ -162,15 +162,15 @@ Now you are ready to create a simulation using all the generated building blocks
 
 1.  Click the ribbon tab **Modeling & Simulation**.
 
-2.  Click the ribbon button <img width="32" src="../assets/icons/Simulation.ico"> **Create**. The simulation creation wizard opens, showing you the default values for all building blocks to be used for the simulation.
+2.  Click the ribbon button <img width="32" src="../assets/icons/Simulation.svg"> **Create**. The simulation creation wizard opens, showing you the default values for all building blocks to be used for the simulation.
 
-3.  Enter a "1" into the Name input box, and the circular red error symbol <img width="32" src="../assets/icons/ErrorProvider.ico"> will vanish.
+3.  Enter a "1" into the Name input box, and the circular red error symbol <img width="32" src="../assets/icons/ErrorProvider.svg"> will vanish.
 
 4.  Click the now activated **Finish** button in the bottom of the window. After a few seconds, a tabbed simulation window should appear in the edit window.
 
 5.  In case any warnings appear on the screen, you can ignore them at this point and click **OK** again.
 
-6.  Click the orange arrow <img width="32" src="../assets/icons/Run.ico"> ribbon button to run the simulation, or alternatively press the **F5** key.
+6.  Click the orange arrow <img width="32" src="../assets/icons/Run.svg"> ribbon button to run the simulation, or alternatively press the **F5** key.
 
 ![Simulation Wizard Window](../assets/images/part-4/Wizard.png)
 
@@ -200,11 +200,11 @@ If you want to run a simulation in MoBi® that you have already created in PK- S
 
 1.  Save your project as PK-Sim® simulation to a .pkml (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi).
 
-2.  Open the .pkml file using the **File** menu and choose the <img width="32" src="../assets/icons/Simulation.ico"> **Open Simulation** command.
+2.  Open the .pkml file using the **File** menu and choose the <img width="32" src="../assets/icons/Simulation.svg"> **Open Simulation** command.
 
-3.  In the Simulations Explorer, double-click the <img width="32" src="../assets/icons/Simulation.ico"> **Simulation Icon** or the name of your simulation left to it.
+3.  In the Simulations Explorer, double-click the <img width="32" src="../assets/icons/Simulation.svg"> **Simulation Icon** or the name of your simulation left to it.
 
-4.  Click the run <img width="32" src="../assets/icons/Run.ico"> ribbon button of press the **F5** key. Wait until the calculation is done.
+4.  Click the run <img width="32" src="../assets/icons/Run.svg"> ribbon button of press the **F5** key. Wait until the calculation is done.
 
 5.  Select the **Results** tab.
 

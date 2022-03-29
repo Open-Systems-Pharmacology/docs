@@ -40,7 +40,7 @@ Selecting the input parameters of interest as **Favorites** makes it much easier
     
 ### Create a Parameter Identification‌
     
-A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Start Parameter Identification ...** from the context menu.
+A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select <img width="32" src="../assets/icons/ParameterIdentification.svg"> **Start Parameter Identification ...** from the context menu.
 
 ### Map outputs to observed data‌
     
@@ -68,7 +68,7 @@ During the Parameter Identification Run you can get visual feedback about the cu
 
 For a hands on exercise, open the example project Theophylline.pksim5. You can open the folder with the example projects from the Start menu by selecting All Programs/Open Systems Pharmacology/PK-Sim/Examples.
 
-1.  In the Simulation Explorer mark the two simulations "_Kaumeier IV 208 mg fit_" and "_Kaumeier oral solution 185mg_" and select <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Start Parameter Identification ...** from the context menu.
+1.  In the Simulation Explorer mark the two simulations "_Kaumeier IV 208 mg fit_" and "_Kaumeier oral solution 185mg_" and select <img width="32" src="../assets/icons/ParameterIdentification.svg"> **Start Parameter Identification ...** from the context menu.
     
 2.  A new view for _Parameter Identification 1_ is displayed and the tab **Data** is opened. On the left, the simulations with the assigned observed data are displayed. On the right, a list of mappings from outputs to observed data is displayed. For each observed data set for concentrations and fractions the corresponding output is mapped automatically (based on the Organ, Compartment, Molecule meta data).
 
@@ -116,11 +116,11 @@ You can transfer the optimized values for the parameters to the simulations by c
 
 To create a new Parameter Identification, do one of the following
 
-*   Mark one ore more simulations for the Parameter Identification in the Simulation Explorer and select <img width="32" src="../assets/icons/ParameterIdentification.ico">**Start Parameter Identification ...** from the context menu.
+*   Mark one ore more simulations for the Parameter Identification in the Simulation Explorer and select <img width="32" src="../assets/icons/ParameterIdentification.svg">**Start Parameter Identification ...** from the context menu.
 
-*   In the ribbon bar **Parameter Identification** click <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Create** .
+*   In the ribbon bar **Parameter Identification** click <img width="32" src="../assets/icons/ParameterIdentification.svg"> **Create** .
 
-*   In the Simulation Explorer right click the Parameter Identification root node and select <img width="32" src="../assets/icons/ParameterIdentification.ico"> **Add Parameter Identification** from the context menu.
+*   In the Simulation Explorer right click the Parameter Identification root node and select <img width="32" src="../assets/icons/ParameterIdentification.svg"> **Add Parameter Identification** from the context menu.
 
 The Parameter Identification view is displayed and the tab **Data** is opened.
 

@@ -59,7 +59,7 @@ Additionally, you can save any time explicitly using the short cut CTRL-S or the
 
 ### Journal view‌
 
-On the right side of the PK-Sim or MoBi application, the **Journal view** is shown by default. You can show and hide it like other views. In case you have removed the view, you can reopen it by clicking the corresponding button <img width="32" src="../assets/icons/Journal.ico"> in the Tab **Views**.
+On the right side of the PK-Sim or MoBi application, the **Journal view** is shown by default. You can show and hide it like other views. In case you have removed the view, you can reopen it by clicking the corresponding button <img width="32" src="../assets/icons/Journal.svg"> in the Tab **Views**.
 
 ![Image](../assets/images/part-5/JournalList1.png)
 
@@ -157,7 +157,7 @@ Additionally to the content written and copied in a Journal Page, you can attach
 
 For example, you create a Journal Page to document the working state at some milestone presentation and attach the simulations used. Later, you can easily compare current simulations to those milestone simulations and identify differences. Or you can even reload the simulation in its old state and rerun it with a changed parameter value. (Reload of a simulation in MoBi results in loading missing Building blocks, too - in PK-Sim only the simulation itself is reloaded.)
 
-To attach a Simulation or a Building Block to the active Journal Page, just select the context menu entry <img width="32" src="../assets/icons/AddAction.ico"> **Add to Journal ...** at a Simulation or Building Block in the respective Explorer view.
+To attach a Simulation or a Building Block to the active Journal Page, just select the context menu entry <img width="32" src="../assets/icons/AddAction.svg"> **Add to Journal ...** at a Simulation or Building Block in the respective Explorer view.
 
 The Simulation or Building Block is then displayed in the **Related Items** list at the bottom of the Journal view.
 
@@ -177,7 +177,7 @@ After you documented your project work using the Working Journal, you might want
 
 To search for a word or phrase do the following:
 
-1.  Click the <img width="32" src="../assets/icons/Search.ico"> Search button in the tab **Working Journal** to open the Search area in the **Journal view**.
+1.  Click the <img width="32" src="../assets/icons/Search.svg"> Search button in the tab **Working Journal** to open the Search area in the **Journal view**.
     
 2.  Enter the phrase into the Search field (or select one previous search phrase from the list you get by clicking the ![Image](../assets/icons/JournalSearchPhraseList.png) button at the right of the Search field). If necessary, open the Search Options by clicking the ![Image](../assets/icons/JournalSearchOptionsButton.png) button and select options.
     
@@ -197,7 +197,7 @@ The modelling process in PBPK/PD projects is often not straight forward but requ
 
 Using the **Journal Diagram**, you can visualize your working process in a more appropriate way to maintain an overview of complex projects. You can use this overview for yourself or export it to project reports or slides. You can also see the Journal Diagram as a "diagram of content" of your Working Journal.
 
-You can find the Journal Diagram at the bottom of your PK-Sim or MoBi window. It is hidden by default. If you have removed the view, you can activate it using the button <img width="32" src="../assets/icons/JournalDiagram.ico"> Journal Diagram in the Tab Views. There is only one unique Journal Diagram per Working Journal.
+You can find the Journal Diagram at the bottom of your PK-Sim or MoBi window. It is hidden by default. If you have removed the view, you can activate it using the button <img width="32" src="../assets/icons/JournalDiagram.svg"> Journal Diagram in the Tab Views. There is only one unique Journal Diagram per Working Journal.
 
 ![Image](../assets/images/part-5/JournalDiagram.png)
 
@@ -215,7 +215,7 @@ To connect two Journal Pages, do the following:
 
 To delete a connection, select it and press the DEL key.
 
-After you have arranged the Journal Diagram, click the Save Diagram button <img width="32" src="../assets/icons/Save.ico"> to save the Diagram layout to the Working Journal.
+After you have arranged the Journal Diagram, click the Save Diagram button <img width="32" src="../assets/icons/Save.svg"> to save the Diagram layout to the Working Journal.
 
 {% hint style="warning" %}
 Clicking on Reset Layout to Default does immediately overwrite your layout work, so be careful using this button. (Result: All Journal Page nodes are displayed side by side in one horizontal sequence.)

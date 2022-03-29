@@ -92,17 +92,17 @@ The different context menu items are described in the sections below.
 
 To edit the model, do one of the following:
 
-*   Select <img width="32" src="../assets/icons/ContainerAdd.ico"> **Create Container** from the **context menu** to add a new container (or any other entity type).
+*   Select <img width="32" src="../assets/icons/ContainerAdd.svg"> **Create Container** from the **context menu** to add a new container (or any other entity type).
 
-*   Select <img width="32" src="../assets/icons/ContainerLoad.ico"> **Load Container** to load a previously saved container (or any other entity type).
+*   Select <img width="32" src="../assets/icons/ContainerLoad.svg"> **Load Container** to load a previously saved container (or any other entity type).
 
-*   Select <img width="32" src="../assets/icons/Rename.ico"> **Rename** to rename an entity.
+*   Select <img width="32" src="../assets/icons/Rename.svg"> **Rename** to rename an entity.
 
-*   Double click the entity or select <img width="32" src="../assets/icons/Edit.ico"> **Edit** from the context menu to focus and edit an entity.
+*   Double click the entity or select <img width="32" src="../assets/icons/Edit.svg"> **Edit** from the context menu to focus and edit an entity.
 
-*   Select <img width="32" src="../assets/icons/Save.ico"> **Save** to save an entity separate from the project. You can load such entities in the same or into other projects.
+*   Select <img width="32" src="../assets/icons/Save.svg"> **Save** to save an entity separate from the project. You can load such entities in the same or into other projects.
 
-*   Select <img width="32" src="../assets/icons/Cancel.ico"> **Remove** to remove an entity.
+*   Select <img width="32" src="../assets/icons/Cancel.svg"> **Remove** to remove an entity.
 
 ### Diagram Changes‌
 
@@ -142,11 +142,11 @@ Now you can move, hide or resize the selected nodes:
 You may use different node sizes to emphasize important reactions and molecules or to minimize marginal reactions or molecules.
 {% endhint %}
 
-*   Select <img width="32" src="../assets/icons/Undo.ico"> **Undo Diagram Layout change** to undo diagram changes like collapse/expand or auto layout. Model changes break the undo sequence, and also hide/show cannot be undone. Observe that the **History Manager** only stores model changes but not diagram changes.
+*   Select <img width="32" src="../assets/icons/Undo.svg"> **Undo Diagram Layout change** to undo diagram changes like collapse/expand or auto layout. Model changes break the undo sequence, and also hide/show cannot be undone. Observe that the **History Manager** only stores model changes but not diagram changes.
 
-*   Select <img width="32" src="../assets/icons/Forward.ico"> **Diagram / To front** or <img width="32" src="../assets/icons/Back.ico"> **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
+*   Select <img width="32" src="../assets/icons/Forward.svg"> **Diagram / To front** or <img width="32" src="../assets/icons/Back.svg"> **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
 
-*   Select <img width="32" src="../assets/icons/Update.ico"> **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](#display-changes)).
+*   Select <img width="32" src="../assets/icons/Update.svg"> **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](#display-changes)).
 
 #### Layout Actions
 
@@ -204,7 +204,7 @@ We have already explained in “General Visualization, Scrolling and Zooming” 
 
 You can change the general appearance of the diagrams in the **Diagram Options**
 
-tab within the **User Settings** dialog (click <img width="32" src="../assets/icons/Settings.ico"> **Options** in the Utilities ribbon tab).
+tab within the **User Settings** dialog (click <img width="32" src="../assets/icons/Settings.svg"> **Options** in the Utilities ribbon tab).
 
 All these options are stored in the user settings and apply to newly opened diagram tabs. Refresh a diagram to apply the diagram options to an existing diagram tab (see “Basic Actions”).
 

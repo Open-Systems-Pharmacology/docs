@@ -1,6 +1,6 @@
 # MoBi®‌ Simulation Results
 
-Simulation results are stored during a simulation when observers are defined as described in “Observers”. The results are available for display once an existing simulation has been run. The simulation results of a simulation are listed in the simulation explorer tree below the corresponding simulation. To display the simulation results, either double-click on the results or right-click ![Image](../assets/icons/mouse_select.png) on them and select ![Image](../assets/icons/SummaryChart.png) **Show Data** in the context menu. The results can then be accessed in a new tab in the main window. The most recent results are also shown in the "Results" tab <img width="32" src="../assets/icons/TimeProfileAnalysis.ico"> which can be accessed in the simulation edit mode.
+Simulation results are stored during a simulation when observers are defined as described in “Observers”. The results are available for display once an existing simulation has been run. The simulation results of a simulation are listed in the simulation explorer tree below the corresponding simulation. To display the simulation results, either double-click on the results or right-click ![Image](../assets/icons/mouse_select.png) on them and select ![Image](../assets/icons/SummaryChart.png) **Show Data** in the context menu. The results can then be accessed in a new tab in the main window. The most recent results are also shown in the "Results" tab <img width="32" src="../assets/icons/TimeProfileAnalysis.svg"> which can be accessed in the simulation edit mode.
 
 To display the simulation results in a chart window use the Chart Editor as described in detail in [Shared Tools - Chart Component](../part-5/chart-component.md).
 
@@ -14,9 +14,9 @@ To compare the simulation results with observed (i.e., experimental) data, e.g.,
 
 ### Importing Observed Data‌
 
-To import observed data either use the <img width="32" src="../assets/icons/ObservedData.ico"> **Observed Data** button in the "Modeling&Simulation" ribbon group "Import" or right-click ![Image](../assets/icons/mouse_select_right.png) on the **Observed Data** building block in the Building Block Explorer and select <img width="32" src="../assets/icons/ObservedData.ico"> **Import Observed Data from Excel** in the context menu. MoBi® supports the import of MS Excel® worksheets in a defined format which is also described in detail in [Shared Tools: Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
+To import observed data either use the <img width="32" src="../assets/icons/ObservedData.svg"> **Observed Data** button in the "Modeling&Simulation" ribbon group "Import" or right-click ![Image](../assets/icons/mouse_select_right.png) on the **Observed Data** building block in the Building Block Explorer and select <img width="32" src="../assets/icons/ObservedData.svg"> **Import Observed Data from Excel** in the context menu. MoBi® supports the import of MS Excel® worksheets in a defined format which is also described in detail in [Shared Tools: Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
 
-Once the import has been completed, the imported data are added to the "Observed Data" building block in the Building Block Explorer. The building block that contains the observed data may be renamed by right-clicking <img width="32" src="../assets/icons/Rename.ico"> on it and selecting Rename in the context menu.
+Once the import has been completed, the imported data are added to the "Observed Data" building block in the Building Block Explorer. The building block that contains the observed data may be renamed by right-clicking <img width="32" src="../assets/icons/Rename.svg"> on it and selecting Rename in the context menu.
 
 ### Display Observed Data‌
 
@@ -36,7 +36,7 @@ MoBi® supports the export of simulation results to MS Excel® as xls or xlsx sp
 
 ### Export Data‌
 
-To export simulation results, right-click ![Image](../assets/icons/mouse_select_right.png) on the simulation in the simulation explorer and select <img width="32" src="../assets/icons/ObservedData.ico"> **Export results to Excel** in the context menu.
+To export simulation results, right-click ![Image](../assets/icons/mouse_select_right.png) on the simulation in the simulation explorer and select <img width="32" src="../assets/icons/ObservedData.svg"> **Export results to Excel** in the context menu.
 
 {% hint style="warning" %}
 All existing results of the selected simulation are exported! In case the simulation produces a large number of results (high number of compartments, molecules, or observers), you may reach the limit of MS Excel® file size.
