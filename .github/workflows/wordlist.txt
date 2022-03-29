@@ -154,6 +154,7 @@ Cheung
 cholesteryl
 Chosing
 chronogenetics
+CKD
 cilostazol
 Cimetidine
 clarithromycin
@@ -173,6 +174,7 @@ Coboeken
 Combinatorial
 combobox
 comboboxes
+comorbid
 ComparisonTimeProfile
 ComparisonTimeProfilePlots
 cooperativity
@@ -257,6 +259,7 @@ edoc
 edu
 Educt
 educts
+eGFR
 EHC
 Ehpgavin
 EI
