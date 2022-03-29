@@ -494,7 +494,7 @@ To clone a simulation in the project:
 2. Select **Clone...** ![](../assets/icons/SimulationClone.svg)
 3. The **Cloning Simulation dialog**, which is identical to the **Create Simulation dialog** for new simulations, will open. You will have to enter an alternative name for the simulation clone.
 4. You can now go through the **Cloning Simulation dialog** and exchange parameters and/or entire building blocks of your simulation clone. To update the settings of the simulation select the appropriate building block from the drop-down menus.
-5. Once all parameters and building blocks are appropriate confirm and close the window by clicking **OK** ![Image](../assets/icons/OK.ico)
+5. Once all parameters and building blocks are appropriate confirm and close the window by clicking **OK** ![](../assets/icons/OK.svg)
 
 {% hint style="info" %}
 Please note that a simulation can only be cloned if the local simulation settings are in agreement with the global settings of the building blocks, as indicated by **green check marks**.
