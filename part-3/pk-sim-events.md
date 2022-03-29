@@ -10,7 +10,7 @@ Please note that the **Event** Building Block does not represent an essential bu
 
 To create a new event, do one of the following:
 
-*   Click **Event** ![](../assets/icons/Event.svg) in the **Create New Building Blocks** Group of the **Modeling & Simulation** Tab
+*   Click **Event** ![](../assets/icons/Event.svg) in the **Create** Group of the **Modeling** Tab
 
 *   Right mouse click on **Events** ![](../assets/icons/EventFolder.svg)in the **Building Block Explorer**
 

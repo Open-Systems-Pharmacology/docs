@@ -27,7 +27,7 @@
   * [Projects](part-3/pk-sim-projects.md)
   * [Creating Individuals](part-3/pk-sim-creating-individuals.md)
   * [Creating Populations](part-3/pk-sim-creating-populations.md)
-  * [Expression Data](part-3/pk-sim-expression-data.md)
+  * [Expression Profile](part-3/pk-sim-expression-profile.md)
   * [Compounds: Definition and Work Flows](part-3/pk-sim-compounds-definition-and-work-flow.md)
   * [Compounds: Defining Inhibition/Induction Processes](part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)
   * [Administration Protocols](part-3/pk-sim-administration-protocols.md)
