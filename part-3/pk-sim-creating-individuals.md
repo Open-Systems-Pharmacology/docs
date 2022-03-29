@@ -37,7 +37,7 @@ In the first drop-down menu you can choose from the following species:
 * Rat ![](../assets/icons/Rat.svg)
 * Mouse ![](../assets/icons/Mouse.svg)
 * Rabbit ![](../assets/icons/Rabbit.svg)
-* Cat ![](../assets/icons/Cat.svg.svg)
+* Cat ![](../assets/icons/Cat.svg)
 * Cattle ![](../assets/icons/Cattle.svg)
 
 ### Human
