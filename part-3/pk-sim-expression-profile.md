@@ -1,4 +1,4 @@
-# PK-SIM Expression Data
+# PK-SIM Expression Profiles
 
 ## Background: Active Processes in PK-SIM
 
@@ -16,13 +16,13 @@ Assuming that kcat is not influenced by _in vivo_ factors, the tissue-specific m
 
 ![Equation 2](../assets/images/part-3/equation-14-2-vmax.png)
 
-### Protein expression data
+### Protein expression profile
 
 Following from **Equation 2**, the effective rate of a protein-mediated process, be it metabolization or transport or binding reaction, is directly dependent on the total amount of the protein in the respective compartment. The abundance of proteins in different organs in PK-Sim is calculated from **relative expression** values. For each organ, the relative expression defines the concentration of the protein in whole organ as a fraction of a defined **reference concentration** value.
 
-![Protein expressions overview](../assets/images/part-3/ProteinExpressionsOverview.png)
+![Protein expression profile overview](../assets/images/part-3/ProteinExpressionProfileOverview.png)
 
-### Reference Concentration
+### Reference concentration
 
 The **reference concentration** can be measured *in vitro* and allow direct *in vitro - in vivo* extrapolation (IVIVE). The concentration of the protein in the organ with the **relative expression = 1** will equal to that measured concentration. The concentrations in all other organs will be set relative to that value. In case no *in vitro* protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g. metabolism of a compound) through the relative expressions.
 
@@ -104,6 +104,20 @@ The relative expressions (and the fractions expressed at different sites) of the
 
 **Initial concentrations** of the enzymes in the different compartments within the model are combined from the relative expression values of organs having direct access to this compartment.
 The name “initial concentration” refers to the fact that these concentrations may change during simulation course e.g. through mechanism based inactivation. The concentration of the enzyme in the compartment ultimately defines the rate of the reaction catalyzed by this enzyme.
+
+{% hint style="tip" %}
+
+The initial concentration value will be effectively calculated when the expression profile is linked to an individual e.g. when individual specific parameters such as volumes, hematocrit etc... are defined
+
+{% endhint %}
+
+To set a specific initial concentration value in a given compartment, simply overwrite the value in the expression profile for this specific compartment. This will effectively ensure that all individual using the expression profile will use the same initial concentration.
+
+{% hint style="warning" %}
+
+Do only overwrite initial concentration by hand if absolutely required.
+
+{% endhint %}
 
 * **BloodCells:**  `RC * rel_exp_bc * f_exp_bc_cell`
   * *RC*: Reference concentration
@@ -243,43 +257,58 @@ The workflow of integrating protein data with PBPK models comprises the followin
 
 1.  Identification of relevant metabolizing enzymes, transport proteins, and protein binding partners for the compound of interest (_your internal research or literature_)
     
-2.  Determination of organ and tissue specific distribution of protein concentrations (PK-Sim® supports this task with an in-built database)
+2.  Determination of organ and tissue specific distribution of protein concentrations (PK-Sim® supports this task with a built-in database)
     
 3.  Identification of cellular location of proteins (_your internal research or literature_)
     
 4.  Devise applicable kinetics and adjust kinetic parameters (_modeling, your internal research or literature_)
 
 ## Modeling protein/drug interactions in PK-Sim®‌
+The distribution of a protein (metabolizing enzyme, transporter protein, or a protein binding partner) in the modeled organism is defined by an Expression Profile in the "Expression Profiles" building block. The expression profile is then linked to the individual (see [PK-Sim® Creating Individuals](pk-sim-creating-individuals.md)), and the interaction between the protein (e.g., a metabolization reaction) is defined in the "Compounds" building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md).
 
-Proteins are added to a PBPK model as part of the building block individual. Proteins are added as binding partners, as metabolizing enzymes or as transporters for “compound”. The specifics of the interaction is adjusted in the compounds building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md), while the quantities and localization of proteins is parameterized in the individual building block. There are two ways of adding proteins to the building block “ individual”, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein quantities to a list of organs and tissues. In either case, a protein is added either as “Metabolising Enzyme”, as “Transport Protein” or as “Protein Binding Partners”. Below the tab “Expression”, you find an area that lists all possible protein ‘types’. For each type, it is possible to select via right click a context menu with two entries, **Add type… (Default)** or **Add type… (Database Query)** with type being one of “Metabolising Enzyme”, “Transport Protein” or “Protein Binding Partners”.
+## Definition of new Expression Profile in PK-Sim®‌
 
-![Expression Input Form](../assets/images/part-3/ExpressionInputForm.PNG)
+To create a new expression profile, do one of the following:
 
-## Adding protein quantities manually‌
+*   Click **Expression Profile** <img width="32" height="32" src="../assets/icons/ExpressionProfile.ico"> in the **Create** Group of the **Modeling** Tab and select the protein type (metabolizing enzyme, transport protein or protein binding partner)
 
-If you know quantities of proteins in one or several organs you can define the expression data manually. Start by selecting the type of protein you have, enzyme, transporter or binding partner.
-    
-Right click on this type, and select the first entry in the context menu: **Add Metabolizing Enzyme ... (Default)** (assuming you want to add an enzyme).
+*   Right mouse click on **Expression Profiles** <img width="32" height="32" src="../assets/icons/ExpressionProfileFolder.ico">in the **Building Block Explorer**
 
-![Expression Input Form Context Menu](../assets/images/part-3/ExpressionInputFormContextMenu.PNG)
+and select **Add Expression Profile...**
 
-Next, you will be required to choose a name for your protein. After doing so, an area to configure properties of this protein will appear. 
+The following dialog will open in which the properties of the expression profile can defined:
+
+![Create Expression Profile (for a metabolizing enzyme)](../assets/images/part-3/CreateExpressionProfile.png)
+
+* Species: Species for which the expression profile will be defined.
+
+* Metabolizing Enzyme: Name of the enzyme. You can select from a predefined list of common proteins or enter a name
+
+* Phenotype: A free text allowing you to specify the expression profile. For example, you might want to create different profiles for the CYP3A4 enzyme in human for poor vs extensive metabolizer. In this case,  **poor** and **extensive** could be used. Alternatively, you might want to create a profile for a **healthy** vs **sick** individual etc...
+
+{% hint style="info" %}
+The combination {Species, Protein, Phenotype} needs to be unique in the project. It will define the name of the expression profile building block
+{% endhint %}
+
+## Editing an Expression Profile in PK-Sim®‌
+
+There are two ways of editing an expression profile, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein expression to a list of organs and tissues. 
+
+### Editing protein expression manually‌
+
+If you know expression of proteins in one or several organs you can define the expression data manually. 
+
+We will explain settings in detail in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab). 
+
+### Editing protein expression by querying the expression database‌
 
 {% hint style="info" %}
 To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md).
 {% endhint %}
 
-![Expression Data Input Form For Manually Data Input](../assets/images/part-3/ExpressionDataInputManually.PNG)
+PK-Sim® is shipped with an internal gene expression database. Gene expression is experimentally more amenable then actual protein expression, in particular with the wide spread use of micro array chip technology. Then, a proportionality of gene expression and protein quantities across organs and tissues is assumed.
 
-We will explain settings in detail in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab). 
-
-## Adding protein quantities by querying the internal database‌
-
-Use this if you do not know quantities of proteins in all PK relevant organs/tissues. PK-Sim® is shipped with an internal gene expression database. Gene expression is experimentally more amenable then actual protein expression, in particular with the wide spread use of micro array chip technology. Then, a proportionality of gene expression and protein quantities across organs and tissues is assumed.
-
-Start by selecting the type of protein you have, enzyme, transporter or binding partner. Right click on this type, and select the first entry in the context menu: “Add Metabolizing Enzyme (Database query)” (assuming you want to add an enzyme).
-
-Next, a database query wizard will open. This is discussed in more detail in, “[Advanced Analysis](#advanced-analysis)”. Here we walk you through the simplest possible process.
+Click on **Database Query**. A database query wizard will open, using the name of the protein as a default search criteria. This is discussed in more detail in, “[Advanced Analysis](#advanced-analysis)”. Here we walk you through the simplest possible process.
 
 ### Adding search criteria‌
 
@@ -348,14 +377,14 @@ The complete data set is stored within the PK-Sim® project. If you re-enter the
 {% endhint %}
 
 {% hint style="tip" %}
-You can rename a defined protein within your PK-Sim® project by selecting the **Rename...** menu item from the context menu of a defined protein. This name has no impact on the query and is only used to identify the protein within the PK-Sim® project.
+You can rename a defined expression profile within your PK-Sim® project by selecting the **Rename...** menu item from the context menu of a defined expression profile. This name has no impact on the query and is only used to identify the protein within the PK-Sim® project.
 {% endhint %}
 
 ## Settings in the protein expression tab‌
 
 In the upper section, the following entries can be adjusted:
     
-*   **Reference concentration**: Enter the molar concentration of the protein in the organ with the highest enzyme concentration (typically the liver). This is useful as you will later solely enter relative enzyme concentrations. If you do not know the absolute concentration in the organ with the highest expression level you can leave this entry at its default value of 1.00 pmol/mg and adjust the active process, e.g. via the Vmax value.
+*   **Reference concentration**: Enter the molar concentration of the protein in the organ with the highest enzyme concentration (typically the liver). This is useful as you will later solely enter relative enzyme concentrations. If you do not know the absolute concentration in the organ with the highest expression level you can leave this entry at its default value of 1.00 μmol/mg and adjust the active process, e.g. via the Vmax value.
 See [Reference Concentration](#reference-concentration) for a more detailed discussion of the Reference concentration.
 
 *   **t1/2 (liver)** and **t1/2 (intestine)**: Half-life of the protein turnover in the liver and in the intestine.
@@ -378,8 +407,8 @@ In the lower section, values of relative expression can be edited for individual
 * For metabolizing enzymes and protein binding partners:
 
   * The localization in tissue, blood cells and vascular endothelium can be modified (see [Localizations and initial concentrations of enzymes](#localizations-and-initial-concentrations-of-enzymes) for explanation of the various parameters).
-![](../assets/images/part-3/LocalizationGroups.png)
-Activating/deactivating checkboxes in each of these 3 localization groups changes some parameter values and shows/hides parameters following the following logic:
+    ![](../assets/images/part-3/LocalizationGroups.png)
+    Activating/deactivating checkboxes in each of these 3 localization groups changes some parameter values and shows/hides parameters following the following logic:
     
     - If only one option in a group is activated: corresponding ```fraction expressed``` parameter will be set to 1; other ```fraction expressed``` parameter(s) of this group will be set to 0; all ```fraction expressed``` parameters of the group will be hidden. E.g. activating the checkboxes as in the screenshot above will result in:
       - **Tissue** localization parameters:
@@ -394,7 +423,7 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
         - `Fraction expressed on tissue-side membrane of vascular endothelium = 0` (parameter is hidden)
       
     - If more than one option in a group is activated: corresponding ```fraction expressed``` parameters are shown and can be edited by user. E.g. for the selection below:
-![](../assets/images/part-3/LocalizationGroups2.png)
+    ![](../assets/images/part-3/LocalizationGroups2.png)
       
       - **Tissue** localization parameters:
         - `Fraction expressed intracellular` is shown and can be edited by user
@@ -413,7 +442,7 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
         - `Fraction expressed in endosomes ` is shown and can be edited by user
         - `Fraction expressed on plasma-side membrane of vascular endothelium ` is shown and can be edited by user
         - `Fraction expressed on tissue-side membrane of vascular endothelium ` is hidden and always set to `1 - (Fraction expressed in endosomes + Fraction expressed on plasma-side membrane of vascular endothelium)`
-![](../assets/images/part-3/FractionExpressed2.png)
+      ![](../assets/images/part-3/FractionExpressed2.png)
     - If all options in a group are deactivated: all corresponding `Fraction expressed` parameters are hidden AND all corresponding relative expressions are automatically set to 0. E.g. deactivating both options "*Blood cells intracellular*" and "*Blood cells membrane*" will not only hide the parameters `Fraction expressed in blood cells ` and `Fraction expressed in blood cells membrane` but also set `Relative expression in blood cells ` to 0 and hide it.
     
       In such a case, before setting relative expressions to zero a warning is shown to the user to avoid the loss of information:
@@ -424,14 +453,18 @@ Activating/deactivating checkboxes in each of these 3 localization groups change
   * For some organs, `Fraction expressed apical` can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
   * Transporter direction can be set to **Efflux**, **Influx**, **Bi-Directional** or **Pgp-Like**.
     * Transporter direction can be set **for each organ independently**. In order to change the direction in all organs simultaneously, change the selected value in the "Default Transporter Direction" selection box.
-{% hint style="warning" %}
-The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
-{% endhint %}
+    {% hint style="warning" %}
+    The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
+    {% endhint %}
 
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)
 
 * For all proteins:
   * Initial concentration in every compartment (which is calculated based on the reference concentration, relative expression values and localization settings as described above) is hidden as per default. To show and **to edit** it (if required), the *Show initial concentration* checkbox must be activated:
+
+  {% hint style="warning" %}
+  Most initial concentration values can only be computed in the context of an individual the expression profile is linked to. If you enter a specific value, it will be used in all individuals that use this expression profile and will effectively replace the formula described previously.
+  {% endhint %}
 
 ![Show/Edit (effective) initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
 

@@ -201,7 +201,27 @@ Please note that when switching to another species on the Biometrics tab all par
 
 In the **Expression** tab, all relevant enzymes, transport proteins and protein binding partners can be defined for the selected individual.
 
-For details please see [PK-Sim® - Expression Data](pk-sim-expression-data.md).
+For details on how to create an expression profile, please see [PK-Sim® - Expression Profile](pk-sim-expression-profile.md).
+
+To add a protein to the individual, right click on the corresponding protein type in the tree view and select the corresponding action in the context menu
+
+![Add a metabolizing enzyme](../assets/images/part-3/add_metabolizing_enzyme.png)
+
+This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on <img width="32" src="../assets/icons/AddAction.ico"> 
+
+![Select an expression profile](../assets/images/part-3/select_expression_profile.png)
+
+Once the expression profile is selected, it will be linked to the individual and displayed in the **Expression** tab.
+
+![Expression profile linked to individual](../assets/images/part-3/expression_profile_in_individual.png)
+
+This is the only instance in PK-Sim where a a building block is referencing another building block. 
+
+{% hint style="warning" %}
+Please note that when adding an expression profile to an individual, the expression profile is linked directly to the individual. Any modification performed in the expression profile will be immediately reflected into the individual. This is the reason why all parameters are read-only in the individual.
+{% endhint %}
+
+
 
 ### Editing and Scaling Individual Properties‌
 
