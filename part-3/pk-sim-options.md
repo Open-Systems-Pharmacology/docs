@@ -48,7 +48,7 @@ You can change the size of the icons displayed within the **Tree view**, the **T
 
 ## Template Database Path
 
-You can change the path to the template database or create a new template database by clicking on <img width="32" src="../assets/icons/AddAction.svg">
+You can change the path to the template database or create a new template database by clicking on ![](../assets/icons/AddAction.svg)
 
 ## Colors
 

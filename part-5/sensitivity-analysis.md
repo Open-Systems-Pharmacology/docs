@@ -18,7 +18,7 @@ Or from the perspective of PK parameters for outputs: It is calculated how sensi
 
 The general workflow to perform a **Sensitivity Analysis** for a chosen simulation consists of the following steps:
 
-1.  Open the simulation and define the interesting outputs in the simulation setting. <img width="32" src="../assets/icons/SimulationSettings.svg">
+1.  Open the simulation and define the interesting outputs in the simulation setting. ![](../assets/icons/SimulationSettings.svg)
     
 2.  Create a Sensitivity Analysis for that simulation.
     
@@ -26,7 +26,7 @@ The general workflow to perform a **Sensitivity Analysis** for a chosen simulati
     
 4.  If necessary adjust their variation range to appropriate values.
     
-5.  Start the Sensitivity Analysis. <img width="32" src="../assets/icons/Run.svg">.
+5.  Start the Sensitivity Analysis. ![](../assets/icons/Run.svg).
     
 6.  View the sensitivity rankings in tab **Sensitivity Analysis** for the outputs to identify those input parameters with the highest impact.
     
@@ -64,23 +64,23 @@ For the default setting n = 2 and a = 0.1, we get 4 variation factors: 1/1.1, 1/
 
 Outputs of a simulation cannot be changed while creating or configuring the Sensitivity Analysis, you need to decide on the outputs before you create a Sensitivity Analysis.
 
-To select the outputs of interest for a simulation, open that simulation and click <img width="32" src="../assets/icons/Settings.svg"> Define Settings and Run to display the Curve Selection Dialog.
+To select the outputs of interest for a simulation, open that simulation and click ![](../assets/icons/Settings.svg) Define Settings and Run to display the Curve Selection Dialog.
 
 ## Creating a Sensitivity Analysis‌
 
 To create a new Sensitivity Analysis, do one of the following
 
-*   Mark a simulation for the Sensitivity Analysis in the Simulation Explorer and select <img width="32" src="../assets/icons/SensitivityAnalysis.svg"> **Start Sensitivity Analysis ...** from the context menu.
+*   Mark a simulation for the Sensitivity Analysis in the Simulation Explorer and select ![](../assets/icons/SensitivityAnalysis.svg) **Start Sensitivity Analysis ...** from the context menu.
 
-*   Click <img width="32" src="../assets/icons/AddAction.svg"> **Create** in the ribbon bar **Sensitivity Analysis**.
+*   Click ![](../assets/icons/AddAction.svg) **Create** in the ribbon bar **Sensitivity Analysis**.
 
-*   In the Simulation Explorer, right click the Sensitivity Analysis root node and select <img width="32" src="../assets/icons/SensitivityAnalysis.svg"> **Add Sensitivity Analysis** from the context menu.
+*   In the Simulation Explorer, right click the Sensitivity Analysis root node and select ![](../assets/icons/SensitivityAnalysis.svg) **Add Sensitivity Analysis** from the context menu.
 
 The Sensitivity Analysis view is displayed and the tab **Parameters** is opened.
 
 For a hands on example, open the example project Theophylline.pksim5. You can open the folder with the example projects from the Start menu by selecting All Programs/Open Systems Pharmacology/PK-Sim/Examples.
 
-In the Simulation Explorer, mark the simulation "_Kaumeier IV 208 mg fit_" and select <img width="32" src="../assets/icons/SensitivityAnalysis.svg"> **Start Sensitivity Analysis ...** from the context menu.
+In the Simulation Explorer, mark the simulation "_Kaumeier IV 208 mg fit_" and select ![](../assets/icons/SensitivityAnalysis.svg) **Start Sensitivity Analysis ...** from the context menu.
 
 ![Sensitivity Analysis - Tab Parameters](../assets/images/part-5/SA_Parameters1.png)
 
@@ -128,7 +128,7 @@ On the right side of the tab Parameters, you can adjust the variation parameters
 
 *   change the parameters individually in each row,
 
-*   change the parameters in the top area and set the value for all input parameters by clicking <img width="32" src="../assets/icons/RefreshAll.svg">**All**,
+*   change the parameters in the top area and set the value for all input parameters by clicking ![](../assets/icons/RefreshAll.svg)**All**,
 
 *   change the parameters in the top area, select multiple input parameters and set the value for the selected parameters only by clicking **Selection**.
 
@@ -144,7 +144,7 @@ So in case of performance problems, think about restricting the tested input par
 
 In the ribbon bar **Sensitivity Analysis**, you can start and stop the calculation of the sensitivities.
 
-Click <img width="32" src="../assets/icons/SensitivityAnalysisVisualFeedback.svg"> **Show Visual Feedback** to see a progress bar of the simulations calculation.
+Click ![](../assets/icons/SensitivityAnalysisVisualFeedback.svg) **Show Visual Feedback** to see a progress bar of the simulations calculation.
 
 ![Visual Feedback - Progress bar of calculated simulations](../assets/images/part-5/SA_ProgressBar.png)
 

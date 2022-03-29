@@ -52,7 +52,7 @@ You will be able to reproduce every step that you have made during the project. 
 
 ## MoBi® Options‌
 
-The program options window can be opened by clicking the <img width="32" src="../assets/icons/Settings.svg"> **Options** in the **Utilities** ribbon tab. This opens the options window. MoBi® here allows the user to define some basic settings, e.g., concerning the number of recently opened projects or settings for the diagrams or (de-)activating the dimensions validation in the **General** tab.
+The program options window can be opened by clicking the ![](../assets/icons/Settings.svg) **Options** in the **Utilities** ribbon tab. This opens the options window. MoBi® here allows the user to define some basic settings, e.g., concerning the number of recently opened projects or settings for the diagrams or (de-)activating the dimensions validation in the **General** tab.
 
 ![Options window in MoBi®](../assets/images/part-4/Prg_overview_options.png)
 

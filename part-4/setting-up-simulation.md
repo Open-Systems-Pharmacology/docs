@@ -191,7 +191,7 @@ If you change the value of a parameter defined by an explicit formula, the Formu
 {% endhint %}
 
 {% hint style="info" %}
-After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![](../assets/icons/Refresh.png), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![](../assets/icons/Notifications.svg) appears.
+After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![](../assets/icons/Refresh.svg), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![](../assets/icons/Notifications.svg) appears.
 {% endhint %}
 
 {% hint style="info" %}

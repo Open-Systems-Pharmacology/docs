@@ -243,15 +243,15 @@ A table described in [Working with Tables](model-building-components.md#working-
 ```
 1.  Select Table Formula with Offset as **Formula Type**.
     
-2.  To create a new table formula with offset, click the <img width="32" src="../assets/icons/AddAction.svg"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
+2.  To create a new table formula with offset, click the ![](../assets/icons/AddAction.svg) **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
     
 3.  In the **Formula Name** _combobox_, you may select an existing table formula with offset.
     
-4.  In the box below the formula name, there is a selection to a **path with a table object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter, a transport or a reaction defined by a table defined as described in [Working with Tables](#working-with-tables). Only when you select a valid object, the <img width="32" src="../assets/icons/OK.svg"> **OK** button will become active, and you can successfully continue.
+4.  In the box below the formula name, there is a selection to a **path with a table object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter, a transport or a reaction defined by a table defined as described in [Working with Tables](#working-with-tables). Only when you select a valid object, the ![](../assets/icons/OK.svg) **OK** button will become active, and you can successfully continue.
     
 5.  Below the table object path, there is a selection to a **path with an offset object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter containing a time, i.e., its dimension has to be Time.
 
-Only when you select a valid object, the <img width="32" src="../assets/icons/OK.svg"> **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
+Only when you select a valid object, the ![](../assets/icons/OK.svg) **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
 ```
 
 ### State Variable Parameters‌

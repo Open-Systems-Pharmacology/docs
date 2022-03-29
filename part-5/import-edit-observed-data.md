@@ -431,7 +431,7 @@ Missing columns will be ignored.
 
 ## Editing Observed Data
 
-Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing metadata. Changes are reversible through <img width="32" src="../assets/icons/Undo.svg"> and will be tracked in the project history. Numerically changing a value is reflected in real-time in the preview graph below and will result in moving the data point in the data grid to the new settings.
+Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing metadata. Changes are reversible through ![](../assets/icons/Undo.svg) and will be tracked in the project history. Numerically changing a value is reflected in real-time in the preview graph below and will result in moving the data point in the data grid to the new settings.
 
 The editing window can be accessed by double-clicking the observed data in the building block view or through the context menu.
 

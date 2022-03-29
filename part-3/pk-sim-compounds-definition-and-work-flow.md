@@ -6,9 +6,9 @@ A **Compound** is a set of data that describes the properties of the substance w
 
 To create a new compound, do one of the following:
 
-- Click on **Compound** <img width="32" src="../assets/icons/Molecule.svg"> in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+- Click on **Compound** ![](../assets/icons/Molecule.svg) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
-- Right mouse click on **Compounds** in the **Building Block Explorer** and select <img width="32" src="../assets/icons/Molecule.svg"> **Add Compound...**
+- Right mouse click on **Compounds** in the **Building Block Explorer** and select ![](../assets/icons/Molecule.svg) **Add Compound...**
 
 - Use the short cut **Ctrl+Alt+C**
 
@@ -26,17 +26,17 @@ The basic physico-chemical properties have to be specified in the **Basic Physic
 
 ### To Enter an additional value:
 
-1.  Click **Add** <img width="32" src="../assets/icons/AddAction.svg"> at the end of a row.
+1.  Click **Add** ![](../assets/icons/AddAction.svg) at the end of a row.
 
 2.  Enter the alternative name
 
 3.  If desired, enter a short description in the respective input field
 
-4.  Click **OK** <img width="32" src="../assets/icons/OK.svg">
+4.  Click **OK** ![](../assets/icons/OK.svg)
 
 ### To delete a value:
 
-1.  Click **Delete** <img width="32" src="../assets/icons/Delete.svg">
+1.  Click **Delete** ![](../assets/icons/Delete.svg)
 
 2.  Click **Yes**
 
@@ -164,7 +164,7 @@ A general workflow for defining a specific process in _Protein Binding Partners_
 After definition of the required parameters the specific clearance or kinetic rate constant used in the simulation is automatically calculated taking into account the parameters listed under **Calculation parameters**.
 
 {% hint style="note" %}
-Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol <img width="32" src="../assets/icons/Notifications.svg">. The formula can be reset by clicking on ![Image](../assets/icons/Refresh.svg)
+Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol ![](../assets/icons/Notifications.svg). The formula can be reset by clicking on ![Image](../assets/icons/Refresh.svg)
 {% endhint %}
 
 After having defined the biological properties of the compound, you will have to link specific processes to enzymatic, transport, and binding settings defined for the selected individual/species in the Simulation. This is described in [Select relevant biological processes](pk-sim-simulations.md#select-relevant-biological-processes).
@@ -414,7 +414,7 @@ i.e. no binding is assumed.
 
 - kass (FcRn): association rate constant for binding to FcRn for the acidic endosomal space as well as for plasma/interstitial space. The default value is a typical value for monoclonal antibodies and can usually be kept.
 
-After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img width="32" src="../assets/icons/OK.svg">. The new compound will appear in the **Building Block Explorer** view.
+After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** ![](../assets/icons/OK.svg). The new compound will appear in the **Building Block Explorer** view.
 
 ## Setting or Changing Compound Properties‌
 
@@ -422,7 +422,7 @@ To set or change the properties of an existing compound:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/Edit.svg"> **Edit...**
+2.  Select ![](../assets/icons/Edit.svg) **Edit...**
 
 or simply double click on the compound in the **Building Block Explorer**.
 
@@ -434,11 +434,11 @@ To clone a compound in the project:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select **Clone...** <img width="32" src="../assets/icons/SimulationClone.svg">
+2.  Select **Clone...** ![](../assets/icons/SimulationClone.svg)
 
 3.  Enter an alternative name for the compound clone and enter a description, if desired.
 
-4.  Confirm and close the window by clicking **OK** <img width="32" src="../assets/icons/OK.svg">
+4.  Confirm and close the window by clicking **OK** ![](../assets/icons/OK.svg)
 
 ## Saving Compounds as Templates‌
 
@@ -448,7 +448,7 @@ To save an existing compound as template:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/SaveAction.svg"> **Save as Template...**
+2.  Select ![](../assets/icons/SaveAction.svg) **Save as Template...**
 
 In case a compound with the same name already exists, a warning appears and you have the following options:
 
@@ -466,13 +466,13 @@ To load an existing compound from the template database:
 
 1.  Right mouse click on **Compounds** in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/LoadAction.svg"> **Load From Template...**
+2.  Select ![](../assets/icons/LoadAction.svg) **Load From Template...**
 
 3.  Select the desired compound from the user templates
 
     In case a compound with the same name already exists in the project, a warning pops up and you will have to **Rename** the compound that is to be loaded from template.
 
-4.  Click **OK** <img width="32" src="../assets/icons/OK.svg">
+4.  Click **OK** ![](../assets/icons/OK.svg)
 
 The selected compound will appear in the **Building Block Explorer** view.
 
@@ -484,7 +484,7 @@ To delete a compound from the project:
 
 1.  Right mouse click on the respective compound in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/Delete.svg"> **Delete...**
+2.  Select ![](../assets/icons/Delete.svg) **Delete...**
 
 3.  Confirm by clicking **Yes**
 
