@@ -16,7 +16,7 @@ In the building block **Individual** the properties of individuals are defined. 
 Please note that the volume of fat tissue is not optimized by the algorithm as this value is used to match the target body weight.
 {% endhint %}
 
-### Definition of new Individual in PK-Sim®‌
+## Definition of new Individual in PK-Sim®‌
 
 - Click on **Individual** ![](../assets/icons/Individual.svg) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 
@@ -31,7 +31,7 @@ European individual are shown.](../assets/images/part-3/PKSim_Individuals_NewInd
 
 The **Create Individual** building block window is subdivided into three tabs: **Biometrics, Anatomy & Physiology**, and **Expression**.
 
-#### Biometrics‌
+### Biometrics‌
 
 In the first drop-down menu you can choose from the following species:
 
@@ -41,23 +41,21 @@ In the first drop-down menu you can choose from the following species:
 
 - Beagle ![](../assets/icons/Beagle.svg)
 
-
 - Dog ![](../assets/icons/Dog.svg)
-
 
 - Minipig ![](../assets/icons/Minipig.svg)
 
-
 - Rat ![](../assets/icons/Rat.svg)
-
 
 - Mouse ![](../assets/icons/Mouse.svg)
 
-
 - Rabbit ![](../assets/icons/Rabbit.svg)
 
+- Cat ![](../assets/icons/Cat.svg.svg)
 
-**Human** 
+- Cattle ![](../assets/icons/Cattle.svg)
+
+### Human
 
 If **Human**  ![](../assets/icons/Human.svg)  is selected, you can select one of the following populations from the next drop-down menu:
 
@@ -103,7 +101,23 @@ Oral administration to preterm neonates is, so far, not possible in PK- Sim®. T
 Please note that gender-specific information for all parameters except body weight and height (biometrics) was not available for preterms.Therefore, it is an assumption that for a given body weight the organ weights and blood flow rates are equal for males and females.
 {% endhint %}
 
-**Animal species**
+#### Disease State
+
+Depending on the selected population, a disease state for the selected individual can be specified. By default, the individual will be created as **Healthy**. 
+
+#### Healthy
+
+Healthy individuals in PK-Sim are representative of the general population of individuals in the specified ethnicity and/or geographic area. These individuals are parameterized under the assumption that they have no chronic or comorbid disease states that would have a relevant effect on anatomy, physiology or drug disposition.
+
+#### Chronic Kidney Disease (CKD)
+
+Chronic kidney disease is renal impairment lasting at least 3 months. The disease is staged according to eGFR. Over time, multiple other body systems are also affected. To apply this disease state to an individual in PK-Sim, first select the targeted eGFR. Accordingly, the individual will display changes in GFR, kidney volume, kidney blood flow, plasma protein binding, hematocrit, gastric emptying time, and small intestinal transit time.
+
+This parameterization is for individuals with CKD who are not on dialysis. It does not modify the expression or activity of enzymes or transporters - only foundational anatomy and physiology. Users should consult scientific literature for information how the relevant enzymes and transporters for their purposes may be affected.
+
+For more information on the implementation, please refer to  \[[122](../references.md#122)\]
+
+### Animal species
 
 If one of the animal species, i.e. **Monkey, Beagle, Dog, Minipig, Rat** or **Mouse** is selected, the menu items are slightly different.
 
