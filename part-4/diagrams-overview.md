@@ -115,8 +115,8 @@ You may use different node sizes to emphasize important reactions and molecules 
 {% endhint %}
 
 * Select ![](../assets/icons/Undo.svg) **Undo Diagram Layout change** to undo diagram changes like collapse/expand or auto layout. Model changes break the undo sequence, and also hide/show cannot be undone. Observe that the **History Manager** only stores model changes but not diagram changes.
-* Select ![](../assets/icons/Forward.svg) **Diagram / To front** or ![](../assets/icons/Back.svg) **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
-* Select ![](../assets/icons/Update.svg) **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](diagrams-overview.md#display-changes)).
+* Select ![](../assets/icons/Next.svg) **Diagram / To front** or ![](../assets/icons/Back.svg) **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
+* Select ![](../assets/icons/Refresh.svg) **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](diagrams-overview.md#display-changes)).
 
 #### Layout Actions
 
@@ -208,9 +208,9 @@ You can **insert reactions and molecule nodes** by the context menu as described
 To **add an educt, product or modifier to a reaction**, connect a molecule node with its name to the corresponding port of the reaction node by doing one of the following:
 
 1. Move the mouse to the outer circle or the molecule node until the mouse pointer looks like ![Image](../assets/icons/HandCursor.png); now you are in connection mode.
-2.  Click and hold the left mouse button and drag the mouse to the intended port. A straight connection line is shown during dragging the mouse.
-3.  When you reach the vicinity of a port, the connection line snaps to that port. Move the mouse to the vicinity of the intended port.
-4.  Release the mouse button. A colored bended connection line is drawn now.
+2. Click and hold the left mouse button and drag the mouse to the intended port. A straight connection line is shown during dragging the mouse.
+3. When you reach the vicinity of a port, the connection line snaps to that port. Move the mouse to the vicinity of the intended port.
+4. Release the mouse button. A colored bended connection line is drawn now.
 
 Alternatively, you can establish a connection in the opposite direction: Move the mouse first to the port until you are in connection mode (![Image](../assets/icons/HandCursor.png)) and connect to a molecule node as described before.
 
