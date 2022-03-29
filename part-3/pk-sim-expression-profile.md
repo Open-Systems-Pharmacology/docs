@@ -270,9 +270,9 @@ The distribution of a protein (metabolizing enzyme, transporter protein, or a pr
 
 To create a new expression profile, do one of the following:
 
-*   Click **Expression Profile** <img width="32" height="32" src="../assets/icons/ExpressionProfile.ico"> in the **Create** Group of the **Modeling** Tab and select the protein type (metabolizing enzyme, transport protein or protein binding partner)
+*   Click **Expression Profile** ![](../assets/icons/ProteinExpression.svg) in the **Create** Group of the **Modeling** Tab and select the protein type (metabolizing enzyme, transport protein or protein binding partner)
 
-*   Right mouse click on **Expression Profiles** <img width="32" height="32" src="../assets/icons/ExpressionProfileFolder.ico">in the **Building Block Explorer**
+*   Right mouse click on **Expression Profiles**  ![](../assets/icons/ExpressionProfileFolder.svg) in the **Building Block Explorer**
 
 and select **Add Expression Profile...**
 
