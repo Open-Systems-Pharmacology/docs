@@ -207,12 +207,12 @@ You can **insert reactions and molecule nodes** by the context menu as described
 
 To **add an educt, product or modifier to a reaction**, connect a molecule node with its name to the corresponding port of the reaction node by doing one of the following:
 
-1. Move the mouse to the outer circle or the molecule node until the mouse pointer looks like ; now you are in connection mode.
-2. Click and hold the left mouse button and drag the mouse to the intended port. A straight connection line is shown during dragging the mouse.
-3. When you reach the vicinity of a port, the connection line snaps to that port. Move the mouse to the vicinity of the intended port.
-4. Release the mouse button. A colored bended connection line is drawn now.
+1. Move the mouse to the outer circle or the molecule node until the mouse pointer looks like ![Image](../assets/icons/HandCursor.png); now you are in connection mode.
+2.  Click and hold the left mouse button and drag the mouse to the intended port. A straight connection line is shown during dragging the mouse.
+3.  When you reach the vicinity of a port, the connection line snaps to that port. Move the mouse to the vicinity of the intended port.
+4.  Release the mouse button. A colored bended connection line is drawn now.
 
-Alternatively, you can establish a connection in the opposite direction: Move the mouse first to the port until you are in connection mode () and connect to a molecule node as described before.
+Alternatively, you can establish a connection in the opposite direction: Move the mouse first to the port until you are in connection mode (![Image](../assets/icons/HandCursor.png)) and connect to a molecule node as described before.
 
 To **remove an educt, product or modifier from a reaction**, disconnect the molecule node from the corresponding port of the reaction node by clicking on the connection line (it will then be marked by four squares) and pressing the **Delete** key.
 
