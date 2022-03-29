@@ -42,7 +42,7 @@ In the main window, the molecules building block should now contain three list e
 * Open the "Organism" building block in the spacial structure building block group.
 * In the new main window, double-click on the green container in the diagram area named "Organism".
 * Select the **Properties** tab in the lower half of the main window and using the right combobox of **Container Type**. Select: _Logical Container ..._.
-* In the diagram area, right-click anywhere and select ![](../assets/icons/Update.svg) **Refresh** in the context menu: the color of the green container named "Organism" should change to _blue_, which characterizes logical containers.
+* In the diagram area, right-click anywhere and select ![](../assets/icons/Refresh.svg) **Refresh** in the context menu: the color of the green container named "Organism" should change to _blue_, which characterizes logical containers.
 * In the diagram area, right-click on the container named "Organism" and select ![](../assets/icons/ContainerAdd.svg) Create Container in the context menu.
 * In the appearing "New Container" window, choose a new name for the container (here: liver), set the **Container Type** to _Logical Container ..._, and click **OK**.
 * Right-click on the new "Liver" container. Again, create a new container named "Plasma" with **Container Type** set to _Physical Container ..._ and click **OK**.

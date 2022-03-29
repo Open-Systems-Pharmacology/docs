@@ -37,11 +37,11 @@ In the first step of the simulation creation you can choose the building blocks 
 
 In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the ![](../assets/icons/AddAction.svg) button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Molecule Start Values](building-block-concepts.md#molecule-start-values) and [Parameter Start Values](building-block-concepts.md#parameter-start-values).
 
-Clicking on **Next** ![](../assets/icons/Forward.svg) will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the ![](../assets/icons/Save.svg) **Save Changes as new building block** button.
+Clicking on **Next** ![](../assets/icons/Next.svg) will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the ![](../assets/icons/Save.svg) **Save Changes as new building block** button.
 
 ![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW\_MSV.png)
 
-Clicking on **Next** ![](../assets/icons/Forward.svg) will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
+Clicking on **Next** ![](../assets/icons/Next.svg) will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
 
 {% hint style="info" %}
 Changes of start values will affect newly created simulations. Adding them to the project, will leave the original start values building blocks unaffected. **Save Changes as new building block** will create a new building block under a different name.
@@ -53,7 +53,7 @@ Changes of start values will affect newly created simulations. Adding them to th
 Newly created Molecule and Parameter Start Value building blocks in step one, or Start Values building blocks saved in steps two and three during the simulation creation process will only be added to the project when the simulation creation is completed by clicking **Finish** ![](../assets/icons/OK.svg) and not cancelled prematurely.
 {% endhint %}
 
-The third and fourth steps after clicking **Next** ![](../assets/icons/Forward.svg) allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
+The third and fourth steps after clicking **Next** ![](../assets/icons/Next.svg) allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
 
 In the last step, you can choose to immediately run the simulation upon completion of the simulation creation process by selecting the checkbox ![Image](../assets/icons/Checked.png) **Run Simulation** as depicted.
 
@@ -191,7 +191,7 @@ If you change the value of a parameter defined by an explicit formula, the Formu
 {% endhint %}
 
 {% hint style="info" %}
-After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![](../assets/icons/Refresh.svg), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![](../assets/icons/Notifications.svg) appears.
+After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![](../assets/icons/Update.svg), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![](../assets/icons/Notifications.svg) appears.
 {% endhint %}
 
 {% hint style="info" %}
@@ -276,7 +276,7 @@ The context menu that opens when right-clicking on the simulation in the Simulat
 * ![](../assets/icons/Undo.svg) Refresh - discard all changes made in the simulation.
 * ![](../assets/icons/Edit.svg) Edit - opens the simulation in the edit window (same as double-clicking).
 * ![](../assets/icons/Rename.svg) Rename - renames the simulation.
-* ![Image](../assets/icons/Cancel.ico) Remove - deletes the simulation from the project.
+* ![](../assets/icons/Cancel.svg) Remove - deletes the simulation from the project.
 * ![](../assets/icons/SaveAs.svg) Save As - saves the simulation as pkml file.
 * ![](../assets/icons/Population.svg) Start Population Simulation - calls the Population Simulation Analysis in PK-Sim®, loads the simulation and runs the population simulation (see “Running and analyzing a population simulation” for description).
 * Start Parameter Identification - calls Parameter Identification tool (see [Parameter Identification](tools.md#parameter-identification) for description).
