@@ -240,7 +240,6 @@ Data points cannot be edited, but have to be deleted and newly entered. Data poi
 
 A table described in [Working with Tables](model-building-components.md#working-with-tables) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)). To enter a table formula with offset:
 
-```
 1.  Select Table Formula with Offset as **Formula Type**.
     
 2.  To create a new table formula with offset, click the ![](../assets/icons/AddAction.svg) **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
@@ -252,7 +251,6 @@ A table described in [Working with Tables](model-building-components.md#working-
 5.  Below the table object path, there is a selection to a **path with an offset object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter containing a time, i.e., its dimension has to be Time.
 
 Only when you select a valid object, the ![](../assets/icons/OK.svg) **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
-```
 
 ### State Variable Parameters‌
 
@@ -733,17 +731,13 @@ To work with molecule observers, make sure the tab "Molecule Observer" in the ed
 10. The formula for molecular concentration you will need to enter is the ratio of molecule amount and container volume. For both, you need the references, similar to all previously described formulas. For the amount of molecules, this is straightforward: just drag and drop the word "MOLECULE" from the "Possible Referenced Objects" tree on the right to the white space below "Alias/Path/Dimension" on the left. The alias "M", the path "..", and the dimension "Amount" will appear. This alias "M" stands for the corresponding amount for each molecule the observer is calculated for, according to the conditions defined previously, visible under the "Properties" tab.
 11. Since our concentration observer should be computed for containers of different hierarchical levels (in case the spatial structure will be extended in the future), you need to select "Relative Path" by clicking the corresponding radio button on the right. The first time you do that in this window, you will be asked for entering a path by the window shown below. To completely visualize the path, press the **\*** key or click on all + symbols to the left of the names. You may select any of the containers here and then use its corresponding Volume parameter; however, do not use any of the "MoleculeProperties" branches, as that would invalidate the path. To complete our example observer, click on "Vial1" and then on the OK button; see the following image.
 
-```
 ![Select Relative Path window](../assets/images/part-4/EnteringRelativePath.png)
-```
 
 1. On the right hand side of the edit window, the "Possible Referenced Objects" tree, "Vial1" is now highlighted. Open the "Vial1" tree by clicking on the + symbol to the left of "Vial1". You will see the parameter "Volume" below it, after "MoleculeProperties".
 2. Drag and drop exactly this "Volume" to the left, below the "M". The alias "Volume", the path "..|..|Volume", and the dimension "Volume" should appear. Compare the screen shot below with your monitor window.
 3. Finally, enter the formula "M/Volume" into the input box below the references (showing a red symbol ![](../assets/icons/ErrorProvider.svg) next to it before the formula is entered), and all should look like in this image.
 
-```
 ![Molar Concentration Molecule Observer formula including references completed](../assets/images/part-4/AmountObserverComplete.png)
-```
 
 1. The warning symbol disappears, you can see the still highlighted "Volume" that was used to drag the reference path, and you will see the amount of molecules M. In case there was a mistake and you need to reset the Local Reference Point, click on the **...** symbol to the right of the path and re-enter it. Wrong references above the formula can be deleted by right-clicking on them and selecting **Remove** from the context menu.
 
@@ -834,9 +828,7 @@ To create an event, click the Create Event option. A window named "New Event" wi
 15. Enter "SetA" as name into the Name input box.
 16. Click the **...** on the left hand side of the "Changed Entity" input box below Name. A window named "Select Changed Entity" will open. Select the molecule "A" in "Vial1" as target. To see it and be able to click it, you need to open the levels BigVial|BigVial|Vial1 by clicking successively on the + sign to the left of them. Then click on **A**. The window should look like the following screen shot.
 
-```
 ![Select Changed Entity window](../assets/images/part-4/SetA.png)
-```
 
 1. Click the **OK** button. The red error symbol ![](../assets/icons/ErrorProvider.svg) to the left of the "Changed Entity" input box should now be gone, and a path to molecule A, "BigVial| Vial1|A", should be visible.
 2. Check the box ![Image](../assets/icons/Checked.png) **Use Assignment As Value**, then enter "50" into the Value input box. This will set the amount of molecules to 50 µmol in "Vial1" when the event is executed. Finally, click the **OK** button or press **Enter**. The screen should look like in the following image, and the event is now completed.
