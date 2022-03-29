@@ -168,9 +168,9 @@ To change the value of a parameter, do one of the following
 
 - Multiply the default values with the scale option There are three types of parameter values:
 
-1.  Parameter values displayed by default on a white background represent constants values. By changing the parameter value, the default value will be overwritten and the background of the field turns yellow. To reset the parameter value to default click **Reset parameter to default** ![Image](../assets/icons/Reset.png) or use the **Rollback** function of the **History manager**, see [Shared Tools - History manager and history _reporting_](../part-5/history-manager-history-reporting‌.md).
+1.  Parameter values displayed by default on a white background represent constants values. By changing the parameter value, the default value will be overwritten and the background of the field turns yellow. To reset the parameter value to default click **Reset parameter to default** ![](../assets/icons/Refresh.png) or use the **Rollback** function of the **History manager**, see [Shared Tools - History manager and history _reporting_](../part-5/history-manager-history-reporting‌.md).
 
-2.  Parameter values displayed by default on a light blue background represent parameters calculated using a formula. By changing these values, the formula is overwritten and the background of the field turns yellow. To reset to the default value(s) click **Reset parameter to default** ![Image](../assets/icons/Reset.png).
+2.  Parameter values displayed by default on a light blue background represent parameters calculated using a formula. By changing these values, the formula is overwritten and the background of the field turns yellow. To reset to the default value(s) click **Reset parameter to default** ![](../assets/icons/Refresh.png).
 
 3.  Parameter values displayed by default on a grey background represent values which cannot be changed by the user, because otherwise a fundamental relationship could be destroyed.
 

@@ -36,7 +36,7 @@ Setting tolerances lower than default values (absolute tolerance: 1.0E-10; relat
 
 *   Default species and Default population: Changes the default species and default population used for creation of a new individual.      
     
-*   Default parameter layout: Changes the default parameter layout used for parameters shown within the Anatomy & Physiology tab of an individual and within the Parameters tab of a simulation.
+*   Default parameter layout: Changes the default parameter layout used for parameters shown within the Anatomy & Physiology ta b of an individual and within the Parameters tab of a simulation.
     
 *   Lipophilicity, Fraction unbound and Solubility: You can specify the defaults for the description used for the Experiment input box when a new compound is created.
     

@@ -164,7 +164,7 @@ A general workflow for defining a specific process in _Protein Binding Partners_
 After definition of the required parameters the specific clearance or kinetic rate constant used in the simulation is automatically calculated taking into account the parameters listed under **Calculation parameters**.
 
 {% hint style="note" %}
-Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol <img width="32" src="../assets/icons/Notifications.svg">. The formula can be reset by clicking on ![Image](../assets/icons/Reset.png)
+Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol <img width="32" src="../assets/icons/Notifications.svg">. The formula can be reset by clicking on ![Image](../assets/icons/Refresh.svg)
 {% endhint %}
 
 After having defined the biological properties of the compound, you will have to link specific processes to enzymatic, transport, and binding settings defined for the selected individual/species in the Simulation. This is described in [Select relevant biological processes](pk-sim-simulations.md#select-relevant-biological-processes).

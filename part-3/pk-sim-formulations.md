@@ -93,7 +93,7 @@ The origin (0, 0) is always present. Values must be monotonically increasing in 
 
 In order to **import** experimental dissolution data from Excel®:
 
-1. Click ![Image](../assets/icons/Load.png) **Import Formulation**
+1. Click ![](../assets/icons/LoadAction.svg) **Import Formulation**
 2. Select and open the Excel® file
 3. Import and transfer the appropriate Excel® sheet
 

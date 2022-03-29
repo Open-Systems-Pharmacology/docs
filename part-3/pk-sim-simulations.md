@@ -240,7 +240,7 @@ For more information on uploading observed data, see [Import and Edit of Observe
 
 Generally, two different views are available and switching between these view can be done by clicking on **Show PK-Analysis** and **Show Chart** button on the bottom of the chart window:
 
-* Chart view ![Image](../assets/icons/Chart.png) (default): The simulated curves and the observed data are displayed
+* Chart view ![](../assets/icons/TimeProfileAnalysis.svg) (default): The simulated curves and the observed data are displayed
 * PK-Analysis view ![](../assets/icons/PKAnalysis.svg): The calculated PK parameters for the selected simulated curves are displayed.
 
 ### Chart view‌

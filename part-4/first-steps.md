@@ -64,7 +64,7 @@ You now need to create molecules which are later used as reaction partners. Do t
 
 2.  Double-click the <img width="32" src="../assets/icons/Molecule.svg"> **Molecules** entry to edit this building block. A new tab with an empty space will open.
 
-3.  Click the newly visible icon <img width="32" src="../assets/icons/Molecule.svg"> **New** in the context ribbon, or right-click ![Image](../assets/icons/mouse_select_right.png) into the empty space below the **Molecules** tab and choose **Create Molecule** from the context menu. A new window titled "New Molecule" will open.
+3.  Click the newly visible icon <img width="32" src="../assets/icons/Molecule.svg"> **New** in the context ribbon, or right-click into the empty space below the **Molecules** tab and choose **Create Molecule** from the context menu. A new window titled "New Molecule" will open.
 
 4.  Enter "A" as name and press the **Enter** key, or click **OK**. The molecule "A" appears in the left part of the **Molecules** tab, and a tab on the right shows the properties of the molecule.
 
@@ -84,9 +84,9 @@ In the same way, create a second molecule, name it "B". Also, uncheck the box ![
 
 2.  Double-click the newly visible building block name "Reaction" in the Building Block Explorer. A new tab with an empty space will open.
 
-3.  We will now make all needed previously created molecules available for the reactions to be defined. To do this, click the newly visible ribbon button <img width="32" src="../assets/icons/MoleculeAdd.svg"> **Insert Molecule**, or right-click ![Image](../assets/icons/mouse_select_right.png) into the empty white edit space of the Diagram Area and select **Insert Molecule**. A new window titled "Molecule" will open, showing an input box for manual name entry and a list of available molecules.
+3.  We will now make all needed previously created molecules available for the reactions to be defined. To do this, click the newly visible ribbon button <img width="32" src="../assets/icons/MoleculeAdd.svg"> **Insert Molecule**, or right-click into the empty white edit space of the Diagram Area and select **Insert Molecule**. A new window titled "Molecule" will open, showing an input box for manual name entry and a list of available molecules.
 
-4.  Mark both molecules "A" and "B" by clicking on them with the mouse ![Image](../assets/icons/mouse_select.png) while simultaneously keeping the **Shift** key pressed. Then release the **Shift** key and click the **OK** button. Green circular symbols will appear on the Diagram Area for each molecule.
+4.  Mark both molecules "A" and "B" by clicking on them with the mouse while simultaneously keeping the **Shift** key pressed. Then release the **Shift** key and click the **OK** button. Green circular symbols will appear on the Diagram Area for each molecule.
 
 5.  Click the ribbon button <img width="32" src="../assets/icons/ReactionAdd.svg"> **New**, or click again into the white space of the Diagram Area to get the context menu and select **Create Reaction**. A new window titled "New Reaction" will open.
 
@@ -96,7 +96,7 @@ In the same way, create a second molecule, name it "B". Also, uncheck the box ![
 
 8.  Back in the "New Reaction" window, the circular red error symbol <img width="32" src="../assets/icons/ErrorProvider.svg"> in the Formula Name combo box has now vanished. Press again **Enter** or click **OK**. A reaction triangle symbol <img width="32" src="../assets/icons/Reaction.svg"> with the name "R" underneath will now appear in the Diagram Area in addition to the molecules "A" and "B".
 
-9.  You can now move the reaction triangle or either molecule within the Diagram Area by clicking on them, holding the left mouse button ![Image](../assets/icons/mouse_select.png) and moving the mouse into the desired direction. To move a reaction, its grey center needs to be clicked on. To move a molecule, it needs to be clicked on in its darker green center.
+9.  You can now move the reaction triangle or either molecule within the Diagram Area by clicking on them, holding the left mouse button and moving the mouse into the desired direction. To move a reaction, its grey center needs to be clicked on. To move a molecule, it needs to be clicked on in its darker green center.
 
 {% hint style="tip" %}
 Practice this procedure before advancing to the next step!
@@ -106,7 +106,7 @@ Practice this procedure before advancing to the next step!
 
 - First, move the reaction triangle and the molecules into a position where "A" is on the left of the reaction triangle, and "B" on the right. Educts of a reaction are by default connected to the blue circle at the left triangle corner of a reaction, and products to the right green circle on the right triangle.
 
-- Connections can be drawn by either "grabbing" (keeping the left mouse key ![Image](../assets/icons/mouse_select.png) pressed) the outer light green rim of a molecule and pulling it to the corresponding place of a reaction triangle, or by "grabbing" the corresponding reaction port (i.e., the colored circle) and pulling it to the desired molecule.
+- Connections can be drawn by either "grabbing" (keeping the left mouse key pressed) the outer light green rim of a molecule and pulling it to the corresponding place of a reaction triangle, or by "grabbing" the corresponding reaction port (i.e., the colored circle) and pulling it to the desired molecule.
 
 - In each case, a hand symbol ![Image](../assets/icons/HandCursor.png) will appear in place of the standard arrow mouse pointer ![Image](../assets/icons/ArrowCursor.png).
 
@@ -118,9 +118,9 @@ Try it first without making a connection by just hovering with the mouse over a 
 
 - If you want to delete a connection (or if you produced a connection by mistake), click on the connection (which will then be highlighted by green squares) and then press the **Delete** key on your keyboard.
 
-11. To complete the reaction where "A" reacts to "B", click onto the blue circle in the reaction triangle (educt port), keep the left mouse key ![Image](../assets/icons/mouse_select.png) pressed, and pull the line to molecule "A". Release the mouse key, and a connection line will be displayed between molecule "A" and the left corner of the triangle.
+11. To complete the reaction where "A" reacts to "B", click onto the blue circle in the reaction triangle (educt port), keep the left mouse key pressed, and pull the line to molecule "A". Release the mouse key, and a connection line will be displayed between molecule "A" and the left corner of the triangle.
 
-12. Move the mouse pointer to the green reaction triangle circle (product port) on the left, click it, hold the left mouse key ![Image](../assets/icons/mouse_select.png) , and pull a connection to molecule "B".
+12. Move the mouse pointer to the green reaction triangle circle (product port) on the left, click it, hold the left mouse key, and pull a connection to molecule "B".
 
 Below the Diagram Area you find a window with the three tabs **Properties**, **Stoichiometry**, and **Parameters**. Click the tab **Stoichiometry**. If the previous steps went well, you should see the molecule "A" listed in the "Educts" part with a stoichiometric coefficient of 1, and molecule "B" listed in the "Products" part, also with a stoichiometric coefficient of 1.
 
@@ -144,13 +144,13 @@ Now start to create a kinetic equation; in this example assuming an irreversible
 
 Now, you need to create the Molecules and Parameters Start Values. In our example, these are the initial amounts for the two molecules.
 
-1.  In the building block explorer, right-click ![Image](../assets/icons/mouse_select_right.png) the entry <img width="32" src="../assets/icons/MoleculeStartValuesFolder.svg"> **Molecule Start Values**.
+1.  In the building block explorer, right-click the entry <img width="32" src="../assets/icons/MoleculeStartValuesFolder.svg"> **Molecule Start Values**.
 
-2.  Right-click ![Image](../assets/icons/mouse_select_right.png) it, select ![Image](../assets/icons/AddAction.ico **Create Molecule Start Values Building Block** from the context menu. A new window named "Create new start values" opens.
+2.  Right-click it, select ![Image](../assets/icons/AddAction.ico **Create Molecule Start Values Building Block** from the context menu. A new window named "Create new start values" opens.
 
 3.  Enter the name "1" (or any other name you prefer) and click the **OK** button. A window showing the start values for the molecules "A" and "B", 100 and 0 µmol, opens in the edit window of the screen. The values could be edited if other values than the defaults are required for the simulation.
 
-4.  Repeat the procedure with the next building block, <img width="32" src="../assets/icons/ParameterStartValuesFolder.svg"> **Parameter Start Values**: Right-click ![Image](../assets/icons/mouse_select_right.png) it, select <img width="32" src="../assets/icons/AddAction.svg"> **Create Parameter Start Values Building Block** from the menu, enter "1" as name in the "Create new start values" window, and click **OK**. This building block, however, should not show any values since our simple model does not contain any relevant parameters.
+4.  Repeat the procedure with the next building block, <img width="32" src="../assets/icons/ParameterStartValuesFolder.svg"> **Parameter Start Values**: Right-click it, select <img width="32" src="../assets/icons/AddAction.svg"> **Create Parameter Start Values Building Block** from the menu, enter "1" as name in the "Create new start values" window, and click **OK**. This building block, however, should not show any values since our simple model does not contain any relevant parameters.
 
 {% hint style="tip" %}
 Start values can also be created during the next step (Simulation Creation Wizard window) by using the <img width="32" src="../assets/icons/AddAction.svg"> icons which start the same parameter generation procedure. Compare and [Create a Simulation](setting-up-simulation.md#create-a-simulation).

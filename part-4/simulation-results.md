@@ -1,6 +1,6 @@
 # MoBi®‌ Simulation Results
 
-Simulation results are stored during a simulation when observers are defined as described in “Observers”. The results are available for display once an existing simulation has been run. The simulation results of a simulation are listed in the simulation explorer tree below the corresponding simulation. To display the simulation results, either double-click on the results or right-click ![Image](../assets/icons/mouse_select.png) on them and select ![Image](../assets/icons/SummaryChart.png) **Show Data** in the context menu. The results can then be accessed in a new tab in the main window. The most recent results are also shown in the "Results" tab <img width="32" src="../assets/icons/TimeProfileAnalysis.svg"> which can be accessed in the simulation edit mode.
+Simulation results are stored during a simulation when observers are defined as described in “Observers”. The results are available for display once an existing simulation has been run. The simulation results of a simulation are listed in the simulation explorer tree below the corresponding simulation. To display the simulation results, either double-click on the results or right-click on them and select ![](../assets/icons/IndividualSimulationComparison.svg) **Show Data** in the context menu. The results can then be accessed in a new tab in the main window. The most recent results are also shown in the "Results" tab <img width="32" src="../assets/icons/TimeProfileAnalysis.svg"> which can be accessed in the simulation edit mode.
 
 To display the simulation results in a chart window use the Chart Editor as described in detail in [Shared Tools - Chart Component](../part-5/chart-component.md).
 
@@ -14,7 +14,7 @@ To compare the simulation results with observed (i.e., experimental) data, e.g.,
 
 ### Importing Observed Data‌
 
-To import observed data either use the <img width="32" src="../assets/icons/ObservedData.svg"> **Observed Data** button in the "Modeling&Simulation" ribbon group "Import" or right-click ![Image](../assets/icons/mouse_select_right.png) on the **Observed Data** building block in the Building Block Explorer and select <img width="32" src="../assets/icons/ObservedData.svg"> **Import Observed Data from Excel** in the context menu. MoBi® supports the import of MS Excel® worksheets in a defined format which is also described in detail in [Shared Tools: Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
+To import observed data either use the <img width="32" src="../assets/icons/ObservedData.svg"> **Observed Data** button in the "Modeling&Simulation" ribbon group "Import" or right-click on the **Observed Data** building block in the Building Block Explorer and select <img width="32" src="../assets/icons/ObservedData.svg"> **Import Observed Data from Excel** in the context menu. MoBi® supports the import of MS Excel® worksheets in a defined format which is also described in detail in [Shared Tools: Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
 
 Once the import has been completed, the imported data are added to the "Observed Data" building block in the Building Block Explorer. The building block that contains the observed data may be renamed by right-clicking <img width="32" src="../assets/icons/Rename.svg"> on it and selecting Rename in the context menu.
 
@@ -22,13 +22,13 @@ Once the import has been completed, the imported data are added to the "Observed
 
 The imported datasets can be displayed either in a new chart or within an existing chart.
 
-To display the data in a new chart right-click ![Image](../assets/icons/mouse_select_right.png) on the data and select ![Image](../assets/icons/SummaryChart.png) **Show Data** in the context menu.
+To display the data in a new chart right-click on the data and select ![](../assets/icons/IndividualSimulationComparison.svg) **Show Data** in the context menu.
 
 To display the dataset in an existing chart window, simply drag&drop the dataset into the chart. The observed dataset is then also listed in the data browser of the chart editor.
 
 ### Deleting imported Observed Data‌
 
-To delete imported observed data from the project right-click ![Image](../assets/icons/mouse_select_right.png) on the data and select ![Image](../assets/icons/Cancel.ico) **Remove** in the context menu (or simply press the **Delete** key on your keyboard to delete the selected data). This also removes the data from the chart and the data browser of the chart editor.
+To delete imported observed data from the project right-click on the data and select ![Image](../assets/icons/Cancel.ico) **Remove** in the context menu (or simply press the **Delete** key on your keyboard to delete the selected data). This also removes the data from the chart and the data browser of the chart editor.
 
 ## Exporting Simulation Results and Parts of a Simulation Model‌
 
@@ -36,7 +36,7 @@ MoBi® supports the export of simulation results to MS Excel® as xls or xlsx sp
 
 ### Export Data‌
 
-To export simulation results, right-click ![Image](../assets/icons/mouse_select_right.png) on the simulation in the simulation explorer and select <img width="32" src="../assets/icons/ObservedData.svg"> **Export results to Excel** in the context menu.
+To export simulation results, right-click on the simulation in the simulation explorer and select <img width="32" src="../assets/icons/ObservedData.svg"> **Export results to Excel** in the context menu.
 
 {% hint style="warning" %}
 All existing results of the selected simulation are exported! In case the simulation produces a large number of results (high number of compartments, molecules, or observers), you may reach the limit of MS Excel® file size.
@@ -48,7 +48,7 @@ MS Excel® is automatically started and new worksheets, one for each simulation,
 
 Charts can be exported by copying an image of the chart to the clipboard:
 
-- Right-click ![Image](../assets/icons/mouse_select_right.png) on the chart and select **Copy as Image**
+- Right-click on the chart and select **Copy as Image**
 
 - Press **Ctrl+C** when viewing the chart
 
