@@ -35,7 +35,7 @@ Modeling & Simulation Tab
 
 Add Population...
 
-* Use the short cut **Ctrl+Alt+P**
+* Use the shortcut **Ctrl+Alt+P**
 
 A dialog box will open where the properties of the population can be selected and/ or defined. The **Create Population** building block is subdivided into three tabs: **Demographics**, **User Defined Variability**, and **Distribution**.
 
@@ -43,7 +43,7 @@ The population is initialized by giving it a **Name** in the respective input fi
 
 #### Demographics‌
 
-In the first drop-down menu (**Based on individual**) you can specify an **Individual** that you previously defined in this project. A **Population** can then be created based on any **Individual** already defined. You need to specify the number of individuals in your populations comprises and the percentage of females therein. In the tab **User Defined Variability**, changes in anatomical and physiological properties of the population you chose may be specified, i.e. anatomy and physiology including expression and ontogeny information about metabolizing enzymes, transport proteins and protein binding partners. Likewise, the distribution of the property may specified and results are visualized in the next tab **Distribution**. A population can be based on an individual saved as template:
+In the first drop-down menu (**Based on individual**) you can specify an **Individual** that you previously defined in this project. A **Population** can then be created based on any **Individual** already defined. You need to specify the number of individuals in your population comprises and the percentage of females therein. In the tab **User Defined Variability**, changes in anatomical and physiological properties of the population you chose may be specified, i.e. anatomy and physiology including expression and ontogeny information about metabolizing enzymes, transport proteins and protein binding partners. Likewise, the distribution of the property may be specified and results are visualized in the next tab **Distribution**. A population can be based on an individual saved as template:
 
 * Click on **Load** ![](../assets/icons/LoadAction.svg)
 * Select the individual from **User Templates** or **Predefined Templates**
@@ -55,7 +55,7 @@ Alternatively, you can create a new individual which serves as a basis individua
 * Click on **Create** ![](../assets/icons/AddAction.svg)
 * Define the properties of the **Individual**. For details see [PK-Sim® - Creating Individuals](pk-sim-creating-individuals.md).
 
-In the following line, information about the population that will be used based on the selected basis individual is given. For the different animal species no alternative populations are provided, but for humans, the following populations are available:
+In the following line, information about the population that will be used based on the selected basis individual is given. For the different animal species, no alternative populations are provided, but for humans, the following populations are available:
 
 * Asian (Tanaka, 1996) \[[74](../references.md#74)]
 * Black American (NHANES, 1997) \[[82](../references.md#82)]
@@ -66,7 +66,7 @@ In the following line, information about the population that will be used based 
 * Preterm
 * Pregnant (Dallmann et al. 2017)
 
-In the **Population Properties** the number of individuals can be selected. For humans the individual's gender is defined additionally. You can define a female (proportion of females 100%), male (proportion of females 0%), or a mixed gender (proportion of females 1-99%) virtual population.
+In the **Population Properties,** the number of individuals can be selected. For human the individual's gender is defined additionally. You can define a female (proportion of females 100%), male (proportion of females 0%), or a mixed gender (proportion of females 1-99%) virtual population.
 
 Further below, the **Population Parameters Ranges** can be set i.e. the anthropometry of the individuals can be constrained at the lower and/or upper end of the range.
 
@@ -88,7 +88,7 @@ The population database contains physiological information starting from newborn
 
 * Height: The range of body heights of the individuals in units of cm or m.
 * Weight: The range of body weight of the individuals in units of kg or g.
-* BMI: The range of body mass index of the individuals in unit of kg/m2.
+* BMI: The range of body mass index of the individuals in units of kg/m2.
 
 The BMI is a measure for the human fat content. It is given by the individual's height (H) and weight (BW) according to: BMI = BW / H2.
 
