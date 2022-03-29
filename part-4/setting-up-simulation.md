@@ -66,7 +66,7 @@ Finish the simulation creation by clicking on **OK** <img width="32" src="../ass
 
 ### Warnings and Errors‌
 
-If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img width="32" src="../assets/icons/Warning.svg"> Warning or <img width="32" src="../assets/icons/Error.svg"> Error depending on their severity.
+If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img width="32" src="../assets/icons/Notifications.svg"> Warning or <img width="32" src="../assets/icons/Error.svg"> Error depending on their severity.
 
 Errors and warning messages are shown in a notification viewer at the bottom of the page similar to the history viewer. Warnings and error notifications are described in more detail in the viewer as such describing
 
@@ -94,11 +94,11 @@ In this case, the simulation cannot be created. Errors are generated, for exampl
 
 - General syntax errors in formulas.
 
-You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the <img width="32" src="../assets/icons/Error.svg"> Errors and <img width="32" src="../assets/icons/Warning.svg"> Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
+You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the <img width="32" src="../assets/icons/Error.svg"> Errors and <img width="32" src="../assets/icons/Notifications.svg"> Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
 
 ![Notifications View: Warnings](../assets/images/part-4/SimCW_Warnings.png)
 
-The <img width="32" src="../assets/icons/Warning.svg"> Warnings and <img width="32" src="../assets/icons/Error.svg"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img width="32" src="../assets/icons/Save.svg"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
+The <img width="32" src="../assets/icons/Notifications.svg"> Warnings and <img width="32" src="../assets/icons/Error.svg"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img width="32" src="../assets/icons/Save.svg"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
 
 ## Simulation Settings‌
 
@@ -201,7 +201,7 @@ If you change the value of a parameter defined by an explicit formula, the Formu
 {% endhint %}
 
 {% hint style="note" %}
-After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![Image](../assets/icons/Reset.png), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign <img width="32" src="../assets/icons/Warning.svg"> appears.
+After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![Image](../assets/icons/Reset.png), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign <img width="32" src="../assets/icons/Notifications.svg"> appears.
 {% endhint %}
 
 {% hint style="tip" %}

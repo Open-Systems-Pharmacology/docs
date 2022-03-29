@@ -106,7 +106,7 @@ We will now define the reaction kinetics as a reversible reaction in which the m
 
 By default, the **Formula Type** of the kinetics is set to **Formula** (an explicit formula). You can change this selection by use of the combobox, if needed.
 
-Now select the formula string input box to the right of the yellow warning sign with the exclamation mark <img width="32" src="../assets/icons/Warning.svg"> and enter the chosen reaction rate:
+Now select the formula string input box to the right of the yellow warning sign with the exclamation mark <img width="32" src="../assets/icons/Notifications.svg"> and enter the chosen reaction rate:
 
 *   k1\*Drug/V\*((Educt/V)/(Km+Educt/V))-k2\*Product/V
 
@@ -122,11 +122,11 @@ In the properties tab, two essential inputs are still missing:
 
 *   An explicit formula requires a name as indicated by the symbol <img width="32" src="../assets/icons/ErrorProvider.svg">.
 
-*   The specified formula cannot be parsed due to the unknown entities: _k1_, _k2_, _Km_ and _V_ as indicated by the symbol <img width="32" src="../assets/icons/Warning.svg">.
+*   The specified formula cannot be parsed due to the unknown entities: _k1_, _k2_, _Km_ and _V_ as indicated by the symbol <img width="32" src="../assets/icons/Notifications.svg">.
 
 First, a new formula has to be created. To create a new formula, click on the <img width="32" src="../assets/icons/AddAction.svg"> **Add Formula** button. A new window appears, where you can define a new name for the formula. Type in "r1" and confirm the name by clicking **OK**. The formula is also listed in the formula list in the formula tab located above the diagram area.
 
-The yellow warning sign <img width="32" src="../assets/icons/Warning.svg"> indicates that the construction of our kinetic rate equation is not yet complete. To get a consistent formula, you need to assign the missing parameters to the reaction and add them to the referenced objects list.
+The yellow warning sign <img width="32" src="../assets/icons/Notifications.svg"> indicates that the construction of our kinetic rate equation is not yet complete. To get a consistent formula, you need to assign the missing parameters to the reaction and add them to the referenced objects list.
 
 {% hint style="note" %}
 As depicted above, molecules are automatically added to the referenced objects list of an _explicit Formula_ when connected to the reaction. The referenced objects are by default listed by the following properties:
@@ -136,7 +136,7 @@ _The table below belongs to note above._
 
 |   |   |
 |--- |--- |
-| Alias | Defines the name by which the referenced objects are used in the Formula. If the name in the formula does not correspond to the Alias of the respective reference, a warning sign <img width="32" src="../assets/icons/Warning.svg"> appears. |
+| Alias | Defines the name by which the referenced objects are used in the Formula. If the name in the formula does not correspond to the Alias of the respective reference, a warning sign <img width="32" src="../assets/icons/Notifications.svg"> appears. |
 | Path | Path where the referenced object is located within the project. |
 | Dimension | Dimension (e.g., _Volume_ l or _Concentration_ µmol/l) of the referenced object. |
 
