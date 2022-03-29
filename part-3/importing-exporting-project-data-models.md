@@ -116,7 +116,7 @@ A project snapshot contains the **minimal amount of information** required to re
 
 Project snapshots are human-readable text files in [JSON format](https://en.wikipedia.org/wiki/JSON)
 
-![Snapshot example](../assets/images/part-3/Snapshot_Example.jpg)
+![Snapshot example](../assets/images/part-3/Snapshot-Example.jpg)
 
 The following PK-Sim entities are currently supported by snapshots and will be recreated when a project is loaded from snapshot:
 * All building block types (incl. observed data)
@@ -132,7 +132,7 @@ To export a project to snapshot, select **File** :arrow_right:  **Export to Snap
 {% hint style="warning" %} Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect. 
 In this case PK-Sim will warn you. If exported anyway, the new project created from this snapshot may have some undesired deviations from the original projects, which must be corrected manually by the user.
 
-![Snapshot export warning](../assets/images/part-3/Snapshot_Export_Warning.png){% endhint %}
+![Snapshot export warning](../assets/images/part-3/Snapshot-Export-Warning.png){% endhint %}
 
 To load a project from snapshot, select **File** -   **Load from Snapshot** ![](../assets/icons/SnapshotImport.svg)
 

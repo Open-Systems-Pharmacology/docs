@@ -6,7 +6,7 @@ The Open Systems Pharmacology Suite contains different software tools and has be
 
 PK-Sim® is based on a whole-body concept, the focus of its counterpart, MoBi®, is at the molecular level. However, both tools extend to additional physiological scales as illustrated below.
 
-![Multiscale modeling and simulation (taken from [18])](../assets/images/part-2/Eissing_et_al_Frontiers_2011_Figure1.jpg)
+![Multiscale modeling and simulation (taken from [18])](../assets/images/part-2/Eissing-et-al-Frontiers-2011-Figure1.jpg)
 
 ## PK-Sim®
 
@@ -33,7 +33,7 @@ The modular architecture of the software platform is outlined in screenshot belo
 
 Apart from the two central, graphical user interface (GUI) based software tools PK-Sim® and MoBi®, the software platform includes a qualification framework, validation and automation tools, import and export options, as well as interfaces to general computing environments, as detailed below.
 
-![Modular structure of the software platform](../assets/images/part-2/OSP_software_landscape.png)
+![Modular structure of the software platform](../assets/images/part-2/OSP-software-landscape.png)
 
 ### Qualification framework
 

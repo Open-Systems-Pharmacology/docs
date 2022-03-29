@@ -12,4 +12,4 @@ While the very early phases of drug development do not normally involve work on 
 
 
 
-![Phases, costs, and biological systems used in drug development](../assets/images/part-1/Kuepfer_et_al_Adv_Exp_Med_Biol_2012_Figure1.jpg)
+![Phases, costs, and biological systems used in drug development](../assets/images/part-1/Kuepfer-et-al-Adv-Exp-Med-Biol-2012-Figure1.jpg)

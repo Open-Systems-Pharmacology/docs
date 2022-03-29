@@ -20,7 +20,7 @@ and select **Add Event...**
 
 The following dialog will open in which the properties of the event can be selected and/or defined:
 
-![Create Event dialog (with properties of a standard meal for humans)](../assets/images/part-3/PKSim_Event_NewEvent.png)
+![Create Event dialog (with properties of a standard meal for humans)](../assets/images/part-3/PKSim-Event-NewEvent.png)
 
 First the event is initialized by giving it a **Name** in the respective input field. The name is used to identify the event when its parameters are saved in the project and/or as a template. The name is used for the identification of the event in the simulation.
 

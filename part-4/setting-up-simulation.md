@@ -39,7 +39,7 @@ In the first step of the Simulation Creation Wizard, you can also create new Mol
 
 Clicking on **Next** ![](../assets/icons/Next.svg) will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the ![](../assets/icons/Save.svg) **Save Changes as new building block** button.
 
-![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW\_MSV.png)
+![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW-MSV.png)
 
 Clicking on **Next** ![](../assets/icons/Next.svg) will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
 
@@ -47,7 +47,7 @@ Clicking on **Next** ![](../assets/icons/Next.svg) will bring you to the third s
 Changes of start values will affect newly created simulations. Adding them to the project, will leave the original start values building blocks unaffected. **Save Changes as new building block** will create a new building block under a different name.
 {% endhint %}
 
-![Simulation Creation Wizard: Edit Parameter Start Values](../assets/images/part-4/SimCW\_PSV.png)
+![Simulation Creation Wizard: Edit Parameter Start Values](../assets/images/part-4/SimCW-PSV.png)
 
 {% hint style="warning" %}
 Newly created Molecule and Parameter Start Value building blocks in step one, or Start Values building blocks saved in steps two and three during the simulation creation process will only be added to the project when the simulation creation is completed by clicking **Finish** ![](../assets/icons/OK.svg) and not cancelled prematurely.
@@ -57,7 +57,7 @@ The third and fourth steps after clicking **Next** ![](../assets/icons/Next.svg)
 
 In the last step, you can choose to immediately run the simulation upon completion of the simulation creation process by selecting the checkbox ![Image](../assets/icons/Checked.png) **Run Simulation** as depicted.
 
-![Simulation Creation Wizard: Finish](../assets/images/part-4/SimCW\_Finish.png)
+![Simulation Creation Wizard: Finish](../assets/images/part-4/SimCW-Finish.png)
 
 Finish the simulation creation by clicking on **OK** ![](../assets/icons/OK.svg). MoBi® now generates the new simulation, the progress of which is visualized by a progress bar. During this process the simulation is also checked for consistency, and possible issues will be reported.
 
@@ -90,7 +90,7 @@ In this case, the simulation cannot be created. Errors are generated, for exampl
 
 You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the ![](../assets/icons/Error.svg) Errors and ![](../assets/icons/Notifications.svg) Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
 
-![Notifications View: Warnings](../assets/images/part-4/SimCW\_Warnings.png)
+![Notifications View: Warnings](../assets/images/part-4/SimCW-Warnings.png)
 
 The ![](../assets/icons/Notifications.svg) Warnings and ![](../assets/icons/Error.svg) Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the ![](../assets/icons/Save.svg) **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
 
@@ -102,7 +102,7 @@ Simulation Settings allow you to specify the resolution of the results as well a
 
 Output Intervals specify the simulation times at which simulation results are stored. In MoBi® you can specify a variable number of Output Intervals (as depicted below).
 
-![Simulation Creation Wizard: Output Intervals](../assets/images/part-4/SimCW\_OI.png)
+![Simulation Creation Wizard: Output Intervals](../assets/images/part-4/SimCW-OI.png)
 
 Each Output Interval is defined by the following options:
 
@@ -142,7 +142,7 @@ MoBi® uses the CVODE differential equation solver. The solver settings can be a
 For more information on the solver, please refer to the documentation of the CVODE solver: \[CVODE] https://computing.llnl.gov/projects/sundials.
 {% endhint %}
 
-![Simulation Creation Wizard: ODE Solver Properties](../assets/images/part-4/SimCW\_SimS.png)
+![Simulation Creation Wizard: ODE Solver Properties](../assets/images/part-4/SimCW-SimS.png)
 
 The following options can be changed by the user:
 
@@ -240,7 +240,7 @@ Within the **Simulation Explorer**, each building block item of the **Configurat
 
 A right click on the red traffic lights in the **Simulation** window allows for two actions:
 
-![Image](../assets/images/part-4/MoBi\_UpdateCommit.png)
+![Image](../assets/images/part-4/MoBi-UpdateCommit.png)
 
 * Update: The simulation settings (local) will be updated with the (general) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block. Updating from a Spatial Structure or Molecule Building Block will open a dialogue that allows you to check your configuration. You may check here automatically applied changes in the Molecule Start Values and Parameter Start Values and adjust them manually.
 * Commit: The (local) changes of the simulation will be committed to the general building block. This is useful if you want to make these changes available in other simulations.
@@ -251,7 +251,7 @@ The Update and Commit logic in MoBi is slightly different from the one used in P
 
 ## Running a Simulation‌
 
-To run a simulation, use the simulation edit mode by either double clicking ![Image](../assets/icons/mouse\_select.png) on the simulation in the Simulation Explorer or by right-clicking ![Image](../assets/icons/mouse\_select\_right.png) on the simulation and select ![](../assets/icons/Edit.svg) **Edit** from the context menu.
+To run a simulation, use the simulation edit mode by either double clicking on the simulation in the Simulation Explorer or by right-clicking on the simulation and select ![](../assets/icons/Edit.svg) **Edit** from the context menu.
 
 Now you can run the simulation by one of the following options:
 

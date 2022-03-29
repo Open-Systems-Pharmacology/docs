@@ -21,7 +21,7 @@ Please note that the volume of fat tissue is not optimized by the algorithm as t
 A dialog will pop up in which the properties of the individual can be specified. First, new individuals are initialized by giving them a **Name** in the respective input field. These names are then used to identify them when their properties are saved in the project and/or as templates. In addition, names are used for identification of individuals in the simulation. Second, the properties of individuals can be set or changed:
 
 ![The Create Individual dialog. Here, the properties of a non-standard
-European individual are shown.](../assets/images/part-3/PKSim\_Individuals\_NewIndividual.png)
+European individual are shown.](../assets/images/part-3/PKSim-Individuals-NewIndividual.png)
 
 The **Create Individual** building block window is subdivided into three tabs: **Biometrics, Anatomy & Physiology**, and **Expression**.
 
@@ -67,7 +67,7 @@ If as a special human population **Preterm** is selected, an additional age scal
 
 ![Postnatal growth curves for preterm infants pooled into different weight
 classes up to two years (black solid lines) compared to term born infants matched to the
-growth charts of the “Centers for Disease Control and Prevention” (CDC, shaded area).](../assets/images/part-3/PretermModel\_Growth\_Weight.png)
+growth charts of the “Centers for Disease Control and Prevention” (CDC, shaded area).](../assets/images/part-3/PretermModel-Growth-Weight.png)
 
 {% hint style="warning" %}
 Oral administration to preterm neonates is, so far, not possible in PK- Sim®. The parameters relevant to oral administration are all set to "0" so that the fraction of dose absorbed and, in addition, the distribution of drugs into the mucosa irrespective of the administration route are disabled.
@@ -189,15 +189,15 @@ For details on how to create an expression profile, please see [PK-Sim® - Expre
 
 To add a protein to the individual, right click on the corresponding protein type in the tree view and select the corresponding action in the context menu
 
-![Add a metabolizing enzyme](../assets/images/part-3/add_metabolizing_enzyme.png)
+![Add a metabolizing enzyme](../assets/images/part-3/add-metabolizing-enzyme.png)
 
 This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on <img width="32" src="../assets/icons/AddAction.ico"> 
 
-![Select an expression profile](../assets/images/part-3/select_expression_profile.png)
+![Select an expression profile](../assets/images/part-3/select-expression-profile.png)
 
 Once the expression profile is selected, it will be linked to the individual and displayed in the **Expression** tab.
 
-![Expression profile linked to individual](../assets/images/part-3/expression_profile_in_individual.png)
+![Expression profile linked to individual](../assets/images/part-3/expression-profile-in-individual.png)
 
 This is the only instance in PK-Sim where a a building block is referencing another building block. 
 

@@ -165,7 +165,7 @@ Before we can simulate, the reactions network of a simulation has to be created 
 
 A new simulation "RN" is added to the simulations explorer and automatically opened in edit mode in the main window. Your MoBi® program user interface should now look like depicted in below.
 
-![Create a Simulation](../assets/images/part-5/HowTo\_RN\_Step9.png)
+![Create a Simulation](../assets/images/part-5/HowTo-RN-Step9.png)
 
 ### Step 10: Simulate the dynamics of the newly created simulation of "RN": To run the simulation we first need to adjust the simulation settings:
 
@@ -190,4 +190,4 @@ To display the simulation results in a plot window:
 
 You can now see the simulation results in the plot, and your **Results** tab should now look as depicted below.
 
-![Simulation Results](../assets/images/part-5/HowTo\_RN\_Step10.png)
+![Simulation Results](../assets/images/part-5/HowTo-RN-Step10.png)

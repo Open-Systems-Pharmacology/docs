@@ -14,11 +14,11 @@ Your first step is to create a new project.
 
 To create a new project select **New Project** on the **File** ribbon tab or alternatively press **Ctrl+N**.
 
-![File tab](../assets/images/part-4/Prj\_new.png)
+![File tab](../assets/images/part-4/Prj-new.png)
 
 The ribbon bar **Modeling & Simulation** with the different Ribbon Groups for creation of building blocks, simulations, and more will appear. Empty building blocks are now present for Molecules, Reactions, Spatial Structures, Passive Transports, Observers, and Events and are shown in the **Building Block Explorer**. You can now edit a building block by double-clicking the corresponding entry.
 
-![New project in MoBi®](../assets/images/part-4/Prj\_view.png)
+![New project in MoBi®](../assets/images/part-4/Prj-view.png)
 
 ### Other project actions in the File tab‌
 
@@ -413,7 +413,7 @@ Use one of such files an proceed in the following way:
 You can **edit the molecule properties** for the molecule in the tree that is currently being highlighted.
 
 * Within the properties window, the checkbox ![Image](../assets/icons/Unchecked.png) **Stationary** determines if the corresponding molecule will be transported by [Passive Transports](model-building-components.md#passive-transports) processes described below (see [Passive Transports](model-building-components.md#passive-transports)) - this box should thus be checked ![Image](../assets/icons/Checked.png) only for immobile molecules, like membrane-bound receptors or transporters.
-* Select the **Molecule Type** specification from the combobox. This has only influence on the icon depicted in front of the molecules in the molecules tree view to the right. Selectable options are ![](../assets/icons/Molecule.svg) Drug, ![](../assets/icons/Enzyme.svg) Enzyme, ![](../assets/icons/Transporter.svg) Transporter, ![](../assets/icons/complex.svg) Complex,![](../assets/icons/Metabolite.svg) Metabolite , ![](../assets/icons/Protein.svg) Protein, and Other Protein.
+* Select the **Molecule Type** specification from the combobox. This has only influence on the icon depicted in front of the molecules in the molecules tree view to the right. Selectable options are ![](../assets/icons/Molecule.svg) Drug, ![](../assets/icons/Enzyme.svg) Enzyme, ![](../assets/icons/Transporter.svg) Transporter, ![](../assets/icons/Complex.svg) Complex,![](../assets/icons/Metabolite.svg) Metabolite , ![](../assets/icons/Protein.svg) Protein, and Other Protein.
 * The **Default Start Amount** determines what default value will be used whenever "Molecule Start Values" are created (see “Molecule Start Values”). The value should be left on 0 for all molecules which only will be created in the process of the simulation. For complex spatial structures, it might be an alternative strategy to set all default start amount values to 0 and set everything manually in the molecule start values for those containers where a molecule is present in known concentrations.
 * The **Used Calculation Methods** at the bottom right of the edit window shows three comboboxes for the selection of calculation methods for the distribution of the molecule within a model exported from PK-Sim®. The calculation method defines which method is used to calculate parameter values of parameters located in the "Spatial Structure" ("MoleculeProperties") which have the **Formula Type Calculation Method**. These selections are only needed if you want to use distribution methods from PK-Sim®. Otherwise, leave them on No Calculation Method. For further information on this subject, please refer to the discussion of the different distribution models in the PK-Sim® manual ([Simulations](../part-3/pk-sim-simulations.md)). If you select a certain "Calculation Method" you can get tool tip information on the equations and specific parameters used in the "Calculation Method" by hovering with the mouse over the "Category" entry.
 
@@ -652,7 +652,7 @@ The resulting formula is a generic formula. The example model has 3 different mo
 
 ![Passive Transport has been added - Properties Tab](../assets/images/part-4/PassiveTransportComplete.png)
 
-![Passive Transport has been added - Kinetic Tab](../assets/images/part-4/PassiveTransportComplete\_KinticTab.png)
+![Passive Transport has been added - Kinetic Tab](../assets/images/part-4/PassiveTransportComplete-KinticTab.png)
 
 ### Molecule-specific Passive Transports‌
 

@@ -17,11 +17,11 @@ The properties of a population of individuals can be defined in the building blo
 The following figures show, as an example, the age dependence of the body weight, body height, and body mass index distribution for a certain population (white males). The data were taken from the NHANES study 82.
 
 ![Age dependence of the distribution in body weight for white males according
-to the NHANES study](../assets/images/part-3/BW\_vs\_age.png)
+to the NHANES study](../assets/images/part-3/BW-vs-age.png)
 
-![Age dependence of the distribution in body height for white males according to the NHANES study](../assets/images/part-3/BH\_vs\_age.png)
+![Age dependence of the distribution in body height for white males according to the NHANES study](../assets/images/part-3/BH-vs-age.png)
 
-![Age dependence of the distribution in body mass index for white males according to the NHANES study](../assets/images/part-3/BMI\_vs\_age.png)
+![Age dependence of the distribution in body mass index for white males according to the NHANES study](../assets/images/part-3/BMI-vs-age.png)
 
 ### Definition of new Populations in PK- Sim®‌
 

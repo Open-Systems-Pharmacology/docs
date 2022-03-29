@@ -12,7 +12,7 @@ To create a new compound, do one of the following:
 
 A dialog will open, where the properties of the compound can be defined. The compound is initialized by giving it a **Name** in the respective input field. The name is used to identify the substance when its parameters are saved in the project and/or as a template. The properties of the compound can then be set or changed:
 
-![The Create Compound dialog. Here, the basic physico-chemical properties of diclofenac are shown.](../assets/images/part-3/PKSim\_Compound\_NewCompound.png)
+![The Create Compound dialog. Here, the basic physico-chemical properties of diclofenac are shown.](../assets/images/part-3/PKSim-Compound-NewCompound.png)
 
 The **Create Compound** building block is subdivided into three tabs: Basic Physico-chemistry, ADME Properties, and Advanced Properties.
 
@@ -194,21 +194,21 @@ PBPK modeling requires many substance-specific parameters, which are usually unk
 
 Organ/plasma partition coefficients are based on the concept of partition coefficients between drug binding tissue constituents and water. These include lipid/water and protein/water partition coefficients. Several similar concepts for utilizing such partition coefficients and the composition of organ tissue to calculate the organ/plasma partition coefficients have been published recently (see \[[53](../references.md#53)],and \[[86](../references.md#86)]b for examples, an overview is given in \[[32](../references.md#32)]). Even though the idea is very similar in all cases, they deviate in the kind of parameters that they use. In PK-Sim® there are five ways to calculate the partition coefficients for the organs: The PK-Sim® standard model, which is described in more detail below, and the approaches developed by Rodgers & Rowland, Schmitt, Poulin & Theil, and Berezhkovskiy. The mechanistic equations for the different models are found in the respective literature (\[[53](../references.md#53)], \[[59](../references.md#59)], \[[62](../references.md#62)], \[[60](../references.md#60)], \[[61](../references.md#61)], \[[68](../references.md#68)], \[[54](../references.md#54)], \[[55](../references.md#55)], \[[52](../references.md#52)], \[[5](../references.md#5)]). In the PK-Sim® standard model the partition coefficients are calculated using the following equation:
 
-![Partition Coefficients](../assets/images/part-3/Partition\_Coefficients.png)
+![Partition Coefficients](../assets/images/part-3/Partition-Coefficients.png)
 
-with ![Image](../assets/images/part-3/Fx\_organ.png) = volume fraction of water, lipid and protein, ![Image](../assets/images/part-3/K\_lipid.png) = lipid/water partition coefficient,
+with ![Image](../assets/images/part-3/Fx-organ.png) = volume fraction of water, lipid and protein, ![Image](../assets/images/part-3/K-lipid.png) = lipid/water partition coefficient,
 
-![Image](../assets/images/part-3/K\_protein.png) = protein/water partition coefficient,
+![Image](../assets/images/part-3/K-protein.png) = protein/water partition coefficient,
 
-![Image](../assets/images/part-3/fu\_plasma.png) = free fraction in plasma.
+![Image](../assets/images/part-3/fu-plasma.png) = free fraction in plasma.
 
 Partition coefficients are derived from input data as follows:
 
-![Image](../assets/images/part-3/K\_lipid.png) The value entered as Lipophilicity is directly used.
+![Image](../assets/images/part-3/K-lipid.png) The value entered as Lipophilicity is directly used.
 
-![Image](../assets/images/part-3/K\_protein.png) Calculated from **Lipophilicity** using a correlation determined experimentally by measuring the unspecific binding to different tissue protein fraction of various organs for a large set of diverse compounds.
+![Image](../assets/images/part-3/K-protein.png) Calculated from **Lipophilicity** using a correlation determined experimentally by measuring the unspecific binding to different tissue protein fraction of various organs for a large set of diverse compounds.
 
-Drug partitioning between plasma and red blood cells is calculated in analogous manner to ![Drug Partitioning](../assets/images/part-3/Eq\_Krbc\_PKSim.png)
+Drug partitioning between plasma and red blood cells is calculated in analogous manner to ![Drug Partitioning](../assets/images/part-3/Eq-Krbc-PKSim.png)
 
 The only exceptions are the Schmitt model that additionally takes into account the amount of acidic and neutral phospholipids as well as neutral lipids, and the Rodgers & Rowland model, if experimental data for blood-to-plasma concentration ratios (B:P) are available.
 

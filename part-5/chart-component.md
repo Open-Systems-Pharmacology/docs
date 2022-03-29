@@ -300,7 +300,7 @@ In this layout are stored the selected view and column settings in the subviews 
 
 As mentioned in the introduction of this section, typically one curve corresponds to a single time series in which the x-values represent the time axis and the y- values are the corresponding functional values, such as concentration.
 
-![Concentration versus Time Plot](../assets/images/part-5/Concentration_Time.png)
+![Concentration versus Time Plot](../assets/images/part-5/Concentration-Time.png)
 
 However, curves can also correspond to two time series with the same time scale. In this case, the x-values are the values of the first time series and the y-values are the values of the second time series. Thus, concentrations can be plotted against another concentration or a fraction of the dose, for example.
 
@@ -322,13 +322,13 @@ To select other x-values than the default ones, do the following (you can skip s
     
     An error symbol appears at the x-Data field, because now the x-Data and the x-axis have different dimensions, which cannot be resolved automatically.
 
-    ![Image](../assets/images/part-5/Concentration_DimensionWarning.png)
+    ![Image](../assets/images/part-5/Concentration-DimensionWarning.png)
     
 4.  Change the Dimension of the x-axis in the Axis Table to the dimension of the x-values manually.
     
 5.  Change curve or x-axis caption according to your needs. Now the concentration is plotted against the selected x-values.
     
-![Concentration versus Concentration Plot](../assets/images/part-5/Concentration_FractionDose.png)
+![Concentration versus Concentration Plot](../assets/images/part-5/Concentration-FractionDose.png)
 
 ### Chart Options in User Settings‌‌
 

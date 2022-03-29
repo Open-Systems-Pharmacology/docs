@@ -82,7 +82,7 @@ For a hands on example, open the example project Theophylline.pksim5. You can op
 
 In the Simulation Explorer, mark the simulation "_Kaumeier IV 208 mg fit_" and select ![](../assets/icons/SensitivityAnalysis.svg) **Start Sensitivity Analysis ...** from the context menu.
 
-![Sensitivity Analysis - Tab Parameters](../assets/images/part-5/SA_Parameters1.png)
+![Sensitivity Analysis - Tab Parameters](../assets/images/part-5/SA-Parameters1.png)
 
 In the Simulation Explorer, the Sensitivity Analyses are also displayed in a tree. Using the context menu, you can
 
@@ -100,11 +100,11 @@ In the Simulation Explorer, the Sensitivity Analyses are also displayed in a tre
     
 You can select the input parameters that are of interest to you and that you want to test in the Sensitivity Analysis in two ways:
 
-1.  You can select all input parameters by clicking Add All Constants. Depending on the selection Simple or Advanced in the lower selection list, all parameters in the left list (not only the filtered ones) are tested in the Sensitivity Analysis. You can then remove single parameters by clicking ![Image](../assets/icons/SA_Delete.png).
+1.  You can select all input parameters by clicking Add All Constants. Depending on the selection Simple or Advanced in the lower selection list, all parameters in the left list (not only the filtered ones) are tested in the Sensitivity Analysis. You can then remove single parameters by clicking ![Image](../assets/icons/SA-Delete.png).
     
 2.  You can select specific input parameter by manually selecting them (multiple selection is possible) and clicking Add. To identify the parameters of interest it can be helpful to reorganize the parameter list view on the left and use column filters or the Find field.
     
-![Selection of interesting input parameters](../assets/images/part-5/SA_Parameters2.png)
+![Selection of interesting input parameters](../assets/images/part-5/SA-Parameters2.png)
 
 {% hint style="tip" %}
 Be aware that only independent input parameters are displayed and selectable for Sensitivity Analysis, input parameters calculated by a formula cannot be selected.
@@ -146,7 +146,7 @@ In the ribbon bar **Sensitivity Analysis**, you can start and stop the calculati
 
 Click ![](../assets/icons/SensitivityAnalysisVisualFeedback.svg) **Show Visual Feedback** to see a progress bar of the simulations calculation.
 
-![Visual Feedback - Progress bar of calculated simulations](../assets/images/part-5/SA_ProgressBar.png)
+![Visual Feedback - Progress bar of calculated simulations](../assets/images/part-5/SA-ProgressBar.png)
 
 After the calculation is finished, you can:
 
@@ -164,7 +164,7 @@ Select an output and a PK Parameter for that output. (Normalized PK parameters a
 
 Then a list of the input parameters with the most impact on that PK Parameter is displayed ranked by their impact resp. sensitivity.
 
-![Ranking of Input paramters by sensitivity](../assets/images/part-5/SA_Ranking1.png)
+![Ranking of Input paramters by sensitivity](../assets/images/part-5/SA-Ranking1.png)
 
 For some outputs not all PK Parameters are reasonable, for instance clearance parameters for Fraction excreted outputs. Then no ranking is calculated and displayed.
 
@@ -194,14 +194,14 @@ You can sort and filter rows and columns to restrict the view to the sensitiviti
 
 *   For simple filtering just move the cursor right to the sort symbol of the headers **Parameter**, **Output**, **PK Parameter** and click the filter symbol which shows up. You can select the values of interest in the filter list.
 
-![Image](../assets/images/part-5/SA_Filter.png)
+![Image](../assets/images/part-5/SA-Filter.png)
 
 *   For more sophisticated filtering, right click the header and select **Show Prefilter**. A dialog shows up, click the + symbol and enter more complex conditions.
 
-![Image](../assets/images/part-5/SA_Prefilter.png)
+![Image](../assets/images/part-5/SA-Prefilter.png)
 
 As a result, you get a restricted view of the sensitivity matrix.
 
-![Sensitivity Matrix](../assets/images/part-5/SA_Results1.png)
+![Sensitivity Matrix](../assets/images/part-5/SA-Results1.png)
 
 Alternatively, you can export the full matrix (filters are not used) to Excel by clicking **Export to Excel**.
