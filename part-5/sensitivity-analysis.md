@@ -100,7 +100,7 @@ In the Simulation Explorer, the Sensitivity Analyses are also displayed in a tre
     
 You can select the input parameters that are of interest to you and that you want to test in the Sensitivity Analysis in two ways:
 
-1.  You can select all input parameters by clicking Add All Constants. Depending on the selection Simple or Advanced in the lower selection list, all parameters in the left list (not only the filtered ones) are tested in the Sensitivity Analysis. You can then remove single parameters by clicking ![Image](../assets/icons/SA-Delete.png).
+1.  You can select all input parameters by clicking Add All Constants. Depending on the selection Simple or Advanced in the lower selection list, all parameters in the left list (not only the filtered ones) are tested in the Sensitivity Analysis. You can then remove single parameters by clicking ![Image](../assets/images/part-5/SA-Delete.png).
     
 2.  You can select specific input parameter by manually selecting them (multiple selection is possible) and clicking Add. To identify the parameters of interest it can be helpful to reorganize the parameter list view on the left and use column filters or the Find field.
     

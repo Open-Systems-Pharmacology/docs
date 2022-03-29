@@ -34,7 +34,7 @@ You can rearrange the window by different actions:
 
 - Click ![Image](../assets/icons/CloseView.png) to close these views or click the corresponding symbol in the Views group in the **Utilities** ribbon bar to open it,
 
-- Furthermore, you can drag these views and dock them to a different location. To do so, click on the title bar of the view, drag it around and drop it on one of the icons like ![Image](../assets/icons/Prg-overview-move-icon.png)
+- Furthermore, you can drag these views and dock them to a different location. To do so, click on the title bar of the view, drag it around and drop it on one of the icons like ![Image](../assets/images//part-4/Prg-overview-move-icon.png)
 
 ![Docking a window to different positions](../assets/images/part-4/Prg-overview-drag-dock.png)
 

@@ -96,7 +96,7 @@ Renal excretion of the compounds should be incorporated into the model. The foll
 
 Add a renal clearance process for the selected compound in Compound → Biological processes → Transport & Excretion → Renal clearances, as exemplified in the following screenshot:
 
-![Defining the renal clearance process.](../assets/images/part-3/PK-Sim-CreateSimulation-Processes-renalExcretion2.png)
+![Defining the renal clearance process.](../assets/images/part-3/PK-Sim-CreateSimulation-Processes-RenalExcretion2.png)
 
 Link the process in the individual with the biological process of the compound (if not yet automatically done):
 
