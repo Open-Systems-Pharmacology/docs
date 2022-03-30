@@ -271,6 +271,8 @@ If a simulation has been successfully created, click **Show PK-Analysis** on the
 
 ![PK-Analysis view of the Results window.](../assets/images/part-3/pk-analysis-20-17.jpg)
 
+#### PK-Parameters
+
 The calculated pharmacokinetic parameters are:
 
 1. In all simulations:
