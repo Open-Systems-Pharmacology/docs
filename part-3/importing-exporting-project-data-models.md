@@ -70,10 +70,6 @@ and select **Save Simulation to MoBi pkml format ...**
 
 A window opens where you can choose the directory and enter the \*.pkml file name. The file is saved an can be subsequently opened from MoBi®.
 
-## Export to PDF‌
-
-Via exporting the simulation to PDF format a report will be generated. For details please see [Reporting](../part-5/reporting.md).
-
 ## Exporting Simulation Structures To File‌
 
 You can export a PK-Sim® simulation to a text file that contains all model and simulation details: model structure, rate equations and parameter values. You can export the simulation by:

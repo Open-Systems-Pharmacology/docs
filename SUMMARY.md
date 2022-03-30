@@ -59,7 +59,6 @@
 * [Sensitivity Analysis](part-5/sensitivity-analysis.md)
 * [Import and Edit of Observed Data](part-5/import-edit-observed-data.md)
 * [Default, Display and Base Units](part-5/default-display-base-units.md)
-* [Reporting](part-5/reporting.md)
 * [Working Journal](part-5/working-journal.md)
 * [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
 * [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
