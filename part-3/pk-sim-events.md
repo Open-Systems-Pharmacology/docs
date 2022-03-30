@@ -10,9 +10,9 @@ Please note that the **Event** Building Block does not represent an essential bu
 
 To create a new event, do one of the following:
 
-*   Click **Event** <img width="32" src="../assets/icons/Event.ico"> in the **Create** Group of the **Modeling** Tab
+*   Click **Event** ![](../assets/icons/Event.svg) in the **Create** Group of the **Modeling** Tab
 
-*   Right mouse click on **Events** <img width="32" src="../assets/icons/EventFolder.ico">in the **Building Block Explorer**
+*   Right mouse click on **Events** ![](../assets/icons/EventFolder.svg)in the **Building Block Explorer**
 
 and select **Add Event...**
 
@@ -20,7 +20,7 @@ and select **Add Event...**
 
 The following dialog will open in which the properties of the event can be selected and/or defined:
 
-![Create Event dialog (with properties of a standard meal for humans)](../assets/images/part-3/PKSim_Event_NewEvent.png)
+![Create Event dialog (with properties of a standard meal for humans)](../assets/images/part-3/PKSim-Event-NewEvent.png)
 
 First the event is initialized by giving it a **Name** in the respective input field. The name is used to identify the event when its parameters are saved in the project and/or as a template. The name is used for the identification of the event in the simulation.
 
@@ -83,7 +83,7 @@ To set or change the properties of an existing event:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/Edit.ico"> **Edit...**
+2.  Select ![](../assets/icons/Edit.svg) **Edit...**
 
 or simply double click on the existing event in the **Building Block Explorer**
 
@@ -95,11 +95,11 @@ To clone an event in the project:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/SimulationClone.ico"> **Clone...**
+2.  Select ![](../assets/icons/SimulationClone.svg) **Clone...**
 
 3.  Set an alternative name for the event clone and enter a description if desired.
 
-4.  Confirm and close the window by clicking **OK** <img width="32" src="../assets/icons/OK.ico">
+4.  Confirm and close the window by clicking **OK** ![](../assets/icons/OK.svg)
 
 ## Saving Events as Templates‌
 
@@ -109,7 +109,7 @@ To save an existing event as template:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/SaveAction.ico"> **Save as Template...**
+2.  Select ![](../assets/icons/SaveAction.svg) **Save as Template...**
 
 In case an event with the same name already exists, a warning appears and you have the following options:
 
@@ -123,13 +123,13 @@ To load an existing formulation from the template database:‌‌
 
 1.  Right mouse click on **Events** in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/LoadAction.ico"> **Load From Template...**
+2.  Select ![](../assets/icons/LoadAction.svg) **Load From Template...**
 
 3.  Select the desired event from the user templates
 
 In case an event with the same name already exists in the project, a warning appears and you will have to **Rename** the event that is to be loaded from template.
 
-4.  Click **OK** <img width="32" src="../assets/icons/OK.ico">
+4.  Click **OK** ![](../assets/icons/OK.svg)
 
 The selected event will appear in the **Building Block Explorer** view.
 
@@ -141,7 +141,7 @@ To delete an event from the project:
 
 1.  Right mouse click on the respective event in the **Building Block Explorer**
 
-2.  Select <img width="32" src="../assets/icons/Delete.ico"> **Delete...**
+2.  Select ![](../assets/icons/Delete.svg) **Delete...**
 
 3.  Confirm to delete the event by clicking **Yes**
 

@@ -4,7 +4,7 @@
 
 The history manager serves two purposes. On the one hand, it allows you to precisely log, and thereby document, all steps that lead to a particular result. This log can be saved to disk as an Excel® report. On the other hand, with the history available, the user can step back in the history to any previous state of the current session, and take that as starting point for a different direction in model development.
 
-![History manager, and history related ribbon groups in PK-Sim®](../assets/images/part-5/PKSIM_History.png)
+![History manager, and history related ribbon groups in PK-Sim®](../assets/images/part-5/PKSIM-History.png)
 
 The history manager is available both in PK-Sim® and MoBi®, with only minor differences between the two programs. It is located at the lower part of the application window screenshot above. If it is not apparent, look for the little handle on the lower left corner which can be used, by hovering over, to pop up the history manager. Use the top right controls (in this history window) to make the history permanently visible. Other elements of relevance for interaction with the history are placed in the "Modeling & Simulation" ribbon as Buttons:
 

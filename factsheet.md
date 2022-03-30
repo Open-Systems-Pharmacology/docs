@@ -108,7 +108,7 @@ Prediction models for cellular permeabilities and intestinal permeability
   * Single
   * once daily, bi-daily, …
   * complex (multi-)periodic schemes
-<img src="assets/images/part-3/PKSim_Protocol_AdvancedEx.png" />
+<img src="assets/images/part-3/PKSim-Protocol-AdvancedEx.png" />
 
 ### Events
 
@@ -123,13 +123,13 @@ Prediction models for cellular permeabilities and intestinal permeability
 
 A fully integrated PI Toolbox provides a straightforward means to adjust key model parameters automatically within user-defined ranges. It is possible to optimize multiple simulations, for example with different dose levels, and multiple observed data sets, simultaneously. A clear visualization of the optimization process and of the optimization results gives you full control and direct feedback whether the identification process was successful.
 
-<img src="assets/images/part-5/Tab_Data.png" />
+<img src="assets/images/part-5/Tab-Data.png" />
 
-<img src="assets/images/part-5/Tab_Parameters.png"  />
+<img src="assets/images/part-5/Tab-Parameters.png"  />
 
 <img src="assets/images/part-5/visual-feedback-data.jpg" />
 
-<img src="assets/images/part-5/Results_Calculation_Methods_Variation.png" />
+<img src="assets/images/part-5/Results-Calculation-Methods-Variation.png" />
 
 * Simultaneous optimization of multiple simulations
 * Simultaneous optimization of multiple observed data sets
@@ -164,11 +164,11 @@ A fully integrated PI Toolbox provides a straightforward means to adjust key mod
 * Update simulations with optimized parameter values
 * Calculation of time profile confidence intervals
     * **Confidence Interval**: Corresponds to the model error, which is based on the uncertainty of estimated parameters. This uncertainty is based on an estimation of the difference between the mean value of used observed data compared with the mean value of the (unknown) total data.
-  <img src="assets/images/part-5/PI_ConfidenceInterval.png"  />
+  <img src="assets/images/part-5/PI-ConfidenceInterval.png"  />
     * **Visual Predictive Check Interval**: Corresponds to the uncertainty based on the data error. The data error is the standard deviation of the distribution of the used observed data.
-      <img src="assets/images/part-5/PI_VPCCheckInterval.png" />
+      <img src="assets/images/part-5/PI-VPCCheckInterval.png" />
     * **Prediction Interval**: Corresponds to the combination of the model error and the data error. It shows how much future measured data are expected to differ from the model predictions.
-      <img src="assets/images/part-5/PI_PredictionInterval.png" />
+      <img src="assets/images/part-5/PI-PredictionInterval.png" />
 
 ### Sensitivity Analysis
 
@@ -178,10 +178,10 @@ Because PBPK models can be complex and contain numerous input parameters, it wou
 For a chosen simulation, the relative impact of selected - or all - input parameters on the PK parameters of the output curves is calculated and displayed. In addition, the input parameters can be ranked by their impact on a certain PK parameter of an output. Results of Sensitivity Analysis can be shown as:
 
 * Sensitivity table:
-<img src="assets/images/part-5/SA_Results1.png" />
+<img src="assets/images/part-5/SA-Results1.png" />
 
 * Ranking of most sensitive simulation parameters. Most sensitive parameters comprise all parameters that contribute to 90% of total sensitivity.
-<img src="assets/images/part-5/SA_Ranking1.png" />
+<img src="assets/images/part-5/SA-Ranking1.png" />
 
 ### Lab Journal ("Working Journal")
 
@@ -214,11 +214,11 @@ Full transparency and full edit access to all structural model properties
   * Plot settings (axes, styles, etc.)
   * Individual simulations:
     * Time profile plots
-<img src="assets/images/part-3/PK-Sim_CreateSimulation_RunSimulation_Results1.png"  />
+<img src="assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Results1.png"  />
   * Population simulations
     * Time profile plots
-<img src="assets/images/part-3/PK-Sim_CreateSimulation_PopSim_TimeProfile_Outputs.png"  />
-<img src="assets/images/part-3/PK-Sim_CreateSimulation_PopSim_TimeProfile_Plot1.png"  />
+<img src="assets/images/part-3/PK-Sim-CreateSimulation-PopSim-TimeProfile-Outputs.png"  />
+<img src="assets/images/part-3/PK-Sim-CreateSimulation-PopSim-TimeProfile-Plot1.png"  />
     * Box-Whisker plots
 <img src="assets/images/factsheet/image025.png" />
     * Range plots

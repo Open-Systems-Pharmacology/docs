@@ -23,6 +23,7 @@ AddPoint
 addPoints
 adjustbox
 ADME
+Advani
 ae
 ageMax
 ageMin
@@ -154,6 +155,7 @@ Cheung
 cholesteryl
 Chosing
 chronogenetics
+CKD
 cilostazol
 Cimetidine
 clarithromycin
@@ -173,6 +175,7 @@ Coboeken
 Combinatorial
 combobox
 comboboxes
+comorbid
 ComparisonTimeProfile
 ComparisonTimeProfilePlots
 cooperativity
@@ -234,6 +237,7 @@ Dispos
 diss
 distributedParameters
 Distrubtion
+Djie
 dk
 dlast
 dm
@@ -257,6 +261,7 @@ edoc
 edu
 Educt
 educts
+eGFR
 EHC
 Ehpgavin
 EI
@@ -450,6 +455,7 @@ isDistributed
 ISEF
 isFixedValue
 isFormula
+Ismaeil
 isoforms
 IsPresent
 isStateVariable
@@ -546,6 +552,7 @@ Mackensen
 macromolecules
 Madsen
 Maier
+Malik
 ManualModel
 Marquardt
 MassTransferBloodPool
@@ -1021,6 +1028,7 @@ Unserer
 unstirred
 unticking
 untransformed
+Urooj
 UseDerivedValues
 UseJacobian
 userdefinedsnippets
@@ -1079,6 +1087,7 @@ Yamamoto
 Yaroslavsky
 Yassen
 Yeo
+Yeung
 Yoshitsugu
 yout
 yValues

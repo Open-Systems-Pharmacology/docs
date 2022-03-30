@@ -65,16 +65,16 @@ Proteins involved in metabolism or transport of compounds are located in differe
 
 Organs containing epithelial cell membranes, like intestinal mucosa or liver (bile duct epithelium) and kidney (tubular epithelium), express different types of proteins on either side of the cell, whether basolateral or apical. The *apical* membrane is exposed to the luminal space, while the *basolateral* membrane is facing the interstitial space of the tissue.
 
-The *relative expression* defines the concentration of the protein in whole organ, i.e., the sum volume of the sub-compartments interstitial space, intracellular space, blood plasma and blood cells, and (for the large molecules model) the endosomal space. Within the organ, the protein can be distributed over the different sub-compartments, with the *effective concentration* in the compartment being calculated by PK-Sim such that the concentration in the whole organ ![Effective protein concentration](../assets/images/part-3/C_org.png) is 
+The *relative expression* defines the concentration of the protein in whole organ, i.e., the sum volume of the sub-compartments interstitial space, intracellular space, blood plasma and blood cells, and (for the large molecules model) the endosomal space. Within the organ, the protein can be distributed over the different sub-compartments, with the *effective concentration* in the compartment being calculated by PK-Sim such that the concentration in the whole organ ![Effective protein concentration](../assets/images/part-3/C-org.png) is 
 
-![Effective protein concentration](../assets/images/part-3/Equation_C_org.png)
+![Effective protein concentration](../assets/images/part-3/Equation-C-org.png)
 
-with ***RC*** being the reference concentration and ![RelExp_Org](../assets/images/part-3/RelExp_Org.png) the relative expression in this organ. The following sections give an overview over the possible localizations and the equations used to calculate the effective concentrations in the different compartments for enzymes and transport
+with ***RC*** being the reference concentration and ![RelExp_Org](../assets/images/part-3/RelExp-Org.png) the relative expression in this organ. The following sections give an overview over the possible localizations and the equations used to calculate the effective concentrations in the different compartments for enzymes and transport
 proteins.
 
 ### Localizations and initial concentrations of enzymes
 
-![Localization Enzymes](../assets/images/part-3/Localization_Enzymes.png)
+![Localization Enzymes](../assets/images/part-3/Localization-Enzymes.png)
 
 By default, an added enzyme is localized only in the intracellular space of the organs. The user can select additional compartments where the enzyme should be expressed and set the expression values.
 
@@ -168,7 +168,7 @@ Do only overwrite initial concentration by hand if absolutely required.
 
 ### Localizations, directions, and initial concentrations of transport proteins
 
-![Localization Transporter](../assets/images/part-3/Localization_Transporter.png)
+![Localization Transporter](../assets/images/part-3/Localization-Transporter.png)
 
 Transporters are located in the cell membranes, connecting two neighbor compartments. Four transport directions can be specified:
 
@@ -270,9 +270,9 @@ The distribution of a protein (metabolizing enzyme, transporter protein, or a pr
 
 To create a new expression profile, do one of the following:
 
-*   Click **Expression Profile** <img width="32" height="32" src="../assets/icons/ExpressionProfile.ico"> in the **Create** Group of the **Modeling** Tab and select the protein type (metabolizing enzyme, transport protein or protein binding partner)
+*   Click **Expression Profile** ![](../assets/icons/ProteinExpression.svg) in the **Create** Group of the **Modeling** Tab and select the protein type (metabolizing enzyme, transport protein or protein binding partner)
 
-*   Right mouse click on **Expression Profiles** <img width="32" height="32" src="../assets/icons/ExpressionProfileFolder.ico">in the **Building Block Explorer**
+*   Right mouse click on **Expression Profiles**  ![](../assets/icons/ExpressionProfileFolder.svg) in the **Building Block Explorer**
 
 and select **Add Expression Profile...**
 
