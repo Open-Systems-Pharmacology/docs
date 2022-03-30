@@ -1,6 +1,6 @@
 # Open Systems Pharmacology Suite Manual
 
-Version 10
+Version 11
 
 Publication date October 2021
 

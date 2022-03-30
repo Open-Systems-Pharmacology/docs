@@ -228,7 +228,7 @@ Full transparency and full edit access to all structural model properties
 
 * Multiple plots per simulation
 
-* Export of plotted/simulated results to Excel/CSV/PDF/Image
+* Export of plotted/simulated results to Excel/CSV/Image
 
 * Calculation of the most important PK-Parameters
 
