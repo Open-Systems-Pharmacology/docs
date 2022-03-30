@@ -1,4 +1,3 @@
-<!-- markdown-link-check-disable -->
 # References
 
 ### References & Information
@@ -369,5 +368,3 @@ Y. Wu and F. Kesisoglou. _Immediate Release Oral Dosage Forms: Formulation Scree
 
 #### 122
 [Paul R.V. Malik, Cindy H.T. Yeung, Shams Ismaeil, Urooj Advani, Sebastian Djie, Andrea N. Edginton. A Physiological Approach to Pharmacokinetics in Chronic Kidney Disease](https://accp1.onlinelibrary.wiley.com/doi/full/10.1002/jcph.1713)
-
-<!-- markdown-link-check-enable-->
