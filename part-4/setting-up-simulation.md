@@ -102,8 +102,6 @@ Simulation Settings allow you to specify the resolution of the results as well a
 
 Output Intervals specify the simulation times at which simulation results are stored. In MoBi® you can specify a variable number of Output Intervals (as depicted below).
 
-![Simulation Creation Wizard: Output Intervals](../assets/images/part-4/SimCW-OI.png)
-
 Each Output Interval is defined by the following options:
 
 |                 |                                                                                                                                                   |
@@ -141,8 +139,6 @@ MoBi® uses the CVODE differential equation solver. The solver settings can be a
 {% hint style="warning" %}
 For more information on the solver, please refer to the documentation of the CVODE solver: \[CVODE] https://computing.llnl.gov/projects/sundials.
 {% endhint %}
-
-![Simulation Creation Wizard: ODE Solver Properties](../assets/images/part-4/SimCW-SimS.png)
 
 The following options can be changed by the user:
 
