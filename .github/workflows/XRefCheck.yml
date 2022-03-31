@@ -14,3 +14,5 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
     - uses: serokell/xrefcheck-action@v1
+      with:
+        xrefcheck-args: --mode local-only
