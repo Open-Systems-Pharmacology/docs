@@ -59,7 +59,7 @@ Finally, the following two parameters can be defined:
 *   The gallbladder emptying lag time, i.e. the lag time between the ingestion of meal and gallbladder emptying
 
 {% hint style="note" %}
-Please note that enabling gallbladder emptying does not automatically imply active secretion of the compound into the bile! In order to simulate enterohepatic circulation of the compound, an active transport process from the liver into the bile is needed, i.e. the definition of an efflux or P-gp like efflux transport process at the apical side of the hepatocytes or a biliary clearance process, which‌ can be defined in the **Compound** Building Block, is required.
+Please note that enabling gallbladder emptying does not automatically imply active secretion of the compound into the bile! In order to simulate enterohepatic circulation of the compound, an active transport process from the liver into the bile is needed, i.e. the definition of an efflux transport process at the apical side of the hepatocytes or a biliary clearance process, which‌ can be defined in the **Compound** Building Block, is required.
 {% endhint %}
 
 

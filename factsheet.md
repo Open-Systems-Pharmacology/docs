@@ -32,7 +32,7 @@
 * Allowing for full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.
 * Most important organs included. For each organ optional processes can be added:
   * Metabolizing pathways
-  * Different active transporter types(influx, efflux, Pgp-like, bi-directional)
+  * Different active transporter types(influx, efflux, bi-directional)
   * Protein binding partners
 * Biliary tract included, enables enterohepatic cycling
 * Scaling of Individuals

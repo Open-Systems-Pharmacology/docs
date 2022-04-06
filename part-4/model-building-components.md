@@ -677,15 +677,15 @@ First, an active transporter molecule needs to be defined:
 
 1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
 2. Select **Create Transporter Molecule** from the context menu.
-3. You are asked for a transporter name. Either enter a new name (e.g., "PGP"), or the name of an already existing transporter molecule if the very same transporter is active for several molecules in your list and has been previously defined.
+3. You are asked for a transporter name. Either enter a new name (e.g., "TRANS"), or the name of an already existing transporter molecule if the very same transporter is active for several molecules in your list and has been previously defined.
 4. Press **Enter** or click **OK**. In the molecules tree, a transporter molecule is displayed, and a transporter entry is added to the molecule selected in step 1.
 5. In the transporter entry below the selected molecule, you may enter a description and parameters, as for any molecule.
 6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](model-building-components.md#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
 7. Right-click on the transporter attached to the molecule to be transported, and select **Create Transport** from the context menu. A window named "New Active Transport" opens.
-8. Enter a name into the Name input box, like "PGP Transport". Then, follow the steps described in the previous section “Passive Transports” for selecting source and target, define a transport rate parameter and entering a transport kinetics formula.
+8. Enter a name into the Name input box, like "TRANS Transport". Then, follow the steps described in the previous section “Passive Transports” for selecting source and target, define a transport rate parameter and entering a transport kinetics formula.
 9. The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol ![](../assets/icons/ErrorProvider.svg) will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a KM value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
 
-Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which runs in the opposite direction of the above passive transport, i.e., from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to "C\_PGP", and that of molecule "A" to "C\_A" by just overriding the default names. The equation to be entered is "0.001\*C\_PGP\*C\_A". The figure below shows what the screen should look like after everything is properly set up.
+Continuing with our **example project**, let us enter a transport called "TRANS" for molecule "A" and a transport process called "TRANS Transport A" which runs in the opposite direction of the above passive transport, i.e., from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "TRANS" and of "A" from the references tree. The alias of the TRANS concentration is renamed to "C\_TRANS", and that of molecule "A" to "C\_A" by just overriding the default names. The equation to be entered is "0.001\*C\_TRANS\*C\_A". The figure below shows what the screen should look like after everything is properly set up.
 
 ![Active Transport has been entered](../assets/images/part-4/active-transport-entered.jpg)
 
@@ -949,7 +949,7 @@ A start values building block can also be cloned by choosing the **Clone** comma
 Every start values building block can also be renamed by choosing the **Rename** command from the context menu in the Building Block Explorer. This operation allows you to choose more descriptive names for cloned building blocks.
 
 {% hint style="info" %}
-For our **test model**, create new molecule start values and set the concentration of molecule "A" in "Vial2" to 0. Then, set the concentration of "PGP" to 1 µmol. Uncheck the ![Image](../assets/icons/Unchecked.png) **IsPresent** box for the unnamed path elements which represent the top level container "BigVial".
+For our **test model**, create new molecule start values and set the concentration of molecule "A" in "Vial2" to 0. Then, set the concentration of "TRANS" to 1 µmol. Uncheck the ![Image](../assets/icons/Unchecked.png) **IsPresent** box for the unnamed path elements which represent the top level container "BigVial".
 {% endhint %}
 
 ## Parameter Start Values‌
