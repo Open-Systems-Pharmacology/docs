@@ -177,7 +177,6 @@ Transporters are located in the cell membranes, connecting two neighbor compartm
 * **Bi-directional**: Facilitated transport along the concentration gradient. It is assumed that Vmax and Km values are equal for both directions. Only Michaelis-Menten kinetics can be used with this direction.
 * **Plasma to interstitial space** across endothelial border
 * **Interstitial space to plasma** across endothelial border
-* **P-gp like**: The substance is transported from intracellular space and interstitial space to the interstitial space.
 
 As the model structure of PK-Sim does not explicitly contains membranes, expression of transporters is modeled in one of the neighbor compartments. In addition to the default transporter direction that is applied for all compartments, the direction can be specified for each compartment separately. As for proteins, the relative expression of a transport protein in an organ refers to the volume of organ tissue without blood cells and blood plasma.
 
@@ -451,12 +450,17 @@ In the lower section, values of relative expression can be edited for individual
 
 * For transport proteins:
   * For some organs, `Fraction expressed apical` can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
-  * Transporter direction can be set to **Efflux**, **Influx**, **Bi-Directional** or **Pgp-Like**.
+  * Transporter direction can be set to **Efflux**, **Influx** or **Bi-Directional**.
     * Transporter direction can be set **for each organ independently**. In order to change the direction in all organs simultaneously, change the selected value in the "Default Transporter Direction" selection box.
+
     {% hint style="warning" %}
     The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
     {% endhint %}
 
+    {% hint style="warning" %}
+    The transporter direction **Pgp-like** is, starting wit version 11 of PK-Sim, marked as **[DEPRECATED]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software. 
+    {% endhint %}
+    
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)
 
 * For all proteins:
