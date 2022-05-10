@@ -3,16 +3,6 @@ name: XRefCheck
 on: 
   pull_request:
 
-permissions:
-  contents: read
-
 jobs:
-  markdown-link-check:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
-    - uses: serokell/xrefcheck-action@v1
-      with:
-        xrefcheck-args: --mode local-only
+  crossref-check-without-anchors:
+    uses: Open-Systems-Pharmacology/Workflows/.github/workflows/XRefCheck.yml@main
