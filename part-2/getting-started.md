@@ -2,7 +2,7 @@
 
 ## Software and Hardware Requirements
 
-| OS         | Windows 7®, Windows 8®, Windows 10®, Windows Server 2008 R2®, Windows Server 2012 R2®, Windows Server 2016®, Windows Server 2019® |
+| OS         | Windows 7®, Windows 8®, Windows 10®, Windows 11®, Windows Server 2008 R2®, Windows Server 2012 R2®, Windows Server 2016®, Windows Server 2019® |
 | ---------- | -------------------------------------- |
 | Processor  | minimum 1 GHz (the faster, the better) |
 | Memory     | 2 GB RAM, 4+ GB recommended            |
