@@ -6,7 +6,7 @@
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
 
-* [Modeling Concepts](mechanistic-modeling-of-pharmacokinetics-and-dynamics/modeling-concepts/README.md)
+* Modeling Concepts
   * [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
   * [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
   * [Principles of PBPK Modeling](part-1/principles-of-pbpk-modeling.md)
@@ -21,7 +21,7 @@
 
 ## Working with PK-Sim
 
-* [PK-Sim Documentation](working-with-pk-sim/pk-sim-documentation/README.md)
+* PK-Sim Documentation
   * [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
   * [Options](part-3/pk-sim-options.md)
   * [Projects](part-3/pk-sim-projects.md)
@@ -40,7 +40,7 @@
 
 ## Working with MoBi
 
-* [MoBi‌ Documentation](working-with-mobi/mobi-documentation/README.md)
+* MoBi‌ Documentation
   * [First Steps](part-4/first-steps.md)
   * [The Building Block Concept](part-4/building-block-concepts.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
