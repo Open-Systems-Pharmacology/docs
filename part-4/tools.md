@@ -48,13 +48,13 @@ If you want to test different possible directions in modeling of a specific prob
 
 You will be able to reproduce every step that you have made during the project. In the window you will see the number of steps in the column **State After Action**. You can add labels in the history to mark important steps in your project modeling history and comment them by using the **Add Label...** button in the bottom. You can also change these comments by selecting a status in history and click on **Edit Comments...**. The **Rollback...** allows the user to step back to any numbered status in the current session.
 
-![History Manager in MoBi®](../assets/images/part-4/Prj_history.png)
+![History Manager in MoBi®](../assets/images/part-4/Prj-history.png)
 
 ## MoBi® Options‌
 
-The program options window can be opened by clicking the <img width="32" src="../assets/icons/Settings.ico"> **Options** in the **Utilities** ribbon tab. This opens the options window. MoBi® here allows the user to define some basic settings, e.g., concerning the number of recently opened projects or settings for the diagrams or (de-)activating the dimensions validation in the **General** tab.
+The program options window can be opened by clicking the ![](../assets/icons/Settings.svg) **Options** in the **Utilities** ribbon tab. This opens the options window. MoBi® here allows the user to define some basic settings, e.g., concerning the number of recently opened projects or settings for the diagrams or (de-)activating the dimensions validation in the **General** tab.
 
-![Options window in MoBi®](../assets/images/part-4/Prg_overview_options.png)
+![Options window in MoBi®](../assets/images/part-4/Prg-overview-options.png)
 
 The tabs **Diagram Options**, **Diagram Auto Layout**, and **Chart Options** enable the control of the diagrams and charts. Most of these options are either self-explanatory (like colors or sizes of diagram elements), are explained in MoBi® _\- Diagrams overview_, or may be used to empirically optimize the outcome of the auto layout function.
 

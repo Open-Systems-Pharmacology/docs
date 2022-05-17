@@ -2,16 +2,7 @@ name: Spellcheck
 
 on: 
   pull_request:
-  push:
-
-permissions:
-  contents: read
 
 jobs:
   Spellcheck:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
-    - uses: rojopolis/spellcheck-github-actions@0.16.0
+    uses: Open-Systems-Pharmacology/Workflows/.github/workflows/SpellChecker.yml@main

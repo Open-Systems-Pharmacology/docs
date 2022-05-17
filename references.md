@@ -366,3 +366,5 @@ Y. Wu and F. Kesisoglou. _Immediate Release Oral Dosage Forms: Formulation Scree
 #### 121
 [Frechen S, Solodenko J, Wendl T, et al. A generic framework for the physiologically-based pharmacokinetic platform qualification of PK-Sim and its application to predicting cytochrome P450 3A4-mediated drug-drug interactions. CPT Pharmacometrics Syst Pharmacol. 2021;10(6):633-644. doi:10.1002/psp4.12636](https://pubmed.ncbi.nlm.nih.gov/33946131)
 
+#### 122
+[Paul R.V. Malik, Cindy H.T. Yeung, Shams Ismaeil, Urooj Advani, Sebastian Djie, Andrea N. Edginton. A Physiological Approach to Pharmacokinetics in Chronic Kidney Disease](https://accp1.onlinelibrary.wiley.com/doi/full/10.1002/jcph.1713)

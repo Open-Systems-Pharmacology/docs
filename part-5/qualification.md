@@ -53,13 +53,13 @@ Technically, a qualification plan is nothing more than a text file in [JSON form
 
 ## Components of a (re-)qualification plan
 
-![](../assets/images/part-5/QualificationPlan_00_Overview.png)
+![](../assets/images/part-5/QualificationPlan-00-Overview.png)
 
 ### Projects
 
 Describes all projects used in a qualification scenario. Currently, only PK-Sim projects are supported. MoBi projects will be supported in the mid-term future.
 
-![](../assets/images/part-5/QualificationPlan_01_Projects.png)
+![](../assets/images/part-5/QualificationPlan-01-Projects.png)
 
 - "**Id**": Whenever a project is referenced within a qualification plan: it happens via its project id. Any non-empty string can be defined by the author of a qualification plan as a project id (the only restriction: a project id must be _unique_ within one qualification plan).
 
@@ -82,7 +82,7 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
   - Compound building block "_Midazolam_" in the project "_Itraconazole-Midazolam-DDI_" will be overwritten by the Compound building block **with the same name** from the project "_Midazolam_" (if there is no Compound with the same name in the "_Midazolam_" project: execution of the qualification plan will stop with an error)
 
-![](../assets/images/part-5/QualificationPlan_02_Projects.png)
+![](../assets/images/part-5/QualificationPlan-02-Projects.png)
 
 - "**SimulationParameters**": OPTIONAL: List of inherited simulation parameters (i.e. parameters that are not specified in building blocks, but in the simulation, e.g. `blood/plasma concentration ratio` or `P (interstitial->intracellular)`). Same principle as in case of inherited building blocks: simulation parameters can be inherited between projects. Each inherited simulation parameter description consists of:
 
@@ -98,7 +98,7 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
 - In all target simulations shown below (_DDI Control - xxx, DDI Treatment - xxx_), the value of parameter `P (interstitial->intracellular)` defined in `Neighborhoods|Duodenum_int_Duodenum_cell|Midazolam` will be set to the value of the same parameter in the simulation `po 3mg (solution)`
 
-![](../assets/images/part-5/QualificationPlan_03_Projects.png)
+![](../assets/images/part-5/QualificationPlan-03-Projects.png)
 
 ### Observed data sets
 
@@ -112,7 +112,7 @@ There are two kinds of observed data set:
 
 2. Observed data set which is not included into one project. It must be described in the "_ObservedDataSets_" section of a qualification plan.
 
-   ![](../assets/images/part-5/QualificationPlan_04_ObservedData.png)
+   ![](../assets/images/part-5/QualificationPlan-04-ObservedData.png)
 
    - "**Id**": (Unique) id of an observed data set
    
@@ -164,7 +164,7 @@ Defines the chapter structure of the report. A `section` consists of:
 
 - "**Sections**": OPTIONAL list of sub-sections. Every sub-section is built in the same way (thus report structure can be defined with an arbitrary chapter depth level).
 
-![](../assets/images/part-5/QualificationPlan_05_Sections.png)
+![](../assets/images/part-5/QualificationPlan-05-Sections.png)
 
 {% hint style="tip" %}
 
@@ -195,7 +195,7 @@ The introduction is defined by:
 
 - "**Path**": Path to the **static** content file. Can be given as remote URL or local file path (s. the [Projects](#projects) section for details). Static content files must be written in [Markdown](#markdown) format.
 
-![](../assets/images/part-5/QualificationPlan_06_Intro.png)
+![](../assets/images/part-5/QualificationPlan-06-Intro.png)
 
 ### Inputs
 
@@ -217,7 +217,7 @@ Input description contains all input settings (model- type, calculation methods 
 
 This section defines the type of plots (and some additional related information like tables and qualification measures) to generate for the report.
 
-![](../assets/images/part-5/QualificationPlan_10_PlotOverview.png)
+![](../assets/images/part-5/QualificationPlan-10-PlotOverview.png)
 
 - "**PlotSettings**": OPTIONAL _Global_ plot settings (pictures size, font properties). In addition, every plot can define its _local_ plot settings.
 
@@ -298,11 +298,11 @@ Two types of plots are supported here:
 
 - Predicted vs. Observed
 
-![](../assets/images/part-5/001_plotGOFMergedPredictedVsObserved.png)
+![](../assets/images/part-5/001-plotGOFMergedPredictedVsObserved.png)
 
 - Residuals over time
 
-![](../assets/images/part-5/003_plotGOFMergedResidualsOverTime.png)
+![](../assets/images/part-5/003-plotGOFMergedResidualsOverTime.png)
 
 Combines data from several simulations; every simulation data can be displayed in different color/symbol.
 
@@ -408,13 +408,13 @@ Creates comparison time profile plots similar to [Comparison Charts in PK-Sim](h
   - "**Color**": Color in "_#RRGGBB_" format. (s. [GOFMergedPlots](#gofmergedplots) for details). Will be used for both simulated output and observed data
   - "**Symbol**": Symbol (s. [GOFMergedPlots](#gofmergedplots) for details) - will be used for observed data only
 
-![](../assets/images/part-5/016_plotComparisonTimeProfile.png)
+![](../assets/images/part-5/016-plotComparisonTimeProfile.png)
 
 #### DDIRatioPlots
 
 Creates DDI Ratio plots as described e.g. in Hanke et. al ([[106](../references.md#106)])
 
-![](../assets/images/part-5/QualificationPlan_20_PlotDDIRatio.png)
+![](../assets/images/part-5/QualificationPlan-20-PlotDDIRatio.png)
 
 Two types of plots are supported here:
 
@@ -511,7 +511,7 @@ Two types of plots are supported here:
 
 Creates plots of predicted/observed ratios for PK parameters of interest
 
-![](../assets/images/part-5/QualificationPlan_30_PlotPKRatio.png)
+![](../assets/images/part-5/QualificationPlan-30-PlotPKRatio.png)
 
     "PKRatioPlots": [
       {
@@ -655,23 +655,23 @@ All static and dynamic elements described in a qualification plan are compiled i
   _ either start typing: the list of all snippets starting with this shortcut will be shown via Intellisense
   _ or press CTRL+SPACE: the list of ALL snippets will be shown. Then just navigate to the right snippet and select it
 
-![](../assets/images/part-5/QualificationPlan_Tools_01.png)
+![](../assets/images/part-5/QualificationPlan-Tools-01.png)
 
 - After you inserted a skeleton via snippet: fill all the placeholders with correct information. Just start typing (don't click with the mouse!) into the first entry; once finished - press TAB to switch to the next input
 
-![](../assets/images/part-5/QualificationPlan_Tools_02.png)
+![](../assets/images/part-5/QualificationPlan-Tools-02.png)
 
 - If a value to be entered is an enumeration: click between double quotes and press CTRL+SPACE, then select from the list
 
-![](../assets/images/part-5/QualificationPlan_Tools_03.png)
+![](../assets/images/part-5/QualificationPlan-Tools-03.png)
 
 - If a Dimension/Unit pair has to be defined: select the dimension first (CTRL+SPACE), AFTER that select the unit
 
-![](../assets/images/part-5/QualificationPlan_Tools_04.png)
+![](../assets/images/part-5/QualificationPlan-Tools-04.png)
 
 - Every time when a new element of a qualification plan was entered via snippet (or manually) and filled out: immediately check errors and warnings and correct them as soon as possible.
 
-![](../assets/images/part-5/QualificationPlan_Tools_05.png)
+![](../assets/images/part-5/QualificationPlan-Tools-05.png)
 
 - When adding a new element of NON-EMPTY array, do not forget a comma before or after inserted element. (Before when inserted as last element, after otherwise).
 
@@ -725,7 +725,7 @@ Execute Workflow.m.
 
         `CreateQualificationReport.bat "C:\Evaluation-plan-template\Evaluation\Workflow.m"`
 
-![](../assets/images/part-5/CreateQualificationReport_CMD.PNG)
+![](../assets/images/part-5/CreateQualificationReport-CMD.PNG)
 
 This will create a report in markdown format in the _Evaluation/report_ subfolder.
 

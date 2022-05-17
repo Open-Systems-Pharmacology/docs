@@ -8,7 +8,7 @@ In PK-Sim® and MoBi®, tables are often used for input and output, for instance
 
 In this section we describe the most important features on the example of the table **Physiology > Organ composition** in the tab **Anatomy & Physiology** of an individual in PK-Sim®.
 
-![Organ Table](../assets/images/part-5/Table_Original.png)
+![Organ Table](../assets/images/part-5/Table-Original.png)
 
 Before we describe the features in more detail in the following subsections, we give a brief overview of the most used concepts and actions:
 
@@ -34,7 +34,7 @@ The screenshot below shows a table
 
 *   and the name column moved left to the value column.
 
-![Organ Table With Changes Applied](../assets/images/part-5/Table_OrganizedWithDescription.png)
+![Organ Table With Changes Applied](../assets/images/part-5/Table-OrganizedWithDescription.png)
 
 ## Sorting‌
 
@@ -74,7 +74,7 @@ To filter the rows of a table do one of the following:
 
 You can easily combine different filter features, as exemplary shown in below.
 
-![Organ Table With All Features Applied](../assets/images/part-5/Table_AllFilterFeatures.png)
+![Organ Table With All Features Applied](../assets/images/part-5/Table-AllFilterFeatures.png)
 
 ## Select columns‌
 

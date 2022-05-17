@@ -116,7 +116,7 @@ Then this data will be split into 4 data sets corresponding to the available com
 
 `{Organ, Compartment, Route}`: 
 
-![Import result: Observed data sets](../assets/images/part-5/ImportResult_ObservedDataSets.PNG)
+![Import result: Observed data sets](../assets/images/part-5/ImportResult-ObservedDataSets.PNG)
 
 * Data set 1: "`Brain.Plasma.IV`"
 
@@ -312,7 +312,7 @@ Additionally, for some meta data mappings (e.g., Organ, Species and others), the
 
 In the latter case: the selected predefined value will be used as "Organ" for ALL imported data sets.
 
-![List of values](../assets/images/part-5/Import_ListOfValues.PNG)
+![List of values](../assets/images/part-5/Import-ListOfValues.PNG)
 
 {% hint style="warning" %}
 The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' mapping. 
@@ -320,17 +320,17 @@ The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' ma
 
 For the molecule mapping, a column from the sheet can be selected. Alternatively, the user can select from a drop-down menu of the available molecules from the project or specify a new molecule manually by clicking "Edit manually" under "Edit extra fields".
 
-![Mapping molecules](../assets/images/part-5/Import_Map_Molecule.PNG)
+![Mapping molecules](../assets/images/part-5/Import-Map-Molecule.PNG)
 
 The user can also add one or more '**Group by**'-mappings. Those mappings are used to define *additional* meta data and will be used together with the *predefined* meta data ("*Organ*", "*Compartment*", ...) to break down a single data sheet into multiple data sets as described in [Data sets](#data-sets).
 
-![Add GroupBy](../assets/images/part-5/Import_AddGroupBy.PNG) 
+![Add GroupBy](../assets/images/part-5/Import-AddGroupBy.PNG) 
 
 {% hint style="note" %}
 The mapping can be reset by right-clicking on the mapping panel and selecting one of the displayed options.
 {% endhint %}
 
-![Observed data mapping context menu](../assets/images/part-5/ObsData_MApping_ContextMenu.PNG)
+![Observed data mapping context menu](../assets/images/part-5/ObsData-MApping-ContextMenu.PNG)
 
 #### Selection of units
 
@@ -369,7 +369,7 @@ This can be done either by mapping of the data set to a molecule or by mapping o
   * If yes: observed data set will be automatically assigned the molecular weight of this compound.
   * If no: molecular weight of the given data set is undefined. However, if a new molecule with the name assigned to the data set is added to the project later on: observed data set will automatically become the molecular weight of this molecule.  
 
-![](../assets/images/part-5/Import_MW_Molecule.PNG)
+![](../assets/images/part-5/Import-MW-Molecule.PNG)
 
 {% hint style="tip" %}
 If molecular weight of the molecule is changed by user: molecular weight of all data sets linked to this molecule via the "Molecule" meta data will be automatically adjusted to the new value. 
@@ -382,13 +382,13 @@ If the "Molecule" meta data was not mapped during the import process - it can be
 * If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
   * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
 
-![](../assets/images/part-5/Import_MW_MW.PNG)
+![](../assets/images/part-5/Import-MW-MW.PNG)
 
 * If the **Molecule** is mapped to a data source column or is set to specific value and  the **Molecular Weight** is mapped as well:
   * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
   * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
 
-![](../assets/images/part-5/Import_MW_MW_Molecule.PNG)
+![](../assets/images/part-5/Import-MW-MW-Molecule.PNG)
 
 ### The NaN indicator
 
@@ -398,7 +398,7 @@ It is possible to define a specific number (e.g. 99999) as an equivalent of NaN.
 
 Data sets can be added to preview by clicking on "**Add current sheet**" or "**Add all sheets**":
 
-![Add data sheet(s) to preview](../assets/images/part-5/Import_AddDataSheets.PNG)
+![Add data sheet(s) to preview](../assets/images/part-5/Import-AddDataSheets.PNG)
 
 When at least one data set has been added to the preview, the confirmation tab "**Import preview**" gets activated. 
 
@@ -416,7 +416,7 @@ By clicking the "**Save configuration**"-button, the user can save all configura
 
 The saved configuration can be used to resume the configuring at a later time point or to import a different file that should be imported with exactly the same configuration.
 
-![Save/Load configuration](../assets/images/part-5/Import_SaveLoadConfig.PNG)
+![Save/Load configuration](../assets/images/part-5/Import-SaveLoadConfig.PNG)
 
 {% hint style="note" %}
 If some sheets have already been loaded, this state is also part of the configuration. 
@@ -431,7 +431,7 @@ Missing columns will be ignored.
 
 ## Editing Observed Data
 
-Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing metadata. Changes are reversible through <img width="32" src="../assets/icons/Undo.ico"> and will be tracked in the project history. Numerically changing a value is reflected in real-time in the preview graph below and will result in moving the data point in the data grid to the new settings.
+Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing metadata. Changes are reversible through ![](../assets/icons/Undo.svg) and will be tracked in the project history. Numerically changing a value is reflected in real-time in the preview graph below and will result in moving the data point in the data grid to the new settings.
 
 The editing window can be accessed by double-clicking the observed data in the building block view or through the context menu.
 
@@ -448,7 +448,7 @@ Using the context menu of the **Observed Data** folders, the metadata values can
 
 Using the context menu on a single data set, the user can update **all data sets which were imported together with the selected one**. 
 
-![Update previously imported data sets](../assets/images/part-5/Import_UpdateDataSets.PNG)
+![Update previously imported data sets](../assets/images/part-5/Import-UpdateDataSets.PNG)
 
 Upon selecting this option, the user is prompted to select the file from where the data will be re-imported (This can also be the same file used for the original import, just with edited data.) A window appears, showing the changes this re-import would make to the observed data: which data sets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload or abort it.
 

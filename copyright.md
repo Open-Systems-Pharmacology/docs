@@ -1,8 +1,8 @@
 # Open Systems Pharmacology Suite Manual
 
-Version 10
+Version 11
 
-Publication date October 2021
+Publication date April 2022
 
 Copyright © 2021 [Open Systems Pharmacology Community](references.md#115)
 
@@ -22,8 +22,8 @@ All rights reserved.
 
 Please, refer to the LLNL website for detailed information on licensing:
 
-- https://computation.llnl.gov/projects/sundials/license
-- https://computation.llnl.gov/projects/sundials
+- https://computing.llnl.gov/projects/sundials/license
+- https://computing.llnl.gov/projects/sundials
 
 Internet:
 
