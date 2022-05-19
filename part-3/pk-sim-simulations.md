@@ -237,8 +237,8 @@ For more information on uploading observed data, see [Import and Edit of Observe
 
 Generally, two different views are available and switching between these view can be done by clicking on **Show PK-Analysis** and **Show Chart** button on the bottom of the chart window:
 
-* Chart view ![](../assets/icons/TimeProfileAnalysis.svg) (default): The simulated curves and the observed data are displayed
-* PK-Analysis view ![](../assets/icons/PKAnalysis.svg): The calculated PK parameters for the selected simulated curves are displayed.
+* Chart view <img src="../assets/icons/TimeProfileAnalysis.svg" data-size="line"> (default): The simulated curves and the observed data are displayed
+* PK-Analysis view <img src="../assets/icons/PKAnalysis.svg" data-size="line">: The calculated PK parameters for the selected simulated curves are displayed.
 
 ### Chart view‌
 
@@ -256,11 +256,11 @@ For more information on how to load observed data and compare them to your simul
 
 Multiple results windows
 
-If you wish to display different curves or use different settings for the same simulation, you can add new results charts windows by clicking on the **Results** button ![](../assets/icons/TimeProfileAnalysis.svg) in the Ribbon group **Simulation**.
+If you wish to display different curves or use different settings for the same simulation, you can add new results charts windows by clicking on the **Results** button <img src="../assets/icons/TimeProfileAnalysis.svg" data-size="line"> in the Ribbon group **Simulation**.
 
 Special features for population simulations
 
-If you wish to display other percentiles or other curves without simulating again, click on the **Results** button ![](../assets/icons/TimeProfileAnalysis.svg) in the ribbon group **Simulation**. You will be directed to the **Curve selection for chart** window (see above).
+If you wish to display other percentiles or other curves without simulating again, click on the **Results** button <img src="../assets/icons/TimeProfileAnalysis.svg" data-size="line"> in the ribbon group **Simulation**. You will be directed to the **Curve selection for chart** window (see above).
 
 ### PK-Analysis view‌
 
@@ -342,7 +342,7 @@ Unlike for simulations in single individuals, additional variability for paramet
 For more information on adding variability to a defined population, go to [PK-Sim® - Creating Populations](pk-sim-creating-populations.md).
 {% endhint %}
 
-Once all parameters are set, click the **Run** simulation button ![](../assets/icons/Run.svg) in the **Modeling & Simulation** group or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
+Once all parameters are set, click the **Run** simulation button <img src="../assets/icons/Run.svg" data-size="line"> in the **Modeling & Simulation** group or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
 
 ![The Population Simulation Settings: Curve Selection window. Time profiles and PK-parameters will be calculated in the selected organs and compartments.](../assets/images/part-3/population-simulation-20-18.jpg)
 

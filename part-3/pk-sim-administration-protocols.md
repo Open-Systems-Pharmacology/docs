@@ -1,6 +1,6 @@
 # Administration Protocols
 
-An administration protocol is a set of data describing administration type, dose and dosing regimen. These properties can be specified within the building block **Administration Protocol** ![](../assets/icons/ProtocolFolder.svg) . A number of administration protocols can be defined and saved as templates.These can be shared among other projects and users.
+An administration protocol is a set of data describing administration type, dose and dosing regimen. These properties can be specified within the building block **Administration Protocol** <img src="../assets/icons/ProtocolFolder.svg" data-size="line"> . A number of administration protocols can be defined and saved as templates.These can be shared among other projects and users.
 
 ## Definition of new Administration Protocols in PK-Sim®‌
 
@@ -132,10 +132,10 @@ To save an existing administration protocol as template:
 
 To load an existing administration protocol from the template database:
 
-1. Right mouse click on **Administration Protocols** ![](../assets/icons/ProtocolFolder.svg) in the **Building Block Explorer**
-2. Select ![](../assets/icons/LoadAction.svg) **Load From Template...**
+1. Right mouse click on **Administration Protocols** <img src="../assets/icons/ProtocolFolder.svg" data-size="line"> in the **Building Block Explorer**
+2. Select <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load From Template...**
 3. Select the desired administration protocol from the user templates. In case a protocol with the same name already exists in the project, a warning appears and you will have to **Rename** the protocol that is to be loaded from template.
-4. Click **OK** ![](../assets/icons/OK.svg)
+4. Click **OK** <img src="../assets/icons/OK.svg" data-size="line">
 
 The selected administration protocol will appear in the **Building Block Explorer**.
 
@@ -146,7 +146,7 @@ Administration protocols can also be directly loaded from the template database 
 To delete an administration protocol from the project:
 
 1. Right mouse click on the respective administration protocol in the **Building Block Explorer**
-2. Select ![](../assets/icons/Delete.svg) **Delete...**
+2. Select <img src="../assets/icons/Delete.svg" data-size="line"> **Delete...**
 3. Confirm by clicking **Yes**
 
 {% hint style="warning" %}

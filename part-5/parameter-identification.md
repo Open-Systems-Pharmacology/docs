@@ -40,7 +40,7 @@ Selecting the input parameters of interest as **Favorites** makes it much easier
 
 ### Create a Parameter Identification‌
 
-A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select ![](../assets/icons/ParameterIdentification.svg) **Start Parameter Identification ...** from the context menu.
+A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select <img src="../assets/icons/ParameterIdentification.svg" data-size="line"> **Start Parameter Identification ...** from the context menu.
 
 ### Map outputs to observed data‌
 
