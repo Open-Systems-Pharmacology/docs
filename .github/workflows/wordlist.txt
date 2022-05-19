@@ -1,4 +1,3 @@
 PKParameter
 PKSim
 userid
-svg

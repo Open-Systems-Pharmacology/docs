@@ -60,7 +60,7 @@ The first step to start working with MoBi® is to create a new project. To do th
 
 You now need to create molecules which are later used as reaction partners. Do this by the following steps:
 
-1.  Click the + symbol in front of the <img src="../assets/icons/MoleculeFolder.svg) Molecules folder in the **Building Block Explorer**. Alternatively, double-click the ![](../assets/icons/MoleculeFolder.svg" data-size="line"> Molecules folder.
+1.  Click the + symbol in front of the <img src="../assets/icons/MoleculeFolder.svg" data-size="line"> Molecules folder in the **Building Block Explorer**. Alternatively, double-click the  <img src="../assets/icons/MoleculeFolder.svg" data-size="line"> Molecules folder.
 
 2.  Double-click the <img src="../assets/icons/Molecule.svg" data-size="line"> **Molecules** entry to edit this building block. A new tab with an empty space will open.
 
@@ -92,9 +92,9 @@ In the same way, create a second molecule, name it "B". Also, uncheck the box ![
 
 6.  Enter "R" into the **Name** input box.
 
-7.  Click the <img src="../assets/icons/AddAction.svg) **Add Formula** button. You will be asked for a reaction formula name. Enter "R" into the New Name input box, and the circular red error symbol ![](../assets/icons/ErrorProvider.svg" data-size="line"> will vanish. Press **Enter** or click **OK**.
+7.  Click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button. You will be asked for a reaction formula name. Enter "R" into the New Name input box, and the circular red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> will vanish. Press **Enter** or click **OK**.
 
-8.  Back in the "New Reaction" window, the circular red error symbol <img src="../assets/icons/ErrorProvider.svg) in the Formula Name combo box has now vanished. Press again **Enter** or click **OK**. A reaction triangle symbol ![](../assets/icons/Reaction.svg" data-size="line"> with the name "R" underneath will now appear in the Diagram Area in addition to the molecules "A" and "B".
+8.  Back in the "New Reaction" window, the circular red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> in the Formula Name combo box has now vanished. Press again **Enter** or click **OK**. A reaction triangle symbol <img src="../assets/icons/Reaction.svg" data-size="line"> with the name "R" underneath will now appear in the Diagram Area in addition to the molecules "A" and "B".
 
 9.  You can now move the reaction triangle or either molecule within the Diagram Area by clicking on them, holding the left mouse button and moving the mouse into the desired direction. To move a reaction, its grey center needs to be clicked on. To move a molecule, it needs to be clicked on in its darker green center.
 
@@ -150,7 +150,7 @@ Now, you need to create the Molecules and Parameters Start Values. In our exampl
 
 3.  Enter the name "1" (or any other name you prefer) and click the **OK** button. A window showing the start values for the molecules "A" and "B", 100 and 0 µmol, opens in the edit window of the screen. The values could be edited if other values than the defaults are required for the simulation.
 
-4.  Repeat the procedure with the next building block, <img src="../assets/icons/ParameterStartValuesFolder.svg) **Parameter Start Values**: Right-click it, select ![](../assets/icons/AddAction.svg" data-size="line"> **Create Parameter Start Values Building Block** from the menu, enter "1" as name in the "Create new start values" window, and click **OK**. This building block, however, should not show any values since our simple model does not contain any relevant parameters.
+4.  Repeat the procedure with the next building block, <img src="../assets/icons/ParameterStartValuesFolder.svg" data-size="line"> **Parameter Start Values**: Right-click it, select ! <img src="../assets/icons/AddAction.svg" data-size="line"> **Create Parameter Start Values Building Block** from the menu, enter "1" as name in the "Create new start values" window, and click **OK**. This building block, however, should not show any values since our simple model does not contain any relevant parameters.
 
 {% hint style="tip" %}
 Start values can also be created during the next step (Simulation Creation Wizard window) by using the <img src="../assets/icons/AddAction.svg" data-size="line"> icons which start the same parameter generation procedure. Compare and [Create a Simulation](setting-up-simulation.md#create-a-simulation).

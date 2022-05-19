@@ -37,7 +37,7 @@ In the first step of the simulation creation you can choose the building blocks 
 
 In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the <img src="../assets/icons/AddAction.svg" data-size="line"> button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Molecule Start Values](building-block-concepts.md#molecule-start-values) and [Parameter Start Values](building-block-concepts.md#parameter-start-values).
 
-Clicking on **Next** <img src="../assets/icons/Forward.svg) will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the ![](../assets/icons/Save.svg" data-size="line"> **Save Changes as new building block** button.
+Clicking on **Next** <img src="../assets/icons/Forward.svg" data-size="line"> will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the  <img src="../assets/icons/Save.svg" data-size="line"> **Save Changes as new building block** button.
 
 ![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW-MSV.png)
 
@@ -63,7 +63,7 @@ Finish the simulation creation by clicking on **OK** <img src="../assets/icons/O
 
 ### Warnings and Errors‌
 
-If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img src="../assets/icons/Notifications.svg) Warning or ![](../assets/icons/Error.svg" data-size="line"> Error depending on their severity.
+If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img src="../assets/icons/Notifications.svg" data-size="line"> Warning or  <img src="../assets/icons/Error.svg" data-size="line"> Error depending on their severity.
 
 Errors and warning messages are shown in a notification viewer at the bottom of the page similar to the history viewer. Warnings and error notifications are described in more detail in the viewer as such describing
 
@@ -88,11 +88,11 @@ In this case, the simulation cannot be created. Errors are generated, for exampl
 * Missing or wrong references in formulas for essential objects like Molecule Start Values.
 * General syntax errors in formulas.
 
-You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the <img src="../assets/icons/Error.svg) Errors and ![](../assets/icons/Notifications.svg" data-size="line"> Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
+You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the <img src="../assets/icons/Error.svg" data-size="line"> Errors and <img src="../assets/icons/Notifications.svg" data-size="line"> Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
 
 ![Notifications View: Warnings](../assets/images/part-4/SimCW-Warnings.png)
 
-The <img src="../assets/icons/Notifications.svg) Warnings and ![](../assets/icons/Error.svg) Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the ![](../assets/icons/Save.svg" data-size="line"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
+The <img src="../assets/icons/Notifications.svg" data-size="line"> Warnings and <img src="../assets/icons/Error.svg" data-size="line"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img src="../assets/icons/Save.svg" data-size="line"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
 
 ## Simulation Settings‌
 
@@ -187,7 +187,7 @@ If you change the value of a parameter defined by an explicit formula, the Formu
 {% endhint %}
 
 {% hint style="info" %}
-After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** <img src="../assets/icons/Refresh.svg), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![](../assets/icons/Notifications.svg" data-size="line"> appears.
+After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** <img src="../assets/icons/Refresh.svg" data-size="line">, which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign <img src="../assets/icons/Notifications.svg" data-size="line"> appears.
 {% endhint %}
 
 {% hint style="info" %}
@@ -254,7 +254,7 @@ Now you can run the simulation by one of the following options:
 * Click the <img src="../assets/icons/Run.svg" data-size="line"> **Run** button in the Simulation Ribbon Group
 * Press the function key **F5**
 
-Alternatively, select the <img src="../assets/icons/Run.svg) **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ). Selecting the ![](../assets/icons/Undo.svg" data-size="line"> **Undo** option from the menu bar discards all changes made in the simulation and resets settings to those of the original Building Blocks.
+Alternatively, select the <img src="../assets/icons/Run.svg" data-size="line"> **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ). Selecting the <img src="../assets/icons/Undo.svg" data-size="line"> **Undo** option from the menu bar discards all changes made in the simulation and resets settings to those of the original Building Blocks.
 
 The progress of a simulation run is shown by the progress bar in the lower right corner of the MoBi® window. A running simulation can be stopped by clicking the <img src="../assets/icons/Stop.svg" data-size="line"> **Stop** button in the Simulation Ribbon Group which will become active during a run.
 
