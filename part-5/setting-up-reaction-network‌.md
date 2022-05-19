@@ -11,7 +11,7 @@ This workflow will be described in detail below.
 ### Step 1: Create a new project:
 
 * Start MoBi®
-*   Click on the **File** tab and select ![](../assets/icons/ProjectNew.svg) **New Project**
+*   Click on the **File** tab and select <img src="../assets/icons/ProjectNew.svg" alt="" data-size="line"> **New Project**
 
     or
 * Use the shortcut key **Ctrl+N**
@@ -24,14 +24,14 @@ Creating a new project automatically creates new building blocks for molecules, 
 
 To open a building block, extend its tree view in the building block explorer and either:
 
-* Double-click on the appearing building block ![](../assets/icons/MoleculeFolder.svg).
-* Right-click on the appearing building block and select ![](../assets/icons/Edit.svg) **Edit** from the context menu.
+* Double-click on the appearing building block <img src="../assets/icons/MoleculeFolder.svg" alt="" data-size="line">.
+* Right-click on the appearing building block and select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit** from the context menu.
 
 The building block is now opened in the main window and the ribbon view changed to the building block specific ribbon tab (Edit Molecules).
 
 ### Step 3: Create three new Molecules named "Educt", "Product" and "Drug":
 
-* Click ![](../assets/icons/AddAction.svg) **New** in the building block specific ribbon tab or right-click on the empty space in the building block (_Molecule List Tree View_) in the main window and select ![](../assets/icons/AddAction.svg) **Create Molecule**.
+* Click <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> **New** in the building block specific ribbon tab or right-click on the empty space in the building block (_Molecule List Tree View_) in the main window and select <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> **Create Molecule**.
 * In the appearing window, select a name for the molecule and enter a **Constant** default start amount with the value set to 1 µmol.
 * Deselect the **Stationary** property (to indicate that the molecule is non- stationary) and click **OK**.
 
@@ -42,18 +42,18 @@ In the main window, the molecules building block should now contain three list e
 * Open the "Organism" building block in the spacial structure building block group.
 * In the new main window, double-click on the green container in the diagram area named "Organism".
 * Select the **Properties** tab in the lower half of the main window and using the right combobox of **Container Type**. Select: _Logical Container ..._.
-* In the diagram area, right-click anywhere and select ![](../assets/icons/Refresh.svg) **Refresh** in the context menu: the color of the green container named "Organism" should change to _blue_, which characterizes logical containers.
-* In the diagram area, right-click on the container named "Organism" and select ![](../assets/icons/ContainerAdd.svg) Create Container in the context menu.
+* In the diagram area, right-click anywhere and select <img src="../assets/icons/Refresh.svg" alt="" data-size="line"> **Refresh** in the context menu: the color of the green container named "Organism" should change to _blue_, which characterizes logical containers.
+* In the diagram area, right-click on the container named "Organism" and select <img src="../assets/icons/ContainerAdd.svg" alt="" data-size="line"> Create Container in the context menu.
 * In the appearing "New Container" window, choose a new name for the container (here: liver), set the **Container Type** to _Logical Container ..._, and click **OK**.
 * Right-click on the new "Liver" container. Again, create a new container named "Plasma" with **Container Type** set to _Physical Container ..._ and click **OK**.
-* Double-click on the new "Plasma" container. In the parameters tab below the diagram area click on the ![](../assets/icons/AddAction.svg) **Add Parameter** button.
+* Double-click on the new "Plasma" container. In the parameters tab below the diagram area click on the <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> **Add Parameter** button.
 * In the appearing "New Parameter" window, specify a name for the parameter (here: Volume), verify that the **Dimension** is set to _Volume_ and **Formula Type** to _Constant_, and set the Value to 1 liter.
 
 ### Step 5: Create a new reaction named "Re":
 
 * Open the reaction building block for editing.
-* To create a reaction, either click on ![](../assets/icons/ReactionAdd.svg) **New** in the building block specific ribbon tab or right-click on the empty space in the diagram area of the building block edit window and select ![](../assets/icons/ReactionAdd.svg) **Create Reaction**.
-* Add the molecules created in **Step 3** by either clicking on ![](../assets/icons/MoleculeAdd.svg) **Insert Molecule** in the building block specific ribbon tab or right-clicking on the diagram area of the building block edit window and select ![](../assets/icons/MoleculeAdd.svg) **Insert Molecule**.
+* To create a reaction, either click on <img src="../assets/icons/ReactionAdd.svg" alt="" data-size="line"> **New** in the building block specific ribbon tab or right-click on the empty space in the diagram area of the building block edit window and select <img src="../assets/icons/ReactionAdd.svg" alt="" data-size="line"> **Create Reaction**.
+* Add the molecules created in **Step 3** by either clicking on <img src="../assets/icons/MoleculeAdd.svg" alt="" data-size="line"> **Insert Molecule** in the building block specific ribbon tab or right-clicking on the diagram area of the building block edit window and select <img src="../assets/icons/MoleculeAdd.svg" alt="" data-size="line"> **Insert Molecule**.
 * A new window appears: select the molecules displayed in the list (select all three while holding down the **Ctrl** key) and click **OK**.
 
 To connect the molecule "Educt" as an educt of the reaction "Re", move the mouse to the edge of the molecule in the diagram area until the mouse cursor changes into a "Hand" symbol. . Click and drag your cursor towards the reaction until the appearing line snaps onto the _blue_ circle (the educt port) at the lower left end of the reaction symbol.
@@ -71,7 +71,7 @@ The molecule "Drug" is now a modifier (as is indicated by the _red_ circle) of t
 To edit the reaction "Re" and define its kinetics:
 
 * Double-click on the reaction symbol in the diagram area;
-* or right-click on the reaction symbol in the diagram area and select ![](../assets/icons/Edit.svg) **Edit** from the context menu.
+* or right-click on the reaction symbol in the diagram area and select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit** from the context menu.
 
 Select the properties tab in the window below the diagram area.
 
@@ -86,7 +86,7 @@ We will now define the reaction kinetics as a reversible reaction in which the m
 
 By default, the **Formula Type** of the kinetics is set to **Formula** (an explicit formula). You can change this selection by use of the combobox, if needed.
 
-Now select the formula string input box to the right of the yellow warning sign with the exclamation mark ![](../assets/icons/Notifications.svg) and enter the chosen reaction rate:
+Now select the formula string input box to the right of the yellow warning sign with the exclamation mark <img src="../assets/icons/Notifications.svg" alt="" data-size="line"> and enter the chosen reaction rate:
 
 * k1\*Drug/V\*((Educt/V)/(Km+Educt/V))-k2\*Product/V
 
@@ -100,12 +100,12 @@ The color of the circles of the reaction symbol determines the sign of the kinet
 
 In the properties tab, two essential inputs are still missing:
 
-* An explicit formula requires a name as indicated by the symbol ![](../assets/icons/ErrorProvider.svg).
-* The specified formula cannot be parsed due to the unknown entities: _k1_, _k2_, _Km_ and _V_ as indicated by the symbol ![](../assets/icons/Notifications.svg).
+* An explicit formula requires a name as indicated by the symbol <img src="../assets/icons/ErrorProvider.svg" alt="" data-size="line">.
+* The specified formula cannot be parsed due to the unknown entities: _k1_, _k2_, _Km_ and _V_ as indicated by the symbol <img src="../assets/icons/Notifications.svg" alt="" data-size="line">.
 
-First, a new formula has to be created. To create a new formula, click on the ![](../assets/icons/AddAction.svg) **Add Formula** button. A new window appears, where you can define a new name for the formula. Type in "r1" and confirm the name by clicking **OK**. The formula is also listed in the formula list in the formula tab located above the diagram area.
+First, a new formula has to be created. To create a new formula, click on the <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> **Add Formula** button. A new window appears, where you can define a new name for the formula. Type in "r1" and confirm the name by clicking **OK**. The formula is also listed in the formula list in the formula tab located above the diagram area.
 
-The yellow warning sign ![](../assets/icons/Notifications.svg) indicates that the construction of our kinetic rate equation is not yet complete. To get a consistent formula, you need to assign the missing parameters to the reaction and add them to the referenced objects list.
+The yellow warning sign <img src="../assets/icons/Notifications.svg" alt="" data-size="line"> indicates that the construction of our kinetic rate equation is not yet complete. To get a consistent formula, you need to assign the missing parameters to the reaction and add them to the referenced objects list.
 
 {% hint style="info" %}
 As depicted above, molecules are automatically added to the referenced objects list of an _explicit Formula_ when connected to the reaction. The referenced objects are by default listed by the following properties:
@@ -113,11 +113,11 @@ As depicted above, molecules are automatically added to the referenced objects l
 
 _The table below belongs to note above._
 
-|           |                                                                                                                                                                                                                                   |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Alias     | Defines the name by which the referenced objects are used in the Formula. If the name in the formula does not correspond to the Alias of the respective reference, a warning sign ![](../assets/icons/Notifications.svg) appears. |
-| Path      | Path where the referenced object is located within the project.                                                                                                                                                                   |
-| Dimension | Dimension (e.g., _Volume_ l or _Concentration_ µmol/l) of the referenced object.                                                                                                                                                  |
+|           |                                                                                                                                                                                                                                                                  |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Alias     | Defines the name by which the referenced objects are used in the Formula. If the name in the formula does not correspond to the Alias of the respective reference, a warning sign <img src="../assets/icons/Notifications.svg" alt="" data-size="line"> appears. |
+| Path      | Path where the referenced object is located within the project.                                                                                                                                                                                                  |
+| Dimension | Dimension (e.g., _Volume_ l or _Concentration_ µmol/l) of the referenced object.                                                                                                                                                                                 |
 
 {% hint style="warning" %}
 Formulas are automatically stored _even if incomplete_! However, they can be completed any time later. A list of all formulas used in one building block can be found in the formulas tab next to the main tab of each building block in edit view.
@@ -127,7 +127,7 @@ Formulas are automatically stored _even if incomplete_! However, they can be com
 
 Select the parameters tab next to the properties tab. To create a new parameter:
 
-* Click on the ![](../assets/icons/AddAction.svg) **Add Parameter** button.
+* Click on the <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> **Add Parameter** button.
 
 In the new window
 
@@ -151,17 +151,17 @@ To add the volume parameter "V" to the list, select the bullet Relative Path. A 
 
 Before we can create a simulation, we need to define start values. To create new molecule and parameter start values:
 
-* Right-click on the molecule start values building block group in the building block explorer and select ![](../assets/icons/AddAction.svg) **Create Molecule Start Value Building Block** from the context menu.
-* In the appearing "Create new Start Values" window, define a name (here: "MSV") for the molecule start values building block and confirm by clicking **OK** ![](../assets/icons/OK.svg).
+* Right-click on the molecule start values building block group in the building block explorer and select <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> **Create Molecule Start Value Building Block** from the context menu.
+* In the appearing "Create new Start Values" window, define a name (here: "MSV") for the molecule start values building block and confirm by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">.
 * Repeat the procedure for a new parameter start values building block using the name "PSV".
 
 ### Step 9: Create a Simulation from the newly defined building blocks:
 
 Before we can simulate, the reactions network of a simulation has to be created from the building blocks. To create a simulation:
 
-* Click on ![](../assets/icons/Simulation.svg) **Create** in the _Simulation_ Group the _Modeling & Simulation_ ribbon tab.
+* Click on <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Create** in the _Simulation_ Group the _Modeling & Simulation_ ribbon tab.
 * In the appearing "Simulation Creation Wizard" window, specify a name for the simulation. Here: "RN".
-* Confirm the simulation creation process by clicking **Finish** ![](../assets/icons/OK.svg).
+* Confirm the simulation creation process by clicking **Finish** <img src="../assets/icons/OK.svg" alt="" data-size="line">.
 
 A new simulation "RN" is added to the simulations explorer and automatically opened in edit mode in the main window. Your MoBi® program user interface should now look like depicted in below.
 
@@ -172,7 +172,7 @@ A new simulation "RN" is added to the simulations explorer and automatically ope
 * Select the Settings tab of the simulation in the main window.
 * In the top half of the Settings tab set the **EndTime** to 0.25 h and the **Resolution** to 600.00 pts/h.
 
-Now we can run the simulation. To run the simulation, click ![](../assets/icons/Run.svg) **Run** in the simulation group of the modeling & simulation ribbon.
+Now we can run the simulation. To run the simulation, click <img src="../assets/icons/Run.svg" alt="" data-size="line"> **Run** in the simulation group of the modeling & simulation ribbon.
 
 To view the simulation results:
 

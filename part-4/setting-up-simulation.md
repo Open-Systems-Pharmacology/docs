@@ -9,8 +9,8 @@ After having made yourself familiar with the processes of building model compone
 
 Existing simulations can be loaded by either:
 
-* Clicking on the ![](../assets/icons/Simulation.svg) **Load Simulation into Project** button in the Import Ribbon Group.
-* Right-click on an existing simulation in the Simulations Explorer and select ![](../assets/icons/Simulation.svg)
+* Clicking on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Load Simulation into Project** button in the Import Ribbon Group.
+* Right-click on an existing simulation in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line">
 
 Load Simulation in the context menu.
 
@@ -26,8 +26,8 @@ To create a simulation, a full set of building blocks is needed. All building bl
 
 A simulation can be created by:
 
-* Clicking on the ![](../assets/icons/Simulation.svg) **Create** button in the Simulation Ribbon Group.
-* Right-clicking on an existing simulation in the Simulations Explorer and select ![](../assets/icons/Simulation.svg) Create Simulation in the context menu.
+* Clicking on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Create** button in the Simulation Ribbon Group.
+* Right-clicking on an existing simulation in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> Create Simulation in the context menu.
 
 Creating a simulation opens the **Simulation Creation Wizard** in a new window as shown below
 
@@ -37,11 +37,11 @@ In the first step of the simulation creation you can choose the building blocks 
 
 In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the ![](../assets/icons/AddAction.svg) button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Molecule Start Values](building-block-concepts.md#molecule-start-values) and [Parameter Start Values](building-block-concepts.md#parameter-start-values).
 
-Clicking on **Next** ![](../assets/icons/Next.svg) will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the ![](../assets/icons/Save.svg) **Save Changes as new building block** button.
+Clicking on **Next** ![](../assets/icons/Forward.svg) will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the ![](../assets/icons/Save.svg) **Save Changes as new building block** button.
 
 ![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW-MSV.png)
 
-Clicking on **Next** ![](../assets/icons/Next.svg) will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
+Clicking on **Next** ![](../assets/icons/Forward.svg) will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
 
 {% hint style="info" %}
 Changes of start values will affect newly created simulations. Adding them to the project, will leave the original start values building blocks unaffected. **Save Changes as new building block** will create a new building block under a different name.
@@ -53,7 +53,7 @@ Changes of start values will affect newly created simulations. Adding them to th
 Newly created Molecule and Parameter Start Value building blocks in step one, or Start Values building blocks saved in steps two and three during the simulation creation process will only be added to the project when the simulation creation is completed by clicking **Finish** ![](../assets/icons/OK.svg) and not cancelled prematurely.
 {% endhint %}
 
-The third and fourth steps after clicking **Next** ![](../assets/icons/Next.svg) allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
+The third and fourth steps after clicking **Next** ![](../assets/icons/Forward.svg) allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
 
 In the last step, you can choose to immediately run the simulation upon completion of the simulation creation process by selecting the checkbox ![Image](../assets/icons/Checked.png) **Run Simulation** as depicted.
 
@@ -187,7 +187,7 @@ If you change the value of a parameter defined by an explicit formula, the Formu
 {% endhint %}
 
 {% hint style="info" %}
-After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![](../assets/icons/Update.svg), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![](../assets/icons/Notifications.svg) appears.
+After changing a parameter value, the parameter can be reset to its original value by clicking on the icon **Reset Parameter to default** ![](../assets/icons/Refresh.svg), which appears after changing a value. (If a formula dependency of a parameter is overwritten by changing the parameter value, a yellow warning sign ![](../assets/icons/Notifications.svg) appears.
 {% endhint %}
 
 {% hint style="info" %}

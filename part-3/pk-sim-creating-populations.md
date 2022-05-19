@@ -27,11 +27,11 @@ to the NHANES study](../assets/images/part-3/BW-vs-age.png)
 
 To create a new population, do one of the following:
 
-* Click on **Population** ![](../assets/icons/Population.svg) in the **Create New Building Blocks** Group of the
+* Click on **Population** <img src="../assets/icons/Population.svg" alt="" data-size="line"> in the **Create New Building Blocks** Group of the
 
 Modeling & Simulation Tab
 
-* Right mouse click on **Populations** ![](../assets/icons/Population.svg)in the **Building Block Explorer** and select
+* Right mouse click on **Populations** <img src="../assets/icons/Population.svg" alt="" data-size="line">in the **Building Block Explorer** and select
 
 Add Population...
 
@@ -45,14 +45,14 @@ The population is initialized by giving it a **Name** in the respective input fi
 
 In the first drop-down menu (**Based on individual**) you can specify an **Individual** that you previously defined in this project. A **Population** can then be created based on any **Individual** already defined. You need to specify the number of individuals in your population comprises and the percentage of females therein. In the tab **User Defined Variability**, changes in anatomical and physiological properties of the population you chose may be specified, i.e. anatomy and physiology including expression and ontogeny information about metabolizing enzymes, transport proteins and protein binding partners. Likewise, the distribution of the property may be specified and results are visualized in the next tab **Distribution**. A population can be based on an individual saved as template:
 
-* Click on **Load** ![](../assets/icons/LoadAction.svg)
+* Click on **Load** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line">
 * Select the individual from **User Templates** or **Predefined Templates**
 * Click OK
 * If the name of the **Individual** loaded from template is already used in the project, a new name has to be defined.
 
 Alternatively, you can create a new individual which serves as a basis individual for the population:
 
-* Click on **Create** ![](../assets/icons/AddAction.svg)
+* Click on **Create** <img src="../assets/icons/AddAction.svg" alt="" data-size="line">
 * Define the properties of the **Individual**. For details see [PK-Sim® - Creating Individuals](pk-sim-creating-individuals.md).
 
 In the following line, information about the population that will be used based on the selected basis individual is given. For the different animal species, no alternative populations are provided, but for humans, the following populations are available:
@@ -116,7 +116,7 @@ The tree view shows only drawings that are currently open. To select a parameter
 Use the **Filter** function above the tree view to find parameters more quickly.
 {% endhint %}
 
-Selected parameters can be added to the box on the right hand side by clicking ![](../assets/icons/Next.svg) **Add**. Accordingly, parameters can be removed from the box by clicking ![](../assets/icons/Back.svg) **Remove**. Parameters added to the box on the right hand side can be varied within the population simulation. For each parameter, a type of distribution and associated parameters can be chosen. Four types of distributions are available:
+Selected parameters can be added to the box on the right hand side by clicking <img src="../assets/icons/Next.svg" alt="" data-size="line"> **Add**. Accordingly, parameters can be removed from the box by clicking <img src="../assets/icons/Back.svg" alt="" data-size="line"> **Remove**. Parameters added to the box on the right hand side can be varied within the population simulation. For each parameter, a type of distribution and associated parameters can be chosen. Four types of distributions are available:
 
 * Normal: The parameter is normally (Gaussian-like) distributed. Mean and standard deviation must be given. Select the unit accordingly.
 * LogNormal: The parameter is log-normally distributed. Mean and geometric standard deviation must be given. Select the unit for the mean value accordingly. The standard deviation can be given as a (dimensionless) relative standard deviation.
@@ -148,7 +148,7 @@ The distribution of any parameter can be copied as image via right mouse click o
 To set or edit the properties of an existing population:
 
 1. Right mouse click on the respective population in the **Building Block Explorer**
-2. Select ![](../assets/icons/Edit.svg) **Edit...**
+2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
 
 or simply double click on the existing population in the **Building Block Explorer**.
 
@@ -176,9 +176,9 @@ In addition to the export of the population parameters to CSV, population simula
 To clone populations in the project:
 
 1. Right mouse click on the respective population in the **Building Block Explorer**
-2. Select ![](../assets/icons/SimulationClone.svg) **Clone...**
+2. Select <img src="../assets/icons/SimulationClone.svg" alt="" data-size="line"> **Clone...**
 3. Set an alternative name for the population clone and enter a description, if desired
-4. Confirm and close the window with **OK** ![](../assets/icons/OK.svg)
+4. Confirm and close the window with **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
 ### Saving Populations as Templates‌
 
@@ -187,7 +187,7 @@ Previously defined populations can be saved as templates and then be shared amon
 To save an existing population as template:
 
 1. Right mouse click on the respective population in the **Building Block Explorer**
-2.  Select ![](../assets/icons/SaveAction.svg) **Save as Template...**
+2.  Select <img src="../assets/icons/SaveAction.svg" alt="" data-size="line"> **Save as Template...**
 
     In case a population with the same name already exists, a warning message will pop up and you have the following options:
 
@@ -200,11 +200,11 @@ To save an existing population as template:
 To load an existing population from the template database:
 
 1. Right mouse click on **Populations** in the **Building Block Explorer**
-2. Select ![](../assets/icons/LoadAction.svg) **Load From Template...**
+2. Select <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Load From Template...**
 3.  Select the desired population from the user templates
 
     In case a population with the same name already exists in the project, a warning message will pop up and you will have to **Rename** the population that is to be loaded from the template.
-4. Click **OK** ![](../assets/icons/OK.svg)
+4. Click **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
 The selected population will appear in the **Building Block Explorer** view.
 
@@ -215,7 +215,7 @@ In addition, populations can be directly loaded from the template database withi
 To delete a population from the project:
 
 1. Right mouse click on the respective population in the **Building Block Explorer**
-2. Select ![](../assets/icons/Delete.svg) **Delete...**
+2. Select <img src="../assets/icons/Delete.svg" alt="" data-size="line"> **Delete...**
 3. Confirm to delete the population by clicking on **Yes**
 
 {% hint style="warning" %}

@@ -14,7 +14,7 @@ Please note that the volume of fat tissue is not optimized by the algorithm as t
 
 ## Definition of new Individual in PK-Sim®‌
 
-* Click on **Individual** ![](../assets/icons/Individual.svg) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+* Click on **Individual** <img src="../assets/icons/Individual.svg" alt="" data-size="line"> in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 * Right mouse click on **Individuals** in the **Building Block Explorer** and select Add Individual...
 * Use the shortcut **Ctrl+Alt+I**
 
@@ -29,20 +29,20 @@ The **Create Individual** building block window is subdivided into three tabs: *
 
 In the first drop-down menu you can choose from the following species:
 
-* Human ![](../assets/icons/Human.svg)
-* Monkey ![](../assets/icons/Monkey.svg)
-* Beagle ![](../assets/icons/Beagle.svg)
-* Dog ![](../assets/icons/Dog.svg)
-* Minipig ![](../assets/icons/Minipig.svg)
-* Rat ![](../assets/icons/Rat.svg)
-* Mouse ![](../assets/icons/Mouse.svg)
-* Rabbit ![](../assets/icons/Rabbit.svg)
-* Cat ![](../assets/icons/Cat.svg)
-* Cattle ![](../assets/icons/Cattle.svg)
+* Human <img src="../assets/icons/Human.svg" alt="" data-size="line">
+* Monkey <img src="../assets/icons/Monkey.svg" alt="" data-size="line">
+* Beagle <img src="../assets/icons/Beagle.svg" alt="" data-size="line">
+* Dog <img src="../assets/icons/Dog.svg" alt="" data-size="line">
+* Minipig <img src="../assets/icons/Minipig.svg" alt="" data-size="line">
+* Rat <img src="../assets/icons/Rat.svg" alt="" data-size="line">
+* Mouse <img src="../assets/icons/Mouse.svg" alt="" data-size="line">
+* Rabbit <img src="../assets/icons/Rabbit.svg" alt="" data-size="line">
+* Cat <img src="../assets/icons/Cat.svg" alt="" data-size="line">
+* Cattle <img src="../assets/icons/Cattle.svg" alt="" data-size="line">
 
 ### Human
 
-If **Human** ![](../assets/icons/Human.svg) is selected, you can select one of the following populations from the next drop-down menu:
+If **Human** <img src="../assets/icons/Human.svg" alt="" data-size="line"> is selected, you can select one of the following populations from the next drop-down menu:
 
 * Asian (Tanaka, 1996) \[[74](../references.md#74)]
 * Black American (NHANES, 1997) \[[82](../references.md#82)]
@@ -191,7 +191,7 @@ To add a protein to the individual, right click on the corresponding protein typ
 
 ![Add a metabolizing enzyme](../assets/images/part-3/add-metabolizing-enzyme.png)
 
-This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on <img width="32" src="../assets/icons/AddAction.ico"> 
+This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on ![](../assets/icons/AddAction.ico)
 
 ![Select an expression profile](../assets/images/part-3/select-expression-profile.png)
 
@@ -199,13 +199,11 @@ Once the expression profile is selected, it will be linked to the individual and
 
 ![Expression profile linked to individual](../assets/images/part-3/expression-profile-in-individual.png)
 
-This is the only instance in PK-Sim where a a building block is referencing another building block. 
+This is the only instance in PK-Sim where a a building block is referencing another building block.
 
 {% hint style="warning" %}
 Please note that when adding an expression profile to an individual, the expression profile is linked directly to the individual. Any modification performed in the expression profile will be immediately reflected into the individual. This is the reason why all parameters are read-only in the individual.
 {% endhint %}
-
-
 
 ### Editing and Scaling Individual Properties‌
 
