@@ -191,7 +191,7 @@ To add a protein to the individual, right click on the corresponding protein typ
 
 ![Add a metabolizing enzyme](../assets/images/part-3/add-metabolizing-enzyme.png)
 
-This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on ![](../assets/icons/AddAction.ico)
+This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on <img src="../assets/icons/AddAction.svg" data-size="line">
 
 ![Select an expression profile](../assets/images/part-3/select-expression-profile.png)
 

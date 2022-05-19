@@ -146,7 +146,7 @@ Now, you need to create the Molecules and Parameters Start Values. In our exampl
 
 1.  In the building block explorer, right-click the entry <img src="../assets/icons/MoleculeStartValuesFolder.svg" data-size="line"> **Molecule Start Values**.
 
-2.  Right-click it, select ![Image](../assets/icons/AddAction.ico **Create Molecule Start Values Building Block** from the context menu. A new window named "Create new start values" opens.
+2.  Right-click it, select <img src="../assets/icons/AddAction.svg" data-size="line"> **Create Molecule Start Values Building Block** from the context menu. A new window named "Create new start values" opens.
 
 3.  Enter the name "1" (or any other name you prefer) and click the **OK** button. A window showing the start values for the molecules "A" and "B", 100 and 0 µmol, opens in the edit window of the screen. The values could be edited if other values than the defaults are required for the simulation.
 
