@@ -24,7 +24,7 @@ To scroll the diagram, use one of the following options:
 * Use the mouse wheel to scroll vertically or press the **Shift** key while using the mouse wheel to scroll horizontally.
 *   For the spatial structure and simulation, there is a **Diagram Overview** to the left of the diagram and above the model tree. Here, the current clipping is marked by a rectangular frame. You can pick this frame at its edge and move it to select the displayed clipping of the diagram, i.e., to scroll the diagram.
 
-    ![Image](../assets/images/part-4/DiagramOverviewScroll.png)
+    <img src="../assets/images/part-4/DiagramOverviewScroll.png" alt="Image" data-size="original">
 
 To zoom the diagram, use one of the following options:
 
@@ -78,12 +78,12 @@ The different context menu items are described in the sections below.
 
 To edit the model, do one of the following:
 
-* Select ![](../assets/icons/ContainerAdd.svg) **Create Container** from the **context menu** to add a new container (or any other entity type).
-* Select ![](../assets/icons/ContainerLoad.svg) **Load Container** to load a previously saved container (or any other entity type).
-* Select ![](../assets/icons/Rename.svg) **Rename** to rename an entity.
-* Double click the entity or select ![](../assets/icons/Edit.svg) **Edit** from the context menu to focus and edit an entity.
-* Select ![](../assets/icons/Save.svg) **Save** to save an entity separate from the project. You can load such entities in the same or into other projects.
-* Select ![](../assets/icons/Cancel.svg) **Remove** to remove an entity.
+* Select <img src="../assets/icons/ContainerAdd.svg" alt="" data-size="line"> **Create Container** from the **context menu** to add a new container (or any other entity type).
+* Select <img src="../assets/icons/ContainerLoad.svg" alt="" data-size="line"> **Load Container** to load a previously saved container (or any other entity type).
+* Select <img src="../assets/icons/Rename.svg" alt="" data-size="line"> **Rename** to rename an entity.
+* Double click the entity or select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit** from the context menu to focus and edit an entity.
+* Select <img src="../assets/icons/Save.svg" alt="" data-size="line"> **Save** to save an entity separate from the project. You can load such entities in the same or into other projects.
+* Select <img src="../assets/icons/Cancel.svg" alt="" data-size="line"> **Remove** to remove an entity.
 
 ### Diagram Changes‌
 
@@ -114,9 +114,9 @@ Now you can move, hide or resize the selected nodes:
 You may use different node sizes to emphasize important reactions and molecules or to minimize marginal reactions or molecules.
 {% endhint %}
 
-* Select ![](../assets/icons/Undo.svg) **Undo Diagram Layout change** to undo diagram changes like collapse/expand or auto layout. Model changes break the undo sequence, and also hide/show cannot be undone. Observe that the **History Manager** only stores model changes but not diagram changes.
-* Select ![](../assets/icons/Next.svg) **Diagram / To front** or ![](../assets/icons/Back.svg) **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
-* Select ![](../assets/icons/Refresh.svg) **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](diagrams-overview.md#display-changes)).
+* Select <img src="../assets/icons/Undo.svg" alt="" data-size="line"> **Undo Diagram Layout change** to undo diagram changes like collapse/expand or auto layout. Model changes break the undo sequence, and also hide/show cannot be undone. Observe that the **History Manager** only stores model changes but not diagram changes.
+* Select <img src="../assets/icons/Next.svg" alt="" data-size="line"> **Diagram / To front** or <img src="../assets/icons/Back.svg" alt="" data-size="line"> **Diagram / To back** to bring an element into front resp. back of another element/container in case of overlapping of containers and other nodes.
+* Select <img src="../assets/icons/Refresh.svg" alt="" data-size="line"> **Refresh** to refresh a diagram, for example after changing the Diagram Options (see [Display Changes](diagrams-overview.md#display-changes)).
 
 #### Layout Actions
 
@@ -168,7 +168,7 @@ We have already explained in “General Visualization, Scrolling and Zooming” 
 
 You can change the general appearance of the diagrams in the **Diagram Options**
 
-tab within the **User Settings** dialog (click ![](../assets/icons/Settings.svg) **Options** in the Utilities ribbon tab).
+tab within the **User Settings** dialog (click <img src="../assets/icons/Settings.svg" alt="" data-size="line"> **Options** in the Utilities ribbon tab).
 
 All these options are stored in the user settings and apply to newly opened diagram tabs. Refresh a diagram to apply the diagram options to an existing diagram tab (see “Basic Actions”).
 

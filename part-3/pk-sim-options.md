@@ -2,7 +2,7 @@
 
 PK-Sim® can be customized using several options. To do this click on the **Options**
 
-Button ![](../assets/icons/Settings.svg) within the **Utilities** Ribbon Tab.
+Button <img src="../assets/icons/Settings.svg" alt="" data-size="line"> within the **Utilities** Ribbon Tab.
 
 Within the **User** Tab, you can specify the following user specific options:
 
@@ -38,7 +38,7 @@ You can change the size of the icons displayed within the **Tree view**, the **T
 
 ## Template Database Path
 
-You can change the path to the template database or create a new template database by clicking on ![](../assets/icons/AddAction.svg)
+You can change the path to the template database or create a new template database by clicking on <img src="../assets/icons/AddAction.svg" alt="" data-size="line">
 
 ## Colors
 

@@ -263,7 +263,7 @@ The following options are available for managing templates:
 
 *   Delete template
 
-In addition, a template can be loaded as .xml file using the ![](../assets/icons/LoadAction.svg) button.
+In addition, a template can be loaded as .xml file using the <img src="../assets/icons/LoadAction.svg" data-size="line"> button.
 
 In the right panel, the user can specify which curve will be selected as output and how it will be displayed.
 
@@ -332,7 +332,7 @@ To select other x-values than the default ones, do the following (you can skip s
 
 ### Chart Options in User Settings‌‌
 
-In MoBi®, you can change the default editor layout and the default curve name generation in the **Chart Options** tab within the **User Settings** dialog (click ![](../assets/icons/Settings.svg) **Options** in the Utilities ribbon tab).
+In MoBi®, you can change the default editor layout and the default curve name generation in the **Chart Options** tab within the **User Settings** dialog (click <img src="../assets/icons/Settings.svg" data-size="line"> **Options** in the Utilities ribbon tab).
 
 All options here are stored in the user settings and apply for newly opened charts and curves.
 

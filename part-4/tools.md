@@ -1,4 +1,4 @@
-# MoBi®‌ Tools
+# Tools
 
 ## Search Function‌
 
@@ -10,23 +10,19 @@ A search text can then be entered into the **Search** input box. This may be the
 
 The scope of the search can be selected in the **Scope** combobox:
 
-- Selecting Project will search through the entire project, meaning all contained building blocks and simulations.
-
-- Selecting Local will search only within the currently edited building block.
-
-- Selecting AllOfSameType will search within the currently edited building block and all other building blocks of the same type. If, for example, you are currently editing a Molecules building block and have several of them in your project, the search will show results from _all_ molecules building blocks.
+* Selecting Project will search through the entire project, meaning all contained building blocks and simulations.
+* Selecting Local will search only within the currently edited building block.
+* Selecting AllOfSameType will search within the currently edited building block and all other building blocks of the same type. If, for example, you are currently editing a Molecules building block and have several of them in your project, the search will show results from _all_ molecules building blocks.
 
 Several search options can be selected by checkboxes:
 
-- Checking **Match whole word** will only return results where the whole word is matching what is entered in the **Search** input box.
-
-- Checking **Use regular expression** will treat the text in the **Search** input box as a Regular Expression in the search. See other references (e.g., http://en.wikipedia.org/wiki/Regular_expression) for the explanation of a Regular Expression if you are not familiar with them.
-
-- Checking **Match Case** will only return results where the upper and lower case of the characters entered into the **Search** input box matches. This checkbox cannot be used in combination with **Use regular expression** and will thus become inactivated once you select the previous checkbox.
+* Checking **Match whole word** will only return results where the whole word is matching what is entered in the **Search** input box.
+* Checking **Use regular expression** will treat the text in the **Search** input box as a Regular Expression in the search. See other references (e.g., http://en.wikipedia.org/wiki/Regular\_expression) for the explanation of a Regular Expression if you are not familiar with them.
+* Checking **Match Case** will only return results where the upper and lower case of the characters entered into the **Search** input box matches. This checkbox cannot be used in combination with **Use regular expression** and will thus become inactivated once you select the previous checkbox.
 
 To start the search, click on the magnifier glass icon at the right side of the **Search** input box. The results will then be displayed in the Search Results table; if nothing is found, this list will remain empty. Initially, only the building block names with search hits are listed in the results window, but you can expand the lists by clicking the symbol in front of the name.
 
-{% hint style="tip" %}
+{% hint style="info" %}
 Double-clicking a listed item will show it in the edit window where you can view it in detail or enter changes.
 {% endhint %}
 
@@ -42,7 +38,7 @@ The history manager allows you to document all steps that lead to a specific pro
 
 Here we only give a brief description; for more details see [History Manager and History Reporting‌](../part-5/history-manager-history-reporting‌.md).
 
-{% hint style="tip" %}
+{% hint style="info" %}
 If you want to test different possible directions in modeling of a specific problem, you can use this functionality to step back to the "decision point" (within the current session).
 {% endhint %}
 
@@ -52,11 +48,11 @@ You will be able to reproduce every step that you have made during the project. 
 
 ## MoBi® Options‌
 
-The program options window can be opened by clicking the ![](../assets/icons/Settings.svg) **Options** in the **Utilities** ribbon tab. This opens the options window. MoBi® here allows the user to define some basic settings, e.g., concerning the number of recently opened projects or settings for the diagrams or (de-)activating the dimensions validation in the **General** tab.
+The program options window can be opened by clicking the <img src="../assets/icons/Settings.svg" alt="" data-size="line"> **Options** in the **Utilities** ribbon tab. This opens the options window. MoBi® here allows the user to define some basic settings, e.g., concerning the number of recently opened projects or settings for the diagrams or (de-)activating the dimensions validation in the **General** tab.
 
 ![Options window in MoBi®](../assets/images/part-4/Prg-overview-options.png)
 
-The tabs **Diagram Options**, **Diagram Auto Layout**, and **Chart Options** enable the control of the diagrams and charts. Most of these options are either self-explanatory (like colors or sizes of diagram elements), are explained in MoBi® _\- Diagrams overview_, or may be used to empirically optimize the outcome of the auto layout function.
+The tabs **Diagram Options**, **Diagram Auto Layout**, and **Chart Options** enable the control of the diagrams and charts. Most of these options are either self-explanatory (like colors or sizes of diagram elements), are explained in MoBi® _- Diagrams overview_, or may be used to empirically optimize the outcome of the auto layout function.
 
 {% hint style="warning" %}
 Since no rollback or cancel of the user settings is possible, keep track of whatever changes you have done in the user settings.

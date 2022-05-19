@@ -14,7 +14,7 @@ Please note that the volume of fat tissue is not optimized by the algorithm as t
 
 ## Definition of new Individual in PK-Sim®‌
 
-* Click on **Individual** ![](../assets/icons/Individual.svg) in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+* Click on **Individual** <img src="../assets/icons/Individual.svg" alt="" data-size="line"> in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 * Right mouse click on **Individuals** in the **Building Block Explorer** and select Add Individual...
 * Use the shortcut **Ctrl+Alt+I**
 
@@ -29,20 +29,20 @@ The **Create Individual** building block window is subdivided into three tabs: *
 
 In the first drop-down menu you can choose from the following species:
 
-* Human ![](../assets/icons/Human.svg)
-* Monkey ![](../assets/icons/Monkey.svg)
-* Beagle ![](../assets/icons/Beagle.svg)
-* Dog ![](../assets/icons/Dog.svg)
-* Minipig ![](../assets/icons/Minipig.svg)
-* Rat ![](../assets/icons/Rat.svg)
-* Mouse ![](../assets/icons/Mouse.svg)
-* Rabbit ![](../assets/icons/Rabbit.svg)
-* Cat ![](../assets/icons/Cat.svg)
-* Cattle ![](../assets/icons/Cattle.svg)
+* Human <img src="../assets/icons/Human.svg" alt="" data-size="line">
+* Monkey <img src="../assets/icons/Monkey.svg" alt="" data-size="line">
+* Beagle <img src="../assets/icons/Beagle.svg" alt="" data-size="line">
+* Dog <img src="../assets/icons/Dog.svg" alt="" data-size="line">
+* Minipig <img src="../assets/icons/Minipig.svg" alt="" data-size="line">
+* Rat <img src="../assets/icons/Rat.svg" alt="" data-size="line">
+* Mouse <img src="../assets/icons/Mouse.svg" alt="" data-size="line">
+* Rabbit <img src="../assets/icons/Rabbit.svg" alt="" data-size="line">
+* Cat <img src="../assets/icons/Cat.svg" alt="" data-size="line">
+* Cattle <img src="../assets/icons/Cattle.svg" alt="" data-size="line">
 
 ### Human
 
-If **Human** ![](../assets/icons/Human.svg) is selected, you can select one of the following populations from the next drop-down menu:
+If **Human** <img src="../assets/icons/Human.svg" alt="" data-size="line"> is selected, you can select one of the following populations from the next drop-down menu:
 
 * Asian (Tanaka, 1996) \[[74](../references.md#74)]
 * Black American (NHANES, 1997) \[[82](../references.md#82)]
@@ -139,7 +139,7 @@ Use the **Filter** function above the tree view to find parameters more quickly.
 
 In the window on the right hand side, the details of the respective parameter group will be shown.
 
-Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** ![](../assets/icons/Favorites.svg) in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
+Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** <img src="../assets/icons/Favorites.svg" data-size="line"> in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
 
 {% hint style="info" %}
 The order of the columns can be changed manually. Drag the column header to the desired position to change the sequence of columns.
@@ -154,8 +154,8 @@ To change the value of a parameter, do one of the following
 * Enter a new value in the respective input field
 * Multiply the default values with the scale option There are three types of parameter values:
 
-1. Parameter values displayed by default on a white background represent constants values. By changing the parameter value, the default value will be overwritten and the background of the field turns yellow. To reset the parameter value to default click **Reset parameter to default** ![](../assets/icons/Refresh.svg) or use the **Rollback** function of the **History manager**, see [Shared Tools - History manager and history _reporting_](../part-5/history-manager-history-reporting‌.md).
-2. Parameter values displayed by default on a light blue background represent parameters calculated using a formula. By changing these values, the formula is overwritten and the background of the field turns yellow. To reset to the default value(s) click **Reset parameter to default** ![](../assets/icons/Refresh.svg).
+1. Parameter values displayed by default on a white background represent constants values. By changing the parameter value, the default value will be overwritten and the background of the field turns yellow. To reset the parameter value to default click **Reset parameter to default** <img src="../assets/icons/Refresh.svg" data-size="line"> or use the **Rollback** function of the **History manager**, see [Shared Tools - History manager and history _reporting_](../part-5/history-manager-history-reporting‌.md).
+2. Parameter values displayed by default on a light blue background represent parameters calculated using a formula. By changing these values, the formula is overwritten and the background of the field turns yellow. To reset to the default value(s) click **Reset parameter to default** <img src="../assets/icons/Refresh.svg" data-size="line">.
 3. Parameter values displayed by default on a grey background represent values which cannot be changed by the user, because otherwise a fundamental relationship could be destroyed.
 
 {% hint style="info" %}
@@ -191,7 +191,7 @@ To add a protein to the individual, right click on the corresponding protein typ
 
 ![Add a metabolizing enzyme](../assets/images/part-3/add-metabolizing-enzyme.png)
 
-This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on <img width="32" src="../assets/icons/AddAction.ico"> 
+This will open a view to select the expression profile to link with the individual. Either select an existing expression profile, load one from template or create a new one by clicking on <img src="../assets/icons/AddAction.svg" data-size="line">
 
 ![Select an expression profile](../assets/images/part-3/select-expression-profile.png)
 
@@ -199,20 +199,18 @@ Once the expression profile is selected, it will be linked to the individual and
 
 ![Expression profile linked to individual](../assets/images/part-3/expression-profile-in-individual.png)
 
-This is the only instance in PK-Sim where a a building block is referencing another building block. 
+This is the only instance in PK-Sim where a a building block is referencing another building block.
 
 {% hint style="warning" %}
 Please note that when adding an expression profile to an individual, the expression profile is linked directly to the individual. Any modification performed in the expression profile will be immediately reflected into the individual. This is the reason why all parameters are read-only in the individual.
 {% endhint %}
-
-
 
 ### Editing and Scaling Individual Properties‌
 
 To edit properties of existing individuals:
 
 1. Right mouse click on the respective individual in the **Building Block Explorer**
-2. Select ![](../assets/icons/Edit.svg) **Edit...**
+2. Select <img src="../assets/icons/Edit.svg" data-size="line"> **Edit...**
 
 or simply double click on the existing individual in the **Building Block Explorer**.
 
@@ -223,7 +221,7 @@ Please note that the **Biometrics** of an existing individual cannot be changed 
 In order to **scale** an existing individual:
 
 1. Right mouse click on the respective individual in the **Building Block Explorer**
-2.  Select ![](../assets/icons/IndividualScaling.svg) **Scale...**
+2.  Select <img src="../assets/icons/IndividualScaling.svg" data-size="line"> **Scale...**
 
     The **Scale Individual** dialog opens, which is divided into four tabs: **Biometrics**, **Scaling configuration**, **Anatomy & Physiology**, and **Expression**. Details about the three tabs **Biometrics**, **Anatomy & Physiology**, and **Expression** have already been described for the **Create Individual** dialog (please see above). Here, only details about the tab **Scaling configuration** are given:
 
@@ -249,9 +247,9 @@ The line **Target weight**, which appears only on the top of this window if modi
 To clone an individual in the project:
 
 1. Right mouse click on the respective individual in the **Building Block Explorer**
-2. Select ![](../assets/icons/SimulationClone.svg) **Clone...**
+2. Select <img src="../assets/icons/SimulationClone.svg" data-size="line"> **Clone...**
 3. Set an alternative name for the clone and enter a description if desired
-4. Confirm and close the window by clicking ![](../assets/icons/OK.svg) **OK**
+4. Confirm and close the window by clicking <img src="../assets/icons/OK.svg" data-size="line"> **OK**
 
 ### Saving of Individuals as Templates‌
 
@@ -260,7 +258,7 @@ Previously defined individuals can be saved as a template in the template databa
 To save an existing individual as template:
 
 1. Right mouse click on the respective individual in the **Building Block Explorer**
-2. Select ![](../assets/icons/SaveAction.svg) **Save as Template...**
+2. Select <img src="../assets/icons/SaveAction.svg" data-size="line"> **Save as Template...**
 
 A message will appear confirming that the Individual was successfully saved in the template database.
 
@@ -275,9 +273,9 @@ In case an individual with the same name already exists, a warning message will 
 To load existing individuals from the template database:
 
 1. Right mouse click on **Individuals** in the **Building Block Explorer**
-2. Select ![](../assets/icons/LoadAction.svg) **Load From Template...**
+2. Select <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load From Template...**
 3. Select the desired individual from the user templates. In case an individual with the same name already exists in the project, a warning appears and you will have to **Rename** the individual that is to be loaded from template.
-4. Click **OK** ![](../assets/icons/OK.svg)
+4. Click **OK** <img src="../assets/icons/OK.svg" data-size="line">
 
 The selected individual will appear in the **Building Block Explorer** view.
 
@@ -288,7 +286,7 @@ In addition, individuals can be directly loaded from the template database withi
 To delete individuals from a project:
 
 1. Right mouse click on the respective individual in the **Building Block Explorer**
-2. Select ![](../assets/icons/Delete.svg) **Delete...**
+2. Select <img src="../assets/icons/Delete.svg" data-size="line"> **Delete...**
 3. Confirm to delete the individual by clicking **Yes**
 
 {% hint style="warning" %}

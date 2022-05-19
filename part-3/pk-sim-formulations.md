@@ -6,7 +6,7 @@ In the building block **Formulation** the properties of the dosage form that is 
 
 To create a new formulation, do one of the following:
 
-* Click on ![](../assets/icons/Formulation.svg) **Formulation** in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
+* Click on <img src="../assets/icons/Formulation.svg" alt="" data-size="line"> **Formulation** in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
 * Right mouse click on **Formulations** in the **Building Block Explorer** and select **Add Formulation...**
 * Use the short cut **Ctrl+Alt+F**
 
@@ -93,7 +93,7 @@ The origin (0, 0) is always present. Values must be monotonically increasing in 
 
 In order to **import** experimental dissolution data from Excel®:
 
-1. Click ![](../assets/icons/LoadAction.svg) **Import Formulation**
+1. Click <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Import Formulation**
 2. Select and open the Excel® file
 3. Import and transfer the appropriate Excel® sheet
 
@@ -114,7 +114,7 @@ First Order defines the application as a first order input. The required input i
 To set or change the properties of an existing formulation:
 
 1. Right mouse click on the respective formulation in the **Building Block Explorer**
-2. Select ![](../assets/icons/Edit.svg) **Edit...**
+2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
 
 or simply double click on the formulation in the **Building Block Explorer**
 
@@ -125,17 +125,17 @@ The window with the properties of the formulation will open. The properties can 
 To clone a formulation in the project:
 
 1. Right mouse click on the respective formulation in the **Building Block Explorer**
-2. Select ![](../assets/icons/SimulationClone.svg) **Clone...**
+2. Select <img src="../assets/icons/SimulationClone.svg" alt="" data-size="line"> **Clone...**
 3. Set an alternative name for the formulation clone and enter a description, if desired.
-4. Confirm and close the window by clicking **OK** ![](../assets/icons/OK.svg).
-5. #### Saving Formulations as Templates‌
+4. Confirm and close the window by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">.
+5. **Saving Formulations as Templates‌**
 
 For each project, a number of formulations can be defined. They can be saved as a template and then be shared among several projects and users.
 
 To save an existing formulation as template:
 
 1. Right mouse click on the respective formulation in the **Building Block Explorer**
-2. Select ![](../assets/icons/SaveAction.svg) **Save as Template...**
+2. Select <img src="../assets/icons/SaveAction.svg" alt="" data-size="line"> **Save as Template...**
 
 In case a formulation with the same name already exists, a warning appears and you have the following opportunities:
 
@@ -148,12 +148,12 @@ In case a formulation with the same name already exists, a warning appears and y
 To load an existing formulation from the template database:
 
 1. Right mouse click on **Formulations** in the **Building Block Explorer**
-2. Select ![](../assets/icons/LoadAction.svg) **Load From Template...**
+2. Select <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Load From Template...**
 3. Select the desired formulation from the user templates
 
 In case a formulation with the same name already exists in the project, a warning appears and you will have to **Rename** the formulation that is to be loaded from template.
 
-1. Click **OK** ![](../assets/icons/OK.svg)
+1. Click **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
 The selected formulation will appear in the **Building Block Explorer** view.
 
@@ -164,7 +164,7 @@ In addition, formulations can be directly loaded from the template database with
 To delete a formulation from the project:
 
 1. Right mouse click on the respective formulation in the **Building Block Explorer**
-2. Select ![](../assets/icons/Delete.svg) **Delete...**
+2. Select <img src="../assets/icons/Delete.svg" alt="" data-size="line"> **Delete...**
 3. Confirm to by clicking **Yes**
 
 {% hint style="warning" %}
