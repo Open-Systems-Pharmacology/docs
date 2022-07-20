@@ -195,7 +195,7 @@ An (optional) introduction can be added to the report. The differences between i
 
 1. In the generated report, the introduction will be inserted at the very beginning, before the TOC (table of content) and is not part of the TOC.
 
-2. The introduction does not have any Id and it is not possible to assign any dynamic content to it.
+2. The introduction does not have any *Reference* and it is not possible to assign any dynamic content to it.
 
 The introduction is defined by:
 
@@ -590,9 +590,9 @@ All static and dynamic elements described in a qualification plan are compiled i
 
    3.1 Static content of the section
 
-   3.2 For all inputs **with SectionId = Id of the current section**: generated input descriptions **in order of appearance in the qualification plan**
+   3.2 For all inputs **with SectionReference = Reference of the current section**: generated input descriptions **in order of appearance in the qualification plan**
 
-   3.3 For all plots **with SectionId = Id of the current section**: generated plots (and related artifacts) **in order of appearance in the qualification plan**
+   3.3 For all plots **with SectionReference = Reference of the current section**: generated plots (and related artifacts) **in order of appearance in the qualification plan**
 
    3.4 Subsections of the current section (if any) **in order of appearance in the qualification plan**. Per subsection ... (s. 3.1..3.4)
 
