@@ -246,10 +246,10 @@ G. Tanaka and H. Kawamura. _Anatomical and physiological characteristics for Asi
 [K. Thelen, K. Coboeken, Y. Jia, J.B. Dressman, S. Willmann. _Dynamically simulating the effect of food on gastric emptying using a detailed physiological model for gastrointestinal transit and absorption_. PAGE meeting 2012. Venice, Italy. 2012.](https://www.page-meeting.org/default.asp?abstract=2355)
 
 #### 82
-Third National Health and Nutrition Examination Survey, (NHANES III). 1997\. National Center for Health Statistics Hyattsville, MD 20782 http://www.cdc.gov/nchs/nhanes.htm
+[Third National Health and Nutrition Examination Survey, (NHANES III). 1997\. National Center for Health Statistics Hyattsville, MD 20782](http://www.cdc.gov/nchs/nhanes.htm)
 
 #### 83
-Expressed Sequence Tags (EST) from UniGene. 2010\. National Center for Biotechnology Information (NCBI) https://ftp.ncbi.nlm.nih.gov/repository/UniGene/
+[Expressed Sequence Tags (EST) from UniGene. 2010\. National Center for Biotechnology Information (NCBI)](https://ftp.ncbi.nlm.nih.gov/repository/UniGene/)
 
 #### 84
 [Annals of the ICRP. Basic Anatomical and Physiological Data for Use in Radiological Protection: Reference Values. J. Valentin. Vol. 32 (3-4). 2002.](https://pubmed.ncbi.nlm.nih.gov/14506981)

@@ -17,7 +17,7 @@ The scope of the search can be selected in the **Scope** combobox:
 Several search options can be selected by checkboxes:
 
 * Checking **Match whole word** will only return results where the whole word is matching what is entered in the **Search** input box.
-* Checking **Use regular expression** will treat the text in the **Search** input box as a Regular Expression in the search. See other references (e.g., http://en.wikipedia.org/wiki/Regular\_expression) for the explanation of a Regular Expression if you are not familiar with them.
+* Checking **Use regular expression** will treat the text in the **Search** input box as a Regular Expression in the search. See other references (e.g., [http://en.wikipedia.org/wiki/Regular\_expression](http://en.wikipedia.org/wiki/Regular\_expression)) for the explanation of a Regular Expression if you are not familiar with them.
 * Checking **Match Case** will only return results where the upper and lower case of the characters entered into the **Search** input box matches. This checkbox cannot be used in combination with **Use regular expression** and will thus become inactivated once you select the previous checkbox.
 
 To start the search, click on the magnifier glass icon at the right side of the **Search** input box. The results will then be displayed in the Search Results table; if nothing is found, this list will remain empty. Initially, only the building block names with search hits are listed in the results window, but you can expand the lists by clicking the symbol in front of the name.

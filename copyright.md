@@ -22,13 +22,13 @@ All rights reserved.
 
 Please, refer to the LLNL website for detailed information on licensing:
 
-- https://computing.llnl.gov/projects/sundials/license
-- https://computing.llnl.gov/projects/sundials
+- [https://computing.llnl.gov/projects/sundials/license](https://computing.llnl.gov/projects/sundials/license)
+- [https://computing.llnl.gov/projects/sundials](https://computing.llnl.gov/projects/sundials)
 
 Internet:
 
-- http://www.open-systems-pharmacology.org
+- [http://www.open-systems-pharmacology.org](http://www.open-systems-pharmacology.org)
 
 Support:
 
-- http://forum.open-systems-pharmacology.org
+- [http://forum.open-systems-pharmacology.org](http://forum.open-systems-pharmacology.org)

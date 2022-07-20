@@ -269,9 +269,9 @@ This iteration is performed until the break condition holds.
 
 For a description of this algorithm see
 
-Henri P. Gavin: "The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems" (May 2016) (https://people.duke.edu/\~hpgavin/ce281/lm.pdf)
+Henri P. Gavin: "The Levenberg-Marquardt method for nonlinear least squares curve-fitting problems" (May 2016) ([https://people.duke.edu/~hpgavin/ce281/lm.pdf](https://people.duke.edu/~hpgavin/ce281/lm.pdf))
 
-K. Madsen, H.B. Nielsen, O. Tingleff: „METHODS FOR NON-LINEAR LEAST SQUARES PROBLEMS” (2nd Edition, April 2004) http://(http://www2.imm.dtu.dk/pubdb/views/edoc\_download.php/3215/pdf/imm3215.pdf) www2.imm.dtu.dk/pubdb/views/edoc\_download.php/3215/pdf/imm3215.pdf
+K. Madsen, H.B. Nielsen, O. Tingleff: „METHODS FOR NON-LINEAR LEAST SQUARES PROBLEMS” (2nd Edition, April 2004) ([http://www2.imm.dtu.dk/pubdb/edoc/imm3215.pdf](http://www2.imm.dtu.dk/pubdb/edoc/imm3215.pdf))
 
 **Algorithm parameters**
 

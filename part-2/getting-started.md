@@ -35,7 +35,7 @@ The modular structure of the Open Systems Pharmacology Suite is explained in [Mo
 
 To install the Open Systems Pharmacology Suite core components:
 
-1.  Download installation packages from http://setup.open-systems-pharmacology.org/
+1.  Download installation packages from [http://setup.open-systems-pharmacology.org/](http://setup.open-systems-pharmacology.org/)
 
 2.  Start the **OSPSuite-Full.X.Y.Z.exe*** (where X.Y.Z is a program version, e.g. 7.4.0) from the menu Start -> Run or from Windows Explorer.
 
@@ -57,6 +57,6 @@ Besides the core components of the Open Systems Pharmacology Suite including PK-
 
 ## Help: Contact, Discussion Forum, Bug Reporting, ...
 
-Additional information on the software is available on http://www.open-systems-pharmacology.org/.
+Additional information on the software is available on [http://www.open-systems-pharmacology.org/](http://www.open-systems-pharmacology.org/).
 
-For support, bug reports, etc. please contact http://forum.open-systems-pharmacology.org/. 
+For support, bug reports, etc. please contact [http://forum.open-systems-pharmacology.org/](http://forum.open-systems-pharmacology.org/). 
