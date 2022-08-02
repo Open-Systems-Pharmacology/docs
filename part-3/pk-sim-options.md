@@ -51,4 +51,4 @@ Within the **Application** Tab, you can specify the path to a species-specific *
 
 ![Linking a species-specific expression database to an individual.](../assets/images/part-3/expression-database-options.png)
 
-The available expression databases can be downloaded from http://setup.open-systems-pharmacology.org/
+The available expression databases can be downloaded from [http://setup.open-systems-pharmacology.org/](http://setup.open-systems-pharmacology.org/)

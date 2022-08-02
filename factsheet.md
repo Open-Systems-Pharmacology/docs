@@ -53,9 +53,9 @@
 ### Protein Expression
 
 The PK-Sim® library includes large-scale gene-expression data from publicly available sources which were downloaded, processed, stored and customized such that they can be directly utilized in PBPK model building. Public database which were imported are
-* Whole genome expression arrays from ArrayExpress (European Informatics Institute, 2010, http://www.ebi.ac.uk/microarray-as/ae/)
+* Whole genome expression arrays from ArrayExpress (European Informatics Institute, 2010, [http://www.ebi.ac.uk/microarray-as/ae/](http://www.ebi.ac.uk/microarray-as/ae/))
 * RT-PCR derived gene expression (Nishimura et al., 2003; Nishimura and Naito, 2005, 2006)
-* Expressed sequence tags (EST) from UniGene (National Center for Biotechnology Information, 2010, https://ftp.ncbi.nlm.nih.gov/repository/UniGene/).
+* Expressed sequence tags (EST) from UniGene (National Center for Biotechnology Information, 2010, [https://ftp.ncbi.nlm.nih.gov/repository/UniGene/](https://ftp.ncbi.nlm.nih.gov/repository/UniGene/)).
 
 ### Compounds
 
