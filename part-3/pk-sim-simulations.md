@@ -162,6 +162,32 @@ If you click on **Show Diagram**, a reaction network of all reactions in the sim
 
 ![All reactions in a simulation are depicted in the reaction diagram.](../assets/images/part-3/ReactionNetwork.png)
 
+## Mapping Outputs to Observed Data
+
+In the **Data** Tab observed data can be mapped to the corresponding simulation outputs. In the left part of the grid all the observed data that belong to the opened simulation are listed. When adding or removing observed data the list is updated. Newly added observed data are automatically mapped to simulation outputs according to Organ, Compartment and Molecule meta data of observed data and path elements of the outputs. If no matching output can be found the mapping output is set to **None**. This means that the specified observed data is not mapped to an output. The user can also clear an output mapping by clicking on the **x** button to the right, whihc will also set the output to **None**. 
+
+![In the Data Tab observed data can be mapped to simulation outputs.](../assets/images/part-3/SimulationOutputMappings.png)
+
+{% hint style="warning" %}
+Because meta data of observed data can be incomplete or wrong, you should check whether the right output is mapped to each observed data item. In case of different outputs with the same meta data (this can happen at least in MoBi), you should also check whether the automatically chosen output is correct.
+{% endhint %}
+
+{% hint style="info" %}
+In case of incomplete or missing meta data, it is recommended to correct the meta data first to enable automatic mapping.
+{% endhint %}
+
+For each mapping, the scaling can be defined as Lin or Log which determines the residual calculation.
+
+**Scaling**
+
+|     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Lin | Residuals are calculated as: Simulation value - Observed value. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values).                                                                                                                                                                                                        |
+| Log | Residuals are calculated as: log(Simulation value) - log(Observed value) = log (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because log(10E-N) = -N can becomes large. Then, the weights should be manually adjusted. |
+
+To reflect the quality or importance of the Observed Data item or to balance different magnitudes of values in case of Lin scaling, you can edit the weights of each mapping.
+
+
 ## Running a simulation in an individual‌
 
 If a simulation was successfully created, press the **Run** simulation button <img src="../assets/icons/Run.svg" alt="" data-size="line"> in the Modeling & Simulation ribbon or press the F5 key. If the simulation is run for the first time, ths following window will appear in which the simulation curves that will be generated in the simulation can be selected:
@@ -468,6 +494,30 @@ In contrast to the Time Profile Analysis, population parameters and PK- paramete
 ![Display simulated parameters in a box whisker plot stratified by Population Parameters and/or PK-parameters.](../assets/images/part-3/PK-Sim-CreateSimulation-PopSim-BoxWhisker.png)
 
 A separate panel is created for each of the selected output parameters in the graphical display. The name and unit of the output parameters is printed along the Y-axis.
+
+#### Predicted vs. Observed
+
+For each observed concentration value a point is plotted with observed value as x-Value and corresponding simulation value as y-Value.
+
+![Simulation Predicted vs Observed Chart.](../assets/images/part-3/SimulationPredictedVsObservedChart.png)
+
+**Adding Deviation Lines to the plot**
+
+In a Predicted vs. Observed plot the user can right click on the chart and add deviation lines:
+
+
+This opens a dialog that lets the user specify the fold value of the deviation curves. 
+
+This will create two deviation lines according to the given x-fold value which has to be greater or equal to 1.  For a fold value equal to 1, the created lines would both be equal to the identity line. An x-fold deviation range includes simulated values within x-fold and 1/x-fold of observed values.
+
+
+#### Residuals vs. Time
+
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The chart includes scaling, weights and LLOQ usage and the values are dimensionless, so you can assess the actual influence of the observed data.
+
+![Simulation Residuals vs Time Chart.](../assets/images/part-3/SimulationResidualsVSTimeChart.png)
+
+At the top of the chart, the total residual error is being displayed. 
 
 #### The Scatter Plot Analysis
 
