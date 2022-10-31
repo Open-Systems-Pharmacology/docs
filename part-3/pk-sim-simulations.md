@@ -352,6 +352,13 @@ The calculated pharmacokinetic parameters are:
 
 All values are calculated using the standard equations for PK-values (see e.g. M. Rowland, T. N. Tozer, “Clinical Pharmacokinetic Concepts and Applications”, (1994) Lippincott Williams & Wilkins, Philadelphia). For extrapolation to infinity an exponential function is used on the basis of the last 10% of the calculated time steps. AUC is calculated by extrapolating the first time steps to t = 0. Depending on the curve shape the result of this extrapolation may be sensitive to time resolution. This may lead to some variability in AUC and thus, in clearance and distribution volumes.
 
+PK-parameters for selected outputs of population simulations are shown in two ways:
+
+1. Aggregated PK Values are calcualted from aggregated curve being analzyed
+2. Individual PK Values are calculated for all individuals within the range being analyzed and the median is presented
+
+Globally calcualted PK-parameters are always calculated for all individuals with the median being presented
+
 By clicking on **Export to Excel**®\*\*...\*\* the calculated PK-parameters (including the simulated concentration-time profiles) can be exported to MS Excel® format.
 
 ## Running and analyzing a population simulation‌
