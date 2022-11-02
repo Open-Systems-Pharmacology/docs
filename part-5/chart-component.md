@@ -122,6 +122,16 @@ If a row header or cell content cannot be fully displayed, the full content is s
 
 ![Curve Options](../assets/images/part-5/CurvesTable.png)
 
+##  Editing options of multiple curves
+
+In the “Curves and Axis Options” Tab of the Chart Editor a new context menu item has been added called “Edit options for selected”. It is only visible when the user has selected at least two rows.
+
+![Edit Multiple Curves Context Menu](../assets/images/part-5/EditMultipleCurvesContextMenu.png)
+
+Selecting this option opens a new dialog that lists the common option of the curves. Initially the values for the options are not set, and if the user lets any of the options to that initial state, that option will not be edited – meaning that the selected curves will retain for that option the value they had before opening the dialog.
+
+![Edit Options Dialog](../assets/images/part-5/EditOptionsDialog.png)
+
 ### Coloring curves with the same color‌
 
 Often you may want to use the same color for different curves, e.g. for curves of the same molecule or organ or for observed data.
@@ -137,6 +147,25 @@ If you want to color different curves - for instance of observed data - with the
 3.  Select the curves from the data browser.
     
 4.  Reset the **Default Color** for the y-Axis to White which deactivates default color.
+
+### Coloring grouping tab
+
+A new tab called "Curves Color Grouping" has been introduced to the plots with observed data curves. In the tab the user can select one or more metadata, according to which the lines will be grouped and given the same color. Clicking the “Apply Color Grouping” button changes the color of the curves in the chart according to the selection, and then the selection is cleared. The user can then if she wants choose a new selection of metadata and change the coloring once again.
+
+![Color Grouping Tab](../assets/images/part-5/ColorGroupingTab.png)
+
+####  Observed Data color grouping when adding to charts
+
+When adding data sets to a plot via drag-and-drop of a folder (or multiple folders), all data sets within one folder can be assigned to a single color. This behavior is optional and can be changed by (un)selecting the checkbox "Color group when adding to chart" in the context menu of the “Observed Data” entry of the building blocks explorer. This setting is a central configuration and valid for all subfolders. 
+
+![Color Grouping Option Context Menu](../assets/images/part-5/ColorGroupingOptionContextMenu.png)
+
+Alternatively this feature can be toggled on and off from the User Settings, under “Utilities” -> “Options” -> “General” -> “Colors”:
+
+![Color Grouping Option In Settings](../assets/images/part-5/ColorGroupingOptionInSettings.png)
+
+When this option is selected and whole folders are dragged and dropped into a plot, the observed data from the same folders will be assigned the same color. However, when the user selects individual observed data sets instead of folders and drags and drops them on the plot, then each one will be assigned a new color, and they should not be grouped according to the folder they belong to. 
+
 
 ### Creating clear legends‌
 
