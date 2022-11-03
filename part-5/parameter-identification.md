@@ -27,7 +27,7 @@ In a lot of situations the available **Parameter Identification** features of th
 Within a Parameter Identification you have to perform the following steps:
 
 ### Prepare simulations‌
-
+<!--  -->
 In order to use the Parameter Identification tool, you should add all observed data you want to use to one or more simulations.
 
 Ensure that meta data for **Organ**, **Compartment**, **Molecule** is up to date, because this meta data is used for automatic mapping to outputs.
@@ -56,7 +56,7 @@ You can select between three optimization algorithms, edit their standard settin
 
 ### Run Optimization‌
 
-After finishing the previous steps, you can run a Parameter Identification which does not block the application. So you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification.
+After finishing the previous steps, you can run a Parameter Identification through the “Run & Analyze” tab. Running the Parameter Identification does not block the application, so you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification. Multiple Parameter Identifications can be run in parallel. In that case, when the user explicitly starts a simulation, the simulation has the highest priority to be run as soon as a thread is available. The “Run & Analyze” tab reflects the state of the currently selected Parameter Identification.
 
 ### View results‌
 
@@ -382,7 +382,7 @@ In a Predicted vs. Observed plot the user can right click on the chart and add d
 ![Add Deviation Lines Context Menu Entry](../assets/images/part-3/AddDeviationLines.png)
 
 
-This opens a dialog that lets the user specify the fold value of the deviation curves. 
+This opens a dialog that lets the user specify the fold value of the deviation curves.
 
 ![Deviation Line Dialog for specifying the fold value](../assets/images/part-3/DeviationLineDialog.png)
 
@@ -391,7 +391,7 @@ This will create two deviation lines according to the given x-fold value which h
 
 ![2-fold Deviation Lines](../assets/images/part-3/TwoFoldDeviationLine.png)
 
-In the Chart Editor the deviation lines are grouped under the Category Identity. 
+In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 
