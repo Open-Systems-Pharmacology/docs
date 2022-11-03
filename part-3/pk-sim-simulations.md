@@ -164,7 +164,7 @@ If you click on **Show Diagram**, a reaction network of all reactions in the sim
 
 ## Mapping Outputs to Observed Data
 
-In the **Data** Tab observed data can be mapped to the corresponding simulation outputs. In the left part of the grid all the observed data that belong to the opened simulation are listed. When adding or removing observed data the list is updated. Newly added observed data are automatically mapped to simulation outputs according to Organ, Compartment and Molecule meta data of observed data and path elements of the outputs. If no matching output can be found the mapping output is set to **None**. This means that the specified observed data is not mapped to an output. The user can also clear an output mapping by clicking on the **x** button to the right, whihc will also set the output to **None**. 
+In the **Data** Tab observed data can be mapped to the corresponding simulation outputs. In the left part of the grid all the observed data that belong to the opened simulation are listed. When adding or removing observed data the list is updated. Newly added observed data are automatically mapped to simulation outputs according to Organ, Compartment and Molecule meta data of observed data and path elements of the outputs. If no matching output can be found the mapping output is set to **None**. This means that the specified observed data is not mapped to an output. The user can also clear an output mapping by clicking on the **x** button to the right, which will also set the output to **None**. 
 
 ![In the Data Tab observed data can be mapped to simulation outputs.](../assets/images/part-3/SimulationOutputMappings.png)
 
@@ -354,10 +354,10 @@ All values are calculated using the standard equations for PK-values (see e.g. M
 
 PK-parameters for selected outputs of population simulations are shown in two ways:
 
-1. Aggregated PK Values are calcualted from aggregated curve being analzyed
+1. Aggregated PK Values are calculated from aggregated curve being analyzed
 2. Individual PK Values are calculated for all individuals within the range being analyzed and the median is presented
 
-Globally calcualted PK-parameters are always calculated for all individuals with the median being presented
+Globally calculated PK-parameters are always calculated for all individuals with the median being presented
 
 By clicking on **Export to Excel**®\*\*...\*\* the calculated PK-parameters (including the simulated concentration-time profiles) can be exported to MS Excel® format.
 
