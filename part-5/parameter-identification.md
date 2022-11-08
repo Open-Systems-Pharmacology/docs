@@ -56,7 +56,7 @@ You can select between three optimization algorithms, edit their standard settin
 
 ### Run Optimization‌
 
-After finishing the previous steps, you can run a Parameter Identification through the Ribbon Bar “Run & Analyze”. Running the Parameter Identification does not block the application, so you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification. Multiple Parameter Identifications can be run in parallel. The “Run & Analyze” tab reflects the state of the currently selected Parameter Identification.
+After finishing the previous steps, you can run a Parameter Identification through the Ribbon Bar “Run & Analyze”. Running the Parameter Identification does not block the application, so you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification. Multiple Parameter Identifications can be run in parallel. The “Run & Analyze” Ribbon Bar reflects the state of the currently selected Parameter Identification.
 
 ### View results‌
 
