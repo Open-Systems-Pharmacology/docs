@@ -377,17 +377,16 @@ In case of different dimensions of the outputs you have to switch the x-Axis dim
 
 **Adding Deviation Lines to the plot**
 
-In a Predicted vs. Observed plot the user can right click on the chart and add deviation lines:
+In a *Predicted vs. Observed* plot the user can right click on the chart and add deviation lines:
 
 ![Add Deviation Lines Context Menu Entry](../assets/images/part-3/AddDeviationLines.png)
 
-
-This opens a dialog that lets the user specify the fold value of the deviation curves.
+This opens a dialog where the user can specify the fold value of the deviation curves. 
 
 ![Deviation Line Dialog for specifying the fold value](../assets/images/part-3/DeviationLineDialog.png)
 
 
-This will create two deviation lines according to the given x-fold value which has to be greater or equal to 1.  For a fold value equal to 1, the created lines would both be equal to the identity line. An x-fold deviation range includes simulated values within x-fold and 1/x-fold of observed values.
+This will create two deviation lines according to the given x-fold value which has to be greater than 1. An x-fold deviation range includes  simulated values within x-fold and 1/x-fold of observed values.
 
 ![2-fold Deviation Lines](../assets/images/part-3/TwoFoldDeviationLine.png)
 

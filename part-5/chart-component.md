@@ -46,6 +46,7 @@ Creating a chart consists of two steps:
         
     *   Edit chart options.
         
+
 We describe these steps in the following subsections.
 
 ## Selecting Data‌
@@ -97,7 +98,7 @@ To deselect data, do one of the following:
 *   Click the row header on the left side of the row to select the curve row and press **Delete**.
 
 {% hint style="tip" %}
-When having a Parameter Identification or Simulation chart open the data are initially grouped according to their category and the checkbox **Link Data to Simulations** will be present. By selecting this checkbox the observed data to the simulation outputs they are mapped to. When the checkbox is selected (un)selecting a simulation output will result in the corresponding observed data getting (un)selected {% endhint %}
+When a Parameter Identification or Simulation chart is open, the data are first grouped by their category and the checkbox **Link Data to Simulations** is displayed. Selecting this check box links the observed data to the simulation outputs they are mapped to. When the checkbox is selected, (un)selecting a simulation output will result in the (un)selecting corresponding observed data. {% endhint %}
 
 ![The view for PI and Simulation Charts](../assets/images/part-5/LinkDataToSimulationCheckBox.png)
 
@@ -124,11 +125,11 @@ If a row header or cell content cannot be fully displayed, the full content is s
 
 ##  Editing options of multiple curves
 
-In the “Curves and Axis Options” Tab of the Chart Editor a new context menu item has been added called “Edit options for selected”. It is only visible when the user has selected at least two rows.
+In the “Curves and Axis Settings” Tab of the Chart Editor a new context menu item has been added called “Edit options for selected”. It is only visible when the user has selected at least two rows in the curves table.
 
 ![Edit Multiple Curves Context Menu](../assets/images/part-5/EditMultipleCurvesContextMenu.png)
 
-Selecting this option opens a new dialog that lists the common option of the curves. Initially the values for the options are not set, and if the user lets any of the options to that initial state, that option will not be edited – meaning that the selected curves will retain for that option the value they had before opening the dialog.
+Selecting this option opens a new dialog listing the common options of the curves. Initially the values for the options are not set, and if the user leaves one of the options in this initial state, that option will not be edited – meaning that the selected curves will retain for that option the value they had before opening the dialog.
 
 ![Edit Options Dialog](../assets/images/part-5/EditOptionsDialog.png)
 
@@ -150,17 +151,17 @@ If you want to color different curves - for instance of observed data - with the
 
 ### Coloring grouping tab
 
-A new tab called "Curves Color Grouping" has been introduced to the plots with observed data curves. In the tab the user can select one or more metadata, according to which the lines will be grouped and given the same color. Clicking the “Apply Color Grouping” button changes the color of the curves in the chart according to the selection, and then the selection is cleared. The user can then if she wants choose a new selection of metadata and change the coloring once again.
+A tab called "Curves Color Grouping" is displayed in the charts with observed data sets. In the tab the user can select one or more metadata, according to which the observed data sets will be grouped and given the same color. Clicking the “Apply Color Grouping” button changes the color of the observed data sets in the chart according to the selection, and then the selection is cleared. The user can then choose a new selection of metadata and change the coloring once again.
 
 ![Color Grouping Tab](../assets/images/part-5/ColorGroupingTab.png)
 
 ####  Observed Data color grouping when adding to charts
 
-When adding data sets to a plot via drag-and-drop of a folder (or multiple folders), all data sets within one folder can be assigned to a single color. This behavior is optional and can be changed by (un)selecting the checkbox "Color group when adding to chart" in the context menu of the “Observed Data” entry of the building blocks explorer. This setting is a central configuration and valid for all subfolders. 
+When adding observed data sets to a chart via drag-and-drop of a folder (or multiple folders), all data sets within one folder can be assigned to a single color. This behavior is optional and can be changed by (un)selecting the checkbox "Color by folder when adding to chart" in the context menu of the “Observed Data” entry of the building blocks explorer. This setting is a central configuration and applies for all subfolders. 
 
 ![Color Grouping Option Context Menu](../assets/images/part-5/ColorGroupingOptionContextMenu.png)
 
-Alternatively this feature can be toggled on and off from the User Settings, under “Utilities” -> “Options” -> “General” -> “Colors”:
+Alternatively, this feature can be toggled on and off from the User Settings, under “Utilities” -> “Options” -> “General” -> “Colors”:
 
 ![Color Grouping Option In Settings](../assets/images/part-5/ColorGroupingOptionInSettings.png)
 
@@ -230,7 +231,7 @@ You can export charts to the Working Journal or other applications by copy & pas
 
 You can define the size of the exported chart in the **Chart Export Options**. Then, the exported chart is independent of the current size of the application window. You can also define the font sizes of the exported chart to get readable legend entries in your slides for example.
 
-In the **Chart Export Options** tab, you can select **Preview these settings in Chart Display** to preview any changes you have made in the settings of the **Chart Export Options**. You can select **Include origin data** and show the title of the PK-Sim® or MoBi®file, the name of simulation and the date of creation beneath the Chart®, as illustrated in the image below. This can be useful for example, if you want to refer to the simulation state used in a chart in a presentation.
+In the **Chart Export Options** tab, you can select **Preview these settings in Chart Display** to preview any changes you have made in the settings of the **Chart Export Options**. You can select **Include origin data** and show the title of the PK-Sim® or MoBi® file, the name of simulation and the date of creation beneath the Chart®, as illustrated in the image below. This can be useful for example, if you want to refer to the simulation state used in a chart in a presentation.
 
 ![Chart Export Options](../assets/images/part-5/IncludeOriginData.png)
 
@@ -264,7 +265,7 @@ To reset the zoom right click on the chart area and select **Reset Zoom (Ctrl+0)
 ## Further Actions‌
 
 ### Saving and managing chart settings‌
-    
+
 You can save the chart settings (Chart Options and Chart Export Options, Curve and Axes Options) in different Chart Templates and reuse them in a simulation. This is useful for example, if you want to switch between different settings. You can also save and load these Chart Templates to files and reuse them in other simulations.
     
 Moreover:
@@ -349,7 +350,7 @@ To select other x-values than the default ones, do the following (you can skip s
     3.  Drag the x-Data (and y-Data, if you like) to a position between two other column headers in the header row.
         
     4.  Close the **Column Chooser**.
-        
+    
 2.  Show the dimension column in the axis table (like in step 1) and in the data browser.
     
 3.  Drag the time series with same the time scale and the intended values from the data browser to the x-Data field of the desired curve in the curves table.
@@ -362,6 +363,7 @@ To select other x-values than the default ones, do the following (you can skip s
     
 5.  Change curve or x-axis caption according to your needs. Now the concentration is plotted against the selected x-values.
     
+
 ![Concentration versus Concentration Plot](../assets/images/part-5/Concentration-FractionDose.png)
 
 ### Chart Options in User Settings‌‌

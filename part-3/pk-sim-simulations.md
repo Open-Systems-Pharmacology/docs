@@ -164,28 +164,30 @@ If you click on **Show Diagram**, a reaction network of all reactions in the sim
 
 ## Mapping Outputs to Observed Data
 
-In the **Observed Data** Tab observed data can be mapped to the corresponding simulation outputs. In the left part of the grid all the observed data that belong to the opened simulation are listed. When adding or removing observed data the list is updated. Newly added observed data are automatically mapped to simulation outputs according to Organ, Compartment and Molecule meta data of observed data and path elements of the outputs. If no matching output can be found the mapping output is set to **None**. This means that the specified observed data is not mapped to an output. The user can also clear an output mapping by selecting the **None** entry from the Output dropdown. By clicking the **"x"** on the right side of the grid, the user can delete the observed data from the simulation.
+In the **Observed Data** tab observed data sets can be mapped to the corresponding simulation outputs. This mapping is required e.g. for displaying goodness of fit plots and is used as **default** when adding the simulation to a parameter identification.
+
+All observed data sets belonging  to the opened simulation are listed in the mapping table. When adding or removing an observed data set to/from the simulation, the table is updated. Newly added observed data sets are automatically mapped to simulation outputs according to `Organ`, `Compartment` and `Molecule` meta data of the data set and path elements of the outputs. If no matching output can be found, the mapped simulation output is set to **None**. This means that the specified observed data set is not mapped. The user can also clear an output mapping by selecting the **None** entry from the Output dropdown. By clicking the **"x"** on the right side of the grid, the user can delete the observed data from the simulation.
 
 ![In the Observed Data Tab observed data can be mapped to simulation outputs.](../assets/images/part-3/SimulationOutputMappings.png)
 
 {% hint style="warning" %}
-Because meta data of observed data can be incomplete or wrong, you should check whether the right output is mapped to each observed data item. In case of different outputs with the same meta data (this can happen at least in MoBi), you should also check whether the automatically chosen output is correct.
+Because meta data of observed data can be incomplete or wrong, you should check whether the right output is mapped to each observed data set. In case of different outputs with the same meta data (this can happen at least in MoBi), you should also check whether the automatically chosen output is correct.
 {% endhint %}
 
 {% hint style="info" %}
 In case of incomplete or missing meta data, it is recommended to correct the meta data first to enable automatic mapping.
 {% endhint %}
 
-For each mapping, the scaling can be defined as Lin or Log which determines the residual calculation.
+For each mapping, the scaling can be defined as **Linear** or **Log** which determines the residual calculation.
 
 **Scaling**
 
-|     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Lin | Residuals are calculated as: Simulation value - Observed value. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values).                                                                                                                                                                                                        |
-| Log | Residuals are calculated as: log(Simulation value) - log(Observed value) = log (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because log(10E-N) = -N can becomes large. Then, the weights should be manually adjusted. |
+|            |                                                              |
+| ---------- | ------------------------------------------------------------ |
+| **Linear** | Residuals are calculated as: `Simulation value - Observed value`. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values). |
+| **Log**    | Residuals are calculated as: `log(Simulation value) - log(Observed value)` = `log (Simulation Value / Observed Value)`. This means that the ratio of values is considered which is independent of the magnitude of the value. |
 
-To reflect the quality or importance of the Observed Data item or to balance different magnitudes of values in case of Lin scaling, you can edit the weights of each mapping.
+To reflect the quality or importance of the Observed Data set you can edit the weights of each mapping.
 
 
 ## Running a simulation in an individual‌
@@ -354,12 +356,12 @@ All values are calculated using the standard equations for PK-values (see e.g. M
 
 PK-parameters for selected outputs of population simulations are shown in two ways:
 
-1. Aggregated PK Values are calculated from aggregated curve being analyzed
-2. Individual PK Values are calculated for all individuals within the range being analyzed and the median is presented
+1. Individual PK Values are calculated for all individuals within the range being analyzed and the median is presented
+2. Aggregated PK Values are calculated from aggregated curve being analyzed
 
 Globally calculated PK-parameters are always calculated for all individuals with the median being presented
 
-By clicking on **Export to Excel**®\*\*...\*\* the calculated PK-parameters (including the simulated concentration-time profiles) can be exported to MS Excel® format.
+By clicking on **Export to Excel**® the calculated PK-parameters (including the simulated concentration-time profiles) can be exported to MS Excel® format.
 
 ## Running and analyzing a population simulation‌
 
@@ -504,23 +506,23 @@ A separate panel is created for each of the selected output parameters in the gr
 
 #### Predicted vs. Observed
 
-For each observed concentration value a point is plotted with observed value as x-Value and corresponding simulation value as y-Value.
+For each observed value a point is plotted with observed value as x-Value and corresponding simulated value as y-Value.
 
 ![Simulation Predicted vs Observed Chart.](../assets/images/part-3/SimulationPredictedVsObservedChart.png)
 
 **Adding Deviation Lines to the plot**
 
-In a Predicted vs. Observed plot the user can right click on the chart and add deviation lines:
+In a *Predicted vs. Observed* plot the user can right click on the chart and add deviation lines:
 
 ![Add Deviation Lines Context Menu Entry](../assets/images/part-3/AddDeviationLines.png)
 
 
-This opens a dialog that lets the user specify the fold value of the deviation curves. 
+This opens a dialog where the user can specify the fold value of the deviation curves. 
 
 ![Deviation Line Dialog for specifying the fold value](../assets/images/part-3/DeviationLineDialog.png)
 
 
-This will create two deviation lines according to the given x-fold value which has to be greater or equal to 1.  For a fold value equal to 1, the created lines would both be equal to the identity line. An x-fold deviation range includes simulated values within x-fold and 1/x-fold of observed values.
+This will create two deviation lines according to the given x-fold value which has to be greater than 1. An x-fold deviation range includes simulated values within x-fold and 1/x-fold of observed values.
 
 ![2-fold Deviation Lines](../assets/images/part-3/TwoFoldDeviationLine.png)
 
@@ -528,11 +530,11 @@ In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 
-This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The chart includes scaling, weights and LLOQ usage and the values are dimensionless, so you can assess the actual influence of the observed data.
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals are plotted. The chart includes scaling and weights.
 
 ![Simulation Residuals vs Time Chart.](../assets/images/part-3/SimulationResidualsVSTimeChart.png)
 
-At the top of the chart, the total residual error is being displayed. 
+At the top of the chart, the **total residual error** is displayed. 
 
 #### The Scatter Plot Analysis
 
