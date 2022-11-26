@@ -522,7 +522,7 @@ This opens a dialog where the user can specify the fold value of the deviation c
 ![Deviation Line Dialog for specifying the fold value](../assets/images/part-3/DeviationLineDialog.png)
 
 
-This will create two deviation lines according to the given x-fold value which has to be greater than 1. An x-fold deviation range includes  simulated values within x-fold and 1/x-fold of observed values.
+This will create two deviation lines according to the given x-fold value which has to be greater than 1. An x-fold deviation range includes simulated values within x-fold and 1/x-fold of observed values.
 
 ![2-fold Deviation Lines](../assets/images/part-3/TwoFoldDeviationLine.png)
 
@@ -530,7 +530,7 @@ In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 
-This chart is similar to the Time Profile chart, but on the y-axis the  (absolute) residuals are plotted. The chart includes scaling and  weights.
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals are plotted. The chart includes scaling and weights.
 
 ![Simulation Residuals vs Time Chart.](../assets/images/part-3/SimulationResidualsVSTimeChart.png)
 
