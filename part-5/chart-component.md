@@ -98,7 +98,7 @@ To deselect data, do one of the following:
 *   Click the row header on the left side of the row to select the curve row and press **Delete**.
 
 {% hint style="tip" %}
-When a Parameter Identification or Simulation chart is open, the data are first grouped by their category and the checkbox **Link Data to Simulations** is displayed. Selecting this check box links the observed data to the  simulation outputs they are mapped to. When the checkbox is selected, (un)selecting a simulation output will result in the (un)selecting corresponding observed data. {% endhint %}
+When a Parameter Identification or Simulation chart is open, the data are first grouped by their category and the checkbox **Link Data to Simulations** is displayed. Selecting this check box links the observed data to the simulation outputs they are mapped to. When the checkbox is selected, (un)selecting a simulation output will result in the (un)selecting corresponding observed data. {% endhint %}
 
 ![The view for PI and Simulation Charts](../assets/images/part-5/LinkDataToSimulationCheckBox.png)
 
