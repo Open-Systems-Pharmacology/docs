@@ -187,6 +187,10 @@ For each mapping, the scaling can be defined as Lin or Log which determines the 
 
 To reflect the quality or importance of the Observed Data item or to balance different magnitudes of values in case of Lin scaling, you can edit the weights of each mapping.
 
+### Handling of missing values for residuals
+
+If there is no simulated time value corresponding to an observed time value we use linear interpolation to calculate the missing simulated value. This happens in the calculation of the Residuals in the Simulation, opposed to the calculation of Residuals in Parameter Identification (where we insert an additional time point which has exactly the same value as the time value of the observed data).
+
 
 ## Running a simulation in an individual‌
 
