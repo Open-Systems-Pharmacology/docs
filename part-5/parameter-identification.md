@@ -160,7 +160,7 @@ In MoBi®, you can freely define observers to match any kind of observed data. I
 
 ### Handling of missing values for residuals
 
-If there is no simulated time value corresponding to an observed time value we insert an additional time point that has exactly the same value as the time value of the observed data. This happens in the calculation of the Parameter Identification Residuals, opposed to the calculation of Residuals in SImulation (in Simulation linear interpolation of the simulated values is used).
+For every observec data time point, the respective time value is added to the output interval of the simulation. This way, simulated value exists for each observed time point, and no interpolation of simulation results is required for the calculation of the total error.
 
 ## Defining Identification Parameters‌
 
