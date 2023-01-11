@@ -189,6 +189,10 @@ For each mapping, the scaling can be defined as **Linear** or **Log** which dete
 
 To reflect the quality or importance of the Observed Data set you can edit the weights of each mapping.
 
+### Handling of missing values for residuals
+
+If there is no simulated time value corresponding to an observed time value, linear interpolation between simulated points is used to calculate the missing simulated value. This happens in the calculation of the Residuals in the Simulation, opposed to the calculation of Residuals in Parameter Identification (where every observed time point is added to simulation output points). This might result in slightly different total error values calculated in "Simulation" view and in Parameter Identification.
+
 
 ## Running a simulation in an individual‌
 

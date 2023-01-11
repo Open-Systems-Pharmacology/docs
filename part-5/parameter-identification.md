@@ -158,6 +158,10 @@ If you select a mapping, the corresponding Observed Data is displayed as table a
 In MoBi®, you can freely define observers to match any kind of observed data. In order to enable the automatic mapping ensure that the meta data for Organ, Compartment and Molecule is the same for corresponding observed data and observers. Therefore, you can define the observers for specific Containers and Molecules and/or edit the meta data of the observed data.
 {% endhint %}
 
+### Handling of missing values for residuals
+
+For every observed data time point, the respective time value is added to the output interval of the simulation. This way, simulated value exists for each observed time point, and no interpolation of simulation results is required for the calculation of the total error.
+
 ## Defining Identification Parameters‌
 
 In the tab **Parameters** you can select the parameters which should be identified. If you have different simulations in one Parameter Identification, you have to decide, if one **Identification Parameter** is linked to _multiple_ **Simulation Parameters** or _one_ **Simulation Parameter** only. (If necessary you can even link different simulation parameters from the _same_ simulation to _one_ Identification Parameter.)
