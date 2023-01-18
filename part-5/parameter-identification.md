@@ -27,7 +27,7 @@ In a lot of situations the available **Parameter Identification** features of th
 Within a Parameter Identification you have to perform the following steps:
 
 ### Prepare simulations‌
-
+<!--  -->
 In order to use the Parameter Identification tool, you should add all observed data you want to use to one or more simulations.
 
 Ensure that meta data for **Organ**, **Compartment**, **Molecule** is up to date, because this meta data is used for automatic mapping to outputs.
@@ -56,7 +56,7 @@ You can select between three optimization algorithms, edit their standard settin
 
 ### Run Optimization‌
 
-After finishing the previous steps, you can run a Parameter Identification which does not block the application. So you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification.
+After finishing the previous steps, you can run a Parameter Identification through the Ribbon Bar “Run & Analyze”. Running the Parameter Identification does not block the application, so you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification. Multiple Parameter Identifications can be run in parallel. The “Run & Analyze” Ribbon Bar reflects the state of the currently selected Parameter Identification.
 
 ### View results‌
 
@@ -147,7 +147,7 @@ For each mapping, the scaling can be defined as Lin or Log which determines the 
 
 |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Lin | Residuals are calculated as: Simulation value - Observed value. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values).                                                                                                                                                                                                        |
+| Lin | Residuals are calculated as: Simulation value - Observed value. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values). Linear residuals are always calculated in the internal units.                                                                                                                                                                                                       |
 | Log | Residuals are calculated as: log(Simulation value) - log(Observed value) = log (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because log(10E-N) = -N can becomes large. Then, the weights should be manually adjusted or LLOQ handling should be adjusted in the **Configuration**. (See “Configuration of Optimization”) |
 
 To reflect the quality or importance of the Observed Data item or to balance different magnitudes of values in case of Lin scaling, you can edit the weights of each mapping.
@@ -157,6 +157,10 @@ If you select a mapping, the corresponding Observed Data is displayed as table a
 {% hint style="info" %}
 In MoBi®, you can freely define observers to match any kind of observed data. In order to enable the automatic mapping ensure that the meta data for Organ, Compartment and Molecule is the same for corresponding observed data and observers. Therefore, you can define the observers for specific Containers and Molecules and/or edit the meta data of the observed data.
 {% endhint %}
+
+### Handling of missing values for residuals
+
+For every observed data time point, the respective time value is added to the output interval of the simulation. This way, simulated value exists for each observed time point, and no interpolation of simulation results is required for the calculation of the total error.
 
 ## Defining Identification Parameters‌
 
@@ -373,6 +377,24 @@ For each observed concentration value a point is plotted with observed value as 
 ![Parameter Identification Analysis - Predicted vs. Observed](../assets/images/part-5/PI-Analysis-PredictedVsObserved.png)
 
 In case of different dimensions of the outputs you have to switch the x-Axis dimension to see the respective outputs.
+
+
+**Adding Deviation Lines to the plot**
+
+In a *Predicted vs. Observed* plot the user can right click on the chart and add deviation lines:
+
+![Add Deviation Lines Context Menu Entry](../assets/images/part-3/AddDeviationLines.png)
+
+This opens a dialog where the user can specify the fold value of the deviation curves. 
+
+![Deviation Line Dialog for specifying the fold value](../assets/images/part-3/DeviationLineDialog.png)
+
+
+This will create two deviation lines according to the given x-fold value which has to be greater than 1. An x-fold deviation range includes  simulated values within x-fold and 1/x-fold of observed values.
+
+![2-fold Deviation Lines](../assets/images/part-3/TwoFoldDeviationLine.png)
+
+In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 

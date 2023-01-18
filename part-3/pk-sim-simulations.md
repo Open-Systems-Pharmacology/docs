@@ -162,6 +162,38 @@ If you click on **Show Diagram**, a reaction network of all reactions in the sim
 
 ![All reactions in a simulation are depicted in the reaction diagram.](../assets/images/part-3/ReactionNetwork.png)
 
+## Mapping Outputs to Observed Data
+
+In the **Observed Data** tab observed data sets can be mapped to the corresponding simulation outputs. This mapping is required e.g. for displaying goodness of fit plots and is used as **default** when adding the simulation to a parameter identification.
+
+All observed data sets belonging  to the opened simulation are listed in the mapping table. When adding or removing an observed data set to/from the simulation, the table is updated. Newly added observed data sets are automatically mapped to simulation outputs according to `Organ`, `Compartment` and `Molecule` meta data of the data set and path elements of the outputs. If no matching output can be found, the mapped simulation output is set to **None**. This means that the specified observed data set is not mapped. The user can also clear an output mapping by selecting the **None** entry from the Output dropdown. By clicking the **"x"** on the right side of the grid, the user can delete the observed data from the simulation.
+
+![In the Observed Data Tab observed data can be mapped to simulation outputs.](../assets/images/part-3/SimulationOutputMappings.png)
+
+{% hint style="warning" %}
+Because meta data of observed data can be incomplete or wrong, you should check whether the right output is mapped to each observed data set. In case of different outputs with the same meta data (this can happen at least in MoBi), you should also check whether the automatically chosen output is correct.
+{% endhint %}
+
+{% hint style="info" %}
+In case of incomplete or missing meta data, it is recommended to correct the meta data first to enable automatic mapping.
+{% endhint %}
+
+For each mapping, the scaling can be defined as **Linear** or **Log** which determines the residual calculation.
+
+**Scaling**
+
+|            |                                                              |
+| ---------- | ------------------------------------------------------------ |
+| **Linear** | Residuals are calculated as: `Simulation value - Observed value`. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values). |
+| **Log**    | Residuals are calculated as: `log(Simulation value) - log(Observed value)` = `log (Simulation Value / Observed Value)`. This means that the ratio of values is considered which is independent of the magnitude of the value. |
+
+To reflect the quality or importance of the Observed Data set you can edit the weights of each mapping.
+
+### Handling of missing values for residuals
+
+If there is no simulated time value corresponding to an observed time value, linear interpolation between simulated points is used to calculate the missing simulated value. This happens in the calculation of the Residuals in the Simulation, opposed to the calculation of Residuals in Parameter Identification (where every observed time point is added to simulation output points). This might result in slightly different total error values calculated in "Simulation" view and in Parameter Identification.
+
+
 ## Running a simulation in an individual‌
 
 If a simulation was successfully created, press the **Run** simulation button <img src="../assets/icons/Run.svg" alt="" data-size="line"> in the Modeling & Simulation ribbon or press the F5 key. If the simulation is run for the first time, ths following window will appear in which the simulation curves that will be generated in the simulation can be selected:
@@ -326,7 +358,14 @@ The calculated pharmacokinetic parameters are:
 
 All values are calculated using the standard equations for PK-values (see e.g. M. Rowland, T. N. Tozer, “Clinical Pharmacokinetic Concepts and Applications”, (1994) Lippincott Williams & Wilkins, Philadelphia). For extrapolation to infinity an exponential function is used on the basis of the last 10% of the calculated time steps. AUC is calculated by extrapolating the first time steps to t = 0. Depending on the curve shape the result of this extrapolation may be sensitive to time resolution. This may lead to some variability in AUC and thus, in clearance and distribution volumes.
 
-By clicking on **Export to Excel**®\*\*...\*\* the calculated PK-parameters (including the simulated concentration-time profiles) can be exported to MS Excel® format.
+PK-parameters for selected outputs of population simulations are shown in two ways:
+
+1. Individual PK Values are calculated for all individuals within the range being analyzed and the median is presented
+2. Aggregated PK Values are calculated from aggregated curve being analyzed
+
+Globally calculated PK-parameters are always calculated for all individuals with the median being presented
+
+By clicking on **Export to Excel**® the calculated PK-parameters (including the simulated concentration-time profiles) can be exported to MS Excel® format.
 
 ## Running and analyzing a population simulation‌
 
@@ -468,6 +507,38 @@ In contrast to the Time Profile Analysis, population parameters and PK- paramete
 ![Display simulated parameters in a box whisker plot stratified by Population Parameters and/or PK-parameters.](../assets/images/part-3/PK-Sim-CreateSimulation-PopSim-BoxWhisker.png)
 
 A separate panel is created for each of the selected output parameters in the graphical display. The name and unit of the output parameters is printed along the Y-axis.
+
+#### Predicted vs. Observed
+
+For each observed value a point is plotted with observed value as x-Value and corresponding simulated value as y-Value.
+
+![Simulation Predicted vs Observed Chart.](../assets/images/part-3/SimulationPredictedVsObservedChart.png)
+
+**Adding Deviation Lines to the plot**
+
+In a *Predicted vs. Observed* plot the user can right click on the chart and add deviation lines:
+
+![Add Deviation Lines Context Menu Entry](../assets/images/part-3/AddDeviationLines.png)
+
+
+This opens a dialog where the user can specify the fold value of the deviation curves. 
+
+![Deviation Line Dialog for specifying the fold value](../assets/images/part-3/DeviationLineDialog.png)
+
+
+This will create two deviation lines according to the given x-fold value which has to be greater than 1. An x-fold deviation range includes simulated values within x-fold and 1/x-fold of observed values.
+
+![2-fold Deviation Lines](../assets/images/part-3/TwoFoldDeviationLine.png)
+
+In the Chart Editor the deviation lines are grouped under the Category Identity. 
+
+#### Residuals vs. Time
+
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals are plotted. The chart includes scaling and weights.
+
+![Simulation Residuals vs Time Chart.](../assets/images/part-3/SimulationResidualsVSTimeChart.png)
+
+At the top of the chart, the **total residual error** is displayed. 
 
 #### The Scatter Plot Analysis
 
