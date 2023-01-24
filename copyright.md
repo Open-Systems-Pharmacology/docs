@@ -1,10 +1,10 @@
 # Open Systems Pharmacology Suite Manual
 
-Version 11
+Version 11 Update 1
 
-Publication date April 2022
+Publication date January 2023
 
-Copyright © 2021 [Open Systems Pharmacology Community](references.md#115)
+Copyright © 2023 [Open Systems Pharmacology Community](references.md#115)
 
 The manual is provided “as is” without expressed or implied warranty.
 
