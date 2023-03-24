@@ -340,7 +340,7 @@ In the first case (specified in the measurement column), the LLOQ values in the 
 
 In the second case (specified in a separate column), the values in the column must not be preceded by "<" or anything else, neither should they have the unit written next to them in the cell: the LLOQ column should just contain arithmetic values. The unit in this case is always the same as the measurement unit. There can only be one single LLOQ value for every data set. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole data set. 
 
-When importing the datasets, the measurement values that are below the LLOQ are assigned the value LLOQ/2. For example a value written in the measurent column as "<0.2" will be imported in the data repository with a value of "0.1".
+When importing the datasets, the measurement values that are below the LLOQ are assigned the value LLOQ/2. For example a value written in the measurement column as "<0.2" will be imported in the data repository with a value of "0.1".
 
 #### Configuring the error
 
