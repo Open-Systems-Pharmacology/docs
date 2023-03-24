@@ -334,7 +334,13 @@ When setting the unit manually, the user needs to select the dimension first, up
 
 #### LLOQ
 
-The LLOQ can either be specified from the column of the measurement or from a separate column. In the first case, the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. In the second case, there can only be one single LLOQ value for every data set. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole data set. for the values that are below the LLOQ, the measurement assigned is LLOQ/2. For example "<0.2" will be imported in the data repository as "0.1".
+The LLOQ can either be specified from the column of the measurement or from a separate column. 
+
+In the first case (specified in the measurement column), the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. 
+
+In the second case (specified in a separate column), the values in the column must not be preceded by "<" or anything else, neither should they have the unit written next to them in the cell: the LLOQ column should just contain numerical values. The unit in this case is always the same as the measurement unit. There can only be one single LLOQ value for every data set. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole data set. Also in this case, if the user has some values that are preceded by "<" in the measurement column, the whole row of that value will be ignored and no simulation point will be loaded for it, since f.e. "<0.2" is not a numerical value, and the measurement column in this case has to contain only numerical values.
+
+When importing the datasets, the measurement values that are below the LLOQ are assigned the value LLOQ/2. For example a value written in the measurement column as "<0.2" will be imported in the data repository with a value of "0.1". This happens only to the values of the measurement that are preceded by "<" (e.g. "<0.2") in case the LLOQ comes from the measurement column, or in case the LLOQ comes from a separate column, just the measurement values that have an entry in the same row in the LLOQ column. 
 
 #### Configuring the error
 
