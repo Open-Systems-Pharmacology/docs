@@ -147,7 +147,7 @@ Useful workflows with parameter aliases or with reference paths to aliases are d
 In a formula, the following characters may be used:
 
 * numbers can be entered as described for constants
-* the arithmetic operation signs **+**, **-**, \*\*\*\*\*, **/**, **^** (for exponents)
+* the arithmetic operation signs **+**, **-**, **\***, **/**, **^** (for exponents)
 * round brackets **(** **)**
 * the constants **pi** and **e**
 * the mathematical functions **ACOS**, **ASIN**, **ATAN**, **COS**, **COSH**, **EXP**, **LN**, **LOG** (identical to **LN**, natural logarithm), **LOG10**, **MAX**, **MIN**, **POW**, **SIN**, **SINH**, **SQRT**, **TAN**, **TANH**; if two operators are required (**MAX**, **MIN**, **POW**), a semicolon is used for separation, e.g., _POW(3;2)_ which corresponds to _3^2_
