@@ -123,7 +123,7 @@ Literature for capillary surface areas for the different organs and species is r
 2. **Blood flow.** The capillary surface area is estimated by ![Image](../assets/images/part-3/sa-k-organ.png)\
    , with the constant of proportionality k, the organ blood flow Qorgan, the shape factor beta (default: beta=1). The permeability-surface area product ![Image](../assets/images/part-3/psa.png) is related to the extraction E by ![Image](../assets/images/part-3/psa-e-organ.png) \[[8](../references.md#8)]. With the assumption that the extraction of drug in each organ is equal, ![Image](../assets/images/part-3/psa-organ.png) is obtained. If it is further assumed, that the permeability is equal for each organ one obtains ![Image](../assets/images/part-3/saq-org.png).
 
-#### Anatomy & Physiology‌
+### Anatomy & Physiology‌
 
 Anatomical and physiological properties in PK-Sim® are set at default values for a mean representative of a species. These default values were carefully selected from literature. In the human species module, also the mean values for children of all age groups are included. For some purposes, e.g. to simulate pathological disorders, it is desirable to change these values. This can be done in the **Anatomy & Physiology** tab, in which the parameters are, using the default settings, displayed in a tree structure on the left hand side.
 
@@ -164,6 +164,8 @@ The background colors that indicate the different types of parameters (1.-3.) ca
 
 For some parameters, reasonable ranges are defined. For example pH values should be less than or equal to 14. In case a value outside this range is defined, a warning appears and the window cannot be closed without setting the parameters to a reasonable value.
 
+#### Liver Zonation
+
 The **Advanced** view offers the implementation of a zonated liver into an individual. Metabolic pathways in the liver are spatially separated along the liver sinusoids \[[29](../references.md#29)]. Splitting the liver into more than one zone will improve simulation accuracy. As shown below, the liver is not zonated per default (only periportal zone). Upon zonation, the liver is split into a periportal and a pericentral zone. The parameter **Fraction of periportal zone** defines the ratio of the zone volumes and the surface areas and is set to 50% per default.
 
 ![The Advanced view in the Anatomy/Physiology tab offers the use of a zonated
@@ -181,7 +183,7 @@ Please note that when switching to another species on the Biometrics tab all par
 **User Defined** parameter node shows an overview of all parameters changed by the user in the individual.
 {% endhint %}
 
-#### Expression‌
+### Expression‌
 
 In the **Expression** tab, all relevant enzymes, transport proteins and protein binding partners can be defined for the selected individual.
 
