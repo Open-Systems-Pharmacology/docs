@@ -1,2 +1,51 @@
-# Extraction of physiological parameters from PKSim Db
+# Extraction of physiological parameters from a PKSim Db population
 
+## Use case description
+
+[TO BE COMPLETED]
+
+In this use case we describe how to **access** and **extract** the **physiological parameters** from the postpartum population in the **PKSim Database (Db)** and how to use that output to **create growth tables** in **Mobi in order to describe** time-varying physiological parameters.
+
+## Process
+
+### Download Database
+
+### Access and extract population data to spreadsheet
+
+``` r
+library()
+```
+
+### Extract time-varying parameters
+
+### Import in Mobi as Table & create time-varying parameters
+
+1.  Create Age parameter
+
+    1.  Constant (single numeric value) Age, dimension 'Age in years', Value àstart value (e.g. 30yo)
+
+    2.  Postpartum Age
+
+        1.  Dimension is Time (default unit is minute)
+
+        2.  = Age \*year2min + TIME
+
+        3.  
+
+2.  Open organ compartment that will contain parameter (e.g. Breats)
+
+3.  Create a Table parameter (E.g. Volume_breast_Table)
+
+    -   chose the formula type "Table (multiple time discrete and piecewise constant numerical values)
+
+    -   Define a formula name (e.g. TABLE_volume_Breast_parameter)
+
+    -   Chose column 'Age' and column 'Mean')
+
+    -   Enter unit (by default values are in the base unit in the Db see file [OSPSuite.Dimensions.xml](https://esqlabs.sharepoint.com/:u:/s/S-BASF-P23-195A/EZSeZvDmQFRLvKNCJRqyxyUBkv8jR2po28wDa-caVE1LMg?e=BagOhT)
+
+4.  Create Volume Table Formula with X-Argument (e.g. Param Volume_breast_PP)
+
+    -   Defined formula and chose path to previously created table parameter (Volume_breast_Table )
+
+    -   X-argument point to 'Postpartum_age'
