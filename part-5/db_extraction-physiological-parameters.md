@@ -12,8 +12,7 @@ In this use case we describe how to **access** and **extract** the **physiologic
 
 For a graphical interface and data visualization, you may use applications such as [Db Browser for SQLite](https://sqlitebrowser.org/)
 
-![Prospective exploration of the PKSim Db with  DB Browser for SQLite - Postpartum population](../assets/images/part-5/ExploreDb.png)
-
+![Prospective exploration of the PKSim Db with DB Browser for SQLite - Postpartum population](../assets/images/part-5/ExploreDb.png)
 
 ### Access and extract population data to spreadsheet
 
@@ -22,6 +21,39 @@ library()
 ```
 
 ### Extract time-varying parameters
+
+``` r
+library(magrittr)
+library(RSQLite)
+library(DBI)
+library(openxlsx)
+
+conn <- dbConnect(RSQLite::SQLite(), "PKSimDB_v11.sqlite")
+
+# Execute a SQL query
+query <- "SELECT * FROM VIEW_PARAMETER_DISTRIBUTIONS"
+result <- dbGetQuery(conn, query)
+
+
+# Filtering population with 'Postpartum' and selecting 'ContainerName', 'ParameterName', 'Age', and 'Mean' columns
+
+result_filtered <- result %>% 
+  dplyr::select(Population, ContainerName, ParameterName, Age, Mean) 
+
+result_postpartum <- result %>% 
+  dplyr::select(Population, ContainerName, ParameterName, Age, Mean) %>%
+  dplyr::filter(Population %in% "Postpartum")
+
+# Write data in workbook
+wb <- createWorkbook()
+addWorksheet(wb, "Postpartum")
+
+writeData(wb, sheet = "Postpartum", 
+          result_filtered %>%
+            dplyr::filter(Population %in% "Postpartum"))
+
+saveWorkbook(wb, "data/param_distributions.xlsx", overwrite = TRUE)
+```
 
 ### Import in Mobi as Table & create time-varying parameters
 
