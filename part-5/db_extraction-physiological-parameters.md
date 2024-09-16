@@ -8,7 +8,7 @@ In this use case we describe how to **access** and **extract** the **physiologic
 
 ## Process
 
-### Download Database and explore database
+### Download Database and explore contnent
 
 For a graphical interface and data visualization, you may use applications such as [Db Browser for SQLite](https://sqlitebrowser.org/)
 
