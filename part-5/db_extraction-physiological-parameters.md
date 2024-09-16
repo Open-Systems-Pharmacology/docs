@@ -8,7 +8,12 @@ In this use case we describe how to **access** and **extract** the **physiologic
 
 ## Process
 
-### Download Database
+### Download Database and explore database
+
+For a graphical interface and data visualization, you may use applications such as [Db Browser for SQLite](https://sqlitebrowser.org/)
+
+![Prospective exploration of the PKSim Db with  DB Browser for SQLite - Postpartum population](../assets/images/part-5/ExploreDb.png)
+
 
 ### Access and extract population data to spreadsheet
 
