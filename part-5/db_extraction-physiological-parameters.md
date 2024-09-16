@@ -8,9 +8,13 @@ In this use case we describe how to **access** and **extract** the **physiologic
 
 ## Process
 
-### Download Database and explore contnent
+### Download Database and explore content
 
-For a graphical interface and data visualization, you may use applications such as [Db Browser for SQLite](https://sqlitebrowser.org/)
+The latest version of the PKSim Db can always be downloaded via this link: [PKSim Db](https://github.com/Open-Systems-Pharmacology/PK-Sim/raw/develop/src/Db/PKSimDB.sqlite).
+
+For reproducibility of the use case described here below, the following version may be used: [PKsimDB_v11.sqlite](https://github.com/open-systems-pharmacology/pk-sim/blob/6dc119cfa8884fe14f5c7c98d54c47970bb1e219/src/db/pksimdb.SQLite)
+
+For a graphical interface and data visualization, applications such as [Db Browser for SQLite](https://sqlitebrowser.org/) are available.
 
 ![Prospective exploration of the PKSim Db with DB Browser for SQLite - Postpartum population](../assets/images/part-5/ExploreDb.png)
 
