@@ -1,0 +1,71 @@
+# Application Simulation
+## Intended-use scenario-based applications:
+
+- DDI 
+    - Application Case Examples
+        - (Zhou et al. 2019): Case-scenario of an industry-application PBPK bottom-up modeling approach used to evaluate the DDI potential of acalabrutinib and its active metabolite, with CYP3A inhibitors and inducers.
+    - Model Template Development
+        - (Türk, Hanke, and Lehr 2020) Türk’s paper describes a comprehensive workflow of DDI module in PK-Sim and the Supplementary Materials to this manuscript were compiled as one comprehensive reference manual with transparent documentation of the model performance to support DDI investigations during drug development, labeling, and submission for regulatory approval of new drugs.
+- Special Populations / Organ Impairment
+    - Pediatrics
+        - (Yun and Edginton 2019): Yun’s paper determined the appropriateness of the virtual individual creating algorithm in PK-Sim® in predicting PK parameters and their variability in children by comparing a model output, clearance, to observed data. Identified the critical system specific input parameters within a pediatric PBPK model structure for estimating exposure in children via a sensitivity analysis.
+        - (Lin et al. 2018): provides a brief overview of the development of pediatric physiologically based pharmacokinetic (PPBPK) models, the challenges of uncertain systems information, and finally performance verification considering recent regulatory guidance.
+    - Pregnancy 
+        - (Dallmann et al. 2017): These manuscripts provide overview of pregnancy model in PK-Sim and  its major aspect of the model and physiology changes
+- Organ Impairment
+    - Reviews 
+        - (Heimbach et al. 2020): PBPK predictions can help determine the need and timing of organ impairment study. It may be suitable for predicting the impact of RI on PK of drugs predominantly cleared by metabolism with varying contribution of renal clearance. 
+    - CKD 
+        - (Tan et al. 2019): The renal diseases also affect drug metabolization by the liver. Tan et al. provides a comprehensive workflow used for investigation of pharmacokinetics on patients with CKD.
+    - Liver 
+        - (Morcos et al. 2018): PBPK Modeling for prospective dose recommendations and efficacy/safety assessment in special populations (when consistent clinical data are lacking). Example for a PBPK model to predict the effect of moderate and severe hepatic impairment on the PK of alectinib to best inform clinical study design.
+- Virtual Bioequivalence (VBE)
+    - (Loisios-Konstantinidis, Cristofoletti, et al. 2020): Average bioequivalence studies have been required by the FDA and the EMA. These publications explore a workflow and discuss data requirements to run Virtual BE using PBPK.
+- Regulatory Review
+    - (Zhao et al. 2011): This report reviews the use of PBPK in decision-making during regulatory review.Thereport also discusses the challenges encountered when PBPK modeling and simulation were used in these cases and recommends approaches to facilitating full utilization of this tool.It also summarize general schemes of PBPK simulation and propose procedures to obtain necessary data to construct PBPK models. In order to fully utilize PBPK in drug development and regulatory review, it is critical to adequately define mechanisms of drug disposition and understand general physiological perturbations related to diseases,age, and organ dysfunction.
+    - (Kuemmel et al 2019): This white Paper summarises the FDAs view how a framework for evidential criteria for PBPK models can be established. With that the FDA reached out to the scientific community to stimulate a discussion about this topic
+    - (Grimstein et al. 2019): Overview on use of PBPK for submissions to the FDA. Discusses limitations and knowledge gaps in integration of PBPK to inform regulatory decision making, as well as the importance of scientific engagement with drug developers who intend to use this approach.
+
+## Simulation (i.e. application) design / strategy considerations:
+- Population-level vs mean (TBD)
+    - (Fendt et al 2021) This case study for Caffeine shows that individual pharmacokinetic profiles can be predicted more accurately by considering individual attributes and that personalized PBPK models could be a valuable tool for model informed precision dosing approaches in the future.
+- Workflow Review 
+    - (Zhuang and Lu 2016): This review of several case stuiesdy provides is for a better understanding of the absorption, distribution, metabolism and excretion (ADME) workflow of a drug candidate, and the applications to increase efficiency, reduce the need for animal studies, and perhaps to replace clinical trials. The regulatory acceptance and industrial practices around PBPK modeling and simulation is also discussed.
+- Hypothesis generation
+    - Optimal Design/Identifiability (Calvier et al. 2018): The aim of this paper was to develop an analysis framework to investigate whether population modelling approach can be used to estimate PBPK model parameters from clinical PK data and establish the required criteria for such estimations.	
+- Regulatory Confidence
+    - Case-based (Wagner et al. 2015): It is a perspective case of workshop entitled “Application of Physiologically-based Pharmacokinetic (PBPK) Modeling to Support Dose Selection” was hosted on March 10, 2014 by the US Food and Drug Administration (FDA) at its White Oak Campus in Silver Spring, MD. The workshop endeavored to (i) assess the current state of knowledge in the application of PBPK in regulatory decision-making, and (ii) share and discuss best practices in the use of PBPK modeling to inform dose selection in specific patient populations
+    - (Kuemmel et al 2019): This white Paper summarises the FDAs view how a framework for evidential criteria for PBPK models can be established. With that the FDA reached out to the scientific community to stimulate a discussion about this topic
+- Case-based strategies for different application scenarios (Peters and Dolgos 2019)
+    - This work presents a systematic assessment of the current challenges to establishing confidence in PBPK models with respect to parameter estimation and model verification in each of the three major areas of PBPK application absorption prediction, exposure prediction in a target population, and DDI risk assessment during drug development.
+
+## References
+- https://doi.org/10.1007/s11095-018-2487-1 
+- https://doi.org/10.1016/j.ejps.2017.07.035 
+- https://doi.org/10.1016/j.ejps.2019.105170 
+- https://doi.org/10.1208/s12248-020-00495-4 
+- https://doi.org/10.1007/s40262-019-00790-0 
+- https://doi.org/10.1002/psp4.33 
+- https://doi.org/10.1038/clpt.2010.298 
+- https://doi.org/10.1002/psp4.12408 
+- https://doi.org/10.1016/j.apsb.2016.04.004 
+- Calvier, Elisa A. M., Thu Thuy Nguyen, Trevor N. Johnson, Amin Rostami-Hodjegan, Dick Tibboel, Elke H. J. Krekels, and Catherijne A. J. Knibbe. 2018. “Can Population Modelling Principles Be Used to Identify Key PBPK Parameters for Paediatric Clearance Predictions? An Innovative Application of Optimal Design Theory.” *Pharmaceutical Research* 35 (11): 209. https://doi.org/10.1007/s11095-018-2487-1.
+- Dallmann, André, Ibrahim Ince, Juri Solodenko, Michaela Meyer, Stefan Willmann, Thomas Eissing, and Georg Hempel. 2017. “Physiologically Based Pharmacokinetic Modeling of Renally Cleared Drugs in Pregnant Women.” Clinical Pharmacokinetics 56 (12): 1525–41. https://doi.org/10.1007/s40262-017-0538-0.
+- Doki, Kosuke, Adam S. Darwich, Nikunjkumar Patel, and Amin Rostami-Hodjegan. 2017. “Virtual Bioequivalence for Achlorhydric Subjects: The Use of PBPK Modelling to Assess the Formulation-Dependent Effect of Achlorhydria.” European Journal of Pharmaceutical Sciences 109 (November): 111–20. https://doi.org/10.1016/j.ejps.2017.07.035.
+- Fendt, Rebekka, Hofmann, Ute, Schneider, Annika R.P., Schaeffeler, Elke, Burghaus, Rolf, et al. 2021. “Data-Driven Personalization of a Physiologically Based Pharmacokinetic Model for Caffeine: A Systematic Assessment” CPT: Pharmacometrics & Systems Pharmacology. https://doi.org/10.1002/psp4.12646
+- Grimstein, Manuela, Yuching Yang, Xinyuan Zhang, Joseph Grillo, Shiew-Mei Huang, Issam Zineh, and Yaning Wang. 2019. “Physiologically Based Pharmacokinetic Modeling in Regulatory Science: An Update From the U.S. Food and Drug Administration’s Office of Clinical Pharmacology.” Journal of Pharmaceutical Sciences 108 (1): 21–25. https://doi.org/10.1016/j.xphs.2018.10.033.
+- Heimbach, Tycho, Yuan Chen, Jun Chen, Vaishali Dixit, Neil Parrott, Sheila Annie Peters, Italo Poggesi, et al. 2020. “Physiologically-Based Pharmacokinetic Modeling in Renal and Hepatic Impairment Populations: A Pharmaceutical Industry Perspective.” Clinical Pharmacology & Therapeutics n/a (n/a). https://doi.org/10.1002/cpt.2125.
+- Kuemmel, Colleen, Yan, Yuching, Zhang, Xiyuan, Florian, Jeffry, Zhu, Hao et al. 2019.” Consideration of a Credibility Assessment Framework in Model-Informed Drug Development: Potential Application to PBPK Modeling and Simulation” CPT: Pharmacometrics & Systems Pharmacology. https://doi.org/10.1002/psp4.12479
+- Lin, Wen, Jing-He Yan, Tycho Heimbach, and Handan He. 2018. “Pediatric Physiologically Based Pharmacokinetic Model Development: Current Status and Challenges.” Current Pharmacology Reports 4 (6): 491–501. https://doi.org/10.1007/s40495-018-0162-1.
+- Loisios-Konstantinidis, Ioannis, Rodrigo Cristofoletti, Nikoletta Fotaki, David B. Turner, and Jennifer Dressman. 2020. “Establishing Virtual Bioequivalence and Clinically Relevant Specifications Using in Vitro Biorelevant Dissolution Testing and Physiologically-Based Population Pharmacokinetic Modeling. Case Example: Naproxen.” European Journal of Pharmaceutical Sciences 143 (February): 105170. https://doi.org/10.1016/j.ejps.2019.105170.
+- Loisios-Konstantinidis, Ioannis, Bart Hens, Amitava Mitra, Sarah Kim, Chang Chiann, and Rodrigo Cristofoletti. 2020. “Using Physiologically Based Pharmacokinetic Modeling to Assess the Risks of Failing Bioequivalence Criteria: A Tale of Two Ibuprofen Products.” The AAPS Journal 22 (5): 113. https://doi.org/10.1208/s12248-020-00495-4.
+- Morcos, Peter N., Yumi Cleary, Carolina Sturm‐Pellanda, Elena Guerini, Markus Abt, Massimiliano Donzelli, Faye Vazvaei, Bogdana Balas, Neil Parrott, and Li Yu. 2018. “Effect of Hepatic Impairment on the Pharmacokinetics of Alectinib.” The Journal of Clinical Pharmacology 58 (12): 1618–28. https://doi.org/10.1002/jcph.1286.
+- Peters, Sheila Annie, and Hugues Dolgos. 2019. “Requirements to Establishing Confidence in Physiologically Based Pharmacokinetic (PBPK) Models and Overcoming Some of the Challenges to Meeting Them.” Clinical Pharmacokinetics 58 (11): 1355–71. https://doi.org/10.1007/s40262-019-00790-0.
+- Rimmler, Christer, Christian Lanckohr, Ceren Akamp, Dagmar Horn, Manfred Fobker, Karsten Wiebe, Bassam Redwan, Bjoern Ellger, Robin Koeck, and Georg Hempel. 2019. “Physiologically Based Pharmacokinetic Evaluation of Cefuroxime in Perioperative Antibiotic Prophylaxis.” British Journal of Clinical Pharmacology 85 (12): 2864–77. https://doi.org/10.1111/bcp.14121.
+- Tan, Ming-Liang, Ping Zhao, Lei Zhang, Yunn-Fang Ho, Manthena V. S. Varma, Sibylle Neuhoff, Thomas D. Nolin, Aleksandra Galetin, and Shiew-Mei Huang. 2019. “Use of Physiologically Based Pharmacokinetic Modeling to Evaluate the Effect of Chronic Kidney Disease on the Disposition of Hepatic CYP2C8 and OATP1B Drug Substrates.” Clinical Pharmacology & Therapeutics 105 (3): 719–29. https://doi.org/10.1002/cpt.1205.
+- Türk, Denise, Nina Hanke, and Thorsten Lehr. 2020. “A Physiologically-Based Pharmacokinetic Model of Trimethoprim for MATE1, OCT1, OCT2, and CYP2C8 Drug–Drug–Gene Interaction Predictions.” Pharmaceutics 12 (11): 1074. https://doi.org/10.3390/pharmaceutics12111074.
+- Wagner, C., P. Zhao, Y. Pan, V. Hsu, J. Grillo, S. M. Huang, and V. Sinha. 2015. “Application of Physiologically Based Pharmacokinetic (PBPK) Modeling to Support Dose Selection: Report of an FDA Public Workshop on PBPK.” CPT: Pharmacometrics & Systems Pharmacology 4 (4): 226–30. https://doi.org/10.1002/psp4.33.
+- Yun, Yejin Esther, and Andrea N. Edginton. 2019. “Model Qualification of the PK-Sim® Pediatric Module for Pediatric Exposure Assessment of CYP450 Metabolized Compounds.” Journal of Toxicology and Environmental Health. Part A 82 (14): 789–814. https://doi.org/10.1080/15287394.2019.1652215.
+- Zhao, P, L Zhang, J A Grillo, Q Liu, J M Bullock, Y J Moon, P Song, et al. 2011. “Applications of Physiologically Based Pharmacokinetic (PBPK) Modeling and Simulation During Regulatory Review.” Clinical Pharmacology & Therapeutics 89 (2): 259–67. https://doi.org/10.1038/clpt.2010.298.
+- Zhou, Diansong, Terry Podoll, Yan Xu, Ganesh Moorthy, Karthick Vishwanathan, Joseph Ware, J. Greg Slatter, and Nidal Al‐Huniti. 2019. “Evaluation of the Drug–Drug Interaction Potential of Acalabrutinib and Its Active Metabolite, ACP-5862, Using a Physiologically-Based Pharmacokinetic Modeling Approach.” CPT: Pharmacometrics & Systems Pharmacology 8 (7): 489–99. https://doi.org/10.1002/psp4.12408.
+- Zhuang, Xiaomei, and Chuang Lu. 2016. “PBPK Modeling and Simulation in Drug Research and Development.” Acta Pharmaceutica Sinica. B 6 (5): 430–40. https://doi.org/10.1016/j.apsb.2016.04.004.
