@@ -376,7 +376,7 @@ Y. Wu and F. Kesisoglou. _Immediate Release Oral Dosage Forms: Formulation Scree
 [Peters and Dolgos. Requirements to Establishing Confidence in Physiologically Based Pharmacokinetic (PBPK) Models and Overcoming Some of the Challenges to Meeting Them.](https://doi.org/10.1007/s40262-019-00790-0)
 
 #### 125
-[FDA Guidance: Physiologically Based Pharmacokinetic Analyses — Format and Content Guidance for Industry.](https://www.fda.gov/media/101469/download)
+[FDA, Center for Drug Evaluation and. 2019. “Physiologically Based Pharmacokinetic Analyses — Format and Content Guidance for Industry.” U.S. Food and Drug Administration. October 18, 2019.](http://www.fda.gov/regulatory-information/search-fda-guidance-documents/physiologically-based-pharmacokinetic-analyses-format-and-content-guidance-industry)
 
 #### 126
 [EMA Guideline: Guideline on the qualification and reporting of physiologically based pharmacokinetic (PBPK) modelling and simulation.](https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-qualification-reporting-physiologically-based-pharmacokinetic-pbpk-modelling-simulation_en.pdf)
@@ -392,3 +392,124 @@ Y. Wu and F. Kesisoglou. _Immediate Release Oral Dosage Forms: Formulation Scree
 
 #### 130
 [OECD (2021), Guidance document on the characterisation, validation and reporting of Physiologically Based Kinetic (PBK) models for regulatory purposes, OECD Series on Testing and Assessment, No. 331, OECD Publishing, Paris](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/02/guidance-document-on-the-characterisation-validation-and-reporting-of-physiologically-based-kinetic-pbk-models-for-regulatory-purposes_670da2f4/d0de241f-en.pdf)
+
+#### 131
+[Calvier, Elisa A. M., Thu Thuy Nguyen, Trevor N. Johnson, Amin Rostami-Hodjegan, Dick Tibboel, Elke H. J. Krekels, and Catherijne A. J. Knibbe. 2018. “Can Population Modelling Principles Be Used to Identify Key PBPK Parameters for Paediatric Clearance Predictions? An Innovative Application of Optimal Design Theory.” *Pharmaceutical Research* 35 (11): 209.](https://doi.org/10.1007/s11095-018-2487-1)
+
+#### 132
+[Dallmann, André, Ibrahim Ince, Juri Solodenko, Michaela Meyer, Stefan Willmann, Thomas Eissing, and Georg Hempel. 2017. “Physiologically Based Pharmacokinetic Modeling of Renally Cleared Drugs in Pregnant Women.” Clinical Pharmacokinetics 56 (12): 1525–41.](https://doi.org/10.1007/s40262-017-0538-0)
+
+#### 133
+[Doki, Kosuke, Adam S. Darwich, Nikunjkumar Patel, and Amin Rostami-Hodjegan. 2017. “Virtual Bioequivalence for Achlorhydric Subjects: The Use of PBPK Modelling to Assess the Formulation-Dependent Effect of Achlorhydria.” European Journal of Pharmaceutical Sciences 109 (November): 111–20.](https://doi.org/10.1016/j.ejps.2017.07.035)
+
+#### 134
+[Fendt, Rebekka, Hofmann, Ute, Schneider, Annika R.P., Schaeffeler, Elke, Burghaus, Rolf, et al. 2021. “Data-Driven Personalization of a Physiologically Based Pharmacokinetic Model for Caffeine: A Systematic Assessment” CPT: Pharmacometrics & Systems Pharmacology.](https://doi.org/10.1002/psp4.12646)
+
+#### 135
+[Grimstein, Manuela, Yuching Yang, Xinyuan Zhang, Joseph Grillo, Shiew-Mei Huang, Issam Zineh, and Yaning Wang. 2019. “Physiologically Based Pharmacokinetic Modeling in Regulatory Science: An Update From the U.S. Food and Drug Administration’s Office of Clinical Pharmacology.” Journal of Pharmaceutical Sciences 108 (1): 21–25.](https://doi.org/10.1016/j.xphs.2018.10.033)
+
+#### 136
+[Heimbach, Tycho, Yuan Chen, Jun Chen, Vaishali Dixit, Neil Parrott, Sheila Annie Peters, Italo Poggesi, et al. 2020. “Physiologically-Based Pharmacokinetic Modeling in Renal and Hepatic Impairment Populations: A Pharmaceutical Industry Perspective.” Clinical Pharmacology & Therapeutics n/a (n/a).](https://doi.org/10.1002/cpt.2125)
+
+#### 137
+[Kuemmel, Colleen, Yan, Yuching, Zhang, Xiyuan, Florian, Jeffry, Zhu, Hao et al. 2019.” Consideration of a Credibility Assessment Framework in Model-Informed Drug Development: Potential Application to PBPK Modeling and Simulation” CPT: Pharmacometrics & Systems Pharmacology.](https://doi.org/10.1002/psp4.12479)
+
+#### 138
+[Lin, Wen, Jing-He Yan, Tycho Heimbach, and Handan He. 2018. “Pediatric Physiologically Based Pharmacokinetic Model Development: Current Status and Challenges.” Current Pharmacology Reports 4 (6): 491–501.](https://doi.org/10.1007/s40495-018-0162-1)
+
+#### 139
+[Loisios-Konstantinidis, Ioannis, Rodrigo Cristofoletti, Nikoletta Fotaki, David B. Turner, and Jennifer Dressman. 2020. “Establishing Virtual Bioequivalence and Clinically Relevant Specifications Using in Vitro Biorelevant Dissolution Testing and Physiologically-Based Population Pharmacokinetic Modeling. Case Example: Naproxen.” European Journal of Pharmaceutical Sciences 143 (February): 105170.](https://doi.org/10.1016/j.ejps.2019.105170)
+
+#### 140
+[Loisios-Konstantinidis, Ioannis, Bart Hens, Amitava Mitra, Sarah Kim, Chang Chiann, and Rodrigo Cristofoletti. 2020. “Using Physiologically Based Pharmacokinetic Modeling to Assess the Risks of Failing Bioequivalence Criteria: A Tale of Two Ibuprofen Products.” The AAPS Journal 22 (5): 113.](https://doi.org/10.1208/s12248-020-00495-4)
+
+#### 141
+[Morcos, Peter N., Yumi Cleary, Carolina Sturm‐Pellanda, Elena Guerini, Markus Abt, Massimiliano Donzelli, Faye Vazvaei, Bogdana Balas, Neil Parrott, and Li Yu. 2018. “Effect of Hepatic Impairment on the Pharmacokinetics of Alectinib.” The Journal of Clinical Pharmacology 58 (12): 1618–28.](https://doi.org/10.1002/jcph.1286)
+
+#### 142
+[Peters, Sheila Annie, and Hugues Dolgos. 2019. “Requirements to Establishing Confidence in Physiologically Based Pharmacokinetic (PBPK) Models and Overcoming Some of the Challenges to Meeting Them.” Clinical Pharmacokinetics 58 (11): 1355–71.](https://doi.org/10.1007/s40262-019-00790-0)
+
+#### 143
+[Rimmler, Christer, Christian Lanckohr, Ceren Akamp, Dagmar Horn, Manfred Fobker, Karsten Wiebe, Bassam Redwan, Bjoern Ellger, Robin Koeck, and Georg Hempel. 2019. “Physiologically Based Pharmacokinetic Evaluation of Cefuroxime in Perioperative Antibiotic Prophylaxis.” British Journal of Clinical Pharmacology 85 (12): 2864–77.](https://doi.org/10.1111/bcp.14121)
+
+#### 144
+[Tan, Ming-Liang, Ping Zhao, Lei Zhang, Yunn-Fang Ho, Manthena V. S. Varma, Sibylle Neuhoff, Thomas D. Nolin, Aleksandra Galetin, and Shiew-Mei Huang. 2019. “Use of Physiologically Based Pharmacokinetic Modeling to Evaluate the Effect of Chronic Kidney Disease on the Disposition of Hepatic CYP2C8 and OATP1B Drug Substrates.” Clinical Pharmacology & Therapeutics 105 (3): 719–29.](https://doi.org/10.1002/cpt.1205)
+
+#### 145
+[Türk, Denise, Nina Hanke, and Thorsten Lehr. 2020. “A Physiologically-Based Pharmacokinetic Model of Trimethoprim for MATE1, OCT1, OCT2, and CYP2C8 Drug–Drug–Gene Interaction Predictions.” Pharmaceutics 12 (11): 1074.](https://doi.org/10.3390/pharmaceutics12111074)
+
+#### 146
+[Wagner, C., P. Zhao, Y. Pan, V. Hsu, J. Grillo, S. M. Huang, and V. Sinha. 2015. “Application of Physiologically Based Pharmacokinetic (PBPK) Modeling to Support Dose Selection: Report of an FDA Public Workshop on PBPK.” CPT: Pharmacometrics & Systems Pharmacology 4 (4): 226–30.](https://doi.org/10.1002/psp4.33)
+
+#### 147
+[Yun, Yejin Esther, and Andrea N. Edginton. 2019. “Model Qualification of the PK-Sim® Pediatric Module for Pediatric Exposure Assessment of CYP450 Metabolized Compounds.” Journal of Toxicology and Environmental Health. Part A 82 (14): 789–814.](https://doi.org/10.1080/15287394.2019.1652215)
+
+#### 148
+[Zhao, P, L Zhang, J A Grillo, Q Liu, J M Bullock, Y J Moon, P Song, et al. 2011. “Applications of Physiologically Based Pharmacokinetic (PBPK) Modeling and Simulation During Regulatory Review.” Clinical Pharmacology & Therapeutics 89 (2): 259–67.](https://doi.org/10.1038/clpt.2010.298)
+
+#### 149
+[Zhou, Diansong, Terry Podoll, Yan Xu, Ganesh Moorthy, Karthick Vishwanathan, Joseph Ware, J. Greg Slatter, and Nidal Al‐Huniti. 2019. “Evaluation of the Drug–Drug Interaction Potential of Acalabrutinib and Its Active Metabolite, ACP-5862, Using a Physiologically-Based Pharmacokinetic Modeling Approach.” CPT: Pharmacometrics & Systems Pharmacology 8 (7): 489–99.](https://doi.org/10.1002/psp4.12408)
+
+#### 150
+[Zhuang, Xiaomei, and Chuang Lu. 2016. “PBPK Modeling and Simulation in Drug Research and Development.” Acta Pharmaceutica Sinica. B 6 (5): 430–40.](https://doi.org/10.1016/j.apsb.2016.04.004)
+
+#### 151
+
+Kuemmel, C., Yang, Y., Zhang, X., Florian, J., Zhu, H., Tegenge, M., Huang, S.-M., Wang, Y., Morrison, T., & Zineh, I. (2020). Consideration of a Credibility Assessment Framework in Model-Informed Drug Development: Potential Application to Physiologically-Based Pharmacokinetic Modeling and Simulation. CPT: Pharmacometrics & Systems Pharmacology, 9(1), 21–28
+
+#### 152
+[Rüdesheim, S., Wojtyniak, J.-G., Selzer, D., Hanke, N., Mahfoud, F., Schwab, M., & Lehr, T. (2020). Physiologically Based Pharmacokinetic Modeling of Metoprolol Enantiomers and α-Hydroxymetoprolol to Describe CYP2D6 Drug-Gene Interactions. Pharmaceutics, 12(12).](https://doi.org/10.3390/pharmaceutics12121200)
+
+#### 153
+Utsey, K., Gastonguay, M. S., Russell, S., Freling, R., Riggs, M. M., & Elmokadem, A. (2020). Quantification of the Impact of Partition Coefficient Prediction Methods on Physiologically Based Pharmacokinetic Model Output Using a Standardized Tissue Composition. Drug Metabolism and Disposition: The Biological Fate of Chemicals, 48(10), 903–916.
+
+#### 154
+[Peters and Dolgos. Requirements to Establishing Confidence in Physiologically Based Pharmacokinetic (PBPK) Models and Overcoming Some of the Challenges to Meeting Them.](https://doi.org/10.1007/s40262-019-00790-0)
+
+#### 155
+McNally, K., Cotton, R., & Loizou, G. D. (2011). A Workflow for Global Sensitivity Analysis of PBPK Models. Frontiers in Pharmacology, 2, 31.
+
+#### 156
+Peters, S. A. (Ed.). (2012). Variability, Uncertainty, and Sensitivity Analysis. In Physiologically-Based Pharmacokinetic (PBPK) Modeling and Simulations (Vol. 120, pp. 161–181). John Wiley & Sons, Inc.
+
+#### 157
+Hsieh, N.-H., Reisfeld, B., Bois, F. Y., & Chiu, W. A. (2018). Applying a Global Sensitivity Analysis Workflow to Improve the Computational Efficiencies in Physiologically-Based Pharmacokinetic Modeling. Frontiers in Pharmacology, 9, 588.
+
+#### 158
+Zhang, X.-Y., Trame, M. N., Lesko, L. J., & Schmidt, S. (2015). Sobol Sensitivity Analysis: A Tool to Guide the Development and Evaluation of Systems Pharmacology Models. CPT: Pharmacometrics & Systems Pharmacology, 4(2), 69–79.
+
+#### 159
+[Miller, Neil A., Micaela B. Reddy, Aki T. Heikkinen, Viera Lukacova, and Neil Parrott. 2019. “Physiologically Based Pharmacokinetic Modelling for First-In-Human Predictions: An Updated Model Building Strategy Illustrated with Challenging Industry Case Studies.” Clinical Pharmacokinetics, February. ](https://doi.org/10.1007/s40262-019-00741-9)
+
+#### 160
+[Cho, Hyun-Jong, Ji-Eon Kim, Dae-Duk Kim, and In-Soo Yoon. 2014. “In Vitro-in Vivo Extrapolation (IVIVE) for Predicting Human Intestinal Absorption and First-Pass Elimination of Drugs: Principles and Applications.” Drug Development and Industrial Pharmacy 40 (8): 989–98.](https://doi.org/10.3109/03639045.2013.831439)
+
+#### 161
+[Poulin, Patrick, Hannah M. Jones, Rhys Do Jones, James W.T. Yates, Christopher R. Gibson, Jenny Y. Chien, Barbara J. Ring, et al. 2011. “PhRMA CPCDC Initiative on Predictive Models of Human Pharmacokinetics, Part 1: Goals, Properties of the Phrma Dataset, and Comparison with Literature Datasets.” Journal of Pharmaceutical Sciences 100 (10): 4050–73.](https://doi.org/10.1002/jps.22554)
+
+#### 162
+[Berezhkovskiy, Leonid M. 2004. “Volume of Distribution at Steady State for a Linear Pharmacokinetic System with Peripheral Elimination.” Journal of Pharmaceutical Sciences 93 (6): 1628–40.](https://doi.org/10.1002/jps.20073)
+
+#### 163
+[Poulin, P., and F. P. Theil. 2000. “A Priori Prediction of Tissue:Plasma Partition Coefficients of Drugs to Facilitate the Use of Physiologically-Based Pharmacokinetic Models in Drug Discovery.” Journal of Pharmaceutical Sciences 89 (1): 16–35.](https://doi.org/10.1002/(SICI)1520-6017(200001)89:1<16::AID-JPS3>3.0.CO;2-E) **TODO Link not working**
+
+#### 164
+[Rodgers, Trudy, David Leahy, and Malcolm Rowland. 2005. “Physiologically Based Pharmacokinetic Modeling 1: Predicting the Tissue Distribution of Moderate-to-Strong Bases.” Journal of Pharmaceutical Sciences 94 (6): 1259–76.](https://doi.org/10.1002/jps.20322)
+
+#### 165
+[Benet, Leslie Z., and Jasleen K. Sodhi. 2020. “Investigating the Theoretical Basis for In Vitro–In Vivo Extrapolation (IVIVE) in Predicting Drug Metabolic Clearance and Proposing Future Experimental Pathways.” The AAPS Journal 22 (5): 120.](https://doi.org/10.1208/s12248-020-00501-9)
+
+#### 166
+[Kumar, Vineet, Jia Yin, Sarah Billington, Bhagwat Prasad, Colin D. A. Brown, Joanne Wang, and Jashvant D. Unadkat. 2018. “The Importance of Incorporating OCT2 Plasma Membrane Expression and Membrane Potential in IVIVE of Metformin Renal Secretory Clearance.” Drug Metabolism and Disposition: The Biological Fate of Chemicals 46 (10): 1441–45.](https://doi.org/10.1124/dmd.118.082313)
+
+#### 167
+[Trapa, Patrick E., Matthew D. Troutman, Thomas Y. Lau, Travis T. Wager, Tristan S. Maurer, Nandini C. Patel, Mark A. West, et al. 2019. “In Vitro–In Vivo Extrapolation of Key Transporter Activity at the Blood–Brain Barrier.” Drug Metabolism and Disposition 47 (4): 405–11.](https://doi.org/10.1124/dmd.118.083279)
+
+#### 168
+[Kuepfer, L, C Niederalt, T Wendl, J-F Schlender, S Willmann, J Lippert, M Block, T Eissing, and D Teutonico. 2016. “Applied Concepts in PBPK Modeling: How to Build a PBPK/PD Model: Applied Concepts in PBPK Modeling.” CPT: Pharmacometrics & Systems Pharmacology 5 (10): 516–31.](https://doi.org/10.1002/psp4.12134)
+
+#### 169
+[Marshall, S. F., R. Burghaus, V. Cosson, S. Y. A. Cheung, M. Chenel, O. DellaPasqua, N. Frey, et al. 2016. “Good Practices in Model-Informed Drug Discovery and Development: Practice, Application, and Documentation.” CPT: Pharmacometrics & Systems Pharmacology 5 (3): 93–122.](https://doi.org/10.1002/psp4.12049)
+
+#### 170
+[Tan, Yu-Mei, Melissa Chan, Amechi Chukwudebe, Jeanne Domoradzki, Jeffrey Fisher, C. Eric Hack, Paul Hinderliter, et al. 2020. “PBPK Model Reporting Template for Chemical Risk Assessment Applications.” Regulatory Toxicology and Pharmacology 115 (August): 104691.](https://doi.org/10.1016/j.yrtph.2020.104691)
