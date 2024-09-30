@@ -391,4 +391,4 @@ Y. Wu and F. Kesisoglou. _Immediate Release Oral Dosage Forms: Formulation Scree
 [Miller et al. Physiologically Based Pharmacokinetic Modelling for First‐In‐Human Predictions: An Updated Model Building Strategy Illustrated with Challenging Industry Case Studies.](https://doi.org/10.1007/s40262-019-00741-9) 
 
 #### 130
-[OECD: Guidance Document on the Characterisation, Validation and Reporting of PBK Models For Regulatory Purposes (2021).](http://www.oecd.org/officialdocuments/publicdisplaydocumentpdf/?cote=ENV-CBC-MONO(2021)1%20&doclanguage=en)
+[OECD (2021), Guidance document on the characterisation, validation and reporting of Physiologically Based Kinetic (PBK) models for regulatory purposes, OECD Series on Testing and Assessment, No. 331, OECD Publishing, Paris](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/02/guidance-document-on-the-characterisation-validation-and-reporting-of-physiologically-based-kinetic-pbk-models-for-regulatory-purposes_670da2f4/d0de241f-en.pdf)
