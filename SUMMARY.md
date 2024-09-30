@@ -5,8 +5,8 @@
 * [How to Contribute](how-to-contribute.md)
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
-  * Best Practices
-    * [Introduction](part-7/a-short-guid-to-pbpk-model-development.md)
+* Best Practices
+    * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
     * [Model Development](part-7/model-development.md)
     * [Model Evaluation](part-7/model-evaluation.md)
     * [Application Simulation](part-7/application-simulation.md)
