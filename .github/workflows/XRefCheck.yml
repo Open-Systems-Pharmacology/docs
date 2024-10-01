@@ -4,7 +4,5 @@ on:
   pull_request:
 
 jobs:
-  crossref-check-with-anchors:
-    uses: Open-Systems-Pharmacology/Workflows/.github/workflows/MarkdownCrossrefCheck_withAnchors.yml@main
-    with:
-      folder-path: './'
+  crossref-check-without-anchors:
+    uses: Open-Systems-Pharmacology/Workflows/.github/workflows/XRefCheck.yml@main
