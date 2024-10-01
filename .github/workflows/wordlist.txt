@@ -16,3 +16,6 @@ metrumresearchgroup
 mrgsolve
 pbpk
 qsp
+Türk’s
+FDA's
+Yun’s
