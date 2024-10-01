@@ -141,7 +141,7 @@ C. Crone and D.G. Levitt. _Capillary permeability to small solutes_. in Handbook
 [M. Meyer, S. Schneckener, B. Ludewig, L. Kuepfer, and J. Lippert. _Using expression data for quantification of active processes in physiologically- based pharmacokinetic modeling_. Drug Metab Dispos. 2012.](https://pubmed.ncbi.nlm.nih.gov/22293118)
 
 #### 47
-[John A. Nelder and R. Mead. _A simplex method for function minimization_. Computer Journal. 7. 308-313. 1965.](https://people.duke.edu/~hpgavin/cee201/Nelder+Mead-ComputerJournal-1965.pdf)
+[John A. Nelder and R. Mead. _A simplex method for function minimization_. Computer Journal. 7. 308-313. 1965.](https://people.duke.edu/~hpgavin/cee201/Nelder+Mead-ComputerJournal-1965.pdf) **TODO BROKEN LINK**
 
 #### 48
 [I. Nestorov. _Whole-body physiologically based pharmacokinetic models_. Exp Opin Drug Metab Toxicol. 3. 235-249. 2007.](https://pubmed.ncbi.nlm.nih.gov/17428153)
@@ -379,10 +379,10 @@ Y. Wu and F. Kesisoglou. _Immediate Release Oral Dosage Forms: Formulation Scree
 [FDA, Center for Drug Evaluation and. 2019. “Physiologically Based Pharmacokinetic Analyses — Format and Content Guidance for Industry.” U.S. Food and Drug Administration. October 18, 2019.](http://www.fda.gov/regulatory-information/search-fda-guidance-documents/physiologically-based-pharmacokinetic-analyses-format-and-content-guidance-industry)
 
 #### 126
-[EMA Guideline: Guideline on the qualification and reporting of physiologically based pharmacokinetic (PBPK) modelling and simulation.](https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-qualification-reporting-physiologically-based-pharmacokinetic-pbpk-modelling-simulation_en.pdf)
+[EMA Guideline: Guideline on the qualification and reporting of physiologically based pharmacokinetic (PBPK) modelling and simulation.](https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-qualification-reporting-physiologically-based-pharmacokinetic-pbpk-modelling-simulation_en.pdf) **TODO BROKEN LINK**
 
 #### 127
-[EMA Guideline: Guideline on the use of physiologically based pharmacokinetic (PBPK) modelling in the assessment of regulatory pharmacokinetic applications.](https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-use-physiologically-based-pharmacokinetic-pbpk-modelling-assessment-regulatory-pharmacokinetic_en.pdf)
+[EMA Guideline: Guideline on the use of physiologically based pharmacokinetic (PBPK) modelling in the assessment of regulatory pharmacokinetic applications.](https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-use-physiologically-based-pharmacokinetic-pbpk-modelling-assessment-regulatory-pharmacokinetic_en.pdf) **TODO BROKEN LINK**
 
 #### 128
 [Shebley et al. Physiologically Based Pharmacokinetic Model Qualification and Reporting Procedures for Regulatory Submissions: A Consortium Perspective.](https://doi.org/10.1002/cpt.1013 )
