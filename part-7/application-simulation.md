@@ -30,7 +30,7 @@
 - Population-level vs mean (**TBD**)
     - This case study for Caffeine shows that individual pharmacokinetic profiles can be predicted more accurately by considering individual attributes and that personalized PBPK models could be a valuable tool for model informed precision dosing approaches in the future [[134](../references.md#134)].
 - Workflow Review 
-    - This review of several case stuiesdy provides is for a better understanding of the absorption, distribution, metabolism and excretion (ADME) workflow of a drug candidate, and the applications to increase efficiency, reduce the need for animal studies, and perhaps to replace clinical trials. The regulatory acceptance and industrial practices around PBPK modeling and simulation is also discussed  [[150](../references.md#150)].
+    - This review of several case studies provides is for a better understanding of the absorption, distribution, metabolism and excretion (ADME) workflow of a drug candidate, and the applications to increase efficiency, reduce the need for animal studies, and perhaps to replace clinical trials. The regulatory acceptance and industrial practices around PBPK modeling and simulation is also discussed  [[150](../references.md#150)].
 - Hypothesis generation
     - The aim of this paper was to develop an analysis framework to investigate whether population modelling approach can be used to estimate PBPK model parameters from clinical PK data and establish the required criteria for such estimations [[131](../references.md#131)].	
 - Regulatory Confidence
