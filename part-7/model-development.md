@@ -41,9 +41,6 @@ What should not be neglected in the requirements analysis, is the evaluation of 
   - Benet and Sodhi proposed future pathways that should be investigated in terms of the relationship to experimentally measured clearance values, rather than model-dependent intrinsic clearance
 - Transporters & Excretion [[166](../references.md#166)], [[167](../references.md#167)]
   - These data demonstrate the promise of using IVIVE of transporter-mediated drug clearance and highlight the importance of quantifying plasma membrane expression of transporters and utilizing cells that mimic the in vivo mechanism(s) of transport of drugs.
-- Data-driven model refinement and qualification (**TODO Add References e.g. [[124](../references.md#124)]**)
-- PD Model?
-  - Points to consider for target engagement/RO (add reference) and linking PBPK into QSP (add reference)
 
 ## Further Reading
 - Data-driven model refinement and qualification (e.g. [[168](../references.md#168)], [[124](../references.md#124)] ) 
