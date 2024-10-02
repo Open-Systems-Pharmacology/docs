@@ -23,7 +23,7 @@
         1. Overlay of observed and predicted concentration-time profiles. Depending on your focus (include plots on linear scale (e.g. focus on absorption and Cmax) and / or logarithmic scale (e.g. focus on Distribution and elimination)!). [[152](../references.md#152)], [[153](../references.md#153)]
         2. Observed vs predicted of derived metrics, e.g., Cmax and AUC [[152](../references.md#152)]
         3. Precision and bias metrics (e.g., MAE, RMSE) to compare across models or other methodological approaches [[153](../references.md#153)]
-    3. Standards for Model Evaluation Metrics (Loisios-Konstantinidis, Cristofoletti, et al. 2020) (**TODO Rimmler et al. 2019 ref not found**),[1]
+    3. Standards for Model Evaluation Metrics [[139](../references.md#139)],[[143](../references.md#143)]
     4. Strategies for model development and evaluation
         1. Case-based strategies for different application scenarios [[154](../references.md#154)]
 
