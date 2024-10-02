@@ -379,10 +379,10 @@ Y. Wu and F. Kesisoglou. _Immediate Release Oral Dosage Forms: Formulation Scree
 [FDA, Center for Drug Evaluation and. 2019. “Physiologically Based Pharmacokinetic Analyses — Format and Content Guidance for Industry.” U.S. Food and Drug Administration. October 18, 2019.](http://www.fda.gov/regulatory-information/search-fda-guidance-documents/physiologically-based-pharmacokinetic-analyses-format-and-content-guidance-industry)
 
 #### 126
-[EMA Guideline: Guideline on the qualification and reporting of physiologically based pharmacokinetic (PBPK) modelling and simulation.](https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-qualification-reporting-physiologically-based-pharmacokinetic-pbpk-modelling-simulation_en.pdf) **TODO BROKEN LINK**
+[EMA Guideline: Guideline on the qualification and reporting of physiologically based pharmacokinetic (PBPK) modelling and simulation.](https://www.ema.europa.eu/en/reporting-physiologically-based-pharmacokinetic-pbpk-modelling-simulation-scientific-guideline)
 
 #### 127
-[EMA Guideline: Guideline on the use of physiologically based pharmacokinetic (PBPK) modelling in the assessment of regulatory pharmacokinetic applications.](https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-use-physiologically-based-pharmacokinetic-pbpk-modelling-assessment-regulatory-pharmacokinetic_en.pdf) **TODO BROKEN LINK**
+[Frechen, S., Rostami-Hodjegan, A. Quality Assurance of PBPK Modeling Platforms and Guidance on Building, Evaluating, Verifying and Applying PBPK Models Prudently under the Umbrella of Qualification: Why, When, What, How and By Whom?. Pharm Res 39, 1733–1748 (2022)](https://doi.org/10.1007/s11095-022-03250-w)
 
 #### 128
 [Shebley et al. Physiologically Based Pharmacokinetic Model Qualification and Reporting Procedures for Regulatory Submissions: A Consortium Perspective.](https://doi.org/10.1002/cpt.1013 )
