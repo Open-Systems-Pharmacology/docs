@@ -513,3 +513,9 @@ Zhang, X.-Y., Trame, M. N., Lesko, L. J., & Schmidt, S. (2015). Sobol Sensitivit
 
 #### 170
 [Tan, Yu-Mei, Melissa Chan, Amechi Chukwudebe, Jeanne Domoradzki, Jeffrey Fisher, C. Eric Hack, Paul Hinderliter, et al. 2020. “PBPK Model Reporting Template for Chemical Risk Assessment Applications.” Regulatory Toxicology and Pharmacology 115 (August): 104691.](https://doi.org/10.1016/j.yrtph.2020.104691)
+
+#### 171
+[Schaller, S., Willmann, S., Lippert, J., Schaupp, L., Pieber, T., Schuppert, A. and Eissing, T. (2013), A Generic Integrated Physiologically based Whole-body Model of the Glucose-Insulin-Glucagon Regulatory System. CPT: Pharmacometrics & Systems Pharmacology, 2: 1-10 65.](https://doi.org/10.1038/psp.2013.40)
+
+#### 172
+[Balazki, P., Schaller, S., Eissing, T. and Lehr, T. (2018), A Quantitative Systems Pharmacology Kidney Model of Diabetes Associated Renal Hyperfiltration and the Effects of SGLT Inhibitors. CPT Pharmacometrics Syst. Pharmacol., 7: 788-797.](https://doi.org/10.1002/psp4.12359)

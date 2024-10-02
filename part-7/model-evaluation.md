@@ -13,7 +13,7 @@
    
 ![Model evalution](../assets/images/part-7/model-evaluation-1.png) 
 
-CPT: Pharmacometrics & Systems Pharmacology, Volume: 9, Issue: 1, Pages: 21-28, First published: 25 October 2019, DOI: (10.1002/psp4.12479)
+###### [Overview of the ASME V&V 40 risk‐informed credibility assessment framework](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6966181/); COU, context of use; V&V, verification and validation. 
 
 3.	Goodness-of-fit diagnostics to consider during model development and for the final model evaluations include the following:
     1. Quantitative metrics of predictive performance for exposure endpoints of interest, 
