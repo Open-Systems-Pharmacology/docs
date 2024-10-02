@@ -49,5 +49,5 @@ What should not be neglected in the requirements analysis, is the evaluation of 
 - Data-driven model refinement and qualification (e.g. [[168](../references.md#168)], [[124](../references.md#124)] ) 
   - The papers describe a definition of, “qualification”, a how-to work flow, regulatory perspective, and an case example for model refinement 
 
-- Expansion to a PBPK-QSP Model (Platform) (e.g. [[171](../references.md#171)], [[172](../references.md#172)])? 
+- Expansion to a PBPK-QSP Model (Platform) (e.g. [[171](../references.md#171)], [[172](../references.md#172)]) 
   - These papers highlight complex integrations of PBPK and PD/QSP for building disease platform level PBPK-QSP models, which include often efficacy-relevant target/receptor kinetics and occupancy, and deposition.  
