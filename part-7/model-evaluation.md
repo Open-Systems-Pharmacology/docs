@@ -13,20 +13,18 @@
    
 ![Model evalution](../assets/images/part-7/model-evaluation-1.png) 
 
-**TODO LOW RES IMAGE**
-
 CPT: Pharmacometrics & Systems Pharmacology, Volume: 9, Issue: 1, Pages: 21-28, First published: 25 October 2019, DOI: (10.1002/psp4.12479)
 
 3.	Goodness-of-fit diagnostics to consider during model development and for the final model evaluations include the following:
     1. Quantitative metrics of predictive performance for exposure endpoints of interest, 
         - e.g., half-life, Cmax and AUC
         - Precision and bias calculations: RMSE, mean absolute error (MAE), mean relative deviation (MRD) of the predicted plasma concentrations for all observed and the corresponding predicted plasma concentrations as well as geometric mean fold errors (GMFEs) 
-    1. Graphics
+    2. Graphics
         1. Overlay of observed and predicted concentration-time profiles. Depending on your focus (include plots on linear scale (e.g. focus on absorption and Cmax) and / or logarithmic scale (e.g. focus on Distribution and elimination)!). [[152](../references.md#152)], [[153](../references.md#153)]
-        1. Observed vs predicted of derived metrics, e.g., Cmax and AUC [[152](../references.md#152)]
-        1. Precision and bias metrics (e.g., MAE, RMSE) to compare across models or other methodological approaches [[153](../references.md#153)]
-    1. Standards for Model Evaluation Metrics (Loisios-Konstantinidis, Cristofoletti, et al. 2020) (**TODO Rimmler et al. 2019 ref not found**),[1]
-    1. Strategies for model development and evaluation
+        2. Observed vs predicted of derived metrics, e.g., Cmax and AUC [[152](../references.md#152)]
+        3. Precision and bias metrics (e.g., MAE, RMSE) to compare across models or other methodological approaches [[153](../references.md#153)]
+    3. Standards for Model Evaluation Metrics (Loisios-Konstantinidis, Cristofoletti, et al. 2020) (**TODO Rimmler et al. 2019 ref not found**),[1]
+    4. Strategies for model development and evaluation
         1. Case-based strategies for different application scenarios [[154](../references.md#154)]
 
 4.	Acknowledge parameter value sources and expectations of reliability.  Use sensitivity analyses to evaluate the impact that variability or uncertainty in those values might have on model performance:
