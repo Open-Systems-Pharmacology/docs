@@ -141,7 +141,7 @@ C. Crone and D.G. Levitt. _Capillary permeability to small solutes_. in Handbook
 [M. Meyer, S. Schneckener, B. Ludewig, L. Kuepfer, and J. Lippert. _Using expression data for quantification of active processes in physiologically- based pharmacokinetic modeling_. Drug Metab Dispos. 2012.](https://pubmed.ncbi.nlm.nih.gov/22293118)
 
 #### 47
-[John A. Nelder and R. Mead. _A simplex method for function minimization_. Computer Journal. 7. 308-313. 1965.](https://people.duke.edu/~hpgavin/cee201/Nelder+Mead-ComputerJournal-1965.pdf) **TODO BROKEN LINK**
+[John A. Nelder and R. Mead. _A simplex method for function minimization_. Computer Journal. 7. 308-313. 1965.](https://doi.org/10.1093/comjnl/7.4.308)
 
 #### 48
 [I. Nestorov. _Whole-body physiologically based pharmacokinetic models_. Exp Opin Drug Metab Toxicol. 3. 235-249. 2007.](https://pubmed.ncbi.nlm.nih.gov/17428153)
@@ -491,7 +491,7 @@ Zhang, X.-Y., Trame, M. N., Lesko, L. J., & Schmidt, S. (2015). Sobol Sensitivit
 [Berezhkovskiy, Leonid M. 2004. “Volume of Distribution at Steady State for a Linear Pharmacokinetic System with Peripheral Elimination.” Journal of Pharmaceutical Sciences 93 (6): 1628–40.](https://doi.org/10.1002/jps.20073)
 
 #### 163
-[Poulin, P., and F. P. Theil. 2000. “A Priori Prediction of Tissue:Plasma Partition Coefficients of Drugs to Facilitate the Use of Physiologically-Based Pharmacokinetic Models in Drug Discovery.” Journal of Pharmaceutical Sciences 89 (1): 16–35.](https://doi.org/10.1002/(SICI)1520-6017(200001)89:1<16::AID-JPS3>3.0.CO;2-E) **TODO Link not working**
+[Poulin, P., and F. P. Theil. 2000. “A Priori Prediction of Tissue:Plasma Partition Coefficients of Drugs to Facilitate the Use of Physiologically-Based Pharmacokinetic Models in Drug Discovery.” Journal of Pharmaceutical Sciences 89 (1): 16–35.](https://doi.org/10.1002/%28sici%291520-6017%28200001%2989:1%3C16::aid-jps3%3E3.0.co;2-e)
 
 #### 164
 [Rodgers, Trudy, David Leahy, and Malcolm Rowland. 2005. “Physiologically Based Pharmacokinetic Modeling 1: Predicting the Tissue Distribution of Moderate-to-Strong Bases.” Journal of Pharmaceutical Sciences 94 (6): 1259–76.](https://doi.org/10.1002/jps.20322)
