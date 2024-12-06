@@ -18,13 +18,7 @@ For a graphical interface and data visualization, applications such as [Db Brows
 
 ![Prospective exploration of the PKSim Db with DB Browser for SQLite - Postpartum population](../assets/images/part-5/ExploreDb.png)
 
-### Access and extract population data to spreadsheet
-
-``` r
-library()
-```
-
-### Extract time-varying parameters
+### Access and extract population data to a spreadsheet
 
 ``` r
 library(magrittr)
@@ -59,34 +53,79 @@ writeData(wb, sheet = "Postpartum",
 saveWorkbook(wb, "data/param_distributions.xlsx", overwrite = TRUE)
 ```
 
+### Extract time-varying parameters of interest programmatically
+
+For the current case study (postpartum population), a parameter is considered 'time-varying in the Db when the following condition is met:
+
+-   More than one entry is available for the attribute 'Age' in the interval [30,31]
+
+This type of condition can vary according to the case study, and the code should be adapted accordingly.
+
+``` r
+library(dplyr, quietly = TRUE)
+library(openxlsx)
+
+# Load distributed parameters from extracted Db file
+file.path <- "data/param_distributions_postpartum.csv"
+db <- readWorkbook(file.path)
+df <- tibble::as_tibble(db)
+
+# Transform parameter names to fit OSPS parameter paths
+df <- df %>% mutate(concatenated_path = paste(ContainerName, ParameterName, sep = "|"))
+
+# Find distributed parameters
+distributed_parameters <- df %>%
+  dplyr::filter(Age >= 30, Age <= 31) %>%
+  dplyr::group_by(concatenated_path) %>%
+  dplyr::filter(n() > 1) %>%
+  dplyr::pull(concatenated_path) %>%
+  unique()
+
+# Isolate distributed parameters & save to worksheet
+distributed_parameters_df <- df %>%
+  dplyr::filter(concatenated_path  %in% distributed_parameters) %>%
+  dplyr::select(Age, concatenated_path, Mean)
+  
+# Write data in workbook
+wb <- createWorkbook()
+addWorksheet(wb, "Postpartum_distributedParam")
+
+writeData(wb, sheet = "Postpartum_distributedParam", 
+          distributed_parameters_df)
+
+saveWorkbook(wb, "data/Postpartum_distributed_parameters.xlsx", overwrite = TRUE) 
+```
+
+The user interface of the Db viewer tool (e.g. Db Browser for SQLite) may also be used to extract the parameters of interest (i.e. distributed parameters, here).
+
 ### Import in Mobi as Table & create time-varying parameters
 
 1.  Create Age parameter
 
-    1.  Constant (single numeric value) Age, dimension 'Age in years', Value àstart value (e.g. 30yo)
+    -   Constant (single numeric value) Age, dimension 'Age in years', Value start value (e.g. 30yo)
 
-    2.  Postpartum Age
+    -   Postpartum Age
 
         1.  Dimension is Time (default unit is minute)
 
-        2.  = Age \*year2min + TIME
+        2.  Formula is "= Age \*year2min + TIME" (the start Age in years must be converted into the OSPS default unit for 'TIME', which is minute)
 
-        3.  
+2.  Open organ compartment that will contain the parameter (e.g. Breasts)
 
-2.  Open organ compartment that will contain parameter (e.g. Breats)
+3.  Create an intermediary Table parameter (E.g. Volume_breasts_Table)
 
-3.  Create a Table parameter (E.g. Volume_breast_Table)
+    -   Chose the formula type "Table (multiple time discrete and piecewise constant numerical values)
 
-    -   chose the formula type "Table (multiple time discrete and piecewise constant numerical values)
-
-    -   Define a formula name (e.g. TABLE_volume_Breast_parameter)
+    -   Define a formula name (e.g. TABLE_volume_breast_parameter)
 
     -   Chose column 'Age' and column 'Mean')
 
-    -   Enter unit (by default values are in the base unit in the Db see file [OSPSuite.Dimensions.xml](https://esqlabs.sharepoint.com/:u:/s/S-BASF-P23-195A/EZSeZvDmQFRLvKNCJRqyxyUBkv8jR2po28wDa-caVE1LMg?e=BagOhT)
+    -   Enter unit (by default values are in the base unit of the Db, see file: [OSPSuite.Dimensions.xml](https://esqlabs.sharepoint.com/:u:/s/S-BASF-P23-195A/EZSeZvDmQFRLvKNCJRqyxyUBkv8jR2po28wDa-caVE1LMg?e=BagOhT))
 
-4.  Create Volume Table Formula with X-Argument (e.g. Param Volume_breast_PP)
+4.  Create Volume parameter in the 'Breasts' compartment:
 
-    -   Defined formula and chose path to previously created table parameter (Volume_breast_Table )
+    -   Chose the formula type 'Table Formula with X-Argument (e.g. Param Volume_breast_PP)
+
+    -   Chose path to previously created table parameter 'Volume_breasts_Table' (see point 3)
 
     -   X-argument point to 'Postpartum_age'
