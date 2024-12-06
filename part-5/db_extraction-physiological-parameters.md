@@ -2,9 +2,7 @@
 
 ## Use case description
 
-[TO BE COMPLETED]
-
-In this use case we describe how to **access** and **extract** the **physiological parameters** from the postpartum population in the **PKSim Database (Db)** and how to use that output to **create growth tables** in **Mobi in order to describe** time-varying physiological parameters.
+In this use case, we describe how to **access** and **extract** the **physiological parameters** from the postpartum population in the **PKSim Database (Db)** and how to use that output to **create growth tables** in **Mobi to describe** time-varying physiological parameters.
 
 ## Process
 
@@ -55,9 +53,11 @@ saveWorkbook(wb, "data/param_distributions.xlsx", overwrite = TRUE)
 
 ### Extract time-varying parameters of interest programmatically
 
-For the current case study (postpartum population), a parameter is considered 'time-varying in the Db when the following condition is met:
+A parameter is classified as 'time-varying' within the database if its value changes corresponding to different entries in the 'Age' column.
 
--   More than one entry is available for the attribute 'Age' in the interval [30,31]
+In the context of this exemplary case study (focused in the postpartum population), a parameter is classified as 'time-varying' when the following condition is met:
+
+-   There is more than one record of the parameter in the database for the attribute 'Age' in the interval [30,31]
 
 This type of condition can vary according to the case study, and the code should be adapted accordingly.
 
@@ -96,36 +96,69 @@ writeData(wb, sheet = "Postpartum_distributedParam",
 saveWorkbook(wb, "data/Postpartum_distributed_parameters.xlsx", overwrite = TRUE) 
 ```
 
-The user interface of the Db viewer tool (e.g. Db Browser for SQLite) may also be used to extract the parameters of interest (i.e. distributed parameters, here).
+The user interface of the database viewer tool (e.g. Db Browser for SQLite) may also be used to extract the parameters of interest (i.e. distributed parameters).
 
 ### Import in Mobi as Table & create time-varying parameters
 
-1.  Create Age parameter
+In Mobi:
 
-    -   Constant (single numeric value) Age, dimension 'Age in years', Value start value (e.g. 30yo)
+1.  Create a Postpartum_Age parameter increasing over simulation time (NB: the parameter 'Age' remains constant):
 
-    -   Postpartum Age
+    -   Define the value for the age parameter at the beginning of the simulation 'Age':
 
-        1.  Dimension is Time (default unit is minute)
+        -   Formula type is "constant (single numeric value)", dimension is 'Age in years', Value is 30 (i.e. start age of the postpartum population in database)
 
-        2.  Formula is "= Age \*year2min + TIME" (the start Age in years must be converted into the OSPS default unit for 'TIME', which is minute)
+    -   Add parameter 'Organism\|Postpartum Age'
 
-2.  Open organ compartment that will contain the parameter (e.g. Breasts)
+        -   Dimension is Time (default unit is minutes, in OSPS)
 
-3.  Create an intermediary Table parameter (E.g. Volume_breasts_Table)
+        -   Formula type is 'Formula (an explicit formula)'
+
+        -   Formula is "Age \*year2min + TIME" (the start Age in years must be converted into the OSPS default unit for 'TIME', which is minute)
+
+        ![Fig1: Postpartum Age](../assets/images/part-5/Postpartum_age.png){width="300"}
+
+2.  Open organ compartment that will contain the time-varying parameter (e.g. Breasts)
+
+3.  Add an intermediary Table parameter (E.g. Volume_breasts_TABLE)
 
     -   Chose the formula type "Table (multiple time discrete and piecewise constant numerical values)
 
-    -   Define a formula name (e.g. TABLE_volume_breast_parameter)
+    -   Define a formula name (e.g. TABLE_volume_Breasts_PP)
 
-    -   Chose column 'Age' and column 'Mean')
+    -   Click on the 'import from worksheet' button (green arrow on Figure below)
 
-    -   Enter unit (by default values are in the base unit of the Db, see file: [OSPSuite.Dimensions.xml](https://esqlabs.sharepoint.com/:u:/s/S-BASF-P23-195A/EZSeZvDmQFRLvKNCJRqyxyUBkv8jR2po28wDa-caVE1LMg?e=BagOhT))
+    -   Select a parameter from the data file import menu. E.g for the Postpartum case:
 
-4.  Create Volume parameter in the 'Breasts' compartment:
+        -   Chose "data/Postpartum_distributed_parameters.xlsx" as exported in previous section
 
-    -   Chose the formula type 'Table Formula with X-Argument (e.g. Param Volume_breast_PP)
+        -   Filter 'concatenated_path' \> "Breasts\|Volume"
 
-    -   Chose path to previously created table parameter 'Volume_breasts_Table' (see point 3)
+        -   Enter units (by default values are in the base unit of the Db, see file: [OSPSuite.Dimensions.xml](https://esqlabs.sharepoint.com/:u:/s/S-BASF-P23-195A/EZSeZvDmQFRLvKNCJRqyxyUBkv8jR2po28wDa-caVE1LMg?e=BagOhT)). Column 'Age' in years and column 'Mean' in litter (OSPS base unit for volumes)
 
-    -   X-argument point to 'Postpartum_age'
+![Fig 2: Uploading table as a Table Parameter from a worksheet](../assets/images/part-5/Table_Parameter_Breasts_Volume.png){width="345"}
+
+4.  Add a time-varying Volume parameter in the 'Breasts' compartment:
+
+    -   Click 'Add parameter'
+
+    -   Name: "Volume", Dimension= Volume
+
+    -   Formula type: 'Table Formula with X-Argument' (e.g. formula name "PARAM_Volume_Breasts_PP")
+
+    -   Path to table object: chose path to the previously created table parameter 'Volume_breasts_TABLE' (see point 3)
+
+        ![Fig3: Selecting the table parameter path](../assets/images/part-5/Select_Volume_breasts_table_param.png){width="300"}
+
+    -   Path to X-Argument object should point to 'Organism\|Postpartum_age'
+
+        ![Fig 4: Time-varying Volume parameter](../assets/images/part-5/Time_varying_Volume_parameter.png){width="400"}
+
+By ticking the box 'Plot parameter' for the parameters "Organism\|Postpartum_Age" and "Organism\|Breasts\|Volume", one can visualize the newly implemented time-varying parameters:\
+![Time-varying parameter in Human postpartum individual. Data extracted from the PK-Sim Database\>'Postpartum' population](../assets/images/part-5/BreastsVolume_for_Age_Postpartum.png){width="345"}
+
+## References
+
+The pospartum population as implemented in the built-in PK-Sim database and that serves as input for the current workflow, was first described by Dallmann et al. (2020).
+
+Source: Dallmann, André, Anneke Himstedt, Juri Solodenko, Ibrahim Ince, Georg Hempel, and Thomas Eissing. 2020. "Integration of Physiological Changes during the Postpartum Period into a PBPK Framework and Prediction of Amoxicillin Disposition before and Shortly after Delivery." *Journal of Pharmacokinetics and Pharmacodynamics* 47 (4): 341--59. <https://doi.org/10.1007/s10928-020-09706-z>.
