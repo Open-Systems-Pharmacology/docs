@@ -70,6 +70,8 @@
 * [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
 * [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
 * [Qualification‌](part-5/qualification.md)
+* [Extraction of physiological parameters from PKSim Db](part-5/db_extraction-physiological-parameters.md)
+
 
 ## Working with R‌
 
