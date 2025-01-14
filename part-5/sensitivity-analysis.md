@@ -68,7 +68,7 @@ To create a new Sensitivity Analysis, do one of the following
 
 The Sensitivity Analysis view is displayed and the tab **Parameters** is opened.
 
-For a hands on example, open the example project Theophylline.pksim5. You can open the folder with the example projects from the Start menu by selecting All Programs/Open Systems Pharmacology/PK-Sim/Examples.
+For a hands on example, open the example project Theophylline.pksim5. You can download the project from [https://github.com/Open-Systems-Pharmacology/Example_Theophylline](https://github.com/Open-Systems-Pharmacology/Example_Theophylline).
 
 In the Simulation Explorer, mark the simulation "_Kaumeier IV 208 mg fit_" and select <img src="../assets/icons/SensitivityAnalysis.svg" alt="" data-size="line"> **Start Sensitivity Analysis ...** from the context menu.
 
