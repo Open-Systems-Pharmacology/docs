@@ -1,20 +1,22 @@
-# Extraction of physiological parameters from a PKSim Db population
+# Extraction of physiological parameters from a PK-Sim population database
 
 ## Use case description
 
-In this use case, we describe how to **access** and **extract** the **physiological parameters** from the postpartum population in the **PKSim Database (Db)** and how to use that output to **create growth tables** in **Mobi to describe** time-varying physiological parameters.
+In this use case, we describe how to **access** and **extract** the **physiological parameters** from the postpartum population in the **PK-Sim Database (Db)** and how to use that output to **create growth tables** in **MoBi to describe** age-dependent (or time-varying) physiological parameters.
 
 ## Process
 
 ### Download Database and explore content
 
-The latest version of the PKSim Db can always be downloaded via this link: [PKSim Db](https://github.com/Open-Systems-Pharmacology/PK-Sim/raw/develop/src/Db/PKSimDB.sqlite).
+The latest version of the PK-Sim database can always be downloaded via this link: [PK-Sim database](https://github.com/Open-Systems-Pharmacology/PK-Sim/raw/develop/src/Db/PKSimDB.sqlite).
 
-For reproducibility of the use case described here below, the following version may be used: [PKsimDB_v11.sqlite](https://github.com/open-systems-pharmacology/pk-sim/blob/6dc119cfa8884fe14f5c7c98d54c47970bb1e219/src/db/pksimdb.SQLite)
+For reproducibility of the use case described here below, the following version may be used: [PKsimDB_v11.sqlite](https://github.com/Open-Systems-Pharmacology/Lactation-PBPK-model/blob/main/PKSimDB_v11.sqlite)
 
 For a graphical interface and data visualization, applications such as [Db Browser for SQLite](https://sqlitebrowser.org/) are available.
 
-![Prospective exploration of the PKSim Db with DB Browser for SQLite - Postpartum population](../assets/images/part-5/ExploreDb.png)
+![Prospective exploration of the PK-Sim database with DB Browser for SQLite - Postpartum population](../assets/images/part-5/ExploreDb.png)
+
+For detailed documentation, please visit: [PK-Sim database documentation](https://dev.open-systems-pharmacology.org/pk-sim-database/db).
 
 ### Access and extract population data to a spreadsheet
 
@@ -34,7 +36,7 @@ result <- dbGetQuery(conn, query)
 # Filtering population with 'Postpartum' and selecting 'ContainerName', 'ParameterName', 'Age', and 'Mean' columns
 
 result_filtered <- result %>% 
-  dplyr::select(Population, ContainerName, ParameterName, Age, Mean) 
+  dplyr::select(Population, ContainerName, ParameterName, Age, Mean, Dimension) 
 
 result_postpartum <- result %>% 
   dplyr::select(Population, ContainerName, ParameterName, Age, Mean) %>%
@@ -48,14 +50,14 @@ writeData(wb, sheet = "Postpartum",
           result_filtered %>%
             dplyr::filter(Population %in% "Postpartum"))
 
-saveWorkbook(wb, "data/param_distributions.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/param_distributions_postpartum.xlsx", overwrite = TRUE)
 ```
 
-### Extract time-varying parameters of interest programmatically
+### Extract age-dependent parameters of interest programmatically
 
-A parameter is classified as 'time-varying' within the database if its value changes corresponding to different entries in the 'Age' column.
+A parameter is classified as 'age-dependent' within the database if its value changes corresponding to different entries in the 'Age' column.
 
-In the context of this exemplary case study (focused in the postpartum population), a parameter is classified as 'time-varying' when the following condition is met:
+In the context of this exemplary case study (focused in the postpartum population), a parameter is classified as age-dependent when the following condition is met:
 
 -   There is more than one record of the parameter in the database for the attribute 'Age' in the interval [30,31]
 
@@ -66,7 +68,7 @@ library(dplyr, quietly = TRUE)
 library(openxlsx)
 
 # Load distributed parameters from extracted Db file
-file.path <- "data/param_distributions_postpartum.csv"
+file.path <- "data/param_distributions_postpartum.xlsx"
 db <- readWorkbook(file.path)
 df <- tibble::as_tibble(db)
 
@@ -98,9 +100,9 @@ saveWorkbook(wb, "data/Postpartum_distributed_parameters.xlsx", overwrite = TRUE
 
 The user interface of the database viewer tool (e.g. Db Browser for SQLite) may also be used to extract the parameters of interest (i.e. distributed parameters).
 
-### Import in Mobi as Table & create time-varying parameters
+### Import in MoBi as Table & create age-dependent parameters
 
-In Mobi:
+In MoBi:
 
 1.  Create a Postpartum_Age parameter increasing over simulation time (NB: the parameter 'Age' remains constant):
 
@@ -118,7 +120,7 @@ In Mobi:
 
         ![Fig1: Postpartum Age](../assets/images/part-5/Postpartum_age.png){width="300"}
 
-2.  Open organ compartment that will contain the time-varying parameter (e.g. Breasts)
+2.  Open organ compartment that will contain the age-dependent parameter (e.g. Breasts)
 
 3.  Add an intermediary Table parameter (E.g. Volume_breasts_TABLE)
 
@@ -134,11 +136,11 @@ In Mobi:
 
         -   Filter 'concatenated_path' \> "Breasts\|Volume"
 
-        -   Enter units (by default values are in the base unit of the Db, see file: [OSPSuite.Dimensions.xml](https://esqlabs.sharepoint.com/:u:/s/S-BASF-P23-195A/EZSeZvDmQFRLvKNCJRqyxyUBkv8jR2po28wDa-caVE1LMg?e=BagOhT)). Column 'Age' in years and column 'Mean' in litter (OSPS base unit for volumes)
+        -   Enter units (by default values are in the base unit of the Db, see file: [OSPSuite.Dimensions.xml](https://github.com/Open-Systems-Pharmacology/OSPSuite.Dimensions/blob/master/OSPSuite.Dimensions.xml)). Column 'Age' in years and column 'Mean' in litter (OSPS base unit for volumes)
 
 ![Fig 2: Uploading table as a Table Parameter from a worksheet](../assets/images/part-5/Table_Parameter_Breasts_Volume.png){width="345"}
 
-4.  Add a time-varying Volume parameter in the 'Breasts' compartment:
+4.  Add a age-dependent Volume parameter in the 'Breasts' compartment:
 
     -   Click 'Add parameter'
 
@@ -152,13 +154,15 @@ In Mobi:
 
     -   Path to X-Argument object should point to 'Organism\|Postpartum_age'
 
-        ![Fig 4: Time-varying Volume parameter](../assets/images/part-5/Time_varying_Volume_parameter.png){width="400"}
+        ![Fig 4: Age-dependent Volume parameter](../assets/images/part-5/Time_varying_Volume_parameter.png){width="400"}
 
-By ticking the box 'Plot parameter' for the parameters "Organism\|Postpartum_Age" and "Organism\|Breasts\|Volume", one can visualize the newly implemented time-varying parameters:\
-![Time-varying parameter in Human postpartum individual. Data extracted from the PK-Sim Database\>'Postpartum' population](../assets/images/part-5/BreastsVolume_for_Age_Postpartum.png){width="345"}
+By ticking the box 'Plot parameter' for the parameters "Organism\|Postpartum_Age" and "Organism\|Breasts\|Volume", one can visualize the newly implemented age-dependent parameters:\
+![Age-dependent parameter in Human postpartum individual. Data extracted from the PK-Sim Database\>'Postpartum' population](../assets/images/part-5/BreastsVolume_for_Age_Postpartum.png){width="345"}
 
 ## References
 
-The pospartum population as implemented in the built-in PK-Sim database and that serves as input for the current workflow, was first described by Dallmann et al. (2020).
+-   Detailed PK-Sim database documentation is available at: [PK-Sim database documentation](https://dev.open-systems-pharmacology.org/pk-sim-database/db)
 
-Source: Dallmann, André, Anneke Himstedt, Juri Solodenko, Ibrahim Ince, Georg Hempel, and Thomas Eissing. 2020. "Integration of Physiological Changes during the Postpartum Period into a PBPK Framework and Prediction of Amoxicillin Disposition before and Shortly after Delivery." *Journal of Pharmacokinetics and Pharmacodynamics* 47 (4): 341--59. <https://doi.org/10.1007/s10928-020-09706-z>.
+-   The pospartum population as implemented in the built-in PK-Sim database and that serves as input for the current workflow, was first described by Dallmann et al. (2020).
+
+    -   Source: Dallmann, André, Anneke Himstedt, Juri Solodenko, Ibrahim Ince, Georg Hempel, and Thomas Eissing. 2020. "Integration of Physiological Changes during the Postpartum Period into a PBPK Framework and Prediction of Amoxicillin Disposition before and Shortly after Delivery." *Journal of Pharmacokinetics and Pharmacodynamics* 47 (4): 341--59. <https://doi.org/10.1007/s10928-020-09706-z>.
