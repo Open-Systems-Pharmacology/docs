@@ -136,7 +136,7 @@ In MoBi:
 
         -   Filter 'concatenated_path' \> "Breasts\|Volume"
 
-        -   Enter units (by default values are in the base unit of the Db, see file: [OSPSuite.Dimensions.xml](https://github.com/Open-Systems-Pharmacology/OSPSuite.Dimensions/blob/master/OSPSuite.Dimensions.xml)). Column 'Age' in years and column 'Mean' in litter (OSPS base unit for volumes)
+        -   Enter units (by default values are in the base unit of the Db, see file: [OSPSuite.Dimensions.xml](https://github.com/Open-Systems-Pharmacology/OSPSuite.Dimensions/blob/master/OSPSuite.Dimensions.xml)). Column 'Age' in years and column 'Mean' in liter (OSPS base unit for volumes)
 
 ![Fig 2: Uploading table as a Table Parameter from a worksheet](../assets/images/part-5/Table_Parameter_Breasts_Volume.png){width="345"}
 
@@ -163,6 +163,6 @@ By ticking the box 'Plot parameter' for the parameters "Organism\|Postpartum_Age
 
 -   Detailed PK-Sim database documentation is available at: [PK-Sim database documentation](https://dev.open-systems-pharmacology.org/pk-sim-database/db)
 
--   The pospartum population as implemented in the built-in PK-Sim database and that serves as input for the current workflow, was first described by Dallmann et al. (2020).
+-   The postpartum population as implemented in the built-in PK-Sim database and that serves as input for the current workflow, was first described by Dallmann et al. (2020).
 
     -   Source: Dallmann, André, Anneke Himstedt, Juri Solodenko, Ibrahim Ince, Georg Hempel, and Thomas Eissing. 2020. "Integration of Physiological Changes during the Postpartum Period into a PBPK Framework and Prediction of Amoxicillin Disposition before and Shortly after Delivery." *Journal of Pharmacokinetics and Pharmacodynamics* 47 (4): 341--59. <https://doi.org/10.1007/s10928-020-09706-z>.
