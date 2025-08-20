@@ -12,7 +12,7 @@ Within the **General** Tab, you can specify the following user-specific options:
 -   **Maximum number of processors to use** for tasks that can be executed in parallel (population simulations, parameter identification, parallel execution of simulations).
 -   **Number of individuals per bins**:
 
-{% hint style="warning" %} Setting tolerances lower than default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may cause conversion errors in simulations following oral administration. {% endhint %}
+{% hint style="warning" %} Setting tolerances lower than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may cause conversion errors in simulations following oral administration. {% endhint %}
 
 ## Look and Feel
 
