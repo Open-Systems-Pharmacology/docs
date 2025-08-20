@@ -24,7 +24,7 @@ A technical description of the different software elements is presented starting
 
 ## Working with MoBi®
 
-MoBi® focusing on model customization and extension as well as on pharmacodynamics in "Working with MoBi®".
+MoBi® focusing on modular model customization and extension as well as on pharmacodynamics in "Working with MoBi®".
 
 [Go to: Working with MoBi®‌](part-4/first-steps.md)
 
