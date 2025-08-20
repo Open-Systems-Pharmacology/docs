@@ -44,14 +44,14 @@ In the first drop-down menu you can choose from the following species:
 
 If **Human** <img src="../assets/icons/Human.svg" alt="" data-size="line"> is selected, you can select one of the following populations from the next drop-down menu:
 
-* Asian (Tanaka, 1996) \[[74](../references.md#74)]
+* East Asian (Tanaka, 1996) \[[74](../references.md#74)]
 * Black American (NHANES, 1997) \[[82](../references.md#82)]
-* European (ICRP, 2002) \[[84](../references.md#84)], [\[113\]](../references.md#113)
+* European (ICRP, 2002) \[[84](../references.md#84)], \[[113](../references.md#113)]
 * Mexican American -White (NHANES, 1997) \[[82](../references.md#82)]
 * White American (NHANES, 1997) \[[82](../references.md#82)]
-* Japanese (2015) \[[67](../references.md#67)]
-* Preterm [\[111\]](../references.md#111)
-* Pregnant (Dallmann et al. 2017) [\[107 - 110\]](../references.md#107)
+* Japanese \[[67](../references.md#67)]
+* Preterm \[[111](../references.md#111)]
+* Pregnant (Dallmann et al. 2017) \[[107 - 110](../references.md#107)]
 
 In the following drop-down menu, the gender is specified.
 
