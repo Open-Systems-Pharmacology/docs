@@ -16,6 +16,7 @@
   - Formulations / Meal effects
 
   - PBPK/PD, QSP as well as pathway, network and disease modeling
+  - Modular model building approach, enabling collaboration, re-usability, and validation of developed modules
 
 ## Model building blocks
 
