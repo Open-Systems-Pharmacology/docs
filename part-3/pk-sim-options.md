@@ -2,9 +2,9 @@
 
 PK-Sim® can be customized using several options. To do this, click on the **Options** Button <img src="../assets/icons/Settings.svg" data-size="line"/> within the **Utilities** Ribbon Tab.
 
-Within the **General** Tab, you can specify the following user-specific options:
+## **General** Tab
 
-## Numerical Properties
+### Numerical Properties
 
 -   **Allows scientific notation**: You can specify if parameter values and results are displayed in scientific notation and if they are very small or large.
 -   **Decimal place**: You can specify the number of decimal places displayed for parameter values and results.
@@ -14,38 +14,43 @@ Within the **General** Tab, you can specify the following user-specific options:
 
 {% hint style="warning" %} Setting tolerances lower than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may cause conversion errors in simulations following oral administration. {% endhint %}
 
-## Look and Feel
+### Look and Feel
 
--   Active skin: By changing the skin in the Skins group next to the Options icon the graphical appearance of the program can be changed.
--   Number of recent file items shown: Changes the number of recent documents displayed within the File Tab. The program needs to be restarted for the changes to take effect.
--   Preferred view layout: Choose from either tabbed or accordion view in e.g. the Compound window.
--   Restore opened view when loading project: Open tabs (e.g. particular simulations, individuals or compounds) are saved upon saving and restored when re-opening the project.
+-   **Active skin**: The program's graphical appearance can be changed by changing the skin in the Skins group next to the Options icon.
+-   **Number of recent file items shown**: Changes the number of recent documents displayed within the File Tab. The program needs to be restarted for the changes to take effect.
+-   **Preferred view layout**: Choose from either tabbed or accordion view, e.g., the Compound window.
+-   **Restore opened view when loading project**: Open tabs (e.g., particular simulations, individuals, or compounds) are saved upon saving and restored when re-opening the project. Warning—this may significantly impact a project's loading time!
 -   **Show software update notification if available**: When enabled and connected to the internet, a check for new versions of PK-Sim® is done automatically.
 
-## Defaults
+### Defaults
 
--   Default species and Default population: Changes the default species and default population used for creation of a new individual.
--   Default parameter layout: Changes the default parameter layout used for parameters shown within the Anatomy & Physiology ta b of an individual and within the Parameters tab of a simulation.
--   Lipophilicity, Fraction unbound and Solubility: You can specify the defaults for the description used for the Experiment input box when a new compound is created.
--   Population analysis: After the first simulation run an analysis window opens automatically. The default type of this first analysis ('Time Profile', 'Box Whisker', ...) is set by this option.
+-   **Species** and **Population**: Changes the default species and default population used for the creation of a new individual or population.
+-   **Default parameter layout**: Changes the default parameter layout used for parameters shown within the Anatomy & Physiology tab of an individual and the Parameters tab of a simulation.
+-   **Lipophilicity**, **Fraction unbound,** and **Solubility**: You can specify the defaults for the description used for the Experiment input box when a new compound is created.
+-   **Population analysis**: After the first simulation run, an analysis window opens automatically. This option sets the default type of this first analysis ('Time Profile', 'Box Whisker', ...).
+-   **Chart y scale**: Default scaling (lin or log) of the y axis in new time-profile charts.
 
-## Icon Sizes
+### Icon Sizes
 
-You can change the size of the icons displayed within the **Tree view**, the **Tabs** and the **Context menu**
+You can change the size of the icons displayed within the **Tree view**, the **Tabs,** and the **Context menu**
 
-## Template Database Path
+### Template Database
 
-You can change the path to the template database or create a new template database by clicking on <img src="../assets/icons/AddAction.svg" data-size="line"/>
+You can change the path to the template database by clicking on "...", or create a new template database by clicking on <img src="../assets/icons/AddAction.svg" data-size="line"/>
 
-## Colors
+### Colors
 
--   Formula parameter: Changes the background color for parameters that are calculated by a formula.
--   Parameter changed: Changes the background color for formula calculated parameters that have been manually changed by the user.
--   Chart background and Chart diagram background: Changes the chart colors. For simulation charts, this is the default if no other color is specified in the Chart Editor of the Results Tab.
--   Disabled: Changes the background color of all boxes with non-editable content.
+-   **Formula parameter**: Changes the background color for parameters that are calculated by a formula.
+-   **Parameter changed**: Changes the background color for formula-calculated parameters that have been changed by the user.
+-   **Chart background** and **Chart diagram background**: Changes the chart colors. For simulation charts, this is the default if no other color is specified in the Chart Editor of the Results Tab.
+-   **Color group observed data from same folder when dropping to chart**: If enabled, when adding observed data sets to a chart via drag-and-drop from a folder (or multiple folders) within the "Observed Data" group, all data sets within one folder will get the same color.
 
-Within the **Application** Tab, you can specify the path to a species-specific **Expression Database** you would like to use. To do so, click on the three dots in the **Expression Database** column in the row of the species you require.
+## **Application** Tab
+
+-   **MoBi Executable Path**: Path to the location of the MoBi.exe file
+
+Specify the path to a species-specific **Expression Database** you would like to use by clicking on the three dots in the **Expression Database** column in the row of the species you require.
 
 ![Linking a species-specific expression database to an individual.](../assets/images/part-3/expression-database-options.png)
 
-The available expression databases can be downloaded from <http://setup.open-systems-pharmacology.org/>
+The available expression databases can be downloaded from the [gene expression databases repository](https://github.com/Open-Systems-Pharmacology/Gene-Expression-Databases/releases).
