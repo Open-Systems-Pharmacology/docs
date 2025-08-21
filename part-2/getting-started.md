@@ -58,6 +58,6 @@ In addition to the core components of the Open Systems Pharmacology Suite, inclu
 
 ## Help: Contact, Discussion Forum, Bug Reporting, ...
 
-Additional information on the software is available on [http://www.open-systems-pharmacology.org/>](http://www.open-systems-pharmacology.org/).
+Additional information on the software is available on [http://www.open-systems-pharmacology.org/](http://www.open-systems-pharmacology.org/).
 
 For support, bug reports, etc., please contact [http://forum.open-systems-pharmacology.org/](http://forum.open-systems-pharmacology.org/).
