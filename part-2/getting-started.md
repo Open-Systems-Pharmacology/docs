@@ -2,7 +2,7 @@
 
 ## Software and Hardware Requirements
 
-| OS | Windows 7®, Windows 8®, Windows 10®, Windows 11®, Windows Server 2008 R2®, Windows Server 2012 R2®, Windows Server 2016®, Windows Server 2019® |
+| OS | Windows 10®, Windows 11®, Windows Server 2016®, Windows Server 2019® |
 |-------------------|-----------------------------------------------------|
 | Processor | minimum 1 GHz (the faster, the better) |
 | Memory | 2 GB RAM, 4+ GB recommended |
@@ -12,7 +12,9 @@
 
 The information provided above refers to the core components of the Open Systems Pharmacology Suite, including PK-Sim® MoBi®. Both PK-Sim® and MoBi® can be installed as stand-alone software packages to reduce the disk space required.
 
-{% hint style="warning" %} The Open Systems Pharmacology Suite includes interfaces to MS Excel® and R. These are separate programs that are not available within the Open Systems Pharmacology Suite. You need to have these programs installed to use their interfaces! {% endhint %}
+{% hint style="warning" %}
+The Open Systems Pharmacology Suite includes interfaces to MS Excel® and R. These are separate programs that are not available within the Open Systems Pharmacology Suite. You need to have these programs installed to use their interfaces!
+{% endhint %}
 
 ### Trademark Information
 
@@ -22,13 +24,17 @@ Excel® is a registered trademark of Microsoft Inc., Redmond, USA; R is a produc
 
 ### Core Components
 
-{% hint style="warning" %} To correctly install the software, administrator rights are necessary. If you do not have these rights, your IT administrator should carry out the installation. {% endhint %}
+{% hint style="warning" %}
+To correctly install the software, administrator rights are necessary. If you do not have these rights, your IT administrator should carry out the installation.
+{% endhint %}
 
-{% hint style="info" %} The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed as stand-alone applications. However, to obtain the full modeling and simulation capabilities, we recommend that both programs are installed. {% endhint %}
+{% hint style="info" %}
+The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed as stand-alone applications. However, to obtain the full modeling and simulation capabilities, we recommend that both programs are installed.
+{% endhint %}
 
 To install the Open Systems Pharmacology Suite core components:
 
-1.  Download installation packages from <http://setup.open-systems-pharmacology.org/>
+1.  Download installation packages from [http://setup.open-systems-pharmacology.org/](http://setup.open-systems-pharmacology.org/).
 
 2.  Start the **OSPSuite-Full.X.Y.Z.exe**\* (where X.Y.Z is a program version, e.g. 12.0.397) from the menu Start -\> Run or from Windows Explorer.
 
@@ -52,6 +58,6 @@ In addition to the core components of the Open Systems Pharmacology Suite, inclu
 
 ## Help: Contact, Discussion Forum, Bug Reporting, ...
 
-Additional information on the software is available on <http://www.open-systems-pharmacology.org/>.
+Additional information on the software is available on [http://www.open-systems-pharmacology.org/](http://www.open-systems-pharmacology.org/).
 
-For support, bug reports, etc., please contact <http://forum.open-systems-pharmacology.org/>.
+For support, bug reports, etc., please contact [http://forum.open-systems-pharmacology.org/](http://forum.open-systems-pharmacology.org/).
