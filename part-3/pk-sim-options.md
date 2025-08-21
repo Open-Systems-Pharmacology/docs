@@ -10,9 +10,12 @@ PK-Sim® can be customized using several options. To do this, click on the **Opt
 -   **Decimal place**: You can specify the number of decimal places displayed for parameter values and results.
 -   **Absolute tolerance** and **Relative tolerance**: You can specify the absolute and relative tolerance to control the error of the ODE solver. Changes will only affect simulations that are created after changing values.
 -   **Maximum number of processors to use** for tasks that can be executed in parallel (population simulations, parameter identification, parallel execution of simulations).
+-   **Number of bins**: number of bins to display in histograms of populations/population simulations for parameter distribution.
 -   **Number of individuals per bins**:
 
-{% hint style="warning" %} Setting tolerances lower than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may cause conversion errors in simulations following oral administration. {% endhint %}
+{% hint style="warning" %}
+Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
+{% endhint %}
 
 ### Look and Feel
 
@@ -25,7 +28,7 @@ PK-Sim® can be customized using several options. To do this, click on the **Opt
 ### Defaults
 
 -   **Species** and **Population**: Changes the default species and default population used for the creation of a new individual or population.
--   **Default parameter layout**: Changes the default parameter layout used for parameters shown within the Anatomy & Physiology tab of an individual and the Parameters tab of a simulation.
+-   **Parameter layout**: Changes the default parameter layout used for parameters shown within the Anatomy & Physiology tab of an individual and the Parameters tab of a simulation.
 -   **Lipophilicity**, **Fraction unbound,** and **Solubility**: You can specify the defaults for the description used for the Experiment input box when a new compound is created.
 -   **Population analysis**: After the first simulation run, an analysis window opens automatically. This option sets the default type of this first analysis ('Time Profile', 'Box Whisker', ...).
 -   **Chart y scale**: Default scaling (lin or log) of the y axis in new time-profile charts.
@@ -36,7 +39,8 @@ You can change the size of the icons displayed within the **Tree view**, the **T
 
 ### Template Database
 
-You can change the path to the template database by clicking on "...", or create a new template database by clicking on <img src="../assets/icons/AddAction.svg" data-size="line"/>
+-   **Template database path:** The path to the template databas., You can create a new template database by clicking on <img src="../assets/icons/AddAction.svg" data-size="line"/>
+-   **Load metabolites when loading compound:** Choose whether or not to load the metabolites of a compound when loading a (parent) compound.
 
 ### Colors
 
