@@ -39,7 +39,7 @@ You can change the size of the icons displayed within the **Tree view**, the **T
 
 ### Template Database
 
--   **Template database path:** The path to the template databas., You can create a new template database by clicking on <img src="../assets/icons/AddAction.svg" data-size="line"/>
+-   **Template database path:** The path to the template database. You can create a new template database by clicking on <img src="../assets/icons/AddAction.svg" data-size="line"/>
 -   **Load metabolites when loading compound:** Choose whether or not to load the metabolites of a compound when loading a (parent) compound.
 
 ### Colors
