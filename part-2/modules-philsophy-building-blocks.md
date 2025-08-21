@@ -8,7 +8,7 @@ PK-Sim® is based on a whole-body physiologically-based modeling concept, while 
 
 ![Multiscale modeling and simulation (taken from \[18\])](../assets/images/part-2/Eissing-et-al-Frontiers-2011-Figure1.jpg)
 
-## PK-Sim® {#pk-sim}
+## PK-Sim®
 
 PK-Sim® is a comprehensive software tool for whole-body physiologically based pharmacokinetic (PBPK) modeling \[[92](../references.md#92)\]. It enables rapid access to all relevant anatomical and physiological parameters for humans and common laboratory animals (mouse, rat, minipig, dog, monkey, and rabbit) contained in the integrated database. Users can access different PBPK calculation methods for fast and efficient model building and parameterization. Relevant generic passive processes, such as distribution through blood flows as well as specific active processes, such as metabolization by a particular enzyme, are automatically taken into account by PK-Sim®. Like most PBPK modeling tools, PK-Sim® is designed for use by non-modeling experts and only allows for minor structural model modifications. Unlike most PBPK modeling tools, though, PK-Sim® offers different model structures to choose from, e.g., to account for important differences between small and large molecules (see [Model settings](../part-3/pk-sim-simulations.md#model-settings)). More importantly, PK-Sim® is accompanied by the expert modeling software tool MoBi®, allowing full access and transparency to all model details, including the option for extensive model modifications and extensions. This way, customized systems pharmacology models may be set up to deal with the challenges of modern drug research and development.
 
@@ -16,7 +16,7 @@ PK-Sim® applies the building blocks concept, separating information used for mo
 
 PK-Sim® will be described in detail in [Working with PK-Sim®](../part-3/pk-sim-quick-guide‌.md).
 
-## MoBi® {#mobi}
+## MoBi®
 
 MoBi® is a systems biology software tool for multiscale physiological modeling and simulation. Within the restrictions of ordinary differential equations, almost any kind of (biological) model can be imported or set up from scratch. Examples include biochemical reaction networks, compartmental disease progression models, or PBPK models. However, de novo development of a PBPK model, for example, is very cumbersome, such that the preferred procedure is to import them from PK-Sim®. Importantly, MoBi® also allows for the combination of the described examples and thereby is a very powerful tool for modeling and simulation of multi-scale physiological systems covering molecular details and whole-body architecture.
 
@@ -29,13 +29,13 @@ All building blocks are further organized into **modules**. The modules are eith
 
 MoBi® will be described in detail in [Working with MoBi®](../part-4/first-steps.md).
 
-## Software Ecosystem {#software-ecosystem}
+## Software Ecosystem
 
 The software ecosystem is outlined in the figure below.
 
 Apart from the two central, graphical user interface (GUI)- based software tools PK-Sim® and MoBi®, the software platform is supported by an ecosystem of various R packages, including a qualification framework, validation and automation tools, and specialized workflows for modeling and simulation.
 
-![The software ecosystem](../assets/images/part-2/OSP-software-landscape.png)
+![The software ecosystem](https://raw.githubusercontent.com/Open-Systems-Pharmacology/Suite/refs/heads/develop/OSP_software_landscape.svg)
 
 ### Qualification framework
 
