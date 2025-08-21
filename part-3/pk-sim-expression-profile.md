@@ -8,7 +8,7 @@ Small molecules frequently interact with proteins. Protein/compound interaction 
 
 Active, protein-mediated processes involved in drug ADME generally occur simultaneously in various organs. However, a quantitative description of active processes is difficult due to the limited experimental accessibility of tissue-specific protein activity *in vivo*. PK-Sim® uses gene expression data as a surrogate for protein abundance to estimate *in vivo* activity of such enzymes or transporters that influence drug pharmacokinetics. This concept implies that protein availability and catalytic rate constants, which ultimately underlie enzyme and transporter activity, are decoupled. For more details, please see \[[46](../references.md#46)\].
 
-In brief, the concept of using gene expression data as a proxy for protein abundance is based on the definition of the maximum velocity *Vmax* \[µmol/l/min\]. According to the Michaelis-Menten equation, *Vmax* depends on both the total enzyme or transporter concentration E0 \[µmol/l9 and the catalytic rate constant *kcat* \[1/min\]:
+In brief, the concept of using gene expression data as a proxy for protein abundance is based on the definition of the maximum velocity *Vmax* \[µmol/l/min\]. According to the Michaelis-Menten equation, *Vmax* depends on both the total enzyme or transporter concentration E0 \[µmol/l\] and the catalytic rate constant *kcat* \[1/min\]:
 
 ![Equation 1](../assets/images/part-3/equation-14-1-vmax.png)
 
@@ -22,13 +22,15 @@ Following **Equation 2**, the effective rate of a protein-mediated process, be i
 
 ![Protein expression profile overview](../assets/images/part-3/ProteinExpressionProfileOverview.png)
 
-### Reference concentration {#reference-concentration}
+### Reference concentration
 
 The **reference concentration** can be measured *in vitro*, allowing direct *in vitro - in vivo* extrapolation (IVIVE). The protein concentration in the organ with the **relative expression = 1** will equal that measured concentration. The concentrations in all other organs will be set relative to that value. If no *in vitro* protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g., metabolism of a compound) through the relative expressions.
 
 For example, the enzyme **CYP3A4** is mainly expressed in the liver of human adults, some in the gastrointestinal tract, and minor amounts in almost all other tissues. The concentration of CYP3A4 in the liver is 108 pmol/mg microsomal protein \[[63](../references.md#63)\]. The concentration of microsomal protein in the liver is 40 mg per g liver. Assuming a specific tissue density of 1 g/mL, the concentration of CYP3A4 in whole liver is 4.32 µmol/L. This number can be used as a reference concentration with a relative expression of 1 in the liver.
 
 The following table shows reference concentrations from a selection of CYP enzymes. The values were derived from measurements of human microsomal samples, see \[[63](../references.md#63)\].
+
+Table: Reference concentration of CYP enzymes
 
 | Enzyme | pmol/mg human liver microsomes | µmol CYP/L liver tissue (Reference concentration) |
 |------------------------|------------------------|------------------------|
@@ -44,7 +46,7 @@ The following table shows reference concentrations from a selection of CYP enzym
 | CYP3A4 | 108 | 4.32 |
 | CYP3A5 | 1 | 0.04 |
 
-: Reference concentration of CYP enzymes
+
 
 Special attention has to be paid when using ontogeny information together with the reference concentration. The reference concentration is subject to an age-dependent ontogeny, and the underlying implementation assumes that the reference concentration refers to an ontogeny factor of 1. For example, if it is known that for a 0.5-year-old individual, the ontogeny factor of a particular enzyme is 0.1, and the concentration of the enzyme in individuals of that age is 0.13 µmol/ L, the reference concentration (of an adult) is 1.3 µmol/L (that is 0.13/0.1).
 
@@ -72,7 +74,7 @@ The *relative expression* defines the concentration of the protein in the whole 
 
 with ***RC*** being the reference concentration and ![RelExp_Org](../assets/images/part-3/RelExp-Org.png) the relative expression in this organ. The following sections give an overview over the possible localizations and the equations used to calculate the effective concentrations in the different compartments for enzymes and transport proteins.
 
-### Localizations and initial concentrations of enzymes {#localizations-and-initial-concentrations-of-enzymes}
+### Localizations and initial concentrations of enzymes
 
 ![Localization Enzymes](../assets/images/part-3/Localization-Enzymes.png)
 
@@ -94,8 +96,8 @@ By default, an added enzyme is localized only in the intracellular space of the 
 
     -   “*Fraction expressed on tissue-side membrane of vascular endothelium*”: the enzyme is located in the membrane of endothelial cells facing the interstitial space and acts on educts in the interstitial space of the organ. The fraction of the relative expression is added to the expression in interstitial space.
 
-{% hint style="tip" %}\
-The relative expressions (and the fractions expressed at different sites) of the enzyme in the vascular system are equal for all organs.\
+{% hint style="tip" %}
+The relative expressions (and the fractions expressed at different sites) of the enzyme in the vascular system are equal for all organs.
 {% endhint %}
 
 -   **Tissue**: The expression values for the organ tissue (excluding the vascular system) can be defined per organ and refer to the amount of the protein in whole organ (including plasma and blood cells). The “*Fraction expressed intracellular*” defines the concentration of the enzyme located intracellularly as fraction of total amount and acts on educts located intracellularly. The “*Fraction expressed interstitial*” defines the amount of the enzyme that is available in the interstitial space. Usually this refers to the enzymes located in the cellular membrane facing the interstitial space. NOTE: As per construction, it’s always `Fraction expressed interstitial = 1 - Fraction expressed intracellular`
@@ -156,7 +158,7 @@ Do only overwrite initial concentration by hand if absolutely required.
     -   *f_exp_vasend_endosomes*: Fraction expressed in endosomes
     -   *f_endo*: Fraction endosomal (of total organ volume)
 
-### Localizations, directions, and initial concentrations of transport proteins {#localizations-directions-and-initial-concentrations-of-transport-proteins}
+### Localizations, directions, and initial concentrations of transport proteins
 
 ![Localization Transporter](../assets/images/part-3/Localization-Transporter.png)
 
@@ -268,13 +270,15 @@ The following dialog will open in which the properties of the expression profile
 
 ![Create Expression Profile (for a metabolizing enzyme)](../assets/images/part-3/CreateExpressionProfile.png)
 
--   **Species**: Species for which the expression profile will be defined. [Note]{.underline}: The profile can only be added to an individual with the same species! You need to create separate expression profiles for each species where the protein should be used.
+-   **Species**: Species for which the expression profile will be defined. <ins>Note</ins>: The profile can only be added to an individual with the same species! You need to create separate expression profiles for each species where the protein should be used.
 
 -   **Metabolizing Enzyme**: Name of the enzyme. You can select from a predefined list of common proteins or enter a name
 
 -   **Phenotype**: A free text allowing you to specify the expression profile. For example, you might want to create different profiles for the CYP3A4 enzyme in human for poor vs extensive metabolizer. In this case, **poor** and **extensive** could be used. Alternatively, you might want to create a profile for a **healthy** vs **sick** individual etc...
 
-{% hint style="info" %} The combination {Species, Protein, Phenotype} needs to be unique in the project. It will define the name of the expression profile building block {% endhint %}
+{% hint style="info" %}
+The combination {Species, Protein, Phenotype} needs to be unique in the project. It will define the name of the expression profile building block
+{% endhint %}
 
 ## Editing an Expression Profile in PK-Sim®‌
 
@@ -288,7 +292,9 @@ We will explain settings in detail in [Settings in the protein expression tab](#
 
 ### Editing protein expression by querying the expression database‌
 
-{% hint style="info" %} To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md)). {% endhint %}
+{% hint style="info" %}
+To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md)).
+{% endhint %}
 
 Click on **Database Query**. A database query wizard will open, using the name of the protein as a default search criteria. This is discussed in more detail in “[Advanced Analysis](#advanced-analysis)”. Here we walk you through the simplest possible process.
 
@@ -300,7 +306,9 @@ The first panel of the database search wizard allows you to enter a search term 
 
 This term can be anything from gene name, gene symbol, or parts of the description.
 
-{% hint style="info" %} The term is automatically enclosed by wildcards. You can turn off this default behavior by enclosing the term with “quotes”. As wildcards you can use a percent sign (%) or a star (\*) for multiple characters and a question mark (?) or underscore (\_) for a single character. {% endhint %}
+{% hint style="info" %}
+The term is automatically enclosed by wildcards. You can turn off this default behavior by enclosing the term with “quotes”. As wildcards you can use a percent sign (%) or a star (\*) for multiple characters and a question mark (?) or underscore (\_) for a single character.
+{% endhint %}
 
 Once you hit enter, you will see a list of database entries that match your search. Several details are displayed like:
 
@@ -316,15 +324,21 @@ Once you hit enter, you will see a list of database entries that match your sear
 
 Select the appropriate entry in the list of search results (or refine your search).
 
-{% hint style="tip" %} The (entrez) gene ID is also a hyper link to the NCBI gene page where you can find additional information about the gene. {% endhint %}
+{% hint style="tip" %}
+The (entrez) gene ID is also a hyper link to the NCBI gene page where you can find additional information about the gene.
+{% endhint %}
 
-{% hint style="info" %} A hit row is highlighted in gray if the gene is known in the database but there are no expression data available. In this case the other tabs are disabled. {% endhint %}
+{% hint style="info" %}
+A hit row is highlighted in gray if the gene is known in the database but there are no expression data available. In this case the other tabs are disabled.
+{% endhint %}
 
 ### Reviewing measured gene expression‌
 
 In the upper panel you can find a table of gene expression values. The table is organized with tissues in rows, and data sources in columns.
 
-{% hint style="tip" %} You can select one or several cells with the mouse (press left mouse key down), copy the content with **Ctrl+C**, and paste the values into another application, e.g. Microsoft Excel,® with **Ctrl+V**. {% endhint %}
+{% hint style="tip" %}
+You can select one or several cells with the mouse (press left mouse key down), copy the content with **Ctrl+C**, and paste the values into another application, e.g. Microsoft Excel,® with **Ctrl+V**.
+{% endhint %}
 
 The lower panel gives a graphical representation of the gene expression values. In the table (upper panel), the data can be filtered by several criteria. (REF: How to use the database query wizard).
 
@@ -336,17 +350,25 @@ In the data transfer overview tab the data to be transferred are compiled for re
 
 ![Expression Data Transfer](../assets/images/part-3/ExpressionDataTransfer.PNG)
 
-{% hint style="tip" %} The Array Database is best in terms of the number of genes covered (essentially the complete genome), RT-PCR provides the most accurate measurements, and EST data in some cases covers unusual types of tissue. Use the data sources that has the most appropriate coverage of tissues for your purpose. Array data is usually a good choice. {% endhint %}
+{% hint style="tip" %}
+The Array Database is best in terms of the number of genes covered (essentially the complete genome), RT-PCR provides the most accurate measurements, and EST data in some cases covers unusual types of tissue. Use the data sources that has the most appropriate coverage of tissues for your purpose. Array data is usually a good choice.
+{% endhint %}
 
-{% hint style="tip" %} When using several proteins different data sources for different proteins may safely be used. {% endhint %}
+{% hint style="tip" %}
+When using several proteins different data sources for different proteins may safely be used.
+{% endhint %}
 
 ![Expression Input Form With Transferred Data](../assets/images/part-3/ExpressionInputFormAfterTransferDone.png)
 
-{% hint style="tip" %} The complete data set is stored within the PK-Sim® project. If you re-enter the query by selecting the **Edit...** menu item from the context menu of a defined protein, all data will be taken from the internally saved data set. To force access to the database you need to re-query the protein in the protein selection form. {% endhint %}
+{% hint style="tip" %}
+The complete data set is stored within the PK-Sim® project. If you re-enter the query by selecting the **Edit...** menu item from the context menu of a defined protein, all data will be taken from the internally saved data set. To force access to the database you need to re-query the protein in the protein selection form.
+{% endhint %}
 
-{% hint style="tip" %} You can rename a defined expression profile within your PK-Sim® project by selecting the **Rename...** menu item from the context menu of a defined expression profile. This name has no impact on the query and is only used to identify the protein within the PK-Sim® project. {% endhint %}
+{% hint style="tip" %}
+You can rename a defined expression profile within your PK-Sim® project by selecting the **Rename...** menu item from the context menu of a defined expression profile. This name has no impact on the query and is only used to identify the protein within the PK-Sim® project.
+{% endhint %}
 
-## Settings in the protein expression tab‌ {#settings-in-the-protein-expression-tab}
+## Settings in the protein expression tab‌
 
 In the upper section, the following entries can be adjusted:
 
@@ -424,9 +446,13 @@ In the lower section, values of relative expression can be edited for individual
 
         -   Transporter direction can be set **for each organ independently**. In order to change the direction in all organs simultaneously, change the selected value in the "Default Transporter Direction" selection box.
 
-        {% hint style="warning" %} The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created! {% endhint %}
+        {% hint style="warning" %}
+        The value of the "Default Transporter Direction" is only used to reset all organ transporter directions to the given type and is not used in the model. E.g. if the user sets the default transporter direction to **Efflux** in all organs and then changes it to **Influx** in one organ: in this particular organ the Influx transporter will be created!
+        {% endhint %}
 
-        {% hint style="warning" %} The transporter direction **Pgp-like** is, starting wit version 11 of PK-Sim, marked as **\[DEPRECATED\]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software. {% endhint %}
+        {% hint style="warning" %}
+        The transporter direction **Pgp-like** is, starting wit version 11 of PK-Sim, marked as **\[DEPRECATED\]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software.
+        {% endhint %}
 
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)
 
@@ -434,11 +460,13 @@ In the lower section, values of relative expression can be edited for individual
 
     -   Initial concentration in every compartment (which is calculated based on the reference concentration, relative expression values and localization settings as described above) is hidden as per default. To show and **to edit** it (if required), the *Show initial concentration* checkbox must be activated:
 
-    {% hint style="warning" %} Most initial concentration values can only be computed in the context of an individual the expression profile is linked to. If you enter a specific value, it will be used in all individuals that use this expression profile and will effectively replace the formula described previously. {% endhint %}
+    {% hint style="warning" %}
+    Most initial concentration values can only be computed in the context of an individual the expression profile is linked to. If you enter a specific value, it will be used in all individuals that use this expression profile and will effectively replace the formula described previously.
+    {% endhint %}
 
 ![Show/Edit (effective) initial concentration](../assets/images/part-3/ShowInitialConcentration.png)
 
-## Advanced Analysis‌ {#advanced-analysis}
+## Advanced Analysis
 
 In this section the more advanced features of the expression database integration are explained.
 
@@ -448,11 +476,17 @@ In the upper section of the “Data Analysis tab page” the expression data is 
 
 ![Expression Data Analysis Pivot Table](../assets/images/part-3/ExpressionDataAnalysisPivotTable.png)
 
-{% hint style="tip" %} You can change the X-Axis field used by the corresponding chart by double clicking on a row header. This feature is only available for fields with no empty values. {% endhint %}
+{% hint style="tip" %}
+You can change the X-Axis field used by the corresponding chart by double clicking on a row header. This feature is only available for fields with no empty values.
+{% endhint %}
 
-{% hint style="tip" %} You can change the series building field used by the corresponding chart by double clicking on a column header. This feature is only available for fields with no empty values. {% endhint %}
+{% hint style="tip" %}
+You can change the series building field used by the corresponding chart by double clicking on a column header. This feature is only available for fields with no empty values.
+{% endhint %}
 
-{% hint style="tip" %} You can reset all fields back to their default position by double clicking on a filter field header. The fields used in the chart are also reset by that action. {% endhint %}
+{% hint style="tip" %}
+You can reset all fields back to their default position by double clicking on a filter field header. The fields used in the chart are also reset by that action.
+{% endhint %}
 
 ## Filtering Data‌
 
@@ -462,7 +496,9 @@ Each field can be used for filtering. To open the filter dialog click on the fil
 
 By ticking the check boxes you can toggle the filtering of individual values.
 
-{% hint style="tip" %} The buttons in the upper area have the following meaning: \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOnlyVisibleValuesSymbol.png) button can be used to limit the list of values to only those that are currently visible. If you would have added a filter on another field some values might are unreachable. Those values would be hidden. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOptionModeSymbol.png) button can be used to change the check box into an option box which means that you can only select one filter value at a time and that the previously selected value gets automatically deselected by selecting a new value. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterInvertSymbol.png) button can be used to invert the selected filter values which means that every selected value gets deselected and vice versa.. {% endhint %}
+{% hint style="tip" %}
+The buttons in the upper area have the following meaning: \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOnlyVisibleValuesSymbol.png) button can be used to limit the list of values to only those that are currently visible. If you would have added a filter on another field some values might are unreachable. Those values would be hidden. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOptionModeSymbol.png) button can be used to change the check box into an option box which means that you can only select one filter value at a time and that the previously selected value gets automatically deselected by selecting a new value. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterInvertSymbol.png) button can be used to invert the selected filter values which means that every selected value gets deselected and vice versa..
+{% endhint %}
 
 The respective active filter is shown right under the table.
 
@@ -488,7 +524,9 @@ Now the condition has changed and only data from adults will be used
 
 ![Prefilter Dialog With Age Condition Added](../assets/images/part-3/ExpressionDataAnalysisPrefilterAgeCondition.PNG)
 
-{% hint style="tip" %} For filtering age ranges of populations you might find it more convenient to use the \[Age(Minimum)\] and \[Age(Maximum)\] columns. {% endhint %}
+{% hint style="tip" %}
+For filtering age ranges of populations you might find it more convenient to use the \[Age(Minimum)\] and \[Age(Maximum)\] columns.
+{% endhint %}
 
 ### Edit Mapping‌
 
