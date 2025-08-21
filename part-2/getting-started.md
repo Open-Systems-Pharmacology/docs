@@ -24,9 +24,13 @@ Excel® is a registered trademark of Microsoft Inc., Redmond, USA; R is a produc
 
 ### Core Components
 
-{% hint style="warning" %} To correctly install the software, administrator rights are necessary. If you do not have these rights, your IT administrator should carry out the installation. {% endhint %}
+{% hint style="warning" %}
+To correctly install the software, administrator rights are necessary. If you do not have these rights, your IT administrator should carry out the installation.
+{% endhint %}
 
-{% hint style="info" %} The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed as stand-alone applications. However, to obtain the full modeling and simulation capabilities, we recommend that both programs are installed. {% endhint %}
+{% hint style="info" %}
+The modular structure of the Open Systems Pharmacology Suite is explained in [Modules, Philosophy, and Building Blocks](modules-philsophy-building-blocks.md). Both PK-Sim® and MoBi® can be installed as stand-alone applications. However, to obtain the full modeling and simulation capabilities, we recommend that both programs are installed.
+{% endhint %}
 
 To install the Open Systems Pharmacology Suite core components:
 

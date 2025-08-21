@@ -57,7 +57,9 @@ The OSP software suite provides a set of packages for the R computing environmen
 -   [ospsuite.reportingengine](https://github.com/Open-Systems-Pharmacology/OSPSuite.ReportingEngine) for automated generating of model reports.
 -   [ospsuite.parameteridentification](https://github.com/Open-Systems-Pharmacology/OSPSuite.ParameterIdentification) provides the functionality of performing parameter identification (i.e., fitting the model to observed data) with simulations. The package is currently under development and everyone is encouraged to contribute.
 
-{% hint style="info" %} OSP Qualification Framework and R packages are not included into the main OSP Suite setup and must be installed separately. Installation instructions are provided in the documentation of the tools or on the GitHub download site. {% endhint %}
+{% hint style="info" %}
+OSP Qualification Framework and R packages are not included into the main OSP Suite setup and must be installed separately. Installation instructions are provided in the documentation of the tools or on the GitHub download site.
+{% endhint %}
 
 ### OSP Model exchange format
 
