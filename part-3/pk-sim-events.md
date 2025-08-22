@@ -11,7 +11,7 @@ Please note that the **Event** Building Block does not represent an essential bu
 To create a new event, do one of the following:
 
 * Click **Event** <img src="../assets/icons/Event.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling** Tab, or
-* Right mouse click on **Events** <img src="../assets/icons/EventFolder.svg" data-size="line">in the **Building Blocks Explorer** and select **Add Event...**, or
+* Right mouse click on **Events** <img src="../assets/icons/EventFolder.svg" data-size="line"> in the **Building Blocks Explorer** and select **Add Event...**, or
 
 * Use the short cut **Ctrl+Alt+E**
 
