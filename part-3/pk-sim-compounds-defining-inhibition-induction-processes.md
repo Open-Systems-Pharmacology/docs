@@ -196,7 +196,6 @@ If the reaction of the enzyme Ex and the substrate Sj follows a Michaelis-Menten
 
 ## Multiple Inhibitors : Equations Used by PK-Sim®‌
 
-
 The enzyme turnover for Enzyme X in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND) is given by:
 
 ![Enzyme Ex turnover (dEx/dt) at steady state in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND).](../assets/images/part-3/eq-16-10.png)
