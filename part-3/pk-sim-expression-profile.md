@@ -497,7 +497,10 @@ Each field can be used for filtering. To open the filter dialog click on the fil
 By ticking the check boxes you can toggle the filtering of individual values.
 
 {% hint style="tip" %}
-The buttons in the upper area have the following meaning: \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOnlyVisibleValuesSymbol.png) button can be used to limit the list of values to only those that are currently visible. If you would have added a filter on another field some values might are unreachable. Those values would be hidden. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOptionModeSymbol.png) button can be used to change the check box into an option box which means that you can only select one filter value at a time and that the previously selected value gets automatically deselected by selecting a new value. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterInvertSymbol.png) button can be used to invert the selected filter values which means that every selected value gets deselected and vice versa..
+The buttons in the upper area have the following meaning:
+- The ![Image](../assets/images/part-3/ExpressionFieldFilterOnlyVisibleValuesSymbol.png) button can be used to limit the list of values to only those that are currently visible. If you would have added a filter on another field some values might are unreachable. Those values would be hidden.
+- The ![Image](../assets/images/part-3/ExpressionFieldFilterOptionModeSymbol.png) button can be used to change the check box into an option box which means that you can only select one filter value at a time and that the previously selected value gets automatically deselected by selecting a new value.
+- The ![Image](../assets/images/part-3/ExpressionFieldFilterInvertSymbol.png) button can be used to invert the selected filter values which means that every selected value gets deselected and vice versa..
 {% endhint %}
 
 The respective active filter is shown right under the table.
