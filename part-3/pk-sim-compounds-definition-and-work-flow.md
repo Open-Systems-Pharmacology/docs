@@ -376,7 +376,7 @@ The following parameters cane be specified:
 
 • The maximum size of particles that dissolves immediately
 
-• Enable supersaturation or not
+• Enable supersaturation or not. **Supersaturation** is the increase in the concentration of a solution beyond its saturation point. If activated, the effective concentration of the compound in the intestinal lumen can exceed its defined intestinal solubility. The default value of this option is 'disabled', meaning that supersaturation is inactivated.
 
 Further parameters such as the mean particle size and the particle size distribution, the number of bins, and the diffusion layer thickness are considered to be related to the formulation and thus can be defined in the Formulation Building Block (see [Formulations](pk-sim-formulations.md)).
 
