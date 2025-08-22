@@ -27,7 +27,7 @@ The administration protocol is initialized by providing it a **Name** in the res
 
 ### Simple Protocol‌
 
-To create a **Simple Protocol**, follow the the instructions in the table below.
+To create a **Simple Protocol**, follow the instructions in the table below.
 
 Depending on the choice of administration protocol the required input parameters change.
 
