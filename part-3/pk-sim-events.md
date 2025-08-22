@@ -1,6 +1,6 @@
 # Events
 
-In the building block **Event** you can define special events that are to occur during simulation time. These are, for example, the ingestion of a meal and the associated physiological changes or the discrete emptying of the gallbladder independent of a meal event. It is the idea of this building block that special physical conditions such as sports or nightly sleep can be defined in the **Event** Building Block, and thus, considered in the simulation.
+In the building block **Event** you can define special events that are to occur during simulation time. These are, for example, the ingestion of a meal and the associated physiological changes, or the discrete emptying of the gallbladder independent of a meal event. The idea of this building block is that special physical conditions such as sports or nightly sleep can be defined in the **Event** Building Block, and thus, considered in the simulation.
 
 {% hint style="info" %}
 Please note that the **Event** Building Block does not represent an essential building block for the simulation.
