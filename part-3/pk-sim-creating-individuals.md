@@ -1,17 +1,15 @@
 # Creating Individuals
 
-In the building block **Individual** the properties of individuals are defined. In the database underlying PK-Sim®, anatomical and physiological information on various animal species, as well as humans of different populations, sexes, and ages, is provided. The algorithm for creating virtual individuals differs for animals and humans:
+In the building block **Individual** the properties of individuals are defined. In the database underlying PK-Sim®, anatomical and physiological information on various animal species, as well as humans of different populations, genders, and ages, is provided. The algorithm for creating virtual individuals differs for animals and humans:
 
 -   In the case of **animal species**, no age-dependent distribution information for the anatomical and physiological parameters is included in the database so far. The generation of an animal with a predefined body weight is thus done by linear scaling of an average animal of the given species. Consequently, all organs always contribute to the same relative extent to the total body weight, and differences, e.g., related to growth or to different races of the respective animal species are not taken into account.
--   For **humans**, the population parameters database that comes with PK-Sim® includes information on the dependence of anatomical and physiological parameters relevant for PK-Sim® such as organ weights, blood flow rates, or tissue composition on age, sex, body weight, body mass index, which have been collected in a comprehensive literature search. Thus, when creating an individual of a given **Age**, **Weight**, and **Height**, the parameters will be adjusted based on the information included in the underlying database. There are three classes of parameters that are be adjusted:
+-   For **humans**, the population parameters database that comes with PK-Sim® includes information on the dependence of anatomical and physiological parameters relevant for PK-Sim® such as organ weights, blood flow rates, or tissue composition on age, gender, body weight, body mass index, which have been collected in a comprehensive literature search. Thus, when creating an individual of a given **Age**, **Weight**, and **Height**, the parameters will be adjusted based on the information included in the underlying database. There are three classes of parameters that are be adjusted:
     -   Organ volumes
     -   Further parameters for which distribution data are available in the database, e.g. the hematocrit value.
     -   The volume fractions, which are scaled using a global scale factor taken from the database
 
 {% hint style="info" %}
-
 Please note that the volume of fat tissue is not optimized by the algorithm as this value is used to match the target body weight.
-
 {% endhint %}
 
 ## Definition of new Individual in PK-Sim®‌
@@ -38,8 +36,8 @@ In the first drop-down menu you can choose from the following species:
 -   Rat <img src="../assets/icons/Rat.svg" data-size="line"/>
 -   Mouse <img src="../assets/icons/Mouse.svg" data-size="line"/>
 -   Rabbit <img src="../assets/icons/Rabbit.svg" data-size="line"/>
--   Cat (experimental)<img src="../assets/icons/Cat.svg" data-size="line"/>
--   Cattle (experimental)<img src="../assets/icons/Cattle.svg" data-size="line"/>
+-   Cat <img src="../assets/icons/Cat.svg" data-size="line"/>
+-   Cattle <img src="../assets/icons/Cattle.svg" data-size="line"/>
 
 ### Human
 
@@ -54,7 +52,7 @@ If **Human** <img src="../assets/icons/Human.svg" data-size="line"/> is selected
 -   Preterm [[111](../references.md#111)]
 -   Pregnant (Dallmann et al. 2017) [[107 - 110](../references.md#107)]
 
-In the following drop-down menu, the sex is specified.
+In the following drop-down menu, the gender is specified.
 
 Further below, the **Individual Parameters** can be defined. In the case of the human Asian, Black American, European, Mexican American, and White American populations, the individual is characterized by the following parameters:
 
@@ -69,15 +67,11 @@ If as a special human population **Preterm** is selected, an additional age scal
 ![Postnatal growth curves for preterm infants pooled into different weight classes up to two years (black solid lines) compared to term born infants matched to the growth charts of the “Centers for Disease Control and Prevention” (CDC, shaded area).](../assets/images/part-3/PretermModel-Growth-Weight.png)
 
 {% hint style="warning" %}
-
 Oral administration to preterm neonates is, so far, not possible in PK- Sim®. The parameters relevant to oral administration are all set to "0" so that the fraction of dose absorbed and, in addition, the distribution of drugs into the mucosa irrespective of the administration route are disabled.
-
 {% endhint %}
 
 {% hint style="info" %}
-
 Please note that gender-specific information for all parameters except body weight and height (biometrics) was not available for preterms.Therefore, it is an assumption that for a given body weight the organ weights and blood flow rates are equal for males and females.
-
 {% endhint %}
 
 #### Disease State
@@ -101,17 +95,13 @@ For more information on the implementation, please refer to [[122](../references
 If one of the animal species, i.e. **Monkey, Beagle, Dog, Minipig, Rat** or **Mouse** is selected, the menu items are slightly different.
 
 {% hint style="info" %}
-
-Please note that PK-Sim® does currently not distinguish between male and female animals. Animal models represent an average adult animal of the species or breed
-
+Please note that PK-Sim® does currently not distinguish between male and female animals. Animal models represent an average adult animal of the species or breed.
 {% endhint %}
 
 If desired, the body weight of an animal can be changed under **Individual Parameters**. By changing the body weight of the animal, PK-Sim® automatically scales the weight of the different organs ( see [**Anatomy & Physiology**](pk-sim-creating-individuals.md#anatomy--physiology) tab) by keeping their relative contribution to the total body weight constant. Likewise, the organ blood flow rate will be re-calculated by keeping the organ specific blood flow rate, i.e. the blood flow rate per kg of tissue weight.
 
 {% hint style="info" %}
-
 Significant breed-specific differences exist for some animal species. For example, a Beagle dog obviously has a different physique than a Labrador and the body weight of an adult Yucatan minipig doubles that of a Göttinger minipig. See below for tips to determine how each species is defined in PK-Sim®.
-
 {% endhint %}
 
 -   For monkeys, the default values represent an average monkey with a body weight of 5.6 kg. The monkey-specific physiological parameters were derived for macaques such as rhesus and cynomolgus monkeys [[98](../references.md#98)].
@@ -128,7 +118,7 @@ Literature for capillary surface areas for the different organs and species is r
 
 1.  **Organ vascularization (default method)**. The capillary surface area (SA) is estimated by ![Image](../assets/images/part-3/sa-k.png) , with the constant of proportionality k, the fraction of vascular space of an organ ![Image](../assets/images/part-3/fvas-organ.png), and the organ volume ![Image](../assets/images/part-3/vorgan.png). The idea behind this heuristics is the following: with the assumption that the morphology of the vascular tree is similar in each organ, the specific surface area per organ volume can be estimated by the capillary density of an organ, which in turn can be estimated by the fraction of vascular space of an organ.
 2.  **Blood flow.** The capillary surface area is estimated by ![Image](../assets/images/part-3/sa-k-organ.png)\
-    , with the constant of proportionality k, the organ blood flow Qorgan, the shape factor beta (default: beta=1). The permeability-surface area product ![Image](../assets/images/part-3/psa.png) is related to the extraction E by ![Image](../assets/images/part-3/psa-e-organ.png) [[8](../references.md#8)]. With the assumption that the extraction of drug in each organ is equal, ![Image](../assets/images/part-3/psa-organ.png) is obtained. If it is further assumed, that the permeability is equal for each organ one obtains ![Image](../assets/images/part-3/saq-org.png).
+    , with the constant of proportionality $k$, the organ blood flow $Q_{organ}$, the shape factor $beta$ (default: $beta=1$). The permeability-surface area product ![Image](../assets/images/part-3/psa.png) is related to the extraction $E$ by ![Image](../assets/images/part-3/psa-e-organ.png) [[8](../references.md#8)]. With the assumption that the extraction of drug in each organ is equal, ![Image](../assets/images/part-3/psa-organ.png) is obtained. If it is further assumed, that the permeability is equal for each organ one obtains ![Image](../assets/images/part-3/saq-org.png).
 
 ### Anatomy & Physiology‌
 
@@ -148,9 +138,13 @@ In the window on the right hand side, the details of the respective parameter gr
 
 Typically, the first column(s) contains the **Name** of the parameter and/or its location (i.e. the organ or segment). In the next column, the default **Value** for the parameter in the given organ or segment for the species selected is provided together with the corresponding unit. For humans, the column **Percentile** depicts the percentile within the respective population. If an average subject is selected, this bar should be equal or at least close to 50%. In the last column, you can define parameters as **Favorites** <img src="../assets/icons/Favorites.svg" data-size="line"/> in order to select certain parameters, e.g. if they have to be changed frequently. Parameters defined as favorites will be listed in the undermost node of the tree view and are thereby easily accessible.
 
-{% hint style="info" %} The order of the columns can be changed manually. Drag the column header to the desired position to change the sequence of columns. {% endhint %}
+{% hint style="info" %}
+The order of the columns can be changed manually. Drag the column header to the desired position to change the sequence of columns.
+{% endhint %}
 
-{% hint style="info" %} The column by which the parameters are grouped can be selected. Drag the column header to the top of the table into the group box. {% endhint %}
+{% hint style="info" %}
+The column by which the parameters are grouped can be selected. Drag the column header to the top of the table into the group box.
+{% endhint %}
 
 To change the value of a parameter, do one of the following
 
@@ -161,7 +155,9 @@ To change the value of a parameter, do one of the following
 2.  Parameter values displayed by default on a light blue background represent parameters calculated using a formula. By changing these values, the formula is overwritten and the background of the field turns yellow. To reset to the default value(s) click **Reset parameter to default** <img src="../assets/icons/Refresh.svg" data-size="line"/>.
 3.  Parameter values displayed by default on a grey background represent values which cannot be changed by the user, because otherwise a fundamental relationship could be destroyed.
 
-{% hint style="info" %} The background colors that indicate the different types of parameters (1.-3.) can be changed by the user. For details please see [PK-Sim® - Options](pk-sim-options.md). {% endhint %}
+{% hint style="info" %}
+The background colors that indicate the different types of parameters (1.-3.) can be changed by the user. For details please see [PK-Sim® - Options](pk-sim-options.md).
+{% endhint %}
 
 For some parameters, reasonable ranges are defined. For example pH values should be less than or equal to 14. In case a value outside this range is defined, a warning appears and the window cannot be closed without setting the parameters to a reasonable value.
 
@@ -175,9 +171,13 @@ Switching between zonated and non-zonated liver does not alter the model structu
 
 The relative expressions for enzymes, transporters and binding proteins can be set independently for both zones. The relative expression in the pericentral zone have no effect if the liver is not zonated. Currently, the PK-Sim gene expression database delivers the same relative expression for both zones for all proteins, but this will be improved in the future.
 
-{% hint style="warning" %} Please note that when switching to another species on the Biometrics tab all parameters of the individual defined in the **Anatomy & Physiology** tab and in the **Expression** tabs, including applied changes (e.g. active processes), are overwritten. {% endhint %}
+{% hint style="warning" %}
+Please note that when switching to another species on the Biometrics tab all parameters of the individual defined in the **Anatomy & Physiology** tab and in the **Expression** tabs, including applied changes (e.g. active processes), are overwritten.
+{% endhint %}
 
-{% hint style="info" %} **User Defined** parameter node shows an overview of all parameters changed by the user in the individual. {% endhint %}
+{% hint style="info" %}
+**User Defined** parameter node shows an overview of all parameters changed by the user in the individual.
+{% endhint %}
 
 ### Expression‌
 
@@ -199,7 +199,9 @@ Once the expression profile is selected, it will be linked to the individual and
 
 This is the only instance in PK-Sim where a a building block is referencing another building block.
 
-{% hint style="warning" %} Please note that when adding an expression profile to an individual, the expression profile is linked directly to the individual. Any modification performed in the expression profile will be immediately reflected into the individual. This is the reason why all parameters are read-only in the individual. {% endhint %}
+{% hint style="warning" %}
+Please note that when adding an expression profile to an individual, the expression profile is linked directly to the individual. Any modification performed in the expression profile will be immediately reflected into the individual. This is the reason why all parameters are read-only in the individual.
+{% endhint %}
 
 ### Editing and Scaling Individual Properties‌
 
@@ -286,4 +288,6 @@ To delete individuals from a project:
 2.  Select <img src="../assets/icons/Delete.svg" data-size="line"/> **Delete...**
 3.  Confirm to delete the individual by clicking **Yes**
 
-{% hint style="warning" %} Please note that an individual that is used in any simulation of the project cannot be deleted. {% endhint %}
+{% hint style="warning" %}
+Please note that an individual that is used in any simulation of the project cannot be deleted.
+{% endhint %}
