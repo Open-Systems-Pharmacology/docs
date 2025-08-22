@@ -1,6 +1,6 @@
 # Projects
 
-The organization of simulations is supported by PK-Sim® with a building block concept. Each project contains a **Building Block** panel that comprises one or several building blocks for individuals, populations, compounds, formulations, protocols, events and observed data. Simulations that are created with the building blocks and comparisons of simulations are organized in a separate panel. The user can create subfolders for organization of observed data, simulations and comparison.
+The organization of simulations is supported by PK-Sim® with a building block concept. Each project contains a **Building Blocks** panel that comprises one or several building blocks for individuals, populations, compounds, formulations, protocols, events and observed data. Simulations that are created with the building blocks and comparisons of simulations are organized in a separate panel. The user can create subfolders for organization of observed data, simulations and comparison.
 
 {% hint style="info" %}
 Only one project can be opened at a time in one PK-Sim® instance. If you wish to work on more than one project in parallel you may start separate instances of PK-Sim® for each individual project. If the identical project is already being accessed by yourself or by another user, PK-Sim® will warn you and open the project as read-only. You will still be able to use the project but won't be able to save your changes.

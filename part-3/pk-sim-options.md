@@ -11,7 +11,6 @@ PK-Sim® can be customized using several options. To do this, click on the **Opt
 -   **Absolute tolerance** and **Relative tolerance**: You can specify the absolute and relative tolerance to control the error of the ODE solver. Changes will only affect simulations that are created after changing values.
 -   **Maximum number of processors to use** for tasks that can be executed in parallel (population simulations, parameter identification, parallel execution of simulations).
 -   **Number of bins**: number of bins to display in histograms of populations/population simulations for parameter distribution.
--   **Number of individuals per bins**:
 
 {% hint style="warning" %}
 Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
