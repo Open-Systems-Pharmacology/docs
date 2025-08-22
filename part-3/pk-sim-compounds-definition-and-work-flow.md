@@ -177,22 +177,23 @@ In the simulation parameters, the calculated specific intestinal permeability (t
 If experimental values for intestinal permeability are available, e.g., from Caco2-cell permeability assays, a calibration of these in vitro values has to be performed for a defined set of compounds before they can be used as input parameters. This is due to the high inter-laboratory variability in absolute permeability values. In this calibration, the fractions of dose absorbed of the set of substances are correlated with the measured permeabilities. For new compounds, the corresponding intestinal permeability used in PK- Sim® is automatically calculated based on the Caco2 permeability value input. If you require an expert calibration of a defined set of experimentally determined permeabilities derived from in vitro assays, please contact your PK-Sim® support ([http://forum.open-systems-pharmacology.org/](http://forum.open-systems-pharmacology.org/)).
 {% endhint %}
 
-#### Distribution
+#### Distribution  tab - Distribution calculation
 
 **Partition coefficient calculation methods‌**
 
-Two parameters determine the rate and extent of passive distribution in the body: steady state organ-plasma partition coefficients as well as permeability surface area (PxSA) products of each organ.
+Two parameters determine the rate and extent of passive distribution in the body: steady state organ-plasma partition coefficients (PC) as well as permeability surface area (PxSA) products of each organ, also called Cellular Permeabilities (CP).
 
-The partition coefficients are calculated from the physico-chemical data of the compound currently active in the simulation.
+The partition coefficients are calculated from the physico-chemical properties of the compound.
 
-**How are model parameters predicted in PK-Sim®?**
+**How are PC and CP predicted in PK-Sim®?**
 
-PBPK modeling requires many substance-specific parameters, which are usually unknown and rarely accessible directly. These include the organ/plasma partition coefficients, the permeability surface area products and intrinsic clearances. The difficulty in gathering this type of data is one of the major reasons that prevented a more widespread use of PBPK-modeling in the past. PK-Sim® addresses and solves this issue by including several published and proprietary methods for parameter deduction from physico-chemical data, which are easily experimentally accessible and are, in most cases, frequently determined during the course of drug development.
+PBPK modeling requires many substance-specific parameters, which are usually unknown and rarely accessible directly. These include the organ/plasma partition coefficients, the permeability surface area products, and intrinsic clearances. The difficulty in gathering this type of data is one of the major reasons that prevented a more widespread use of PBPK-modeling in the past. PK-Sim® addresses and solves these issues by including several published and proprietary methods for calculation of PC and CP from physico-chemical data that are experimentally accessible and, in most cases, are frequently determined during the course of drug development.
 
 **How are organ/plasma partition coefficients deduced from physico-chemical parameters?**
 
-Organ/plasma partition coefficients are based on the concept of partition coefficients between drug binding tissue constituents and water. These include lipid/water and protein/water partition coefficients. Several similar concepts for utilizing such partition coefficients and the composition of organ tissue to calculate the organ/plasma partition coefficients have been published recently (see \[[53](../references.md#53)],and \[[86](../references.md#86)]b for examples, an overview is given in \[[32](../references.md#32)]). Even though the idea is very similar in all cases, they deviate in the kind of parameters that they use. In PK-Sim® there are five ways to calculate the partition coefficients for the organs: The PK-Sim® standard model, which is described in more detail below, and the approaches developed by Rodgers & Rowland, Schmitt, Poulin & Theil, and Berezhkovskiy. The mechanistic equations for the different models are found in the respective literature (\[[53](../references.md#53)], \[[59](../references.md#59)], \[[62](../references.md#62)], \[[60](../references.md#60)], \[[61](../references.md#61)], \[[68](../references.md#68)], \[[54](../references.md#54)], \[[55](../references.md#55)], \[[52](../references.md#52)], \[[5](../references.md#5)]). In the PK-Sim® standard model the partition coefficients are calculated using the following equation:
+Organ/plasma partition coefficients are based on the concept of partition coefficients between drug binding tissue constituents and water. These include lipid/water and protein/water partition coefficients. Several similar concepts for utilizing such partition coefficients and the composition of organ tissue to calculate the organ/plasma partition coefficients have been published (see [[53](../references.md#53)] and [[86](../references.md#86)] for examples; an overview is given in [[32](../references.md#32)]). Even though the idea is very similar in all cases, the different methods deviate in the kind of parameters that they use. PK-Sim® implements five different methods to calculate the partition coefficients for the organs: i) The PK-Sim® standard model, which is described in more detail below, and the approaches developed by ii) Rodgers & Rowland, iii) Schmitt, iv) Poulin & Theil, and v) Berezhkovskiy. The mechanistic equations for the different models are found in the respective literature ([[53](../references.md#53)], [[59](../references.md#59)], [[62](../references.md#62)], [[60](../references.md#60)], [[61](../references.md#61)], [[68](../references.md#68)], [[54](../references.md#54)], [[55](../references.md#55)], [[52](../references.md#52)], [[5](../references.md#5)]). In the PK-Sim® standard model the partition coefficients are calculated using the following equation:
 
+-------------
 ![Partition Coefficients](../assets/images/part-3/Partition-Coefficients.png)
 
 with ![Image](../assets/images/part-3/Fx-organ.png) = volume fraction of water, lipid and protein, ![Image](../assets/images/part-3/K-lipid.png) = lipid/water partition coefficient,
@@ -200,6 +201,8 @@ with ![Image](../assets/images/part-3/Fx-organ.png) = volume fraction of water, 
 ![Image](../assets/images/part-3/K-protein.png) = protein/water partition coefficient,
 
 ![Image](../assets/images/part-3/fu-plasma.png) = free fraction in plasma.
+
+-------------
 
 Partition coefficients are derived from input data as follows:
 
