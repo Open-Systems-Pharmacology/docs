@@ -374,50 +374,46 @@ The following parameters cane be specified:
 
 • Enable supersaturation or not
 
-Further parameters such as the mean particle size and the particle size distribution, the number of bins and the diffusion layer thickness are considered to be related to the formulation and thus can be defined in the Formulation Building Block (see [Formulations](pk-sim-formulations.md)).
+Further parameters such as the mean particle size and the particle size distribution, the number of bins, and the diffusion layer thickness are considered to be related to the formulation and thus can be defined in the Formulation Building Block (see [Formulations](pk-sim-formulations.md)).
 
-Model for proteins and large molecules
+#### **Model for proteins and large molecules**
 
 Four drug-related parameters which are used in the model for proteins and large molecules can be defined in the **Advanced Parameters** tab, namely:
 
-• the solute radius, i.e. the hydrodynamic radius of the drug. The default value for the solute radius is estimated from the molecular weight defined in the **Basic Physico-chemistry** tab
+- **Radius (solute)**: The hydrodynamic radius of the drug. The default value for the solute radius is estimated from the molecular weight defined in the **Basic Physico-chemistry** tab.
+- **Kd (FcRn) in endosomal space:** the dissociation constant for binding to FcRn in the acidic endosomal space. By default, this value is set to a very high value, implying no binding.
+- **Kd (FcRn) in plasma/interstitial:** the dissociation constant for binding to FcRn in plasma and the interstitial space (neutral environment). By default, this value is set to a very high value, implying no binding. For monoclonal antibodies, the binding to FcRn in neutral environment is generally very weak or not detectable. In this case, the high default value for Kd (FcRn) in plasma/interstitial space can be kept.
+- **kass (FcRn):** the association rate constant for binding to FcRn in both the acidic endosomal space and the plasma/interstitial space. The default value is a typical value for monoclonal antibodies and can usually be kept as is.
 
-• Kd (FcRn) in endosomal space: the dissociation constant for binding to FcRn in the acidic endosomal space. By default, this value is set to a very high value,
-
-i.e. no binding is assumed.
-
-* Kd (FcRn) in plasma/interstitial: the dissociation constant for binding to FcRn in plasma and the interstitial space (neutral environment). By default, this value is set to a very high value, i.e. no binding is assumed. For monoclonal antibodies the binding to FcRn in neutral environment is generally very weak or not detectable. In this case the high default value for Kd (FcRn) in plasma/ interstitial space can be kept.
-* kass (FcRn): association rate constant for binding to FcRn for the acidic endosomal space as well as for plasma/interstitial space. The default value is a typical value for monoclonal antibodies and can usually be kept.
-
-After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Block Explorer** view.
+After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Blocks Explorer** view.
 
 ## Setting or Changing Compound Properties‌
 
 To set or change the properties of an existing compound:
 
-1. Right mouse click on the respective compound in the **Building Block Explorer**
+1. Right mouse click on the respective compound in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
 
-or simply double click on the compound in the **Building Block Explorer**.
+or simply double click on the compound in the **Building Blocks Explorer**.
 
-A window with the three tabs **Basic Physico-chemistry**, **ADME Properties** and **Advanced Parameters** will open. The properties can be set or changed appropriately. The changes can be saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
+A window with the three tabs **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Parameters** will open. The properties can be set or changed appropriately. The changes can be saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 
 ## Cloning Compounds‌
 
 To clone a compound in the project:
 
-1. Right mouse click on the respective compound in the **Building Block Explorer**
+1. Right mouse click on the respective compound in the **Building Blocks Explorer**
 2. Select **Clone...** <img src="../assets/icons/SimulationClone.svg" alt="" data-size="line">
 3. Enter an alternative name for the compound clone and enter a description, if desired.
 4. Confirm and close the window by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
 ## Saving Compounds as Templates‌
 
-For each project, several compounds can be defined. They can be saved as templates and then be shared among several projects and users.
+For each project, several compounds can be defined. They can be saved as templates and then shared among several projects and users.
 
 To save an existing compound as template:
 
-1. Right mouse click on the respective compound in the **Building Block Explorer**
+1. Right mouse click on the respective compound in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/SaveAction.svg" alt="" data-size="line"> **Save as Template...**
 
 In case a compound with the same name already exists, a warning appears and you have the following options:
@@ -432,7 +428,7 @@ As mentioned before, the compounds defined in a project can be saved as template
 
 To load an existing compound from the template database:
 
-1. Right mouse click on **Compounds** in the **Building Block Explorer**
+1. Right mouse click on **Compounds** in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Load From Template...**
 3.  Select the desired compound from the user templates
 
