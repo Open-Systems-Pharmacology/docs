@@ -103,11 +103,11 @@ $$K_{M,app} = \frac{1+\frac{I}{K_{Ic}}}{1+\frac{I}{K_{Iu}}}$$
 
 with $K_{Ic}$ = dissociation constant of the enzyme-inhibitor complex, $K_{Iu}$ = dissociation constant of the enzyme-substrate-inhibitor complex, and $I$ = free inhibitor concentration.
 
-## Non-Competitive Inhibition : Simple Setting with One Inhibitor‌
+### Non-Competitive Inhibition : Simple Setting with One Inhibitor‌
     
-The non-competitive inhibition is a special case of a mixed inhibition in which an inhibitor binds reversibly to the enzyme and/or to the enzyme/substrate complex with the same inhibition constant (KI=KIu=KIc). The reaction velocity is described by the same equation as in a mixed inhibition and the apparent maximum velocity is described by the same equation as in an uncompetitive inhibition.
+The non-competitive inhibition is a special case of a mixed inhibition in which an inhibitor binds reversibly to the enzyme and/or to the enzyme/substrate complex with the same inhibition constant ($K_I = K_{Iu}=K_{Ic}$). The reaction velocity is described by the same equation as in a mixed inhibition and the apparent maximum velocity is described by the same equation as in an uncompetitive inhibition.
 
-## Irreversible Inhibition‌
+### Irreversible Inhibition‌ / Mechanism-Based Inactivation
     
 Principally, an irreversible inhibition is a time-dependent inhibition (TDI) in which recovery is only due to de novo protein, e.g. enzyme synthesis. Thus, the in vivo production and degradation of enzyme has to be taken into account by PK- Sim®. Turnover of any protein inherently is a function of both, protein synthesis (a zero-order process) and protein degradation (a first-order rate process). In view of the kinetic nature of these processes, the rate constant of degradation frequently is the sole determinant of the "steady-state" concentration of each protein as it oscillates between the basal and the induced/repressed state. The natural enzyme turnover in PK-Sim® is represented as shown below.
 
@@ -121,7 +121,7 @@ A common model for mechanism-based inactivation is illustrated below:
 
 ![Schematic representation of a enzyme inhibition by a mechanism-based enzyme inactivator](../assets/images/part-3/IrreversibleInhibition-woSubstrate.png)
 
-According to Silvermann et al. \[[72](../references.md#72)\], a mechanism-based enzyme inactivator (MBEI) requires a step to convert the compound to the inactivating species (k2). This step, which is generally responsible for the observed time dependence of the enzyme inactivation, usually is irreversible and forms a new complex (EI') which can have two distinctive fates:
+According to Silvermann et al. [[72](../references.md#72)], a mechanism-based enzyme inactivator (MBEI) requires a step to convert the compound to the inactivating species (k2). This step, which is generally responsible for the observed time dependence of the enzyme inactivation, usually is irreversible and forms a new complex (EI') which can have two distinctive fates:
 
 *   The EI' is a reactive species and forms a covalent complex with the enzyme (Einact) (k4).
 *   The species generated is released from the enzyme as a product/metabolite P of the inactivator and the enzyme is again available as active enzyme (k3).
@@ -158,9 +158,9 @@ Given the variability and uncertainty associated with experimental determination
 Please note that for the mechanism-based inactivator no clearance process is defined via the inactivation process by default. In theory, for every inactivated enzyme molecule, also one inactivator molecule is cleared; this must be separately defined by the user in form of additional metabolization/excretion processes for the inhibitor.
 {% endhint %}
 
-## Enzyme Induction‌
+## Protein Induction‌
 
-Enzyme induction can occur as a result of either increased **de novo synthesis of enzyme** or (in very rare cases and currently not implemented in PK-Sim®) a decrease in degradation following protein stabilisation induction. Some examples of induction processes are:
+Enzyme or transporter induction can occur as a result of either increased **de novo synthesis of protein** or (in very rare cases and currently not implemented in PK-Sim®) a decrease in degradation following protein stabilisation induction. Some examples of induction processes are:
 
 
 *   CYPs 1A1, 1A2 and 1B1 induced by aryl hydrocarbon receptor (AHR) that is activated by binding of e.g. dioxin, benzoapyrene, omeprazole (in vitro), tobacco smoke
@@ -171,16 +171,15 @@ Enzyme induction can occur as a result of either increased **de novo synthesis o
 
 Implementation of induction in PK-Sim® uses the following parameters:
 
-*   EMax: maximum in vivo induction effect (Dimension: dimensionless)
+*   Emax: maximum in vivo induction effect (Dimension: dimensionless)
 
 *   EC50: concentration of the inducer to reach half the maximal in vivo induction effect (Dimension: concentration)
 
-In an induction, EMax ranges from 0 (=no induction) to infinity. A value of 1 means that the effect is twice the effect without induction. Modelling of suppressed de novo synthesis (suppression) (for example in some cytokines) is also possible with PKSim using the induction specification of a compound. In a suppression, EMax ranges from 0 (=no suppression) to -1 (full suppression, no synthesis anymore).
+In an induction, Emax ranges from 0 (= no induction) to infinity. A value of 1 means that the effect is twice the effect without induction. Modelling of suppressed de novo synthesis (suppression) (for example in some cytokines) is also possible with PKSim using the induction specification of a compound. In a suppression, Emax ranges from 0 (=no suppression) to -1 (full suppression, no synthesis anymore).
 
 If the reaction of the enzyme Ex and the substrate Sj follows a Michaelis-Menten kinetics, the rate of the enzyme Ex degradation/production and the substrate Sj degradation are given by:
 
 ## Multiple Inhibitors : Equations Used by PK-Sim®‌
-
 
 The enzyme turnover for Enzyme X in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND) is given by:
 
