@@ -354,6 +354,10 @@ Kidney Plasma Clearance is a systemic process that does not have to be linked to
 Biliary clearance is a systemic process that does not have to be linked to properties defined for an individual/species when establishing a simulation.
 {% endhint %}
 
+### Inhibition and induction
+
+Drugs may influence a broad variety of ADME processes that in turn will then affect the PK of the drug and possibly also other drugs. See section [PK-Sim® Compounds: Defining Inhibition/Induction Processes](pk-sim-compounds-defining-inhibition-induction-processes.md) for details on how to define inhibition and induction processes in PK-Sim®.
+
 ### Advanced Parameters‌ tab
 
 Additional compound-related parameters can be defined in the **Advanced Parameters** that are needed in case the particle dissolution function (see [Formulations](pk-sim-formulations.md)) or the model for proteins and large molecules (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)) are used. In all other cases, the parameters defined in the **Advanced Parameters** tab will not be used and can be left unchanged.
