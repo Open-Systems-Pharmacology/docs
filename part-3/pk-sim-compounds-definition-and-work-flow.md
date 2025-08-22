@@ -1,98 +1,97 @@
 # Compounds: Definition and Work Flows
 
-A **Compound** is a set of data that describes the properties of the substance whose behavior is to be simulated. These properties are defined within the building block **Compound**. For each project, several compounds may be defined. The compounds defined can be saved as a templates and then be shared among several projects and users.
+A **Compound** is a set of data that describes the properties of the substance whose behavior is to be simulated. These properties are defined within the building block **Compound**. For each project, several compounds may be defined. The compounds defined can be saved as templates and shared among several projects and users.
 
 ## Definition of new Compounds in PK- Sim®‌
 
 To create a new compound, do one of the following:
 
-* Click on **Compound** <img src="../assets/icons/Molecule.svg" alt="" data-size="line"> in the **Create New Building Blocks** Group of the Modeling & Simulation Tab
-* Right mouse click on **Compounds** in the **Building Block Explorer** and select <img src="../assets/icons/Molecule.svg" alt="" data-size="line"> **Add Compound...**
-* Use the short cut **Ctrl+Alt+C**
+* Click on **Compound** <img src="../assets/icons/Molecule.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling** Tab, or
+* Right mouse click on **Compounds** in the **Building Block Explorer** and select <img src="../assets/icons/Molecule.svg" alt="" data-size="line"> **Add Compound...**, or
+* Use the short cut **Ctrl+Alt+C**.
 
-A dialog will open, where the properties of the compound can be defined. The compound is initialized by giving it a **Name** in the respective input field. The name is used to identify the substance when its parameters are saved in the project and/or as a template. The properties of the compound can then be set or changed:
+A dialog will open, where the properties of the compound can be defined. The compound is initialized by giving it a **Name** in the respective input field. The properties of the compound can then be set or changed:
 
 ![The Create Compound dialog. Here, the basic physico-chemical properties of diclofenac are shown.](../assets/images/part-3/PKSim-Compound-NewCompound.png)
 
-The **Create Compound** building block is subdivided into three tabs: Basic Physico-chemistry, ADME Properties, and Advanced Properties.
+The **Create Compound** window is subdivided into three tabs: **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Properties**.
 
-### Basic Physico-Chemistry‌
+### Basic Physico-Chemistry‌ tab
 
-The first checkbox one can define the compound as being a small or a large molecule, such as a protein. If **Is small molecule** is de-selected, the permeability for passive diffusion into blood cells and into the intracellular space of the organs as well as the intestinal permeability will be set to zero. If the drug is a small molecule and is used in a **Model for proteins and large molecules**, the drug will not enter the endosomal space (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)).
+The basic physico-chemical properties of a compound are specified in the **Basic Physico-chemistry** tab. Most of the drug properties can have multiple values, e.g., coming from differed sources, determined using various methods or assays. During the simulation creation, you can choose one value for each property.
 
-The basic physico-chemical properties have to be specified in the **Basic Physico-chemistry** tab. Drug properties in many cases, have numerous values, determined using various methods or assays, the following are available (logMA, logP, clogP for lipophilicity). You are able to specify several alternative values. Later, in the simulation, you can choose the most appropriate value from the list.
-
-### To Enter an additional value:
+#### To Enter an additional value:
 
 1. Click **Add** <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> at the end of a row.
 2. Enter the alternative name
 3. If desired, enter a short description in the respective input field
 4. Click **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
-### To delete a value:
+#### To delete a value:
 
 1. Click **Delete** <img src="../assets/icons/Delete.svg" alt="" data-size="line">
 2. Click **Yes**
 
-If several alternative values have been defined, you can select a default one by ticking the check box. When setting up the simulation, a value set as default will be ranked first. The alternative values can still be selected, if desired.
+If several alternative values have been defined, you can select a default one by enabling the check box "Default". When setting up the simulation, a value set as default will be selected first. The alternative values can still be selected, if desired.
 
 {% hint style="info" %}
 Please note that a value set as default cannot be deleted. In order to delete the value, define another default value.
 {% endhint %}
 
-**Lipophilicity**
+#### **Is small molecule**
+This checkbox defines whether the compound is a small molecule or a large molecule such as a protein. If not selected (i.e., the compound is treated as a large molecule), the permeability for passive diffusion into blood cells and into the intracellular space of the organs as well as the intestinal permeability are set to zero, as it is assumed that large molecules do not passively diffuse across the cell membranes. If the drug is a small molecule and is used in a **Model for proteins and large molecules**, the drug will not enter the endosomal space (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)).
+
+#### **Lipophilicity**
 
 {% hint style="info" %}
-As lipophilicity input, the partition coefficient between lipid membranes and water, i.e. the membrane affinity (logMA) is recommended. Alternatively, other lipophilicity values (e.g. logP, clogP) can be used, but in this case the quality of the simulation results might be affected. The type of lipophilicity measurement can be described in the first column (experiment).
+Lipids in organ tissue are predominantly present in the form of phospholipid membranes. The best descriptor for lipophilicity is the partition coefficient between lipid membranes and water, as determined at physiological pH [[43](../references.md#43)]. This is called membrane affinity and the value to be entered is the logMA. It is recommended to use these membrane affinities as input parameters for PK-Sim®. With their use, it is very likely that specific organ and intestinal permeability coefficients are obtained that require no or only marginal adjustment.
 {% endhint %}
 
 {% hint style="info" %}
-Lipids in organ tissue are predominantly present in the form of phospholipid membranes. The best descriptor for lipophilicity is the partition coefficient between lipid membranes and water, as determined at physiological pH \[[43](../references.md#43)]. This is called membrane affinity and the value to be entered is the logMA. It is recommended to use these membrane affinities as input parameters for PK-Sim®. With their use, it is very likely that specific organ and intestinal permeability coefficients are obtained that require no or only marginal adjustment.
+If the membrane affinity is not available, other lipophilicity values (e.g., logP, clogP) can be used as surrogates. In this case the quality of the simulation results might be negatively affected.
+
+The membrane/water partition coefficient is predominantly affected by two contributions. A real lipophilicity, which describes the partitioning into the lipid core of a membrane, and the interaction between a molecule and the phospholipid head groups. Particularly for charged substances this can lead to large differences between membrane affinity and other lipophilicity descriptors. A common observation is that membrane affinity is much less pH dependent than, e.g., logD [[21](../references.md#21)].
+
+For this reason, it is recommended to use a lipophilicity value for the neutral form, e.g., logP, as a replacement for membrane affinity if the latter is not available. A reasonable variation around the logP value should be allowed since this parameter is not 1:1 correlated with the membrane affinity.
 {% endhint %}
 
-{% hint style="info" %}
-If the membrane affinity is not available, other lipophilicity values can be used as surrogates. The membrane/water partition coefficient is predominantly affected by two contributions. A real lipophilicity, which describes the partitioning into the lipid core of a membrane, and the interaction between a molecule and the phospholipid head groups. Particularly for charged substances this can lead to large differences between membrane affinity and other lipophilicity descriptors. A common observation is that membrane affinity is much less pH dependent than e.g. logD \[[21](../references.md#21)].
-
-For this reason it is recommended to use a lipophilicity value for the neutral form, e.g. logP, as a replacement for membrane affinity if membrane affinity is not available. A reasonable variation around the logP value should be allowed since this parameter is not 1:1 correlated with membrane affinity.
-{% endhint %}
-
-**Fraction Unbound (plasma, reference value)**
+#### **Fraction Unbound (plasma, reference value)**
 
 The free fraction of drug in plasma (fu) is a mixed parameter depending on both the species and the drug. Thus, it might be necessary to define several values for one compound, namely one for each species to be simulated. The respective species can be selected in the **Species** column from the drop-down menu.
 
 Later, during the create simulation process, the appropriate value can be selected from the alternatives defined here.
 
-In the uppermost row of this field the user is asked to decide whether the drug is predominantly bound to either **albumin** or **alpha1-acid glycoprotein**. Depending on the predominant binding partner in plasma, the corresponding ontogeny function underlying PK-Sim® will be used for scaling the plasma protein binding in children. If this information is not available or needed, you can also select **unknown** and the reference value selected in the simulation will be used irrespective of the age of the individual.
+In the uppermost row of this field, the user is asked to decide whether the drug is predominantly bound to either **albumin** or **alpha1-acid glycoprotein**. Depending on the predominant binding partner in plasma, the corresponding ontogeny function stored in PK-Sim® database will be used for scaling the plasma protein binding in children. If this information is not available or needed, you can also select **unknown** and the reference value selected in the simulation will be used irrespective of the age of the individual.
 
-In order to modify the fraction unbound as a function of disease please use the **Plasma protein scale factor** defined in the **Individual building block**. With the help of this factor, the fraction of drug bound to either protein can be scaled up or down. The resulting fraction unbound parameter used in the simulation can be found in the list of parameters of the **Simulation** under the header **Distribution**.
+In order to modify the fraction unbound as a function of disease please use the **Plasma protein scale factor** parameter defined in the **Individual building block**. With the help of this factor, the fraction of drug bound to either protein can be scaled up or down. The resulting fraction unbound parameter used in the simulation can be found in the list of parameters of the **Simulation** under the header **Distribution**.
 
 {% hint style="info" %}
-If the fraction unbound is known for one species, e.g. rat, but unknown for another one, e.g. the dog, it is technically possible to simulate pharmacokinetics in the dog using the fraction unbound defined for the rat. In other words, PK-Sim® does not judge the consistence of the combination of the species and the fraction unbound. However, in this case the value should only be considered as a best guess and a reasonable variation around the fu values should be allowed.
+If the fraction unbound is known for one species, e.g., rat, but unknown for another one, e.g., dog, it is technically possible to simulate pharmacokinetics in the dog using the fraction unbound defined for the rat. In other words, PK-Sim® does not judge the consistence of the combination of the species and the fraction unbound. However, in this case the value should only be considered as a best guess and a reasonable variation around the fu values should be allowed.
 
 Similarly, for the scaling of pharmacokinetics from one species to another, make sure that not only the building block **Individual** is replaced but also mixed parameters such as fraction unbound in plasma and clearance pathways and/or expression data are changed appropriately.
 {% endhint %}
 
-**Molweight**
+#### **Molweight**
 
-In the first line the molecular weight (MW) of the substance is specified. For substances containing halogen atoms the number of these atoms should chosen from the drop down menu that can be opened next to the **Has Halogens** field. This input is used to calculate an effective molecular weight, which is needed to estimate permeability values. It takes into account the small contribution of halogens to the molecular volume in relation to their weight. After the nature and number of halogens have been entered, the effective molecular weight is calculated automatically.
-
-{% hint style="info" %}
-Even though the property determining the diffusion coefficient is the molecular volume rather than the weight, only the latter is commonly available and has therefore been chosen as easily accessible input parameter. However, in some cases this leads to inaccurate results, particularly since halogen atoms have a much smaller volume than what would be expected from their weight. Therefore, for substances containing such atoms “effective molecular weights” based on the following corrections are used (N = number of atoms, CF = correction factor): **Effective Molecular Weight** ![Image](../assets/images/part-3/equation-15-1.png) with CF = 17 for fluorine, CF = 22 for chloride, CF = 62 for bromine, and CF = 98 for iodine (see \[[93](../references.md#93)]).
-{% endhint %}
-
-**Compound type / pka**
-
-The type of compound: neutral, base, or acid. In case the compound is a base or an acid choose either **Base** or **Acid** from the drop-down menu. You will then be able to specify the respective pka(s). Up to three pka values can be specified.
+In the first line the molecular weight (MW) of the substance is specified. For substances containing halogen atoms the number of these atoms should chosen from the drop down menu that can be opened next to the **Has Halogens** field. This input is used to calculate an *effective molecular weight*, which is needed to estimate the permeability values. It takes into account the small contribution of halogens to the molecular volume in relation to their weight. After the type and the number of halogens have been entered, the effective molecular weight is calculated automatically.
 
 {% hint style="info" %}
-pka values always refer to the pka value of the acidic form of the compound. The compound type defines whether the pka value refers to the uncharged acid "HA" (= type acid; the compound is charged when it dissociates to H+ and A-) or to the conjugated acid of a base "BH+" (= type base; the compound is uncharged when it dissociates to H+ und B). In other words, the compound type always refers to the uncharged form of the molecule.
+Even though the property determining the diffusion coefficient is the molecular volume rather than the weight, only the latter is commonly available and has therefore been chosen as an easily accessible input parameter. However, in some cases this leads to inaccurate results, particularly since halogen atoms have a much smaller volume than what would be expected from their weight. Therefore, for substances containing such atoms, the “effective molecular weight” based on the following corrections is used (N = number of atoms, CF = correction factor): **Effective Molecular Weight** ![Image](../assets/images/part-3/equation-15-1.png) with CF = 17 for fluorine, CF = 22 for chloride, CF = 62 for bromine, and CF = 98 for iodine (see [[93](../references.md#93)]).
+{% endhint %}
+
+#### **Compound type / pKa**
+
+The type of compound: neutral, base, or acid. In case the compound is a base or an acid choose either **Base** or **Acid** from the drop-down menu. You will then be able to specify the respective pKa(s). Up to three pKa values can be specified.
+
+{% hint style="info" %}
+pKa values always refer to the pKa value of the acidic form of the compound. The compound type defines whether the pKa value refers to the uncharged acid "HA" (= type acid; the compound is charged when it dissociates to H+ and A-) or to the conjugated acid of a base "BH+" (= type base; the compound is uncharged when it dissociates to H+ und B). In other words, the compound type always refers to the uncharged form of the molecule.
 {% endhint %}
 
 {% hint style="info" %}
-The pka values are used for the calculation of pH-dependent changes in solubility in the gastrointestinal tract. Furthermore, when using the distribution model (see [Creating new simulations in PK-Sim®](pk-sim-simulations.md#creating-new-simulations-in-pk-sim)) of Rodgers and Rowland or the model of Schmitt the compound type is a basic parameter for calculating the partition coefficients. It is furthermore used by the two charge-dependent methods of Schmitt to calculate the permeability of the barrier between interstitial and cellular space.
+The pKa values are used for the calculation of pH-dependent changes in solubility in the gastrointestinal tract. Furthermore, when using the distribution model (see [Creating new simulations in PK-Sim®](pk-sim-simulations.md#creating-new-simulations-in-pk-sim)) of Rodgers and Rowland or the model of Schmitt, the compound type is a basic parameter for calculating the partition coefficients. It is furthermore used by the two charge-dependent methods of Schmitt to calculate the permeability of the barrier between interstitial and cellular space.
 {% endhint %}
 
-**Solubility**
+#### **Solubility**
 
 The solubility of the compound (in the intestine): The solubility can be specified together with the type of measurement or the medium used (first column, **Experiment**). The corresponding unit can be chosen from the drop-down menu in the second column (**Solubility at Ref-pH**). For charged compounds, the pH value at which the solubility of the compound was measured should be given in the third column (**Ref-pH**). In the fourth column, the **Solubility gain per charge** can be modified, which defines the factor by which the solubility increases with each ionization step. In order to calculate the charge of the molecule, the fraction of each microspecies is calculated according to the Henderson-Hasselbalch equation for a given pH. This is done across the entire pH-range such that the fractions are used to calculate the probability with which a molecule is in a certain ionization state. Based on this information, the **pH-dependent solubility** of molecules with one or more ionizable groups is calculated. By clicking on **Show Graph**, the pH-dependent solubility across the whole pH range calculated based on the experimental solubility at the defined pH is shown. For neutral compounds the input fields **Ref-pH** and **Solubility gain per charge** and the graph are irrelevant.
 
@@ -101,11 +100,11 @@ In the simulation, the intestinal solubility can be displayed for each segment b
 {% endhint %}
 
 {% hint style="info" %}
-The solubility of the compound is only needed for the oral administration route. Additionally, it can be taken into account if e.g. a Noyes-Whitney dissolution is assumed for other routes of administration such as intramuscular or subcutaneous drug administration. However, for this purpose, the dissolution function has to be defined in MoBi®.
+The solubility of the compound is only needed for the oral administration route. Additionally, it can be taken into account if, e.g., a Noyes-Whitney dissolution is assumed for other routes of administration such as intramuscular or subcutaneous drug administration. However, for this purpose, the dissolution function has to be defined in MoBi®.
 {% endhint %}
 
 {% hint style="info" %}
-First estimates can be made using water solubility. However, especially for lipophilic compounds this value might underestimate the solubility in the intestine so that it is better to use a value obtained under bio-relevant conditions (e.g. in Fasted State Simulated Intestinal Fluid, FaSSIF). If different values are available for one compound (e.g. in FaSSIF and in Fed State Simulated Intestinal Fluid, FeSSIF), several alternative solubility values can specified and the appropriate value can then chosen in the **Simulation**.
+First estimates can be made using water solubility. However, especially for lipophilic compounds this value might underestimate the solubility in the intestine so that it is better to use a value obtained under bio-relevant conditions (e.g., in *Fasted State Simulated Intestinal Fluid*, FaSSIF). If different values are available for one compound (e.g., in FaSSIF and in *Fed State Simulated Intestinal Fluid*, FeSSIF), several alternative solubility values can specified and the appropriate value can then chosen in the **Simulation** creation step.
 {% endhint %}
 
 #### Intestinal solubility as table function of pH
@@ -114,11 +113,11 @@ Intestinal solubility can also be defined as a linear interpolation of measured 
 
 ![](../assets/images/part-3/CreateSolubilityAsTable.png) ==> ![](../assets/images/part-3/EditSolubilityTable.png)
 
-### ADME Properties‌
+### ADME Properties‌ tab
 
 After having defined the basic physico-chemical properties of the compound, processes known to be involved in its distribution and elimination can be specified in the **ADME** tab. The **ADME** tab is accessible either by clicking Next or by directly clicking on the respective tab in the **Create Compound** window.
 
-Five kinds of processes can be defined in the ADME tab depending on the type of interaction between the compound and the biological entity influencing the pharmacokinetics of the drug in vivo:
+Five kinds of processes can be defined in the **ADME** tab depending on the type of interaction between the compound and the biological entity influencing the pharmacokinetics of the drug in vivo:
 
 * Absorption
 * Distribution
@@ -127,9 +126,9 @@ Five kinds of processes can be defined in the ADME tab depending on the type of 
 * Inhibition
 * Induction
 
-For each of these items one or more ADME processes can be defined in order to systematically collect all available information on absorption, degradation, transport and binding processes from e.g. _in vitro_ assays and use this information to obtain specific kinetic rates used in the simulation.
+For each of these items one or more ADME processes can be defined in order to systematically collect all available information on absorption, degradation, transport, and binding processes from, e.g., in vitro assays and use this information to obtain specific kinetic rates used in the simulation.
 
-A general workflow for defining a specific process in _Protein Binding Partners_, _Metabolizing Enzymes_, _Total Hepatic Clearances_, _Transport Proteins_, _Renal Clearances_, _Biliary Clearances_ is as follows:
+A general workflow for defining a specific process in _Protein Binding Partners_, _Metabolizing Enzymes_, _Total Hepatic Clearances_, _Transport Proteins_, _Renal Clearances_, and _Biliary Clearances_ is as follows:
 
 * Right click on the biological process you want to add to (e.g. **Metabolizing Enzymes** in the **Metabolism** branch, **Renal Clearances** in the **Transport & Excretion** branch, …).
 * Click on the **Add …** command (e.g. **Add Metabolizing Enzyme …**).
@@ -146,21 +145,21 @@ After definition of the required parameters the specific clearance or kinetic ra
 Specifying a value for **Specific clearance**, which is normally calculated automatically by PK-Sim®, will overwrite the original formula. This is indicated by the symbol <img src="../assets/icons/Notifications.svg" alt="" data-size="line">. The formula can be reset by clicking on <img src="../assets/icons/Update.svg" alt="Image" data-size="line">
 {% endhint %}
 
-After having defined the biological properties of the compound, you will have to link specific processes to enzymatic, transport, and binding settings defined for the selected individual/species in the Simulation. This is described in [Select relevant biological processes](pk-sim-simulations.md#select-relevant-biological-processes).
+After having defined the biological properties of the compound, you must link the specific processes to the enzymatic, transport, and binding settings defined for the selected individual/species in the Simulation. This is described in [Select relevant biological processes](pk-sim-simulations.md#select-relevant-biological-processes).
 
-In the following an overview of the process types is given that can be defined for the different biological properties including additional information on the required input parameters.
+In the following, an overview of the process types is given that can be defined for the different biological properties, including additional information on the required input parameters.
 
 #### Absorption
 
 **Calculation of Specific Intestinal Permeabilities**
 
-Within the PK-Sim® standard package, transcellular specific permeability of the intestinal wall is deduced from physico-chemical properties.
+PK-Sim® calculates the transcellular specific permeability of the intestinal wall is from the physico-chemical properties of a compound.
 
-In addition to the calculated specific intestinal permeability, experimentally determined permeabilities, e.g. from Caco-2-cell permeability assays can be used. However, due to the large inter-laboratory variability in Caco-2 permeations, a proper calibration of the measured in vitro values and the calculated in silico permeabilities for a defined set of compounds is necessary. If experimentally determined values for intestinal permeabilities are available and the customized calibration method has been implemented in PK-Sim®, this option is then available in the drop-down menu in the _Calculation methods_ window.
+In addition to the calculated specific intestinal permeability, experimentally determined permeabilities, e.g., from Caco-2-cell permeability assays, can be used. However, due to the large inter-laboratory variability in Caco-2 permeations, a proper calibration of the measured in vitro values and the calculated in silico permeabilities for a defined set of compounds is necessary. If the experimentally determined values for the intestinal permeabilities are available and the customized calibration method has been implemented in PK-Sim®, this option is then available in the drop-down menu in the _Calculation methods_ window.
 
 **Specific Intestinal Permeability**
 
-Similarly, the specific intestinal permeability, i.e. the surface area-normalized transcellular permeability of the innermost layer of the intestinal wall, is calculated from the drugs´ lipophilicity and effective molecular weight. The paracellular pathway has been shown to have no impact on the accuracy of prediction of the fraction dose absorbed in humans \[[79](../references.md#79)] and is therefore not accounted for, i.e. the value for the paracellular specific permeability is not automatically calculated. However, the paracellular pathway can be included in the simulation, if desired. You will find the parameter **Intestinal permeability (paracellular)** in the simulation within the parameter group **Permeability**.
+Similarly, the specific intestinal permeability, i.e., the surface area-normalized transcellular permeability of the innermost layer of the intestinal wall, is calculated from the drugs´ lipophilicity and effective molecular weight. The paracellular pathway has been shown to have no impact on the accuracy of prediction of the fraction dose absorbed in humans [[79](../references.md#79)] and is therefore not accounted for, i.e., the value for the paracellular specific permeability is not automatically calculated. However, the paracellular pathway can be included in the simulation, if desired. You will find the parameter **Intestinal permeability (paracellular)** in the simulation within the parameter group **Permeability**.
 
 For acids and bases, the transcellular intestinal permeability can be dynamically calculated throughout the intestinal tract based on the pH within the intestinal segments. Per default it is assumed that the pH-effect on the intestinal permeability is already reflected by the measured membrane affinity used as input and thus, the specific transcellular permeability is constant over the whole intestine. However, this parameter can be adjusted manually, if desired. You will find the parameter **Use pH- and pKa-dependent penalty factor for charged molecule fraction** in the simulation within the parameter group **Permeability**.
 
