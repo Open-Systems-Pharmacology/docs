@@ -6,13 +6,13 @@
 
 Small molecules frequently interact with proteins. Protein/compound interaction may influence all aspects of ADME to a varying extent. Metabolic and transport processes are of particular importance in this context. Most protein concentrations vary spatially as well as temporally. PK-Sim® allows the user to model proteins and compound/protein interactions.
 
-Active, protein-mediated processes involved in drug ADME generally occur simultaneously in various organs. However, a quantitative description of active processes is difficult due to the limited experimental accessibility of tissue-specific protein activity *in vivo*. PK-Sim® uses gene expression data as a surrogate for protein abundance to estimate *in vivo* activity of such enzymes or transporters that influence drug pharmacokinetics. This concept implies that protein availability and catalytic rate constants, which ultimately underlie enzyme and transporter activity, are decoupled. For more details, please see \[[46](../references.md#46)\].
+Active, protein-mediated processes involved in drug ADME generally occur simultaneously in various organs. However, a quantitative description of active processes is difficult due to the limited experimental accessibility of tissue-specific protein activity in vivo. PK-Sim® uses gene expression data as a surrogate for protein abundance to estimate in vivo activity of such enzymes or transporters that influence drug pharmacokinetics. This concept implies that protein availability and catalytic rate constants, which ultimately underlie enzyme and transporter activity, are decoupled. For more details, please see \[[46](../references.md#46)\].
 
 In brief, the concept of using gene expression data as a proxy for protein abundance is based on the definition of the maximum velocity *Vmax* \[µmol/l/min\]. According to the Michaelis-Menten equation, *Vmax* depends on both the total enzyme or transporter concentration E0 \[µmol/l\] and the catalytic rate constant *kcat* \[1/min\]:
 
 ![Equation 1](../assets/images/part-3/equation-14-1-vmax.png)
 
-Assuming that kcat is not influenced by *in vivo* factors, the tissue-specific maximum velocity *Vmax,organ* is defined as:
+Assuming that kcat is not influenced by in vivo factors, the tissue-specific maximum velocity *Vmax,organ* is defined as:
 
 ![Equation 2](../assets/images/part-3/equation-14-2-vmax.png)
 
@@ -24,7 +24,7 @@ Following **Equation 2**, the effective rate of a protein-mediated process, be i
 
 ### Reference concentration
 
-The **reference concentration** can be measured *in vitro*, allowing direct *in vitro - in vivo* extrapolation (IVIVE). The protein concentration in the organ with the **relative expression = 1** will equal that measured concentration. The concentrations in all other organs will be set relative to that value. If no *in vitro* protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g., metabolism of a compound) through the relative expressions.
+The **reference concentration** can be measured in vitro, allowing direct in vitro - in vivo extrapolation (IVIVE). The protein concentration in the organ with the **relative expression = 1** will equal that measured concentration. The concentrations in all other organs will be set relative to that value. If no in vitro protein abundance values are available for any organ, the reference concentration can be set to any arbitrary value (the default value is 1 µmol/L). While direct IVIVE will not be possible in this case, the model will still be able to account for the different contributions of the organs to the total process rate (e.g., metabolism of a compound) through the relative expressions.
 
 For example, the enzyme **CYP3A4** is mainly expressed in the liver of human adults, some in the gastrointestinal tract, and minor amounts in almost all other tissues. The concentration of CYP3A4 in the liver is 108 pmol/mg microsomal protein \[[63](../references.md#63)\]. The concentration of microsomal protein in the liver is 40 mg per g liver. Assuming a specific tissue density of 1 g/mL, the concentration of CYP3A4 in whole liver is 4.32 µmol/L. This number can be used as a reference concentration with a relative expression of 1 in the liver.
 
@@ -451,7 +451,7 @@ In the lower section, values of relative expression can be edited for individual
         {% endhint %}
 
         {% hint style="warning" %}
-        The transporter direction **Pgp-like** is, starting wit version 11 of PK-Sim, marked as **\[DEPRECATED\]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software.
+        The transporter direction **Pgp-like** is, starting with version 11 of PK-Sim, marked as **\[DEPRECATED\]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software.
         {% endhint %}
 
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)
@@ -497,7 +497,10 @@ Each field can be used for filtering. To open the filter dialog click on the fil
 By ticking the check boxes you can toggle the filtering of individual values.
 
 {% hint style="tip" %}
-The buttons in the upper area have the following meaning: \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOnlyVisibleValuesSymbol.png) button can be used to limit the list of values to only those that are currently visible. If you would have added a filter on another field some values might are unreachable. Those values would be hidden. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterOptionModeSymbol.png) button can be used to change the check box into an option box which means that you can only select one filter value at a time and that the previously selected value gets automatically deselected by selecting a new value. \* The ![Image](../assets/images/part-3/ExpressionFieldFilterInvertSymbol.png) button can be used to invert the selected filter values which means that every selected value gets deselected and vice versa..
+The buttons in the upper area have the following meaning:
+- The ![Image](../assets/images/part-3/ExpressionFieldFilterOnlyVisibleValuesSymbol.png) button can be used to limit the list of values to only those that are currently visible. If you would have added a filter on another field some values might are unreachable. Those values would be hidden.
+- The ![Image](../assets/images/part-3/ExpressionFieldFilterOptionModeSymbol.png) button can be used to change the check box into an option box which means that you can only select one filter value at a time and that the previously selected value gets automatically deselected by selecting a new value.
+- The ![Image](../assets/images/part-3/ExpressionFieldFilterInvertSymbol.png) button can be used to invert the selected filter values which means that every selected value gets deselected and vice versa..
 {% endhint %}
 
 The respective active filter is shown right under the table.
