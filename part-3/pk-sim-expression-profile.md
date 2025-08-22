@@ -451,7 +451,7 @@ In the lower section, values of relative expression can be edited for individual
         {% endhint %}
 
         {% hint style="warning" %}
-        The transporter direction **Pgp-like** is, starting wit version 11 of PK-Sim, marked as **\[DEPRECATED\]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software.
+        The transporter direction **Pgp-like** is, starting with version 11 of PK-Sim, marked as **\[DEPRECATED\]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software.
         {% endhint %}
 
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)
