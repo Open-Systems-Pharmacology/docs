@@ -14,7 +14,7 @@ To set up an inhibition of a protein by a compound, do the following:
 
 *   Specify the type of inhibition from the Process type list (competitive, uncompetitive, non-competitive, mixed). The interaction types are described in the next sections.
 
-Inhibition changes reaction rates and/or the kinteics of active transports by modifying the following reaction and/or transport parameters:
+Inhibition changes reaction rates and/or the kinetics of active transports by modifying the following reaction and/or transport parameters:
 
 *   The Michaelis-Menten constant Km and the turnover number kcat for Michaelis-Menten kinetics
 
