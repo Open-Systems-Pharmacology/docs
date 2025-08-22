@@ -159,6 +159,16 @@ Populations generated in PK-Sim® can be exported to a CSV format. The file, whi
 In addition to the export of the population parameters to CSV, population simulations can be exported to CSV via the Simulation Explorer. Then, the population parameters file (.CSV), the respective model file (.pkml), and an information file (.txt) with the relevant information about the PK-Sim® version number will be generated. For details please see (see [PK-Sim® - Importing and Exporting Project Data and Models](importing-exporting-project-data-models.md).
 {% endhint %}
 
+## Extracting individuals
+
+You can extract specific individuals from a population and add them as standalone building blocks to the project for follow-up analyses.
+
+Individuals of interest can be identified within a population analysis (e.g. individuals associated with the percentiles displayed in a population Box-Whisker plot)
+
+To extract individuals from a population, right click on the respective population in the **Buildings Block Explorer** and select **Extract Individuals...**.
+
+![Dialog for extracting individuals from a populatoin](../assets/images/part-3/populations-extract-individuals.png)
+
 ## Cloning of Populations‌
 
 To clone populations in the project:
