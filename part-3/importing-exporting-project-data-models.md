@@ -127,3 +127,7 @@ Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrec
 {% endhint %}
 
 To load a project from snapshot, select **File** - **Load from Snapshot** <img src="../assets/icons/SnapshotImport.svg" alt="" data-size="line">
+
+{% hint style="info" %}
+When loading a project from snapshot, you can select whether to **run the simulations immediately** after loading or not. Not running the simulations can significantly speed up the loading process, especially for large projects with many simulations.
+{% endhint %}
