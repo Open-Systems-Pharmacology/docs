@@ -53,7 +53,7 @@ The following parameters have to be defined when choosing the Weibull function:
 - **Dissolution shape** $b$ characterizing the curve as either exponential ($b = 1$), sigmoid ($b > 1$), or parabolic ($b < 1$).
 - **Dissolution time (50% dissolved)** defining the time (excluding the lag time) at which 50% of the administered dose is dissolved and, thus, corresponding to the scale parameter $a$ of the Weibull function.
 - **Lag time** $T_{lag}$ characterizing the time after which dissolution begins.
-- **Use as suspension**: TBD
+- **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
 
 Please note that the Weibull function can only be combined with the Administration type **Oral**.
 
@@ -65,7 +65,7 @@ The following parameters have to be defined when choosing the **Lint80** functio
 
 * **Dissolution time (80% dissolved)**, defining the time (excluding the lag time) when 80% of the administered dose is dissolved.
 * **Lag time** characterizing the time after which dissolution starts.
-- **Use as suspension**: TBD
+- **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
 
 ### Particle Dissolution‌
 
