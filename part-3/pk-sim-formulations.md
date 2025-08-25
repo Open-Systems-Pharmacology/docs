@@ -120,6 +120,8 @@ In order to **import** experimental dissolution data from Excel®:
 For additional information about the import data and mapping workflow see [Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
 {% endhint %}
 
+- **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
+
 ### Zero Order‌
 
 Zero Order defines the application at a constant rate. The total dose (defined in the administration protocol) will be administered at a constant rate until within the specified time [Start of administration, Start of administration + **(End time)**].
