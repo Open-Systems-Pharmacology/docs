@@ -22,7 +22,7 @@ A simulation previously exported as a \*.pkml file from PK-Sim® or MoBi® can b
 
 #### Loading a population simulation
 
-Similarly to individual simulations, a simulation previously exported as a \*.pkml file from PK-Sim® or MoBi® can be imported into the current project as a population simulation. As the \*.pkml exports only contain individual simulations and no information about the population, population information must be either a) loaded from a \*.CSV file (e.g., previously exported from PK-Sim or created in R), or a Population Building Block must be created and assigned to the simulation. To import a population simulation:
+Similarly to individual simulations, a simulation previously exported as a \*.pkml file from PK-Sim® or MoBi® can be imported into the current project as a population simulation. As the \*.pkml exports only contain individual simulation and no information about the population, population information must be either a) loaded from a \*.CSV file (e.g., previously exported from PK-Sim or created in R), or a Population Building Block must be created and assigned to the simulation. To import a population simulation:
 
 - Click on the **Import/Export** tab, then click on the **Population Simulation** icon <img src="../assets/icons/PopulationSimulationLoad.svg" alt="" data-size="line">. In the **Simulation** section of the "Import Population Simulation" dialog, select the \*.pkml file to be imported.
 
