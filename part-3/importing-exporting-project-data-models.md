@@ -2,7 +2,7 @@
 
 ## Importing Observed data‌
 
-The Open Systems Pharmacology Suite offers a convenient handling of experimental data that you wish to compare with your simulations, e.g. observed data. The dialogues that cover this feature are called by clicking on the <img src="../assets/icons/ObservedData.svg" alt="" data-size="line"> **Observed Data** button in the **Import/Export** ribbon bar. The following steps are described in detail in Shared Tools - Import and edit of Observed _Data_.
+The Open Systems Pharmacology Suite offers a convenient handling of experimental time-values data. The process of loading of observed data from file formats like MS Excel, CSV, or NONMEM, is described in [Shared Tools - Import and edit of Observed Data](../part-5/import-edit-observed-data.md).
 
 ## Importing Individual and Population Simulation‌
 
