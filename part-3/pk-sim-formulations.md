@@ -101,7 +101,7 @@ In addition, in order to use the Particle Dissolution formulation, the drug-rela
 
 Table defines the amount of drug applied per unit time as a continuous function. You can either manually specify time and fraction of the applied dose values or import dissolution data from Excel®.
 
-In order to manually enter values:
+In order to manually enter the values:
 
 * Click on **Add Point** ![Image](../assets/icons/Add.png) to add a new row to the table
 * Enter appropriate values for **Time** and **Fraction (dose)** dissolved
@@ -122,20 +122,26 @@ For additional information about the import data and mapping workflow see [Impor
 
 ### Zero Order‌
 
-Zero Order defines the application as occurring in a dose-dependent manner. The required input is the time at which the entire application has been input **(End time)**.
+Zero Order defines the application at a constant rate. The total dose (defined in the administration protocol) will be administered at a constant rate until within the specified time [Start of administration, Start of administration + **(End time)**].
 
 ### First Order‌
 
-First Order defines the application as a first order input. The required input is the half-life of application value **(t1/2)**.
+First Order defines the application as a first order input. The required input is the half-life of application value **(t1/2)**. The formulation release is then described by the following equation:
+
+$$\frac{dA}{dt}=-k\cdot A$$
+
+where $A$ is the amount of drug at time $t$ and $k$ the first order rate constant calculated from the half-life of application value according to:
+
+$$k=\frac{\ln(2)}{t_{1/2}}$$
 
 ## Setting or Changing Formulation Properties‌
 
 To set or change the properties of an existing formulation:
 
-1. Right mouse click on the respective formulation in the **Building Block Explorer**
+1. Right mouse click on the respective formulation in the **Building Blocsk Explorer**
 2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
 
-or simply double click on the formulation in the **Building Block Explorer**
+or simply double click on the formulation in the **Building Blocks Explorer**
 
 The window with the properties of the formulation will open. The properties can be set or changed appropriately. The changes are saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 
@@ -143,15 +149,16 @@ The window with the properties of the formulation will open. The properties can 
 
 To clone a formulation in the project:
 
-1. Right mouse click on the respective formulation in the **Building Block Explorer**
+1. Right mouse click on the respective formulation in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/SimulationClone.svg" alt="" data-size="line"> **Clone...**
 3. Set an alternative name for the formulation clone and enter a description, if desired.
 4. Confirm and close the window by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">.
-5. **Saving Formulations as Templates‌**
+
+## Formulations as Templates‌
 
 For each project, a number of formulations can be defined. They can be saved as a template and then be shared among several projects and users.
 
-To save an existing formulation as template:
+To **save** an existing formulation as template:
 
 1. Right mouse click on the respective formulation in the **Building Block Explorer**
 2. Select <img src="../assets/icons/SaveAction.svg" alt="" data-size="line"> **Save as Template...**
@@ -162,11 +169,9 @@ In case a formulation with the same name already exists, a warning appears and y
 * Save as: You can save the formulation under a different name. In this case, you will be asked to Rename the new template.
 * Cancel: This action will abort the saving process.
 
-## Loading existing Formulations from Templates‌
+To **load** an existing formulation from the template database:
 
-To load an existing formulation from the template database:
-
-1. Right mouse click on **Formulations** in the **Building Block Explorer**
+1. Right mouse click on **Formulations** in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Load From Template...**
 3. Select the desired formulation from the user templates
 
@@ -174,7 +179,7 @@ In case a formulation with the same name already exists in the project, a warnin
 
 1. Click **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
-The selected formulation will appear in the **Building Block Explorer** view.
+The selected formulation will appear in the **Building Blocks Explorer** view.
 
 In addition, formulations can be directly loaded from the template database within a simulation (see [Simulations](pk-sim-simulations.md)).
 
@@ -182,7 +187,7 @@ In addition, formulations can be directly loaded from the template database with
 
 To delete a formulation from the project:
 
-1. Right mouse click on the respective formulation in the **Building Block Explorer**
+1. Right mouse click on the respective formulation in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/Delete.svg" alt="" data-size="line"> **Delete...**
 3. Confirm to by clicking **Yes**
 
