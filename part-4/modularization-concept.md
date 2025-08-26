@@ -16,6 +16,8 @@ A MoBi project contains a set of:
 - Expression Profiles
 - Simulations, which are combinations of (0-n) PK-Sim modules, (0-n) Extension modules, (0-1) individual, and (0-n) expression profiles. At least one module (PK-Sim or Extension) must be selected to create a simulation.
 
+Every module consists of [building blocks (BB)](building-block-concepts.md), with BB types Spatial Structures (SS) (0-1), Molecules (0-1), Reactions (0-1), Passive Transports (PT) (0-1), Observers (0-1), Events (0-1), Parameter Values (PV) (0-n), and Initial conditions (IC) (0-n). Every module includes no or exactly one BB of each type, except for PV and IC BBs, of which multiple can be present in one module.
+
 ## Commit/update changes
 
 The workflow of commiting changes from a simulation to a building block and updating a simulation with changes from a building block has been changed.
