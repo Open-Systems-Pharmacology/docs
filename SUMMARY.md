@@ -47,6 +47,7 @@
 ## Working with MoBi
 
 * MoBi‌ Documentation
+  - [Modularization concept](part-4/modularization-concept.md)
   * [First Steps](part-4/first-steps.md)
   * [The Building Block Concept](part-4/building-block-concepts.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
