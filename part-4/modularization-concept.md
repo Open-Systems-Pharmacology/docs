@@ -101,25 +101,87 @@ The current behavior of combining the passive transports might appear inconsiste
 
 #### Merge behavior "Extend"
 
-Currently, the merge behavior "Extend" is not implemented for passive transports. The bahavior is identical to "Overwrite".
+Currently, the merge behavior "Extend" is not implemented for passive transports. The behavior is identical to "Overwrite".
 
 ### Observers
 
-Observers are always overwritten by name. The "In container with" and "Include/Exclude molecules" lists are always combined.
+##### Merge behavior "Overwrite"
+
+- The equation in the **Monitoring** tab is overwritten.
+
+- The **In container with** list is overwritten, including the **Operator** (and/or).
+
+- **Include/Exclude** molecule lists for molecules are always extended. However, behavior of the **All checkbox** is overwritten.
+
+The current behavior of combining the observers might appear inconsistent and somewhat confusing. The discussion on this topic is still ongoing and can be followed [on GitHub](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2053).
+
+##### Merge behavior "Extend"
+
+Currently, the merge behavior "Extend" is not implemented for observers. The bahavior is identical to "Overwrite".
 
 ### Events
 
-Events are always overwritten by name. 2DO https://github.com/Open-Systems-Pharmacology/OSMOSES/issues/62
+Imagine the following case:
 
-Will be changed https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2328
+1. Module `A` has an event `Event 1` and Module `B` has an event `Event 1`. The event from module `A` has the contaner criteria `Events`, and the event from module `B` has the container criteria `Organism`. The final model will contain one event `Event 1` with the container criteria `Organism|Liver`.
+
+The event from module `A` has a parameter `Param 1` and the event from module `B` has a parameter `Param 2`. The final model will contain one event `Event 1` with the parameters `Param 1` and `Param 2`.
+
+The final model will contain two events called `Event 1` - one event in the node `Events` with parameter `Param 1` and one event in the node `Organism` with parameter `Param 2`, disregarding the merge behavior.
+
+2. If event from module `B` has container criteria `Events` OR `Organism`
+    - Merge behavior "Overwrite": the final model will contain the `Event 1` in both containers `Events` and `Organism` with `Param 2` only
+    - Merge behavior "Extend": the final model will contain the `Event 1` in container `Organism` with the parmaeter `Param 1`, and the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2`.
+
+{% hint style="warning" %}
+The container criteria of events are not combined in any way. The events across different modules are generated separately based on their on container criteria and combined (merge or extend) only if they are created in the same container.
+{% endhint %}
+
+For the events with final absolute path (container criteria) that are the same across multiple modules, the following rules apply:
+
+#### Merge behavior "Overwrite"
+
+The complete tree structure of the event is overwritten. This means:
+
+- **Parameters** list is overwritten. Only parameters defined in the module that is lower in the hierarchy are used.
+
+- **Administered molecule** is overwritten.
+
+- All subnodes of the event (e.g., **ProtocolSchemaItem**, **Application_StartEvent**, etc.) are overwritten.
+
+For each event:
+
+- **Events start condition** equation is overwritten.
+- **Events start condition - "One Time" checkbox** is overwritten.
+- The list of **Assignments** is overwritten.
+
+#### Merge behavior "Extend"
+
+The tree structure of the event is extended. This means:
+
+ - **Parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
+
+- **Administered molecule** is extended.
+
+{% hint style="warning" %}
+ This results in a malformed event if different molecules are defined in different modules!
+{% endhint %}
+
+For each event:
+
+- **Events start condition** equation: Changes are not applied!
+- **Events start condition - "One Time" checkbox**: Changes are not applied!
+- The list of **Assignments** is overwritten.
+- New nodes (events, containers, etc.) are added.
 
 ### Parameter values
 
 The final values of the parameters are determined in the following order:
 
 1. **Values defined in the Building block.**  First, the value that is defined in the BB where the parameter is defined. E.g., `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB. If a simulation is created only with the module with this Molecules BB without selection of an Expression Profile or a PV BB, the value will be 1 µmol/l.
-2. **Values defined in the Individual**. If an individual is selected, the values from the Individual are applied. When applying an Individual to a PK-Sim module only, the parameters defined in the individual are not present in the Spatial Structure of the PK-Sim module (see #pk-sim-modules). These parameters are added to the structure upon simulation creation.
-A special case is when an extension module explicitly defines a parameter in the spatial structure that is also present in the Individual. In this case, the value from the Individual will override the value (or formula) defined in the extension module. To overwrite the parameters that are defined in the Individual (e.g., defining the `Volume` of an organ as an age-dependent table instead of a constant value), define this parameter in the Parameter Values BB of an extension module.
+2. **Values defined in the Individual**. If an individual is selected, the values from the Individual are applied. When applying an Individual to a PK-Sim module only, the parameters defined in the individual are not present in the Spatial Structure of the PK-Sim module. These parameters are added to the structure upon simulation creation.
+
+    A special case is when an extension module explicitly defines a parameter in the spatial structure that is also present in the Individual. In this case, the value from the Individual will override the value (or formula) defined in the extension module. To overwrite the parameters that are defined in the Individual (e.g., defining the `Volume` of an organ as an age-dependent table instead of a constant value), define this parameter in the Parameter Values BB of an extension module.
 
 3. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. E.g., `CYP3A4|Reference concentration` is set to 4.32 µmol/l in the Molecules BB. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l.
 4. **Values defined in the PV BBs.** If a module is selected that contains a PV BB, the values from the PV BB are applied. If multiple modules have PV BBs with entries for the same parameters, the value from the latest module is selected. E.g., if the Extension module has an entry for `CYP3A4|Reference concentration` with the value of 2 µmol/l, and a simulation is created with the module with the Molecules BB where the value is 1 µmol/l, the Expression Profile where the value is 4.32 µmol/l, and the PV BB where the value is 2 µmol/l, the value in the simulation will be 2 µmol/l.
@@ -132,16 +194,6 @@ The final start values for molecules are determined in the following order:
 1. **Values defined in the Molecules BB**. Start values as defined in the Molecules BB.
 2. **Values defined in the Expression Profiles.** For proteins, values (including the formulas for start values) that are defined in the Expression Profile of the protein.
 3. **Values defined in the IC BBvs.** If multiple modules have IC BBs with entries for the same molecules, the value from the latest module is selected. If an IC BB have entries for the same molecule/container combination as an Expression Profile, the values from the IC BB will be applied.
-
-
-
-
-
-
-
-
-
--------------
 
 ## Commit/update changes
 
