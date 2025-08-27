@@ -117,7 +117,7 @@ The current behavior of combining the observers might appear inconsistent and so
 
 ##### Merge behavior "Extend"
 
-Currently, the merge behavior "Extend" is not implemented for observers. The bahavior is identical to "Overwrite".
+Currently, the merge behavior "Extend" is not implemented for observers. The behavior is identical to "Overwrite".
 
 ### Events
 
