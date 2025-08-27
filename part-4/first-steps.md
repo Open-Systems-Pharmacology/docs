@@ -57,7 +57,7 @@ To develop a model in MoBi®, you can either create it from scratch or import a 
 3.  Start MoBi®.
 4.  Open the `*.pkml` file using the **File** menu and choose the <img src="../assets/icons/Simulation.svg" data-size="line"> **Open Simulation** command.
 
-The simulation is loaded into MoBi® as a separate **PK-Sim module**. Aditionally, an Individual and a set of Expression Profiles are created in the **Modules Explorer**. Furthermore, observed data are imported if they were part of the PK-Sim® simulation.
+The simulation is loaded into MoBi® as a separate **PK-Sim module**. Additionally, an Individual and a set of Expression Profiles are created in the **Modules Explorer**. Furthermore, observed data are imported if they were part of the PK-Sim® simulation.
 
 ![Imported PK-Sim® Module](../assets/images/part-4/modules-explorer-pk-sim-transfer.png)
 
