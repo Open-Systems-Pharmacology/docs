@@ -63,7 +63,7 @@ The simulation is loaded into MoBi® as a separate **PK-Sim module**. Additional
 
 To add extensions to the PK-Sim® module, create an **Extension Module**. To do this, right-click the **Modules** folder in the **Modules Explorer**, and select <img src="../assets/icons/AddAction.svg" data-size="line"> **Create Module...** from the context menu. A new window titled "New Module" will open. Enter a name for the new module (e.g., "Cimetidine Extension"), select the building blocks that should be created in the module, select the merge behavior (see [Modularization concept](modularization-concept.md) for details), and click **OK**. The new module will appear in the Modules Explorer.
 
-{%! hint style="tip" %}
+{% hint style="tip" %}
 You can always add building blocks later if you did not select them when creating the module.
 {% endhint %}
 
