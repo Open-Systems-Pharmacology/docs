@@ -193,7 +193,7 @@ The final start values for molecules are determined in the following order:
 
 1. **Values defined in the Molecules BB**. Start values as defined in the Molecules BB.
 2. **Values defined in the Expression Profiles.** For proteins, values (including the formulas for start values) that are defined in the Expression Profile of the protein.
-3. **Values defined in the IC BBvs.** If multiple modules have IC BBs with entries for the same molecules, the value from the latest module is selected. If an IC BB have entries for the same molecule/container combination as an Expression Profile, the values from the IC BB will be applied.
+3. **Values defined in the IC BBs.** If multiple modules have IC BBs with entries for the same molecules, the value from the latest module is selected. If an IC BB have entries for the same molecule/container combination as an Expression Profile, the values from the IC BB will be applied.
 
 ## Commit/update changes
 
