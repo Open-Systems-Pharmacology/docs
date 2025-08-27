@@ -212,7 +212,7 @@ Changes to parameter or start values made in a simulation can be committed to th
 Changes to parameters values are committed to the selected Parameter Values (PV) building block of the last module in the simulation configuration. If the last module does not contain a PV BB, or no PV BB has been selected for this module, new PV BB will be created.
 
 {% hint style="warning" %}
-When committing changes made to a simulation created from PK-Sim module(s) only, the last PK-Sim module will be converted to an extension module. To avoide this, create a new extension module that should contain the changes. Then create the simulation with the extension module.
+When committing changes made to a simulation created from PK-Sim module(s) only, the last PK-Sim module will be converted to an extension module. To avoid this, create a new extension module that should contain the changes. Then create the simulation with the extension module.
 {% endhint %}
 
 Changes to initial conditions (IC) of molecules are handled similarly. They are committed to the selected IC BB of the last module in the simulation configuration. If the last module does not contain an IC BB, or no IC BB has been selected for this module, a new IC BB will be created.
