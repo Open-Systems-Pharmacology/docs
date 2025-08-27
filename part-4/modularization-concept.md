@@ -52,7 +52,7 @@ Multiple modules can be combined to create a simulation. For simplicity, a speci
 
 If a model configuration contains a PK-Sim module, the user must select an **Individual** and might include **Expression Profiles**. For each module that contains at least one IC or PV BB, the user can select one (or none) IC and/or PV BB.
 
-During simulation creation, the modules are combined to a common model structure. Entities are combined (extended or overwritten) by their absoulte path (for containers in the spatial structure, parameters, and molecule values) or by their names (for neighborhoods, passive transports, molecules, etc). The result is a simulation which represents the combination of the selected modules.
+During simulation creation, the modules are combined to a common model structure. Entities are combined (extended or overwritten) by their absolute path (for containers in the spatial structure, parameters, and molecule values) or by their names (for neighborhoods, passive transports, molecules, etc). The result is a simulation which represents the combination of the selected modules.
 
 There are two types of combination behavior that can be defined for a module - **overwrite** or **extend**. The following sections describe how different building blocks are merged and what are the differences between the **overwrite** and the  **extend** modes, if any.
 
