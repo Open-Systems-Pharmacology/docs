@@ -12,7 +12,7 @@ A typical MoBi® window looks like screenshot below. The window contains differe
 
 ![MoBi® window](../assets/images/part-4/Prg-overview.png)
 
-- The tabs **File**, **Modeling**, **Parameter Identification & Sensitivity**, **Working Journal**, **Import/Export**, **Utilities**, and **Views** with the **Ribbon Bar**. Additinal tabs may appear depending on the context, e.g. when editing a building block or a simulation.
+- The tabs **File**, **Modeling**, **Parameter Identification & Sensitivity**, **Working Journal**, **Import/Export**, **Utilities**, and **Views** with the **Ribbon Bar**. Additional tabs may appear depending on the context, e.g. when editing a building block or a simulation.
 
 - The **Modules Explorer** in the upper left section, which gives access to all modules and their building blocks, the individuals, expression profiles, and observed data of the current project,
 
