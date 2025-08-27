@@ -131,7 +131,7 @@ The final model will contain two events called `Event 1` - one event in the node
 
 2. If event from module `B` has container criteria `Events` OR `Organism`
     - Merge behavior "Overwrite": the final model will contain the `Event 1` in both containers `Events` and `Organism` with `Param 2` only
-    - Merge behavior "Extend": the final model will contain the `Event 1` in container `Organism` with the parmaeter `Param 1`, and the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2`.
+    - Merge behavior "Extend": the final model will contain the `Event 1` in container `Organism` with the parameter `Param 1`, and the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2`.
 
 {% hint style="warning" %}
 The container criteria of events are not combined in any way. The events across different modules are generated separately based on their on container criteria and combined (merge or extend) only if they are created in the same container.
