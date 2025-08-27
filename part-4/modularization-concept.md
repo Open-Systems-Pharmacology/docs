@@ -123,7 +123,7 @@ Currently, the merge behavior "Extend" is not implemented for observers. The beh
 
 Imagine the following case:
 
-1. Module `A` has an event `Event 1` and Module `B` has an event `Event 1`. The event from module `A` has the contaner criteria `Events`, and the event from module `B` has the container criteria `Organism`. The final model will contain one event `Event 1` with the container criteria `Organism|Liver`.
+1. Module `A` has an event `Event 1` and Module `B` has an event `Event 1`. The event from module `A` has the container criteria `Events`, and the event from module `B` has the container criteria `Organism`. The final model will contain one event `Event 1` with the container criteria `Organism|Liver`.
 
 The event from module `A` has a parameter `Param 1` and the event from module `B` has a parameter `Param 2`. The final model will contain one event `Event 1` with the parameters `Param 1` and `Param 2`.
 
