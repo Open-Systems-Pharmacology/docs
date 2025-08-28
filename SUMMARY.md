@@ -56,6 +56,7 @@
   * [Diagrams Overview](part-4/diagrams-overview.md)
   * [Tools](part-4/tools.md)
   * [Reuse of Project Information from Previous Versions](part-4/reuse-of-project-information-from-previous-versions.md)
+  * [Example Workflows](part-4/example-workflows.md)
 
 ## Shared Tools and Example Workflows
 
