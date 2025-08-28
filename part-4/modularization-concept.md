@@ -242,7 +242,7 @@ To get the full advantage of the new modularization concept with the support of 
 
 - When loading a simulation from a `*.pkml` file, one module will be created containing the entire model.
 - When opening a MoBi project created with previous versions:
-    - If the projects contains exactly one building block (BB) of each type (i.e., spatial structure BB, one reactions BB, on molecules BB, etc.), a single module will be created containing all the building blocks.
+    - If the project contains exactly one building block (BB) of each type (i.e., spatial structure BB, one reactions BB, one molecules BB, etc.), a single module will be created containing all the building blocks.
     - If the project contains multiple building blocks of the same type, a module will be created for each building block.
 
 Due to the new structure of simulation configuration, changes in parameter values or initial conditions made in the simulations created with previous versions of MoBi cannot be committed to building blocks. When opening a project created with previous versions of MoBi, the simulations will be marked as "outdated", and a warning will be shown.
