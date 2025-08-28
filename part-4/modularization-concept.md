@@ -50,7 +50,7 @@ The parameters that are defined in the individual are shown with grey background
 
 ## Parameter values building block
 
-Another important change (compared to the previous versions): the PV BB should only contain values for parameters that are different from those stored in other BBs. In the most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transfered in the PV BB.
+Another important change (compared to the previous versions): the PV BB should only contain values for parameters that are different from those stored in other BBs. In the most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transferred in the PV BB.
 
 ## Creating simulations from modules and combination rules
 
