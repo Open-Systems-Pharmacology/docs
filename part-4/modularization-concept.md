@@ -135,7 +135,7 @@ Imagine the following case:
 
 2. If the event from module `B` has container criteria `Events` OR `Organism`
     - Merge behavior **Overwrite**: the final model will contain the `Event 1` in both containers `Events` and `Organism` with `Param 2` only (`Organism|Event 1` is defined in module `B` only, and `Events|Event 1` is defined in both modules and will be overwritten by the event defined in module `B`).
-    - Merge behavior **Extend**: the final model will contain the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2` (`Events|Event 1` is defined in both modules and will be extended), and the `Event 1` in container `Organism` with the parameter `Param 1`.
+    - Merge behavior **Extend**: the final model will contain the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2` (`Events|Event 1` is defined in both modules and will be extended), and the `Event 1` in container `Organism` with the parameter `Param 2`.
 
 {% hint style="warning" %}
 The container criteria of events are not combined in any way. The events across different modules are generated separately based on their container criteria and combined (merge or extend) only if they are created in the same container.
