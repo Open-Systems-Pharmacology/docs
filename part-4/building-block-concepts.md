@@ -12,7 +12,7 @@ There are 8 different building blocks types that are organized in modules:
 - **Parameter Values**
 - **Initial Conditions**
 
-Additinonally, the building block types **Individuals** and **Expression Profiles** are organized separately and can be used in simulations with different modules.
+Additionally, the building block types **Individuals** and **Expression Profiles** are organized separately and can be used in simulations with different modules.
 
 The following sections give a brief overview of the different building blocks. More detailed information on each building block can be found in [Model Building and Model Components](model-building-components.md).
 
