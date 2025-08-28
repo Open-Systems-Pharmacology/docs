@@ -283,6 +283,9 @@ Similarly, observers or events can be included or excluded from being created in
 
 ## Spatial Structures‌
 
+ Logical containers in turn represent descriptive entities which support organization and visualization of the models. An important information on containers is also the hierarchy of its sub-models (parent vs. child) which ultimately defines path names and thus identifiers of the different containers, molecules and reactions.
+
+
 A spatial structure can be an organism consisting of organs, cells and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume. Containers of a spatial structure can be defined as Physical, which may contain molecules in the simulation. They can also be defined as Logical, meaning they do not represent a real container with molecules but instead just representing a grouping of sub-containers. Containers are also grouped in categories like Organism, Organ, and others. This way, the physical makeup of an organism is described.
 
 The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
@@ -359,6 +362,10 @@ A collection of template files with predefined building blocks is automatically 
 {% endhint %}
 
 ### Creating Neighborhoods‌‌
+
+{% hint style="warning" %}
+Defining a neighborhood between compartments is a prerequisite for exchange processes like active or passive transports.
+{% endhint %}
 
 Within a spatial structure, transport processes may occur (see [Active Transporter Molecules](model-building-components.md#active-transporter-molecules) or [Passive Transports](model-building-components.md#passive-transports)). If you plan to define a transport process within a project, it is necessary to define a neighborhood for a transport to become active. Creating a neighborhood works similar to connecting reaction partners with a reaction triangle:
 
