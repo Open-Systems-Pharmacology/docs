@@ -204,7 +204,7 @@ The final start values or formulas for molecules in a simulation are determined 
 
 ## Commit/update changes
 
-The workflow of commiting changes from a simulation to a building block and updating a simulation with changes from a building block has been changed.
+The workflow of committing changes from a simulation to a building block and updating a simulation with changes from a building block has been changed.
 
 ### Updating a simulation with changes from a building block
 
