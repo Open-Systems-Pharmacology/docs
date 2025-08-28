@@ -21,7 +21,7 @@ The following sections give a brief overview of the different building blocks. M
 The spatial structure building block defines the structural organization of the model. It contains the containers (e.g., organs, tissues, blood compartments) and their neighborhood relations. The spatial structure, therefore, defines the compartments of the model and their interconnections by defining the **neighborhoods** between the containers.
 
 {% hint style="warning" %}
-Two different species like mice and humans are not necessarily different in their spatial structure. (By default, the spatial structures are even equal!) These two species differ in their parameter values such as organ sizes, the blood flow rates, etc...
+Two different species like mice and humans are not necessarily different in their spatial structure. (By default, the spatial structures are even equal!) These two species differ in their parameter values such as organ sizes, the blood flow rates, etc.
 {% endhint %}
 
 ## Molecules‌
