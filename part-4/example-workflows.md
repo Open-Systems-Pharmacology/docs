@@ -1,4 +1,4 @@
-# MoBi - Exmple Workflows
+# MoBi - Example Workflows
 
 The following workflows illustrate how to use MoBi in different scenarios.
 
