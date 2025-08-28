@@ -39,7 +39,7 @@ Being a substrate of a transporter, unlike being the substrate of an enzymatic r
 
 ## Reactions‌
 
-Reactions define the causal interplay of the various molecules in a model. Note that they are not associated with a particular location or container, but are rather physical rules for the interactions of the components of a system. If two molecules are defined as reaction partners, they will react everywhere in the model, as long all reactants (and the catalyzing proteins, if required) are available in the same compartment. The inherent precondition for a reaction to be _created_ in the simulation structure is that all reaction partners are present; the precondition to _really take place_ is that the amounts of the corresponding partners are not equal to zero.
+Reactions define the causal interplay of the various molecules in a model. Note that they are not associated with a particular location or container, but are rather physical rules for the interactions of the components of a system. If two molecules are defined as reaction partners, they will react everywhere in the model, as long as all reactants (and the catalyzing proteins, if required) are available in the same compartment. The inherent precondition for a reaction to be _created_ in the simulation structure is that all reaction partners are present; the precondition to _really take place_ is that the amounts of the corresponding partners are not equal to zero.
 
 {% hint style="note" %}
 Reactions are defined independent of the location and take place wherever all reaction partners are present in non-zero amounts.
