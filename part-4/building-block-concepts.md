@@ -89,7 +89,7 @@ This building block defines the start values (either as a constant value or a fo
 
 ## Parameter Values‌
 
-The **Parameter Values (PV)** building block defines the values (contant or formula) of the parameters in the model. Values in the PV BB always overwrite the default values defined in other building blocks such as the spatial structure or the molecules building block. Therefore, the PV BB should only contain values for parameters that are different from the default values.
+The **Parameter Values (PV)** building block defines the values (constant or formula) of the parameters in the model. Values in the PV BB always overwrite the default values defined in other building blocks such as the spatial structure or the molecules building block. Therefore, the PV BB should only contain values for parameters that are different from the default values.
 
 ## Individuals‌
 
