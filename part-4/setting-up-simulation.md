@@ -5,7 +5,7 @@ After having made yourself familiar with the processes of building model compone
 * Load an existing simulation (pkml file) into the MoBi® project.
 * Create a new simulation from existing model components (building blocks). These two workflows of setting up simulations will be described in the following.
 
-## Simulatin settings
+## Simulation settings
 
 ### Numerical Properties
 
