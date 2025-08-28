@@ -13,7 +13,7 @@ The new concept introduces changes on how model structures are organized and com
 A MoBi project contains a set of:
 
 - PK-Sim modules
-    - A module created from a PK-Sim PBPK model. As best practice, a PK-Sim module should not be modified. Instead, all changes/extensions to the model should be done in the so-called Extension modules (see below). A PK-Sim module is converted into an Extension module when edited by the user.
+    - A module created from a PK-Sim PBPK model. As a best practice, a PK-Sim module should not be modified. Instead, all changes/extensions to the model should be done in the so-called Extension modules (see below). A PK-Sim module is converted into an Extension module when edited by the user.
 - Extension modules
     - Editable modules that contain any changes to the model structure made by the user.
 - Individuals
