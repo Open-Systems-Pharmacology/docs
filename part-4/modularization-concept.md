@@ -1,6 +1,6 @@
 # Modularization Concept in MoBi
 
-Starting with version 12, the OSP Suite introduces a new modularization concept for building models in MoBi. This new concept allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
+Starting with version 12 the OSP Suite introduces a new modularization concept for building models in MoBi. This new concept allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
 
 This section provides an overview of the modularization concept and is especially suited for users familiar with previous versions of MoBi. It explains the advantages of using modules, how to create and manage them, and the rules that govern module combination.
 
