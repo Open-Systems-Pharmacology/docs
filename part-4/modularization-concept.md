@@ -8,7 +8,7 @@ An example workflow illustrating how to use the modularization concept in practi
 
 ## MoBi project structure
 
-The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
+The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite <V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
 
 A MoBi project contains a set of:
 
