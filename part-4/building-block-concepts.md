@@ -31,7 +31,7 @@ A molecule can either move between containers of a model (transported either by 
 
 Non-stationary molecules imported from PK-Sim® projects are automatically associated with their distribution calculation method (e.g., PK-Sim® standard, Rodgers and Rowland, etc., see [Distribution](../part-3/pk-sim-compounds-definition-and-work-flow.md#distribution)). Selection of the distribution method defined how parameters describing the passive distribution of the compound and the partitioning into the different tissues are calculated.
 
-All proteins, molecule-protein complexes, and metabolites (that are modeled as "sink", see [Definition of a metabolite in an enzymatic process‌](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-a-metabolite-in-an-enzymatic-process]) are also found in the Molecules building block as stationary molecules.
+All proteins, molecule-protein complexes, and metabolites (that are modeled as "sink", see [Definition of a metabolite in an enzymatic process‌](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-a-metabolite-in-an-enzymatic-process)) are also found in the Molecules building block as stationary molecules.
 
 {% hint style="note" %}
 Being a substrate of a transporter, unlike being the substrate of an enzymatic reaction, is considered to be a drug property. Therefore, **active transports** are found under the drug properties in the Molecules building block.
