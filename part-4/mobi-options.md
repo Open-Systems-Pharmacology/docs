@@ -21,7 +21,7 @@ Always check which elements are renamed when this option is enabled. Sometimes, 
 
 - **Show warnings from PK-Sim standard observers**:
 - **Show warnings for unresolved endosome containers**:
-- **Validate dimentions**: Enables or disables dimension validation for formulas. If enabled, the application will check if the calculated dimensions of formulas are consistent with the dimension of the entity the formula is assigned to. If the dimensions are inconsistent, a warning will be shown in the **Notifications** view.
+- **Validate dimensions**: Enables or disables dimension validation for formulas. If enabled, the application will check if the calculated dimensions of formulas are consistent with the dimension of the entity the formula is assigned to. If the dimensions are inconsistent, a warning will be shown in the **Notifications** view.
 - **Show warnings when formulas dimension could not be calculated**: If enabled, a warning will be shown in the **Notifications** view if the dimension of a formula could not be calculated.
 - **Show known dimension warnings for PK-Sim parameters**
 - **Validate value constraints**: Enables or disables value constraint validation for parameters. If enabled, the application will check if the values assigned to parameters are within the defined constraints (e.g., min/max values). If a value is outside the constraints, a warning will be shown in the **Notifications** view.
