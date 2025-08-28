@@ -1,6 +1,9 @@
 # MoBi®‌ - First Steps
 
-This section guides you to your first project with MoBi® and familiarizes yourself with the software's user interface. First, the window structure of MoBi®and the basic steps for setting up a new MoBi® project are described, followed by a description on how to set up and carry out a simulation. Additionally, the import of a PK-Sim® simulation is explained. However, more sophisticated applications can be performed in MoBi®, and you are referred to the following chapters for a more detailed description.
+This section guides you to your first project with MoBi® and familiarizes yourself with the software's user interface. If you are already familiar with MoBi® and want to learn about the modularization concept, please refer to [Modularization concept](modularization-concept.md).
+
+
+First, the window structure of MoBi®and the basic steps for setting up a new MoBi® project are described, followed by a description on how to set up and carry out a simulation. Additionally, the import of a PK-Sim® simulation is explained. However, more sophisticated applications can be performed in MoBi®, and you are referred to the following chapters for a more detailed description.
 
 To create your first MoBi® project, simply follow the steps described in the sections below.
 
@@ -93,6 +96,6 @@ With a model imported from PK-Sim® or created from scratch, you can now create 
 
 6.  Click the orange arrow <img src="../assets/icons/Run.svg" data-size="line"> ribbon button to run the simulation, or alternatively press the **F5** key.
 
-After the computation is done, the simulated results are displayed in the **Results** tab. On the right, a vertical **Chart Editor** bar is visible.
+After the computation is done, the simulated results are displayed in the **Results** tab. On the right, a vertical **Chart Editor** panel is visible.
 
 The **Chart Editor** allows you to select the data to be displayed in the chart, and to customize the chart appearance. See [Chart Component](../part-5/chart-component.md) for details.
