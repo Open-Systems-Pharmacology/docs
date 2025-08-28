@@ -8,7 +8,7 @@ An example workflow illustrating how to use the modularization concept in practi
 
 ## MoBi project structure
 
-The new concept introduces changes on how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
+The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
 
 A MoBi project contains a set of:
 
@@ -135,7 +135,7 @@ Imagine the following case:
 
 2. If the event from module `B` has container criteria `Events` OR `Organism`
     - Merge behavior **Overwrite**: the final model will contain the `Event 1` in both containers `Events` and `Organism` with `Param 2` only (`Organism|Event 1` is defined in module `B` only, and `Events|Event 1` is defined in both modules and will be overwritten by the event defined in module `B`).
-    - Merge behavior **Extend**: the final model will contain the `Event 1` in container `Organism` with the parameter `Param 1`, and the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2` (`Events|Event 1` is defined in both modules and will be extended).
+    - Merge behavior **Extend**: the final model will contain the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2` (`Events|Event 1` is defined in both modules and will be extended), and the `Event 1` in container `Organism` with the parameter `Param 1`.
 
 {% hint style="warning" %}
 The container criteria of events are not combined in any way. The events across different modules are generated separately based on their container criteria and combined (merge or extend) only if they are created in the same container.
@@ -186,13 +186,15 @@ For each event:
 
 The final values or formulas of the parameters in a simulation are determined in the following order:
 
-1. **Values defined in the Building block.**  First, the value that is defined in the BB where the parameter is defined. E.g., `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB. If a simulation is created only with the module with this Molecules BB without selection of an Expression Profile or a PV BB, the value will be 1 µmol/l.
-2. **Values defined in the Individual**. If an individual is selected, the values from the Individual are applied. When applying an Individual to a PK-Sim module only, the parameters defined in the individual are not present in the Spatial Structure of the PK-Sim module. These parameters are added to the structure upon simulation creation.
+1. **Values defined in the building block:** first, the value defined in the BB where the parameter is defined. For example, the value of `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB. If a simulation is created using only this Molecules BB and no Expression Profile or PV BB is selected, the value will be 1 µmol/l.
 
-    A special case is when an extension module explicitly defines a parameter in the spatial structure that is also present in the Individual. In this case, the value from the Individual will override the value (or formula) defined in the extension module. To overwrite the parameters that are defined in the Individual (e.g., defining the `Volume` of an organ as an age-dependent table instead of a constant value), define this parameter in the Parameter Values BB of an extension module.
+2. **Values defined in the individual.** If an individual is selected, the values from the individual are applied. When applying an individual to a PK-Sim module only, the parameters defined in the individual are not present in the spatial structure of the PK-Sim module. **These parameters are added to the model when the simulation is created.**
 
-3. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. E.g., `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
-4. **Values defined in the PV BBs.** If a module is selected that contains a PV BB, the values from the PV BB are applied. If multiple modules have PV BBs with entries for the same parameters, the value from the latest module is selected. E.g., if the Extension module has an entry for `CYP3A4|Reference concentration` with the value of 2 µmol/l, and a simulation is created with the module with the Molecules BB where the value is 1 µmol/l, the Expression Profile where the value is 4.32 µmol/l, and the PV BB where the value is 2 µmol/l, the value in the simulation will be 2 µmol/l.
+    One special case occurs when an extension module explicitly defines a parameter in the spatial structure that is also present in the individual. In this case, the value from the individual will overwrite the value (or formula) defined in the extension module. To overwrite parameters defined in an individual (e.g. defining the volume of an organ as an age-dependent table rather than a constant value), define this parameter in the 'Parameter Values' section of an extension module.
+
+3. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. For example, `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
+
+4. **Values defined in PV BBs.** If a module containing a PV BB is selected, the values from the PV BB are applied. If multiple modules contain PV BBs with entries for the same parameters, the value from the latest module is selected. For example, if the Extension module contains an entry for `CYP3A4 Reference concentration`with a value of 2 µmol/l and a simulation is created using the Molecules BB module with a value of 1 µmol/l, the Expression Profile module with a value of 4.32 µmol/l and the PV BB module with a value of 2 µmol/l, the value in the simulation will be 2 µmol/l.
 
 ### Initial conditions
 
