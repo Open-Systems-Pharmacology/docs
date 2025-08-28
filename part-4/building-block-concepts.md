@@ -29,7 +29,7 @@ Two different species like mice and humans are not necessarily different in thei
 Generally, molecules can be any kind of countable entities. Mostly, molecules will be chemical or biological compounds and can either be quantified by amount or by concentration.
 A molecule can either move between containers of a model (transported either by *passive* or by *active* transport processes), or be stationary, i.e., it cannot be transported between containers. In the latter case, for example, the molecule may represent a membrane-bound receptor protein
 
-Non-stationary molecules imported from PK-Sim® projects are automatically associated with their distribution calculation method (e.g., PK-Sim® standard, Rodgers and Rowland, etc., see [Distribution](../part-3/pk-sim-compounds-definition-and-work-flow.md#distribution)). Selection of the distribution method defined how parameters describing the passive distribution of the compound and the partitioning into the different tissues are calculated.
+Non-stationary molecules imported from PK-Sim® projects are automatically associated with their distribution calculation method (e.g., PK-Sim® standard, Rodgers and Rowland, etc., see [Distribution](../part-3/pk-sim-compounds-definition-and-work-flow.md#distribution)). Selection of the distribution method defines how parameters describing the passive distribution of the compound and the partitioning into the different tissues are calculated.
 
 All proteins, molecule-protein complexes, and metabolites (that are modeled as "sink", see [Definition of a metabolite in an enzymatic process‌](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-a-metabolite-in-an-enzymatic-process)) are also found in the Molecules building block as stationary molecules.
 
