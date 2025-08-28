@@ -2,11 +2,13 @@
 
 Starting with version 12, the OSP Suite introduces a new modularization concept for building models in MoBi. This new concept allows users to create, share, and re-use models more efficiently by breaking them down into smaller, manageable components called **modules**.
 
-This section provides an overview of the modularization concept, and is especially suited for users familiar with previous versions of MoBi. It explains the advantages of using modules, how to create and manage them, and which rules the combination of modules follows. 
+This section provides an overview of the modularization concept, and is especially suited for users familiar with previous versions of MoBi. It explains the advantages of using modules, how to create and manage them, and which rules the combination of modules follows.
+
+An example workflow illustrating how to use the modularization concept in practice can be found [here](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
 
 ## MoBi project structure
 
-The new concept introduces changes on how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks** (BB) that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
+The new concept introduces changes on how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
 
 A MoBi project contains a set of:
 
@@ -16,9 +18,9 @@ A MoBi project contains a set of:
     - Editable modules that contain any changes to the model structure made by the user.
 - Individuals
 - Expression Profiles
-- Simulations, which are combinations of (0-n) PK-Sim modules, (0-n) Extension modules, (0-1) individual, and (0-n) expression profiles. At least one module (PK-Sim or Extension) must be selected to create a simulation.
+- Simulations, which are combinations of (0-n) PK-Sim modules, (0-n) Extension modules, (0-1) Individual, and (0-n) Expression Profiles. At least one module (PK-Sim or Extension) must be selected to create a simulation.
 
-Every module consists of [building blocks](building-block-concepts.md), with BB types Spatial Structures (SS) (0-1), Molecules (0-1), Reactions (0-1), Passive Transports (PT) (0-1), Observers (0-1), Events (0-1), Parameter Values (PV) (0-n), and Initial conditions (IC) (0-n). Every module includes no or exactly one BB of each type, except for PV and IC BBs, of which multiple can be present in one module.
+Every module consists of [building blocks](building-block-concepts.md), with BB types **Spatial Structures (SS)** (0-1), **Molecules** (0-1), **Reactions** (0-1), **Passive Transports (PT)** (0-1), **Observers** (0-1), **Events** (0-1), **Parameter Values (PV)** (0-n), and **Initial conditions (IC)** (0-n). Every module includes no or exactly one BB of each type, except for PV and IC BBs, of which multiple can be present in one module.
 
 ### PK-Sim modules
 A project in MoBi can be based on a PBPK model exported from PK-Sim. Such a model will be present as a **PK-Sim module** in MoBi containing *all of the BB types*. PK-Sim modules cannot be edited by default. If the user decides to edit a PK-Sim module, the PK-Sim module will be converted to an Extension module. A project can contain multiple or no PK-Sim modules.
@@ -26,15 +28,15 @@ A project in MoBi can be based on a PBPK model exported from PK-Sim. Such a mode
 Export of a PK-Sim model to MoBi creates one PK-Sim module, one individual, and (0-n) expression profile BBs.
 
 ### Extension modules
-Each MoBi project may contain any number of **Extension modules**. An Extension module can add or modify any part of the default PK-Sim structure - spatial structures, molecules, reactions, etc.
+Each MoBi project may contain any number of **Extension modules**. An Extension module can add or modify any part of the default PK-Sim model structure - spatial structures, molecules, reactions, etc.
 
-When adding new compartments (e.g., adding a new organ) or molecules in an Extension module, it is important to keep in mind that molecules will only be created in compartments if entries for the molecule-container combination is present in *any* IC BB used in the simulation. Therefore, when adding a molecule or a container in an Extension module, the IC BB should be extended accordingly.
+When adding new containers (e.g., adding a new organ) or molecules in an Extension module, it is important to keep in mind that molecules will only be created in containers if entries for the molecule-container combination is present in *any* IC BB used in the simulation. Therefore, when adding a molecule or a container in an Extension module, the IC BB should be extended accordingly.
 
 *Creation* of new modules can be performed from scratch ("Create new module" creates a module with empty BBs) or by cloning modules ("Clone module"). Modules can be saved as a `*.pkml` file, and BBs in a module can be loaded from `*.pkml` files.
 
 ## Location of (individual) parameters
 
-Compared to the previous versions, v12 introduces some changes in how and where individual parameters are stored when a PBPK model is imported in MoBi. The Spatial Structure only contains parameters that are present in all species and have the same value or the same formula across all species **and** individuals. All the other parameters are defined in the **Individual** BB. Furthermore, the PV BB only holds values for parameters that are different from those stored in other BBs. In most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transfered in the PV BB.
+Compared to the previous versions, v12 introduces some changes in how and where individual parameters are stored when a PBPK model is imported in MoBi.
 
 - All parameters of the spatial structure that are **present in all species** and have the **same value or the same formula in all species and individuals** are stored directly in the spatial structures BB with the fixed value or an explicit formula. Example: `Organism|Thickness (endothelium)` (constant value) or `Organism|Weight of blood organs` (sum formula).
 
@@ -45,6 +47,10 @@ For convenience, parameters that are defined in the individuals can be shown in 
 ![Spatial structure view with an individual selected](../assets/images/part-4/modularization-concept-spatial-structure-individual-parameters.png)
 
 The parameters that are defined in the individual are shown with grey background and cannot be edited in the spatial structure editor. You will notice that some parameters have a  `NaN` value. These parameters are defined by an equation that cannot be evaluated at this time, e.g., because they depend on other parameters that are also defined in the individual. The values of these parameters will be calculated after the simulation creation.
+
+## Parameter values building block
+
+Another important change (compared to the previous versions): the PV BB should only contain values for parameters that are different from those stored in other BBs. In the most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transfered in the PV BB.
 
 ## Creating simulations from modules and combination rules
 
@@ -101,7 +107,7 @@ The current behavior of combining the passive transports might appear inconsiste
 
 #### Merge behavior "Extend"
 
-Currently, the merge behavior "Extend" is not implemented for passive transports. The behavior is identical to "Overwrite".
+Currently, the merge behavior "Extend" for passive transports is identical to "Overwrite".
 
 ### Observers
 
@@ -117,27 +123,29 @@ The current behavior of combining the observers might appear inconsistent and so
 
 ##### Merge behavior "Extend"
 
-Currently, the merge behavior "Extend" is not implemented for observers. The behavior is identical to "Overwrite".
+Currently, the merge behavior "Extend" for observers is identical to "Overwrite".
 
 ### Events
 
 Imagine the following case:
 
-1. Module `A` has an event `Event 1` and Module `B` has an event `Event 1`. The event from module `A` has the container criteria `Events`, and the event from module `B` has the container criteria `Organism`. The final model will contain one event `Event 1` with the container criteria `Organism|Liver`.
+1. Module `A` has an event `Event 1` and Module `B` has an event `Event 1`. The event from module `A` has the container criteria `Events`, and the event from module `B` has the container criteria `Organism`. The event from module `A` has a parameter `Param 1` and the event from module `B` has a parameter `Param 2`. 
 
-The event from module `A` has a parameter `Param 1` and the event from module `B` has a parameter `Param 2`. The final model will contain one event `Event 1` with the parameters `Param 1` and `Param 2`.
+    When creating a simulation, these events are created separately based on their container criteria. Therefore, the simulation will contain two events called `Event 1` - one event in the node `Events` with the parameter `Param 1`, and one event in the node `Organism` with the parameter `Param 2`, disregarding the merge behavior.
 
-The final model will contain two events called `Event 1` - one event in the node `Events` with parameter `Param 1` and one event in the node `Organism` with parameter `Param 2`, disregarding the merge behavior.
-
-2. If event from module `B` has container criteria `Events` OR `Organism`
-    - Merge behavior "Overwrite": the final model will contain the `Event 1` in both containers `Events` and `Organism` with `Param 2` only
-    - Merge behavior "Extend": the final model will contain the `Event 1` in container `Organism` with the parameter `Param 1`, and the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2`.
+2. If the event from module `B` has container criteria `Events` OR `Organism`
+    - Merge behavior **Overwrite**: the final model will contain the `Event 1` in both containers `Events` and `Organism` with `Param 2` only (`Organism|Event 1` is defined in module `B` only, and `Events|Event 1` is defined in both modules and will be overwritten by the event defined in module `B`).
+    - Merge behavior **Extend**: the final model will contain the `Event 1` in container `Organism` with the parameter `Param 1`, and the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2` (`Events|Event 1` is defined in both modules and will be extended).
 
 {% hint style="warning" %}
-The container criteria of events are not combined in any way. The events across different modules are generated separately based on their on container criteria and combined (merge or extend) only if they are created in the same container.
+The container criteria of events are not combined in any way. The events across different modules are generated separately based on their container criteria and combined (merge or extend) only if they are created in the same container.
 {% endhint %}
 
-For the events with final absolute path (container criteria) that are the same across multiple modules, the following rules apply:
+{% hint style="note" %}
+This behavior will be changed in a future release, allowing more straightforward combination of events across modules.
+{% endhint %}
+
+For the events with identical final absolute paths (generated by the container criteria), the following rules apply:
 
 #### Merge behavior "Overwrite"
 
@@ -176,7 +184,7 @@ For each event:
 
 ### Parameter values
 
-The final values of the parameters are determined in the following order:
+The final values or formulas of the parameters in a simulation are determined in the following order:
 
 1. **Values defined in the Building block.**  First, the value that is defined in the BB where the parameter is defined. E.g., `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB. If a simulation is created only with the module with this Molecules BB without selection of an Expression Profile or a PV BB, the value will be 1 µmol/l.
 2. **Values defined in the Individual**. If an individual is selected, the values from the Individual are applied. When applying an Individual to a PK-Sim module only, the parameters defined in the individual are not present in the Spatial Structure of the PK-Sim module. These parameters are added to the structure upon simulation creation.
@@ -188,8 +196,7 @@ The final values of the parameters are determined in the following order:
 
 ### Initial conditions
 
-The final start values for molecules are determined in the following order:
-
+The final start values or formulas for molecules in a simulation are determined in the following order:
 
 1. **Values defined in the Molecules BB**. Start values as defined in the Molecules BB.
 2. **Values defined in the Expression Profiles.** For proteins, values (including the formulas for start values) that are defined in the Expression Profile of the protein.
@@ -223,7 +230,7 @@ Structural changes made to building blocks (e.g., adding/removing reactions, mol
 
 The OSP software is best suited for the development of complex quantitative systems pharmacology/toxicology (QSP/T) models based on the physiologically-based kinetics (PBK) modeling framework. With the introduction of the modularization concept, development of such models is even more efficient, transparent, and sustainable. To get the most out of the new concept, the following best practices should be considered.
 
-- If possible, each compound should be represented as a separate PK-Sim module.
+- Consider having a separate PK-Sim module for each compound, if the compounds are not interacting with each other. This allows flexible combination of modeled compounds in MoBi simulations.
 - PK-Sim modules should never be modified. Any modification and/or extensions should be implemented as separate modules.
 - An extension module should be defined as generic as possible. I.e., it should be compatible with any PK-Sim module with minimal adjustments, if possible.
 - Avoid duplication of information across modules - only implement the differences to other modules!
