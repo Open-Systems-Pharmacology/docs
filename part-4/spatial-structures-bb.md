@@ -95,7 +95,7 @@ To create a neighborhood between the two containers `BigVial|Vial1` and `BigVial
 It is possible to type in the paths to the containers instead of selecting them from the tree view. This is especially useful when the final structure with the full paths to the neighbors is a result of combining multiple modules. In this case, the containers may not yet be present in the the modules, but they will be available in the final model.
 {% endhint %}
 
-The created spatial sturcture should now look like this:
+The created spatial structure should now look like this:
 
 ![Spatial structure with two child containers and a neighborhood](../assets/images/part-4/SpatialStructure/SpatialStructureWithTwoContainers.png)
 
