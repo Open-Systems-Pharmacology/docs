@@ -2,7 +2,7 @@
 
 A Spatial Structure is a hierarchical arrangement of containers (compartments) that can represent an organism consisting of organs, cells, and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume.
 
-Two types of containers are available - **logical** and ** physical** containers. Logical containers do not represent a real container with molecules, but serve to group multiple sub-containers. An example is an **organ**, that groups physical containers like blood, interstitial space, and cells. A logical container may also be used to group multiple organs into a system, like the gastrointestinal tract or the whole organism. Logical containers may contain other logical containers or physical containers.
+Two types of containers are available - **logical** and **physical** containers. Logical containers do not represent a real container with molecules, but serve to group multiple sub-containers. An example is an **organ**, that groups physical containers like blood, interstitial space, and cells. A logical container may also be used to group multiple organs into a system, like the gastrointestinal tract or the whole organism. Logical containers may contain other logical containers or physical containers.
 
 Physical containers represent a real physical space that can contain molecules. Examples are blood, interstitial space, or cells within an organ, or a test tube in a laboratory setup.
 
