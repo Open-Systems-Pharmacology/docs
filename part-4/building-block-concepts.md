@@ -9,8 +9,8 @@ There are 8 different building blocks types that are organized in modules:
 - **Passive Transports**
 - **Observers**
 - **Events**
-- **Parameter Values**
 - **Initial Conditions**
+- **Parameter Values**
 
 Additionally, the building block types **Individuals** and **Expression Profiles** are organized separately and can be used in simulations with different modules.
 
@@ -52,12 +52,12 @@ If both, drug A and drug B, are known to bind the same binding partner, the mere
 {% endhint %}
 
 {% hint style="tip" %}
-Drug-drug-interactions such as competitive inhibition of CYP3A4 can easily be described by defining a competitive inhibition in the reactions building block. Competitive inhibition takes place in compartments where drugs and the protein are simultaneously available.
+Drug-drug interactions, such as competitive inhibition of CYP3A4 can easily be described by defining a competitive inhibition in the reactions building block. Competitive inhibition takes place in compartments where drugs and the protein are simultaneously available.
 {% endhint %}
 
 ## Passive Transports‌
 
-The building block "passive transport" defines transport processes such as diffusion, convection, or transport along a lumen. Passive Transports, in contrast to active transports, do not require a transporter protein to mediate the transport.
+The building block "Passive Transports" defines transport processes such as diffusion, convection, or transport along a lumen. Passive transports, in contrast to active transports, do not require a transporter protein to mediate the transport.
 
 Passive (as well as active) transports are only possible between containers that are connected via a neighborhood relation in the spatial structure of the model. The rules for **target** and **source** containers of a transport are defined by the *container criteria* as a mandatory condition.
 
@@ -75,7 +75,7 @@ MoBi® internally works with amounts rather than concentrations. Hence, all conc
 
 ## Events‌
 
-Events describe conditional changes during a simulation, usually a time- dependent change of values or formulas, but also complex events like drug administration, nutritional uptake, or physical exercise. MoBi®allows for any kind of change which can be described by means of an `if then else` condition.
+Events describe conditional changes during a simulation, usually a time-dependent change of values or formulas, but also complex events like drug administration, nutritional uptake, or physical exercise. MoBi®allows for any kind of change which can be described by means of an `if then else` condition.
 
 {% hint style="tip" %}
 An event is explicitly defined by a boolean formula including an `if` condition, which often depends on time, specific parameters, or the amount or concentration of a specific molecule.
@@ -85,7 +85,7 @@ An important distinction is whether an event only occurs once or repeatedly when
 
 ## Initial Conditions‌
 
-This building block defines the start values (either as a constant value or a formula) of the molecules in the model. Additionally, Initial Conditions BB defines the containers in which the molecules will be present and whether their values can become negative.
+This building block defines the start values (either as a constant value or a formula) of the molecules in the model. Additionally, Initial Conditions BB defines the containers in which the molecules will be present and whether their values may become negative.
 
 ## Parameter Values‌
 
@@ -93,7 +93,7 @@ The **Parameter Values (PV)** building block defines the values (constant or for
 
 ## Individuals‌
 
-The **Individuals** building block defines the physiological properties of an individual. The parameter set referred to is limited to the parameters provided by PK-Sim®. Technically, the Individuals BB is comparable to the Parameter Values BB with additional metadata. New individuals can be created in MoBi® the same way as in PK-Sim®.
+The **Individuals** building block defines the physiological properties of an individual. The parameter set referred to is limited to the parameters provided by PK-Sim®. New individuals can be created in MoBi® the same way as in PK-Sim®.
 
 ## Expression Profiles‌
 
