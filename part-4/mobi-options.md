@@ -15,7 +15,7 @@ Always check which elements are renamed when this option is enabled. Sometimes, 
 -   **Number of recent file items shown**: Changes the number of recent documents displayed within the File Tab. The program needs to be restarted for the changes to take effect.
 - **Decimal places**: Changes the number of decimal places shown in numerical fields throughout the application.
 
-- **Max. number of processors to use**: Changes the maximum number of processors used for simulation runs. By default, all available processors are used.
+- **Max. number of processors to use**: Changes the maximum number of processors used for tasks that can be executed in parallel (population simulations, parameter identification, parallel execution of simulations).
 
 ### Validation Options
 

@@ -9,11 +9,7 @@ After having made yourself familiar with the processes of building model compone
 
 ### Numerical Properties
 
--   **Allows scientific notation**: You can specify if parameter values and results are displayed in scientific notation and if they are very small or large.
--   **Decimal place**: You can specify the number of decimal places displayed for parameter values and results.
 -   **Absolute tolerance** and **Relative tolerance**: You can specify the absolute and relative tolerance to control the error of the ODE solver. Changes will only affect simulations that are created after changing values.
--   **Maximum number of processors to use** for tasks that can be executed in parallel (population simulations, parameter identification, parallel execution of simulations).
--   **Number of bins**: number of bins to display in histograms of populations/population simulations for parameter distribution.
 
 {% hint style="warning" %}
 Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
