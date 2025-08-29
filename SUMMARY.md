@@ -50,7 +50,7 @@
   * [First Steps](part-4/first-steps.md)
   * [The Building Block Concept](part-4/building-block-concepts.md)
   * [Modularization concept](part-4/modularization-concept.md)
-  * [Spatial Structures](part-4/spatial-structures-bb.md.md)
+  * [Spatial Structures](part-4/spatial-structures-bb.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
   * [Setting up a Simulation](part-4/setting-up-simulation.md)
   * [Simulation Results](part-4/simulation-results.md)
