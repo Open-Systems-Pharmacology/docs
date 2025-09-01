@@ -460,7 +460,7 @@ Continuing with our example, let us enter a simple diffusion equation based on a
 4. Drag and drop exactly this "Concentration" parameter to the white references area to the left of the tree. The alias name "Concentration" and the path "SOURCE|MOLECULE|Concentration" should appear in the list.‌
 5. Then open the tree below "Vial2" -> "MoleculeProperties" -> "A" and drag exactly this "Concentration" parameter into the references as well. This time, the alias should be named "Concentration1" and the path should read "TARGET|MOLECULE|Concentration".‌
 6. Compare your screen to to the images below. If you want to change the aliases manually, you can do so by clicking on any name input box and replace the corresponding name with another.
-7. Now enter the formula "0.001\*(Concentration-Concentration1)" into the formula input box below the references. The error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> that was displayed to the left of this input box should now disappear, if everything is typed correctly. Compare your result again with the images below.
+7. Now enter the formula `0.001 * (Concentration - Concentration1)` into the formula input box below the references. The error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> that was displayed to the left of this input box should now disappear, if everything is typed correctly. Compare your result again with the images below.
 
 {% hint style="info" %}
 The resulting formula is a generic formula. The example model has 3 different molecules, "A", "B", and "C". Each of them will be transported by the above passive transport, as long as they are all present in the compartments "Vial1" and "Vial2" and the checkbox "All" is selected, which is the case in our example.
@@ -469,21 +469,6 @@ The resulting formula is a generic formula. The example model has 3 different mo
 ![Passive Transport has been added - Properties Tab](../assets/images/part-4/PassiveTransportComplete.png)
 
 ![Passive Transport has been added - Kinetic Tab](../assets/images/part-4/PassiveTransportComplete-KinticTab.png)
-
-### Molecule-specific Passive Transports‌
-
-Besides generic transport processes, molecule-specific passive transports may be required. An example is a molecule's clearance from the body which is not further characterized and cannot be attributed to specific enzymes or transporters.
-
-As with generic passive transports, molecule-specific transports only affect non-stationary molecules. Following the logic of MoBi®, molecule-specific transport processes are to be defined in the "Molecules" building block. Refer to [Creating New Molecules](model-building-components.md#creating-new-molecules) and open your Molecules building block for re-editing by double-clicking or by use of the context menu. If it is still open, you can click the Molecules tab in the edit window.
-
-To create a molecule-specific transport process:
-
-1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
-2. Select **Create Passive Transport** from the context menu.
-3. A "New Passive Transport" window opens.
-4. Then follow the same protocol as given for the generic passive transports, “Passive Transports”.
-
-Like with the generic passive transports, you may also load an existing process from a pkml file. Existing passive transports appear below the affected molecule in the tree view. Selecting such a process by clicking it will display an edit window as for the active transports.
 
 ### Active Transporter Molecules‌
 
