@@ -382,7 +382,7 @@ At this point, you may already input a value for the "Default Start Amount" whic
 
 ### Adding molecule parameters‌
 
-As an example,create the parameter "Molecular weight" for the molecule created above.
+As an example, create the parameter "Molecular weight" for the molecule created above.
 
 1. Click <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**, and a "New Parameter" window will open.
 2. Enter "Molecular weight" as parameter name.
