@@ -19,8 +19,8 @@ Always check which elements are renamed when this option is enabled. Sometimes, 
 
 ### Validation Options
 
-- **Show warnings from PK-Sim standard observers**:
-- **Show warnings for unresolved endosome containers**:
+- **Show warnings from PK-Sim standard observers**: If selected, warnings will be generated if observers imported from PK-Sim (e.g., plasma concentration observer) cannot be created. E.g., if you add an organ tagged with "TissueOrgan" but without the "Intracellular"-compartment - MoBi will try to create a "Tissue" observer in this new organ and fail. The simulation will still be created, but a warning will be shown or not depending on this option.
+- **Show warnings for unresolved endosome containers**: When creating a simulation for small molecules model (without the `Endosome` container), some of the parameters of protein expression will not be created, as they refer to the `Endosome` container. If this option is enabled, a warning will be shown in the **Notifications** view if such unresolved containers are detected. See the [GitHub discussion](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1112) for more details.
 - **Validate dimensions**: Enables or disables dimension validation for formulas. If enabled, the application will check if the calculated dimensions of formulas are consistent with the dimension of the entity the formula is assigned to. If the dimensions are inconsistent, a warning will be shown in the **Notifications** view.
 - **Show warnings when formulas dimension could not be calculated**: If enabled, a warning will be shown in the **Notifications** view if the dimension of a formula could not be calculated.
 - **Show known dimension warnings for PK-Sim parameters**
