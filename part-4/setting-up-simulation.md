@@ -7,13 +7,14 @@ After having made yourself familiar with the processes of building model compone
 
 ## Simulation settings
 
-### Numerical Properties
+- Output Intervals: start and end time point of a simulation and resolution of a simulation; can be edited in this view in the **Output Intervals** tab.
 
--   **Absolute tolerance** and **Relative tolerance**: You can specify the absolute and relative tolerance to control the error of the ODE solver. Changes will only affect simulations that are created after changing values.
+- Solver Settings: solver parameters such as tolerance, use of Jacobian etc.; can also be edited in this view in the **Solver Settings** tab.
 
-{% hint style="warning" %}
-Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
-{% endhint %}
+- Output Selection: outputs that will be available for plots; cannot be edited in this view but will be listed in the **Output Selection** tab after a successful simulation run in the **Simulation Creation Wizard**.
+
+- Chart Templates: a set of chart templates can be managed in the **Chart Editor** as described in [Tools](tools.md); is part of the simulation settings, but not visible in this view.
+
 
 ## Load a Simulation‌
 
