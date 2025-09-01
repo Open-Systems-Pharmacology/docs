@@ -21,10 +21,6 @@ In a similar way, you can **save an entire molecules building block**.
 
 You can **load such a molecules building block** into a  module that *does not have a molecules BB* by right-clicking the module and selecting **Load Building Blocks**. Also, you can use any saved molecules building block to **load individual molecules** from it into other projects, using the **Load Molecule** function described above.
 
-{% hint style="info" %}
-If you are frequently building models in MoBi® where new molecules have to be defined, it is a good idea to once configure your typical **default molecule** and save it in your working directory. You can then populate your molecules building blocks by repeatedly loading your default molecule and each time changing the name to your desired molecule names.
-{% endhint %}
-
 Any molecules building block can also be **removed** (i.e., deleted) and **renamed** using the corresponding context menu functions.
 
 ## MoBi® - Projects‌
@@ -371,30 +367,6 @@ Protein interactions of a molecule are listed as sub-nodes of the interacted mol
 
 Note that in the Molecules BB, only the paramters of the interaction are defined. The interaction itself is modeled in the **Reactions** building block or taken into account in the equations of the active transport processes.
 
-## Loading, Editing, and Saving Molecules‌
-
-Alternatively to newly creating a molecule, **molecules can be loaded from a pkml file**. This file can be
-
-* a PK-Sim® export containing molecules (see [Export to \*.pkml file for MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi) for how to create such a file),
-* an entire previously saved MoBi® simulation,
-* a saved Molecules building block from a previous project,
-* or a previously saved molecule file.
-
-{% hint style="info" %}
-A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the MoBi program group will lead you to the proper path.
-{% endhint %}
-
-Use one of such files and proceed in the following way:
-
-1. Click the <img src="../assets/icons/PKMLLoad.svg" data-size="line"> **Load From Template** button, or right-click into the empty space below the tab "Molecules" and choose **Load Molecule** from the context menu that appears.
-2. Select a folder and then a pkml file from the file browser window that will open.
-3. If the pkml file contains more than one molecule, select one or more from the list that is displayed. If one or more molecule names are already in use in the current project, you will be asked for alternative names.
-
-To **save a molecule** as pkml file:
-
-1. Right-click on its name in the molecules tree, and select **Save As** from the context menu.
-2. Select a location where it is saved in the file browser window that will open and select a name to save it.
-
 ## Example - Creating New Molecules‌
 
 ### Creating a new molecule‌
@@ -432,6 +404,34 @@ For a detailed description of the creation and use of formulas see below, [React
 
 {% hint style="info" %}
 For **continuing our test project**, enter three molecules and name them "A", "B", and "C". Uncheck the checkbox ![Image](../assets/icons/Unchecked.png) **Stationary** for each molecule to allow transport processes. Set the **Default Start Amount** for molecule "A" to 50 µmol and leave "B" and "C" at the default, 0 µmol. It will be needed to practice in the next sections.
+{% endhint %}
+
+## Loading, Editing, and Saving Molecules‌
+
+Alternatively to newly creating a molecule as described in the [Example - Creating New Molecules], **molecules can be loaded from a pkml file**. This file can be
+
+* a PK-Sim® export containing molecules (see [Export to \*.pkml file for MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi) for how to create such a file),
+* an entire previously saved MoBi® simulation,
+* a saved Molecules building block from a previous project,
+* or a previously saved molecule file.
+
+{% hint style="info" %}
+A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the MoBi program group will lead you to the proper path.
+{% endhint %}
+
+Use one of such files and proceed in the following way:
+
+1. Click the <img src="../assets/icons/PKMLLoad.svg" data-size="line"> **Load From Template** button, or right-click into the empty space below the tab "Molecules" and choose **Load Molecule** from the context menu that appears.
+2. Select a folder and then a pkml file from the file browser window that will open.
+3. If the pkml file contains more than one molecule, select one or more from the list that is displayed. If one or more molecule names are already in use in the current project, you will be asked for alternative names.
+
+To **save a molecule** as pkml file:
+
+1. Right-click on its name in the molecules tree, and select **Save As** from the context menu.
+2. Select a location where it is saved in the file browser window that will open and select a name to save it.
+
+{% hint style="info" %}
+If you are frequently building models in MoBi® where new molecules have to be defined, it is a good idea to once configure your typical **default molecule** and save it in your working directory. You can then populate your molecules building blocks by repeatedly loading your default molecule and each time changing the name to your desired molecule names.
 {% endhint %}
 
 ## Reactions‌
