@@ -281,8 +281,8 @@ Tags are evaluated in fields of observers, transports, or event groups titled "I
 2. Not match tag condition: the condition is fulfilled when the tag name is **not** matched.
 3. In Container with: the condition is fulfilled when the container name is matched.
 4. Not in Container with: the condition is fulfilled when the container name is **not** matched.
-5. In Parent
-6. In Children
+5. In Parent: the condition is fulfilled when the container is a direct parent of the entity being considered.
+6. In Children: the condition is fulfilled when the container is a direct child of the entity being considered.
 
 More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
 
