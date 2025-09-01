@@ -342,7 +342,7 @@ Each parameter has:
     - **Local** parameters are parameters whose values depend on the location of the molecule, e.g., "Concentration". These parameters are listed under the molecule node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`.
 
 {% hint style="info" %}
-The goal of defining a parameter a local is to have it's value be different in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)).
+The goal of defining a parameter as local is to have its value be different in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)).
 {% endhint %}
 
 {% hint style="info" %}
