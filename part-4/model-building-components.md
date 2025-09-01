@@ -6,6 +6,15 @@ After having made yourself familiar in the previous chapters with the building b
 Always watch for the helpful tool tips that appear when hovering for a few seconds with the mouse pointer over an input box or its description.
 {% endhint %}
 
+## Exporting and importing building blocks‌
+
+You may also load and save an entire Spatial Structure building block as pkml file. This is described in detail for molecules in [Loading, Editing, and Saving Molecules](model-building-components.md#loading-editing-and-saving-molecules) and applies also for a spatial structure.
+
+{% hint style="info" %}
+A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the "MoBi" program group will lead you to the proper path.
+{% endhint %}
+
+
 ## MoBi® - Projects‌
 
 ### New Project‌
@@ -280,104 +289,6 @@ Models generated in **PK-Sim**® make extensive **use of tags**: For example, op
 2. Target container: tagged with "Plasma" and not tagged with "Arterial Blood" and not tagged with "Lung".
 
 Similarly, observers or events can be included or excluded from being created in different parts of the spatial structure. The molecule observer "Fraction excreted", for example, makes use of the tag "Urine", so this observer is only created in the urine container.
-
-## Spatial Structures‌
-
- Logical containers in turn represent descriptive entities which support organization and visualization of the models. An important information on containers is also the hierarchy of its sub-models (parent vs. child) which ultimately defines path names and thus identifiers of the different containers, molecules and reactions.
-
-
-A spatial structure can be an organism consisting of organs, cells and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume. Containers of a spatial structure can be defined as Physical, which may contain molecules in the simulation. They can also be defined as Logical, meaning they do not represent a real container with molecules but instead just representing a grouping of sub-containers. Containers are also grouped in categories like Organism, Organ, and others. This way, the physical makeup of an organism is described.
-
-The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®. The operations described below for creating new structures can also be used to modify imported structures.
-
-{% hint style="info" %}
-In the process of this and the next sections of this chapter, you will create an example project. An already completed project file named "ManualModel\_Sim.mbp3" is automatically installed together with MoBi® in the default program data directory. The entry "Examples" in the program start menu in the "MoBi" group will lead you to the proper path.
-{% endhint %}
-
-A very simple spatial structure named "Organism" has already been automatically created by executing the **New Project** command. For becoming familiar with editing spatial structures, proceed further:
-
-1. Click on the + sign next to "Spatial Structures" in the Building Block Explorer.
-2. Edit the "Organism" by double-clicking on it or by using the **Edit** command of the context menu that appears after right-clicking on **Organism**.
-
-The screen should now look as shown in the following figure:
-
-![Spatial Structure as created by New Project](../assets/images/part-4/spatial-structure-new-project.jpg)
-
-In the **Edit** window of a spatial structure, you have a diagram area like in the
-
-Edit Reactions mode, which is used here to display the physical and logical arrangement of organs or reaction vials and their interactions. On the left of the **Diagram Area** is a miniature view of the entire diagram which is thought to be helpful in navigating within larger spatial structures. Below the miniature view is a tree view of the spatial structure including any neighborhoods.
-
-### Creating a Spatial Structure‌
-
-For continuing with our example project, construct a simple spatial structure which consists of a surrounding top level container having two interconnected sub-containers. A common tag will be added to both sub-containers which will be used later for restricting some computations (e.g., observers) to be only done for the two sub-containers. Tags are also used for restricting events or selecting source and target for transport processes. Check the corresponding sections for their use.
-
-1. First, **rename the top level container** from its default name that was initially created. Right-click the greenish oval symbol with the name "Organism" inside. A context menu will come up; select <img src="../assets/icons/Rename.svg" data-size="line"> Rename from it.
-2. You will be asked for a new name. Enter "BigVial" and press **Enter** or click OK.
-3. A new window named "Rename also" will open, where a list of object references to the renamed spatial structure will appear. Leave all the checkboxes checked ![Image](../assets/icons/Checked.png), and continue by clicking **OK**. The names in the Diagram Area and in the tree views will now show "BigVial".
-4. Now create two sub-containers. Right-click again into the light green oval symbol in the Diagram Area, but this time select <img src="../assets/icons/ContainerAdd.svg" data-size="line"> **Create Container**.
-5. A new window named "New Container" opens, similar to the creation of molecules or reactions. Enter "Vial1" as name, and leave the Container Type on Organ. Select Physical Container in the right combobox below the name input box.
-6. Click the **Add Tag** button below the Container Type. You are asked for a tag name. Enter "Obs" as a tag name.
-7. Finally, click **OK** or press **Enter**.
-
-![New Container window](../assets/images/part-4/NewContainer.png)
-
-After this step, the top container "BigVial" has expanded in the Diagram Area, and a new oval "Vial1" has appeared within the expanded range. Now, repeat the "Create Container" steps 4 to 7. Make sure to right-click into the green-shaded "BigVial" area surrounding "Vial1", but not into "Vial1" and not in the white area outside the outer "BigVial"! A good place would be some distance to the right of "Vial1". Name the second sub-container "Vial2" and tag it also with "Obs". You can then expand the view by dragging "Vial2" to a more distant point from "Vial1" using the mouse. The screen should now look like this:
-
-![Spatial Structure with two child containers](../assets/images/part-4/Vial1Vial2.png)
-
-The spatial structure can be handled in a similar way as the reactions diagram area. You can zoom in and out using the mouse wheel and the **Ctrl** key, through the context menu or the ribbon icons, and you can move structures around by dragging and dropping. Structures can be expanded by clicking on the + sign in the upper right, or they can be collapsed by clicking on the - sign. Templates can be saved or applied, and a **Layout** function can be applied using the context menu after right-clicking. Sometimes the display needs to be refreshed, using the <img src="../assets/icons/Update.svg" data-size="line"> **Refresh** entry in the context menu.
-
-Any container or sub-container may have parameters associated with it. They can describe physical or biological properties of the container that are required for processes like transports or reactions. What is needed in our practice model is the volume parameter which is used to calculate concentrations required for kinetic equations or for plotting concentrations after a simulation has been performed.‌‌
-
-As for molecules or reactions, parameters become accessible after clicking the "Parameters" tab in the lower section of the edit window. To enter a spatial structure parameter:
-
-1. Click on "BigVial" either in the Diagram Area or in the edit tree.
-2. Click the "Parameters" tab.
-3. Click the button <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**, upon which a window named "New Parameter" opens.
-4. Enter "Volume" into the Name input box, select Volume in the Dimension input box, then enter "1" into the Value input box. The Formula Type remains on "Constant".
-5. Finally, click **OK**, and the new parameter "Volume" will appear in the parameter list.
-6. Repeat this procedure for the sub-containers "Vial1" and "Vial2", but set their volume values to smaller values, like 0.1 and 0.2 liters.
-
-A Spatial Structure (whole or in part) can also be loaded from or saved to a template (pkml) file. Right-clicking into the Diagram Area will open a context menu that show a **Load Container** and a **Save As** entry.
-
-To **save a Container of a Spatial Structure** as pkml file:
-
-1. Right-click on it in the Diagram Area or in the tree view, and select **Save As** from the context menu.
-2. In the file browser window that will open, select a location where it is saved and choose a name to save it.
-
-The selected container, including all its sub-containers, parameters and neighborhoods between the sub-containers will be saved.
-
-To **load a Container into a Spatial Structure** from a pkml file:
-
-1. Right-click onto the desired target position for it in the Diagram Area or in the tree view, and select **Load Container** from the context menu.
-2. Select a folder and then a pkml file from the file browser window that will open.
-3. If the pkml files contains more than one container, select the desired container.
-
-The selected container, including all its sub-containers and neighborhoods between the sub-containers, will be loaded. If duplicate names occur, you may be asked to enter a new name. Any desired neighborhood relations (see [Creating Neighborhoods](model-building-components.md#creating-neighborhoods)) to already existing containers in the spatial structure will have to be newly created.
-
-You may also load and save an entire Spatial Structure building block as pkml file. This is described in detail for molecules in [Loading, Editing, and Saving Molecules](model-building-components.md#loading-editing-and-saving-molecules) and applies also for a spatial structure.
-
-{% hint style="info" %}
-A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the "MoBi" program group will lead you to the proper path.
-{% endhint %}
-
-### Creating Neighborhoods‌‌
-
-{% hint style="warning" %}
-Defining a neighborhood between compartments is a prerequisite for exchange processes like active or passive transports.
-{% endhint %}
-
-Within a spatial structure, transport processes may occur (see [Active Transporter Molecules](model-building-components.md#active-transporter-molecules) or [Passive Transports](model-building-components.md#passive-transports)). If you plan to define a transport process within a project, it is necessary to define a neighborhood for a transport to become active. Creating a neighborhood works similar to connecting reaction partners with a reaction triangle:
-
-1. Move the mouse to one of the connected containers until the mouse pointer changes from the standard arrow ![Image](../assets/icons/ArrowCursor.png) to a hand symbol ![Image](../assets/icons/HandCursor.png).
-2. Hold the left mouse button and drag the connection, displayed by a line, to the container you want to have as a second neighborhood partner until the line hits its rim. In our case, connect "Vial1" with "Vial2".
-3. You will be asked for a neighborhood name that is required to proceed. Enter "V1V2Connection" and click **OK**. In the Diagram Area, the thin initial line is replaced by a bold line showing a circle half-way in the connection. Also, the neighborhood appears in the tree view of the spatial structure.
-
-The screen now looks like this:
-
-![Neighborhood created between two child containers](../assets/images/part-4/NeighborhoodDone.png)
-
-Like the containers, the neighborhood may contain parameters and may carry tags. These parameters could describe the physical makeup of a neighborhood, and these values may later be used in the formulas of transport processes. If you look at simulations imported from PK-Sim®, you will see examples for such parameters. The spatial structure of such a PBPK model is much more complex, but editing it works in the same way as described for our simple example.
 
 ## Molecules‌
 
