@@ -431,7 +431,7 @@ To **save a molecule** as pkml file:
 2. Select a location where it is saved in the file browser window that will open and select a name to save it.
 
 {% hint style="info" %}
-If you are frequently building models in MoBi® where new molecules have to be defined, it is a good idea to once configure your typical **default molecule** and save it in your working directory. You can then populate your molecules building blocks by repeatedly loading your default molecule and each time changing the name to your desired molecule names.
+If you are frequently building models in MoBi® where new molecules have to be defined, it is a good idea to configure your typical **default molecule** once and save it in your working directory. You can then populate your molecules building blocks by repeatedly loading your default molecule and each time changing the name to your desired molecule names.
 {% endhint %}
 
 ## Reactions‌
