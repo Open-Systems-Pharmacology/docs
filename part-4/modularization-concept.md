@@ -233,6 +233,12 @@ Structural changes made to building blocks (e.g., adding/removing reactions, mol
 The OSP software is best suited for the development of complex quantitative systems pharmacology/toxicology (QSP/T) models based on the physiologically-based kinetics (PBK) modeling framework. With the introduction of the modularization concept, development of such models is even more efficient, transparent, and sustainable. To get the most out of the new concept, the following best practices should be considered.
 
 - Consider having a separate PK-Sim module for each compound, if the compounds are not interacting with each other. This allows flexible combination of modeled compounds in MoBi simulations.
+- For **drug-drug interaction (DDI)** models, however, the compounds should be included in the same PK-Sim module, and the interactions should be defined in PK-Sim.
+
+{% hint style="warning" %}
+Combinging two PK-Sim modules does not automatically create interactions between the compounds in the two modules, even of one of the compounds is a perpetrator of a DDI. The interactions must be defined in PK-Sim, and the compounds must be included in the same PK-Sim module.
+{% endhint %}
+
 - PK-Sim modules should never be modified. Any modification and/or extensions should be implemented as separate modules.
 - An extension module should be defined as generic as possible. I.e., it should be compatible with any PK-Sim module with minimal adjustments, if possible.
 - Avoid duplication of information across modules - only implement the differences to other modules!

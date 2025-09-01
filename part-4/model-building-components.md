@@ -14,6 +14,18 @@ You may also load and save an entire Spatial Structure building block as pkml fi
 A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the "MoBi" program group will lead you to the proper path.
 {% endhint %}
 
+In a similar way, you can **save an entire molecules building block**.
+
+1. In the Modules explorer, right-click the building block of interest, and select **Save As** from the context menu.
+2. Select a location where it is saved in the file browser window that will open and select a name to save it.
+
+You can **load such a molecules building block** into a  module that *does not have a molecules BB* by right-clicking the module and selecting **Load Building Blocks**. Also, you can use any saved molecules building block to **load individual molecules** from it into other projects, using the **Load Molecule** function described above.
+
+{% hint style="info" %}
+If you are frequently building models in MoBi® where new molecules have to be defined, it is a good idea to once configure your typical **default molecule** and save it in your working directory. You can then populate your molecules building blocks by repeatedly loading your default molecule and each time changing the name to your desired molecule names.
+{% endhint %}
+
+Any molecules building block can also be **removed** (i.e., deleted) and **renamed** using the corresponding context menu functions.
 
 ## MoBi® - Projects‌
 
@@ -290,11 +302,11 @@ Models generated in **PK-Sim**® make extensive **use of tags**: For example, op
 
 Similarly, observers or events can be included or excluded from being created in different parts of the spatial structure. The molecule observer "Fraction excreted", for example, makes use of the tag "Urine", so this observer is only created in the urine container.
 
-## Molecules‌
+# Molecules‌
 
 The **Molecules** building block contains all molecules with their default start values, molecule-specific parameters and properties. A molecule has a name, typically the name of the compound. Parameters and properties can be defined by you to describe the physico-chemistry, like solubility or lipophilicity. These parameters may later be used in reactions, passive and active transport processes, or may influence events. Also, active transporter molecules and active transport processes are defined for each molecule, if relevant for the model.
 
-The following section describes the functionalities of the Molecules building block based on a PBPK model exporter from PK-Sim.
+The following section describes the functionalities of the Molecules building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-new-molecules) is given to create a molecule from scratch.
 
 ## Molecules - Functionality‌ Overview‌
 
@@ -311,9 +323,12 @@ The following molecule **properties** can be defined:
 - **Stationary**: If checked, the molecule will not be transported by passive transport processes. Typical molecules that are stationary are proteins (e.g., "CYP3A4", "GABRG2"), protein-drug complexes (e.g., "Midazolam-GABRG2-Buhr 1997 Complex"), or drug metabolites that are defined as *sink* (see [Definition of a metabolite in an enzymatic process‌](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-a-metabolite-in-an-enzymatic-process
 )) (e.g., "Midazolam-CYP3A4-Optimized Metabolite").
 
+- **Molecule Type**:  This has only influence on the icon depicted in front of the molecules in the molecules tree view to the right. Selectable options are <img src="../assets/icons/Molecule.svg" data-size="line"> Drug, <img src="../assets/icons/Enzyme.svg" data-size="line"> Enzyme, <img src="../assets/icons/Transporter.svg" data-size="line"> Transporter, !<img src="../assets/icons/Complex.svg" data-size="line"> Complex,<img src="../assets/icons/Metabolite.svg" data-size="line"> Metabolite ,<img src="../assets/icons/Protein.svg" data-size="line"> Protein, and Other Protein.
 - **Used calculation methods**: If the molecule is *not stationary*, it will be transported into the tissues by the *passive transports* which require some parameters that are calculated by different calculation methods. The calculation methods (e.g., for tissue partitioning) can be changed in the Molecules BB and will be applied upon simulation creatoin.
 
-- The **Amount** field shows the default start amount of the molecule (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)) and can be defined either as a constant value (for drugs administered exogenously usually zero) or as a formula (e.g., for proteins, or endogenous compounds).
+    The calculation method defines which method is used to calculate parameter values of parameters located in the **Spatial Structure** (**MoleculeProperties** node) which have the **Formula Type: Calculation Method**. These selections are only needed if you want to use distribution methods from PK-Sim®. Otherwise, leave them on "No Calculation Method". For further information on this subject, please refer to the discussion of the different distribution models in the PK-Sim® manual ([Simulations](../part-3/pk-sim-simulations.md)). If you select a certain "Calculation Method" you can get tool tip information on the equations and specific parameters used in the "Calculation Method" by hovering with the mouse over the "Category" entry.
+
+- The **Amount** field shows the default start amount of the molecule (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)) and can be defined either as a constant value (for drugs administered exogenously usually zero) or as a formula (e.g., for proteins, or endogenous compounds). To define different start amounts in different containers, use the **Initial Conditions** building block (see [Initial Conditions](initial-conditions)).
 
 ### Molecule Parameters‌
 
@@ -326,26 +341,41 @@ Each parameter has:
 - a **Name**,
 - a **Value**, defined by a constant or a different types of formulas (compare [Working with Formulas](model-building-components.md#working-with-formulas)),
 - a **Dimension** (compare [Parameters](model-building-components.md#parameters)),
-- a **Type** (Local, Global, or Property; compare [Parameters](model-building-components.md#parameters)),
+- a **Type** (Local or Global or Property)
+    - **Global** parameters are considered a property of a molecule that does not depend on the location of the molecuel (e.g., "Molecular Weight", "LogP", "pKa"). These parameters are listed under the molecule node in the root of the simulation tree, and are accessed by the path `<MOLECULE>|<parameter name>`, e.g., `Cimetidine|Molecular weight`.
+    - **Local** parameters are parameters those values depend on the location of the molcule, e.g., "Concentration". These parameters are listed under the molecule node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`.
 
-### Creating New Molecules‌
+{% hint style="info" %}
+The goal of defining a parameter a local is to have it's value be different in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)).
+{% endhint %}
 
-To create a new molecule:
+{% hint style="info" %}
+More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. Refer to the [general section](model-building-components.md#parameters-formulas-and-tags) for more information about the different formula types used for parameters.
+{% endhint %}
 
-1. Click in the newly visible ribbon **Add** on the button <img src="../assets/icons/AddAction.svg" data-size="line"> **New**, or right-click into the Diagram area (the empty space below the tab "Molecules") and choose **Create Molecule** from the context menu that appears. A new window titled "New Molecule" will open.
-2. Enter a molecule name into the "Name" input box.
-3. Alternatively, a molecule can be created based on a PK-Sim® template. This can be achieved by using the button **PK-Sim Molecule** in the **Add** ribbon or **Add PK-Sim Molecule** from the context menu in the diagram area.
-4. Enter a name for the PK-Sim molecule and the four physicochemical properties as listed.
+- **Container Criteria**: Container criteria can be defined for local parameters to restrict the containers in which the parameter will be created. This is done by defining tag conditions (compare [How Tags are used](model-building-components.md#how-tags-are-used)). If no criteria are defined, the parameter will be created in all containers where the molecule is present. An example of such parameter is `Fraction expressed interstitial` of a protein molecule, which is only relevant in interstitial spaces of organs.
 
-At this point, you may already input a value for the "Default Start Amount" which is set to zero by default. Also, you may define molecule parameters after clicking on the "Parameters" tab of the "New Molecule" window (see below). Both operations, however, can also be done after the molecule is created (see below), which is finalized by pressing the **Enter** key or by clicking **OK**. The newly created molecule name now appears in the left part of the Molecules edit tab, and a tab on the right shows the properties of the molecule.
+![Molecule parameter container criteria](../assets/images/part-4/Molecules/molecule-parameter-container-criteria.png)
 
-![New Molecule window](../assets/images/part-4/new-molecule-window.jpg)
+### Active transports
 
-### Loading, Editing, and Saving Molecules‌
+Active transport processes of a molecule are listed as sub-nodes of the transported molecule. An active transport process requires a transporter protein. As with passive transports, active transports only affect non-stationary molecules and can only act between containers that are connected by a neighborhood.
+
+Each transporter molecule can have multiple active transport processes defined for it. Clicking on an active transport process will show its properties in the right part of the window.
+
+![Molecule active transport overview](../assets/images/part-4/Molecules/molecules-active-transports-view.png)
+
+### Protein interactions
+
+Protein interactions of a molecule are listed as sub-nodes of the interacted molecule. Protein interactions can be induction or inhibition processes of proteins and their set up is described in [Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
+
+Note that in the Molecules BB, only the paramters of the interaction are defined. The interaction itself is modeled in the **Reactions** building block or taken into account in the equations of the active transport processes.
+
+## Loading, Editing, and Saving Molecules‌
 
 Alternatively to newly creating a molecule, **molecules can be loaded from a pkml file**. This file can be
 
-* a PK-Sim® export containing molecules (see [Export to \*.pkml file for MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi), for how to create such a file),
+* a PK-Sim® export containing molecules (see [Export to \*.pkml file for MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi) for how to create such a file),
 * an entire previously saved MoBi® simulation,
 * a saved Molecules building block from a previous project,
 * or a previously saved molecule file.
@@ -354,60 +384,38 @@ Alternatively to newly creating a molecule, **molecules can be loaded from a pkm
 A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the MoBi program group will lead you to the proper path.
 {% endhint %}
 
-Use one of such files an proceed in the following way:
+Use one of such files and proceed in the following way:
 
-1. Click the <img src="../assets/icons/PKMLLoad.svg" data-size="line"> **Load** ribbon button, or right-click into the empty space below the tab "Molecules" and choose **Load Molecule** from the context menu that appears.
+1. Click the <img src="../assets/icons/PKMLLoad.svg" data-size="line"> **Load From Template** button, or right-click into the empty space below the tab "Molecules" and choose **Load Molecule** from the context menu that appears.
 2. Select a folder and then a pkml file from the file browser window that will open.
 3. If the pkml file contains more than one molecule, select one or more from the list that is displayed. If one or more molecule names are already in use in the current project, you will be asked for alternative names.
-
-You can **edit the molecule properties** for the molecule in the tree that is currently being highlighted.
-
-* Within the properties window, the checkbox ![Image](../assets/icons/Unchecked.png) **Stationary** determines if the corresponding molecule will be transported by [Passive Transports](model-building-components.md#passive-transports) processes described below (see [Passive Transports](model-building-components.md#passive-transports)) - this box should thus be checked ![Image](../assets/icons/Checked.png) only for immobile molecules, like membrane-bound receptors or transporters.
-* Select the **Molecule Type** specification from the combobox. This has only influence on the icon depicted in front of the molecules in the molecules tree view to the right. Selectable options are <img src="../assets/icons/Molecule.svg" data-size="line"> Drug, <img src="../assets/icons/Enzyme.svg" data-size="line"> Enzyme, <img src="../assets/icons/Transporter.svg" data-size="line"> Transporter, !<img src="../assets/icons/Complex.svg" data-size="line"> Complex,<img src="../assets/icons/Metabolite.svg" data-size="line"> Metabolite ,<img src="../assets/icons/Protein.svg" data-size="line"> Protein, and Other Protein.
-* The **Default Start Amount** determines what default value will be used whenever "Molecule Start Values" are created (see “Molecule Start Values”). The value should be left on 0 for all molecules which only will be created in the process of the simulation. For complex spatial structures, it might be an alternative strategy to set all default start amount values to 0 and set everything manually in the molecule start values for those containers where a molecule is present in known concentrations.
-* The **Used Calculation Methods** at the bottom right of the edit window shows three comboboxes for the selection of calculation methods for the distribution of the molecule within a model exported from PK-Sim®. The calculation method defines which method is used to calculate parameter values of parameters located in the "Spatial Structure" ("MoleculeProperties") which have the **Formula Type Calculation Method**. These selections are only needed if you want to use distribution methods from PK-Sim®. Otherwise, leave them on No Calculation Method. For further information on this subject, please refer to the discussion of the different distribution models in the PK-Sim® manual ([Simulations](../part-3/pk-sim-simulations.md)). If you select a certain "Calculation Method" you can get tool tip information on the equations and specific parameters used in the "Calculation Method" by hovering with the mouse over the "Category" entry.
 
 To **save a molecule** as pkml file:
 
 1. Right-click on its name in the molecules tree, and select **Save As** from the context menu.
 2. Select a location where it is saved in the file browser window that will open and select a name to save it.
 
-In a similar way, you can **save an entire molecules building block**.
+## Example - Creating New Molecules‌
 
-1. Go to the Building Block Explorer, right-click your building block (the default name would be "Molecules", it would be the level under the building block group "Molecules"), and select **Save As** from the context menu.
-2. Select a location where it is saved in the file browser window that will open and select a name to save it.
+### Creating a new molecule‌
 
-You can **load such a molecules building block** into any project by right-clicking the building block group (top level) and selecting **Load Molecules Building Block**. Also, you can use any saved molecules building block to **load individual molecules** from it into other projects, using the **Load Molecule** function described above.
+1. Click on the **New** button <img src="../assets/icons/MoleculeAdd.svg" data-size="line"> in the **Add** group of the **Edit Molecule** tab, or right-click in the empty space of the Molecues tree view and select **Create Molecule...**. A new window titled "New Molecule" will open.
+2. Enter a molecule name into the "Name" input box.
+3. Alternatively, a molecule can be created based on a PK-Sim® template. This can be achieved by using the button **PK-Sim Molecule** in the **Add** ribbon or **Add PK-Sim Molecule** from the context menu in the diagram area.
+4. Enter a name for the PK-Sim molecule and the four physicochemical properties as listed.
 
-{% hint style="info" %}
-If you are frequently building models in MoBi® where new molecules have to be defined, it is a good idea to once configure your typical **default molecule** and save it in your working directory. You can then compile your molecules building blocks by repeatedly loading your default molecule and each time changing the name to your desired molecule names.
-{% endhint %}
+At this point, you may already input a value for the "Default Start Amount" which is set to zero by default. Also, you may define molecule parameters after clicking on the "Parameters" tab of the "New Molecule" window (see below). Both operations, however, can also be done after the molecule is created.
 
-Any molecules building block can also be **removed** (i.e., deleted), **renamed**, or **cloned** (i.e., copied under a different name) using the corresponding context menu functions.
+![New Molecule window](../assets/images/part-4/new-molecule-window.jpg)
 
-{% hint style="info" %}
-The above operations, including save and load, are functions available for all other building blocks through the context menu that appears on right-clicking with the mouse at the corresponding positions.
-{% endhint %}
+### Adding molecule parameters‌
 
-### Molecule Parameters‌
-
-Molecule parameters can created, loaded, copied, or changed after clicking on the Parameters tab in the right half of the window. For comprehensive information on parameters and parameter handling, see above [Parameters, Formulas, and Tags](model-building-components.md#parameters-formulas-and-tags).
-
-A molecule parameter needs to have a name, a parameter type (Local, Property, or Global), a dimension, a value or a formula, and it may be a state variable.
-
-* A typical local parameter is "Concentration", defined by the formula "Amount/ Volume".
-* A typical property is "Molecular weight" which is used for calculating weight- based concentrations.
-* An example for a global parameter might be a total start amount from which the start amounts of differently bound molecules are calculated.
-* A description can be added into the input box a the bottom, like for giving a literature reference from where you obtained this value.
-
-More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. If you enter a formula-defined or a state variable parameter, please refer to the [general section](model-building-components.md#parameters-formulas-and-tags) defining how to use this functionality.
-
-As an example, we create the property "Molecular weight" for the molecule created above.
+As an example,create the parameter "Molecular weight" for the molecule created above.
 
 1. Click <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**, and a "New Parameter" window will open.
 2. Enter "Molecular weight" as parameter name.
-3. Select the Parameter Type Property from the combobox and confirm the security question.
-4. Select MolecularWeight in the Dimension combobox - you can narrow down your search by entering the first few characters after clicking this combobox field.
+3. Select the **Parameter Type** - **Global** from the combobox.
+4. Select `MolecularWeight` in the Dimension combobox - you can narrow down your search by entering the first few characters after clicking this combobox field.
 5. Leave "Formula Type" on Constant and enter the molecule's molecular weight in g/mol into the "Value" input box.
 6. Finally, press the **Enter** key or click **OK**. The screen should look like in the screen shot below.
 
@@ -425,10 +433,6 @@ For a detailed description of the creation and use of formulas see below, [React
 {% hint style="info" %}
 For **continuing our test project**, enter three molecules and name them "A", "B", and "C". Uncheck the checkbox ![Image](../assets/icons/Unchecked.png) **Stationary** for each molecule to allow transport processes. Set the **Default Start Amount** for molecule "A" to 50 µmol and leave "B" and "C" at the default, 0 µmol. It will be needed to practice in the next sections.
 {% endhint %}
-
-### Active Transporter
-
-In addition to the molecules described so far, active transporter molecules and transport processes related to them can be created. Since their use requires that a spatial structure and neighborhoods have been created, they and the dependent active transport processes are described below in [Active Transporter Molecules](model-building-components.md#active-transporter-molecules).
 
 ## Reactions‌
 
