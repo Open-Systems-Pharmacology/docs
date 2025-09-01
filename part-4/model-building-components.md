@@ -470,34 +470,6 @@ The resulting formula is a generic formula. The example model has 3 different mo
 
 ![Passive Transport has been added - Kinetic Tab](../assets/images/part-4/PassiveTransportComplete-KinticTab.png)
 
-### Active Transporter Molecules‌
-
-An active transport process, as opposed to a passive transport, requires a transporter molecule (like a protein channel) that works similar to an enzyme. Unlike a chemical reaction, however, this process does not change a molecule but transfers it between containers, for example, from the intercellular space into a cell. As with passive transports, active transports only affect non-stationary molecules. Following the logic of MoBi®, all active transporter molecules and their transport processes are to be defined in the "Molecules" building block. Refer to [Creating New Molecules](model-building-components.md#creating-new-molecules) and open your Molecules building block for re-editing by double-clicking or by use of the context menu. If it is still open, you can click the Molecules tab in the edit window.
-
-First, an active transporter molecule needs to be defined:
-
-1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
-2. Select **Create Transporter Molecule** from the context menu.
-3. You are asked for a transporter name. Either enter a new name (e.g., "PGP"), or the name of an already existing transporter molecule if the very same transporter is active for several molecules in your list and has been previously defined.
-4. Press **Enter** or click **OK**. In the molecules tree, a transporter molecule is displayed, and a transporter entry is added to the molecule selected in step 1.
-5. In the transporter entry below the selected molecule, you may enter a description and parameters, as for any molecule.
-6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](model-building-components.md#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
-7. Right-click on the transporter attached to the molecule to be transported, and select **Create Transport** from the context menu. A window named "New Active Transport" opens.
-8. Enter a name into the Name input box, like "PGP Transport". Then, follow the steps described in the previous section “Passive Transports” for selecting source and target, define a transport rate parameter and entering a transport kinetics formula.
-9. The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a KM value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
-
-Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which runs in the opposite direction of the above passive transport, i.e., from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to "C\_PGP", and that of molecule "A" to "C\_A" by just overriding the default names. The equation to be entered is "0.001\*C\_PGP\*C\_A". The figure below shows what the screen should look like after everything is properly set up.
-
-![Active Transport has been entered](../assets/images/part-4/active-transport-entered.jpg)
-
-{% hint style="info" %}
-If more than one molecule is transported by the very same transporter, you just create the same transporter molecule twice, i.e., with the same name under the second molecule. This will only create a new active transport, but no duplicate transporter molecule. You can then proceed like for the first molecule and create a transport process.
-{% endhint %}
-
-{% hint style="info" %}
-If two molecules compete for the same transporter, you can add inhibition terms to the transport equations that use all molecules, either as transporter substrate or as transporter inhibitor.
-{% endhint %}
-
 ## Observers‌
 
 An observer which can be displayed in a chart (see [Simulation Results](simulation-results.md)) is an output derived from one or several molecules or parameters by a defined formula. There are two classes of observers: **molecule observers** and **container observers**; creating and editing of both classes will be explained in this section. The main difference between those two classes is that a container observer can be computed for every molecule in every container (or for a selectable subset of both), whereas an molecule observer can be used to compute a value from one or more molecules specified in its formula, but for all or a selectable subset of containers.
