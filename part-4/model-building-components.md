@@ -374,7 +374,18 @@ Like the containers, the neighborhood may contain parameters and may carry tags.
 
 ## Molecules‌
 
-The Molecules building block contains all molecules with their default start values, molecule-specific parameters and properties. A molecule has a name, typically the name of the compound. Parameters and properties can be defined by you to describe the physico-chemistry, like solubility or lipophilicity. These parameters may later be used in reactions, passive and active transport processes, or may influence events. Also, active transporter molecules and transport processes are defined for each molecule, if relevant for the model.
+The **Molecules** building block contains all molecules with their default start values, molecule-specific parameters and properties. A molecule has a name, typically the name of the compound. Parameters and properties can be defined by you to describe the physico-chemistry, like solubility or lipophilicity. These parameters may later be used in reactions, passive and active transport processes, or may influence events. Also, active transporter molecules and active transport processes are defined for each molecule, if relevant for the model.
+
+The following section describes the functionalities of the Molecules building block based on a PBPK model exporter from PK-Sim.
+
+## Molecules - Functionality‌ Overview‌
+
+After loading a PBPK model from PK-Sim®, the molecules building block is located in the imported PK-Sim® module. Double-clicking on the Molecules (<img src="../assets/icons/Molecule.png" data-size="line">) or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
+
+![Molecules editor overview](../assets/images/part-4/SpatialStructure/spatial-structure-overview.png)
+
+
+
 
 Start by opening a Molecules building block for editing. In the **Building Block Explorer**, open the Molecules folder and edit the Molecules building block by either right-clicking it and selecting "Edit", or by double-clicking on it. A new tab with an empty space will open. This is the work space where you can add new molecules or load molecules from other projects. You may notice that the ribbon of the MoBi® window has changed, being tabbed "Edit Molecule", to offer you clickable ribbon buttons for molecule-related actions (compare in [Enter Molecules](first-steps.md#enter-molecules)).
 
