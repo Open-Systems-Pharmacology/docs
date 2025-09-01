@@ -236,7 +236,7 @@ The OSP software is best suited for the development of complex quantitative syst
 - For **drug-drug interaction (DDI)** models, however, the compounds should be included in the same PK-Sim module, and the interactions should be defined in PK-Sim.
 
 {% hint style="warning" %}
-Combinging two PK-Sim modules does not automatically create interactions between the compounds in the two modules, even of one of the compounds is a perpetrator of a DDI. The interactions must be defined in PK-Sim, and the compounds must be included in the same PK-Sim module.
+Combining two PK-Sim modules does not automatically create interactions between the compounds in the two modules, even if one of the compounds is a perpetrator of a DDI. The interactions must be defined in PK-Sim, and the compounds must be included in the same PK-Sim module.
 {% endhint %}
 
 - PK-Sim modules should never be modified. Any modification and/or extensions should be implemented as separate modules.
