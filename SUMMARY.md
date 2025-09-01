@@ -52,6 +52,7 @@
   * [Modularization concept](part-4/modularization-concept.md)
   * [Spatial Structures](part-4/spatial-structures-bb.md)
   * [Molecules](part-4/molecules-bb.md)
+  * [Options](part-4/mobi-options.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
   * [Setting up a Simulation](part-4/setting-up-simulation.md)
   * [Simulation Results](part-4/simulation-results.md)
