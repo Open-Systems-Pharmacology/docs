@@ -411,7 +411,7 @@ The following section describes the functionalities of the Passive Transports bu
 
 ## Passive Transports - Functionalities Overview‌
 
-After loading a PBPK model from PK-Sim®, a set of PT os availabile in the imported PK-Sim® module. Double-clicking on the Passive Transports BB <img src="../assets/icons/PassiveTransport.svg" data-size="line"> or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
+After loading a PBPK model from PK-Sim®, a set of PTs are available in the imported PK-Sim® module. Double-clicking on the Passive Transports BB <img src="../assets/icons/PassiveTransport.svg" data-size="line"> or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
 
 A passive transport is defined by its **source** (origin) and **target** (sink), the molecules it should be applied for, abd transport rate equation defined in the **Kinetic** tab.
 
