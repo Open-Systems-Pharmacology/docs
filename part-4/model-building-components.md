@@ -371,7 +371,7 @@ Note that in the Molecules BB, only the parameters of the interaction are define
 
 ### Creating a new molecule‌
 
-1. Click on the **New** button <img src="../assets/icons/MoleculeAdd.svg" data-size="line"> in the **Add** group of the **Edit Molecule** tab, or right-click in the empty space of the Molecues tree view and select **Create Molecule...**. A new window titled "New Molecule" will open.
+1. Click on the **New** button <img src="../assets/icons/MoleculeAdd.svg" data-size="line"> in the **Add** group of the **Edit Molecule** tab, or right-click in the empty space of the Molecules tree view and select **Create Molecule...**. A new window titled "New Molecule" will open.
 2. Enter a molecule name into the "Name" input box.
 3. Alternatively, a molecule can be created based on a PK-Sim® template. This can be achieved by using the button **PK-Sim Molecule** in the **Add** ribbon or **Add PK-Sim Molecule** from the context menu in the diagram area.
 4. Enter a name for the PK-Sim molecule and the four physicochemical properties as listed.
