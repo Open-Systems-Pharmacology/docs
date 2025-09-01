@@ -19,7 +19,7 @@ In a similar way, you can **save an entire molecules building block**.
 1. In the Modules explorer, right-click the building block of interest, and select **Save As** from the context menu.
 2. Select a location where it is saved in the file browser window that will open and select a name to save it.
 
-You can **load such a molecules building block** into a  module that *does not have a molecules BB* by right-clicking the module and selecting **Load Building Blocks**. Also, you can use any saved molecules building block to **load individual molecules** from it into other projects, using the **Load Molecule** function described above.
+You can **load such a molecule building block** into a  module that *does not have a molecules BB* by right-clicking the module and selecting **Load Building Blocks**. Also, you can use any saved molecules building block to **load individual molecules** from it into other projects, using the **Load Molecule** function described above.
 
 Any molecules building block can also be **removed** (i.e., deleted) and **renamed** using the corresponding context menu functions.
 
@@ -29,7 +29,7 @@ Any molecules building block can also be **removed** (i.e., deleted) and **renam
 
 Your first step is to create a new project.
 
-To create a new project select **New Project** on the **File** ribbon tab or alternatively press **Ctrl+N**.
+To create a new project, select **New Project** on the **File** ribbon tab or alternatively press **Ctrl+N**.
 
 ![File tab](../assets/images/part-4/Prj-new.png)
 
@@ -43,7 +43,7 @@ The ribbon bar **Modeling & Simulation** with the different Ribbon Groups for cr
 
 To open a project select **Open Project (Ctrl+O)** on the **File** tab.
 
-A **File Selection Dialog** will open in which a project file (mbp3 file) can be selected. Alternatively, you can also choose one of the **Recent documents**.
+A **File Selection Dialog** will open, in which a project file (mbp3 file) can be selected. Alternatively, you can also choose one of the **Recent documents**.
 
 After selection, the MoBi® project is opened.
 
@@ -61,7 +61,7 @@ Close a project by selecting **Close Project** in the **File** tab. A confirmati
 
 1. Save a Project
 
-To save the current project select **Save Project (Ctrl+S)** in the File tab or use the quick action button <img src="../assets/icons/Save.svg" data-size="line">.
+To save the current project, select **Save Project (Ctrl+S)** in the File tab or use the quick action button <img src="../assets/icons/Save.svg" data-size="line">.
 
 You can then choose either <img src="../assets/icons/Save.svg" data-size="line">  **Save Project**, which saves the project under the name already given or <img src="../assets/icons/SaveAs.svg" data-size="line"> **Save As** to save the project with a new name in another file. The currently opened project will be saved with all information.
 
@@ -79,11 +79,10 @@ Parameters can be newly created, copied, moved, edited, or loaded from a pkml fi
 * Instead of newly creating a parameter, you may also load it from a file. Use the **Load Parameter** button or context menu entry for this purpose and select a pkml file (e.g., a previously saved building block or simulation) that already contains a suitable parameter.
 * A third option is to **copy and paste parameters** between building block items by pressing **Ctrl+C** (on the source parameter, like from an already entered molecule or reaction) and **Ctrl+V** after moving to the target area and after clicking into the empty parameter space. Instead of **Ctrl+C** to copy a parameter, you can use **Ctrl+X** to cut a parameter from its current position.
 
-Within the different building blocks, there are slight differences in the procedure and in the selectable options which will be explained in the corresponding sections in this chapter. In the Molecules and Reactions building blocks, parameters may be of **different types**: Local, Global, and Property. As these names already suggest, the differences are the following:
+Within the different building blocks, there are slight differences in the procedure and in the selectable options which will be explained in the corresponding sections in this chapter. In the Molecules and Reactions building blocks, parameters may be of **different types**: Local and Global. As these names already suggest, the differences are the following:
 
 * Parameters defined as Local can only be used locally, i.e., within the corresponding reaction or for a molecule where a local parameter is defined.
 * Parameters defined as Global can also be used in other formulas, i.e., they appear in the reference lists described in [Working with Formulas](model-building-components.md#working-with-formulas). Furthermore, they are located in different places of a simulation hierarchy, as described in [Molecular Properties](setting-up-simulation.md#molecular-properties).
-* Parameters defined as Property are identical to Global parameters except that they will not be listed and set in the parameter start values.
 
 {% hint style="info" %}
 A change of the parameter type will influence the path wherever this parameter is used in a formula (compare [Working with Formulas](model-building-components.md#working-with-formulas)).
@@ -337,12 +336,12 @@ Each parameter has:
 - a **Name**,
 - a **Value**, defined by a constant or a different types of formulas (compare [Working with Formulas](model-building-components.md#working-with-formulas)),
 - a **Dimension** (compare [Parameters](model-building-components.md#parameters)),
-- a **Type** (Local or Global or Property)
-    - **Global** parameters are considered a property of a molecule that does not depend on the location of the molecuel (e.g., "Molecular Weight", "LogP", "pKa"). These parameters are listed under the molecule node in the root of the simulation tree, and are accessed by the path `<MOLECULE>|<parameter name>`, e.g., `Cimetidine|Molecular weight`.
+- a **Type** (**Local** or **Global**)
+    - **Global** parameters are considered a property of a molecule that does not depend on the location of the molecule (e.g., "Molecular Weight", "LogP", "pKa"). These parameters are listed under the molecule node in the root of the simulation tree, and are accessed by the path `<MOLECULE>|<parameter name>`, e.g., `Cimetidine|Molecular weight`.
     - **Local** parameters are parameters whose values depend on the location of the molecule, e.g., "Concentration". These parameters are listed under the molecule node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`.
 
 {% hint style="info" %}
-The goal of defining a parameter as local is to have its value be different in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)).
+The goal of defining a parameter as local is to have its value differ in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)).
 {% endhint %}
 
 {% hint style="info" %}
@@ -363,7 +362,7 @@ Each transporter molecule can have multiple active transport processes defined f
 
 ### Protein interactions
 
-Protein interactions of a molecule are listed as sub-nodes of the interacted molecule. Protein interactions can be induction or inhibition processes of proteins and their set up is described in [Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
+Protein interactions of a molecule are listed as sub-nodes of the interacted molecule. Protein interactions can be induction or inhibition processes of proteins, and their set up is described in [Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
 
 Note that in the Molecules BB, only the parameters of the interaction are defined. The interaction itself is modeled in the **Reactions** building block or taken into account in the equations of the active transport processes.
 
@@ -459,7 +458,7 @@ To have access to molecules as reaction partners for the reactions you want to c
 2. You can either enter a name manually into the "Molecule Name" input box, or select as many as you wish from the list below this input box. Multi-select is done in the standard Windows® way by keeping the **Shift** key (for a contiguous part of the list) or the **Ctrl** key pressed (for individual selection) followed by clicking with the mouse on the desired molecule range or molecule names.
 3. Click **OK** to execute the operation. For each molecule, a green circular symbol appears in the diagram area.
 
-The added **molecules can be moved** by the mouse within the diagram area. To do this, left-click a molecule on its dark-green center, hold the mouse button and drag it with the mouse. Release the mouse button when the molecule sits at its desired place.
+The added **molecules can be moved** by the mouse within the diagram area. To do this, left-click a molecule on its dark-green center, hold the mouse button, and drag it with the mouse. Release the mouse button when the molecule sits at its desired place.
 
 To **create a new reaction**:
 
@@ -513,7 +512,7 @@ You are now ready to define **Reaction Parameters**, like kinetic rate constants
 1. Click the Parameters tab in the edit reactions window.
 2. Click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter** button. A "New Parameter" window opens (compare molecule parameter creation, “Molecule Parameters”).
 3. Enter a parameter name, like "k1" as a first order rate constant in our example.
-4. Select the parameter type (Local/Property/Global). For a rate constant only used in one single reaction, the recommendation is to choose Local, whereas Global is the right choice if several reactions need this parameter and you want to define it only once.
+4. Select the parameter type (Local or Global). Select "Global" for this example.
 5. Select the proper dimension in the **Dimension** combobox, which is Inversed Time for the first order rate constant in our example.
 6. Enter a value for your parameter, 0.01 as an example. If needed, select a different dimension unit in the combobox to the right of the value input box. The parameter may also be defined by a formula or data table, or you may make the parameter state variable (compare [Parameters, Formulas, and Tags](model-building-components.md#parameters-formulas-and-tags)).
 7. Optionally you may enter a description.
@@ -557,7 +556,7 @@ In MoBi®, passive and active transport processes use common logics in their set
 
 ### Passive Transports‌
 
-Passive transports which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports" in the Building Block Explorer <img src="../assets/icons/PassiveTransport.svg" data-size="line"> and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](model-building-components.md#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
+Passive transports, which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports" in the Building Block Explorer <img src="../assets/icons/PassiveTransport.svg" data-size="line"> and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](model-building-components.md#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
 
 For **creating a new transport** or loading one from a previously saved file:
 
