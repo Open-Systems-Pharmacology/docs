@@ -339,7 +339,7 @@ Each parameter has:
 - a **Dimension** (compare [Parameters](model-building-components.md#parameters)),
 - a **Type** (Local or Global or Property)
     - **Global** parameters are considered a property of a molecule that does not depend on the location of the molecuel (e.g., "Molecular Weight", "LogP", "pKa"). These parameters are listed under the molecule node in the root of the simulation tree, and are accessed by the path `<MOLECULE>|<parameter name>`, e.g., `Cimetidine|Molecular weight`.
-    - **Local** parameters are parameters those values depend on the location of the molcule, e.g., "Concentration". These parameters are listed under the molecule node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`.
+    - **Local** parameters are parameters whose values depend on the location of the molecule, e.g., "Concentration". These parameters are listed under the molecule node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`.
 
 {% hint style="info" %}
 The goal of defining a parameter a local is to have it's value be different in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)).
