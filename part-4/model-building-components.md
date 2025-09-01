@@ -300,12 +300,33 @@ The following section describes the functionalities of the Molecules building bl
 
 After loading a PBPK model from PK-Sim®, the molecules building block is located in the imported PK-Sim® module. Double-clicking on the Molecules (<img src="../assets/icons/Molecule.png" data-size="line">) or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
 
-![Molecules editor overview](../assets/images/part-4/SpatialStructure/spatial-structure-overview.png)
+![Molecules editor overview](../assets/images/part-4/Molecules/molecules-overview.png)
 
+In the left part of the window, a tree view lists all molecules that are currently defined in the project. Clicking on a molecule name will highlight it and show its properties in the right part of the window.
 
+### Molecule Properties‌
 
+The following molecule **properties** can be defined:
 
-Start by opening a Molecules building block for editing. In the **Building Block Explorer**, open the Molecules folder and edit the Molecules building block by either right-clicking it and selecting "Edit", or by double-clicking on it. A new tab with an empty space will open. This is the work space where you can add new molecules or load molecules from other projects. You may notice that the ribbon of the MoBi® window has changed, being tabbed "Edit Molecule", to offer you clickable ribbon buttons for molecule-related actions (compare in [Enter Molecules](first-steps.md#enter-molecules)).
+- **Stationary**: If checked, the molecule will not be transported by passive transport processes. Typical molecules that are stationary are proteins (e.g., "CYP3A4", "GABRG2"), protein-drug complexes (e.g., "Midazolam-GABRG2-Buhr 1997 Complex"), or drug metabolites that are defined as *sink* (see [Definition of a metabolite in an enzymatic process‌](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-a-metabolite-in-an-enzymatic-process
+)) (e.g., "Midazolam-CYP3A4-Optimized Metabolite").
+
+- **Used calculation methods**: If the molecule is *not stationary*, it will be transported into the tissues by the *passive transports* which require some parameters that are calculated by different calculation methods. The calculation methods (e.g., for tissue partitioning) can be changed in the Molecules BB and will be applied upon simulation creatoin.
+
+- The **Amount** field shows the default start amount of the molecule (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)) and can be defined either as a constant value (for drugs administered exogenously usually zero) or as a formula (e.g., for proteins, or endogenous compounds).
+
+### Molecule Parameters‌
+
+The **Parameters** tab shows a list of all parameters defined for the currently selected molecule. 
+
+![Molecule parameters overview](../assets/images/part-4/Molecules/molecule-parameters-view.png)
+
+Each parameter has:
+
+- a **Name**,
+- a **Value**, defined by a constant or a different types of formulas (compare [Working with Formulas](model-building-components.md#working-with-formulas)),
+- a **Dimension** (compare [Parameters](model-building-components.md#parameters)),
+- a **Type** (Local, Global, or Property; compare [Parameters](model-building-components.md#parameters)),
 
 ### Creating New Molecules‌
 
