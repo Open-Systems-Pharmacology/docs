@@ -405,6 +405,34 @@ For a detailed description of the creation and use of formulas see below, [React
 For **continuing our test project**, enter three molecules and name them "A", "B", and "C". Uncheck the checkbox ![Image](../assets/icons/Unchecked.png) **Stationary** for each molecule to allow transport processes. Set the **Default Start Amount** for molecule "A" to 50 µmol and leave "B" and "C" at the default, 0 µmol. It will be needed to practice in the next sections.
 {% endhint %}
 
+### Adding Active Transports
+
+An active transport process, as opposed to a passive transport, requires a transporter molecule (like a protein channel). Unlike a chemical reaction, however, this process does not change a molecule but transfers it between containers, for example, from the intercellular space into a cell.
+
+First, an active transporter molecule needs to be defined:
+
+1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
+2. Select **Create Transporter Molecule** from the context menu.
+3. You are asked for a transporter name. Either enter a new name (e.g., **PGP**), or the name of an already existing transporter molecule if the very same transporter is active for several molecules in your list and has been previously defined.
+4. Press **Enter** or click **OK**. In the molecules tree, a transporter molecule is displayed, and a transporter entry is added to the molecule selected in step 1.
+5. In the transporter entry below the selected molecule, you may enter a description and parameters, as for any molecule.
+6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](model-building-components.md#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
+7. Right-click on the transporter attached to the molecule to be transported, and select **Create Transport** from the context menu. A window named "New Transport" opens.
+8. Enter a name into the Name input box, like "PGP Transport". Select the **source** and the **target** container criteria (see [How Tags are used](model-building-components.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)), define a transport rate parameter, and enter a transport kinetics formula. Also ses [Creating a Passive Transport‌](passive-transports-bb.md#example---creating-a-passive-transport) as an example on how to define a transport process.
+9. The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a $K_M$ value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
+
+Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which transports the molecule from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to `C_PGP`, and that of molecule `A` to `C_A` by overriding the default names. The equation to be entered is `0.001 * C_PGP * C_A`. The figure below shows what the screen should look like after everything is properly set up.
+
+![Active Transport has been entered](../assets/images/part-4/active-transport-entered.jpg)
+
+{% hint style="info" %}
+If more than one molecule is transported by the very same transporter, you must assign the same transporter molecule twice, i.e., with the same name under the second molecule. This will only create a new active transport, but no duplicate transporter molecule. You can then proceed like for the first molecule and create a transport process.
+{% endhint %}
+
+{% hint style="info" %}
+If two molecules compete for the same transporter, you can add inhibition terms to the transport equations that use all molecules, either as transporter substrate or as transporter inhibitor.
+{% endhint %}
+
 ## Loading, Editing, and Saving Molecules‌
 
 Alternatively to newly creating a molecule as described in the [Example - Creating New Molecules], **molecules can be loaded from a pkml file**. This file can be
