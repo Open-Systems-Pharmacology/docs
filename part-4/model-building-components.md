@@ -475,8 +475,7 @@ You are now ready to define **Reaction Parameters**, like kinetic rate constants
 1. Click the Parameters tab in the edit reactions window.
 2. Click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter** button. A "New Parameter" window opens.
 3. Enter a parameter name, like "k1" as a first order rate constant in our example.
-4. Select the parameter type (**Local** or **Global**). For a rate constant only used in one single reaction.
-
+4. Select the parameter type (**Local** or **Global**). 
     - **Global** parameters are considered a property of a reaction that does not depend on the location of the reaction (e.g., $kcat$). These parameters are listed under the reaction node in the root of the simulation tree, and are accessed by the path `<REACTION>|<parameter name>`, e.g., `Midazolam-CYP3A4-Optimized|Km`.
     - **Local** parameters are parameters whose values depend on the location of the reaction, e.g., "Km interaction factor" which is the parameter describing the change of $Km$ by a perpetrator, e.g., an inhibitor (see section [Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)). Therefore, the value of this parameter may be different in different containers depending on the local concentration of the perpetrator. These parameters are listed under the reaction node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<REACTION>|<parameter name>`, e.g., `Organism|Kidney|Intracellular|Midazolam-CYP3A4-Optimized|Km interaction factor`.
 
