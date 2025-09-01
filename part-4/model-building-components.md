@@ -413,7 +413,7 @@ The following section describes the functionalities of the Passive Transports bu
 
 After loading a PBPK model from PK-Sim®, a set of PTs are available in the imported PK-Sim® module. Double-clicking on the Passive Transports BB <img src="../assets/icons/PassiveTransport.svg" data-size="line"> or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
 
-A passive transport is defined by its **source** (origin) and **target** (sink), the molecules it should be applied for, abd transport rate equation defined in the **Kinetic** tab.
+A passive transport is defined by its **source** (origin) and **target** (sink), the molecules it should be applied for, and transport rate equation defined in the **Kinetic** tab.
 
 Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](model-building-components.md#creating-a-spatial-structure)). The usage of criteria based on tags is described in [How Tags are used](model-building-components.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events).
 
