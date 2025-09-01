@@ -365,7 +365,7 @@ Each transporter molecule can have multiple active transport processes defined f
 
 Protein interactions of a molecule are listed as sub-nodes of the interacted molecule. Protein interactions can be induction or inhibition processes of proteins and their set up is described in [Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md).
 
-Note that in the Molecules BB, only the paramters of the interaction are defined. The interaction itself is modeled in the **Reactions** building block or taken into account in the equations of the active transport processes.
+Note that in the Molecules BB, only the parameters of the interaction are defined. The interaction itself is modeled in the **Reactions** building block or taken into account in the equations of the active transport processes.
 
 ## Example - Creating New Molecules‌
 
