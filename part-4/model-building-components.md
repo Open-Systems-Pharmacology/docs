@@ -505,7 +505,7 @@ If more than one molecule is transported by the very same transporter, you just 
 If two molecules compete for the same transporter, you can add inhibition terms to the transport equations that use all molecules, either as transporter substrate or as transporter inhibitor.
 {% endhint %}
 
-# Observers‌
+# Observers‌ Building Block‌
 
 An **observer** which can be displayed in a chart (see [Simulation Results](simulation-results.md)) is an output derived from one or several molecules or parameters by a defined formula. There are two classes of observers: **molecule observers** and **container observers**; creating and editing of both classes will be explained in this section. The main difference between those two classes is:
 
