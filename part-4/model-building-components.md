@@ -275,11 +275,65 @@ Containers and neighborhoods within a spatial structure, elements of an applicat
 
 Tags can be entered when creating or editing a tag-carrying entity. The detailed procedures are described within this chapter in the corresponding sections describing spatial structures, observers, events, or parameters. Generally, one or more names are entered in a special input window of the corresponding entity.
 
-Tags are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". More than one condition can be used, being one of the following classes:
+Conditions are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". Conditions can be combined using either **AND logic** (`Condition1 AND Condition2 AND ...`), or **OR logic** (`Condition1 OR Condition2 OR ...`).
+ 
+Imagine the following simple model structure:
+
+```
+Organism (logical)
+  |
+  +-- Container A (logical)
+  |      |
+  |      +-- Container A1 (physical)
+  |      +-- Container A2 (physical)
+  |
+  +-- Container B (logical))
+         |
+         +-- Container B1 (physical)
+         +-- Container B2 (physical)
+```
+
+A molecule `Molecule A` is present in the physical containers `A1`, `A2`, `B1`, and `B2`. Each container has a parameter `Param A`, including the molecule.
+
+The physical containers have additionally the parameter `Concentration`.
+
+If we create a sum formula for with the following conditions:
 
 1. Match tag condition: the condition is fulfilled when the tag name is matched.
+    - For the sum formula with match tag condition "Param A", the sum will include the following parameters:
+        - `Organism|Param A`
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+        - `Organism|Container B|Param A`
+        - `Organism|Container B|Container B1|Param A`
+        - `Organism|Container B|Container B1|Molecule A|Param A`
+        - `Organism|Container B|Container B2|Param A`
+        - `Organism|Container B|Container B2|Molecule A|Param A`
+
 2. Not match tag condition: the condition is fulfilled when the tag name is **not** matched.
-3. In Container with: the condition is fulfilled when the container name is matched.
+    - For the parameter `SumOfParameters` with the conditions `Not tagged with: Param A` and `Not tagged with: SumOfParameters` (the latter is required to avoid a circular reference), the sum will include the following parameters:
+        - `Organism|Container A|Container A1|Volume`
+        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container B|Container B1|Volume`
+        - `Organism|Container B|Container B1|Molecule A|Concentration`
+        - `Organism|Container B|Container B2|Volume`
+        - `Organism|Container B|Container B2|Molecule A|Concentration`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
+        - `Organism|Container B|Container B1|Molecule A`
+        - `Organism|Container B|Container B2|Molecule A`
+
+3. In Container: the condition is fulfilled by a model entity if any container in the parent hierarchy of this entity matches the given tag.
+    - For the observer with the condition "In Container with: Organism", the observer will be created in:
+        - `Organism|Container A|Container A1`
+        - `Organism|Container A|Container A2`
 4. Not in Container with: the condition is fulfilled when the container name is **not** matched.
 5. In Parent
 6. In Children
@@ -407,7 +461,7 @@ The **Passive Transports (PT)** building block (BB) contains all passive transpo
 
 In contrast to active transporter processes defined in the molecules building block, passive transports do not require a transporter protein.
 
-The following section describes the functionalities of the Passive Transports building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-a-passive-transport) is given to create a passive transport from scratch.
+The following section describes the functionalities of the Passive Transports building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-a-passive-transport) is given to create a passive transport from scratch.
 
 ## Passive Transports - Functionalities Overview‌
 
@@ -433,7 +487,7 @@ For **creating a new transport** or loading one from a previously saved file:
    * A window where you will be asked for the tag name will open.
    * A tag can simply be the name of a container of a spatial structure; you can select from the available names by clicking the drop-down arrow. In our example project, select "Vial1" as "New match tag condition" for "Source", and select "Vial2" as "New match tag condition" for "Target".
    * The arrangement of neighborhood connections set up in the spatial structure (see [Creating Neighborhoods](spatial-structures-bb.md#creating-neighborhoods)) will restrict the pattern of transport streams.
-3. Define which molecules are transported. Per default, the checkbox ![Image](../assets/icons/Checked.png) **All** is selected, which means that all molecules which are present in the corresponding compartments are transported. Exceptions can be defined in the **Exclude** List. In order to add a molecule to the Exclude List, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Molecule** button within the section Exclude List. Molecules listed in the Exclude List will not be transported. If the checkbox **All** is un-checked, you can add molecules to the **Include** List. Then, only molecules listed in the Include List are transported.
+3. Define which molecules are transported. Per default, the checkbox ![Image](../assets/icons/Checked.png) **All** is selected, which means that all non-stationary molecules which are present in the corresponding compartments are transported. Exceptions can be defined in the **Exclude** List. In order to add a molecule to the Exclude List, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Molecule** button within the section Exclude List. Molecules listed in the Exclude List will not be transported. If the checkbox **All** is un-checked, you can add molecules to the **Include** List. Then, only molecules listed in the Include List are transported.
 4. If the box ![Image](../assets/icons/Unchecked.png) **Create process rate parameter** is checked, a parameter which equals the transport rate equation is automatically generated when a simulation is build. You can use this parameter to refer to the transport rate in any equation. It can also be used to plot the transport rate (additionally check the box **Plot Process Rate Parameter**).
 5. In order to define a transport rate, go to the Tab **Kinetic**. Select **Formula - an explicit formula** in the Formula Type combobox.
 6. Click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button. You will be asked for a reaction formula name. Name the formula "Diffusion". Press **Enter** or click **OK**.
