@@ -335,8 +335,8 @@ If we create a sum formula for with the following conditions:
         - `Organism|Container A|Container A1`
         - `Organism|Container A|Container A2`
 4. Not in Container with: the condition is fulfilled when the container name is **not** matched.
-5. In Parent
-6. In Children
+5. In Parent: the condition is fulfilled when the container is a direct parent of the entity being considered.
+6. In Children: the condition is fulfilled when the container is a direct child of the entity being considered.
 
 More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
 
@@ -465,9 +465,9 @@ The following section describes the functionalities of the Passive Transports bu
 
 ## Passive Transports - Functionalities Overview‌
 
-After loading a PBPK model from PK-Sim®, a set of PT os availabile in the imported PK-Sim® module. Double-clicking on the Passive Transports BB <img src="../assets/icons/PassiveTransport.svg" data-size="line"> or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
+After loading a PBPK model from PK-Sim®, a set of PTs are available in the imported PK-Sim® module. Double-clicking on the Passive Transports BB <img src="../assets/icons/PassiveTransport.svg" data-size="line"> or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
 
-A passive transport is defined by its **source** (origin) and **target** (sink), the molecules it should be applied for, abd transport rate equation defined in the **Kinetic** tab.
+A passive transport is defined by its **source** (origin) and **target** (sink), the molecules it should be applied for, and transport rate equation defined in the **Kinetic** tab.
 
 Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](model-building-components.md#creating-a-spatial-structure)). The usage of criteria based on tags is described in [How Tags are used](model-building-components.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events).
 
@@ -483,7 +483,7 @@ For **creating a new transport** or loading one from a previously saved file:
 
 1. Enter a name for this transport process, for example "Diffusion".
 2. Define conditions for target and source containers:
-   * Right-click into the corresponding empty space below "Condition" and "Tag", the select a container criterion (See [How Tags are used](model-building-components.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events) for more information).
+   * Right-click into the corresponding empty space below "Condition" and "Tag", then select a container criterion (See [How Tags are used](model-building-components.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events) for more information).
    * A window where you will be asked for the tag name will open.
    * A tag can simply be the name of a container of a spatial structure; you can select from the available names by clicking the drop-down arrow. In our example project, select "Vial1" as "New match tag condition" for "Source", and select "Vial2" as "New match tag condition" for "Target".
    * The arrangement of neighborhood connections set up in the spatial structure (see [Creating Neighborhoods](spatial-structures-bb.md#creating-neighborhoods)) will restrict the pattern of transport streams.
