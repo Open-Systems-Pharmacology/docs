@@ -564,15 +564,82 @@ The screen should look like in the screen shot below:
 
 ![Container Observer for Sum of Metabolites](../assets/images/part-4/ContainerObserverEntered.png)
 
-## Events and Applications‌
+# Events Building Block
 
-An event is used to change an entity, like the amount of molecules or a reaction rate, when a given condition is met. This condition can be, for example, that a given simulation time is reached, or that the concentration of a molecule has exceeded a certain value. Thus, such a programmed event is used to reflect external changes to the simulation, like the application of a drug or a sudden physical change in the spatial structure, like a vessel rupture.
+An **event** is used to change an entity, like the amount of molecules or a reaction rate, when a given condition is met. This condition can be, for example, that a given simulation time is reached, or that the concentration of a molecule has exceeded a certain value. Thus, such a programmed event is used to reflect external changes to the simulation, like the application of a drug or a sudden physical change in the spatial structure, like a vessel rupture.
 
-In the drug delivery case, however, you rather want to use an application instead of an event to have more options available for drug release and repeated applications. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
+A special case of an event is an **application**, which is used to apply a certain amount of a molecule to a container at a given time. This is typically used to simulate the administration of a drug to the body.
 
-Events and applications are grouped in an events building block, where events are sub-grouped in event groups. To create such a structure, you may need to create a new events building block using the context menu of the building block explorer or the corresponding ribbon button of the Modeling & Simulation tab. In our example, an empty events building block named "Events" has already been created automatically. Simulations imported from a PK-Sim® project also contain such a building block that contains the applications.
+Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
 
-To add events or applications to the project, you need to open the events building block for editing. This can be done by double-clicking on it or by using the **Edit** command of the context menu in the building block explorer.
+Events and applications are grouped in the **Events** building block (BB). Multiple events can be grouped in event groups, and organized hierarchicl container structure similar to that of a [spatial structure](spatial-structures-bb.md). Simulations imported from a PK-Sim® project contain all defined applications and additional events, such as food administration, in the events BB.
+
+The following section describes the functionalities of the Events building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-events) is given to create a events from scratch.
+
+## Events - Functionality Overview‌
+
+Events are organized in a tree structure. The top level container of the Events BB can be either an **Event Group** or an **Application**.‌
+
+### Event Group
+
+Event groups can combine **Applications**, **Events**, further **Event Groups**, and **Containers**.‌
+
+The top level event group has a *name*, the *container criteria* which determines where the events group will be created, and a set of *parameters*.
+
+{% hint style="info" %}
+In contrast to other model structures with container criteria, an empty criteria for the events group means that the group will **not** be created in any container! The typical criteria for the events group is the `Events` node that is automatically created in an empty spatial structure.
+{% endhint %}
+
+### Application
+
+### Event
+
+Events can be created within an event (sub-)group. Each event has parameters, an administered molecule (for applications), a start condition, and assignments.
+
+### Container
+
+A container can be either **logical** or **physical**.‌ and behaves similarly to containers in a [spatial structure](spatial-structures-bb.md).‌ The container can have tags and parameters.
+
+**Logical containers** are used to group parameters.
+
+**Physical containers** can contain parameters and molecules.
+
+
+
+- **Parameters** list is overwritten. Only parameters defined in the module that is lower in the hierarchy are used.
+
+- **Administered molecule** is overwritten.
+
+- All subnodes of the event (e.g., **ProtocolSchemaItem**, **Application_StartEvent**, etc.) are overwritten.
+
+For each event:
+
+- **Events start condition** equation is overwritten.
+- **Events start condition - "One Time" checkbox** is overwritten.
+- The list of **Assignments** is overwritten.
+
+#### Merge behavior "Extend"
+
+The tree structure of the event is extended. This means:
+
+ - **Parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
+
+- **Administered molecule** is extended.
+
+{% hint style="warning" %}
+ This results in a malformed event if different molecules are defined in different modules!
+{% endhint %}
+
+For each event:
+
+- **Events start condition** equation: Changes are not applied!
+- **Events start condition - "One Time" checkbox**: Changes are not applied!
+- The list of **Assignments** is overwritten.
+- New nodes (events, containers, etc.) are added.
+
+## Example - Creating Events‌
+
+Continue with the simple example we have been developing in the previous sections. Open the Events building block or create a new one by right clicking on the module and selecting "Add Building Blocks".
 
 ### Event Groups and Events‌
 
@@ -584,12 +651,9 @@ To **create a new event group**, either
 A window named "New Event Group" will open. Then proceed with:
 
 1. Enter a unique name into the Name input box, like "EventGroup1".
-2. Enter a condition to define for which containers the event will be applicable. In order to do so, click into the white space below the "In Container with" field, and select New match tag condition or New not match tag condition - depending if you want to include or exclude containers with a specific name or tag. You can enter more than one condition, which will be combined by a logical "and". A further option is to select the Add match all tag condition, which selects all containers.
-3. After this, you will be asked to enter a container tag for your condition, where you can select from available tags in a combobox. In our example project, select BigVial as a New match tag condition. This will make the event group effective for the entire spatial structure you created above.
-4. As always, you may enter a description into the input box at the bottom.
-5. Click **OK** or press **Enter** to finalize the event group. The new event group should now be listed in the left part of the event building block edit window. The right part should show the previously specified event group tag conditions.
+2. Enter a condition to define for which containers the event will be applicable. In order to do so, click into the white space below the "In Container with" field, and select **Match tag** condition or new **Not match tag condition** - depending if you want to include or exclude containers with a specific name or tag. In our example project, select `BigVial` as a **Match tag** condition. This will create the event group in the `BigVial` container only.
 
-As in other instances, you may define parameters for an event group. To access the parameters window, click on the "Parameters" tab in the right part of the edit window. Entering a parameter entry works in the same way as described for molecules, reactions, or for spatial structure containers. Examples for event group parameters are values for event timing or amounts of molecules that you want to set within the individual events of this event group.
+As in other instances, you may define parameters for an event group. To access the parameters window, click on the **Parameters** tab in the right part of the edit window. Entering a parameter entry works in the same way as described for molecules, reactions, or for spatial structure containers. Examples for event group parameters are values for event timing or amounts of molecules that you want to set within the individual events of this event group.
 
 ![New Event Group window](../assets/images/part-4/NewEventGroup.png)
 
