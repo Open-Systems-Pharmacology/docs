@@ -8,7 +8,7 @@ Physical containers represent a real physical space that can contain molecules. 
 
 Physical containers must be connected by neighborhoods to allow exchange processes like active or passive transports between them. A neighborhood is a logical connection between two physical containers that allows the definition of transport processes between them. Neighborhoods are always bidirectional, meaning that transport processes can be defined in both directions. Neighborhoods may also carry parameters, for example to describe the physical properties like surface area or permeabilities across the barrier between the two connected compartments.
 
-The following section describes the functionalities of the Spatial Structure building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-a-spatial-structure) is given to create a spatial structure from scratch.
+The following section describes the functionalities of the Spatial Structure building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-a-spatial-structure) is given to create a spatial structure from scratch.
 
 The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®.
 
