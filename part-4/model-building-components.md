@@ -590,10 +590,10 @@ An event group can be created within:
     - another event group,
     - Application
 
-The top level event group has a *name*, the *container criteria* which determines where the events group will be created, and a set of *parameters*.
+The top level event group has a *name*, the *container criteria* which determines where the events group will be created in a simulation, and a set of *parameters*.
 
 {% hint style="info" %}
-In contrast to other model structures with container criteria, an empty criteria for the events group means that the group will **not** be created in any container! The typical criteria for the events group is the `Events` node that is automatically created in an empty spatial structure.
+Like for observers, an empty criteria for the events group means that the group will **not** be created in any container! The typical criteria for the events group is the `Events` node that is automatically created in an empty spatial structure.
 {% endhint %}
 
 ### Application
@@ -617,7 +617,7 @@ Events can be created within:
 Each event has 
     - parameters,
     - a start condition,
-    - **One time** property - should the event be executed (maximal) once during the simulation? If true, the event will be executed the first time the condition is met. If false, the event will be executed each time the condition is met.
+    - **One time** property - should the event be executed (maximal) once during the simulation? If true, the event will be executed only the first time the condition is met. If false, the event will be executed each time the condition is met.
     - list of assignments with
         - Changed entity path (parameter or molecule),
         - New value (or formula),
@@ -629,7 +629,7 @@ Each event has
 
 #### Event conditions
 
-**Event condition** is given by an equation that evaluates to `true` or `false`.‌ Once the equation is evaluated to `true`, the event is executed.‌
+**Event condition** is defined by a logical expression that evaluates to `true` or `false` (exmples: `Time = 100` or `Some_Parameter < 0.001 AND Another_Parameter >0`).‌ Once the equation is evaluated to `true`, the event is executed.‌
 
 {% hint style="info" %}
 Technically, the value of the equation is considered to be `true` if it is unequal to zero, and `false` if it is equal to zero.
@@ -667,6 +667,8 @@ A container can be either **logical** or **physical** and behaves similarly to c
 ### Transport
 
 Transports can be created within applications. An application transport is similar to a [passive transport](passive-transports-bb.md).‌ It defines a transport process between a *source* and a *target* container.‌ The *source* should be a physical container within the application. The *target* can be any physical container in the spatial structure.
+
+In contrast to passive transports, it is not required to define a neighborhood between the source and the target. This neighborhood will be automatically created during simulation build.‌
 
 ## Example - Creating Events‌
 
