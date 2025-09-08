@@ -271,17 +271,129 @@ A parameter can also be defined as state variable. This means, that the paramete
 Once the ![Image](../assets/icons/Unchecked.png) **Parameter is state variable** checkbox is deactivated again, the input box for the RHS will disappear. The parameter is no longer a state variable, and the right hand side (RHS) formula reverts to RHS = 0. If you have accidentally deactivated the checkbox and then reactivate it, the formula you may have previously defined as RHS is not lost, since all created formulas are stored. To reinstate the formula you may have previously defined as the RHS, select the formula from the combobox after the formula type explicit formula is selected.
 {% endhint %}
 
-### How Tags are used‌
+### How Tags are used‌ - container criteria for formulas, observers, transports, and events‌
 
 Containers and neighborhoods within a spatial structure, elements of an application, or parameters may be labelled with tags. These tags, together with the name given to a container or neighborhood, may be used for selectively enabling observers, active or passive transports, or events. They are used for formula evaluations of the formula type "sum".
 
 Tags can be entered when creating or editing a tag-carrying entity. The detailed procedures are described within this chapter in the corresponding sections describing spatial structures, observers, events, or parameters. Generally, one or more names are entered in a special input window of the corresponding entity.
 
-Tags are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". More than one condition can be used, being one of the following classes:
+Conditions are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". Conditions can be combined using either **AND logic** (`Condition1 AND Condition2 AND ...`), or **OR logic** (`Condition1 OR Condition2 OR ...`).
+ 
+Imagine the following simple model structure:
 
-1. Match tag condition: the condition is fulfilled when the tag name is matched.
-2. Not match tag condition: the condition is fulfilled when the tag name is **not** matched.
-3. Match all tag condition: the condition is fulfilled for all tags (not available for transport processes or sum formulas).
+```
+Organism (logical)
+  |
+  +-- Container A (logical)
+  |      |
+  |      +-- Container A1 (physical)
+  |      +-- Container A2 (physical)
+  |
+  +-- Container B (logical))
+         |
+         +-- Container B1 (physical)
+         +-- Container B2 (physical)
+```
+
+A molecule `Molecule A` is present in the physical containers `A1`, `A2`, `B1`, and `B2`. Each container has a parameter `Param A`, including the molecule.
+
+The physical containers have additionally the parameter `Concentration`.
+
+{% hint style="info" %}
+The following examples demonstrate the concept of tags and container criteria. They are not meant to represent a physiologically meaningful model.
+{% endhint %}
+
+If we create a sum formula with the following conditions:
+
+1. **Match tag condition**: the condition is fulfilled when the tag name is matched.
+    - For the sum formula with match tag condition "Param A", the sum will include the following parameters:
+        - `Organism|Param A`
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+        - `Organism|Container B|Param A`
+        - `Organism|Container B|Container B1|Param A`
+        - `Organism|Container B|Container B1|Molecule A|Param A`
+        - `Organism|Container B|Container B2|Param A`
+        - `Organism|Container B|Container B2|Molecule A|Param A`
+
+2. **Not match tag condition**: the condition is fulfilled when the tag name is **not** matched.
+    - For the parameter `SumOfParameters` with the conditions `Not tagged with: Param A` and `Not tagged with: SumOfParameters` (the latter is required to avoid a circular reference), the sum will include the following parameters:
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container B|Container B1|Volume`
+        - `Organism|Container B|Container B1|Molecule A|Concentration`
+        - `Organism|Container B|Container B2|Volume`
+        - `Organism|Container B|Container B2|Molecule A|Concentration`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
+        - `Organism|Container B|Container B1|Molecule A`
+        - `Organism|Container B|Container B2|Molecule A`
+
+3. **In Container**: the condition is fulfilled by all model entities located in the specified container and its children.
+    - For the parameter with the condition "In Container with: Organism", the sum will include the following parameters:
+        - `Organism|Param A`
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+        - `Organism|Container B|Param A`
+        - `Organism|Container B|Container B1|Volume`
+        - `Organism|Container B|Container B1|Molecule A|Concentration`
+        - `Organism|Container B|Container B1|Param A`
+        - `Organism|Container B|Container B1|Molecule A|Param A`
+        - `Organism|Container B|Container B2|Param A`
+        - `Organism|Container B|Container B2|Volume`
+        - `Organism|Container B|Container B2|Molecule A|Concentration`
+        - `Organism|Container B|Container B2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
+        - `Organism|Container B|Container B1|Molecule A`
+        - `Organism|Container B|Container B2|Molecule A`
+
+    - For the parameter with the condition "In Container with: Container A", the sum will include the following parameters:
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
+
+4. **Not in Container with**: the condition is fulfilled for all model entities that are **not** in the specified container or any of its children.
+
+5. **In Parent**: the condition is fulfilled by all model entities located in the specified container and its children. This can be considered as a special case of "In Container", where the container is the parent of the entity being considered.
+
+6. **In Children**: the condition is fulfilled by any model entity in all children of the parent container of the entity for which the criteria is defined. 
+
+    - For the parameter with the condition "In Childre" located in `Organism|Container A`, , the sum will include the following parameters:
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
 
 More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
 
@@ -399,106 +511,6 @@ For **continuing our test project**, enter three molecules and name them "A", "B
 ### Active Transporter
 
 In addition to the molecules described so far, active transporter molecules and transport processes related to them can be created. Since their use requires that a spatial structure and neighborhoods have been created, they and the dependent active transport processes are described below in [Active Transporter Molecules](model-building-components.md#active-transporter-molecules).
-
-## Transport Processes‌
-
-In MoBi®, passive and active transport processes use common logics in their setup. However, for technical reasons they are defined in different building blocks: a separate passive transports building block for those passive processes that are generic for all molecules, while the active and passive transport processes specific to the molecules are defined in the molecules building block. Typical examples for all groups are mentioned in the sections below.
-
-### Passive Transports‌
-
-Passive transports which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports" in the Building Block Explorer <img src="../assets/icons/PassiveTransport.svg" data-size="line"> and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](model-building-components.md#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
-
-For **creating a new transport** or loading one from a previously saved file:
-
-1. Select the corresponding ribbon button <img src="../assets/icons/AddAction.svg" data-size="line"> **New** or <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load**. Alternatively, you may right-click into the empty white space in the left part of the edit window and select **Create Passive Transport** or **Load Passive Transport** from the context menu. If you choose **New** or **Create**, a window named "New Passive Transport" opens.
-
-![New Passive Transport Window](../assets/images/part-4/NewPassiveTransport.png)
-
-1. Enter a name for this transport process, for example "Diffusion".
-2. Define descriptors for target and source containers:
-   * Right-click into the corresponding empty space below "Condition" and "Tag", then either select New match tag condition or New not match tag condition.
-   * A window where you will be asked for the tag name will open.
-   * A tag can simply be the name of a container of a spatial structure; you can select from the available names by clicking the drop-down arrow. In our example project, select "Vial1" as "New match tag condition" for "Source Descriptor", and select "Vial2" as "New match tag condition" for "Target Descriptor". Selecting the "not match condition" will simply invert the selection.
-   * The arrangement of neighborhood connections set up in the spatial structure (see [Creating Neighborhoods](model-building-components.md#creating-neighborhoods)) will restrict the pattern of transport streams.
-3. Define which molecules are transported. Per default, the checkbox ![Image](../assets/icons/Checked.png) **All** is selected, which means that all molecules which are present in the corresponding compartments are transported. Exceptions can be defined in the Exclude List. In order to add a molecule to the Exclude List, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Molecule** button within the section Exclude List. Molecules listed in the Exclude List will not be transported. If the checkbox **All** is un-checked, you can add molecules to the Include List. Then, only molecules listed in the Include List are transported.
-4. If the box ![Image](../assets/icons/Unchecked.png) **Create process rate parameter** is checked, a parameter which equals the transport rate equation is automatically generated when a simulation is build. You can use this parameter to refer to the transport rate in any equation. It can also be used to plot the transport rate (additionally check the box **Plot Process Rate Parameter**) .
-5. In order to define a transport rate, go to the Tab **Kinetic**. Select Formula in the Formula Type combobox.
-6. Click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button. You will be asked for a reaction formula name. Name the formula "Diffusion". Press **Enter** or click **OK**.
-7. Next you need to compile the referenced values for the diffusion formula. To have more space for easier navigation, you may either click **OK** and edit the formula in the larger space of the edit window, or you may increase the size of the window by pulling on its rims with the left mouse button pressed.
-
-A **diffusion equation** typically requires you to use concentration differences between two connected containers. Also, a diffusion constant is required which may be molecule-dependent.
-
-* To have such values as molecule parameters available, you need to go back to edit the Molecules building block and introduce them (see [Molecule Parameters](model-building-components.md#molecule-parameters)).
-* If transport rates depend primarily on the processes rather than on the molecular properties (e.g., blood vessel flow rates), it might be better to attach such parameters to the neighborhood (see [Creating Neighborhoods](model-building-components.md#creating-neighborhoods)).
-* If only one global diffusion coefficient is needed (e.g., if all molecules diffuse rather similarly), you may define it as a parameter to the transport process. Use the "Parameters" tab in the edit window of the newly created passive transport, and create a diffusion constant in the way described for the other building blocks, using the "New Parameter" button.
-* Another alternative is to just enter a diffusion constant as a numerical value into the formula input box, as it is done below.
-
-In any of the above cases, the tree view within the field "Possible Referenced Objects" allows you to pick parameters from a variety of building blocks.
-
-{% hint style="info" %}
-If you notice later that a parameter would rather be placed at another location, you can move a parameter by clicking to the left of it, pressing **Ctrl+X** and inserting it with **Ctrl+V** at the proper position. However, all "Possible Referenced Objects" list entries pointing to this parameter need to be entered again manually.
-{% endhint %}
-
-Continuing with our example, let us enter a simple diffusion equation based on a constant multiplied with the concentration difference between source and target container.
-
-1. Make sure that the molecules created above all have a "Concentration" parameter. If not, see [Molecule Parameters](model-building-components.md#molecule-parameters) how to proceed.
-2. To make the concentrations available for the diffusion formula, work with the "Possible Referenced Objects" tree view, as described in [Reaction Kinetics](model-building-components.md#reaction-kinetics). Select "Relative path", and choose "BigVial|Neighborhoods|V1V2Connection" as reference point. The relative path will result in source and target molecule paths that are generic for all molecules, whereas selecting an absolute path will be molecule-specific.
-3. Successively expand the "Possible Referenced Objects" tree view by clicking on the + signs to the left of "BigVial", then again "BigVial" in the level that opened, there on "Vial1", then on "MoleculeProperties", then on "A" (or any other molecule name). The "Concentration" parameter should now appear, if present.
-4. Drag and drop exactly this "Concentration" parameter to the white references area to the left of the tree. The alias name "Concentration" and the path "SOURCE|MOLECULE|Concentration" should appear in the list.‌
-5. Then open the tree below "Vial2" -> "MoleculeProperties" -> "A" and drag exactly this "Concentration" parameter into the references as well. This time, the alias should be named "Concentration1" and the path should read "TARGET|MOLECULE|Concentration".‌
-6. Compare your screen to to the images below. If you want to change the aliases manually, you can do so by clicking on any name input box and replace the corresponding name with another.
-7. Now enter the formula "0.001\*(Concentration-Concentration1)" into the formula input box below the references. The error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> that was displayed to the left of this input box should now disappear, if everything is typed correctly. Compare your result again with the images below.
-
-{% hint style="info" %}
-The resulting formula is a generic formula. The example model has 3 different molecules, "A", "B", and "C". Each of them will be transported by the above passive transport, as long as they are all present in the compartments "Vial1" and "Vial2" and the checkbox "All" is selected, which is the case in our example.
-{% endhint %}
-
-![Passive Transport has been added - Properties Tab](../assets/images/part-4/PassiveTransportComplete.png)
-
-![Passive Transport has been added - Kinetic Tab](../assets/images/part-4/PassiveTransportComplete-KinticTab.png)
-
-### Molecule-specific Passive Transports‌
-
-Besides generic transport processes, molecule-specific passive transports may be required. An example is a molecule's clearance from the body which is not further characterized and cannot be attributed to specific enzymes or transporters.
-
-As with generic passive transports, molecule-specific transports only affect non-stationary molecules. Following the logic of MoBi®, molecule-specific transport processes are to be defined in the "Molecules" building block. Refer to [Creating New Molecules](model-building-components.md#creating-new-molecules) and open your Molecules building block for re-editing by double-clicking or by use of the context menu. If it is still open, you can click the Molecules tab in the edit window.
-
-To create a molecule-specific transport process:
-
-1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
-2. Select **Create Passive Transport** from the context menu.
-3. A "New Passive Transport" window opens.
-4. Then follow the same protocol as given for the generic passive transports, “Passive Transports”.
-
-Like with the generic passive transports, you may also load an existing process from a pkml file. Existing passive transports appear below the affected molecule in the tree view. Selecting such a process by clicking it will display an edit window as for the active transports.
-
-### Active Transporter Molecules‌
-
-An active transport process, as opposed to a passive transport, requires a transporter molecule (like a protein channel) that works similar to an enzyme. Unlike a chemical reaction, however, this process does not change a molecule but transfers it between containers, for example, from the intercellular space into a cell. As with passive transports, active transports only affect non-stationary molecules. Following the logic of MoBi®, all active transporter molecules and their transport processes are to be defined in the "Molecules" building block. Refer to [Creating New Molecules](model-building-components.md#creating-new-molecules) and open your Molecules building block for re-editing by double-clicking or by use of the context menu. If it is still open, you can click the Molecules tab in the edit window.
-
-First, an active transporter molecule needs to be defined:
-
-1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
-2. Select **Create Transporter Molecule** from the context menu.
-3. You are asked for a transporter name. Either enter a new name (e.g., "PGP"), or the name of an already existing transporter molecule if the very same transporter is active for several molecules in your list and has been previously defined.
-4. Press **Enter** or click **OK**. In the molecules tree, a transporter molecule is displayed, and a transporter entry is added to the molecule selected in step 1.
-5. In the transporter entry below the selected molecule, you may enter a description and parameters, as for any molecule.
-6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](model-building-components.md#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
-7. Right-click on the transporter attached to the molecule to be transported, and select **Create Transport** from the context menu. A window named "New Active Transport" opens.
-8. Enter a name into the Name input box, like "PGP Transport". Then, follow the steps described in the previous section “Passive Transports” for selecting source and target, define a transport rate parameter and entering a transport kinetics formula.
-9. The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a KM value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
-
-Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which runs in the opposite direction of the above passive transport, i.e., from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to "C\_PGP", and that of molecule "A" to "C\_A" by just overriding the default names. The equation to be entered is "0.001\*C\_PGP\*C\_A". The figure below shows what the screen should look like after everything is properly set up.
-
-![Active Transport has been entered](../assets/images/part-4/active-transport-entered.jpg)
-
-{% hint style="info" %}
-If more than one molecule is transported by the very same transporter, you just create the same transporter molecule twice, i.e., with the same name under the second molecule. This will only create a new active transport, but no duplicate transporter molecule. You can then proceed like for the first molecule and create a transport process.
-{% endhint %}
-
-{% hint style="info" %}
-If two molecules compete for the same transporter, you can add inhibition terms to the transport equations that use all molecules, either as transporter substrate or as transporter inhibitor.
-{% endhint %}
 
 ## Observers‌
 
