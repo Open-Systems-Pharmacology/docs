@@ -621,7 +621,7 @@ Each event has
     - list of assignments with
         - Changed entity path (parameter or molecule),
         - New value (or formula),
-        - Property whether the new formula is applied only once as a calculated values at the time point of event execution, or the formular overwrites the values (or other formula).
+        - Property whether the new formula is applied only once as a calculated value at the time point of event execution, or the formula overwrites the value (or other formula).
 
 {% hint style="warning" %}
     Setting the **One time** property to false may lead to unexpected behavior, especially if the event changes a parameter or molecule amount in a way that the event condition is always true after the first execution, e.g., with the condition `TIME > StartTimeParameters`. In this case, the event will be executed at each simulated time step after the start time.
