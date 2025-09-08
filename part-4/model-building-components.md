@@ -165,6 +165,8 @@ In a formula, the following characters may be used:
 * in the conditions, the operators **<**, **>**, **<>**, **>=**, **<=**, **=** ; alternatively: **LT**, **GT**, **NEQ**, **GEQ**, **LEQ**, **EQ**, for which the use is `<function>(<expression1>;<expression2>)`
 * conditions can be composed out of sub-conditions that are logically connected by **AND**, **OR**, or inverted by **NOT**. An alternative symbol for **AND** is **&**; an alternative symbol for **OR** is **|**. Besides logical conditions, the numbers 0 and 1 can be used as arguments.
 
+- `TIME` variable: The simulation time.
+
 {% hint style="info" %}
 The above mathematical functions are defined as in the C programming language. For standard reaction kinetic models, these functions are not required at all. It is recommended to use events rather than "if conditions" in a formula.
 {% endhint %}
@@ -563,136 +565,6 @@ To work with container observers, make sure the tab "Container Observer" in the 
 The screen should look like in the screen shot below:
 
 ![Container Observer for Sum of Metabolites](../assets/images/part-4/ContainerObserverEntered.png)
-
-## Events and Applications‌
-
-An event is used to change an entity, like the amount of molecules or a reaction rate, when a given condition is met. This condition can be, for example, that a given simulation time is reached, or that the concentration of a molecule has exceeded a certain value. Thus, such a programmed event is used to reflect external changes to the simulation, like the application of a drug or a sudden physical change in the spatial structure, like a vessel rupture.
-
-In the drug delivery case, however, you rather want to use an application instead of an event to have more options available for drug release and repeated applications. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
-
-Events and applications are grouped in an events building block, where events are sub-grouped in event groups. To create such a structure, you may need to create a new events building block using the context menu of the building block explorer or the corresponding ribbon button of the Modeling & Simulation tab. In our example, an empty events building block named "Events" has already been created automatically. Simulations imported from a PK-Sim® project also contain such a building block that contains the applications.
-
-To add events or applications to the project, you need to open the events building block for editing. This can be done by double-clicking on it or by using the **Edit** command of the context menu in the building block explorer.
-
-### Event Groups and Events‌
-
-To **create a new event group**, either
-
-* use the <img src="../assets/icons/Event.svg" data-size="line"> **New** ribbon button,
-* or right-click into the white space in the event edit window and select the <img src="../assets/icons/AddAction.svg" data-size="line"> Create Event Group command.
-
-A window named "New Event Group" will open. Then proceed with:
-
-1. Enter a unique name into the Name input box, like "EventGroup1".
-2. Enter a condition to define for which containers the event will be applicable. In order to do so, click into the white space below the "In Container with" field, and select New match tag condition or New not match tag condition - depending if you want to include or exclude containers with a specific name or tag. You can enter more than one condition, which will be combined by a logical "and". A further option is to select the Add match all tag condition, which selects all containers.
-3. After this, you will be asked to enter a container tag for your condition, where you can select from available tags in a combobox. In our example project, select BigVial as a New match tag condition. This will make the event group effective for the entire spatial structure you created above.
-4. As always, you may enter a description into the input box at the bottom.
-5. Click **OK** or press **Enter** to finalize the event group. The new event group should now be listed in the left part of the event building block edit window. The right part should show the previously specified event group tag conditions.
-
-As in other instances, you may define parameters for an event group. To access the parameters window, click on the "Parameters" tab in the right part of the edit window. Entering a parameter entry works in the same way as described for molecules, reactions, or for spatial structure containers. Examples for event group parameters are values for event timing or amounts of molecules that you want to set within the individual events of this event group.
-
-![New Event Group window](../assets/images/part-4/NewEventGroup.png)
-
-After the event group is created, individual events can be defined for this group. Right-click your event group, and you will see the options you have in the context menu. These are:
-
-* Edit - this has the same function as selecting the name.
-* Rename
-* Save As - saves the selected event group to a pkml file.
-* Remove - deletes the selected event group.
-* Create Application - see [Applications](model-building-components.md#applications).
-* Load Application - see [Applications](model-building-components.md#applications).
-* Create Event - creates a new event within the current event group.
-* Load Event - loads an existing event from a pkml file.
-* Create Event Group - creates a new event group below the highlighted event group.
-* Load Event Group - loads an existing event group from a pkml file below the highlighted event group.
-* Create Container - see [Applications](model-building-components.md#applications).
-* Load Container - see [Applications](model-building-components.md#applications).
-
-To create an event, click the Create Event option. A window named "New Event" will open (see image below). Then proceed with the following steps:
-
-1. Enter an event name in the Name input box, e.g. "E1".
-2. If your event should only be executed once during the simulation, check the box ![Image](../assets/icons/Checked.png) **One Time Event** below the name. This is a useful option if, for example, you want to set an amount of molecules to a new value at a given time. For this example, check this box.
-3. The section "Condition" below the checkbox requires that you enter an event condition name, which is comparable to a formula name of a reaction or a parameter. Enter "E1" into this input box.
-4.  To have more space for building the condition, close this window now by clicking **OK** or pressing **Enter** to complete the event building in the edit window. However, all required data could also be entered in the "New Event" window.
-
-    ![New Event window](../assets/images/part-4/NewEvent.png)
-5. Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](model-building-components.md#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
-6. There is still a Condition equation to be entered, as indicated by the red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time > 500", which would execute the event at 500 minutes. The use of "> 500" instead of "= 500" is advantageous since it might well be that during the simulation, the exact value of 500 will never be assumed, depending on the time step. If you plan to quickly test different values for this time, it is advantageous to define this execution time as a parameter which can be altered in the simulation.
-7. Define a time parameter as an event parameter (alternatively, it can be set as an event group parameter if it is needed in several events of this group). Click the "Parameters" tab, then the button <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**. A "New Parameter" window opens.
-8. Enter "E1Time" as parameter name.
-9. Select Time from the combobox "Dimension".
-10. Enter "500". If you prefer to do this in other units than minutes, you may change the dimension (e.g., to "h") in the combobox to the right of the value.
-11. Click **OK** or press **Enter**. The new parameter will appear in the parameters list.
-12. Click the "Properties" tab. Drag and drop the newly created parameter "E1Time" from the Possible Referenced Objects list on the right into the white space below the already added "Time" reference. To find this parameter, you need to look below the E1 event, so click on the + sign to open that part of the reference tree. In case you have defined the parameter under the event group, you will find it below the event group.
-13. Enter "Time > E1Time" into the formula input box, after which the error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> to the left of it should disappear.
-14. What is still needed is the assignment which determines what will happen when the event condition is fulfilled. As an example, we will set the amount of molecule "A" in the container "Vial1". To proceed, click the button **Add Assignment**. A window named "New Event Assignment" will open.
-15. Enter "SetA" as name into the Name input box.
-16. Click the **...** on the left hand side of the "Changed Entity" input box below Name. A window named "Select Changed Entity" will open. Select the molecule "A" in "Vial1" as target. To see it and be able to click it, you need to open the levels BigVial|BigVial|Vial1 by clicking successively on the + sign to the left of them. Then click on **A**. The window should look like the following screen shot.
-
-![Select Changed Entity window](../assets/images/part-4/SetA.png)
-
-1. Click the **OK** button. The red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> to the left of the "Changed Entity" input box should now be gone, and a path to molecule A, "BigVial| Vial1|A", should be visible.
-2. Check the box ![Image](../assets/icons/Checked.png) **Use Assignment As Value**, then enter "50" into the Value input box. This will set the amount of molecules to 50 µmol in "Vial1" when the event is executed. Finally, click the **OK** button or press **Enter**. The screen should look like in the following image, and the event is now completed.
-
-![Event building completed](../assets/images/part-4/event-building-completed.jpg)
-
-Instead the amount of molecules, an event allows for changing a number of assignments, like reaction or transport rate constants, container volumes or neighborhood parameters. The entire formula of a reaction or transport may be changed by not checking "Use Assignment As Value" during the creation of an assignment, and by selecting Formula instead of Constant in "Formula Type". Also, you may change several assignments upon one condition: just click the button "Add Assignment" again, and you can go through the above steps 14 to 18 again and have another value changed.
-
-Instead of a one time event, you can have an **event permanently active** if you uncheck the box ![Image](../assets/icons/Unchecked.png) **One Time Event** in "Properties". In our example of setting the amount of molecule "A" to 50 µmol at above 500 minutes, this would result in keeping the amount of "A" constant at 50 µmol after 500 minutes.
-
-An assignment can be changed by the following actions:
-
-* Click the **...** symbol to the right of "Changed Entity Path", and you will see the Select Changed Entity window again to alter the above choice.
-* In the "New Formula" input box (or row in case of several assignments), you can change between different values or formulas for the target assignment.
-* The box ![Image](../assets/icons/Unchecked.png) **Use Assignment As Value** can be changed to insert a formula at the assignment.
-* The ![Image](../assets/icons/Add.png) symbol has the same function as the button **Add Assignment**.
-* Clicking the ![Image](../assets/icons/Delete.png) symbol will delete the corresponding assignment.
-
-{% hint style="info" %}
-The above actions allow for basic editing of assignments. For all other and deeper changes, the recommended workflow is to delete and re-create an assignment.
-{% endhint %}
-
-### Applications‌
-
-An application is basically an event group with a more complex structure than that described in the previous section. In almost all cases, the application will be created within PK-Sim®and then transferred to MoBi®. The scope of this section will be limited to working with this recommended workflow.
-
-The image below shows two example applications imported from PK-Sim®, one
-
-i.v. and one oral. You can see the two application in the tree view of the event edit window. Each application consist of the application group, the application start event, and the protocol schema item. To make changes, look at the parameters of the protocol schema item, as displayed in the image.
-
-![Example Applications](../assets/images/part-4/events-application.jpg)
-
-You may make changes in the following parameters of this group:
-
-* Altering **DosePerBodyWeight** will change the dose per kg body weight. This will only work if it was used in the original PK-Sim® project, which can be recognized by having a formula in the **Dose** parameter.
-* Altering **Dose** will let you change the absolute drug dose administered. If the original PK-Sim® project contained a dose per body weight, that formula will be overridden by the absolute value.
-* The time where the drug administration starts can be altered by changing the
-
-Start time parameter.
-
-* The volume of water per body weight can be changed for oral applications only by using the parameter **Volume of water / body weight**. This will only work if it was used in the original PK-Sim® project, which can be recognized by having a formula in the **Amount of water** parameter.
-* Altering **Amount of water** will let you change the absolute amount of water administered with the drug. If the original PK-Sim® project contained a volume of water per body weight, that formula will be overridden by the absolute value.
-* The other parameters of this block should not be changed.
-
-{% hint style="info" %}
-The descriptions at the bottom section of each parameter gives you more information on each parameter.
-{% endhint %}
-
-More complex changes, like changing complex dosing schemes or changing dissolution patterns are much easier to achieve using the user interface of PK- Sim® and then exporting the corresponding simulation. Within a MoBi®project, you may then combine drug applications from several PK-Sim® exports. The following describes the workflow for this operation:
-
-1. Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi)).
-2. Load your MoBi® project.
-3. Right-click the Events entry in the building block explorer, select <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Event Group Building Block**.
-4. Enter the name and location of your pkml file. You may be asked for a new building block name. A new Events building block is created.
-5. When creating a simulation ([Create a Simulation](setting-up-simulation.md#create-a-simulation)), you can now select between several possible application building blocks.
-
-{% hint style="info" %}
-A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the MoBi program group will lead you to the proper path.
-{% endhint %}
-
-{% hint style="info" %}
-Descriptive names for each of these applications building blocks could be helpful. Use the <img src="../assets/icons/Rename.svg" data-size="line"> **Rename** function from the building block context menu for this purpose.
-{% endhint %}
 
 ## Molecule Start Values‌
 
