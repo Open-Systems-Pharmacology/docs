@@ -572,11 +572,11 @@ An **event** is used to change an entity, like the amount of molecules or a reac
 
 A special case of an event is an **application**, which is used to apply a certain amount of a molecule to a container at a given time. This is typically used to simulate the administration of a drug to the body.
 
-Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
+
 
 Events and applications are grouped in the **Events** building block (BB). Multiple events can be grouped in event groups, and organized in a hierarchy of  containers similar to that of a [spatial structure](spatial-structures-bb.md). Simulations imported from a PK-Sim® project contain all defined applications and additional events, such as food administration, in the events BB.
 
-The following section describes the functionalities of the Events building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-events) is given to create a events from scratch.
+The following section describes the functionalities of the Events building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-events) is given. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
 
 ## Events - Functionality Overview‌
 
