@@ -638,7 +638,7 @@ Technically, the value of the equation is considered to be `true` if it is unequ
 See [Working with Formulas](model-building-components.md#working-with-formulas) for details on how to create formulas with conditions.
 
 {% hint style="warning" %}
-If an event should be repeteadly fired during the simulation (i.e., the **One time** property is set to false), and the condition depends on systems state (parameter or state variables calculated during simulation), the even will only be fired if this condition is met within the defined output interval and resolution! This may lead to unexpected behavior if the output resolution is too coarse. For example, if the condition is `Concentration > 1 && Concentration < 2` and the concentration is 0.5 at time point t1 and 2 at time point t2, but no output is defined between t1 and t2, the event will not be fired since the condition was not met at any of the output time points.
+If an event should be repeatedly fired during the simulation (i.e., the **One time** property is set to false), and the condition depends on systems state (parameter or state variables calculated during simulation), the event will only be fired if this condition is met within the defined output interval and resolution! This may lead to unexpected behavior if the output resolution is too coarse. For example, if the condition is `Concentration > 1 && Concentration < 2` and the concentration is 0.5 at time point t1 and 2 at time point t2, but no output is defined between t1 and t2, the event will not be fired since the condition was not met at any of the output time points.
 
 A discussion on this topic can be found in the [MoBi® Forum](https://github.com/Open-Systems-Pharmacology/MoBi/issues/321).
 {% endhint %}
