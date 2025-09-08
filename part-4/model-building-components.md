@@ -297,7 +297,11 @@ A molecule `Molecule A` is present in the physical containers `A1`, `A2`, `B1`, 
 
 The physical containers have additionally the parameter `Concentration`.
 
-If we create a sum formula for with the following conditions:
+{% hint style="info" %}
+The following examples demonstrate the concept of tags and container criteria. They are not meant to represent a physiologically meaningful model.
+{% endhint %}
+
+If we create a sum formula with the following conditions:
 
 1. **Match tag condition**: the condition is fulfilled when the tag name is matched.
     - For the sum formula with match tag condition "Param A", the sum will include the following parameters:
@@ -372,17 +376,22 @@ If we create a sum formula for with the following conditions:
 
 4. **Not in Container with**: the condition is fulfilled for all model entities that are **not** in the specified container or any of its children.
 
-5. **In Parent**: the condition is fulfilled when the container is a direct parent of the entity being considered.
+5. **In Parent**: the condition is fulfilled by all model entities located in the specified container and its children. This can be considered as a special case of "In Container", where the container is the parent of the entity being considered.
 
-{% hint style="warning" %}
-This condition cannot be used in sum formulas!
-{% endhint %}
+6. **In Children**: the condition is fulfilled by any model entity in all children of the parent container of the entity for which the criteria is defined. 
 
-6. **In Children**: the condition is fulfilled when the container is a direct child of the entity being considered.
-
-{% hint style="warning" %}
-This condition cannot be used in sum formulas!
-{% endhint %}
+    - For the parameter with the condition "In Childre" located in `Organism|Container A`, , the sum will include the following parameters:
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
 
 More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
 
