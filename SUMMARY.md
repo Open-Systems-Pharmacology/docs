@@ -48,11 +48,12 @@
 
 * MoBi‌ Documentation
   * [First Steps](part-4/first-steps.md)
+  * [Options](part-4/mobi-options.md)
   * [The Building Block Concept](part-4/building-block-concepts.md)
   * [Modularization concept](part-4/modularization-concept.md)
   * [Spatial Structures](part-4/spatial-structures-bb.md)
   * [Molecules](part-4/molecules-bb.md)
-  * [Options](part-4/mobi-options.md)
+  * [Events](part-4/events-bb.md)
   * [Passive Transports](part-4/passive-transports-bb.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
   * [Setting up a Simulation](part-4/setting-up-simulation.md)
