@@ -598,7 +598,7 @@ In contrast to other model structures with container criteria, an empty criteria
 
 ### Application
 
-Application is a special type of an event group that is defined for a specific **molecule**.‌ In addition to the properties of an event group, an application has specify an **administered molecule** and the path to the **Application Molecule Builder**.
+Application is a special type of an event group that is defined for a specific **molecule**.‌ In addition to the properties of an event group, an application has to specify an **administered molecule** and the path to the **Application Molecule Builder**.
 
  - **Application Model Builder**: Applications that add molecules to the system require an application model builder that is a virtual compartment for the administered molecule.
 
