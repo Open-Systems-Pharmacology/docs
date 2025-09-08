@@ -666,7 +666,7 @@ A container can be either **logical** or **physical**.‌ and behaves similarly 
 
 ### Transport
 
-Transports can be created within applications. An application transport is similart to a [passive transport](passive-transports-bb.md).‌ It defines a transport process between a *source* and a *target* container.‌ The *source* should be a physical container within the application. The *target* can be any physical container in the spatial structure.
+Transports can be created within applications. An application transport is similar to a [passive transport](passive-transports-bb.md).‌ It defines a transport process between a *source* and a *target* container.‌ The *source* should be a physical container within the application. The *target* can be any physical container in the spatial structure.
 
 ## Example - Creating Events‌
 
