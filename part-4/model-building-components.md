@@ -768,7 +768,7 @@ You may make changes in the following parameters of this group:
 The descriptions at the bottom section of each parameter gives you more information on each parameter.
 {% endhint %}
 
-More complex changes, like changing complex dosing schemes or changing dissolution patterns, are much easier to achieve using the user interface of PK- Sim® and then exporting the corresponding simulation. Within a MoBi®project, you may then combine drug applications from several PK-Sim® exports. The following describes the workflow for this operation:
+More complex changes, like changing complex dosing schemes or changing dissolution patterns, are much easier to achieve using the user interface of PK- Sim® and then exporting the corresponding simulation. Within a MoBi® project, you may then combine drug applications from several PK-Sim® exports. The following describes the workflow for this operation:
 
 1. Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi)).
 2. Load your MoBi® project.
