@@ -519,7 +519,7 @@ After loading a simulation that was generated in PK-Sim® (see [Load a Simulatio
 
 ## Observers - Functionality Overview
 
-Each observer has **container conditions** that define in which containers the observer will be created and a **list of molecules** that defines for which molecules it will be created. Container conditions explained in [How Tags are used](model-building-components.md#) in detail. The list of molecules can either include all molecules or it can be restricted to a list of included or excluded molecules.
+Each observer has **container conditions** that define in which containers the observer will be created and a **list of molecules** that defines for which molecules it will be created. Container conditions explained in [How Tags are used](model-building-components.md) in detail. The list of molecules can either include all molecules or it can be restricted to a list of included or excluded molecules.
 
 If an observer cannot be created because the conditions do not match any container or molecule, a warning will be issued when creating a simulation (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
 
@@ -555,7 +555,7 @@ To work with molecule observers, make sure the tab "Molecule Observer" in the ed
 
 ![Select Relative Path window](../assets/images/part-4/EnteringRelativePath.png)
 
-1. In the "Possible Referenced Objects" tree, navigate to `Organism|Vial1` and expand it. You will see the parameter `Volume` below it.
+1. In the "Possible Referenced Objects" tree, navigate to `BigVial|Vial1` and expand it. You will see the parameter `Volume` below it.
 
 {% hint style="info" %}
 The **Local Reference Point** can be changed any time by clicking on the **...** symbol to the right of the path.
