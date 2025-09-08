@@ -658,7 +658,7 @@ Containers can be created within:
     - an event (sub-)group,
     - an application.
 
-A container can be either **logical** or **physical**.‌ and behaves similarly to containers in a [spatial structure](spatial-structures-bb.md).‌ The container can have tags and parameters.
+A container can be either **logical** or **physical** and behaves similarly to containers in a [spatial structure](spatial-structures-bb.md).‌ The container can have tags and parameters.
 
 **Logical containers** are used to group parameters.
 
