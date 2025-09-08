@@ -172,6 +172,8 @@ In a formula, the following characters may be used:
 * in the conditions, the operators **<**, **>**, **<>**, **>=**, **<=**, **=** ; alternatively: **LT**, **GT**, **NEQ**, **GEQ**, **LEQ**, **EQ**, for which the use is `<function>(<expression1>;<expression2>)`
 * conditions can be composed out of sub-conditions that are logically connected by **AND**, **OR**, or inverted by **NOT**. An alternative symbol for **AND** is **&**; an alternative symbol for **OR** is **|**. Besides logical conditions, the numbers 0 and 1 can be used as arguments.
 
+- `TIME` variable: The simulation time.
+
 {% hint style="info" %}
 The above mathematical functions are defined as in the C programming language. For standard reaction kinetic models, these functions are not required at all. It is recommended to use events rather than "if conditions" in a formula.
 {% endhint %}
@@ -276,17 +278,129 @@ A parameter can also be defined as state variable. This means, that the paramete
 Once the ![Image](../assets/icons/Unchecked.png) **Parameter is state variable** checkbox is deactivated again, the input box for the RHS will disappear. The parameter is no longer a state variable, and the right hand side (RHS) formula reverts to RHS = 0. If you have accidentally deactivated the checkbox and then reactivate it, the formula you may have previously defined as RHS is not lost, since all created formulas are stored. To reinstate the formula you may have previously defined as the RHS, select the formula from the combobox after the formula type explicit formula is selected.
 {% endhint %}
 
-### How Tags are used‌
+### How Tags are used‌ - container criteria for formulas, observers, transports, and events‌
 
 Containers and neighborhoods within a spatial structure, elements of an application, or parameters may be labelled with tags. These tags, together with the name given to a container or neighborhood, may be used for selectively enabling observers, active or passive transports, or events. They are used for formula evaluations of the formula type "sum".
 
 Tags can be entered when creating or editing a tag-carrying entity. The detailed procedures are described within this chapter in the corresponding sections describing spatial structures, observers, events, or parameters. Generally, one or more names are entered in a special input window of the corresponding entity.
 
-Tags are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". More than one condition can be used, being one of the following classes:
+Conditions are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". Conditions can be combined using either **AND logic** (`Condition1 AND Condition2 AND ...`), or **OR logic** (`Condition1 OR Condition2 OR ...`).
+ 
+Imagine the following simple model structure:
 
-1. Match tag condition: the condition is fulfilled when the tag name is matched.
-2. Not match tag condition: the condition is fulfilled when the tag name is **not** matched.
-3. Match all tag condition: the condition is fulfilled for all tags (not available for transport processes or sum formulas).
+```
+Organism (logical)
+  |
+  +-- Container A (logical)
+  |      |
+  |      +-- Container A1 (physical)
+  |      +-- Container A2 (physical)
+  |
+  +-- Container B (logical))
+         |
+         +-- Container B1 (physical)
+         +-- Container B2 (physical)
+```
+
+A molecule `Molecule A` is present in the physical containers `A1`, `A2`, `B1`, and `B2`. Each container has a parameter `Param A`, including the molecule.
+
+The physical containers have additionally the parameter `Concentration`.
+
+{% hint style="info" %}
+The following examples demonstrate the concept of tags and container criteria. They are not meant to represent a physiologically meaningful model.
+{% endhint %}
+
+If we create a sum formula with the following conditions:
+
+1. **Match tag condition**: the condition is fulfilled when the tag name is matched.
+    - For the sum formula with match tag condition "Param A", the sum will include the following parameters:
+        - `Organism|Param A`
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+        - `Organism|Container B|Param A`
+        - `Organism|Container B|Container B1|Param A`
+        - `Organism|Container B|Container B1|Molecule A|Param A`
+        - `Organism|Container B|Container B2|Param A`
+        - `Organism|Container B|Container B2|Molecule A|Param A`
+
+2. **Not match tag condition**: the condition is fulfilled when the tag name is **not** matched.
+    - For the parameter `SumOfParameters` with the conditions `Not tagged with: Param A` and `Not tagged with: SumOfParameters` (the latter is required to avoid a circular reference), the sum will include the following parameters:
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container B|Container B1|Volume`
+        - `Organism|Container B|Container B1|Molecule A|Concentration`
+        - `Organism|Container B|Container B2|Volume`
+        - `Organism|Container B|Container B2|Molecule A|Concentration`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
+        - `Organism|Container B|Container B1|Molecule A`
+        - `Organism|Container B|Container B2|Molecule A`
+
+3. **In Container**: the condition is fulfilled by all model entities located in the specified container and its children.
+    - For the parameter with the condition "In Container with: Organism", the sum will include the following parameters:
+        - `Organism|Param A`
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+        - `Organism|Container B|Param A`
+        - `Organism|Container B|Container B1|Volume`
+        - `Organism|Container B|Container B1|Molecule A|Concentration`
+        - `Organism|Container B|Container B1|Param A`
+        - `Organism|Container B|Container B1|Molecule A|Param A`
+        - `Organism|Container B|Container B2|Param A`
+        - `Organism|Container B|Container B2|Volume`
+        - `Organism|Container B|Container B2|Molecule A|Concentration`
+        - `Organism|Container B|Container B2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
+        - `Organism|Container B|Container B1|Molecule A`
+        - `Organism|Container B|Container B2|Molecule A`
+
+    - For the parameter with the condition "In Container with: Container A", the sum will include the following parameters:
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
+
+4. **Not in Container with**: the condition is fulfilled for all model entities that are **not** in the specified container or any of its children.
+
+5. **In Parent**: the condition is fulfilled by all model entities located in the specified container and its children. This can be considered as a special case of "In Container", where the container is the parent of the entity being considered.
+
+6. **In Children**: the condition is fulfilled by any model entity in all children of the parent container of the entity for which the criteria is defined. 
+
+    - For the parameter with the condition "In Childre" located in `Organism|Container A`, , the sum will include the following parameters:
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Volume`        
+        - `Organism|Container A|Container A1|Molecule A|Concentration`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Volume`
+        - `Organism|Container A|Container A2|Molecule A|Concentration`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container A|Container A1|Molecule A`
+        - `Organism|Container A|Container A2|Molecule A`
 
 More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
 
@@ -461,106 +575,6 @@ To **save a molecule** as pkml file:
 If you are frequently building models in MoBi® where new molecules have to be defined, it is a good idea to configure your typical **default molecule** once and save it in your working directory. You can then populate your molecules building blocks by repeatedly loading your default molecule and each time changing the name to your desired molecule names.
 {% endhint %}
 
-## Transport Processes‌
-
-In MoBi®, passive and active transport processes use common logics in their setup. However, for technical reasons they are defined in different building blocks: a separate passive transports building block for those passive processes that are generic for all molecules, while the active and passive transport processes specific to the molecules are defined in the molecules building block. Typical examples for all groups are mentioned in the sections below.
-
-### Passive Transports‌
-
-Passive transports, which will affect all non-stationary molecules can be defined in this building block. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes. Open the building block for editing by opening the folder "Passive Transports" in the Building Block Explorer <img src="../assets/icons/PassiveTransport.svg" data-size="line"> and then double- clicking the building block which is by default also called "Passive Transports". A passive transport is defined by source (origin) and target (sink), while the transport rate is defined by a kinetic formula. Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](model-building-components.md#creating-a-spatial-structure)). Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
-
-For **creating a new transport** or loading one from a previously saved file:
-
-1. Select the corresponding ribbon button <img src="../assets/icons/AddAction.svg" data-size="line"> **New** or <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load**. Alternatively, you may right-click into the empty white space in the left part of the edit window and select **Create Passive Transport** or **Load Passive Transport** from the context menu. If you choose **New** or **Create**, a window named "New Passive Transport" opens.
-
-![New Passive Transport Window](../assets/images/part-4/NewPassiveTransport.png)
-
-1. Enter a name for this transport process, for example "Diffusion".
-2. Define descriptors for target and source containers:
-   * Right-click into the corresponding empty space below "Condition" and "Tag", then either select New match tag condition or New not match tag condition.
-   * A window where you will be asked for the tag name will open.
-   * A tag can simply be the name of a container of a spatial structure; you can select from the available names by clicking the drop-down arrow. In our example project, select "Vial1" as "New match tag condition" for "Source Descriptor", and select "Vial2" as "New match tag condition" for "Target Descriptor". Selecting the "not match condition" will simply invert the selection.
-   * The arrangement of neighborhood connections set up in the spatial structure (see [Creating Neighborhoods](model-building-components.md#creating-neighborhoods)) will restrict the pattern of transport streams.
-3. Define which molecules are transported. Per default, the checkbox ![Image](../assets/icons/Checked.png) **All** is selected, which means that all molecules which are present in the corresponding compartments are transported. Exceptions can be defined in the Exclude List. In order to add a molecule to the Exclude List, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Molecule** button within the section Exclude List. Molecules listed in the Exclude List will not be transported. If the checkbox **All** is un-checked, you can add molecules to the Include List. Then, only molecules listed in the Include List are transported.
-4. If the box ![Image](../assets/icons/Unchecked.png) **Create process rate parameter** is checked, a parameter which equals the transport rate equation is automatically generated when a simulation is build. You can use this parameter to refer to the transport rate in any equation. It can also be used to plot the transport rate (additionally check the box **Plot Process Rate Parameter**) .
-5. In order to define a transport rate, go to the Tab **Kinetic**. Select Formula in the Formula Type combobox.
-6. Click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button. You will be asked for a reaction formula name. Name the formula "Diffusion". Press **Enter** or click **OK**.
-7. Next you need to compile the referenced values for the diffusion formula. To have more space for easier navigation, you may either click **OK** and edit the formula in the larger space of the edit window, or you may increase the size of the window by pulling on its rims with the left mouse button pressed.
-
-A **diffusion equation** typically requires you to use concentration differences between two connected containers. Also, a diffusion constant is required which may be molecule-dependent.
-
-* To have such values as molecule parameters available, you need to go back to edit the Molecules building block and introduce them (see [Molecule Parameters](model-building-components.md#molecule-parameters)).
-* If transport rates depend primarily on the processes rather than on the molecular properties (e.g., blood vessel flow rates), it might be better to attach such parameters to the neighborhood (see [Creating Neighborhoods](model-building-components.md#creating-neighborhoods)).
-* If only one global diffusion coefficient is needed (e.g., if all molecules diffuse rather similarly), you may define it as a parameter to the transport process. Use the "Parameters" tab in the edit window of the newly created passive transport, and create a diffusion constant in the way described for the other building blocks, using the "New Parameter" button.
-* Another alternative is to just enter a diffusion constant as a numerical value into the formula input box, as it is done below.
-
-In any of the above cases, the tree view within the field "Possible Referenced Objects" allows you to pick parameters from a variety of building blocks.
-
-{% hint style="info" %}
-If you notice later that a parameter would rather be placed at another location, you can move a parameter by clicking to the left of it, pressing **Ctrl+X** and inserting it with **Ctrl+V** at the proper position. However, all "Possible Referenced Objects" list entries pointing to this parameter need to be entered again manually.
-{% endhint %}
-
-Continuing with our example, let us enter a simple diffusion equation based on a constant multiplied with the concentration difference between source and target container.
-
-1. Make sure that the molecules created above all have a "Concentration" parameter. If not, see [Molecule Parameters](model-building-components.md#molecule-parameters) how to proceed.
-2. To make the concentrations available for the diffusion formula, work with the "Possible Referenced Objects" tree view, as described in [Reaction Kinetics](model-building-components.md#reaction-kinetics). Select "Relative path", and choose "BigVial|Neighborhoods|V1V2Connection" as reference point. The relative path will result in source and target molecule paths that are generic for all molecules, whereas selecting an absolute path will be molecule-specific.
-3. Successively expand the "Possible Referenced Objects" tree view by clicking on the + signs to the left of "BigVial", then again "BigVial" in the level that opened, there on "Vial1", then on "MoleculeProperties", then on "A" (or any other molecule name). The "Concentration" parameter should now appear, if present.
-4. Drag and drop exactly this "Concentration" parameter to the white references area to the left of the tree. The alias name "Concentration" and the path "SOURCE|MOLECULE|Concentration" should appear in the list.‌
-5. Then open the tree below "Vial2" -> "MoleculeProperties" -> "A" and drag exactly this "Concentration" parameter into the references as well. This time, the alias should be named "Concentration1" and the path should read "TARGET|MOLECULE|Concentration".‌
-6. Compare your screen to to the images below. If you want to change the aliases manually, you can do so by clicking on any name input box and replace the corresponding name with another.
-7. Now enter the formula "0.001\*(Concentration-Concentration1)" into the formula input box below the references. The error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> that was displayed to the left of this input box should now disappear, if everything is typed correctly. Compare your result again with the images below.
-
-{% hint style="info" %}
-The resulting formula is a generic formula. The example model has 3 different molecules, "A", "B", and "C". Each of them will be transported by the above passive transport, as long as they are all present in the compartments "Vial1" and "Vial2" and the checkbox "All" is selected, which is the case in our example.
-{% endhint %}
-
-![Passive Transport has been added - Properties Tab](../assets/images/part-4/PassiveTransportComplete.png)
-
-![Passive Transport has been added - Kinetic Tab](../assets/images/part-4/PassiveTransportComplete-KinticTab.png)
-
-### Molecule-specific Passive Transports‌
-
-Besides generic transport processes, molecule-specific passive transports may be required. An example is a molecule's clearance from the body which is not further characterized and cannot be attributed to specific enzymes or transporters.
-
-As with generic passive transports, molecule-specific transports only affect non-stationary molecules. Following the logic of MoBi®, molecule-specific transport processes are to be defined in the "Molecules" building block. Refer to [Creating New Molecules](model-building-components.md#creating-new-molecules) and open your Molecules building block for re-editing by double-clicking or by use of the context menu. If it is still open, you can click the Molecules tab in the edit window.
-
-To create a molecule-specific transport process:
-
-1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
-2. Select **Create Passive Transport** from the context menu.
-3. A "New Passive Transport" window opens.
-4. Then follow the same protocol as given for the generic passive transports, “Passive Transports”.
-
-Like with the generic passive transports, you may also load an existing process from a pkml file. Existing passive transports appear below the affected molecule in the tree view. Selecting such a process by clicking it will display an edit window as for the active transports.
-
-### Active Transporter Molecules‌
-
-An active transport process, as opposed to a passive transport, requires a transporter molecule (like a protein channel) that works similar to an enzyme. Unlike a chemical reaction, however, this process does not change a molecule but transfers it between containers, for example, from the intercellular space into a cell. As with passive transports, active transports only affect non-stationary molecules. Following the logic of MoBi®, all active transporter molecules and their transport processes are to be defined in the "Molecules" building block. Refer to [Creating New Molecules](model-building-components.md#creating-new-molecules) and open your Molecules building block for re-editing by double-clicking or by use of the context menu. If it is still open, you can click the Molecules tab in the edit window.
-
-First, an active transporter molecule needs to be defined:
-
-1. In the molecules building block and in the molecules tree, right-click on the molecule that you want to be transported.
-2. Select **Create Transporter Molecule** from the context menu.
-3. You are asked for a transporter name. Either enter a new name (e.g., "PGP"), or the name of an already existing transporter molecule if the very same transporter is active for several molecules in your list and has been previously defined.
-4. Press **Enter** or click **OK**. In the molecules tree, a transporter molecule is displayed, and a transporter entry is added to the molecule selected in step 1.
-5. In the transporter entry below the selected molecule, you may enter a description and parameters, as for any molecule.
-6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](model-building-components.md#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
-7. Right-click on the transporter attached to the molecule to be transported, and select **Create Transport** from the context menu. A window named "New Active Transport" opens.
-8. Enter a name into the Name input box, like "PGP Transport". Then, follow the steps described in the previous section “Passive Transports” for selecting source and target, define a transport rate parameter and entering a transport kinetics formula.
-9. The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a KM value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
-
-Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which runs in the opposite direction of the above passive transport, i.e., from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to "C\_PGP", and that of molecule "A" to "C\_A" by just overriding the default names. The equation to be entered is "0.001\*C\_PGP\*C\_A". The figure below shows what the screen should look like after everything is properly set up.
-
-![Active Transport has been entered](../assets/images/part-4/active-transport-entered.jpg)
-
-{% hint style="info" %}
-If more than one molecule is transported by the very same transporter, you just create the same transporter molecule twice, i.e., with the same name under the second molecule. This will only create a new active transport, but no duplicate transporter molecule. You can then proceed like for the first molecule and create a transport process.
-{% endhint %}
-
-{% hint style="info" %}
-If two molecules compete for the same transporter, you can add inhibition terms to the transport equations that use all molecules, either as transporter substrate or as transporter inhibitor.
-{% endhint %}
-
 ## Observers‌
 
 An observer which can be displayed in a chart (see [Simulation Results](simulation-results.md)) is an output derived from one or several molecules or parameters by a defined formula. There are two classes of observers: **molecule observers** and **container observers**; creating and editing of both classes will be explained in this section. The main difference between those two classes is that a container observer can be computed for every molecule in every container (or for a selectable subset of both), whereas an molecule observer can be used to compute a value from one or more molecules specified in its formula, but for all or a selectable subset of containers.
@@ -626,136 +640,6 @@ To work with container observers, make sure the tab "Container Observer" in the 
 The screen should look like in the screen shot below:
 
 ![Container Observer for Sum of Metabolites](../assets/images/part-4/ContainerObserverEntered.png)
-
-## Events and Applications‌
-
-An event is used to change an entity, like the amount of molecules or a reaction rate, when a given condition is met. This condition can be, for example, that a given simulation time is reached, or that the concentration of a molecule has exceeded a certain value. Thus, such a programmed event is used to reflect external changes to the simulation, like the application of a drug or a sudden physical change in the spatial structure, like a vessel rupture.
-
-In the drug delivery case, however, you rather want to use an application instead of an event to have more options available for drug release and repeated applications. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
-
-Events and applications are grouped in an events building block, where events are sub-grouped in event groups. To create such a structure, you may need to create a new events building block using the context menu of the building block explorer or the corresponding ribbon button of the Modeling & Simulation tab. In our example, an empty events building block named "Events" has already been created automatically. Simulations imported from a PK-Sim® project also contain such a building block that contains the applications.
-
-To add events or applications to the project, you need to open the events building block for editing. This can be done by double-clicking on it or by using the **Edit** command of the context menu in the building block explorer.
-
-### Event Groups and Events‌
-
-To **create a new event group**, either
-
-* use the <img src="../assets/icons/Event.svg" data-size="line"> **New** ribbon button,
-* or right-click into the white space in the event edit window and select the <img src="../assets/icons/AddAction.svg" data-size="line"> Create Event Group command.
-
-A window named "New Event Group" will open. Then proceed with:
-
-1. Enter a unique name into the Name input box, like "EventGroup1".
-2. Enter a condition to define for which containers the event will be applicable. In order to do so, click into the white space below the "In Container with" field, and select New match tag condition or New not match tag condition - depending if you want to include or exclude containers with a specific name or tag. You can enter more than one condition, which will be combined by a logical "and". A further option is to select the Add match all tag condition, which selects all containers.
-3. After this, you will be asked to enter a container tag for your condition, where you can select from available tags in a combobox. In our example project, select BigVial as a New match tag condition. This will make the event group effective for the entire spatial structure you created above.
-4. As always, you may enter a description into the input box at the bottom.
-5. Click **OK** or press **Enter** to finalize the event group. The new event group should now be listed in the left part of the event building block edit window. The right part should show the previously specified event group tag conditions.
-
-As in other instances, you may define parameters for an event group. To access the parameters window, click on the "Parameters" tab in the right part of the edit window. Entering a parameter entry works in the same way as described for molecules, reactions, or for spatial structure containers. Examples for event group parameters are values for event timing or amounts of molecules that you want to set within the individual events of this event group.
-
-![New Event Group window](../assets/images/part-4/NewEventGroup.png)
-
-After the event group is created, individual events can be defined for this group. Right-click your event group, and you will see the options you have in the context menu. These are:
-
-* Edit - this has the same function as selecting the name.
-* Rename
-* Save As - saves the selected event group to a pkml file.
-* Remove - deletes the selected event group.
-* Create Application - see [Applications](model-building-components.md#applications).
-* Load Application - see [Applications](model-building-components.md#applications).
-* Create Event - creates a new event within the current event group.
-* Load Event - loads an existing event from a pkml file.
-* Create Event Group - creates a new event group below the highlighted event group.
-* Load Event Group - loads an existing event group from a pkml file below the highlighted event group.
-* Create Container - see [Applications](model-building-components.md#applications).
-* Load Container - see [Applications](model-building-components.md#applications).
-
-To create an event, click the Create Event option. A window named "New Event" will open (see image below). Then proceed with the following steps:
-
-1. Enter an event name in the Name input box, e.g. "E1".
-2. If your event should only be executed once during the simulation, check the box ![Image](../assets/icons/Checked.png) **One Time Event** below the name. This is a useful option if, for example, you want to set an amount of molecules to a new value at a given time. For this example, check this box.
-3. The section "Condition" below the checkbox requires that you enter an event condition name, which is comparable to a formula name of a reaction or a parameter. Enter "E1" into this input box.
-4.  To have more space for building the condition, close this window now by clicking **OK** or pressing **Enter** to complete the event building in the edit window. However, all required data could also be entered in the "New Event" window.
-
-    ![New Event window](../assets/images/part-4/NewEvent.png)
-5. Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](model-building-components.md#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
-6. There is still a Condition equation to be entered, as indicated by the red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time > 500", which would execute the event at 500 minutes. The use of "> 500" instead of "= 500" is advantageous since it might well be that during the simulation, the exact value of 500 will never be assumed, depending on the time step. If you plan to quickly test different values for this time, it is advantageous to define this execution time as a parameter which can be altered in the simulation.
-7. Define a time parameter as an event parameter (alternatively, it can be set as an event group parameter if it is needed in several events of this group). Click the "Parameters" tab, then the button <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**. A "New Parameter" window opens.
-8. Enter "E1Time" as parameter name.
-9. Select Time from the combobox "Dimension".
-10. Enter "500". If you prefer to do this in other units than minutes, you may change the dimension (e.g., to "h") in the combobox to the right of the value.
-11. Click **OK** or press **Enter**. The new parameter will appear in the parameters list.
-12. Click the "Properties" tab. Drag and drop the newly created parameter "E1Time" from the Possible Referenced Objects list on the right into the white space below the already added "Time" reference. To find this parameter, you need to look below the E1 event, so click on the + sign to open that part of the reference tree. In case you have defined the parameter under the event group, you will find it below the event group.
-13. Enter "Time > E1Time" into the formula input box, after which the error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> to the left of it should disappear.
-14. What is still needed is the assignment which determines what will happen when the event condition is fulfilled. As an example, we will set the amount of molecule "A" in the container "Vial1". To proceed, click the button **Add Assignment**. A window named "New Event Assignment" will open.
-15. Enter "SetA" as name into the Name input box.
-16. Click the **...** on the left hand side of the "Changed Entity" input box below Name. A window named "Select Changed Entity" will open. Select the molecule "A" in "Vial1" as target. To see it and be able to click it, you need to open the levels BigVial|BigVial|Vial1 by clicking successively on the + sign to the left of them. Then click on **A**. The window should look like the following screen shot.
-
-![Select Changed Entity window](../assets/images/part-4/SetA.png)
-
-1. Click the **OK** button. The red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> to the left of the "Changed Entity" input box should now be gone, and a path to molecule A, "BigVial| Vial1|A", should be visible.
-2. Check the box ![Image](../assets/icons/Checked.png) **Use Assignment As Value**, then enter "50" into the Value input box. This will set the amount of molecules to 50 µmol in "Vial1" when the event is executed. Finally, click the **OK** button or press **Enter**. The screen should look like in the following image, and the event is now completed.
-
-![Event building completed](../assets/images/part-4/event-building-completed.jpg)
-
-Instead the amount of molecules, an event allows for changing a number of assignments, like reaction or transport rate constants, container volumes or neighborhood parameters. The entire formula of a reaction or transport may be changed by not checking "Use Assignment As Value" during the creation of an assignment, and by selecting Formula instead of Constant in "Formula Type". Also, you may change several assignments upon one condition: just click the button "Add Assignment" again, and you can go through the above steps 14 to 18 again and have another value changed.
-
-Instead of a one time event, you can have an **event permanently active** if you uncheck the box ![Image](../assets/icons/Unchecked.png) **One Time Event** in "Properties". In our example of setting the amount of molecule "A" to 50 µmol at above 500 minutes, this would result in keeping the amount of "A" constant at 50 µmol after 500 minutes.
-
-An assignment can be changed by the following actions:
-
-* Click the **...** symbol to the right of "Changed Entity Path", and you will see the Select Changed Entity window again to alter the above choice.
-* In the "New Formula" input box (or row in case of several assignments), you can change between different values or formulas for the target assignment.
-* The box ![Image](../assets/icons/Unchecked.png) **Use Assignment As Value** can be changed to insert a formula at the assignment.
-* The ![Image](../assets/icons/Add.png) symbol has the same function as the button **Add Assignment**.
-* Clicking the ![Image](../assets/icons/Delete.png) symbol will delete the corresponding assignment.
-
-{% hint style="info" %}
-The above actions allow for basic editing of assignments. For all other and deeper changes, the recommended workflow is to delete and re-create an assignment.
-{% endhint %}
-
-### Applications‌
-
-An application is basically an event group with a more complex structure than that described in the previous section. In almost all cases, the application will be created within PK-Sim®and then transferred to MoBi®. The scope of this section will be limited to working with this recommended workflow.
-
-The image below shows two example applications imported from PK-Sim®, one
-
-i.v. and one oral. You can see the two application in the tree view of the event edit window. Each application consist of the application group, the application start event, and the protocol schema item. To make changes, look at the parameters of the protocol schema item, as displayed in the image.
-
-![Example Applications](../assets/images/part-4/events-application.jpg)
-
-You may make changes in the following parameters of this group:
-
-* Altering **DosePerBodyWeight** will change the dose per kg body weight. This will only work if it was used in the original PK-Sim® project, which can be recognized by having a formula in the **Dose** parameter.
-* Altering **Dose** will let you change the absolute drug dose administered. If the original PK-Sim® project contained a dose per body weight, that formula will be overridden by the absolute value.
-* The time where the drug administration starts can be altered by changing the
-
-Start time parameter.
-
-* The volume of water per body weight can be changed for oral applications only by using the parameter **Volume of water / body weight**. This will only work if it was used in the original PK-Sim® project, which can be recognized by having a formula in the **Amount of water** parameter.
-* Altering **Amount of water** will let you change the absolute amount of water administered with the drug. If the original PK-Sim® project contained a volume of water per body weight, that formula will be overridden by the absolute value.
-* The other parameters of this block should not be changed.
-
-{% hint style="info" %}
-The descriptions at the bottom section of each parameter gives you more information on each parameter.
-{% endhint %}
-
-More complex changes, like changing complex dosing schemes or changing dissolution patterns are much easier to achieve using the user interface of PK- Sim® and then exporting the corresponding simulation. Within a MoBi®project, you may then combine drug applications from several PK-Sim® exports. The following describes the workflow for this operation:
-
-1. Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi)).
-2. Load your MoBi® project.
-3. Right-click the Events entry in the building block explorer, select <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Event Group Building Block**.
-4. Enter the name and location of your pkml file. You may be asked for a new building block name. A new Events building block is created.
-5. When creating a simulation ([Create a Simulation](setting-up-simulation.md#create-a-simulation)), you can now select between several possible application building blocks.
-
-{% hint style="info" %}
-A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the MoBi program group will lead you to the proper path.
-{% endhint %}
-
-{% hint style="info" %}
-Descriptive names for each of these applications building blocks could be helpful. Use the <img src="../assets/icons/Rename.svg" data-size="line"> **Rename** function from the building block context menu for this purpose.
-{% endhint %}
 
 ## Molecule Start Values‌
 
