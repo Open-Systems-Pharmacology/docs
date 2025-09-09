@@ -12,15 +12,15 @@ To set up an inhibition of a protein by a compound, do the following:
 
 *   Select the affected enzyme/transporter and specify the source for assuming this inhibition.
 
-*   Specify the type of inhibition from the Process type list (competitive, uncompetitive, non-competitive, mixed). The interaction types are described in the next sections.
+*   Specify the type of inhibition from the Process type list (competitive, uncompetitive, non-competitive, mixed, irreversible/mechanism-based inactivation). The interaction types are described in the next sections.
 
-Inhibition changes reaction rates and/or the kinetics of active transports by modifying the following reaction and/or transport parameters:
+Inhibition changes reaction rates and/or the kinetics of active transports or metabolization reactions by modifying the following reaction and/or transport parameters:
 
-*   The Michaelis-Menten constant Km and the turnover number kcat for Michaelis-Menten kinetics
+*   The Michaelis-Menten constant $K_m$ and the turnover number $kcat$ for Michaelis-Menten kinetics
 
 *   The Specific Clearance for first order kinetics
 
-Without inhibition, the reaction rate is given by:
+In case of a *Michaelis-Menten* process, the reaction/transport rate **without inhibition** is given by:
 
 $$v=\frac{V_{max}\times S}{K_M+S}$$
 
@@ -87,7 +87,7 @@ In a mixed inhibition, the inhibitor binds reversibly to the enzyme or the enzym
 
 The reaction rate is described by the following equation:
 
-$$v=\frac{V_{max,app}\times S}{K_{M}+S}$$
+$$v=\frac{V_{max,app}\times S}{K_{M,app}+S}$$
 
 with $V_{max,app}$ = apparent maximum reaction velocity, $K_{M}$ = Michaelis-Menten constant in the absence of the inhibitor, and $S$ = free substrate concentration.
 
