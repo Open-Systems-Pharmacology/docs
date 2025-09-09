@@ -418,63 +418,97 @@ Models generated in **PK-Sim**® make extensive **use of tags**: For example, op
 
 Similarly, observers or events can be included or excluded from being created in different parts of the spatial structure. The molecule observer "Fraction excreted", for example, makes use of the tag "Urine", so this observer is only created in the urine container.
 
-## Molecule Start Values‌
+# Initial Conditions Building Blocks
 
-Molecule start values are needed to define the initial amounts of all molecules present in the molecules building block used in a simulation for all containers. These values are either imported when loading a simulation, or they can be created automatically and edited manually, if needed.
+The Initial Conditions (IC) Building Block (BB) defines the containers in which the molecules will be present and their initial amounts.
+
+The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-ic-bb) is given to create a new IC BB and population it with information.
+
+## Initial Conditions - Functionality‌ Overview
+
+An IC BB can contain entries for molecules and physical containers across different modules.
+
+In contrast to other BB types except for the parameter values BB, multiple IC BBs can be created within one module. This allows you to define different initial conditions for different simulation scenarios. For example, different initial concentrations of an endogenous molecule may represent different disease states. During simulation creation, you can select which IC BB to use.
+
+The context menu of an IC BB offers the following commands:
+
+- **Save As PKML**: Save the IC BB as a pkml file.
+- **Clone**: Create a copy of the selected IC BB in the same module.
+- **Import from Excel**: Import IC BB information from an Excel file. The excel file must have the following columns:
+    - **Container Path**: The path of the container in which the molecule is located. Path levels are separated by `|`.
+    - **Molecule Name**: The name of the molecule.
+    - **Value**: The initial amount or concentration of the molecule in the container.
+    - **Units**: The unit of the initial amount or concentration.
+    - **IsPresent**: If `true`, the molecule is considered as present in the container. If `false`, the molecule is considered as not present in the container.
+    - **Scale Divisor**: A number by which the value is divided. Can improve numerical stability for very large or very small values. 1 by default.
+    - **Neg. Values Allowed**: If `true`, negative values are allowed for the molecule in the container. If `false`, negative values are not allowed.
 
 {% hint style="info" %}
-Molecule and Parameter Start Values can also be created within the Simulation Creation Wizard (compare [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
+Values defined by a formula cannot be imported from Excel.
 {% endhint %}
 
-To automatically create molecule start values by MoBi®:
+- **Export to Excel**: Export the IC BB information to an Excel file. The exported file has the same format as described for the import.
 
-1. Right-click the entry **Molecule Start Values** in the building block explorer.
-2. Select **Create Molecule Start Values Building Block** from the context menu that appears.
-3. A window called "Create new start values" opens. Enter a unique name for the building block.
-4. In the comboboxes below, you can select between different molecules or spatial structure building blocks from which the start values are calculated.
-5. Click **OK** or press **Enter**.
-6. If the name you have entered is already in use, you may be asked for entering a new name.
-7. An edit window opens, containing all created parameters.
+{% hint style="warning" %}
+Only entries for molecules that are defined by a constant value (not by a formula) can be exported to Excel!
+{% endhint %}
 
-All molecule or concentrations are automatically set to their default values as defined in the selected molecules building block, and these values are used for all containers in the selected spatial structure. All molecules are set to the status IsPresent in all physical containers.
+- **Extend from Initial Conditions Building Block**: Adds entries from the Initial Conditions BB previously exported to pkml. New values are always *added*, existing values are *overwritten*.
+- **Extend from Expression Profile Building Block**: Adds entries from an Expression Profile BB previously exported to pkml. New values are always *added*, existing values are *overwritten*. Useful when creating a custom expression profile as initial condition.
+
+The editor of the IC BB has the following buttons (multi-select of the rows is possible):
+
+- **Delete**: Removes the selected entries
+- **Refresh values**: 
+- **Present**: Sets the IsPresent status of all selected entries to `true`
+- **Not Present**: Sets the IsPresent status of all selected entries to `false`.
 
 {% hint style="info" %}
-Start values which are defined by a formula are displayed as "" at this stage, which means that their values are not determined before the simulation is created.
+A molecule is considered as **not present** in a container in a simulation if the simulation configuration contains no IC BB where the molecule is marked as present in the container.
 {% endhint %}
-
-Instead of creating molecule start values, you may load them from a previously saved simulation or a saved molecule start value building block, a pkml file.
-
-1. Right-click the entry **Molecule Start Values** in the Building Block Explorer.
-2. Select **Load Molecule Start Values Building Block** from the context menu that has appeared.
-3. Select the pkml file in the file explorer window.
-
-Molecule start values can also be imported from Excel-files which is detailed below.
-
-To edit a molecule start value building block, double-click on it or use the context menu in the Building Block Explorer and select **Edit** <img src="../assets/icons/Edit.svg" data-size="line">. An edit window opens, analogue to the one used when creating new start values. You can now
-
-* manually override the start concentrations or dimensions for every molecule in every container;
-* manually change the "IsPresent" state for each molecule;
-* use the <img src="../assets/icons/ExtendParameterStartValues.svg" data-size="line"> **Extend** ribbon button to automatically add new molecules in case more of them have been created or loaded in the molecules building block after initially creating the start values or executing the last **Extend** command;
-* use the combobox "Is Present" in the upper right to make global selections for the "IsPresent" state for all molecules, where you can check or uncheck it for all molecules or selected molecules, giving you a high degree of flexibility in defining the presence of molecules only in desired organs. The <img src="../assets/icons/OK.svg" data-size="line"> **Apply** button has to be pressed after a global selection. Manual changes (see second bullet) are still possible afterwards.
 
 {% hint style="info" %}
 Restricting the presence of molecules to certain organs may improve your computing performance, but use it carefully to keep your model valid!
 {% endhint %}
 
-Restricting the presence of molecules to certain organs may improve your computing performance, but use it carefully to keep your model valid!
+- **Negative Values Allowed/Not Allowed**: Toggles the setting if negative values are allowed for the selected entries. If disabled (by default for all molecules), a simulation will fail if the species will become negative during the simulation.
 
-A complete start values building block can be saved as pkml file by
+The table view shows the following:
 
-1. Right-clicking on its entry in the Building Block Explorer.
-2. Select the command **Save As**.
-3. Select a folder and file name under which it is saved for later use.
+- **Molecule Name**: The name of the molecule.
+- **Path**: The path of the container in which the molecule is located.
+- **Value**: The initial amount or concentration of the molecule in the container.
 
-A start values building block can also be cloned by choosing the **Clone** command from the context menu in the Building Block Explorer. The name "Clone of <\building block name>" is chosen by default, and you may be asked for a different name if it is not unique. Cloning is particularly useful if you want to create several sets of similar start values building blocks with few manual changes to test different simulation scenarios.
+## Creating IC BB‌
 
-Every start values building block can also be renamed by choosing the **Rename** command from the context menu in the Building Block Explorer. This operation allows you to choose more descriptive names for cloned building blocks.
+To create a new IC BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Initial Conditions** and enter a unique name for the new BB. Click **OK** to create the new IC BB.
+
+The new IC BB does not contain any information yet. To populate it with information, you can either import the information from an Excel or a pkml file, or create new entires.
+
+### Extending from existing BBs
+
+The best way to add entries to an IC BB is to use the **Extend** functionality. This allows you to automatically create entries for selected molecules in all physical containers of a selected spatial structures BB. To do so:
+
+1. Click on the **Extend** button in the **Edit** group of the **Edit Initial Conditions** ribbon tab.
+2. A window opens that allows you to select a spatial structure BB and one or more molecules.
+
+This will add entries for all selected molecules in all physical containers of the selected spatial structure BB. When new etnries are added, the initial values or formulas are set to their default values as defined in the selected molecules building block, and these values are used for all containers in the selected spatial structure. All molecules are set to the status `IsPresent` in all selected physical containers of.
+
+### Adding new entries
+
+To manually add new entries to an IC BB:
+
+1. Click on **New Initial Condition** button in the **Edit** group of the **Edit Initial Conditions** ribbon tab.
+2. A new row is added to the table view. Enter the **Molecule Name** and the **Path** of the container in which the molecule is located. You can use auto-completion for both fields.
 
 {% hint style="info" %}
-For our **test model**, create new molecule start values and set the concentration of molecule "A" in "Vial2" to 0. Then, set the concentration of "PGP" to 1 µmol. Uncheck the ![Image](../assets/icons/Unchecked.png) **IsPresent** box for the unnamed path elements which represent the top level container "BigVial".
+The path is composed of different levels of the spatial structure. If the current view of the IC BB does not show enough columns to enter all levels (e.g., after creating a new IC BB, no path levels are shown), you can right click on any column header and select **Column Choosed** from the context menu. In the dialog that opens, you can select which levels of the spatial structure you want to be shown as columns in the table view.
+{% endhint %}
+
+3. Enter the initial **Value** of the molecule in the container. The unit can be selected from a combobox. The value can be either an amount or a concentration, depending on the project settings. Alternatively, assign a formula that will be used to calculate the initial value. You can either create a new formula, select an existing one, or copy-and-paste a formula from another building block.
+
+{% hint style="info" %}
+For our **test model**, create new molecule start values and set the concentration of molecule "A" in "Vial2" to 0. Then, set the concentration of "PGP" to 1 µmol.
 {% endhint %}
 
 ## Parameter Start Values‌

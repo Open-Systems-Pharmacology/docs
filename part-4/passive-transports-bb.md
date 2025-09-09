@@ -1,4 +1,4 @@
-# Passive Transports‌
+# Passive Transports‌ Building Block
 
 The **Passive Transports (PT)** building block (BB) contains all passive transport processes that are generic for all non-stationary molecules. These processes are defined by source and target containers, and a kinetic formula defining the transport rate. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes.
 

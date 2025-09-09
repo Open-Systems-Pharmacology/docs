@@ -6,7 +6,7 @@ An **observer** which can be displayed in a chart (see [Simulation Results](simu
 
 - **Container observers** can be calculated for *any container* (physical and logical) in the spatial structure, independent of whether a certain molecule is present in this container or not. However, even a container observer must be defined for at least one molecule, as it will be created as the property of this molecule.
 
-The following section describes the functionalities of the **Observers** building block (BB) based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-observers) is given to create observers from scratch.
+The following section describes the functionalities of the **Observers** building block (BB) based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-observers) is given to create observers from scratch.
 
 After loading a simulation that was generated in PK-Sim® (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)), the PK-Sim module contains the Observers building block with the standard observers for the PBPK models.
 
