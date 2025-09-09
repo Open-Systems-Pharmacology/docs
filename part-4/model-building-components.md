@@ -476,9 +476,11 @@ Restricting the presence of molecules to certain organs may improve your computi
 The table view shows the following:
 
 - **Molecule Name**: The name of the molecule.
-- **Path**: The path of the container in which the molecule is located.
+- **Path Element xxx**: The path of the container as separate elements in which the molecule is located.
 - **Value**: The initial amount or concentration of the molecule in the container.
-
+- **Scale Divisor**: A number by which the value is divided. Can improve numerical stability for very large or very small values. 1 by default.
+- **Is Present**: If `true`, the molecule is considered as present in the container. If `false`, the molecule is considered as not present in the container.
+- **Neg. Values Allowed**: If `true`, negative values are allowed for the molecule in the container. If `false`, negative values are not allowed, and the simulation will fail if the species becomes negative during the simulation.
 
 {% hint style="info" %}
 Entries for molecules and/or containers that do not exist in the final model will be ignored.
