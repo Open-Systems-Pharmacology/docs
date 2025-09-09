@@ -55,6 +55,7 @@
   * [Molecules](part-4/molecules-bb.md)
   * [Reactions](part-4/reactions-bb.md)
   * [Passive Transports](part-4/passive-transports-bb.md)
+  * [Observers](part-4/observers-bb.md)
   * [Events](part-4/events-bb.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
   * [Setting up a Simulation](part-4/setting-up-simulation.md)
