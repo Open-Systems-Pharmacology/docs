@@ -53,6 +53,7 @@
   * [Modularization concept](part-4/modularization-concept.md)
   * [Spatial Structures](part-4/spatial-structures-bb.md)
   * [Molecules](part-4/molecules-bb.md)
+  * [Reactions](part-4/reactions-bb.md)
   * [Passive Transports](part-4/passive-transports-bb.md)
   * [Observers](part-4/observers-bb.md)
   * [Events](part-4/events-bb.md)
