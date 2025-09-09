@@ -502,7 +502,7 @@ To manually add new entries to an IC BB:
 2. A new row is added to the table view. Enter the **Molecule Name** and the **Path** of the container in which the molecule is located. You can use auto-completion for both fields.
 
 {% hint style="info" %}
-The path is composed of different levels of the spatial structure. If the current view of the IC BB does not show enough columns to enter all levels (e.g., after creating a new IC BB, no path levels are shown), you can right click on any column header and select **Column Choosed** from the context menu. In the dialog that opens, you can select which levels of the spatial structure you want to be shown as columns in the table view.
+The path is composed of different levels of the spatial structure. If the current view of the IC BB does not show enough columns to enter all levels (e.g., after creating a new IC BB, no path levels are shown), you can right click on any column header and select **Column Chooser** from the context menu. In the dialog that opens, you can select which levels of the spatial structure you want to be shown as columns in the table view.
 {% endhint %}
 
 3. Enter the initial **Value** of the molecule in the container. The unit can be selected from a combobox. The value can be either an amount or a concentration, depending on the project settings. Alternatively, assign a formula that will be used to calculate the initial value. You can either create a new formula, select an existing one, or copy-and-paste a formula from another building block.
