@@ -422,7 +422,7 @@ Similarly, observers or events can be included or excluded from being created in
 
 The Initial Conditions (IC) Building Block (BB) defines the containers in which the molecules will be present and their initial amounts.
 
-The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-ic-bb) is given to create a new IC BB and population it with information.
+The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-ic-bb) is given to create a new IC BB and populate it with information.
 
 ## Initial Conditions - Functionality‌ Overview
 
@@ -478,6 +478,11 @@ The table view shows the following:
 - **Molecule Name**: The name of the molecule.
 - **Path**: The path of the container in which the molecule is located.
 - **Value**: The initial amount or concentration of the molecule in the container.
+
+
+{% hint style="info" %}
+Entries for molecules and/or containers that do not exist in the final model will be ignored.
+{% endhint %}
 
 ## Creating IC BB‌
 
