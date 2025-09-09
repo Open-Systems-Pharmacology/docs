@@ -519,24 +519,21 @@ Additinally, PV BB can **create** new parameters during simulation creation.
 
 The following section describes the functionalities of the PV BB. Later on, a simple [example](#example---creating-pv-bb) is given to create a new PV BB and populate it with information.
 
-## Initial Conditions - Functionality‌ Overview
+## Parameter Values - Functionality‌ Overview
 
-An IC BB can contain entries for molecules and physical containers across different modules.
+A PV BB can contain entries for molecules and physical containers across different modules.
 
-In contrast to other BB types except for the parameter values BB, multiple IC BBs can be created within one module. This allows you to define different initial conditions for different simulation scenarios. For example, different initial concentrations of an endogenous molecule may represent different disease states. During simulation creation, you can select which IC BB to use.
+In contrast to other BB types except for the initial conditions BB, multiple PV BBs can be created within one module. This allows you to define different parameterization sets for different simulation scenarios. For example, different parameter sets may represent different disease states. During simulation creation, you can select which PV BB to use.
 
-The context menu of an IC BB offers the following commands:
+The context menu of a PV BB offers the following commands:
 
-- **Save As PKML**: Save the IC BB as a pkml file.
-- **Clone**: Create a copy of the selected IC BB in the same module.
-- **Import from Excel**: Import IC BB information from an Excel file. The excel file must have the following columns:
-    - **Container Path**: The path of the container in which the molecule is located. Path levels are separated by `|`.
-    - **Molecule Name**: The name of the molecule.
-    - **Value**: The initial amount or concentration of the molecule in the container.
-    - **Units**: The unit of the initial amount or concentration.
-    - **IsPresent**: If `true`, the molecule is considered as present in the container. If `false`, the molecule is considered as not present in the container.
-    - **Scale Divisor**: A number by which the value is divided. Can improve numerical stability for very large or very small values. 1 by default.
-    - **Neg. Values Allowed**: If `true`, negative values are allowed for the molecule in the container. If `false`, negative values are not allowed.
+- **Save As PKML**: Save the PV BB as a pkml file.
+- **Clone**: Create a copy of the selected PV BB in the same module.
+- **Import from Excel**: Import PV BB information from an Excel file. The excel file must have the following columns:
+    - **Container Path**: The path of the container in which the parameter is located. Path levels are separated by `|`. For example, `Organism|Liver`.
+    - **Parameter Name**: The name of the parameter. For example, `Volume`.
+    - **Value**: The value of the parameter.
+    - **Units**: The unit of the value.
 
 {% hint style="info" %}
 Values defined by a formula cannot be imported from Excel.
@@ -545,34 +542,24 @@ Values defined by a formula cannot be imported from Excel.
 - **Export to Excel**: Export the IC BB information to an Excel file. The exported file has the same format as described for the import.
 
 {% hint style="warning" %}
-Only entries for molecules that are defined by a constant value (not by a formula) can be exported to Excel!
+Only entries for parameters that are defined by a constant value (not by a formula) can be exported to Excel!
 {% endhint %}
 
-- **Extend from Initial Conditions Building Block**: Adds entries from the Initial Conditions BB previously exported to pkml. New values are always *added*, existing values are *overwritten*.
-- **Extend from Expression Profile Building Block**: Adds entries from an Expression Profile BB previously exported to pkml. New values are always *added*, existing values are *overwritten*. Useful when creating a custom expression profile as initial condition.
+- **Extend from Parameter Values Building Block**: Adds entries from the Parameter Values BB previously exported to pkml. New values are always *added*, existing values are *overwritten*.
+- **Extend from Expression Profile Building Block**: Adds entries from **Parameters** tab of an Expression Profile BB previously exported to pkml. New values are always *added*, existing values are *overwritten*. Useful when creating a custom expression profile as initial condition.
+- **Extend from Individual Building Block**: Adds entries from the Individual BB previously exported to pkml. New values are always *added*, existing values are *overwritten*. Useful when trying to overwrite individual-specific parameters.
 
-The editor of the IC BB has the following buttons (multi-select of the rows is possible):
+The editor of the PV BB has the following buttons (multi-select of the rows is possible):
 
 - **Delete**: Removes the selected entries
-- **Refresh values**: 
-- **Present**: Sets the IsPresent status of all selected entries to `true`
-- **Not Present**: Sets the IsPresent status of all selected entries to `false`.
-
-{% hint style="info" %}
-A molecule is considered as **not present** in a container in a simulation if the simulation configuration contains no IC BB where the molecule is marked as present in the container.
-{% endhint %}
-
-{% hint style="info" %}
-Restricting the presence of molecules to certain organs may improve your computing performance, but use it carefully to keep your model valid!
-{% endhint %}
-
-- **Negative Values Allowed/Not Allowed**: Toggles the setting if negative values are allowed for the selected entries. If disabled (by default for all molecules), a simulation will fail if the species will become negative during the simulation.
 
 The table view shows the following:
 
-- **Molecule Name**: The name of the molecule.
-- **Path**: The path of the container in which the molecule is located.
-- **Value**: The initial amount or concentration of the molecule in the container.
+- **Parameter Name**: The name of the molecule.
+- **Path Element xxx**: The path of the container as separate elements in which the parameter is located.
+- **Parameter Value**: The initial amount or concentration of the molecule in the container.
+- **Formula**: The formula used to calculate the parameter value. If a formula is assigned, the value is `<Not Available>`.
+- **Dimension**: The dimension of the parameter.
 
 ## Creating IC BB‌
 
@@ -601,36 +588,6 @@ The path is composed of different levels of the spatial structure. If the curren
 {% endhint %}
 
 3. Enter the initial **Value** of the molecule in the container. The unit can be selected from a combobox. The value can be either an amount or a concentration, depending on the project settings. Alternatively, assign a formula that will be used to calculate the initial value. You can either create a new formula, select an existing one, or copy-and-paste a formula from another building block.
-
-{% hint style="info" %}
-For our **test model**, create new molecule start values and set the concentration of molecule "A" in "Vial2" to 0. Then, set the concentration of "PGP" to 1 µmol.
-{% endhint %}
-
-
-
------
-
-
-Parameter Start Values are needed to define the values of various parameters present in the molecules and spatial structures building blocks used in a simulation. For example, this is true for the volume parameters of containers. These values are either imported when loading a simulation, or they can be created automatically and edited manually, if needed. Handling of this building block is very similar to the procedure described in the previous section for Molecules Start Values. In particular, cloning, loading from and saving to a pkml file is done in the same fashion (see previous section).
-
-To automatically create Parameter Start Values by MoBi®:
-
-1. Right-click the entry **Parameter Start Values** <img src="../assets/icons/ExtendParameterStartValues.svg" data-size="line"> in the Building Block Explorer.
-2. Select **Create Parameter Start Values Building Block** from the context menu that opens.
-3. A window called "Create new start values" opens. Enter a unique name for the building block.
-4. In the combo boxes below, you can select between different molecules or spatial structure building blocks from which the start values are calculated.
-5. Click **OK** or press **Enter**.
-6. If the name you have entered is already in use, you may be asked for entering a new name.
-7. An edit window opens, containing all created parameters.
-
-All parameter start values are set to the values used in the corresponding building block.
-
-To edit a parameter start value building block, double-click on it or use the context menu in the building block explorer and select **Edit**. An edit window opens, analogue to the one that is used for creating new start values. You can now
-
-* manually override the displayed values or dimensions.
-* use the <img src="../assets/icons/ExtendParameterStartValues.svg" data-size="line"> **Extend** ribbon button at the top to automatically add new parameters in case more of them have been created or loaded in the selected building blocks after initially creating the start values or executing the last **Extend** command.
-
-Again, cloning and manual parameter changes at this level allow for quickly switching among different simulation scenarios.
 
 {% hint style="info" %}
 The example model is now ready for setting up a simulation which is described in the next chapter (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
