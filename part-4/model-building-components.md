@@ -492,7 +492,7 @@ The best way to add entries to an IC BB is to use the **Extend** functionality. 
 1. Click on the **Extend** button in the **Edit** group of the **Edit Initial Conditions** ribbon tab.
 2. A window opens that allows you to select a spatial structure BB and one or more molecules.
 
-This will add entries for all selected molecules in all physical containers of the selected spatial structure BB. When new etnries are added, the initial values or formulas are set to their default values as defined in the selected molecules building block, and these values are used for all containers in the selected spatial structure. All molecules are set to the status `IsPresent` in all selected physical containers of.
+This will add entries for all selected molecules in all physical containers of the selected spatial structure BB. When new entries are added, the initial values or formulas are set to their default values as defined in the selected molecules building block, and these values are used for all containers in the selected spatial structure. All molecules are set to the status `IsPresent` in all selected physical containers of.
 
 ### Adding new entries
 
