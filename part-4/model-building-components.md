@@ -470,7 +470,7 @@ The table view shows the following:
 
 {% hint style="info" %}
 For *state variable* parameters, the **Value** is the initial value of the parameter.
-{% end
+{% endhint %}
 
 ## Creating new parameters in simulation structure through PV BB‌
 
