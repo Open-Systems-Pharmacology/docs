@@ -426,7 +426,7 @@ The following section describes the functionalities of the IC BB on a PBPK model
 
 ## Initial Conditions - Functionality‌ Overview
 
-An IC BB can contain entries for molecules and physical containers across different modules.
+An IC BB can contain entries for molecules in physical containers across different modules.
 
 In contrast to other BB types except for the parameter values BB, **multiple** IC BBs can be created within one module. This allows you to define different initial conditions for different simulation scenarios. For example, different initial concentrations of an endogenous molecule may represent different disease states. During simulation creation, you can select which IC BB to use.
 
