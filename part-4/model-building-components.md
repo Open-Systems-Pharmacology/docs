@@ -523,7 +523,7 @@ The following section describes the functionalities of the PV BB. Later on, a si
 
 A PV BB can contain entries for molecules and physical containers across different modules.
 
-In contrast to other BB types except for the initial conditions BB, multiple PV BBs can be created within one module. This allows you to define different parameterization sets for different simulation scenarios. For example, different parameter sets may represent different disease states. During simulation creation, you can select which PV BB to use.
+In contrast to other BB types except for the initial conditions BB, **multiple** PV BBs can be created within one module. This allows you to define different parameterization sets for different simulation scenarios. For example, different parameter sets may represent different disease states. During simulation creation, you can select which PV BB to use.
 
 The context menu of a PV BB offers the following commands:
 
@@ -556,7 +556,7 @@ The editor of the PV BB has the following buttons (multi-select of the rows is p
 The table view shows the following:
 
 - **Parameter Name**: The name of the molecule.
-- **Path Element xxx**: The path of the container as separate elements in which the parameter is located.
+- **Path Element N**: Represents the N-th level in the hierarchical container path within the spatial structure where the parameter is located.
 - **Parameter Value**: The initial amount or concentration of the molecule in the container.
 - **Formula**: The formula used to calculate the parameter value. If a formula is assigned, the value is `<Not Available>`.
 - **Dimension**: The dimension of the parameter.
