@@ -543,7 +543,7 @@ Molecules can have local parameters that are defined for each physical container
 1. Click on the **Add Local Molecule Parameters** button in the **Edit** group of the **Edit Parameter Values** ribbon tab.
 2. A window opens that allows you to select a spatial structure and one or more molecules.
 
-This will add entries for all local molecule parameters (defined by a constant) for selected molecules in all physical containers of the selected spatial structure. When new etnries are added, the parameter values or formulas are set to their default values as defined in the selected molecules building block, and these values are used for all containers in the selected spatial structure.
+This will add entries for all local molecule parameters (defined by a constant) for selected molecules in all physical containers of the selected spatial structure. When new entries are added, the parameter values or formulas are set to their default values as defined in the selected molecules building block, and these values are used for all containers in the selected spatial structure.
 
 Only _constant_ local parameters are added. If a parameter is defined by a formula, it is assumed that it should not be overwritten by a PV BB. However, the parameter can still be added manually.
 
