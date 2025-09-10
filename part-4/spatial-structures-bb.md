@@ -1,4 +1,4 @@
-# Spatial Structures‌
+# Spatial Structures‌ Building Block
 
 A Spatial Structure is a hierarchical arrangement of containers (compartments) that can represent an organism consisting of organs, cells, and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume.
 

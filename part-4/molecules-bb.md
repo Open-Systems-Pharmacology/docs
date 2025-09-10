@@ -1,8 +1,8 @@
-# Molecules‌
+# Molecules‌ Building Block
 
 The **Molecules** building block contains all molecules with their default start values, molecule-specific parameters and properties. A molecule has a name, typically the name of the compound. Parameters and properties can be defined by you to describe the physico-chemistry, like solubility or lipophilicity. These parameters may later be used in reactions, passive and active transport processes, or may influence events. Also, active transporter molecules and active transport processes are defined for each molecule, if relevant for the model.
 
-The following section describes the functionalities of the Molecules building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-new-molecules) is given to create a molecule from scratch.
+The following section describes the functionalities of the Molecules building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-new-molecules) is given to create a molecule from scratch.
 
 ## Molecules - Functionality‌ Overview‌
 

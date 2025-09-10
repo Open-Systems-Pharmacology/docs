@@ -6,7 +6,7 @@ A special case of an event is an **application**, which is used to apply a certa
 
 Events and applications are grouped in the **Events** building block (BB). Multiple events can be grouped in event groups, and organized in a hierarchy of  containers similar to that of a [spatial structure](spatial-structures-bb.md). Simulations imported from a PK-Sim® project contain all defined applications and additional events, such as food administration, in the events BB.
 
-The following section describes the functionalities of the Events building block based on a PBPK model exporter from PK-Sim. Later on, a simple [example](#example---creating-events) is given. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
+The following section describes the functionalities of the Events building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-events) is given. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
 
 ## Events - Functionality Overview‌
 
