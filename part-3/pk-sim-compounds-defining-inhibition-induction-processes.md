@@ -36,7 +36,9 @@ PK-Sim® calculates the apparent $kcat$ and apparent Michaelis-Menten constant f
 
 If first order processes are inhibited, the specific clearances will be altered. The generic expression for a reversible linear, non saturable metabolism/transport process of first order is:
 
-![Apparent intrinsic specific clearance in a scenario with m competitive inhibitors, o non-competitive inhibitors and p mixed inhibitors.](../assets/images/part-3/equation-16-3.png)
+$$
+{\huge \mathrm{CL}_{\mathrm{int,app}} = \mathrm{CL}_{\mathrm{int}} \left/ \left( 1 + \sum_{a=1}^{m} \frac{I_a}{K_{I,a}} + \sum_{c=1}^{o} \frac{I_c}{K_{I,c}} + \sum_{d=1}^{p} \frac{I_d}{K_{Ic,d}} \right) \right.}
+$$
 
 If an inhibition is set up for an enzyme or transporter, all processes with the same name will be linked and affected by the inhibition. An autoinhibition cannot be set-up because measured Ki values will already be altered due to autoinhibition.
 
