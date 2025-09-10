@@ -495,7 +495,7 @@ Entries for molecules and/or containers that do not exist in the final model wil
 
 To create a new IC BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Initial Conditions** and enter a unique name for the new BB. Click **OK** to create the new IC BB.
 
-The new IC BB does not contain any information yet. To populate it with information, you can either import the information from an Excel or a pkml file, or create new entires.
+The new IC BB does not contain any information yet. To populate it with information, you can either import the information from an Excel or a pkml file, or create new entries.
 
 ### Extending from existing BBs
 
