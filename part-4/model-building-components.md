@@ -480,7 +480,7 @@ If parameter `Param A` in the container `Organism|Organ A|Container A1` does not
 
 The parameter will only be created if the parent path (i.e., `Organism|Organ A|Container A1`) exists in the model. If the parent path does not exist, the parameter will not be created and a warning will be shown during simulation creation.
 
-## Creating PV BB‌
+## Creating Parameter Values Building Blocks‌
 
 To create a new PV BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Parameter Values** and enter a unique name for the new BB. Click **OK** to create the new PV BB.
 
