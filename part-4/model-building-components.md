@@ -422,7 +422,7 @@ Similarly, observers or events can be included or excluded from being created in
 
 The Parameter Values (PV) Building Block (BB) defines the values of various parameters present in the simulation structure. By default, a PV BB should only contain values that are different from the default values defined in the building blocks where the parameter is defined.
 
-Additinally, PV BB can **create** new parameters during simulation creation.
+Additionally, PV BB can **create** new parameters during simulation creation.
 
 The following section describes the functionalities of the PV BB. Later on, a simple [example](#example---creating-pv-bb) is given to create a new PV BB and populate it with information.
 
