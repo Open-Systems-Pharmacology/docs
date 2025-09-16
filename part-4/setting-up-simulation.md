@@ -5,6 +5,23 @@ After having made yourself familiar with the processes of building model compone
 * Load an existing simulation (pkml file) into the MoBi® project.
 * Create a new simulation from existing model components (building blocks). These two workflows of setting up simulations will be described in the following.
 
+## Simulation settings
+
+- Output Intervals: start and end time point of a simulation and resolution of a simulation; can be edited in this view in the **Output Intervals** tab.
+
+- Solver Settings: solver parameters such as tolerance, use of Jacobian etc.; can also be edited in this view in the **Solver Settings** tab.
+
+{% hint style="warning" %}
+Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
+
+However, when scale divisors are calculated and applied to a simulation as described in [Model Building and Model Components](model-building-components.md), solver tolerances can often be safely increased without compromising accuracy.
+{% endhint %}
+
+- Output Selection: outputs that will be available for plots; cannot be edited in this view but will be listed in the **Output Selection** tab after a successful simulation run in the **Simulation Creation Wizard**.
+
+- Chart Templates: a set of chart templates can be managed in the **Chart Editor** as described in [Tools](tools.md); is part of the simulation settings, but not visible in this view.
+
+
 ## Load a Simulation‌
 
 Existing simulations can be loaded by either:
