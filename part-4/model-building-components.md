@@ -1,28 +1,3 @@
-# Model Building and Model Components
-
-After having made yourself familiar in the previous chapters with the building block concept and with the general structure of the program and projects ([“MoBi® - First Steps”](first-steps.md)), this section describes the practical approach how to build MoBi® models by stepwise entering content into the building blocks. Also, this knowledge is of use to upgrade models imported from PK-Sim®, as will be described in [Setting up a Simulation](setting-up-simulation.md).
-
-{% hint style="info" %}
-Always watch for the helpful tool tips that appear when hovering for a few seconds with the mouse pointer over an input box or its description.
-{% endhint %}
-
-## Exporting and importing building blocks‌
-
-You may also load and save an entire Spatial Structure building block as pkml file. This is described in detail for molecules in [Loading, Editing, and Saving Molecules](model-building-components.md#loading-editing-and-saving-molecules) and applies also for a spatial structure.
-
-{% hint style="info" %}
-A collection of template files with predefined building blocks is automatically installed together with MoBi® in the default program data directory. The entry "Templates" in the program start menu in the "MoBi" program group will lead you to the proper path.
-{% endhint %}
-
-In a similar way, you can **save an entire molecules building block**.
-
-1. In the Modules explorer, right-click the building block of interest, and select **Save As** from the context menu.
-2. Select a location where it is saved in the file browser window that will open and select a name to save it.
-
-You can **load such a molecule building block** into a  module that *does not have a molecules BB* by right-clicking the module and selecting **Load Building Blocks**. Also, you can use any saved molecules building block to **load individual molecules** from it into other projects, using the **Load Molecule** function described above.
-
-Any molecules building block can also be **removed** (i.e., deleted) and **renamed** using the corresponding context menu functions.
-
 ## MoBi® - Projects‌
 
 ### New Project‌

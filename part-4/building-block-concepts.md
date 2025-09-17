@@ -16,6 +16,19 @@ Additionally, the building block types **Individuals** and **Expression Profiles
 
 The following sections give a brief overview of the different building blocks. More detailed information on each building block can be found in [Model Building and Model Components](model-building-components.md).
 
+## Exporting and importing building blocks‌
+
+All building blocks can be saved as a `*.pkml` file and imported in a new module from the file.
+
+To **save** a building block as a `*.pkml` file:
+
+1. In the Modules explorer, right-click the building block of interest, and select **Save As** from the context menu.
+2. Select a location where it is saved in the file browser window that will open and select a name to save it.
+
+To **import** a building block from a `*.pkml` file into a  module that *does not have this BB type yet*, right-click on the module and select **Load Building Blocks**. An exception is the building block types **Parameter Values** and **Initial Conditions**, which can be imported in modules that already contain these BB types.
+
+Also, you can use any saved building block to **load individual entities** from it, e.g., individual molecules, reactions, passive transports, or observers.
+
 ## Spatial Structure‌
 
 The spatial structure building block defines the structural organization of the model. It contains the containers (e.g., organs, tissues, blood compartments) and their neighborhood relations. The spatial structure, therefore, defines the compartments of the model and their interconnections by defining the **neighborhoods** between the containers.
