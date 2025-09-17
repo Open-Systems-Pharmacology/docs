@@ -12,7 +12,7 @@ When importing a PBPK model from PK-Sim, a new Individual is created.
 
 In contrast to the other BB types, Individual BBs are not part of a module, but stored in a separate folder in the MoBi project explorer. They can be used in combination with any module of the project. Parameters that are defined in the Individual but are not present in the spatial structure are created during simulation creation. This behavior is similar to the Parameter Values BB.
 
-## Individuals - Functionality‌ Overview
+## Individuals - Functionality Overview
 
 Upon opening an Individual BB, the editor shows two tabs:
 
