@@ -428,9 +428,7 @@ The following section describes the functionalities of the PV BB. Later on, a si
 
 ## Parameter Values - Functionality‌ Overview
 
-A PV BB can contain entries for molecules and physical containers across different modules.
-
-In contrast to other BB types except for the initial conditions BB, **multiple** PV BBs can be created within one module. This allows you to define different parameterization sets for different simulation scenarios. For example, different parameter sets may represent different disease states. During simulation creation, you can select which PV BB to use.
+In contrast to other BB types except for the initial conditions BB, **multiple** PV BBs can be created within one module. This allows you to define different parameterization sets for different simulation scenarios. For example, different parameter sets may represent different disease states or different species. During simulation creation, you can select which PV BB to use.
 
 The context menu of a PV BB offers the following commands:
 
