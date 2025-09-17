@@ -4,6 +4,8 @@ The **Expression Profile** building blocks (BB) contain the information about th
 
 When importing a PBPK model from PK-Sim, a new expression profile BB is created for each protein defined in the PK-Sim model.
 
+In contrast to the other BB types, Expression Profiles BBs are not part of a module, but stored in a separate folder in the MoBi project explorer. They can be used in combination with any module of the project. If the module does not contain the protein defined in the expression profile, the expression profile will have no effect on the simulation.
+
 ## Expression Profiles - Functionality‌ Overview
 
 Upon opening an expression profile BB, the editor shows three tabs:
