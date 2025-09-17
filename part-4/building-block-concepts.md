@@ -18,7 +18,7 @@ The following sections give a brief overview of the different building blocks. M
 
 ## Exporting and importing building blocks‌
 
-All building blocks can be saved as a `*.pkml` file and imported in a new module from the file.
+All building blocks can be saved as a `*.pkml` file and imported into a new module from the file.
 
 To **save** a building block as a `*.pkml` file:
 
