@@ -25,7 +25,7 @@ To **save** a building block as a `*.pkml` file:
 1. In the Modules explorer, right-click the building block of interest, and select **Save As** from the context menu.
 2. Select a location where it is saved in the file browser window that will open and select a name to save it.
 
-To **import** a building block from a `*.pkml` file into a  module that *does not have this BB type yet*, right-click on the module and select **Load Building Blocks**. An exception is the building block types **Parameter Values** and **Initial Conditions**, which can be imported in modules that already contain these BB types.
+To **import** a building block from a `*.pkml` file into a module that *does not have this BB type yet*, right-click on the module and select **Load Building Blocks**. An exception is the building block types **Parameter Values** and **Initial Conditions**, which can be imported into modules that already contain these BB types.
 
 Also, you can use any saved building block to **load individual entities** from it, e.g., individual molecules, reactions, passive transports, or observers.
 
