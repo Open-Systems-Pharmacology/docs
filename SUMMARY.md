@@ -58,7 +58,7 @@
   * [Observers](part-4/observers-bb.md)
   * [Events](part-4/events-bb.md)
   * [Initial Conditions](part-4/initial-conditions-bb.md)
-  * [Model Building and Model Components](part-4/model-building-components.md)
+  * [Parameters, Formulas, Tags, and Keywords](part-4/parameters-formulas-tags.md.md)
   * [Setting up a Simulation](part-4/setting-up-simulation.md)
   * [Simulation Results](part-4/simulation-results.md)
   * [Diagrams Overview](part-4/diagrams-overview.md)
