@@ -1,6 +1,6 @@
 # Expression Profiles Building Blocks
 
-The **Eexpression Profile** building blocks (BB) contain the information about the expression and localization of the proteins. A expression profile is a list of parameter paths and values that define the expression of a protein, and the initial conditions of proteins molecule in different compartments.
+The **Expression Profile** building blocks (BB) contain the information about the expression and localization of the proteins. An expression profile is a list of parameter paths and values that define the expression of a protein, and the initial conditions of proteins molecule in different compartments.
 
 When importing a PBPK model from PK-Sim, a new expression profile BB is created for each protein defined in the PK-Sim model.
 
