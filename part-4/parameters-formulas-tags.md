@@ -6,7 +6,7 @@ First, different types of [parameters](#parameters) and their properties are exp
 
 Then, the use of the different types of [formulas](#working-with-formulas) is described. Formulas are used to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions.
 
-Following is the explanation of the [tag concept](#how-tags-are-used). Tags are widely used to define conditions for for localization of observers, transport processes, events, parameters, as well as for sum formulas.
+Following is the explanation of the [tag concept](#how-tags-are-used). Tags are widely used to define conditions for localization of observers, transport processes, events, parameters, as well as for sum formulas.
 
 Finally, the special [keywords](#keywords) that can be used in paths to define references in formulas are listed.
 
