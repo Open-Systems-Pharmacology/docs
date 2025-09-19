@@ -80,10 +80,10 @@ Examples for constant parameters are "Molecular weight" of a molecule or the rat
 
 - **Discrete Distribution**, which is identical to a *constant parameter*. This feature is implemented for the purpose of simply disabling the distribution function without going through the parameter creation process again.
 - **Uniform Distribution**, where a parameter will be uniformly distributed between a **Minimum** and a **Maximum**.
-- Normal Distribution, where a parameter is varied around a **Mean** value using a **Standard Deviation** - both values have to be specified.
-- LogNormal Distribution, where a parameter is logarithmically varied around a **Mean** value using a **Geometric Standard Deviation** - both values have to be entered.
+- **Normal Distribution**, where the values of the parameter are normally distributed (Gaussian distribution) with a **Mean** value and a **Standard Deviation**.
+- **LogNormal Distribution**, where the values of a parameter follow a lognormal distribution with a **Mean** value and a **Geometric Standard Deviation**.
 
-If you use one of the different distributions, a **percentile** will be automatically calculated for the parameter value define in field **value** given the defined distribution. The functionality of this feature is particularly useful in combination with the script toolboxes for MoBi®.
+If you use one of the different distributions, a **percentile** will be automatically calculated for the parameter value define in field **value** given the defined distribution.
 
 ### Working with Formulas‌
 
