@@ -123,7 +123,7 @@ If you modify a formula in the editor of a parameter or any other entity, this c
 
 You can re-use formulas across different building blocks by copying and pasting them. To do so, select a formula in the formula list of a building block, press **Ctrl+C**, then move to the formula list of another building block and press **Ctrl+V**.
 
-Open creation of a formula, it gets the dimension of the parameter or entity where it is created. For parameters, the formula gets the dimension of the parameter. For molecule start values, the dimension is "Amount". For reaction and transport processes kinetics, the dimension is "Amount per time", and for formulas used in event conditions, the dimension is "Dimensionless". The only way to change the dimension of a formula is to change the dimension of the parameter or entity to which the formula is assigned. Furthermore, a formula can only be used in entities or parameters with the same dimension.
+Upon creation of a formula, it gets the dimension of the parameter or entity where it is created. For parameters, the formula gets the dimension of the parameter. For molecule start values, the dimension is "Amount". For reaction and transport processes kinetics, the dimension is "Amount per time", and for formulas used in event conditions, the dimension is "Dimensionless". The only way to change the dimension of a formula is to change the dimension of the parameter or entity to which the formula is assigned. Furthermore, a formula can only be used in entities or parameters with the same dimension.
 
 {% hint style="info" %}
 It is a good idea to use a name related to the object where the formula is used (e.g., parameter, reaction, observer) - you may even use identical names here.
