@@ -49,7 +49,7 @@ In the combobox of the field **Formula Type**, you can select if the parameter i
 * a **formula**, having a formula name and a formula string (i.e., a mathematical expression) including references to the formula items;
 * a **table with offset**, which is a table that is reused and shifted in time by a constant time value defined in another parameter;
 * a **table formula with x-argument**, which is a table that is reused and evaluated at a value defined in another parameter;
-a *sum formula**, which calculates the sum of all values with a certain condition;
+* a **sum formula**, which calculates the sum of all values with a certain condition;
 * a **calculation method** parameter, whose formula will be defined depending on the selected calculation method of each molecule in the model (only available for parameter of spatial structure container). The calculation methods cannot be edited within MoBi® and are imported from PK-Sim®.
 * a value **distributed** around a constant value or between two limits (only available for parameters of spatial structure containers).
 
@@ -85,11 +85,45 @@ Examples for constant parameters are "Molecular weight" of a molecule or the rat
 
 If you use one of the different distributions, a **percentile** will be automatically calculated for the parameter value define in field **value** given the defined distribution.
 
-### Working with Formulas‌
+### State Variable Parameters‌
 
-A parameter can be defined by a formula that may also use other parameters. A formula string defines the formula. Additionally to parameters, formulas are used in the kinetics equations of reactions and transport processes as well as in the monitor equation of observers. See the corresponding sections for a description. To define a formula, select Formula in the combobox **Formula Type**.
+A parameter can also be defined as a *state variable* with a right-hand-side (RHS). This means, that the parameter value is defined by a differential equation. To do this, click the ![Image](../assets/icons/Checked.png) checkbox **Parameter is state variable** when entering or editing a parameter.
 
-Each formula needs a formula name. The combobox **Formula Name** allows you to select from already existing formulas or to enter a new name. A new formula can be entered by clicking the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button and you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
+The value of a parameter _p_, for example, is defined by a differential equation
+
+$$\frac{dp}{dt} = RHS$$
+
+where _RHS_ is the right-hand side of the differential equation defining the _change of parameter value per unit time step_.
+
+For a *state variable parameter*, the you can define the **initial value** of the parameter in the top half of the parameter edit view, as for any other parameter type. The initial value is the value of the parameter at simulation time = 0.
+
+The **Right Hand Side** is defined in the botton part of the editor. The value of the parameter is evaluated for each simulation step according to the differential equation.
+
+{% hint style="warning" %}
+Once the ![Image](../assets/icons/Unchecked.png) **Parameter is state variable** checkbox is deactivated again, the input box for the RHS will disappear. The parameter is no longer a state variable, and the right hand side (RHS) formula reverts to RHS = 0. If you have accidentally deactivated the checkbox and then reactivate it, the formula you may have previously defined as RHS is not lost, since all created formulas are stored. To reinstate the formula you may have previously defined as the RHS, select the formula from the combobox after the formula type explicit formula is selected.
+{% endhint %}
+
+{% hint style="info" %}
+For state variable parameters, the values defined in a Parameter Values building block represent the initial values of the parameter at simulation time = 0.
+{% endhint %}
+
+## Formulas
+
+### Functionality Overview‌
+
+Formulas are widely used in OSP models to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions. This section describes how to work with formulas in MoBi®.
+
+All formulas defined in a building block are listed in a separate tab named **Formulas**. Clicking on a formula in the list will show the references and the equation for the selected formula. Right-clicking on a formula in the list opens a context menu that allows you to **Rename**, **Clone**, and **Remove** formulas.
+
+Formulas can be re-used, e.g., multiple parameters within a spatial structure can use the same formula.
+
+{% hint style="warning" %}
+If you modify a formula in the editor of a parameter or any other entity, this change will affect all other entities using this formula!
+{% endhint %}
+
+You can re-use formuals across different buildging blocks by copying and pasting them. To do so, select a formula in the formula list of a building block, press **Ctrl+C**, then move to the formula list of another building block and press **Ctrl+V**.
+
+Open creation of a formula, it gets the dimension of the parameter or entity where it is created. For parameters, the formula gets the dimension of the parameter. For molecule start values, the dimension is "Amount". For reaction and transport processes kinetics, the dimension is "Amount per time", and for formulas used in event conditions, the dimension is "Dimensionless". The only way to change the dimension of a formula is to change the dimension of the parameter or entity to which the formula is assigned. Furthermore, a formula can only be used in entities or parameters with the same dimension.
 
 {% hint style="info" %}
 It is a good idea to use a name related to the object where the formula is used (e.g., parameter, reaction, observer) - you may even use identical names here.
@@ -97,105 +131,116 @@ It is a good idea to use a name related to the object where the formula is used 
 
 To enter or edit a **formula string**, click into the unnamed input box above the **Description** field and then use your keyboard. This formula string will be evaluated by the solver once the simulation is run. It is written as a mathematical term that comprises numeric values, arithmetic operation signs, and names of parameters or their alias names. As long as the formula has errors or is incomplete, a red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> is displayed left of the empty input box. Hovering the mouse over this warning symbol will show you a tool tip on the validity of the equation (e.g., missing references or syntax errors).
 
-{% hint style="info" %}
-Useful workflows with parameter aliases or with reference paths to aliases are described below, see [Reaction Kinetics](model-building-components.md#reaction-kinetics) and [Passive Transports](model-building-components.md#passive-transports).
-{% endhint %}
+### Supported Characters and Functions in a Formula‌
 
-In a formula, the following characters may be used:
+In a (explicit) formula, the following characters may be used:
 
-* numbers can be entered as described for constants
-* the arithmetic operation signs **+**, **-**, **\***, **/**, **^** (for exponents)
-* round brackets **(** **)**
-* the constants **pi** and **e**
-* the mathematical functions **ACOS**, **ASIN**, **ATAN**, **COS**, **COSH**, **EXP**, **LN**, **LOG** (identical to **LN**, natural logarithm), **LOG10**, **MAX**, **MIN**, **POW**, **SIN**, **SINH**, **SQRT**, **TAN**, **TANH**; if two operators are required (**MAX**, **MIN**, **POW**), a semicolon is used for separation, e.g., _POW(3;2)_ which corresponds to _3^2_
+* numbers can be entered as described for constants, e.g. `2.34`; `1.2E-6`; `-150` (**WARNING**: a comma `,` is interpreted as a decimal point!)
+- `TIME` variable: The simulation time
+* the arithmetic operation signs
+    - Plus `+`, e.g., `3 + 5`
+    - Minus `-`, e.g., `3 - 5` or `-5` (unary minus)
+    - Multiplication `*`, e.g., `3 * 5`
+    - Division `/`, e.g., `3 / 5`
+    - Exponentiation `^`, e.g., `3^5` = 3 to the power of 5
+* round brackets **(** **)**, e.g., `(3 + 5) * 2`
+* the constants **pi** and **e**, representing the mathematical constants $\pi$ and $e$.
+* the mathematical functions 
+    - Arccosine (inverse cosine) **ACOS**, e.g., `ACOS(0.5)`,
+    - Arcsine (inverse sine) **ASIN**, e.g., `ASIN(0.5)`,
+    - Arctangent (inverse tangent) **ATAN**, e.g., `ATAN(1)`,
+    - Cosine **COS**, e.g., `COS(pi/4)`,
+    - Hyperbolic cosine **COSH**, e.g., `COSH(1)`,
+    - Exponential function **EXP**, e.g., `EXP(1)` which corresponds to $e^1$,
+    - Natural logarithm **LN** or **LOG**, e.g., `LN(e)` or `LOG(e)`,
+    - Logarithm to base 10 **LOG10**, e.g., `LOG10(10)`,
+    - Maximum of two values **MAX**, e.g., `MAX(3;5)` which evaluates to 5,
+    - Minimum of two values **MIN**, e.g., `MIN(3;5)` which evaluates to 3,
+    - Power function **POW**, e.g., `POW(3;5)` which corresponds to $3^5$,
+    - Sine **SIN**, e.g., `SIN(pi/4)`,
+    - Hyperbolic sine **SINH**, e.g., `SINH(1)`,
+    - Square root **SQRT**, e.g., `SQRT(4)`,
+    - Tangent **TAN**, e.g., `TAN(pi/4)`,
+    - Hyperbolic tangent **TANH**, e.g., `TANH(1)`
 * the random number generator functions **RND** and **SRND**, both to be used with the dummy argument **()**
-* if conditions, using the notation `<condition> ? <formula string for true> : <formula string for false>`
-* in the conditions, the operators **<**, **>**, **<>**, **>=**, **<=**, **=** ; alternatively: **LT**, **GT**, **NEQ**, **GEQ**, **LEQ**, **EQ**, for which the use is `<function>(<expression1>;<expression2>)`
-* conditions can be composed out of sub-conditions that are logically connected by **AND**, **OR**, or inverted by **NOT**. An alternative symbol for **AND** is **&**; an alternative symbol for **OR** is **|**. Besides logical conditions, the numbers 0 and 1 can be used as arguments.
-
-- `TIME` variable: The simulation time.
 
 {% hint style="info" %}
-The above mathematical functions are defined as in the C programming language. For standard reaction kinetic models, these functions are not required at all. It is recommended to use events rather than "if conditions" in a formula.
+The above mathematical functions are defined as in the C programming language.
 {% endhint %}
 
-Furthermore, defined **aliases** can be used in a formula as described in the next paragraph.
+Furthermore, defined **aliases** can be used in a formula as formula constants.
 
-{% hint style="warning" %}
-As opposed to mathematical functions, constants, and operators aliases are case sensitive.
-{% endhint %}
+### Formula aliases - using other parameters and molecule amounts in a formula‌
 
-Below the formula name and above the formula string, there is a **Reference Table** showing a header line above the columns named **Alias**, **Path**, and **Dimension**. On the right hand side of the reference table, there is a second table (separated by a vertical bar) titled **References to add**. From this left part, references are moved to the right Reference Table part by drag & drop.
+The following figure shows the formula editor window that opens when you create or edit a formula.‌
 
-{% hint style="info" %}
-In some cases, e.g. when working with formula-defined molecule parameters, it may be helpful to expand this window to have enough working space. To do so, use the vertical bars between the window sections and drag them with the mouse.
-{% endhint %}
+![](../part-4/formula-aliases-editor.png)
 
-References can be of two different kinds:
+Below the formula name and above the formula string, there is a **Reference Table** showing a header line above the columns named **Alias**, **Path**, and **Dimension**. On the right hand side of the reference table, there is a second table titled **References to add**. From this right part, references are moved to the left **Reference Table** by drag & drop.
 
-* An **absolute path** reference specifying the complete path to a referenced object (e.g., parameter, another formula). An example for this would be "Organism| Organ|Volume".
-* A **relative path** reference specifying the truncated path relative to the current formula. The expression ".." is used for "one level up", using a structure similar to that of file systems paths. An example for such a relative reference would be "..|..|Volume".
+- The **Alias** is the name that will be used in the formula string to refer to the object.
+- The **Path** is the path to the referenced object (parameter or molecule amount).
 
-You need to choose between absolute and relative path by selecting the corresponding radio button in the References to add a section of the window. If you select relative, you will be asked for a **Local Reference Point**. This reference point depends on the level on which you create your formula (e.g., the organism or an organ level) and may be specified in the expandable selection tree (see below). Recommendations of how to choose your reference point are given within this chapter. Click **OK** to finalize your selection.
+E.g., in a formula `3 * Conc + 5`, the alias is `Conc`, and the path could be `Organism|Liver|Plasma|Cimetidine|Concentration`.
+
+When adding references to a formula via drag & drop, you can choose between an absolute or a relative path. If you select a relative path, you will be asked to select a **local reference point**. The local reference point is the location in the model structure from which the relative path is defined. You can think of it as a *working directory*, and the paths to the selected entities will be constructed *relative* to it. See the section [The Path concept](#the-path-concept) for more information on absolute and relative paths.
 
 The selected local reference point will be displayed with its absolute path in the "References to add" window. In case you need to correct or alter the local reference point, click on the **...** icon right of the path. This will re-open the reference point selection window.
 
-To add a reference to a formula, after having selected the reference point:
+To add a reference after having selected the reference point:
 
-1. Find the reference by name in the **Possible Referenced Objects** tree. Click on the + signs in the displayed tree to get to deeper levels of selectable points.
-2. Click on the object's name, then drag it to the Reference Table area left to it; drop it there by releasing the mouse button. The object will be added to the list, usually with its name as the alias. If that name already exists in the list, the alias name is automatically renamed by adding a number. The path and dimension of the object are also added.
+1. Find the reference by name in the **Possible Referenced Objects** tree. Expand the tree nodes if necessary.
+2. Click on the object's name, then drag it to the Reference Table area left to it; drop it there by releasing the mouse button. The object will be added to the list, usually with its name as the alias. If that name already exists in the list, the alias name is automatically renamed by adding a running index. The path and dimension of the object are also added.
 
 {% hint style="warning" %}
-Not all entries in the tree are allowed to be moved to the left, depending on the context of the formula. A + sign displayed next to the mouse pointer indicates an allowed reference.
+Not all entries in the tree are allowed to be moved to the left, depending on the context of the formula.
 {% endhint %}
 
-1. If needed, you may edit the alias name of the object manually. Alias names need to be identical to the names that are used in the formula string. Simply click on the alias name and change or override (or copy/paste) the name. For example, if you added several "Concentration" parameters from different molecules to a reaction kinetics equation, it may be helpful to manually add the molecule name next to them.
-2. In the same way as for aliases, it is also an option to manually edit the path. However, the standard procedure would be to remove the object and add it again, using a new local reference point.
-3. Dimensions can be changed by clicking on the displayed dimension and selecting a different one from the combobox.
-
-{% hint style="info" %}
-A reference path may also contain a global part, like "|MOLECULE", which is recognizable by being written in all capital letters. The reference to "|MOLECULE" means that this part of the path refers to a parameter or property of the currently evaluated molecule, whatever its name. This is useful in formulas that are computed for all molecules present in a container. Compare the formulas in [Observers](model-building-components.md#observers) or [Passive Transports](model-building-components.md#passive-transports). A global reference is selected automatically by MoBi® where appropriate.
-{% endhint %}
+3. If needed, you may edit the alias name of the object manually. Alias names need to be identical to the names that are used in the formula string. Simply click on the alias name and change or override (or copy/paste) the name. For example, if you added several "Concentration" parameters from different molecules to a reaction kinetics equation, it may be helpful to manually add the molecule name next to them.
+4. In the same way as for aliases, it is also an option to manually edit the path. However, the standard procedure would be to remove the object and add it again, using a new local reference point.
+5. Dimensions can be changed by clicking on the displayed dimension and selecting a different one from the combobox.
 
 To **remove an object from the reference list**, right-click it and select **Remove**from the context menu.
 
-Clicking on the **Formulas tab** in the edit window will show a list of all formulas used in the reaction building block. This list is a quick overview of formula names within one building block. Clicking on a formula in the list will show the references and the equation for the selected formula. Right-clicking on a formula in the list opens a context menu that allows you to **Rename**, **Clone** and **Remove** formulas.
+### Conditions in a Formula‌
+
+Logical conditions can be used in a formula to define different values depending on the fulfillment of a condition.
+
+A condition is defined using the notation `<condition> ? <value1> : <value2>`, e.g., `TIME < 10 ? 5 : 10`, which means: "if time is less then 10, use value1, otherwise use value2". In the conditions, the following operators are supported:
+
+- Less than `<` or `LT`, e.g., `TIME < 10` or `LT(TIME;10)`
+- Greater than `>` or `GT`, e.g., `TIME > 10` or `GT(TIME;10)`
+- Not equal `<>` or `!=` or `NEQ`, e.g., `TIME <> 10` or `TIME != 10` or `NEQ(TIME;10)`
+- Greater than or equal `>=` or `GEQ`, e.g., `TIME >= 10` or `GEQ(TIME;10)`
+- Less than or equal `<=` or `LEQ`, e.g., `TIME <= 10` or `LEQ(TIME;10)`
+- Equal `=` or `EQ`, e.g., `TIME = 10` or `EQ(TIME;10)`.
+
+Conditions can be combined by **AND** and **OR**, or inverted by **NOT** operands. An alternative symbol for **AND** is **&**; an alternative symbol for **OR** is **|**. Besides logical conditions, the numbers 0 and 1 can be used as arguments, where 0 means `false` and 1 means `true`.
+
+{% hint style="info" %}
+It is recommended to use events rather than "if conditions" in a formula if the value of the entity defined by the formula is expected to change depending on the fulfillment of a condition.
+{% endhint %}
 
 ### Sum Formulas
 
-In addition to the formulas described in the previous section, sum formulas can be used to calculate sums of a specified parameter name. As a selection criterion, parameter tags can be specified.
+**Sum formulas** can be used to calculate sums of values of entities that comply with certain criteria. The criteria are defined by tags that are assigned to the entities. Tags can be assigned to containers, neighborhoods, parameters, and events (see [How Tags are used](#how-tags-are-used)).
 
-To define a parameter or a reaction by a sum formula, use the following procedure:
-
-1. Select Sum Formula in **Formula Type** combobox.
-2. To create a new sum formula, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
-3. In the **Formula Name** combobox, you may alternatively select an existing sum formula name.
-4. In the **Parameter Criteria** field, right click into the empty white space and select either a New match tag condition. (The New not match tag condition is available too if needed). You will then be asked to enter a tag to match; or select one after clicking the combobox arrow. All parameters carrying the specified condition will be summed; if more than one condition is used, they will be connected with a logical AND. The general rationale behind tags is explained in (How Tags are used]\(#how-tags-are-used).
-5. Conditions can also be removed using the context menu that appears when right-clicking into the white space in the **Parameter Criteria** field.
-
-### Working with Tables‌
+### Table Formulas‌
 
 A parameter can be defined by a table that is made up out of pairs of simulation- time and corresponding functional value. The parameter value as a function of time that is used in the simulation will be interpolated between these values. To enter a table:
 
-1. Select Table as **Formula Type**. A table layout will open below the Formula Type combobox.
+1. Select Table as **Formula Type**.
 2. To create a new table formula, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
 3. In the **Formula Name** combobox, you may alternatively select an existing table formula name.
 
-{% hint style="warning" %}
-A formula name needs to be entered or selected before entering any value points.
-{% endhint %}
-
-1. To add a data point, click the **Add Value Point** button.
-2. Enter a time value in the **X** (Time) input box and a parameter value in the **Y** value input box. Units of the values can be selected as described for a constant parameter value.
+1. To add a data point, click the **Add** button.
+2. Enter a time-value pair. The values must be in the unit shown in the column header.
 3. You may check **Restart Solver** box in case the solver generates errors when arriving at these time points.
 4. More data points can be entered by clicking **Add Value Point** again, or by clicking on the button in the right to the values lines. You can delete a data pair by clicking the **delete** button .
 5. If you would like to use the first derivative of the interpolation, check **Use Derivative Values**. Values before the first and after the last data point of the series are set to 0.
 
-{% hint style="info" %}
-Data points cannot be edited, but have to be deleted and newly entered. Data point units can be changed, leading to a recalculation of the associated value to its new unit.
-{% endhint %}
 
-### Working with Table Formulas with Offset‌
+### Table Formulas with Offset‌
 
 A table described in [Working with Tables](model-building-components.md#working-with-tables) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)). To enter a table formula with offset:
 
@@ -211,15 +256,11 @@ A table described in [Working with Tables](model-building-components.md#working-
 
 Only when you select a valid object, the <img src="../assets/icons/OK.svg" data-size="line"> **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
 
-### State Variable Parameters‌
+### Table Formulas with X-Argument‌
 
-A parameter can also be defined as state variable. This means, that the parameter value is defined by a differential equation. To do this, click the ![Image](../assets/icons/Checked.png) checkbox **Parameter is state variable** when entering or editing a parameter. The parameter value of a parameter _p_, for example, is defined as: ![Image](../assets/images/part-4/6p-rhs.png), with ![Image](../assets/images/part-4/6p-6t.png) representing the expression for _change of parameter value per unit time step_ defined by the formula on the right hand side (_RHS_). Once the checkbox is active ![Image](../assets/icons/Checked.png), the parameter edit view is extended by an additional input box for a formula. This formula defines the **Right Hand Side** of the parameter's differential equation. This right hand side equation itself is entered in the same way as a constant or formula type parameter. The formula in the top half of the parameter edit view now defines the initial condition for the differential equation of the parameter. The value of the parameter is defined when the differential equation is solved during the simulation of the model.
 
-{% hint style="warning" %}
-Once the ![Image](../assets/icons/Unchecked.png) **Parameter is state variable** checkbox is deactivated again, the input box for the RHS will disappear. The parameter is no longer a state variable, and the right hand side (RHS) formula reverts to RHS = 0. If you have accidentally deactivated the checkbox and then reactivate it, the formula you may have previously defined as RHS is not lost, since all created formulas are stored. To reinstate the formula you may have previously defined as the RHS, select the formula from the combobox after the formula type explicit formula is selected.
-{% endhint %}
 
-### How Tags are used‌ - container criteria for formulas, observers, transports, and events‌
+## How Tags are used‌ - container criteria for formulas, observers, transports, and events‌
 
 Containers and neighborhoods within a spatial structure, elements of an application, or parameters may be labelled with tags. These tags, together with the name given to a container or neighborhood, may be used for selectively enabling observers, active or passive transports, or events. They are used for formula evaluations of the formula type "sum".
 
@@ -352,9 +393,21 @@ Models generated in **PK-Sim**® make extensive **use of tags**: For example, op
 
 Similarly, observers or events can be included or excluded from being created in different parts of the spatial structure. The molecule observer "Fraction excreted", for example, makes use of the tag "Urine", so this observer is only created in the urine container.
 
-## Formulas
+## The Path concept
 
-## Keywords
+Entities (parameters, molecule amounts, containers, reactions) in a model structure are accessed by their path. A path is a string that describes the location of an entity in the model structure hierarchy. The path elements are separated by the pipe character `|`. A path can be specified as either an absolute path or a relative path.
+
+- An **absolute path** specifies the complete path to a referenced object, e.g., `Organism| Organ|Volume`. An alias defined by an absolute path reference will always refer to the same object, regardless of where the formula is used.
+
+- A **relative path** reference specifies the location of the entity *relative* to the location of the formula. The expression `..` is used for "one level up", using a structure similar to that of file systems paths. An example for such a relative reference would be `..|..|Volume`.
+
+### Keywords
+
+
+
+{% hint style="info" %}
+A reference path may also contain a global part, like "|MOLECULE", which is recognizable by being written in all capital letters. The reference to "|MOLECULE" means that this part of the path refers to a parameter or property of the currently evaluated molecule, whatever its name. This is useful in formulas that are computed for all molecules present in a container. Compare the formulas in [Observers](model-building-components.md#observers) or [Passive Transports](model-building-components.md#passive-transports). A global reference is selected automatically by MoBi® where appropriate.
+{% endhint %}
 
 - `MOLECULE`
 - `SOURCE`
