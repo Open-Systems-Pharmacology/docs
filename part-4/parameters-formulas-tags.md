@@ -1,86 +1,87 @@
-## Keywords
+# Parameters, Formulas, Tags‌, and Keywords
 
-- `MOLECULE`
-- `SOURCE`
-- `TARGET`
-- `<NBH>`
+This section describes in details how to work with the important concepts of modes building in MoBi.
 
-## Parameters, Formulas, and Tags‌
+First, different types of [parameters](#parameters) and their properties are explained.
 
-In all building blocks that are now created, there may be a need to create and edit parameters, to work with formulas or other elements like tables. This section describes the general options you have for parameters and formulas, and the general procedures to work with them.
+Then, the use of the different types of [formulas](#working-with-formulas) is described. Formulas are used to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions.
 
-Parameters are typically listed in a separate tabbed view, named "Parameters"; compare the figures within this Chapter for their exact location which will vary, depending on the building block. A parameter is used to describe physical or physiological properties of a molecule, a reaction or transport, a spatial structure, an event or an application.
+Following is the explanation of the [tag concept](#how-tags-are-used). Tags are widely used to define conditions for for localization of observers, transport processes, events, parameters, as well as for sum formulas.
 
-For improved readability, two categories of parameters exist: "regular" and "advanced" parameters. In any parameter list of a building block, a checkbox exists above the list which is named ![Image](../assets/icons/Unchecked.png) **Show Advanced Parameters**. If this box is checked, only those parameters tagged as "advanced" are displayed. Any parameter can be tagged as being "advanced" by checking the box ![Image](../assets/icons/Checked.png) **Advanced Parameter** when a parameter is created or edited.
+Finally, the special [keywords](#keywords) that can be used in paths to define references in formulas are listed.
 
-Parameters can be newly created, copied, moved, edited, or loaded from a pkml file:
+## Parameters
 
-* A parameter is added by clicking on the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter** button that is present in a parameter tab view, or by right-clicking the building block item's name (molecule, reaction, etc.) in the tree, list, or diagram view and choose **Create Parameter** from the context menu that appears.
-* Instead of newly creating a parameter, you may also load it from a file. Use the **Load Parameter** button or context menu entry for this purpose and select a pkml file (e.g., a previously saved building block or simulation) that already contains a suitable parameter.
-* A third option is to **copy and paste parameters** between building block items by pressing **Ctrl+C** (on the source parameter, like from an already entered molecule or reaction) and **Ctrl+V** after moving to the target area and after clicking into the empty parameter space. Instead of **Ctrl+C** to copy a parameter, you can use **Ctrl+X** to cut a parameter from its current position.
+### Functionality Overview‌
 
-Within the different building blocks, there are slight differences in the procedure and in the selectable options which will be explained in the corresponding sections in this chapter. In the Molecules and Reactions building blocks, parameters may be of **different types**: Local and Global. As these names already suggest, the differences are the following:
+In all building blocks, there may be a need to create and edit parameters. Parameters are typically listed in a separate tabbed view, named "Parameters". A parameter is used to describe physical or physiological properties of a molecule, a reaction or transport, a spatial structure, an event or an application.
 
-* Parameters defined as Local can only be used locally, i.e., within the corresponding reaction or for a molecule where a local parameter is defined.
-* Parameters defined as Global can also be used in other formulas, i.e., they appear in the reference lists described in [Working with Formulas](model-building-components.md#working-with-formulas). Furthermore, they are located in different places of a simulation hierarchy, as described in [Molecular Properties](setting-up-simulation.md#molecular-properties).
+For improved readability, two categories of parameters exist: "regular" and "advanced" parameters. In any parameter list, a checkbox exists above the list which is named ![Image](../assets/icons/Unchecked.png) **Show Advanced Parameters**. If this box is unchecked, the parameters tagged as "advanced" are hidden. Any parameter can be tagged as being "advanced" by checking the box ![Image](../assets/icons/Checked.png) **Advanced Parameter** when a parameter is created or edited.
 
-{% hint style="info" %}
-A change of the parameter type will influence the path wherever this parameter is used in a formula (compare [Working with Formulas](model-building-components.md#working-with-formulas)).
+Parameters can be created, copied, moved, edited, or loaded from a pkml file:
 
-Furthermore, this different path will make this parameter appear in different locations within the simulation hierarchy. Global parameters appear below the reaction list in the top level hierarchy, local parameters below the reaction list in the container level where the reaction occurs.
+- A parameter is added by clicking on the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter** button that is present in a parameter tab view, or by right-clicking the building block item's name (molecule, reaction, etc.) in the tree, list, or diagram view and choosing **Create Parameter** from the context menu that appears.
+- Instead of creating a parameter, you may also load it from a file. Use the **Load Parameter** button or context menu entry for this purpose and select a pkml file (e.g., a previously saved building block, module, or simulation) that already contains a suitable parameter.
+* A third option is to **copy and paste parameters** between building block items by selecting a parameter and pressing **Ctrl+C** and **Ctrl+V** after moving to the target area and after clicking into the empty parameter space. Instead of **Ctrl+C** to copy a parameter, you can use **Ctrl+X** to cut a parameter from its current position.
+
+Within the different building blocks, there are slight differences in the procedure and in the selectable options which will be explained in the corresponding sections in this chapter. In the Molecules and Reactions building blocks, parameters may be of the types **Local** and **Global**.
+
+- **Global** parameters are considered a property of a molecule or a reaction that does not depend on the location of the molecule or reaction (e.g., "Molecular Weight" of a molecule, or a reaction rate constant). These parameters are listed under the molecule/reaction node in the root of the simulation tree, and are accessed by the path `<MOLECULE/REACTION>|<parameter name>`, e.g., `Cimetidine|Molecular weight`.
+
+- **Local** parameters are parameters whose values depend on the location of the molecule or reaction, e.g., "Concentration" of a molecule, or the apparent $K_{M,app}$ that depends on the concentartion of the inhibitor (see [PK-Sim - Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)). These parameters are listed under the molecule or reaction node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE/REACTION>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`, or `Organism|Liver|Periportal|Intracellular|Midazolam-CYP3A4-Metabolization|Km_app`.
+
+Any parameter has a **Dimension**, and the value can be represented in different **Units**. The list of all supported dimensions can be found in [Appendix A.1](../appendix.md#a1-all-dimensions-and-base-units).
+
+{% hint style="warning" %}
+When using a parameter in a formula, the value is always internally converted to the base unit of the dimension. For example, if a parameter with the dimension "Concentration (molar)" is defined with the unit "nmol/l", its value will be converted to "µmol/l" when used in a formula.
 {% endhint %}
 
-Any parameter needs to have a **Dimension** assigned to it or the option Dimensionless has to be selected from the Dimension combobox. This feature is needed for the automatic dimension validation provided by MoBi®. Typical dimensions are concentration, volume, time, or the more complex dimensions for flow or rate constants.
+A parameter can be assigned to a **Group** by selecting one of the pre-defined groups from a drop-down list. This information is used for display purposes only. By selecting the **Group parameters** box in a parameter tree view, parameters will be grouped by their assigned group name.
 
 {% hint style="info" %}
-If the box Validate Dimensions is ![Image](../assets/icons/Unchecked.png) unchecked in Utilities -> Options -> General, the dimension field is not used in the model.
+It is not possible to create new groups. The list of available groups is predefined and cannot be changed.
 {% endhint %}
-
-A parameter can be assigned to a **Group** using the combobox of the field. This information is only used for display purposes to show the list of parameters in e.g. a given container and will enable a grouped view instead of default flat view. You can switch from flat to grouped view by ticking the **Group parameters** box.
 
 In the combobox of the field **Formula Type**, you can select if the parameter is defined as:
 
-* a constant, consisting of a numeric value and a unit;
-* a formula, having a formula name and a formula string (i.e., a mathematical expression) including references to the formula items;
-* a table, using individual data pairs from which a value is interpolated over the simulated time;
-* a value distributed around a constant value or between two limits (only available for parameters of spatial structure containers);
-* a calculation method parameter, whose formula will be defined depending on the selected calculation method of each molecule in the model (only available for parameter of spatial structure container). Currently, this calculation method cannot be edited within MoBi® and is imported from PK-Sim® together with the parameter.
+* a **constant**, consisting of a numeric value and a unit;
+* a **table**, using individual data pairs from which a value is interpolated over the simulated time;
+* a **formula**, having a formula name and a formula string (i.e., a mathematical expression) including references to the formula items;
+* a **table with offset**, which is a table that is reused and shifted in time by a constant time value defined in another parameter;
+* a **table formula with x-argument**, which is a table that is reused and evaluated at a value defined in another parameter;
+a *sum formula**, which calculates the sum of all values with a certain condition;
+* a **calculation method** parameter, whose formula will be defined depending on the selected calculation method of each molecule in the model (only available for parameter of spatial structure container). The calculation methods cannot be edited within MoBi® and are imported from PK-Sim®.
+* a value **distributed** around a constant value or between two limits (only available for parameters of spatial structure containers).
+
+The different formula types are explained in the section [Formulas](#formulas).
 
 In the bottom part of the **Create** or **Edit** window are several input options that have different effects on the parameter:
 
-* Checking ![Image](../assets/icons/Checked.png) **Parameter is state variable** will open additional input fields for the right hand side of a differential equation (explained in detail in [State Variable Parameters](model-building-components.md#state-variable-parameters)).
+* Checking ![Image](../assets/icons/Checked.png) **Parameter is state variable** will open additional input fields for the right hand side of a differential equation (explained in detail in [State Variable Parameters]#state-variable-parameters)).
 * Checking ![Image](../assets/icons/Checked.png) **Plot Parameter** will tag this parameter so that it can be visualized in a chart with the simulation results (see [Chart Component](../part-5/chart-component.md)).
-* Checking ![Image](../assets/icons/Checked.png) **Advanced Parameter** will hide this parameter from the lists if
-
-Show Advance Parameters is ![Image](../assets/icons/Unchecked.png) un-checked in the parameter list view.
+* Checking ![Image](../assets/icons/Checked.png) **Advanced Parameter** will hide this parameter from the lists if **Show Advance Parameters** is ![Image](../assets/icons/Unchecked.png) un-checked in the parameter list view.
 
 * For all parameter types, **a description can be added** into the input box at the bottom, for example to quote a reference. Clicking into the text field will open an edit dialog into which you can enter or paste any text of your choice.
 
-You may also **add tags to any parameter** which is done by first clicking the **Tags**
-
-tab in the parameter window. This will switch you to the tag list view.
+You may also **add tags to any parameter** in the **Tags** tab of the parameters editor. Tags are used to label parameters for selective evaluation in sum formulas (see [Sum Formulas](#sum-formulas)). The application of tags is explained in [How Tags are used](#how-tags-are-used).
 
 * To add a tag, click the "Add Tag" button and enter the tag in the input box.
 * To delete a tag, click the symbol that appears behind every tag in the list.
 
-Parameter tags are used for the evaluation of formulas of the type "Sum", see [Sum Formulas](model-building-components.md#sum-formulas). The general rationale behind tags is explained in, [How Tags are used](model-building-components.md#how-tags-are-used).
+### Constant Parameters‌
 
-Each parameter can be edited by selecting it from the parameter list, upon which the parameter edit dialog right of the list is updated to show the selected parameter, then allowing to edit it.
+A constant parameter is defined by a constant **Value**. You may use decimal points, exponential notation, and minus signs (e.g., 2.34; 1.2E-6; -150). Next to the value, its unit will be shown; the default unit is selected by your choice in the Dimension field, but it can be changed to other units listed in the combobox, e.g. from 1/min to 1/sec or 1/h.
 
-### Working with Constant and Distributed Parameters‌
+Examples for constant parameters are "Molecular weight" of a molecule or the rate constant of a reaction.
 
-A constant parameter is simply entered as a number in the field **Value**. You may use decimal points, exponential notation, and minus signs (e.g., 2.34; 1.2E-6;
+### Distributed Parameters‌
 
-\-150). Next to the value, its unit will be shown; the default unit is selected by your choice in the Dimension field, but it can be changed to other units listed in the combobox, e.g. from 1/min to 1/sec or 1/h.
+**Distributed parameters** (only available for parameters of spatial structure containers) describe a variation around a constant value or between two numerical limits. Within a given MoBi® simulation, a distributed parameter has a fixed value (default defined by the value in the field **value**). A distributed parameter can be used only to calculate the percentile of the parameter value given a certain distribution. Distributed parameters are useful if population statistical data are to be defined within a model. To define such a parameter, use the **Create Distributed Parameter** command from the context menu of a spatial structure item, like for containers (e.g., organ sizes) or neighborhoods (e.g., blood flow rate). In addition to what is entered for constant parameters, the **Distribution Type** has to be selected. Available options are:
 
-Examples for constant parameters are given below, like the property "Molecular weight" for a molecule (see [Molecule Parameters](model-building-components.md#molecule-parameters)) or the rate constant for a reaction (see [Reaction Kinetics](model-building-components.md#reaction-kinetics)).
-
-**Distributed parameters** (only available for parameters of spatial structure containers) describe a variation around a constant value or between two numerical limits. Within a given MoBi® simulation, a distributed parameter has a fixed value (default defined by the value in the field **value**). A distributed parameter can be used only to calculate the percentile of the parameter value given a certain distribution. Distributed parameters are useful if population statistical data are to be defined within a model. To define such a parameter, use the **Create Distributed Parameter** command from the context menu of a spatial structure item, like for containers (e.g. organ sizes) or neighborhoods (e.g., blood flow rate). In addition to what is entered for constant parameters, the **Distribution Type** has to be selected. Available options are:
-
-* Discrete Distribution, which is identical to a constant parameter; this feature is implemented for the purpose of simply disabling the distribution function without going through the parameter creation process again.
-* Uniform Distribution, where a parameter will be uniformly distributed between a **Minimum** and a **Maximum**, both have to be defined as numeric values. This is done by the same rules for value and units as used for the constant parameter value.
-* Normal Distribution, where a parameter is varied around a **Mean** value using a **Standard Deviation** - both values have to be specified.
-* LogNormal Distribution, where a parameter is logarithmically varied around a **Mean** value using a **Geometric Standard Deviation** - both values have to be entered.
+- **Discrete Distribution**, which is identical to a *constant parameter*. This feature is implemented for the purpose of simply disabling the distribution function without going through the parameter creation process again.
+- **Uniform Distribution**, where a parameter will be uniformly distributed between a **Minimum** and a **Maximum**.
+- Normal Distribution, where a parameter is varied around a **Mean** value using a **Standard Deviation** - both values have to be specified.
+- LogNormal Distribution, where a parameter is logarithmically varied around a **Mean** value using a **Geometric Standard Deviation** - both values have to be entered.
 
 If you use one of the different distributions, a **percentile** will be automatically calculated for the parameter value define in field **value** given the defined distribution. The functionality of this feature is particularly useful in combination with the script toolboxes for MoBi®.
 
@@ -351,66 +352,11 @@ Models generated in **PK-Sim**® make extensive **use of tags**: For example, op
 
 Similarly, observers or events can be included or excluded from being created in different parts of the spatial structure. The molecule observer "Fraction excreted", for example, makes use of the tag "Urine", so this observer is only created in the urine container.
 
-## Parameter Start Values‌
+## Formulas
 
-Parameter Start Values are needed to define the values of various parameters present in the molecules and spatial structures building blocks used in a simulation. For example, this is true for the volume parameters of containers. These values are either imported when loading a simulation, or they can be created automatically and edited manually, if needed. Handling of this building block is very similar to the procedure described in the previous section for Molecules Start Values. In particular, cloning, loading from and saving to a pkml file is done in the same fashion (see previous section).
+## Keywords
 
-To automatically create Parameter Start Values by MoBi®:
-
-1. Right-click the entry **Parameter Start Values** <img src="../assets/icons/ExtendParameterStartValues.svg" data-size="line"> in the Building Block Explorer.
-2. Select **Create Parameter Start Values Building Block** from the context menu that opens.
-3. A window called "Create new start values" opens. Enter a unique name for the building block.
-4. In the combo boxes below, you can select between different molecules or spatial structure building blocks from which the start values are calculated.
-5. Click **OK** or press **Enter**.
-6. If the name you have entered is already in use, you may be asked for entering a new name.
-7. An edit window opens, containing all created parameters.
-
-All parameter start values are set to the values used in the corresponding building block.
-
-To edit a parameter start value building block, double-click on it or use the context menu in the building block explorer and select **Edit**. An edit window opens, analogue to the one that is used for creating new start values. You can now
-
-* manually override the displayed values or dimensions.
-* use the <img src="../assets/icons/ExtendParameterStartValues.svg" data-size="line"> **Extend** ribbon button at the top to automatically add new parameters in case more of them have been created or loaded in the selected building blocks after initially creating the start values or executing the last **Extend** command.
-
-Again, cloning and manual parameter changes at this level allow for quickly switching among different simulation scenarios.
-
-{% hint style="info" %}
-The example model is now ready for setting up a simulation which is described in the next chapter (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
-{% endhint %}
-
-## Import Molecule and Parameter Start Values from Excel‌
-
-A major new feature of MoBi®™ 3.5 allows import of Molecule and Parameter Start Values from Excel files on an existing building block. This features enables easier maintenance of start values and exchange with other software tools. The import is started through the context menu of the respective building block.
-
-Files might be of older (.xls) or newer format (.xlsx). The Excel®™ file may include several worksheets and selection of relevant worksheets is part of the import workflow. The workflow includes an import step that validates and creates a start value on each row. Once the import step is successfully completed and all rows are validated, the start values are transferred into the selected building block. This workflow prevents improperly specified or formatted data from from being partially imported.
-
-![Importing start values for Molecules or Parameters involves an import and a transfer (validation) step](../assets/images/part-4/ImportStartValues.png)
-
-It is not necessary that the target building block of the import is empty. If there is a collision of existing and imported start values (a collision is defined by matching name and path), the imported value takes precedence.
-
-A valid Excel file for import of Molecule Start Values must have columns specified for Path, Molecule Name, Is Present, Value, Unit, Scale Divisor and columns must appear in that order.
-
-You may update Molecule Start Values by importing a file of a valid format that contains new values only and is empty otherwise. Upon import for updating, existing Molecular Start Values matching the empty columns remain as is and only those matching the non-empty columns are updated.
-
-| Path | Molecule Name | Is Present | Value | Unit | Scale Divisor |
-| ---- | ------------- | ---------- | ----- | ---- | ------------- |
-| M\|W | A             | 1          | 30    | µmol |               |
-| M\|W | B             | 50         | µmol  | 3.5  |               |
-
-Upon import, the heading row will be ignored and can contain any values indicating the purpose of this column; however, all columns must have a heading.
-
-{% hint style="info" %}
-**Scale divisor**: Internally, very small numerical values are divided by the scale divisors to get to an order of magnitude which is reasonable for the solver. The purpose is to reduce numerical noise and to enhance computation performance. This is also important when working with a broad variety of magnitudes of values. The scale divisors specify a typical scale for each species. Per default, all scale divisors are set to 1. The scale divisors are defined in the Molecule Start Value building block for each start value. If you work with with very small amounts and/or a broad variety of magnitudes of values and your simulation yields implausible results (numerical noise, negative values etc.), use the Calculate Scale Divisor to adjust the scale divisor for computational purposes.
-{% endhint %}
-
-A valid Excel file for import of **Parameter Start Values** must have columns specified for Path, Parameter Name, Value and Unit and columns must appear in that order.
-
-| Path | Parameter Name | Value | Unit  |
-| ---- | -------------- | ----- | ----- |
-| M\|W | B              | 321   | g/mol |
-
-## Editing of Molecule and Parameter Start Values‌
-
-Start values can be edited which allows the user to quickly modify the list of start values. However, the user has to take care that the data entered manually makes sense within the existing building block. Refreshing a start value will allow the user to revert any modifications made to a start value, formula or dimension and use the values for start value, formula and dimension in the original builder. This is realized by finding the original builder using the container path of the start value.
-
-![Start values that were edited or which can't be traced back to a builder are highlighted](../assets/images/part-4/EditStartValues.png)
+- `MOLECULE`
+- `SOURCE`
+- `TARGET`
+- `<NBH>`
