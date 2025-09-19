@@ -237,28 +237,31 @@ A parameter can be defined by a table that is made up out of pairs of simulation
 6. You may check **Restart Solver** box in case the solver generates errors when arriving at these time points.
 7. More data points can be entered by clicking **Add Value Point** again, or by clicking on the button in the right to the values lines. You can delete a data pair by clicking the **delete** button.
 
-If you would like to use the first derivative of the interpolation, check **Use Derivative Values**. Values before the first and after the last data point of the series are set to 0.
+Alternatively, you can import a table from an excel or csv file by clicking the **Import** <img src="../assets/icons/LoadAction.svg" data-size="line"> button. The same import process is applied as for importing observed data (see [Importing Observed Data](../part-5/import-edit-observed-data.md)).
 
+If you would like to use the first derivative of the interpolation, check **Use Derivative Values**. Values before the first and after the last data point of the series are set to 0.
 
 ### Table Formulas with Offset‌
 
-A table described in [Working with Tables](model-building-components.md#working-with-tables) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)). To enter a table formula with offset:
+A table described in [Working with Tables](model-building-components.md#working-with-tables) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)).
+    
+For a table formula with offset, you have to specify:
 
-1.  Select Table Formula with Offset as **Formula Type**.
-    
-2.  To create a new table formula with offset, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
-    
-3.  In the **Formula Name** _combobox_, you may select an existing table formula with offset.
-    
-4.  In the box below the formula name, there is a selection to a **path with a table object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter, a transport or a reaction defined by a table defined as described in [Working with Tables](#working-with-tables). Only when you select a valid object, the <img src="../assets/icons/OK.svg" data-size="line"> **OK** button will become active, and you can successfully continue.
-    
-5.  Below the table object path, there is a selection to a **path with an offset object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter containing a time, i.e., its dimension has to be Time.
+- The table parameter with the **Path to table object**. Upon clicking the "..." icon, you can select an existing table parameter from a path tree.
+- The offset time parameter with the **path to offset object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter with the dimension `Time`.
 
-Only when you select a valid object, the <img src="../assets/icons/OK.svg" data-size="line"> **OK** button will become active, and you can successfully continue. The X values of the table selected before will be shifted by the constant time value given in the selected parameter of this step.
+The values of the offset parameter will be added to the X values of the original table at the time of evaluation.
 
 ### Table Formulas with X-Argument‌
 
+If a table should describe a parameter which values depend on any other parameter than the simulation time, a **table formula with X-Argument** can be used.
 
+For a table formula with X-argument, you have to specify:
+
+- The table parameter with the **Path to table object**. Upon clicking the "..." icon, you can select an existing table parameter from a path tree.
+- The path to the object which values will be used as X-argument.
+
+The values of the selected X-Argument will be used as x-values in the original table at the time of evaluation. The values are considered to be in the base unit.
 
 ## How Tags are used‌ - container criteria for formulas, observers, transports, and events‌
 
@@ -403,13 +406,24 @@ Entities (parameters, molecule amounts, containers, reactions) in a model struct
 
 ### Keywords
 
+A reference path may contain generic keywords that are written in CAPITAL letters. The following keywords are supported:
 
+- `TIME`: The simulation time. Can be used everywhere in a formula.
+- `MOLECULE`: The molecule in whose context the formula is used. Can be used in parameters of molecules, transports, and observers.
+  - Example: `Organism|Gallbladder|MOLECULE` in the kinetic equation of a passive transport process will refer to the amount of the molecule for which the particular transport is created.
+- `SOURCE`: The source container of a transport process. Can be used in parameters of transport processes.
+  - Example: `SOURCE|Volume` in the kinetic equation of a passive transport process will refer to the volume of the source container of the transport process.
+- `TARGET`: The target container of a transport process. Can be used in parameters of transport processes.
+  - Example: `TARGET|Volume` in the kinetic equation of a passive transport process will refer to the volume of the target container of the transport process.
+ - `NEIGHBORHOOD`: The neighborhood in whose context the formula is used. Can be used in parameters of neighborhoods or transport processes.
+  - Example: `NEIGHBORHOOD|Surface area (plasma/interstitial)` in the kinetic equation of a passive transport process will refer to the surface area of the neighborhood in which the particular transport is created.
+- `FIRST_NEIGHBOR`: The first container of a neighborhood.
+- `SECOND_NEIGHBOR`: The second container of a neighborhood.
+- `<NBH>`: The syntax for using this keyword is `<First Neighbor>|<NBH>|<Second Neighbor>|<NBH>`, where `<First Neighbor>` and `<Second Neighbor>` are the paths of two containers between which a neighborhood exists. This keyword is used to generically define paths to neighborhoods without knowing the actual names of the containers. It is usually used in combination with other keywords and relative paths.
+  - Example: `..|<NBH>|..|..|Interstitial|<NBH>|Surface area` is used in a parameter located in intracellular space of an organ, e.g., `Organism|Kidney|Intracellular|ParameterA`. This path points to a neighbhorhood between the organ's intracellular and interstitial space of the organ. In detail:
 
-{% hint style="info" %}
-A reference path may also contain a global part, like "|MOLECULE", which is recognizable by being written in all capital letters. The reference to "|MOLECULE" means that this part of the path refers to a parameter or property of the currently evaluated molecule, whatever its name. This is useful in formulas that are computed for all molecules present in a container. Compare the formulas in [Observers](model-building-components.md#observers) or [Passive Transports](model-building-components.md#passive-transports). A global reference is selected automatically by MoBi® where appropriate.
-{% endhint %}
+    - The expression before the first `<NBH>` keyword is `..` and goes one level up and specified the first neighbor of the neighbhorhood, e.g., `Organism|Kidney|Intracellular`.
 
-- `MOLECULE`
-- `SOURCE`
-- `TARGET`
-- `<NBH>`
+    - The expression after the first `<NBH>` is `..|..|Interstitial`and defines the second neighbor. It goes down to the organ level, e.g., `Organism|Kidney` and into the `Interstitial` container, evaluating to `Organism|Kidney|Interstitial`.
+
+    - The second `<NBH>` marks the end of the neighborhood path.
