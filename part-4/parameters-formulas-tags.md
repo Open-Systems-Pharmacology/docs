@@ -422,7 +422,7 @@ A reference path may contain generic keywords that are written in CAPITAL letter
 - `<NBH>`: The syntax for using this keyword is `<First Neighbor>|<NBH>|<Second Neighbor>|<NBH>`, where `<First Neighbor>` and `<Second Neighbor>` are the paths of two containers between which a neighborhood exists. This keyword is used to generically define paths to neighborhoods without knowing the actual names of the containers. It is usually used in combination with other keywords and relative paths.
   - Example: `..|<NBH>|..|..|Interstitial|<NBH>|Surface area` is used in a parameter located in intracellular space of an organ, e.g., `Organism|Kidney|Intracellular|ParameterA`. This path points to a neighbhorhood between the organ's intracellular and interstitial space of the organ. In detail:
 
-    - The expression before the first `<NBH>` keyword is `..` and goes one level up and specified the first neighbor of the neighbhorhood, e.g., `Organism|Kidney|Intracellular`.
+    - The expression before the first `<NBH>` keyword is `..` and goes one level up and specifies the first neighbor of the neighborhood, e.g., `Organism|Kidney|Intracellular`.
 
     - The expression after the first `<NBH>` is `..|..|Interstitial`and defines the second neighbor. It goes down to the organ level, e.g., `Organism|Kidney` and into the `Interstitial` container, evaluating to `Organism|Kidney|Interstitial`.
 
