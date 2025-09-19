@@ -374,7 +374,7 @@ If we create a sum formula with the following conditions:
 
 6. **In Children**: the condition is fulfilled by any model entity in all children of the parent container of the entity for which the criteria is defined. 
 
-    - For the parameter with the condition "In Childre" located in `Organism|Container A`, , the sum will include the following parameters:
+    - For the parameter with the condition "In Children" located in `Organism|Container A`, the sum will include the following parameters:
         - `Organism|Container A|Container A1|Param A`
         - `Organism|Container A|Container A1|Volume`        
         - `Organism|Container A|Container A1|Molecule A|Concentration`
