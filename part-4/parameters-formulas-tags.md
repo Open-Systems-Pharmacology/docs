@@ -232,12 +232,12 @@ A parameter can be defined by a table that is made up out of pairs of simulation
 1. Select Table as **Formula Type**.
 2. To create a new table formula, click the <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Formula** button, upon which you will be asked for the formula name. Then press **Enter** or click **OK** to return to the main window.
 3. In the **Formula Name** combobox, you may alternatively select an existing table formula name.
+4. To add a data point, click the **Add** button.
+5. Enter a time-value pair. The values must be in the unit shown in the column header.
+6. You may check **Restart Solver** box in case the solver generates errors when arriving at these time points.
+7. More data points can be entered by clicking **Add Value Point** again, or by clicking on the button in the right to the values lines. You can delete a data pair by clicking the **delete** button.
 
-1. To add a data point, click the **Add** button.
-2. Enter a time-value pair. The values must be in the unit shown in the column header.
-3. You may check **Restart Solver** box in case the solver generates errors when arriving at these time points.
-4. More data points can be entered by clicking **Add Value Point** again, or by clicking on the button in the right to the values lines. You can delete a data pair by clicking the **delete** button .
-5. If you would like to use the first derivative of the interpolation, check **Use Derivative Values**. Values before the first and after the last data point of the series are set to 0.
+If you would like to use the first derivative of the interpolation, check **Use Derivative Values**. Values before the first and after the last data point of the series are set to 0.
 
 
 ### Table Formulas with Offset‌
