@@ -16,7 +16,7 @@ Upon opening an expression profile BB, the editor shows three tabs:
 
 - **Formulas**: Lists all formulas used in the expression profile (for parameter values and initial conditions).
 
-Values can be edited by user, but no new entries can be added or existing entries removed. To add expression of a protein to a new structure (e.g., a new organ), you need to create a Parameter Values BB and an Initial Conditions BB in an extension module and add the new entries there.
+Values can be edited by the user, but no new entries can be added or existing entries removed. To add expression of a protein to a new structure (e.g., a new organ), you need to create a Parameter Values BB and an Initial Conditions BB in an extension module and add the new entries there.
 
 An expression profile can be saved as pkml and loaded as a parameter values or an initial conditions BB in an Extension module.
 
