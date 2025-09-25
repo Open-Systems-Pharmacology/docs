@@ -376,66 +376,137 @@ Models generated in **PK-Sim**® make extensive **use of tags**: For example, op
 
 Similarly, observers or events can be included or excluded from being created in different parts of the spatial structure. The molecule observer "Fraction excreted", for example, makes use of the tag "Urine", so this observer is only created in the urine container.
 
-## Parameter Start Values‌
+# Parameter Values Building Blocks
 
-Parameter Start Values are needed to define the values of various parameters present in the molecules and spatial structures building blocks used in a simulation. For example, this is true for the volume parameters of containers. These values are either imported when loading a simulation, or they can be created automatically and edited manually, if needed. Handling of this building block is very similar to the procedure described in the previous section for Molecules Start Values. In particular, cloning, loading from and saving to a pkml file is done in the same fashion (see previous section).
+The Parameter Values (PV) Building Block (BB) defines the values of various parameters present in the simulation structure. By default, a PV BB should only contain values that are different from the default values defined in the building blocks where the parameter is defined.
 
-To automatically create Parameter Start Values by MoBi®:
+Additionally, PV BB can **create** new parameters during simulation creation.
 
-1. Right-click the entry **Parameter Start Values** <img src="../assets/icons/ExtendParameterStartValues.svg" data-size="line"> in the Building Block Explorer.
-2. Select **Create Parameter Start Values Building Block** from the context menu that opens.
-3. A window called "Create new start values" opens. Enter a unique name for the building block.
-4. In the combo boxes below, you can select between different molecules or spatial structure building blocks from which the start values are calculated.
-5. Click **OK** or press **Enter**.
-6. If the name you have entered is already in use, you may be asked for entering a new name.
-7. An edit window opens, containing all created parameters.
+The following section describes the functionalities of the PV BB. Later on, a simple [example](#example---creating-pv-bb) is given to create a new PV BB and populate it with information.
 
-All parameter start values are set to the values used in the corresponding building block.
+## Parameter Values - Functionality‌ Overview
 
-To edit a parameter start value building block, double-click on it or use the context menu in the building block explorer and select **Edit**. An edit window opens, analogue to the one that is used for creating new start values. You can now
+In contrast to other BB types except for the initial conditions BB, **multiple** PV BBs can be created within one module. This allows you to define different parameterization sets for different simulation scenarios. For example, different parameter sets may represent different disease states or different species. During simulation creation, you can select which PV BB to use.
 
-* manually override the displayed values or dimensions.
-* use the <img src="../assets/icons/ExtendParameterStartValues.svg" data-size="line"> **Extend** ribbon button at the top to automatically add new parameters in case more of them have been created or loaded in the selected building blocks after initially creating the start values or executing the last **Extend** command.
+The context menu of a PV BB offers the following commands:
 
-Again, cloning and manual parameter changes at this level allow for quickly switching among different simulation scenarios.
-
-{% hint style="info" %}
-The example model is now ready for setting up a simulation which is described in the next chapter (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
-{% endhint %}
-
-## Import Molecule and Parameter Start Values from Excel‌
-
-A major new feature of MoBi®™ 3.5 allows import of Molecule and Parameter Start Values from Excel files on an existing building block. This features enables easier maintenance of start values and exchange with other software tools. The import is started through the context menu of the respective building block.
-
-Files might be of older (.xls) or newer format (.xlsx). The Excel®™ file may include several worksheets and selection of relevant worksheets is part of the import workflow. The workflow includes an import step that validates and creates a start value on each row. Once the import step is successfully completed and all rows are validated, the start values are transferred into the selected building block. This workflow prevents improperly specified or formatted data from from being partially imported.
-
-![Importing start values for Molecules or Parameters involves an import and a transfer (validation) step](../assets/images/part-4/ImportStartValues.png)
-
-It is not necessary that the target building block of the import is empty. If there is a collision of existing and imported start values (a collision is defined by matching name and path), the imported value takes precedence.
-
-A valid Excel file for import of Molecule Start Values must have columns specified for Path, Molecule Name, Is Present, Value, Unit, Scale Divisor and columns must appear in that order.
-
-You may update Molecule Start Values by importing a file of a valid format that contains new values only and is empty otherwise. Upon import for updating, existing Molecular Start Values matching the empty columns remain as is and only those matching the non-empty columns are updated.
-
-| Path | Molecule Name | Is Present | Value | Unit | Scale Divisor |
-| ---- | ------------- | ---------- | ----- | ---- | ------------- |
-| M\|W | A             | 1          | 30    | µmol |               |
-| M\|W | B             | 50         | µmol  | 3.5  |               |
-
-Upon import, the heading row will be ignored and can contain any values indicating the purpose of this column; however, all columns must have a heading.
+- **Save As PKML**: Save the PV BB as a pkml file.
+- **Clone**: Create a copy of the selected PV BB in the same module.
+- **Import from Excel**: Import PV BB information from an Excel file. The excel file must have the following columns:
+    - **Container Path**: The path of the container in which the parameter is located. Path levels are separated by `|`. For example, `Organism|Liver`.
+    - **Parameter Name**: The name of the parameter. For example, `Volume`.
+    - **Value**: The value of the parameter.
+    - **Units**: The unit of the value.
 
 {% hint style="info" %}
-**Scale divisor**: Internally, very small numerical values are divided by the scale divisors to get to an order of magnitude which is reasonable for the solver. The purpose is to reduce numerical noise and to enhance computation performance. This is also important when working with a broad variety of magnitudes of values. The scale divisors specify a typical scale for each species. Per default, all scale divisors are set to 1. The scale divisors are defined in the Molecule Start Value building block for each start value. If you work with with very small amounts and/or a broad variety of magnitudes of values and your simulation yields implausible results (numerical noise, negative values etc.), use the Calculate Scale Divisor to adjust the scale divisor for computational purposes.
+Values defined by a formula cannot be imported from Excel.
 {% endhint %}
 
-A valid Excel file for import of **Parameter Start Values** must have columns specified for Path, Parameter Name, Value and Unit and columns must appear in that order.
+- **Export to Excel**: Export the PV BB information to an Excel file. The exported file has the same format as described for the import.
 
-| Path | Parameter Name | Value | Unit  |
-| ---- | -------------- | ----- | ----- |
-| M\|W | B              | 321   | g/mol |
+{% hint style="warning" %}
+Only entries for parameters that are defined by a constant value (not by a formula) can be exported to Excel!
+{% endhint %}
 
-## Editing of Molecule and Parameter Start Values‌
+- **Extend from Parameter Values Building Block**: Adds entries from the Parameter Values BB previously exported to pkml. New values are always *added*, existing values are *overwritten*.
+- **Extend from Expression Profile Building Block**: Adds entries from **Parameters** tab of an Expression Profile BB previously exported to pkml. New values are always *added*, existing values are *overwritten*. Useful when creating a custom expression profile as initial condition.
+- **Extend from Individual Building Block**: Adds entries from the Individual BB previously exported to pkml. New values are always *added*, existing values are *overwritten*. Useful when trying to overwrite individual-specific parameters.
 
-Start values can be edited which allows the user to quickly modify the list of start values. However, the user has to take care that the data entered manually makes sense within the existing building block. Refreshing a start value will allow the user to revert any modifications made to a start value, formula or dimension and use the values for start value, formula and dimension in the original builder. This is realized by finding the original builder using the container path of the start value.
+The editor of the PV BB has the following buttons (multi-select of the rows is possible):
 
-![Start values that were edited or which can't be traced back to a builder are highlighted](../assets/images/part-4/EditStartValues.png)
+- **Delete**: Removes the selected entries
+
+The table view shows the following:
+
+- **Parameter Name**: The name of the molecule.
+- **Path Element N**: Represents the N-th level in the hierarchical container path within the spatial structure where the parameter is located.
+- **Parameter Value**: The initial amount or concentration of the molecule in the container.
+- **Formula**: The formula used to calculate the parameter value. If a formula is assigned, the value is `<Not Available>`.
+- **Dimension**: The dimension of the parameter.
+
+{% hint style="info" %}
+For *state variable* parameters, the **Value** is the initial value of the parameter.
+{% endhint %}
+
+## Creating new parameters in simulation structure through PV BB‌
+
+A PV BB can be used to create new parameters that do not exist in the model yet. This can be useful to define parameters that are only relevant for a specific simulation scenario.
+
+If parameter `Param A` in the container `Organism|Organ A|Container A1` does not exist in the model yet, but is defined in a PV BB that is selected during simulation creation, the parameter will be created in the specified container with the specified value.
+
+The parameter will only be created if the parent path (i.e., `Organism|Organ A|Container A1`) exists in the model. If the parent path does not exist, the parameter will not be created and a warning will be shown during simulation creation.
+
+## Creating Parameter Values Building Blocks‌
+
+To create a new PV BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Parameter Values** and enter a unique name for the new BB. Click **OK** to create the new PV BB.
+
+The new PV BB does not contain any information yet. To populate it with information, you can either import the information from an Excel or a pkml file, or create new entires.
+
+### Adding new entries
+
+To manually add new entries to an IC BB:
+
+1. Click on **New Parameter Value** button in the **Edit** group of the **Edit Parameter Values** ribbon tab.
+2. A window appears that allows you to select parameters from a path tree on the left side. The parameters are grouped as follows:
+    - **Spatial Structures**: List of spatial structures in all modules of the project. Expand a spatial structure to see its containers (including the neighborhoods). Within the containers, you will find the parameters defined for the container and for the molecules present in the container.
+    - **Individuals**: List of individuals in all modules of the project. Expand an individual to see its parameters.
+    - **Expression profiles**: List of expression profiles in all modules of the project. Expand an expression profile to see its parameters.
+    - **Events**: List of events building blocks in all modules of the project.
+
+Parameters of the reactions and transport processes are not available for selection at this point.
+
+Select the desired parameter and click **Add**. You can multi-select parameters.
+
+3. Alternatively, you can type in the full path of the parameter in the **Parameter Paths to Add** box on the right. Multiple paths can be added, separated by a new line. For example:
+    ```
+    Organism|Liver|Volume
+    Organism|Kidney|Volume
+    ```
+4. Click **OK** to add the selected parameters to the PV BB. The edit window of the PV BB will show the newly added parameters.
+
+{% hint style="info" %}
+The path is composed of different levels of the spatial structure. If the current view of the PV BB does not show enough columns to enter all levels (e.g., after creating a new PV BB, no path levels are shown), you can right click on any column header and select **Column Chooser** from the context menu. In the dialog that opens, you can select which levels of the spatial structure you want to be shown as columns in the table view.
+{% endhint %}
+
+### Add Protein Expression
+
+Protein expressions are defined as a set of parameter values and initial conditions. There are several cases where you might want to add protein expression information to a PV BB:
+
+- You have created a custom spatial structure and want to add protein expression information to it.
+- You want to overwrite the protein expression information in a custom PV BB to reflect a specific disease state.
+- etc.
+
+A convenient way to add all required parameters to describe protein expression in a spatial structure is to use the **Add Protein Expression** functionality. To do so:
+
+1. Click on the **Add Protein Expression** button in the **Edit** group of the **Edit Parameter Values** ribbon tab.
+
+2. A window opens that allows you to select organs within spatial structures and the proteins you want to add.
+
+The expression parameters will be added to the selected organs, whereby the correct formulas will be automatically assigned. If the selected organ is present in the default protein expression BB, the values for this organ will be used. Otherwise, the default values defined in the molecule BBs will be used (usually, relative expression will be set to 0).
+
+{% hint style="warning" %}
+When adding protein expression for a new organ, do not forget to also add the corresponding molecule start values to the IC BB!
+{% endhint %}
+
+{% hint style="info" %}
+Only new entries are added. Existing entries are not modified.
+{% endhint %}
+
+### Add Local Molecule Parameters
+
+Molecules can have local parameters that are defined for each physical container in which the molecule is present. Examples for such parameters are the **Degradation coefficient** but also expression parameters of a protein. To conveniently add such parameters for all physical containers of a spatial structure, you can use the **Add Local Molecule Parameters** functionality. To do so:
+
+1. Click on the **Add Local Molecule Parameters** button in the **Edit** group of the **Edit Parameter Values** ribbon tab.
+2. A window opens that allows you to select a spatial structure and one or more molecules.
+
+This will add entries for all local molecule parameters (defined by a constant) for selected molecules in all physical containers of the selected spatial structure. When new entries are added, the parameter values or formulas are set to their default values as defined in the selected molecules building block, and these values are used for all containers in the selected spatial structure.
+
+Only _constant_ local parameters are added. If a parameter is defined by a formula, it is assumed that it should not be overwritten by a PV BB. However, the parameter can still be added manually.
+
+{% hint style="info" %}
+Only new entries are added. Existing entries are not modified.
+{% endhint %}
+
+{% hint style="info" %}
+Parameters defining the expression of proteins are also local molecule parameters. However, it is recommended to use the **Add Protein Expression** functionality to add such parameters, as it will automatically assign the correct formulas and values.
+{% endhint %}
