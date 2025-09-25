@@ -23,48 +23,6 @@ You can **load such a molecule building block** into a  module that *does not ha
 
 Any molecules building block can also be **removed** (i.e., deleted) and **renamed** using the corresponding context menu functions.
 
-## MoBi® - Projects‌
-
-### New Project‌
-
-Your first step is to create a new project.
-
-To create a new project, select **New Project** on the **File** ribbon tab or alternatively press **Ctrl+N**.
-
-![File tab](../assets/images/part-4/Prj-new.png)
-
-The ribbon bar **Modeling & Simulation** with the different Ribbon Groups for creation of building blocks, simulations, and more will appear. Empty building blocks are now present for Molecules, Reactions, Spatial Structures, Passive Transports, Observers, and Events and are shown in the **Building Block Explorer**. You can now edit a building block by double-clicking the corresponding entry.
-
-![New project in MoBi®](../assets/images/part-4/Prj-view.png)
-
-### Other project actions in the File tab‌
-
-1. Open a Project
-
-To open a project select **Open Project (Ctrl+O)** on the **File** tab.
-
-A **File Selection Dialog** will open, in which a project file (mbp3 file) can be selected. Alternatively, you can also choose one of the **Recent documents**.
-
-After selection, the MoBi® project is opened.
-
-{% hint style="info" %}
-You can alter the Number of recently opened projects: on the **Utilities** tab click **Options** and select the **General** tab.
-{% endhint %}
-
-{% hint style="warning" %}
-Only one project can be opened at a time! This project may, however, contain several simulations. To work on more than one project in parallel, MoBi® can be started several times.
-{% endhint %}
-
-1. Close a Project
-
-Close a project by selecting **Close Project** in the **File** tab. A confirmation dialog opens if there are unsaved changes.
-
-1. Save a Project
-
-To save the current project, select **Save Project (Ctrl+S)** in the File tab or use the quick action button <img src="../assets/icons/Save.svg" data-size="line">.
-
-You can then choose either <img src="../assets/icons/Save.svg" data-size="line">  **Save Project**, which saves the project under the name already given or <img src="../assets/icons/SaveAs.svg" data-size="line"> **Save As** to save the project with a new name in another file. The currently opened project will be saved with all information.
-
 ## Keywords
 
 - `MOLECULE`
