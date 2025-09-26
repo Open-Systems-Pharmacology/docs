@@ -58,6 +58,7 @@
   * [Observers](part-4/observers-bb.md)
   * [Events](part-4/events-bb.md)
   * [Initial Conditions](part-4/initial-conditions-bb.md)
+  * [Parameter Values](part-4/parameter-values-bb.md)
   * [Expression Profiles](part-4/expression-profiles-bb.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
   * [Setting up a Simulation](part-4/setting-up-simulation.md)
