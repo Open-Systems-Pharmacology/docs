@@ -2,7 +2,6 @@
 
 This section guides you to your first project with MoBi® and familiarizes yourself with the software's user interface. If you are already familiar with MoBi® and want to learn about the modularization concept, please refer to [Modularization concept](modularization-concept.md).
 
-
 First, the window structure of MoBi®and the basic steps for setting up a new MoBi® project are described, followed by a description on how to set up and carry out a simulation. Additionally, the import of a PK-Sim® simulation is explained. However, more sophisticated applications can be performed in MoBi®, and you are referred to the following chapters for a more detailed description.
 
 To create your first MoBi® project, simply follow the steps described in the sections below.
