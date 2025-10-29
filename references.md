@@ -522,9 +522,3 @@ Zhang, X.-Y., Trame, M. N., Lesko, L. J., & Schmidt, S. (2015). Sobol Sensitivit
 
 #### 173
 [Willmann S, Schmitt W, Keldenich J, Lippert J, Dressman JB. A physiological model for the estimation of the fraction dose absorbed in humans. J Med Chem. 2004;47(16):4022–4031.](https://doi.org/10.1021/jm030999b)
-
-#### 174
-[OSP Forum issue #25](https://github.com/Open-Systems-Pharmacology/Forum/issues/25)
-
-#### 175
-[OSP Forum discussion #1816](https://github.com/Open-Systems-Pharmacology/Forum/discussions/1816)
