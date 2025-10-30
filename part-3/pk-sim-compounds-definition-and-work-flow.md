@@ -179,7 +179,9 @@ For acids and bases, the transcellular intestinal permeability can be calculated
 
 Conceptually, only the neutral species is expected to permeate the phospholipid membrane effectively, and the neutral fraction varies with pH. A physiological basis for accounting for this is described by Willmann et al. [[173](../references.md#173)], where GI absorption is driven by regional physiology and compound ionization. In practice, historical PK-Sim implementations used membrane affinity measured near pH 7.4 as a lipophilicity surrogate. Because those values (and logMA in general) show limited pH dependence, the pH effect on permeability was not explicitly applied in the default calibration. Subsequent internal evaluations indicated that simply turning on a uniform penalty for the charged fraction, on top of those neutral-pH-based inputs, could bias permeability downwards (sometimes up to an order of magnitude) and worsen predictions.
 
-**Recommendations When Working in MoBi**
+**Recommendations**
+
+*This recommendation can currently only be realized when exporting a simulation from MoBi to PK-Sim*
 
   1. Keep the penalty factor off when using permeability or membrane-affinity inputs that were derived or calibrated under neutral pH assumptions (default behavior), to remain consistent with the Pint calibration.
   2. Consider enabling the penalty factor when permeability is intended to reflect pH-dependent lipophilicity (e.g., when using or estimating pH-dependent logD or a permeability input explicitly tied to the neutral fraction along the gut) so that the neutral-species limitation is respected regionally.
