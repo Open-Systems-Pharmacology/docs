@@ -181,10 +181,11 @@ Conceptually, only the neutral species is expected to permeate the phospholipid 
 
 **Recommendations**
 
-*This recommendation can currently only be realized when exporting a simulation from MoBi to PK-Sim*
-
   1. Keep the penalty factor off when using permeability or membrane-affinity inputs that were derived or calibrated under neutral pH assumptions (default behavior), to remain consistent with the Pint calibration.
   2. Consider enabling the penalty factor when permeability is intended to reflect pH-dependent lipophilicity (e.g., when using or estimating pH-dependent logD or a permeability input explicitly tied to the neutral fraction along the gut) so that the neutral-species limitation is respected regionally.
+
+*This recommendation can currently only be realized when exporting a simulation from MoBi to PK-Sim*
+
   3. As a more rigorous alternative, provide pH-dependent lipophilicity (logD) rather than pH-invariant membrane affinity as input and refit permeability accordingly. Expert guidance suggests distinguishing between membrane affinity and lipophilicity: for example, using logD of the neutral form for bases and approximately logD − 1 for acids as an approximation for membrane partitioning. This approach aligns better with the physiological rationale that permeability is driven by partitioning into the lipid core of membranes, which is inherently pH dependent (see Willmann et al., 2004).
 
 {% hint style="info" %}
