@@ -519,3 +519,6 @@ Zhang, X.-Y., Trame, M. N., Lesko, L. J., & Schmidt, S. (2015). Sobol Sensitivit
 
 #### 172
 [Balazki, P., Schaller, S., Eissing, T. and Lehr, T. (2018), A Quantitative Systems Pharmacology Kidney Model of Diabetes Associated Renal Hyperfiltration and the Effects of SGLT Inhibitors. CPT Pharmacometrics Syst. Pharmacol., 7: 788-797.](https://doi.org/10.1002/psp4.12359)
+
+#### 173
+[Willmann S, Schmitt W, Keldenich J, Lippert J, Dressman JB. A physiological model for the estimation of the fraction dose absorbed in humans. J Med Chem. 2004;47(16):4022–4031.](https://doi.org/10.1021/jm030999b)
