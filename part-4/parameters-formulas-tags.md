@@ -4,7 +4,7 @@ This section describes in detail how to work with the important concepts of mode
 
 First, different types of [parameters](#parameters) and their properties are explained.
 
-Then, the use of the different types of [formulas](#working-with-formulas) is described. Formulas are used to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions.
+Then, the use of the different types of [formulas](#formulas) is described. Formulas are used to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions.
 
 Following is the explanation of the [tag concept](#how-tags-are-used). Tags are widely used to define conditions for localization of observers, transport processes, events, parameters, as well as for sum formulas.
 
