@@ -235,6 +235,12 @@ A parameter can be defined by a table that is made up out of pairs of simulation
 4. To add a data point, click the **Add** button.
 5. Enter a time-value pair. The values must be in the unit shown in the column header.
 6. You may check **Restart Solver** box in case the solver generates errors when arriving at these time points.
+
+{% hint style="info" %}
+Every point in the table creates a discontinuity in the derivative of the parameter.
+In many cases, the ODE solver handles it by restarting internally. In some situations though, the solver cannot handle such a derivative discontinuity automatically, and the user needs to manually enable the **Restart Solver** property.
+{% endhint %}
+
 7. More data points can be entered by clicking **Add Value Point** again, or by clicking on the button in the right to the values lines. You can delete a data pair by clicking the **delete** button.
 
 Alternatively, you can import a table from an excel or csv file by clicking the **Import** <img src="../assets/icons/LoadAction.svg" data-size="line"> button. The same import process is applied as for importing observed data (see [Importing Observed Data](../part-5/import-edit-observed-data.md)).
@@ -406,7 +412,7 @@ Entities (parameters, molecule amounts, containers, reactions) in a model struct
 
 ### Keywords
 
-A reference path may contain generic keywords that are written in CAPITAL letters. The following keywords are supported:
+A reference path may contain generic keywords that are written in `CAPITAL` letters. The following keywords are supported:
 
 - `TIME`: The simulation time. Can be used everywhere in a formula.
 - `MOLECULE`: The molecule in whose context the formula is used. Can be used in parameters of molecules, transports, and observers.
@@ -427,3 +433,10 @@ A reference path may contain generic keywords that are written in CAPITAL letter
     - The expression after the first `<NBH>` is `..|..|Interstitial`and defines the second neighbor. It goes down to the organ level, e.g., `Organism|Kidney` and into the `Interstitial` container, evaluating to `Organism|Kidney|Interstitial`.
 
     - The second `<NBH>` marks the end of the neighborhood path.
+- `REALIZATION`: 
+- `TRANSPORTER`: Transporter molecule in a active transport process.
+- `TRANSPORT`: Reference to the global transport process. Can be used to retrieve global parameters of the transport process.
+- `ALL_FLOATING_MOLECULES`: String representing a reference to all floating molecules. The entry will be duplicated. This is typically used in event assignment to change all floating molecules at once.
+- `LUMEN_SEGMENT`: Search for a compartment with the same name as the last part preceding the keyword under Lumen. E.g., for a parametere defined in `Organism|SmallIntestine|Duodenum`, the path `..|LUMEN_SEGMENT|Volume` will resolve to `Organism|SmallIntestine|Lumen|Duodenum|Volume`.
+- `LUMEN_NEXT_SEGMENT`: Search for the next segment in lumen.  Assuming the formula is used in a parameter in `Organism|Lumen|Caecum`, the path `..|LUMEN_NEXT_SEGMENT|P1` will be resolved to `Organism|Lumen|ColonAscendens|P1`. This also works with absolute paths: `Organism|Lumen|Stomach|LUMEN_NEXT_SEGMENT|P1` will be resolved to `Organism|Lumen|Duodenum|P1`.
+- `LUMEN_PREVIOUS_SEGMENT`: Search for the previous segment in lumen.  Assuming the formula is used in a parameter in `Organism|Lumen|ColonTransversum`, the path `..|LUMEN_PREVIOUS_SEGMENT|P1` will be resolved to `Organism|Lumen|ColonAscendens|P1`. This also works with absolute paths: `Organism|Lumen|LowerIleum|LUMEN_PREVIOUS_SEGMENT|P1` will be resolved to `Organism|Lumen|UpperIleum|P1`.
