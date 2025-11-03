@@ -1,6 +1,6 @@
 # Parameters, Formulas, Tags‌, and Keywords
 
-This section describes in details how to work with the important concepts of modes building in MoBi.
+This section describes in details how to work with the important concepts of models building in MoBi.
 
 First, different types of [parameters](#parameters) and their properties are explained.
 
@@ -256,7 +256,7 @@ For a table formula with offset, you have to specify:
 - The table parameter with the **Path to table object**. Upon clicking the "..." icon, you can select an existing table parameter from a path tree.
 - The offset time parameter with the **path to offset object**. Upon clicking the "..." icon, you can select one such object from a path tree. This must be a parameter with the dimension `Time`.
 
-The values of the offset parameter will be added to the X values of the original table at the time of evaluation.
+The values of the offset parameter will be subtracted from the X values of the original table at the time of evaluation.
 
 ### Table Formulas with X-Argument‌
 
@@ -393,7 +393,7 @@ If we create a sum formula with the following conditions:
         - `Organism|Container A|Container A1|Molecule A`
         - `Organism|Container A|Container A2|Molecule A`
 
-More than one condition can be combined for evaluation; the combinations are connected with a logical AND. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
+More than one condition can be combined for evaluation; the combinations are connected either with a logical `AND` or a logical `OR`. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
 
 Models generated in **PK-Sim**® make extensive **use of tags**: For example, open a PK-Sim® model and look under [Passive Transports](model-building-components.md#passive-transports) for one part of the blood flow through the organs of an organism called "MassTransferBloodPool2OrgPl". This is a passive transport process that occurs from the arterial plasma compartment to the plasma compartments of all organs except for the lung. Consequently, this transport process is occurring under the following conditions:
 
@@ -406,7 +406,7 @@ Similarly, observers or events can be included or excluded from being created in
 
 Entities (parameters, molecule amounts, containers, reactions) in a model structure are accessed by their path. A path is a string that describes the location of an entity in the model structure hierarchy. The path elements are separated by the pipe character `|`. A path can be specified as either an absolute path or a relative path.
 
-- An **absolute path** specifies the complete path to a referenced object, e.g., `Organism| Organ|Volume`. An alias defined by an absolute path reference will always refer to the same object, regardless of where the formula is used.
+- An **absolute path** specifies the complete path to a referenced object, e.g., `Organism|Bone|Volume`. An alias defined by an absolute path reference will always refer to the same object, regardless of where the formula is used.
 
 - A **relative path** reference specifies the location of the entity *relative* to the location of the formula. The expression `..` is used for "one level up", using a structure similar to that of file systems paths. An example for such a relative reference would be `..|..|Volume`.
 
@@ -425,7 +425,13 @@ A reference path may contain generic keywords that are written in `CAPITAL` lett
   - Example: `NEIGHBORHOOD|Surface area (plasma/interstitial)` in the kinetic equation of a passive transport process will refer to the surface area of the neighborhood in which the particular transport is created.
 - `FIRST_NEIGHBOR`: The first container of a neighborhood.
 - `SECOND_NEIGHBOR`: The second container of a neighborhood.
-- `<NBH>`: The syntax for using this keyword is `<First Neighbor>|<NBH>|<Second Neighbor>|<NBH>`, where `<First Neighbor>` and `<Second Neighbor>` are the paths of two containers between which a neighborhood exists. This keyword is used to generically define paths to neighborhoods without knowing the actual names of the containers. It is usually used in combination with other keywords and relative paths.
+- `<NBH>`: The syntax for using this keyword is `<First Neighbor>|<NBH>|<Second Neighbor>|<NBH>`, where `<First Neighbor>` and `<Second Neighbor>` are the paths of two containers between which a neighborhood exists. 
+
+{% hint style="info" %}
+While the `<First Neighbor>` can be an absolulte or a relative path, the `<Second Neighbor>` is always given relative to the first neighbor.
+{% endhint %}
+
+This keyword is used to generically define paths to neighborhoods without knowing the actual names of the containers. It is usually used in combination with other keywords and relative paths.
   - Example: `..|<NBH>|..|..|Interstitial|<NBH>|Surface area` is used in a parameter located in intracellular space of an organ, e.g., `Organism|Kidney|Intracellular|ParameterA`. This path points to a neighbhorhood between the organ's intracellular and interstitial space of the organ. In detail:
 
     - The expression before the first `<NBH>` keyword is `..` and goes one level up and specifies the first neighbor of the neighborhood, e.g., `Organism|Kidney|Intracellular`.
