@@ -174,7 +174,7 @@ Furthermore, defined **aliases** can be used in a formula as formula constants.
 
 The following figure shows the formula editor window that opens when you create or edit a formula.‌
 
-![](../part-4/formula-aliases-editor.png)
+![](../assets/images/part-4/formula-aliases-editor.png)
 
 Below the formula name and above the formula string, there is a **Reference Table** showing a header line above the columns named **Alias**, **Path**, and **Dimension**. On the right hand side of the reference table, there is a second table titled **References to add**. From this right part, references are moved to the left **Reference Table** by drag & drop.
 
