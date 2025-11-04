@@ -28,7 +28,7 @@ Within the different building blocks, there are slight differences in the proced
 
 - **Global** parameters are considered a property of a molecule or a reaction that does not depend on the location of the molecule or reaction (e.g., "Molecular Weight" of a molecule, or a reaction rate constant). These parameters are listed under the molecule/reaction node in the root of the simulation tree, and are accessed by the path `<MOLECULE/REACTION>|<parameter name>`, e.g., `Cimetidine|Molecular weight`.
 
-- **Local** parameters are parameters whose values depend on the location of the molecule or reaction, e.g., "Concentration" of a molecule, or the apparent $K_{M,app}$ that depends on the concentration of the inhibitor (see [PK-Sim - Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)). These parameters are listed under the molecule or reaction node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE/REACTION>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`, or `Organism|Liver|Periportal|Intracellular|Midazolam-CYP3A4-Metabolization|Km_app`.
+- **Local** parameters are parameters whose values depend on the location of the molecule or reaction, e.g., "Concentration" of a molecule, or the apparent $$K_{M,app}$$ that depends on the concentration of the inhibitor (see [PK-Sim - Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)). These parameters are listed under the molecule or reaction node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE/REACTION>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`, or `Organism|Liver|Periportal|Intracellular|Midazolam-CYP3A4-Metabolization|Km_app`.
 
 Any parameter has a **Dimension**, and the value can be represented in different **Units**. The list of all supported dimensions can be found in [Appendix A.1](../appendix.md#a1-all-dimensions-and-base-units).
 
@@ -144,25 +144,28 @@ In a (explicit) formula, the following characters may be used:
     - Division `/`, e.g., `3 / 5`
     - Exponentiation `^`, e.g., `3^5` = 3 to the power of 5
 * round brackets **(** **)**, e.g., `(3 + 5) * 2`
-* the constants **pi** and **e**, representing the mathematical constants $\pi$ and $e$.
+* the constants **pi** and **e**, representing the mathematical constants $$$\pi$$ and $$e$$.
 * the mathematical functions 
     - Arccosine (inverse cosine) **ACOS**, e.g., `ACOS(0.5)`,
     - Arcsine (inverse sine) **ASIN**, e.g., `ASIN(0.5)`,
     - Arctangent (inverse tangent) **ATAN**, e.g., `ATAN(1)`,
     - Cosine **COS**, e.g., `COS(pi/4)`,
     - Hyperbolic cosine **COSH**, e.g., `COSH(1)`,
-    - Exponential function **EXP**, e.g., `EXP(1)` which corresponds to $e^1$,
+    - Exponential function **EXP**, e.g., `EXP(1)` which corresponds to $$e^1$$,
     - Natural logarithm **LN** or **LOG**, e.g., `LN(e)` or `LOG(e)`,
     - Logarithm to base 10 **LOG10**, e.g., `LOG10(10)`,
     - Maximum of two values **MAX**, e.g., `MAX(3;5)` which evaluates to 5,
     - Minimum of two values **MIN**, e.g., `MIN(3;5)` which evaluates to 3,
-    - Power function **POW**, e.g., `POW(3;5)` which corresponds to $3^5$,
+    - Power function **POW**, e.g., `POW(3;5)` which corresponds to $$3^5$$,
     - Sine **SIN**, e.g., `SIN(pi/4)`,
     - Hyperbolic sine **SINH**, e.g., `SINH(1)`,
     - Square root **SQRT**, e.g., `SQRT(4)`,
     - Tangent **TAN**, e.g., `TAN(pi/4)`,
     - Hyperbolic tangent **TANH**, e.g., `TANH(1)`
 * the random number generator functions **RND** and **SRND**, both to be used with the dummy argument **()**
+
+    - **RND** will produce the same sequence of random numbers in the interval [0..1] every time you run your program because it starts from a default seed.
+    - **SRND** will produce "real" random numbers. If you have a call to **SRND** in any model - all other calls to **RND** (both in this and all other models!) will produce "real" (non-reproducible) random numbers - until you restart MoBi or PK-Sim!
 
 {% hint style="info" %}
 The above mathematical functions are defined as in the C programming language.
@@ -439,7 +442,10 @@ This keyword is used to generically define paths to neighborhoods without knowin
     - The expression after the first `<NBH>` is `..|..|Interstitial`and defines the second neighbor. It goes down to the organ level, e.g., `Organism|Kidney` and into the `Interstitial` container, evaluating to `Organism|Kidney|Interstitial`.
 
     - The second `<NBH>` marks the end of the neighborhood path.
-- `REALIZATION`: 
+- `REALIZATION`: An active transport can translate in 1 or more transport realizations (highlighted part below). Ralizations could have own parameters which can be referenced using this keyword.
+
+![Active Transport with Realizations](../assets/images/part-4/transporter-realizations.png)
+
 - `TRANSPORTER`: Transporter molecule in a active transport process.
 - `TRANSPORT`: Reference to the global transport process. Can be used to retrieve global parameters of the transport process.
 - `ALL_FLOATING_MOLECULES`: String representing a reference to all floating molecules. The entry will be duplicated. This is typically used in event assignment to change all floating molecules at once.

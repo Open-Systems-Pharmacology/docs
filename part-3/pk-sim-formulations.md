@@ -42,17 +42,17 @@ The formulation type **Dissolved** characterizes the drug as being in solution a
 
 The Weibull function can be used to empirically (i.e., not mechanistically) describe the dissolution behavior of various dosage forms. The Weibull function can fit almost any kind of dissolution curve and is often used to describe experimental data when the mechanism of the release is not known [[7](../references.md#7)] [[30](../references.md#30)].
 
-When applied to drug dissolution and release from pharmaceutical dosage forms, the Weibull function expresses the accumulated fraction of the drug $m$ in solution at a time $t$ according to the following equation [[40](../references.md#40)]:
+When applied to drug dissolution and release from pharmaceutical dosage forms, the Weibull function expresses the accumulated fraction of the drug $$m$$ in solution at a time $$t$$ according to the following equation [[40](../references.md#40)]:
 
 $$m=1-\exp(\frac{-(t-T_{lag})^b}{a})$$
 
-where $a$ is the scale parameter, defining the time scale of the process, $T_{lag}$ the lag time before the onset of the dissolution or the release process, and $b$ the shape parameter characterizing the curve as either exponential ($b = 1$), sigmoid ($b > 1$), or parabolic ($b < 1$).
+where $$a$$ is the scale parameter, defining the time scale of the process, $$T_{lag}$$ the lag time before the onset of the dissolution or the release process, and $$b$$ the shape parameter characterizing the curve as either exponential ($$b = 1$$), sigmoid ($$b > 1$$), or parabolic ($$b < 1$$).
 
 The following parameters have to be defined when choosing the Weibull function:
 
-- **Dissolution shape** $b$ characterizing the curve as either exponential ($b = 1$), sigmoid ($b > 1$), or parabolic ($b < 1$).
-- **Dissolution time (50% dissolved)** defining the time (excluding the lag time) at which 50% of the administered dose is dissolved and, thus, corresponding to the scale parameter $a$ of the Weibull function.
-- **Lag time** $T_{lag}$ characterizing the time after which dissolution begins.
+- **Dissolution shape** $$b$$ characterizing the curve as either exponential ($$b = 1$$), sigmoid ($$b > 1$$), or parabolic ($$b < 1$$).
+- **Dissolution time (50% dissolved)** defining the time (excluding the lag time) at which 50% of the administered dose is dissolved and, thus, corresponding to the scale parameter $$a$$ of the Weibull function.
+- **Lag time** $$T_{lag}$$ characterizing the time after which dissolution begins.
 - **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
 
 Please note that the Weibull function can only be combined with the Administration type **Oral**.
@@ -132,7 +132,7 @@ First Order defines the application as a first order input. The required input i
 
 $$\frac{dA}{dt}=-k\cdot A$$
 
-where $A$ is the amount of drug at time $t$ and $k$ the first order rate constant calculated from the half-life of application value according to:
+where $$A$$ is the amount of drug at time $$t$$ and $$k$$ the first order rate constant calculated from the half-life of application value according to:
 
 $$k=\frac{\ln(2)}{t_{1/2}}$$
 
