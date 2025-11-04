@@ -43,7 +43,7 @@ Selected expression profiles will **not** add a protein that is not present in t
 
 ![Simulation Creation Wizard](../assets/images/part-4/simulation-configuration-dialog1.png)
 
-During simulation creation, you can enable the checkbox "Create a process rate parameter for each process in the simulation. This will create a parameter called `ProcessRate` for each instance of a reaction or a (passive and active) transport in the simulation. The `ProcessRate` parameter can be used as output and help to analyze and debug the model.
+During simulation creation, you can enable the checkbox "Create a process rate parameter for each process in the simulation." This will create a parameter called `ProcessRate` for each instance of a reaction or a (passive and active) transport in the simulation. The `ProcessRate` parameter can be used as output and help to analyze and debug the model.
 
 {% hint style="info" %}
 Create of process rate parameter for all processes negatively impacts the performance of the simulation and should only be used for debugging purposes.
