@@ -2,7 +2,7 @@
 
 This section describes the workflows of setting up and running a simulation. There are three ways to set up a simulation in MoBi:
 
-* Export a simulation from [PK-Sim to MoBi](../part-3/importing-exporting-project-data-models.md#export-to-mobi)..
+* Export a simulation from [PK-Sim to MoBi](../part-3/importing-exporting-project-data-models.md#export-to-mobi).
 * Load a simulation from a pkml file into the MoBi® project.
 * Create a new simulation from existing modules.
 
