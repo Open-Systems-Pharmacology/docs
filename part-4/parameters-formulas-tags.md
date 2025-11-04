@@ -442,7 +442,7 @@ This keyword is used to generically define paths to neighborhoods without knowin
     - The expression after the first `<NBH>` is `..|..|Interstitial` and defines the second neighbor. It goes down to the organ level, e.g., `Organism|Kidney` and into the `Interstitial` container, evaluating to `Organism|Kidney|Interstitial`.
 
     - The second `<NBH>` marks the end of the neighborhood path.
-- `REALIZATION`: An active transport can translate in 1 or more transport realizations (highlighted part below). Ralizations could have own parameters which can be referenced using this keyword.
+- `REALIZATION`: An active transport can translate in 1 or more transport realizations (highlighted part below). Realizations could have own parameters which can be referenced using this keyword.
 
 ![Active Transport with Realizations](../assets/images/part-4/transporter-realizations.png)
 
