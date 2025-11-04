@@ -111,7 +111,7 @@ In the main window, the molecules building block should now contain three list e
 
 ### Step 4: Create a container where the reaction takes place:
 
-* Open the "Organism" building block in the spacial structure building block group.
+* Open the "Organism" building block in the spatial structure building block group.
 * In the new main window, double-click on the green container in the diagram area named "Organism".
 * Select the **Properties** tab in the lower half of the main window and using the right combobox of **Container Type**. Select: _Logical Container ..._.
 * In the diagram area, right-click anywhere and select <img src="../assets/icons/Refresh.svg" alt="" data-size="line"> **Refresh** in the context menu: the color of the green container named "Organism" should change to _blue_, which characterizes logical containers.
