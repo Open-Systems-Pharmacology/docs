@@ -59,7 +59,7 @@ In the bottom part of the **Create** or **Edit** window are several input option
 
 * Checking ![Image](../assets/icons/Checked.png) **Parameter is state variable** will open additional input fields for the right hand side of a differential equation (explained in detail in [State Variable Parameters](#state-variable-parameters)).
 * Checking ![Image](../assets/icons/Checked.png) **Plot Parameter** will tag this parameter so that it can be visualized in a chart with the simulation results (see [Chart Component](../part-5/chart-component.md)).
-* Checking ![Image](../assets/icons/Checked.png) **Advanced Parameter** will hide this parameter from the lists if **Show Advance Parameters** is ![Image](../assets/icons/Unchecked.png) un-checked in the parameter list view.
+* Checking ![Image](../assets/icons/Checked.png) **Advanced Parameter** will hide this parameter from the lists if **Show Advanced Parameters** is ![Image](../assets/icons/Unchecked.png) un-checked in the parameter list view.
 
 * For all parameter types, **a description can be added** into the input box at the bottom, for example to quote a reference. Clicking into the text field will open an edit dialog into which you can enter or paste any text of your choice.
 
