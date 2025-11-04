@@ -91,7 +91,7 @@
 
 ## Appendix
 
-* [Appendix](appendix.md)
+* [Dimensions and Units](appendix.md)
 * [OSP Suite Fact Sheet](factsheet.md)
 
 ## References
