@@ -440,7 +440,7 @@ This keyword is used to generically define paths to neighborhoods without knowin
 
     - The second `<NBH>` marks the end of the neighborhood path.
 - `REALIZATION`: 
-- `TRANSPORTER`: Transporter molecule in a active transport process.
+- `TRANSPORTER`: Transporter molecule in an active transport process.
 - `TRANSPORT`: Reference to the global transport process. Can be used to retrieve global parameters of the transport process.
 - `ALL_FLOATING_MOLECULES`: String representing a reference to all floating molecules. The entry will be duplicated. This is typically used in event assignment to change all floating molecules at once.
 - `LUMEN_SEGMENT`: Search for a compartment with the same name as the last part preceding the keyword under Lumen. E.g., for a parametere defined in `Organism|SmallIntestine|Duodenum`, the path `..|LUMEN_SEGMENT|Volume` will resolve to `Organism|SmallIntestine|Lumen|Duodenum|Volume`.
