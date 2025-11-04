@@ -75,7 +75,7 @@ Particle Dissolution calculates the dissolution kinetics of spherical particles 
 - **Type of particle size distribution** - monodisperse or polydisperse.
 - **Particle radius (mean)**.
 
-For the **polydisperse** type of particule size distribution, the following additional parameters can be defined:
+For the **polydisperse** type of particle size distribution, the following additional parameters can be defined:
 
 - **Particle size distribution**:  either normal or log normal.
 - **Particle radius (min)**: the lower limit for the particle radius.
@@ -140,7 +140,7 @@ $$k=\frac{\ln(2)}{t_{1/2}}$$
 
 To set or change the properties of an existing formulation:
 
-1. Right mouse click on the respective formulation in the **Building Blocsk Explorer**
+1. Right mouse click on the respective formulation in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
 
 or simply double click on the formulation in the **Building Blocks Explorer**

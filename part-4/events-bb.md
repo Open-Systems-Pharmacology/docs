@@ -59,7 +59,7 @@ Each event has
 
 #### Event conditions
 
-**Event condition** is defined by a logical expression that evaluates to `true` or `false` (exmples: `Time = 100` or `Some_Parameter < 0.001 AND Another_Parameter >0`).‌ Once the equation is evaluated to `true`, the event is executed.‌
+**Event condition** is defined by a logical expression that evaluates to `true` or `false` (examples: `Time = 100` or `Some_Parameter < 0.001 AND Another_Parameter >0`).‌ Once the equation is evaluated to `true`, the event is executed.‌
 
 {% hint style="info" %}
 Technically, the value of the equation is considered to be `true` if it is unequal to zero, and `false` if it is equal to zero.
