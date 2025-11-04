@@ -62,7 +62,7 @@
   * [Expression Profiles](part-4/expression-profiles-bb.md)
   * [Individuals](part-4/individuals-bb.md)
   * [Model Building and Model Components](part-4/model-building-components.md)
-  * [Setting up a Simulation](part-4/setting-up-simulation.md)
+  * [Simulations](part-4/setting-up-simulation.md)
   * [Simulation Results](part-4/simulation-results.md)
   * [Diagrams Overview](part-4/diagrams-overview.md)
   * [Tools](part-4/tools.md)
