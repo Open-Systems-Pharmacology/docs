@@ -22,7 +22,7 @@ The behavior will be slightly different based on the loaded simulation type.
 
 ## Create a Simulation‌
 
-A simulation can be created from at least one module or a combination of modules, indviduals, and expression profiles. A specific combination of modules is called **model configuration**. To create a simulation:
+A simulation can be created from at least one module or a combination of modules, individuals, and expression profiles. A specific combination of modules is called **model configuration**. To create a simulation:
 
 * Click on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Simulation** button in the **Create** group of the **Modelling** ribbon.
 * Right-clicking on the "Simulations" entry in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> "Create Simulation..." in the context menu.
