@@ -144,7 +144,7 @@ In a (explicit) formula, the following characters may be used:
     - Division `/`, e.g., `3 / 5`
     - Exponentiation `^`, e.g., `3^5` = 3 to the power of 5
 * round brackets **(** **)**, e.g., `(3 + 5) * 2`
-* the constants **pi** and **e**, representing the mathematical constants $$$\pi$$ and $$e$$.
+* the constants **pi** and **e**, representing the mathematical constants $$\pi$$ and $$e$$.
 * the mathematical functions 
     - Arccosine (inverse cosine) **ACOS**, e.g., `ACOS(0.5)`,
     - Arcsine (inverse sine) **ASIN**, e.g., `ASIN(0.5)`,
