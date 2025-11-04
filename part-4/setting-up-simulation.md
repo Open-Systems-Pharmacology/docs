@@ -15,8 +15,8 @@ A simulation created in PK-Sim or MoBi can be saved as a `*.pkml` file and later
 
 The behavior will be slightly different based on the loaded simulation type.
 
-- When sending a simulation from PK-Sim, a new MoBi project will be created. The simulation will be transfered with the obsreved data sets linked in the simulation. A PK-Sim module (see [PK-Sim modules](../part-4/modularization-concept.md#pk-sim-modules)) will be created alongisde with one individual and the expression profiles used in the simulation.
-- When loading a simulation from a pkml file that was saved from PK-Sim, a new PK-Sim module will be created alongisde with one individual and the expression profiles used in the simulation. If a module, an individual, or an expression profile with the same name already exists in the project, the new modules/individuals/expression profiles will be added as copies with a counter suffix.
+- When sending a simulation from PK-Sim, a new MoBi project will be created. The simulation will be transferred with the observed data sets linked in the simulation. A PK-Sim module (see [PK-Sim modules](../part-4/modularization-concept.md#pk-sim-modules)) will be created alongside with one individual and the expression profiles used in the simulation.
+- When loading a simulation from a pkml file that was saved from PK-Sim, a new PK-Sim module will be created alongside with one individual and the expression profiles used in the simulation. If a module, an individual, or an expression profile with the same name already exists in the project, the new modules/individuals/expression profiles will be added as copies with a counter suffix.
 - When loading a simulation created with OSPS versions prior to 12.0, one module will be created containing all building blocks used in the simulation.
 - When loading a simulation consiting of several modules, all modules will be created in the project. If a module with the same name already exists in the project, the new module will be added as a copy with a counter suffix.
 
