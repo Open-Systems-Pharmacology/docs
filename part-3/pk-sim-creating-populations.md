@@ -74,7 +74,7 @@ The population database contains physiological information starting from preterm
 * Weight: The range of body weight of the individuals in units of kg or g.
 * BMI: The range of body mass index of the individuals in units of kg/m2.
 
-The BMI is a measure for the human fat content. It is given by the individual's height (H) and body weight (BW) according to the equation $BMI = \frac{BW}{H^2}$.
+The BMI is a measure for the human fat content. It is given by the individual's height (H) and body weight (BW) according to the equation $$BMI = \frac{BW}{H^2}$$.
 
 If the population **Preterm** is selected, an additional age scale has to be taken into account. Preterm neonates are characterized by their gestational age (GA), which ranges between about 24 and 37 weeks, and their postnatal age (PNA, what we usually refer to as "Age"). In the model, preterm neonates catch up growth during their first two years of life so that there are no differences between a > 2 year old individual of the same race and gender born either preterm or term.
 

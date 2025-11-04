@@ -62,7 +62,7 @@ The parameter will only be created if the parent path (i.e., `Organism|Organ A|C
 
 To create a new PV BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Parameter Values** and enter a unique name for the new BB. Click **OK** to create the new PV BB.
 
-The new PV BB does not contain any information yet. To populate it with information, you can either import the information from an Excel or a pkml file, or create new entires.
+The new PV BB does not contain any information yet. To populate it with information, you can either import the information from an Excel or a pkml file, or create new entries.
 
 ### Adding new entries
 
