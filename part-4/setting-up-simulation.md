@@ -267,7 +267,7 @@ Parameters of Passive Transports are located in the neighborhoods where the resp
 
 Parameters associated with Event and Application Properties can be accessed at the root level of the simulation hierarchy tree within the **Events** node. They are located at the same relative location as the Events building block from which the simulation was created.
 
-## Update and Commit Changes Between Simulations and modules.
+## Update and Commit Changes Between Simulations and Modules.
 
 Within the **Simulation Explorer**, each building block item of the **Configuration** tree is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consistent with the corresponding general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
 
