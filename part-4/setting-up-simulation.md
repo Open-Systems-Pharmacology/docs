@@ -190,7 +190,7 @@ However, when scale divisors are calculated and applied to a simulation, solver 
 
 ## Default Simulation settings
 
-The project defaults for simulation output intervals, output selections, and solver settings can be defined in the **Default Simulation Settings** accessilbe through the **Edit** button of the **Simulation Settings** group in the **Modelling** ribbon. When a new simulation is created, these default settings are automatically applied.
+The project defaults for simulation output intervals, output selections, and solver settings can be defined in the **Default Simulation Settings** accessible through the **Edit** button of the **Simulation Settings** group in the **Modelling** ribbon. When a new simulation is created, these default settings are automatically applied.
 
 The default simulation settings can be exchanged between projects by saving them to and loading from a pkml file.
 
