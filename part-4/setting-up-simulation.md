@@ -277,7 +277,7 @@ A right click on the red traffic lights in the **Simulation** window allows for 
 
 ### Update from building blocks
 
-If the information in the building blocks differs from that in the simulation, the simulation can be recreated using the same model configuration by right-clicking on the simulation and selecting **Update from Buildgin Blocks**. This action is identicall to creating a new simulation from the same model configuration. All local changes in the simulation will be lost.
+If the information in the building blocks differs from that in the simulation, the simulation can be recreated using the same model configuration by right-clicking on the simulation and selecting **Update from Building Blocks**. This action is identical to creating a new simulation from the same model configuration. All local changes in the simulation will be lost.
 
 ### Commit to building blocks
 
