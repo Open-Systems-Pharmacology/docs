@@ -80,7 +80,6 @@
 * [Default, Display and Base Units](part-5/default-display-base-units.md)
 * [Working Journal](part-5/working-journal.md)
 * [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
-* [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
 * [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
 * [Qualification‌](part-5/qualification.md)
 
@@ -92,7 +91,7 @@
 
 ## Appendix
 
-* [Appendix](appendix.md)
+* [Dimensions and Units](appendix.md)
 * [OSP Suite Fact Sheet](factsheet.md)
 
 ## References
