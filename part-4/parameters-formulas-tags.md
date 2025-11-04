@@ -1,10 +1,10 @@
 # Parameters, Formulas, Tags‌, and Keywords
 
-This section describes in details how to work with the important concepts of models building in MoBi.
+This section describes in detail how to work with the important concepts of models building in MoBi.
 
 First, different types of [parameters](#parameters) and their properties are explained.
 
-Then, the use of the different types of [formulas](#working-with-formulas) is described. Formulas are used to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions.
+Then, the use of the different types of [formulas](#formulas) is described. Formulas are used to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions.
 
 Following is the explanation of the [tag concept](#how-tags-are-used). Tags are widely used to define conditions for localization of observers, transport processes, events, parameters, as well as for sum formulas.
 
@@ -95,9 +95,9 @@ $$\frac{dp}{dt} = RHS$$
 
 where _RHS_ is the right-hand side of the differential equation defining the _change of parameter value per unit time step_.
 
-For a *state variable parameter*, the you can define the **initial value** of the parameter in the top half of the parameter edit view, as for any other parameter type. The initial value is the value of the parameter at simulation time = 0.
+For a *state variable parameter*, you can define the **initial value** of the parameter in the top half of the parameter edit view, as for any other parameter type. The initial value is the value of the parameter at simulation time = 0.
 
-The **Right Hand Side** is defined in the botton part of the editor. The value of the parameter is evaluated for each simulation step according to the differential equation.
+The **Right Hand Side** is defined in the bottom part of the editor. The value of the parameter is evaluated for each simulation step according to the differential equation.
 
 {% hint style="warning" %}
 Once the ![Image](../assets/icons/Unchecked.png) **Parameter is state variable** checkbox is deactivated again, the input box for the RHS will disappear. The parameter is no longer a state variable, and the right hand side (RHS) formula reverts to RHS = 0. If you have accidentally deactivated the checkbox and then reactivate it, the formula you may have previously defined as RHS is not lost, since all created formulas are stored. To reinstate the formula you may have previously defined as the RHS, select the formula from the combobox after the formula type explicit formula is selected.
@@ -431,15 +431,15 @@ A reference path may contain generic keywords that are written in `CAPITAL` lett
 - `<NBH>`: The syntax for using this keyword is `<First Neighbor>|<NBH>|<Second Neighbor>|<NBH>`, where `<First Neighbor>` and `<Second Neighbor>` are the paths of two containers between which a neighborhood exists. 
 
 {% hint style="info" %}
-While the `<First Neighbor>` can be an absolulte or a relative path, the `<Second Neighbor>` is always given relative to the first neighbor.
+While the `<First Neighbor>` can be an absolute or a relative path, the `<Second Neighbor>` is always given relative to the first neighbor.
 {% endhint %}
 
 This keyword is used to generically define paths to neighborhoods without knowing the actual names of the containers. It is usually used in combination with other keywords and relative paths.
-  - Example: `..|<NBH>|..|..|Interstitial|<NBH>|Surface area` is used in a parameter located in intracellular space of an organ, e.g., `Organism|Kidney|Intracellular|ParameterA`. This path points to a neighbhorhood between the organ's intracellular and interstitial space of the organ. In detail:
+  - Example: `..|<NBH>|..|..|Interstitial|<NBH>|Surface area` is used in a parameter located in intracellular space of an organ, e.g., `Organism|Kidney|Intracellular|ParameterA`. This path points to a neighborhood between the organ's intracellular and interstitial space of the organ. In detail:
 
     - The expression before the first `<NBH>` keyword is `..` and goes one level up and specifies the first neighbor of the neighborhood, e.g., `Organism|Kidney|Intracellular`.
 
-    - The expression after the first `<NBH>` is `..|..|Interstitial`and defines the second neighbor. It goes down to the organ level, e.g., `Organism|Kidney` and into the `Interstitial` container, evaluating to `Organism|Kidney|Interstitial`.
+    - The expression after the first `<NBH>` is `..|..|Interstitial` and defines the second neighbor. It goes down to the organ level, e.g., `Organism|Kidney` and into the `Interstitial` container, evaluating to `Organism|Kidney|Interstitial`.
 
     - The second `<NBH>` marks the end of the neighborhood path.
 - `REALIZATION`: An active transport can translate in 1 or more transport realizations (highlighted part below). Ralizations could have own parameters which can be referenced using this keyword.
