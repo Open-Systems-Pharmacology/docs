@@ -123,7 +123,7 @@ To select the outputs that will be available for plots after a successful simula
 
 To make the current selection of outputs the project defaults, click on "Make defaults" in the output selection dialog, or right-click on the "Simulation Settings" entry of the expanded simulation, select "Make project defaults" and then "Output Selections".
 
-In the output selection dialog, only *Observers* and *molecule amounts* can be selected. If you want to plot any of the parameters of the simulation, navigate to the respective parameter in the "Parameters" view if the simulation and enable the "Plot parameter" checkbox.
+In the output selection dialog, only *Observers* and *molecule amounts* can be selected. If you want to plot any of the parameters of the simulation, navigate to the respective parameter in the "Parameters" view of the simulation and enable the "Plot parameter" checkbox.
 
 ## Running simulations
 
