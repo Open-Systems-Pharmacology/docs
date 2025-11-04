@@ -1,6 +1,6 @@
 # Events
 
-In the building block **Event** you can define special events that are to occur during simulation time. These are, for example, the ingestion of a meal and the associated physiological changes or the discrete emptying of the gallbladder independent of a meal event. It is the idea of this building block that special physical conditions such as sports or nightly sleep can be defined in the **Event** Building Block, and thus, considered in the simulation.
+In the building block **Event** you can define special events that are to occur during simulation time. These are, for example, the ingestion of a meal and the associated physiological changes, or the discrete emptying of the gallbladder independent of a meal event.
 
 {% hint style="info" %}
 Please note that the **Event** Building Block does not represent an essential building block for the simulation.
@@ -10,10 +10,8 @@ Please note that the **Event** Building Block does not represent an essential bu
 
 To create a new event, do one of the following:
 
-* Click **Event** <img src="../assets/icons/Event.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling** Tab
-* Right mouse click on **Events** <img src="../assets/icons/EventFolder.svg" data-size="line">in the **Building Block Explorer**
-
-and select **Add Event...**
+* Click **Event** <img src="../assets/icons/Event.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling** Tab, or
+* Right mouse click on **Events** <img src="../assets/icons/EventFolder.svg" data-size="line"> in the **Building Blocks Explorer** and select **Add Event...**, or
 
 * Use the short cut **Ctrl+Alt+E**
 
@@ -33,6 +31,9 @@ From the drop-down menu you can currently choose from the following predefined e
 * Meal: Dextrose solution (Human)
 * Meal: Egg sandwich (Human)
 * Gallbladder emptying
+* Urinary bladder emptying
+
+### Meals
 
 In the case of the meals, the typical composition of the selected meal is provided below the drop-down menu.
 
@@ -45,21 +46,21 @@ The following model-relevant parameters of the meal are given:
 Finally, the following two parameters can be defined:
 
 * The decision on whether the discrete gallbladder emptying should be enabled or disabled. Enabling gallbladder emptying will activate discrete mass flow from the gallbladder into the duodenum.
-* The gallbladder emptying lag time, i.e. the lag time between the ingestion of meal and gallbladder emptying
+* The gallbladder emptying lag time, i.e., the lag time between the ingestion of meal and gallbladder emptying
 
 {% hint style="info" %}
-Please note that enabling gallbladder emptying does not automatically imply active secretion of the compound into the bile! In order to simulate enterohepatic circulation of the compound, an active transport process from the liver into the bile is needed, i.e. the definition of an efflux transport process at the apical side of the hepatocytes or a biliary clearance process, which‌ can be defined in the **Compound** Building Block, is required.
+Please note that enabling gallbladder emptying does not automatically imply active secretion of the compound into the bile! In order to simulate enterohepatic circulation of the compound, an active transport process from the liver into the bile is needed, i.e., the definition of an efflux transport process at the apical side of the hepatocytes or a biliary clearance process, which‌ can be defined in the **Compound** Building Block, is required.
 {% endhint %}
 
 {% hint style="info" %}
-Please note that the rat lacks a gallbladder. The combination of discrete gallbladder emptying with the species rat, thus, is not possible! However, continuous bile flow from the hepatocytes into the duodenum can now be simulated in the rat as well as in all other species.
+Please note that the rat lacks a gallbladder. The combination of discrete gallbladder emptying with the species rat, thus, is not possible! However, continuous bile flow from the hepatocytes into the duodenum can be simulated in the rat as well as in all other species.
 {% endhint %}
 
 {% hint style="warning" %}
-In order to additionally or alternatively activate continuous mass flow from the liver into the duodenum please change the EHC continuous fraction in the **Individual** Building Block accordingly. In fasted humans, the fraction of hepatic bile that flows into the gallbladder averages about 60-70% and, accordingly, the fraction that flows directly into the duodenum is about 30-40%. Per default, however, the continuous bile flow is set to 0% as continuous enterohepatic circulation of a drug is frequently not observed, because this would only result in a net reduction of the plasma clearance. Other parameters related to the gallbladder emptying function, such as the gallbladder ejection fraction and the half-time of gallbladder emptying, can also be parameterized in the **Anatomy & Physiology** tab of the **Individual** Building Block.
+In order to additionally or alternatively activate continuous mass flow from the liver into the duodenum please change the parameter **EHC continuous fraction** in the **Individual** Building Block accordingly. In fasted humans, the fraction of hepatic bile that flows into the gallbladder averages about 60-70% and, accordingly, the fraction that flows directly into the duodenum is about 30-40%. Per default, however, the continuous bile flow is set to 0% as continuous enterohepatic circulation of a drug is frequently not observed, because this would only result in a net reduction of the plasma clearance. Other parameters related to the gallbladder emptying function, such as the gallbladder ejection fraction and the half-time of gallbladder emptying, can also be parameterized in the **Anatomy & Physiology** tab of the **Individual** Building Block.
 {% endhint %}
 
-For the various meals provided, the pH in the stomach and the gastric emptying function will change significantly. Irrespective of the meal chosen, the gastric pH will be increased to 5.5 and then decay exponentially. The rate of gastric emptying, which controls the transport of the drug to the absorption sites in the intestine, will change according to a function that is based on the Weibull equation. The Weibull function was parameterized based on about 100 datasets for gastric emptying profiles in humans following ingestion of various meals \[[81](../references.md#81)].
+For the various meals provided, the pH in the stomach and the gastric emptying rate will change significantly. Irrespective of the meal chosen, the gastric pH will be increased to 5.5 and then decay exponentially. The rate of gastric emptying, which controls the transport of the drug to the absorption sites in the intestine, will change according to a function that is based on the Weibull equation. The Weibull function was parameterized based on about 100 datasets for gastric emptying profiles in humans following ingestion of various meals [[81](../references.md#81)].
 
 {% hint style="warning" %}
 The predefined events are, so far, only parameterized based on information obtained for human adults. Therefore, the combination of these events with children and/or the various animal species in the simulation without adjusting certain meal parameters may not be possible. This is true particularly for the meal volume, which cannot exceed the volume of the stomach of the individual!
@@ -69,10 +70,10 @@ The predefined events are, so far, only parameterized based on information obtai
 
 To set or change the properties of an existing event:
 
-1. Right mouse click on the respective event in the **Building Block Explorer**
+1. Right mouse click on the respective event in the **Building Blocks Explorer**
 2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
 
-or simply double click on the existing event in the **Building Block Explorer**
+or simply double click on the existing event in the **Building Blocks Explorer**
 
 The window with the properties of the event will open. The properties can be set or changed appropriately. To save the changes close the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 

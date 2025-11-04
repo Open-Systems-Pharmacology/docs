@@ -11,11 +11,12 @@
   - Pediatric Study Design – PIP/PDP support
 
   - Special Populations: Hepatic/Renal impairment / Obese / Elderly /
-    (Pre)term neonates / Children / Pregnant women / more
+    (pre-) term neonates / Children / Pregnant women / more
 
   - Formulations / Meal effects
 
   - PBPK/PD, QSP as well as pathway, network and disease modeling
+  - Modular model building approach, enabling collaboration, re-usability, and validation of developed modules
 
 ## Model building blocks
 
@@ -29,7 +30,7 @@
   * Rat
   * Mouse
   * Rabbit
-* Allowing for full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels ETC.
+* Allowing for full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels, etc.
 * Most important organs included. For each organ optional processes can be added:
   * Metabolizing pathways
   * Different active transporter types(influx, efflux, bi-directional)
@@ -40,15 +41,15 @@
   
 ### Populations
 
-* Database for population simulations with distributions of anatomical and physiological parameters for
-  * European Caucasians (ICRP, 2002)
-  * US Caucasian (NHANES, 1997)
-  * US Asians (NHANES, 1997)
-  * US Africans (NHANES, 1997)
-  * Asian (Tanaka, 1996)
-  * Japanese (2015)
-  * Preterms (2015)
-  * Pregnant (Dallmann et al. 2017)
+  * Database for population simulations with distributions of anatomical and physiological parameters for
+  * East Asian (Tanaka, 1996) [[74](references.md#74)]
+  * Black American (NHANES, 1997) [[82](references.md#82)]
+  * European (ICRP, 2002) [[84](references.md#84)], [[113](references.md#113)]
+  * Mexican American -White (NHANES, 1997) [[82](references.md#82)]
+  * White American (NHANES, 1997) [[82](references.md#82)]
+  * Japanese [[67](references.md#67)]
+  * Preterm [[111](references.md#111)]
+  * Pregnant (Dallmann et al. 2017) [[107 - 110](references.md#107)]
 
 ### Protein Expression
 

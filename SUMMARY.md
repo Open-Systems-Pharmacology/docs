@@ -1,88 +1,100 @@
 # Table of contents
 
--   [README](README.md)
--   [Open Systems Pharmacology Suite Manual & Copyright](copyright.md)
--   [How to Contribute](how-to-contribute.md)
+* [README](README.md)
+* [Open Systems Pharmacology Suite Manual & Copyright](copyright.md)
+* [How to Contribute](how-to-contribute.md)
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
-
--   Best Practices
-    -   [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
-    -   [Model Development](part-7/model-development.md)
-    -   [Model Evaluation](part-7/model-evaluation.md)
-    -   [Application Simulation](part-7/application-simulation.md)
-    -   [Documentation](part-7/documentation.md)
--   Modeling Concepts
-    -   [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
-    -   [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
-    -   [Principles of PBPK Modeling](part-1/principles-of-pbpk-modeling.md)
-    -   [Expression Data for PBPK Modeling](part-1/modeling-concepts-expression-data-for-pbpk-modeling.md)
-    -   [Modeling of Proteins](part-1/modeling-concepts-modeling-of-proteins.md)
-    -   [PD and Reaction Network Modeling](part-1/modeling-concepts-pd-and-reaction-network-modeling.md)
+* Best Practices
+    * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
+    * [Model Development](part-7/model-development.md)
+    * [Model Evaluation](part-7/model-evaluation.md)
+    * [Application Simulation](part-7/application-simulation.md)
+    * [Documentation](part-7/documentation.md)
+  
+* Modeling Concepts
+  * [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
+  * [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
+  * [Principles of PBPK Modeling](part-1/principles-of-pbpk-modeling.md)
+  * [Expression Data for PBPK Modeling](part-1/modeling-concepts-expression-data-for-pbpk-modeling.md)
+  * [Modeling of Proteins](part-1/modeling-concepts-modeling-of-proteins.md)
+  * [PD and Reaction Network Modeling](part-1/modeling-concepts-pd-and-reaction-network-modeling.md)
 
 ## Open Systems Pharmacology Suite
 
--   [Modules, Philosophy, and Building Blocks](part-2/modules-philsophy-building-blocks.md)
--   [Getting Started](part-2/getting-started.md)
+* [Modules, Philosophy, and Building Blocks](part-2/modules-philsophy-building-blocks.md)
+* [Getting Started](part-2/getting-started.md)
 
 ## Working with PK-Sim
 
--   PK-Sim Documentation
-    -   [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
-    -   [Options](part-3/pk-sim-options.md)
-    -   [Projects](part-3/pk-sim-projects.md)
-    -   [Creating Individuals](part-3/pk-sim-creating-individuals.md)
-    -   [Creating Populations](part-3/pk-sim-creating-populations.md)
-    -   [Expression Profile](part-3/pk-sim-expression-profile.md)
-    -   [Compounds: Definition and Work Flows](part-3/pk-sim-compounds-definition-and-work-flow.md)
-    -   [Compounds: Defining Inhibition/Induction Processes](part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)
-    -   [Administration Protocols](part-3/pk-sim-administration-protocols.md)
-    -   [Events](part-3/pk-sim-events.md)
-    -   [Formulations](part-3/pk-sim-formulations.md)
-    -   [Simulations](part-3/pk-sim-simulations.md)
-    -   [Importing and Exporting Project Data and Models](part-3/importing-exporting-project-data-models.md)
-    -   [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
-    -   [Command Line Interface - CLI](part-3/pk-sim-command-line-interface.md)
+* PK-Sim Documentation
+  * [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
+  * [Options](part-3/pk-sim-options.md)
+  * [Projects](part-3/pk-sim-projects.md)
+  * [Expression Profile](part-3/pk-sim-expression-profile.md)
+  * [Creating Individuals](part-3/pk-sim-creating-individuals.md)
+  * [Creating Populations](part-3/pk-sim-creating-populations.md)
+  * [Compounds: Definition and Work Flows](part-3/pk-sim-compounds-definition-and-work-flow.md)
+  * [Compounds: Defining Inhibition/Induction Processes](part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)
+  * [Administration Protocols](part-3/pk-sim-administration-protocols.md)
+  * [Formulations](part-3/pk-sim-formulations.md)
+  * [Events](part-3/pk-sim-events.md)
+  * [Simulations](part-3/pk-sim-simulations.md)
+  * [Importing and Exporting Project Data and Models](part-3/importing-exporting-project-data-models.md)
+  * [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
+  * [Command Line Interface - CLI](part-3/pk-sim-command-line-interface.md)
 
 ## Working with MoBi
 
--   MoBi‌ Documentation
-    -   [First Steps](part-4/first-steps.md)
-    -   [The Building Block Concept](part-4/building-block-concepts.md)
-    -   [Model Building and Model Components](part-4/model-building-components.md)
-    -   [Setting up a Simulation](part-4/setting-up-simulation.md)
-    -   [Simulation Results](part-4/simulation-results.md)
-    -   [Diagrams Overview](part-4/diagrams-overview.md)
-    -   [Tools](part-4/tools.md)
-    -   [Reuse of Project Information from Previous Versions](part-4/reuse-of-project-information-from-previous-versions.md)
+* MoBi‌ Documentation
+  * [First Steps](part-4/first-steps.md)
+  * [Options](part-4/mobi-options.md)
+  * [The Building Block Concept](part-4/building-block-concepts.md)
+  * [Modularization concept](part-4/modularization-concept.md)
+  * [Spatial Structures](part-4/spatial-structures-bb.md)
+  * [Molecules](part-4/molecules-bb.md)
+  * [Reactions](part-4/reactions-bb.md)
+  * [Passive Transports](part-4/passive-transports-bb.md)
+  * [Observers](part-4/observers-bb.md)
+  * [Events](part-4/events-bb.md)
+  * [Initial Conditions](part-4/initial-conditions-bb.md)
+  * [Parameter Values](part-4/parameter-values-bb.md)
+  * [Expression Profiles](part-4/expression-profiles-bb.md)
+  * [Individuals](part-4/individuals-bb.md)
+  * [Model Building and Model Components](part-4/model-building-components.md)
+  * [Setting up a Simulation](part-4/setting-up-simulation.md)
+  * [Simulation Results](part-4/simulation-results.md)
+  * [Diagrams Overview](part-4/diagrams-overview.md)
+  * [Tools](part-4/tools.md)
+  * [Reuse of Project Information from Previous Versions](part-4/reuse-of-project-information-from-previous-versions.md)
+  * [Example Workflows](part-4/example-workflows.md)
 
 ## Shared Tools and Example Workflows
 
--   [Features of Tables](part-5/features-of-tables.md)
--   [Chart Component](part-5/chart-component.md)
--   [Comparison of Building Blocks](part-5/comparison-building-blocks.md)
--   [Parameter Identification](part-5/parameter-identification.md)
--   [Sensitivity Analysis](part-5/sensitivity-analysis.md)
--   [Import and Edit of Observed Data](part-5/import-edit-observed-data.md)
--   [Default, Display and Base Units](part-5/default-display-base-units.md)
--   [Working Journal](part-5/working-journal.md)
--   [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
--   [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
--   [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
--   [Qualification‌](part-5/qualification.md)
--   [Extraction of physiological parameters from PK-Sim database](part-5/db_extraction-physiological-parameters.md)
+* [Features of Tables](part-5/features-of-tables.md)
+* [Chart Component](part-5/chart-component.md)
+* [Comparison of Building Blocks](part-5/comparison-building-blocks.md)
+* [Parameter Identification](part-5/parameter-identification.md)
+* [Sensitivity Analysis](part-5/sensitivity-analysis.md)
+* [Import and Edit of Observed Data](part-5/import-edit-observed-data.md)
+* [Default, Display and Base Units](part-5/default-display-base-units.md)
+* [Working Journal](part-5/working-journal.md)
+* [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
+* [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
+* [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
+* [Qualification‌](part-5/qualification.md)
 
 ## Working with R‌
 
--   [ospsuite-R Documentation](part-6/introduction-ospsuite-r.md)
--   [Reporting Engine (RE)](part-6/reporting-engine.md)
--   [TLF Library](part-6/tlf-library.md)
+* [ospsuite-R Documentation](part-6/introduction-ospsuite-r.md)
+* [Reporting Engine (RE)](part-6/reporting-engine.md)
+* [TLF Library](part-6/tlf-library.md)
 
 ## Appendix
 
--   [Appendix](appendix.md)
--   [OSP Suite Fact Sheet](factsheet.md)
+* [Appendix](appendix.md)
+* [OSP Suite Fact Sheet](factsheet.md)
 
 ## References
 
--   [References](references.md)
+* [References](references.md)

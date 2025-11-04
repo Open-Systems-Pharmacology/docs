@@ -1,7 +1,8 @@
 # Simulations
 
-Simulations can easily be performed in PK-Sim® after having defined at least one building block for **Individuals**, **Compounds** and **Administration Protocols** in the **Building Block** panel. Optionally, populations, formulations, events and observed data may be defined. Details on these building blocks can be found in the respective sections of this manual:
+Simulations can easily be performed in PK-Sim® after having defined at least one building block for **Individuals**, **Compounds**, and **Administration Protocols** in the **Building Block** panel. Optionally, **Expression Profiles**, **Populations**, **Formulations**, **Events**, and **Observers** can be defined, and **Observed Data** loaded for the comparison with simulation results. Details on those building blocks can be found in the respective sections of this manual:
 
+* [PK-Sim® - Expression Profiles](pk-sim-expression-profile.md)
 * [PK-Sim® - Creating Individuals](pk-sim-creating-individuals.md)
 * [PK-Sim® - Creating Populations](pk-sim-creating-populations.md)
 * [PK-Sim®- Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md)
@@ -10,48 +11,47 @@ Simulations can easily be performed in PK-Sim® after having defined at least on
 * [PK-Sim® - Events](pk-sim-events.md)
 * [Shared Tools - Import and Edit of Observed Data](../part-5/import-edit-observed-data.md)
 
-Even if not all required building blocks are defined you may still set up a simulation. You will then be systematically led through each missing building block where you can specify data or parameters. For details on each building block please refer to the respective chapters of this manual.
+Even if not all required building blocks are defined, you may still set up a simulation. You will then be systematically led through each missing building block where you can specify data or parameters. For details on each building block please refer to the respective chapters of this manual.
 
-Simulations are performed in 3 steps: Creating a simulation (see [Creating new simulations in PK-Sim®](pk-sim-simulations.md#creating-new-simulations-in-pk-sim)), running a simulation (see [Running a simulation in an individual](pk-sim-simulations.md#running-a-simulation-in-an-individual)) and displaying the results in the chart window (see [Analyzing results for a simulation in an individual](pk-sim-simulations.md#analyzing-results-for-a-simulation-in-an-individual)). Experimental data can also be imported in the chart window to enable comparison to the simulated results and to facilitate model refinement.
+Simulations are performed in 3 steps: Creating a simulation (see [Creating new simulations in PK-Sim®](pk-sim-simulations.md#creating-new-simulations-in-pk-sim)), running a simulation (see [Running a simulation in an individual](pk-sim-simulations.md#running-a-simulation-in-an-individual)), and displaying the results in the chart window (see [Analyzing results for a simulation in an individual](pk-sim-simulations.md#analyzing-results-for-a-simulation-in-an-individual)). Experimental data can also be imported in the chart window to enable comparison to the simulated results and to facilitate model refinement.
 
 ## Creating new simulations in PK-Sim®‌
 
 To create a new simulation:
 
-* Click **Simulation** <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling** Tab or
+* Click **Simulation** <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling** Tab, or
 * Use the short cut **Ctrl+Alt+S**
 
-In the **Create Simulation** dialog window the simulation is set up by specifying Individual or Population simulation, selecting a compound from a list and choosing the model settings:
+In the **Create Simulation** dialog window the simulation is set up by specifying Individual or Population simulation, selecting the compound(s) from a list, and choosing the model settings:
 
 ![The Create Simulation dialog. Here, the Model tab is shown in which the Individual "European Male" has already been selected.](../assets/images/part-3/create-simulation.jpg)
 
-In order to create a new simulation, you are guided through five tabs of the **Create Simulation** window:
+In order to create a new simulation, you are guided through the six tabs of the **Create Simulation** window:
 
-* The **Model Structure** tab to define model properties
-* The **Compounds** tab to select the compounds used for the simulation
-* The **Processes** tab to assign the relevant biological processes
-* The **Administration** tab to select between different predefined applications
-* The **Events** tab to choose a specific event defined in the **Event** Building Block
+- The **Model Structure** tab to define model properties
+- The **Compounds** tab to select the compounds used for the simulation
+- The **Processes** tab to assign the relevant biological processes
+- The **Administration** tab to select between different predefined applications
+- The **Events** tab to choose a specific event defined in the **Event** Building Block
+- The **Observers** tab to select user-defined observers
 
 ### Definition of model structure‌
 
 In the **Model Structure** tab of the **Create Simulation** window you need to:
 
-* Enter a name for the simulation
-* Specify an individual or population by doing one of the following:
-  * Select a previously defined individual or population from the drop-down menu
-  * Define a new individual or population by clicking **Create** <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> and follow the instructions of the dialog windows
-  * Load a new individual or population from template by clicking **Load** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> and follow the instructions of the dialog windows
+- Enter a name for the simulation
+- Specify an individual or population by doing one of the following:
+  - Select a previously defined individual or population from the drop-down menu
+  - Define a new individual or population by clicking **Create** <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> and follow the instructions of the dialog windows
+  - Load a new individual or population from template by clicking **Load** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> and follow the instructions of the dialog windows
 
-**Allow aging**: If a human individual or population is selected the growth of the human individual(s) during the simulation time will be taken into account when5 choosing this option. Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g. organ volumes, blood flow rates, organ composition, etc.) the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to
+- **Allow aging**: If a human individual or population is selected, the growth of the individual(s) during the simulation time will be taken into account when choosing this option. Based on the human growth and maturation functions available for most parameters in PK-Sim® (e.g., organ volumes, blood flow rates, organ composition, etc.), the parameters are updated along the time scale of the simulation. This is important for multiple drug administration to, e.g., preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study. Please note that the use of the growth function will need additional simulation time so that it is recommended to use this option only if really needed.
 
-e.g. preterm and term neonates, for which the rapid changes in anatomical and physiological properties can influence the pharmacokinetics during the simulated study circle. Please note that the use of the growth function will need additional simulation time so that it is recommended to use this option only if really needed.
-
-* Specify compound(s) by doing one of the following:
-  * Select a compound from the list of previously created compounds in the Building Block window.
-  * Create a new compound by clicking **Create** <img src="../assets/icons/Molecule.svg" alt="" data-size="line"> and follow the instructions in the dialog windows.
-  * Load a new compound from template by clicking **Load** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> and follow the instructions in the dialog windows.
-* Select the model settings, i.e. either select the standard model for small molecules or the model for proteins and large molecules
+- Specify compound(s) by doing one of the following:
+  - Select a compound from the list of previously created compounds in the Building Block window.
+  - Create a new compound by clicking **Create** <img src="../assets/icons/Molecule.svg" alt="" data-size="line"> and follow the instructions in the dialog windows.
+  - Load a new compound from template by clicking **Load** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> and follow the instructions in the dialog windows.
+- Select the model settings, i.e., either select the standard model for small molecules, or the model for proteins and large molecules
 
 #### Model settings‌
 
@@ -66,7 +66,7 @@ Please note that currently only for mouse, monkey and human species specific val
 
 ### Review compound settings‌
 
-In the **Compounds** tab of the **Create Simulation** window you can review the _Calculation methods_ selected for the partition coefficients and the cellular permeabilities. Also, you can review and override values for the _Parameter Alternatives_.
+In the **Compounds** tab of the **Create Simulation** window you can review the *Calculation methods* selected for the partition coefficients and the cellular permeabilities. Also, you can review and override values for the *Parameter Alternatives*.
 
 ![The Create Simulation dialog. Here, the two selected compounds can be viewed in the tabbed view.](../assets/images/part-3/create-simulation-20-2.jpg)
 
@@ -76,10 +76,10 @@ Click **Next** in order to assign the relevant biological processes. Note that y
 
 ![The Create Simulation dialog. Here, the Processes tab is shown, in which the proteins, i.e. the enzymes, transporters and binding proteins, expressed in the Individual can be linked to the corresponding active processes defined in the Compound.](../assets/images/part-3/ProcessesSimulation.png)
 
-In the **Processes** tab of the **Create Simulation** window, processes like e.g. metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed description of how to set up interaction of a drug with enzymes/transporters (e.g. via a drug-drug interaction or induction) can be found in [PK-Sim® Compounds: Defining Inhibition/Induction Processes](pk-sim-compounds-defining-inhibition-induction-processes.md).
+In the **Processes** tab of the **Create Simulation** window, processes like metabolic, transport, excretion and specific binding processes defined in the selected individual (or population) can be linked to the ADME properties of the selected compounds. A detailed description of how to set up an interaction of a drug with enzymes/transporters (e.g., a drug-drug interaction or induction) can be found in [PK-Sim® Compounds: Defining Inhibition/Induction Processes](pk-sim-compounds-defining-inhibition-induction-processes.md).
 
 {% hint style="warning" %}
-If, and only if, processes in individuals are linked to properties of the compounds, these processes are modeled in the simulation.
+If, and only if, processes in individuals are linked to the properties of the compounds, these processes are considered in the simulation.
 {% endhint %}
 
 {% hint style="info" %}
@@ -102,11 +102,7 @@ Link the process in the individual with the biological process of the compound (
 
 ![The Transport & Excretion dialog. Here paper 2 is assigned as data source for renal clearances.](../assets/images/part-3/PK-Sim-CreateSimulation-Processes-RenalExcretion3.png)
 
-{% hint style="info" %}
-If you wish to simulate a renally impaired individual, decrease the GFR properties in the selected individual, not in the compounds!
-{% endhint %}
-
-Click on **Next** in order to assign an application to your simulation
+Click on **Next** in order to define the administration protocol.
 
 ### Select administration‌
 
@@ -120,7 +116,7 @@ To insert an administration do one of the following:
 * Define a new administration by clicking **Create** <img src="../assets/icons/Protocol.svg" alt="" data-size="line"> and follow the instructions of the dialog windows
 * Load an administration from the template database by clicking **Load** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> and follow the instructions of the dialog windows
 
-In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation name is not necessary, because the drug is always assumed to be given in solution. For these administration types, therefore, no match with formulations has to be made. For further information please see [PK-Sim® - Administration Protocols](pk-sim-administration-protocols.md).
+In case of oral and user defined administration, you will have to additionally map the formulation(s) defined in the **Formulation** building block. In case of sophisticated dosing schedules, different formulations can be chosen for the various administration times. For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation is not necessary, because the drug is always assumed to be given in solution. For further information please see [PK-Sim® - Administration Protocols](pk-sim-administration-protocols.md).
 
 {% hint style="info" %}
 None or exactly one administration protocol can be assigned to every compound used in the simulation. Each administration protocol can be assigned to maximally one compound.
@@ -132,7 +128,7 @@ In the **Events** tab of the **Create Simulation** window, events such as the ad
 
 ![The Create Simulation dialog. Here, the Events tab is shown, in which the administration of a Standard Meal immediately at the start of the simulation is selected.](../assets/images/part-3/PK-Sim-CreateSimulation-Event.png)
 
-Events are optional for creating a simulation. Possible predefined events are currently the application of a meal to simulate fed conditions for an oral administration and gallbladder emptying independent from meal administration. To insert an event do one of the following:
+Events are optional for creating a simulation. Possible predefined events are currently the application of a meal to simulate fed conditions for an oral administration, gallbladder emptying independent from meal administration, and urinary bladder emptying. To insert an event do one of the following:
 
 * Select a previously defined event from the <img src="../assets/icons/Event.svg" alt="" data-size="line"> **Event** drop-down menu
 * Define a new event by clicking **Create** <img src="../assets/icons/Event.svg" alt="" data-size="line"> and follow the instructions of the appearing dialog windows
@@ -145,7 +141,7 @@ If you have successfully created a simulation, it will appear in the simulation 
 ![The Simulations explorer.](../assets/images/part-3/PK-Sim-CreateSimulation-SimulationWindow.png)
 
 {% hint style="info" %}
-The green check marks indicate that the building blocks used in the simulation have the same settings as the original building blocks saved in the building block explorer window. Changing the settings in the simulation is done locally without affecting the original building blocks in the building block explorer window.
+The green check marks indicate that the building blocks used in the simulation have the same settings as the original building blocks saved in the building blocks explorer window. Changing the settings in the simulation is done locally without affecting the original building blocks in the building block explorer window.
 {% endhint %}
 
 ## How to set up a parent/metabolite simulation‌
@@ -196,11 +192,11 @@ If there is no simulated time value corresponding to an observed time value, lin
 
 ## Running a simulation in an individual‌
 
-If a simulation was successfully created, press the **Run** simulation button <img src="../assets/icons/Run.svg" alt="" data-size="line"> in the Modeling & Simulation ribbon or press the F5 key. If the simulation is run for the first time, ths following window will appear in which the simulation curves that will be generated in the simulation can be selected:
+If a simulation was successfully created, press the **Run** simulation button <img src="../assets/icons/Run.svg" alt="" data-size="line"> in the **Run & Analyze** ribbon or press the F5 key. If the simulation is run for the first time, the following window will appear in which the simulation curves that will be generated in the simulation can be selected:
 
 ![The Individual Simulation Settings window. Here, the organs and compartments for which concentration time curves are generated in the individual simulation can be selected.](../assets/images/part-3/IndividualSimulationSettingsCurveSelection.png)
 
-Per default, the peripheral venous blood plasma is already selected. If desired, select further outputs and then press **OK**. The result of the individual simulation will be automatically displayed.
+Per default, the Peripheral Venous Blood Plasma is pre-selected. If desired, select further outputs and then press **OK**. The result of the individual simulation will be automatically displayed.
 
 In order to select another or additional outputs for the current simulation, click on **Define Settings and Run** simulation button.
 
@@ -208,15 +204,15 @@ In order to select another or additional outputs for the current simulation, cli
 By clicking **Save Settings into...** at the bottom left corner of the **Curve Selection window** the settings can be saved as a default for the project or as a user-specific default.
 {% endhint %}
 
-Two venous blood outputs can be selected: “Venous Blood” and “Peripheral Venous Blood”. “Venous Blood” refers to the compartment “Venous Blood” representing the large veins. In clinical practice it is common to sample blood at patients superficial veins, e.g. the antecubital vein. Therefore, PK-Sim® offers the opportunity to also display the pharmacokinetics of the drug in the peripheral venous plasma in order to allow a more accurate description of clinical data. Per default “Peripheral Venous Blood” is a weighted mean of skin and muscle tissue blood (about 70% contribution from skin and about 30% contribution from muscle for all species). You can change the default contribution to “Peripheral Venous Blood” by adjusting the parameters “Fraction of peripheral blood flow in organ” at “Physiology” -> “Flow Rates” -> “Peripheral Blood Flow Fraction” (select “Advanced” view for parameters). The contributions can be defined for arterial blood, bone, fat, muscle, and skin, i.e. all compartments which could possibly contribute to “Peripheral Venous Blood”. The arterial plasma is also considered because of the arteriovenous anastomoses in e.g. the skin of the hand (shunts between arteries and veins involved in the regulation of body temperature). A similar approach to describe peripheral venous plasma concentrations can be found in literature \[41].
+Two venous blood outputs can be selected: “Venous Blood” and “Peripheral Venous Blood”. “Venous Blood” refers to the compartment “Venous Blood” representing the large veins. In clinical practice it is common to sample blood at patients superficial veins, e.g. the antecubital vein. Therefore, PK-Sim® offers the opportunity to also display the pharmacokinetics of the drug in the peripheral venous plasma in order to allow a more accurate description of clinical data. Per default “Peripheral Venous Blood” is a weighted mean of skin and muscle tissue blood (about 70% contribution from skin and about 30% contribution from muscle for all species). You can change the default contribution to “Peripheral Venous Blood” by adjusting the parameters “Fraction of peripheral blood flow in organ” at “Physiology” -> “Flow Rates” -> “Peripheral Blood Flow Fraction” (select “Advanced” view for parameters). The contributions can be defined for arterial blood, bone, fat, muscle, and skin, i.e. all compartments which could possibly contribute to “Peripheral Venous Blood”. The arterial plasma is also considered because of the arteriovenous anastomoses in e.g. the skin of the hand (shunts between arteries and veins involved in the regulation of body temperature). A similar approach to describe peripheral venous plasma concentrations can be found in literature [[41](../references.md#41)].
 
 {% hint style="warning" %}
-As the observer for peripheral venous blood sampling represents a balanced mixture of plasma concentrations of the drug in arterial blood, bone, fat, muscle, and skin please do not use the peripheral venous blood observer in the case of e.g. subcutaneous or intramuscular drug administration. This will lead to an overestimation of the concentration in plasma.
+As the observer for peripheral venous blood sampling represents a balanced mixture of plasma concentrations of the drug in arterial blood, bone, fat, muscle, and skin, please do not use the peripheral venous blood observer in the case of, e.g., subcutaneous or intramuscular drug administration. This will lead to an overestimation of the concentration in plasma.
 {% endhint %}
 
 ![The Results tab of the Simulation window. Here, the simulated plasma concentration-time profile following oral administration of a diclofenac IR tablet is shown in comparison to experimental data.](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Results1.png)
 
-For general information about the chart component, i.e. chart settings and options etc., please see [Chart Component](../part-5/chart-component.md).
+For general information about the chart component, i.e., chart settings and options etc., please see [Chart Component](../part-5/chart-component.md).
 
 {% hint style="info" %}
 If you would like to cancel the running process, press the **Stop** button next to the **Run** button.
@@ -226,11 +222,11 @@ If you wish to change the settings of the simulation, click on the **Parameters*
 
 ![The Parameters tab of the Simulation window. Here, the Settings of the simulation are shown.](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Results2.png)
 
-* Simple view: in this view, not all parameters are displayed
-* Advanced view: all parameters are displayed
-* Hierarchy view: all parameters are displayed as located in the spatial model structure
+* **Simple view**: in this view, not all parameters are displayed
+* **Advanced view**: all parameters are displayed
+* **Hierarchy view**: all parameters are displayed as located in the spatial model structure
 
-You may change the parameter settings for your simulation in order to e.g. achieve a better fit to the observed data. The settings in the building blocks will be unaffected.
+You may change the parameter settings for your simulation in order to, e.g., achieve a better fit to the observed data. The settings in the building blocks will be unaffected.
 
 {% hint style="info" %}
 It is recommended to select all parameters under consideration as **Favorites** and to document the source of all parameter values changed from the default in the column **Value Description**. Then you have a comprehensive overview about the essential input of your simulation, which you can document by copying just the Favorites table.
@@ -241,21 +237,29 @@ It is recommended to select all parameters under consideration as **Favorites** 
 {% endhint %}
 
 {% hint style="warning" %}
-If you change the parameter settings in the **Parameter** tab, the green check marks (traffic lights) on the Results tab will turn red indicating that the displayed simulation results were not performed with the current settings:\
+If you change the parameter settings in the **Parameter** tab, the green check marks (traffic lights) on the Results tab will turn red indicating that the displayed simulation results were not performed with the current settings:
+
 ![Image](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Results3.png)\
 Press the **Run** simulation button in the **Modeling & Simulation** ribbon or press the **F5** key again to re-run the simulation with the current settings and display the results.
 {% endhint %}
 
-{% hint style="warning" %}
-If parameter settings were changed in the simulation, the red traffic lights in the **Simulation** window indicate that the **local settings** in the simulation are different from the settings in the **Building Block**, i.e. the **global settings**:\
-![Image](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Results4.png)\
-A right click on the red traffic lights in the simulation window allows for two possibilities:\
-![Image](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Update-Commit.png)\\
+## Synchronization options for building blocks in a simulation
 
-* Update from building block: The simulation settings (local) will be updated with the (global) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block.\\
-* Commit to building block: The (local) settings of the simulation will be committed to the building block (global settings). This is useful if you want to make these settings available in other simulations.\\
-* Configure: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
-{% endhint %}
+If parameter settings were changed in the simulation, the red traffic lights in the **Simulation** window indicate that the **local settings** in the simulation are different from the settings in the **Building Block**, i.e. the **global settings**:
+
+![Image](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Results4.png)
+
+A right click on the red traffic lights in the simulation window allows for two possibilities:
+
+![Image](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Update-Commit.png)
+
+You can synchronize the settings between the building block and the simulation through the context menu of the affected building block in the simulation:
+
+- **Update from building block**: The simulation settings (local) will be updated with the (global) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block.
+
+- **Commit to building block**: The (local) settings of the simulation will be committed to the building block (global settings). This is useful if you want to make these settings available in other simulations.
+
+- **Configure**: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
 
 ## Analyzing results for a simulation in an individual‌
 
@@ -286,11 +290,11 @@ For comparison, observed data in MS Excel® format (\*.xls and \*.xlsx) can be l
 For more information on how to load observed data and compare them to your simulated data, go to [Import and Edit of Observed Data](../part-5/import-edit-observed-data.md)
 {% endhint %}
 
-Multiple results windows
+#### Multiple results windows
 
 If you wish to display different curves or use different settings for the same simulation, you can add new results charts windows by clicking on the **Results** button <img src="../assets/icons/TimeProfileAnalysis.svg" data-size="line"> in the Ribbon group **Simulation**.
 
-Special features for population simulations
+#### Special features for population simulations
 
 If you wish to display other percentiles or other curves without simulating again, click on the **Results** button <img src="../assets/icons/TimeProfileAnalysis.svg" data-size="line"> in the ribbon group **Simulation**. You will be directed to the **Curve selection for chart** window (see above).
 
