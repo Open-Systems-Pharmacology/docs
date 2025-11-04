@@ -59,7 +59,7 @@ In the bottom part of the **Create** or **Edit** window are several input option
 
 * Checking ![Image](../assets/icons/Checked.png) **Parameter is state variable** will open additional input fields for the right hand side of a differential equation (explained in detail in [State Variable Parameters](#state-variable-parameters)).
 * Checking ![Image](../assets/icons/Checked.png) **Plot Parameter** will tag this parameter so that it can be visualized in a chart with the simulation results (see [Chart Component](../part-5/chart-component.md)).
-* Checking ![Image](../assets/icons/Checked.png) **Advanced Parameter** will hide this parameter from the lists if **Show Advance Parameters** is ![Image](../assets/icons/Unchecked.png) un-checked in the parameter list view.
+* Checking ![Image](../assets/icons/Checked.png) **Advanced Parameter** will hide this parameter from the lists if **Show Advanced Parameters** is ![Image](../assets/icons/Unchecked.png) un-checked in the parameter list view.
 
 * For all parameter types, **a description can be added** into the input box at the bottom, for example to quote a reference. Clicking into the text field will open an edit dialog into which you can enter or paste any text of your choice.
 
@@ -398,7 +398,7 @@ If we create a sum formula with the following conditions:
 
 More than one condition can be combined for evaluation; the combinations are connected either with a logical `AND` or a logical `OR`. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
 
-Models generated in **PK-Sim**® make extensive **use of tags**: For example, open a PK-Sim® model and look under [Passive Transports](model-building-components.md#passive-transports) for one part of the blood flow through the organs of an organism called "MassTransferBloodPool2OrgPl". This is a passive transport process that occurs from the arterial plasma compartment to the plasma compartments of all organs except for the lung. Consequently, this transport process is occurring under the following conditions:
+Models generated in **PK-Sim**® make extensive **use of tags**: For example, open a PK-Sim® model and look under [Passive Transports](building-block-concepts.md#passive-transports) for one part of the blood flow through the organs of an organism called "MassTransferBloodPool2OrgPl". This is a passive transport process that occurs from the arterial plasma compartment to the plasma compartments of all organs except for the lung. Consequently, this transport process is occurring under the following conditions:
 
 1. Source container: tagged with "Arterial Blood" and tagged with "Plasma".
 2. Target container: tagged with "Plasma" and not tagged with "Arterial Blood" and not tagged with "Lung".
@@ -446,9 +446,9 @@ This keyword is used to generically define paths to neighborhoods without knowin
 
 ![Active Transport with Realizations](../assets/images/part-4/transporter-realizations.png)
 
-- `TRANSPORTER`: Transporter molecule in a active transport process.
+- `TRANSPORTER`: Transporter molecule in an active transport process.
 - `TRANSPORT`: Reference to the global transport process. Can be used to retrieve global parameters of the transport process.
 - `ALL_FLOATING_MOLECULES`: String representing a reference to all floating molecules. The entry will be duplicated. This is typically used in event assignment to change all floating molecules at once.
-- `LUMEN_SEGMENT`: Search for a compartment with the same name as the last part preceding the keyword under Lumen. E.g., for a parametere defined in `Organism|SmallIntestine|Duodenum`, the path `..|LUMEN_SEGMENT|Volume` will resolve to `Organism|SmallIntestine|Lumen|Duodenum|Volume`.
+- `LUMEN_SEGMENT`: Search for a compartment with the same name as the last part preceding the keyword under Lumen. E.g., for a parameter defined in `Organism|SmallIntestine|Duodenum`, the path `..|LUMEN_SEGMENT|Volume` will resolve to `Organism|SmallIntestine|Lumen|Duodenum|Volume`.
 - `LUMEN_NEXT_SEGMENT`: Search for the next segment in lumen.  Assuming the formula is used in a parameter in `Organism|Lumen|Caecum`, the path `..|LUMEN_NEXT_SEGMENT|P1` will be resolved to `Organism|Lumen|ColonAscendens|P1`. This also works with absolute paths: `Organism|Lumen|Stomach|LUMEN_NEXT_SEGMENT|P1` will be resolved to `Organism|Lumen|Duodenum|P1`.
 - `LUMEN_PREVIOUS_SEGMENT`: Search for the previous segment in lumen.  Assuming the formula is used in a parameter in `Organism|Lumen|ColonTransversum`, the path `..|LUMEN_PREVIOUS_SEGMENT|P1` will be resolved to `Organism|Lumen|ColonAscendens|P1`. This also works with absolute paths: `Organism|Lumen|LowerIleum|LUMEN_PREVIOUS_SEGMENT|P1` will be resolved to `Organism|Lumen|UpperIleum|P1`.
