@@ -53,7 +53,7 @@ Finish the simulation creation by clicking on **OK** <img src="../assets/icons/O
 
 ### Warnings and Errors‌
 
-If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img src="../assets/icons/Notifications.svg" data-size="line"> a **Warnings** or  <img src="../assets/icons/Error.svg" data-size="line"> **Errors** depending on their severity.
+If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img src="../assets/icons/Notifications.svg" data-size="line"> **Warnings** or  <img src="../assets/icons/Error.svg" data-size="line"> **Errors** depending on their severity.
 
 Errors and warning messages are shown in a notification viewer at the bottom of the page similar to the history viewer. Warnings and error notifications are described in more detail in the viewer as such describing
 
