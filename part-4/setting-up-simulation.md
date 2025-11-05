@@ -204,7 +204,7 @@ The following defaults can be defined:
 
 ![Default Simulation Settings - Output Selection](../assets/images/part-4/Simulation/default-settings-outputs.png)
 
-The user can manually change the path, or select an observer from a any simulation in the project by clicking on "...". New outputs can be added by clicking on the "+" sign.
+The user can manually change the path, or select an observer from any simulation in the project by clicking on "...". New outputs can be added by clicking on the "+" sign.
 
 {% hint style="info" %}
 The outputs defined in this view will be automatically applied to new simulations created in the project. If a simulation does not contain an observer defined in the default output selection, the output will be ignored for that simulation.
