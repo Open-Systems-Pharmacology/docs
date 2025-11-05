@@ -26,7 +26,7 @@ For **creating a new transport** or loading one from a previously saved file:
 
 1. Enter a name for this transport process, for example "Diffusion".
 2. Define conditions for target and source containers:
-   * Right-click into the corresponding empty space below "Condition" and "Tag", then select a container criterion (See [How Tags are used]((parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events) for more information).
+   * Right-click into the corresponding empty space below "Condition" and "Tag", then select a container criterion (See [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events) for more information).
    * A window where you will be asked for the tag name will open.
    * A tag can simply be the name of a container of a spatial structure; you can select from the available names by clicking the drop-down arrow. In our example project, select "Vial1" as "New match tag condition" for "Source", and select "Vial2" as "New match tag condition" for "Target".
    * The arrangement of neighborhood connections set up in the spatial structure (see [Creating Neighborhoods](spatial-structures-bb.md#creating-neighborhoods)) will restrict the pattern of transport streams.
