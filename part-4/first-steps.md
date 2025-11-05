@@ -44,6 +44,10 @@ The **ribbon bar** offers access to the various functionalities of the applicati
 
 The **Modules Explorer** shows all modules with their building blocks **Spatial Structures**, **Molecules**, **Reactions**, **Passive Transports**, **Observers**, **Events**, **Parameter Values**, **Initial Conditions**, and the building blocks for **Individuals** and **Expression Profiles** that are located outside of the modules. Additionally, you may find imported observed data in the modules explorer. More information on the concept of modules can be found in [Modularization concept](modularization-concept.md). The different building blocks are explained in [The Building Block Concept](building-block-concepts.md).
 
+{% hint style="info" %}
+For convenient organization of the project, modules can be grouped in folders in the Modules Explorer.
+{% endhint %}
+
 A detailed introduction on how to develop models in MoBi® is given in [Model Building and Model Components](model-building-components.md). An in-depth explanation on how to create simulations from the modules can be found in [Setting up a Simulation](setting-up-simulation.md).
 
 Once you have defined the simulations in the current project, the **Simulations Explorer** lists all of them. For details, see [Simulation Results](simulation-results.md).
