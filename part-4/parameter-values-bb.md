@@ -4,7 +4,7 @@ The Parameter Values (PV) Building Block (BB) defines the values of various para
 
 Additionally, PV BB can **create** new parameters during simulation creation.
 
-The following section describes the functionalities of the PV BB. Later on, a simple [example](#example---creating-pv-bb) is given to create a new PV BB and populate it with information.
+The following section describes the functionalities of the PV BB. Later on, a simple [example](#creating-parameter-values-building-blocks) is given to create a new PV BB and populate it with information.
 
 ## Parameter Values - Functionality‌ Overview
 

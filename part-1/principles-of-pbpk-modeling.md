@@ -50,7 +50,7 @@ Metabolism is generally an active and substance-specific process. While the enzy
 
 Compounds and their metabolites are generally removed from the body via excretion or elimination processes. The two most prominent routes of excretion are via the kidney into urine and via biliary excretion into the intestine and further into the feces. During the latter process, reabsorption can lead to entero-hepatic circulation of a substance. While biliary secretion is generally mediated via active transport, urinary secretion can be passive (glomerular filtration) or also due to active transport (tubular secretion). Other special routes of elimination can include exhalation via the lungs.
 
-Just like the metabolization processes, the transporter "equipment" is a property of each individual organism. For each substance, it has to be considered which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Just like the metabolization processes, the transporter "equipment" is a property of each individual organism. For each substance, it has to be considered which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties-tab).
 
 ## PBPK model parameterization‌
 
