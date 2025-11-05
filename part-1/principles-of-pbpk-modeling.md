@@ -34,7 +34,7 @@ Besides the passive processes described above, active transport processes or bin
 
 The relative contribution of different processes to distribution also depends on the type of the molecule. The blood endothelium in the different organs often does not constitute a major distribution hurdle for small molecules. An exception is the significant blood-brain barrier. For larger molecules such as biologics, endothelial permeation can significantly impact the PK, and additional processes, such as lymph flow, are important for recirculation.
 
-Further details and options for modeling distribution in PK-Sim® are described in ["Partition coefficient calculation methods”](../part-3/pk-sim-compounds-definition-and-work-flow.md#distribution).
+Further details and options for modeling distribution in PK-Sim® are described in ["Partition coefficient calculation methods”](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-new-compounds-in-pk--sim).
 
 ### Metabolism‌
 
@@ -44,7 +44,7 @@ The products of such biotransformation steps are referred to as metabolites. If 
 
 Generally, the liver is considered the most relevant organ for biotransformation. However, most metabolizing enzymes are also expressed in various other organs, even though often to a lower extent. Nevertheless, extrahepatic metabolism can be very important. Mucosal clearance in the intestinal wall is just one prominent example. Together with first-pass clearance in the liver, this process also influences the bioavailability of a substance [[77](../references.md#77)].
 
-Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance for which enzymes are relevant. Further details on modeling metabolism in PK-Sim® are described in the section [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance for which enzymes are relevant. Further details on modeling metabolism in PK-Sim® are described in the section [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties-tab).
 
 ### Excretion/Elimination‌
 

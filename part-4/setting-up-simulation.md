@@ -2,7 +2,7 @@
 
 This section describes the workflows of setting up and running a simulation. There are three ways to set up a simulation in MoBi:
 
-* Export a simulation from [PK-Sim to MoBi](../part-3/importing-exporting-project-data-models.md#export-to-mobi).
+* Export a simulation from [PK-Sim to MoBi](../part-3/importing-exporting-project-data-models.md#send-to-mobi).
 * Load a simulation from a pkml file into the MoBi® project.
 * Create a new simulation from existing modules.
 
@@ -41,7 +41,7 @@ In the next step, select the individual that should be used in the simulation an
 Selected expression profiles will **not** add a protein that is not present in the model structure!
 {% endhint %}
 
-![Simulation Creation Wizard](../assets/images/part-4/simulation-configuration-dialog1.png)
+![Simulation Creation Wizard](../assets/images/part-4/simulation-configuration-dialog.png)
 
 During simulation creation, you can enable the checkbox "Create a process rate parameter for each process in the simulation." This will create a parameter called `ProcessRate` for each instance of a reaction or a (passive and active) transport in the simulation. The `ProcessRate` parameter can be used as output and help to analyze and debug the model.
 
@@ -320,7 +320,7 @@ The context menu that opens when right-clicking on a simulation offers the follo
 - **Stop** - stops a running simulation.
 * **Start Parameter Identification** - calls Parameter Identification tool (see [Parameter Identification](../part-5/parameter-identification.md) for description).
 - **Start sensitivity analysis** - calls Sensitivity Analysis tool (see [Sensitivity Analysis](../part-5/sensitivity-analysis.md) for description).
-- **Send to PK-Sim for Population Simulation** - sends the simulation to PK-Sim® and opens PK-Sim®. The simulation can then be used as basis for a population simulation in PK-Sim® (see [Running and analyzing a population simulation](../part-3/pk-sim-creating-populations.md#running-and-analyzing-a-population-simulation) for description).
+- **Send to PK-Sim for Population Simulation** - sends the simulation to PK-Sim® and opens PK-Sim®. The simulation can then be used as basis for a population simulation in PK-Sim® (see [Running and analyzing a population simulation](../part-3/pk-sim-creating-populations.md) for description).
 * <img src="../assets/icons/SaveAs.svg" data-size="line"> **Save Simulation to MoBi pkml format** - saves the simulation as pkml file.
 - **Add to Journal** - adds a snapshot of the simulation to the Working Journal (see [Working Journal](../part-5/working-journal.md) for description).
 * <img src="../assets/icons/ObservedData.svg" data-size="line"> **Export results to Excel®** - generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).

@@ -32,7 +32,7 @@ You can rearrange the window by different actions:
 
 - Click ![Image](../assets/icons/CloseView.png) to close these views or click the corresponding symbol in the Views group in the **Utilities** ribbon bar to open it,
 
-- Furthermore, you can drag these views and dock them to a different location. To do so, click on the title bar of the view, drag it around and drop it on one of the icons like ![Image](../assets/images//part-4/Prg-overview-move-icon.png)
+- Furthermore, you can drag these views and dock them to a different location. To do so, click on the title bar of the view, drag it around and drop it on one of the icons like ![Image](../assets/images/part-4/Prg-overview-move-icon.png)
 
 ![Docking a window to different positions](../assets/images/part-4/Prg-overview-drag-dock.png)
 
@@ -48,7 +48,7 @@ The **Modules Explorer** shows all modules with their building blocks **Spatial 
 For convenient organization of the project, modules can be grouped in folders in the Modules Explorer.
 {% endhint %}
 
-A detailed introduction on how to develop models in MoBi® is given in [Model Building and Model Components](model-building-components.md). An in-depth explanation on how to create simulations from the modules can be found in [Setting up a Simulation](setting-up-simulation.md).
+An in-depth explanation on how to create simulations from the modules can be found in [Setting up a Simulation](setting-up-simulation.md).
 
 Once you have defined the simulations in the current project, the **Simulations Explorer** lists all of them. For details, see [Simulation Results](simulation-results.md).
 
@@ -59,7 +59,7 @@ The **History Manager** lists all modeling steps and gives the opportunity to lo
 To develop a model in MoBi®, you can either create it from scratch or import a PBPK model from PK-Sim® and extend it. To import a PBPK model, proceed as follows:
 
 1.  In PK-Sim®, create a simulation with the desired compound and individual.
-2.  Save the simulation as `*.pkml` file (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi)).
+2.  Save the simulation as `*.pkml` file (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi)).
 3.  Start MoBi®.
 4.  Open the `*.pkml` file using the **File** menu and choose the <img src="../assets/icons/Simulation.svg" data-size="line"> **Open Simulation** command.
 

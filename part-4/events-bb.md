@@ -65,7 +65,7 @@ Each event has
 Technically, the value of the equation is considered to be `true` if it is unequal to zero, and `false` if it is equal to zero.
 {% endhint %}
 
-See [Working with Formulas](model-building-components.md#working-with-formulas) for details on how to create formulas with conditions.
+See [Working with Formulas](parameters-formulas-tags.md#formulas) for details on how to create formulas with conditions.
 
 {% hint style="warning" %}
 If an event should be repeatedly fired during the simulation (i.e., the **One time** property is set to false), and the condition depends on systems state (parameter or state variables calculated during simulation), the event will only be fired if this condition is met within the defined output interval and resolution! This may lead to unexpected behavior if the output resolution is too coarse. For example, if the condition is `Concentration > 1 && Concentration < 2` and the concentration is 0.5 at time point t1 and 2 at time point t2, but no output is defined between t1 and t2, the event will not be fired since the condition was not met at any of the output time points.
@@ -126,8 +126,8 @@ After the event group is created, individual events can be defined for this grou
 * Rename
 * Save As PKML - saves the selected event group to a pkml file.
 * Delete - deletes the selected event group.
-* Create Application - see [Applications](model-building-components.md#applications).
-* Load Application - see [Applications](model-building-components.md#applications).
+* Create Application - see [Applications](#applications).
+* Load Application - see [Applications](#applications).
 * Load Application From Template
 * Create Event - creates a new event within the current event group.
 * Load Event - loads an existing event from a pkml file.
@@ -135,8 +135,8 @@ After the event group is created, individual events can be defined for this grou
 * Create Event Group - creates a new event group below the highlighted event group.
 * Load Event Group - loads an existing event group from a pkml file below the highlighted event group.
 * Load Event Group From Template
-* Create Container - see [Applications](model-building-components.md#applications).
-* Load Container - see [Applications](model-building-components.md#applications).
+* Create Container - see [Applications](#applications).
+* Load Container - see [Applications](#applications).
 * Load Container From Template
 
 To create an event, click the **Create Event** option. A window named "New Event" will open (see image below). Then proceed with the following steps:
@@ -147,7 +147,7 @@ To create an event, click the **Create Event** option. A window named "New Event
 4.  To have more space for building the condition, close this window now by clicking **OK** or pressing **Enter** to complete the event building in the edit window. However, all required data could also be entered in the "New Event" window.
 
 ![New Event window](../assets/images/part-4/NewEvent.png)
-5. Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](model-building-components.md#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
+5. Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](reactions-bb.md#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
 6. There is still a Condition equation to be entered, as indicated by the red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time > 500", which would execute the event at 500 minutes. The use of "> 500" instead of "= 500" is advantageous since it might well be that during the simulation, the exact value of 500 will never be assumed, depending on the time step. If you plan to quickly test different values for this time, it is advantageous to define this execution time as a parameter which can be altered in the simulation.
 7. Define a time parameter as an event parameter (alternatively, it can be set as an event group parameter if it is needed in several events of this group). Click the "Parameters" tab, then the button <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**. A "New Parameter" window opens.
 8. Enter "E1Time" as parameter name.
@@ -202,7 +202,7 @@ The descriptions at the bottom section of each parameter gives you more informat
 
 More complex changes, like changing complex dosing schemes or changing dissolution patterns, are much easier to achieve using the user interface of PK- Sim® and then exporting the corresponding simulation. Within a MoBi® project, you may then combine drug applications from several PK-Sim® exports. The following describes the workflow for this operation:
 
-1. Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi)).
+1. Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi)).
 2. Load your MoBi® project.
 3. Right-click the Events entry in the building block explorer, select <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Event Group Building Block**.
 4. Enter the name and location of your pkml file. You may be asked for a new building block name. A new Events building block is created.

@@ -69,4 +69,4 @@ Models created in PK-Sim® or MoBi® can be exported in *PK Modeling Language* (
 
 Apart from the communication and exchange via R, PK-Sim® and MoBi® have import and export functions for MS Excel®, CSV, and NONMEM® that allow for the import of experimental data or the export of simulation results, for example. MoBi® has SBML import functionalities.
 
-PK-Sim can also import and export *project snapshots* in [JSON format](https://en.wikipedia.org/wiki/JSON) (s. [Exporting Project to Snapshot](../part-3/importing-exporting-project-data-models.md#exporting-project-to-snapshot-loading-project-from-snapshot) for details).
+PK-Sim can also import and export *project snapshots* in [JSON format](https://en.wikipedia.org/wiki/JSON) (s. [Exporting Project to Snapshot](../part-3/importing-exporting-project-data-models.md#exporting-project-to-snapshot--loading-project-from-snapshot) for details).

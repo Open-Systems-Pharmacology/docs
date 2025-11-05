@@ -2,7 +2,7 @@
 
 The Initial Conditions (IC) Building Block (BB) defines the containers in which the molecules will be present and their initial amounts.
 
-The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-ic-bb) is given to create a new IC BB and populate it with information.
+The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#creating-ic-bb) is given to create a new IC BB and populate it with information.
 
 ## Initial Conditions - Functionality‌ Overview
 
