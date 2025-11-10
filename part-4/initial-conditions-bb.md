@@ -2,7 +2,7 @@
 
 The Initial Conditions (IC) Building Block (BB) defines the containers in which the molecules will be present and their initial amounts.
 
-The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-ic-bb) is given to create a new IC BB and populate it with information.
+The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#creating-ic-bb) is given to create a new IC BB and populate it with information.
 
 ## Initial Conditions - Functionality‌ Overview
 
@@ -61,7 +61,7 @@ The table view shows the following:
 - **Scale Divisor**: A number by which the value is divided. Can improve numerical stability for very large or very small values. 1 by default.
 
 {% hint style="info" %}
-Internally, very small numerical values are divided by the scale divisors to get to an order of magnitude which is reasonable for the solver. The purpose is to reduce numerical noise and to enhance computation performance. This is also important when working with a broad variety of magnitudes of values. The scale divisors specify a typical scale for each species. Per default, all scale divisors are set to 1. If you work with very small amounts and/or a broad variety of magnitudes of values and your simulation yields implausible results (numerical noise, negative values, etc.), use the **Calculate Scale Divisor** of the to adjust the scale divisor for computational purposes.
+Internally, very small numerical values are divided by the scale divisors to get to an order of magnitude which is reasonable for the solver. The purpose is to reduce numerical noise and to enhance computation performance. This is also important when working with a broad variety of magnitudes of values. The scale divisors specify a typical scale for each species. Per default, all scale divisors are set to 1. If you work with very small amounts and/or a broad variety of magnitudes of values and your simulation yields implausible results (numerical noise, negative values, etc.), use the **Calculate Scale Divisor** function of a simulation to adjust the scale divisor for computational purposes.
 {% endhint %}
 
 - **Is Present**: If `true`, the molecule is considered as present in the container. If `false`, the molecule is considered as not present in the container.

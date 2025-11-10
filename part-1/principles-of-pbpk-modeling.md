@@ -34,7 +34,7 @@ Besides the passive processes described above, active transport processes or bin
 
 The relative contribution of different processes to distribution also depends on the type of the molecule. The blood endothelium in the different organs often does not constitute a major distribution hurdle for small molecules. An exception is the significant blood-brain barrier. For larger molecules such as biologics, endothelial permeation can significantly impact the PK, and additional processes, such as lymph flow, are important for recirculation.
 
-Further details and options for modeling distribution in PK-Sim® are described in ["Partition coefficient calculation methods”](../part-3/pk-sim-compounds-definition-and-work-flow.md#distribution).
+Further details and options for modeling distribution in PK-Sim® are described in ["Partition coefficient calculation methods”](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-new-compounds-in-pk--sim).
 
 ### Metabolism‌
 
@@ -44,13 +44,13 @@ The products of such biotransformation steps are referred to as metabolites. If 
 
 Generally, the liver is considered the most relevant organ for biotransformation. However, most metabolizing enzymes are also expressed in various other organs, even though often to a lower extent. Nevertheless, extrahepatic metabolism can be very important. Mucosal clearance in the intestinal wall is just one prominent example. Together with first-pass clearance in the liver, this process also influences the bioavailability of a substance [[77](../references.md#77)].
 
-Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance for which enzymes are relevant. Further details on modeling metabolism in PK-Sim® are described in the section [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance for which enzymes are relevant. Further details on modeling metabolism in PK-Sim® are described in the section [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties-tab).
 
 ### Excretion/Elimination‌
 
 Compounds and their metabolites are generally removed from the body via excretion or elimination processes. The two most prominent routes of excretion are via the kidney into urine and via biliary excretion into the intestine and further into the feces. During the latter process, reabsorption can lead to entero-hepatic circulation of a substance. While biliary secretion is generally mediated via active transport, urinary secretion can be passive (glomerular filtration) or also due to active transport (tubular secretion). Other special routes of elimination can include exhalation via the lungs.
 
-Just like the metabolization processes, the transporter "equipment" is a property of each individual organism. For each substance, it has to be considered which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Just like the metabolization processes, the transporter "equipment" is a property of each individual organism. For each substance, it has to be considered which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties-tab).
 
 ## PBPK model parameterization‌
 
