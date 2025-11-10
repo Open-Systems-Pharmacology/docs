@@ -1,0 +1,167 @@
+name: Check for Non-Printable Characters
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check-non-printable:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          
+      - name: Check for non-printable characters
+        id: check
+        run: |
+          python3 << 'EOF'
+          import os
+          import sys
+          from pathlib import Path
+          
+          def is_printable(char):
+              """Check if a character is printable (excluding common non-printable chars)"""
+              # Allow common whitespace characters
+              if char in ['\n', '\r', '\t', ' ']:
+                  return True
+              # Check if character is in the printable ASCII range or is a valid Unicode character
+              code_point = ord(char)
+              # Non-printable control characters (0x00-0x1F except whitespace, 0x7F-0x9F)
+              if code_point <= 0x1F or (0x7F <= code_point <= 0x9F):
+                  return False
+              # Zero-width characters and other non-printable Unicode characters
+              if code_point in [
+                  0x200B,  # ZERO WIDTH SPACE
+                  0x200C,  # ZERO WIDTH NON-JOINER (ZWNJ)
+                  0x200D,  # ZERO WIDTH JOINER
+                  0x200E,  # LEFT-TO-RIGHT MARK
+                  0x200F,  # RIGHT-TO-LEFT MARK
+                  0xFEFF,  # ZERO WIDTH NO-BREAK SPACE (BOM)
+              ]:
+                  return False
+              return True
+          
+          def check_filename(filepath):
+              """Check if filename contains non-printable characters"""
+              filename = os.path.basename(filepath)
+              non_printable_chars = []
+              for char in filename:
+                  if not is_printable(char):
+                      non_printable_chars.append((char, hex(ord(char))))
+              return non_printable_chars
+          
+          def check_file_content(filepath):
+              """Check file content for non-printable characters"""
+              issues = []
+              try:
+                  with open(filepath, 'r', encoding='utf-8') as f:
+                      for line_num, line in enumerate(f, 1):
+                          non_printable_chars = []
+                          for char in line:
+                              if not is_printable(char):
+                                  non_printable_chars.append((char, hex(ord(char))))
+                          if non_printable_chars:
+                              issues.append((line_num, line.rstrip('\n'), non_printable_chars))
+              except Exception as e:
+                  print(f"Error reading {filepath}: {e}")
+              return issues
+          
+          # Find all files in the repository
+          repo_root = Path('/home/runner/work/docs/docs')
+          
+          files_with_bad_names = []
+          files_with_bad_content = []
+          
+          # Check all files (including non-markdown files for filename check)
+          for filepath in repo_root.rglob('*'):
+              if filepath.is_file():
+                  # Skip .git directory
+                  if '.git' in filepath.parts:
+                      continue
+                  
+                  relative_path = filepath.relative_to(repo_root)
+                  
+                  # Check filename for non-printable characters
+                  bad_chars = check_filename(str(filepath))
+                  if bad_chars:
+                      files_with_bad_names.append((str(relative_path), bad_chars))
+                  
+                  # Check content only for markdown files
+                  if filepath.suffix == '.md':
+                      issues = check_file_content(filepath)
+                      if issues:
+                          files_with_bad_content.append((str(relative_path), issues))
+          
+          # Generate output
+          has_issues = len(files_with_bad_names) > 0 or len(files_with_bad_content) > 0
+          
+          # Create markdown tables
+          filename_table = "## Files with Non-Printable Characters in Filenames\n\n"
+          if files_with_bad_names:
+              filename_table += "| File Path | Non-Printable Characters |\n"
+              filename_table += "|-----------|-------------------------|\n"
+              for filepath, chars in files_with_bad_names:
+                  char_info = ", ".join([f"{char} ({code})" for char, code in chars])
+                  filename_table += f"| `{filepath}` | {char_info} |\n"
+          else:
+              filename_table += "No files with non-printable characters in filenames found.\n"
+          
+          content_table = "\n## Non-Printable Characters in Markdown Files\n\n"
+          if files_with_bad_content:
+              content_table += "| File Path | Line Number | Line Content |\n"
+              content_table += "|-----------|-------------|-------------|\n"
+              for filepath, issues in files_with_bad_content:
+                  for line_num, line_content, chars in issues:
+                      # Escape pipe characters in content and limit length
+                      escaped_content = line_content.replace('|', '\\|')[:100]
+                      if len(line_content) > 100:
+                          escaped_content += "..."
+                      char_info = ", ".join([f"{char} ({code})" for char, code in chars])
+                      content_table += f"| `{filepath}` | {line_num} | {escaped_content} [Contains: {char_info}] |\n"
+          else:
+              content_table += "No non-printable characters found in markdown file content.\n"
+          
+          # Write to output files
+          with open('/tmp/filename_report.md', 'w') as f:
+              f.write(filename_table)
+          
+          with open('/tmp/content_report.md', 'w') as f:
+              f.write(content_table)
+          
+          # Print summary
+          print(filename_table)
+          print(content_table)
+          
+          if has_issues:
+              print("\n❌ Non-printable characters detected!")
+              sys.exit(1)
+          else:
+              print("\n✅ No non-printable characters detected.")
+              sys.exit(0)
+          EOF
+          
+      - name: Create job summary with results
+        if: always()
+        run: |
+          if [ -f /tmp/filename_report.md ]; then
+            cat /tmp/filename_report.md >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f /tmp/content_report.md ]; then
+            cat /tmp/content_report.md >> $GITHUB_STEP_SUMMARY
+          fi
+          
+      - name: Fail if non-printable characters found
+        if: failure()
+        run: |
+          echo "::error::Non-printable characters detected in the repository. Check the job summary for details."
+          exit 1
