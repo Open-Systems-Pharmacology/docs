@@ -159,9 +159,3 @@ jobs:
           if [ -f /tmp/content_report.md ]; then
             cat /tmp/content_report.md >> $GITHUB_STEP_SUMMARY
           fi
-          
-      - name: Fail if non-printable characters found
-        if: failure()
-        run: |
-          echo "::error::Non-printable characters detected in the repository. Check the job summary for details."
-          exit 1
