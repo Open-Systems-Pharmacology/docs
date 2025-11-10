@@ -77,7 +77,7 @@ jobs:
               return issues
           
           # Find all files in the repository
-          repo_root = Path('/home/runner/work/docs/docs')
+          repo_root = Path(os.environ.get('GITHUB_WORKSPACE', '.'))
           
           files_with_bad_names = []
           files_with_bad_content = []
