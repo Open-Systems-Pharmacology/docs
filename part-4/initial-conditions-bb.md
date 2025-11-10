@@ -4,7 +4,7 @@ The Initial Conditions (IC) Building Block (BB) defines the containers in which 
 
 The following section describes the functionalities of the IC BB on a PBPK model exported from PK-Sim. Later on, a simple [example](#creating-ic-bb) is given to create a new IC BB and populate it with information.
 
-## Initial Conditions - Functionality‌ Overview
+## Initial Conditions - Functionality Overview
 
 An IC BB can contain entries for molecules in physical containers across different modules.
 
@@ -71,7 +71,7 @@ Internally, very small numerical values are divided by the scale divisors to get
 Entries for molecules and/or containers that do not exist in the final model will be ignored.
 {% endhint %}
 
-## Creating IC BB‌
+## Creating IC BB
 
 To create a new IC BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Initial Conditions** and enter a unique name for the new BB. Click **OK** to create the new IC BB.
 

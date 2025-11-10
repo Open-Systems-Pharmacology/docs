@@ -1,4 +1,4 @@
-# Expression data for PBPK modeling‌
+# Expression data for PBPK modeling
 
 ​The most prominent examples of proteins that affect PK are enzymes that catalyze the metabolism of drugs or transporters that can heavily influence drug absorption or distribution. Proteins can also include those which a drug binds to, either by design (drug-target interaction) or as an off-target interaction or side-effect. Such binding can also influence the distribution, as well as the metabolism and excretion of the drug.
 

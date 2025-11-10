@@ -8,13 +8,13 @@ Events and applications are grouped in the **Events** building block (BB). Multi
 
 The following section describes the functionalities of the Events building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-events) is given. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
 
-## Events - Functionality Overview‌
+## Events - Functionality Overview
 
-Events are organized in a tree structure. The top level container of the Events BB can be either an **Event Group** or an **Application**.‌
+Events are organized in a tree structure. The top level container of the Events BB can be either an **Event Group** or an **Application**.
 
 ### Event Group
 
-Event groups can combine **Applications**, **Events**, further **Event Groups**, and **Containers**.‌
+Event groups can combine **Applications**, **Events**, further **Event Groups**, and **Containers**.
 
 An event group can be created within:
     - another event group,
@@ -28,7 +28,7 @@ Like for observers, an empty criteria for the events group means that the group 
 
 ### Application
 
-Application is a special type of an event group that is defined for a specific **molecule**.‌ In addition to the properties of an event group, an application has to specify an **administered molecule** and the path to the **Application Molecule Builder**.
+Application is a special type of an event group that is defined for a specific **molecule**. In addition to the properties of an event group, an application has to specify an **administered molecule** and the path to the **Application Molecule Builder**.
 
  - **Application Model Builder**: Applications that add molecules to the system require an application model builder that is a virtual compartment for the administered molecule.
 
@@ -38,7 +38,7 @@ An Application can be created within:
 
 ### Event
 
-An **Event** is the actual event that changes something in the model, like the amount of a molecule or a parameter value.‌
+An **Event** is the actual event that changes something in the model, like the amount of a molecule or a parameter value.
 
 Events can be created within:
     - an event (sub-)group,
@@ -59,7 +59,7 @@ Each event has
 
 #### Event conditions
 
-**Event condition** is defined by a logical expression that evaluates to `true` or `false` (examples: `Time = 100` or `Some_Parameter < 0.001 AND Another_Parameter >0`).‌ Once the equation is evaluated to `true`, the event is executed.‌
+**Event condition** is defined by a logical expression that evaluates to `true` or `false` (examples: `Time = 100` or `Some_Parameter < 0.001 AND Another_Parameter >0`). Once the equation is evaluated to `true`, the event is executed.
 
 {% hint style="info" %}
 Technically, the value of the equation is considered to be `true` if it is unequal to zero, and `false` if it is equal to zero.
@@ -75,7 +75,7 @@ A discussion on this topic can be found in the [MoBi® Forum](https://github.com
 
 #### Events assignments
 
-An **assignment** defines what should be changed when the event is executed.‌ Each event can have multiple assignments. Each assignment has the following properties:
+An **assignment** defines what should be changed when the event is executed. Each event can have multiple assignments. Each assignment has the following properties:
 
 - **Name**: A unique name for the assignment.
 - **Changed entity path**: Path to the parameter or molecule that should be changed by the event.
@@ -88,7 +88,7 @@ Containers can be created within:
     - an event (sub-)group,
     - an application.
 
-A container can be either **logical** or **physical** and behaves similarly to containers in a [spatial structure](spatial-structures-bb.md).‌ The container can have tags and parameters.
+A container can be either **logical** or **physical** and behaves similarly to containers in a [spatial structure](spatial-structures-bb.md). The container can have tags and parameters.
 
 **Logical containers** are used to group parameters.
 
@@ -96,15 +96,15 @@ A container can be either **logical** or **physical** and behaves similarly to c
 
 ### Transport
 
-Transports can be created within applications. An application transport is similar to a [passive transport](passive-transports-bb.md).‌ It defines a transport process between a *source* and a *target* container.‌ The *source* should be a physical container within the application. The *target* can be any physical container in the spatial structure.
+Transports can be created within applications. An application transport is similar to a [passive transport](passive-transports-bb.md). It defines a transport process between a *source* and a *target* container. The *source* should be a physical container within the application. The *target* can be any physical container in the spatial structure.
 
-In contrast to passive transports, it is not required to define a neighborhood between the source and the target. This neighborhood will be automatically created during simulation build.‌
+In contrast to passive transports, it is not required to define a neighborhood between the source and the target. This neighborhood will be automatically created during simulation build.
 
-## Example - Creating Events‌
+## Example - Creating Events
 
 Continue with the simple example we have been developing in the previous sections. Open the Events building block or create a new one by right clicking on the module and selecting "Add Building Blocks".
 
-### Event Groups and Events‌
+### Event Groups and Events
 
 To **create a new event group**, either
 
@@ -179,7 +179,7 @@ An assignment can be changed by the following actions:
 * The ![Image](../assets/icons/Add.png) symbol has the same function as the button **Add Assignment**.
 * Clicking the ![Image](../assets/icons/Delete.png) symbol will delete the corresponding assignment.
 
-### Applications‌
+### Applications
 
 An application is basically an event group with a more complex structure than that described in the previous section. In almost all cases, the application will be created within PK-Sim®and then transferred to MoBi®. The scope of this section will be limited to working with this recommended workflow.
 

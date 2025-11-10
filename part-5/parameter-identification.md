@@ -4,7 +4,7 @@ The first three chapters provide a basic understanding of the Parameter Identifi
 
 In the following chapters you find more detailed descriptions of the features and configuration of the tool and a more complex second example of a parameter identification.
 
-## Background‌
+## Background
 
 The models built by PK-Sim® or MoBi® depend on a lot of input parameters which are based on literature values, measurements, databases, assumptions. For a given set of input parameters a number of output curves is computed in a **simulation**.
 
@@ -22,11 +22,11 @@ The user should be aware that a **Parameter Identification** as an optimization 
 
 In a lot of situations the available **Parameter Identification** features of the Open Systems Pharmacology Suite allow you to identify unknown parameter values much easier than by manual trial and error.
 
-## Overview of the workflow‌
+## Overview of the workflow
 
 Within a Parameter Identification you have to perform the following steps:
 
-### Prepare simulations‌
+### Prepare simulations
 <!--  -->
 In order to use the Parameter Identification tool, you should add all observed data you want to use to one or more simulations.
 
@@ -38,33 +38,33 @@ In the simulations which will be used for Parameter Identification, select all o
 Selecting the input parameters of interest as **Favorites** makes it much easier to select those parameters later in Parameter Identification.
 {% endhint %}
 
-### Create a Parameter Identification‌
+### Create a Parameter Identification
 
 A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select <img src="../assets/icons/ParameterIdentification.svg" data-size="line"> **Start Parameter Identification ...** from the context menu.
 
-### Map outputs to observed data‌
+### Map outputs to observed data
 
 A mapping of observed data to corresponding simulation outputs is done automatically according to Organ, Compartment and Molecule meta data. Additionally, you can edit the mapping manually.
 
-### Define Identification Parameters‌
+### Define Identification Parameters
 
 You have to select those input parameters which should be varied and identified. Each of these Identification parameters can be linked to corresponding input parameters in different simulations.
 
-## Configure Optimization‌
+## Configure Optimization
 
 You can select between three optimization algorithms, edit their standard settings or change the usage of **Lower Limit Of Quantification** (LLOQ) values.
 
-### Run Optimization‌
+### Run Optimization
 
 After finishing the previous steps, you can run a Parameter Identification through the Ribbon Bar “Run & Analyze”. Running the Parameter Identification does not block the application, so you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification. Multiple Parameter Identifications can be run in parallel. The “Run & Analyze” Ribbon Bar reflects the state of the currently selected Parameter Identification.
 
-### View results‌
+### View results
 
 After the Parameter Identification is finished, you will find the parameter values and corresponding output curves. Other views can help to assess the quality of the result, e.g. Predicted vs. Observed values for drug concentration or the correlation between Identification Parameters at the identified parameter values.
 
 During the Parameter Identification Run you can get visual feedback about the current state. If you like, you can stop the Parameter Identification manually.
 
-## Simple Example‌
+## Simple Example
 
 For a hands on exercise, open the example project Theophylline.pksim5. You can download the project from [https://github.com/Open-Systems-Pharmacology/Example_Theophylline](https://github.com/Open-Systems-Pharmacology/Example_Theophylline).
 
@@ -105,7 +105,7 @@ For a hands on exercise, open the example project Theophylline.pksim5. You can d
 
 You can transfer the optimized values for the parameters to the simulations by clicking **Transfer to Simulation**. Or you can select one of the **Analyses** views from the Parameter Identification ribbon. If you are not satisfied, you can change mapping of outputs or definition of Identification Parameters and run the Parameter Identification again.
 
-## Creating a Parameter Identification‌
+## Creating a Parameter Identification
 
 To create a new Parameter Identification, do one of the following
 
@@ -125,7 +125,7 @@ In the Simulation Explorer, the Parameter Identifications are also displayed in 
 * export the Parameter Identification definition to Matlab,
 * delete a Parameter Identification.
 
-## Mapping Simulation Outputs to Observed Data‌
+## Mapping Simulation Outputs to Observed Data
 
 A mapping of observed data to corresponding simulation outputs is done automatically according to **Organ**, **Compartment** and **Molecule** meta data of observed data and path elements of the outputs.
 
@@ -162,7 +162,7 @@ In MoBi®, you can freely define observers to match any kind of observed data. I
 
 For every observed data time point, the respective time value is added to the output interval of the simulation. This way, simulated value exists for each observed time point, and no interpolation of simulation results is required for the calculation of the total error.
 
-## Defining Identification Parameters‌
+## Defining Identification Parameters
 
 In the tab **Parameters** you can select the parameters which should be identified. If you have different simulations in one Parameter Identification, you have to decide, if one **Identification Parameter** is linked to _multiple_ **Simulation Parameters** or _one_ **Simulation Parameter** only. (If necessary you can even link different simulation parameters from the _same_ simulation to _one_ Identification Parameter.)
 
@@ -197,7 +197,7 @@ By **Scaling** you define how the Identification Parameter is modified during op
 
 In special cases you may want to couple two simulation parameters but not by the same value, e.g. you know that the specific clearance of metabolite is half of compound's specific clearance. In this case you can add both Simulation Parameters for specific clearance to one Identification Parameter, check **Use as Factor** and use e.g. a Minimum Value of 0.5 and Maximum Value of 2. Then both specific clearances are varied in parallel by multiplication of the respective simulation value with the same factor between 0.5 and 2.
 
-## Configuration of Optimization‌
+## Configuration of Optimization
 
 You can configure the handling of LLOQ values, select among three optimization algorithms and edit the settings of the selected optimization algorithms.
 
@@ -205,7 +205,7 @@ When checking **Calculate Sensitivity** at the end of the optimization, the part
 
 Additionally, you have special options to vary calculation methods (PK-Sim only) or to start multiple optimizations with randomized start values.
 
-### Handling of LLOQ values‌
+### Handling of LLOQ values
 
 You can decide if data values below LLOQ should be used or removed and how they should be handled in the residual calculation.
 
@@ -228,7 +228,7 @@ If in Observed Data LLOQ values are contained as 0 values, for **Remove data bel
 | Observed data and simulated data below LLOQ set to LLOQ (default) | <p>Observed data and simulation data are transformed consistently to avoid artificial residuals, especially for log scaled outputs.<br>Values below LLOQ are set to LLOQ to avoid discontinuity for values little above and little below LLOQ.</p> |
 | Observed data below LLOQ set to LLOQ/2                            | This option is left for backward compatibility. Here, simulation data below LLOQ is not transformed in residual calculation in contrast to observed data.                                                                                          |
 
-### Optimization Algorithms‌
+### Optimization Algorithms
 
 The three available optimization algorithms have specific advantages and disadvantages. While for simple optimization problems (e.g. 1 - 3 Identification parameters which are well informed by sufficient and not contradicting observed data) each of the algorithms works stably and fast, there can be big differences in applicability, robustness and performance in more complex situations. In such cases, some optimization experience is often required. The descriptions and hints given here can only give some basic support, for more detailed information follow the references.
 
@@ -304,7 +304,7 @@ Nelder, John A.; R. Mead (1965). "A simplex method for function minimization". C
 | Convergence tolerance | Relative convergence tolerance                                                                   |
 | Maximum evaluations   | Termination occurs when the number of calls to objective function is greater or equal this value |
 
-### Variation of calculation methods and multiple optimizations‌
+### Variation of calculation methods and multiple optimizations
 
 #### Multiple optimization
 
@@ -324,9 +324,9 @@ If you have more than one molecule, you can decide whether the calculation metho
 
 Also, here optimization are done in parallel as long as processors are available to the Open Systems Pharmacology Suite.
 
-### Display of intermediate and final results‌
+### Display of intermediate and final results
 
-#### Visual Feedback‌
+#### Visual Feedback
 
 During the optimization run, you can view intermediate results. Click **Show Visual Feedback** in the Ribbon bar **Run & Analyze**. A new window is displayed.
 
@@ -344,7 +344,7 @@ In case of **Multiple optimization** or **Calculation Methods Variation** the Vi
 
 ![Visual Feedback of Calculation methods variation](../assets/images/part-5/Feedback-Calculation-Methods-Variation.png)
 
-### Results of Parameter Identification‌
+### Results of Parameter Identification
 
 After the optimization run is finished, you can view the results in the tab Results.
 
@@ -360,7 +360,7 @@ In case of **Multiple optimization** or **Calculation Methods Variation** you ca
 
 ![Result of Calculation methods variation](../assets/images/part-5/Results-Calculation-Methods-Variation.png)
 
-### Analyses‌
+### Analyses
 
 From the ribbon Run & Analyze you can select different charts to analyze the optimization result and assess its quality.
 
@@ -436,7 +436,7 @@ Keep in mind that all information in this analysis is calculated only at the opt
 
 ![Parameter Identification Analysis - Covariance Matrix for three identification parameters](../assets/images/part-5/PI-Analysis-CovarianceMatrix3.png)
 
-### Confidence Interval‌
+### Confidence Interval
 
 From the ribbon Run & Analyze in the ribbon bar **Confidence Intervals** you can select different confidence interval charts to assess the quality of the Parameter Identification results.
 
@@ -478,9 +478,9 @@ This chart displays the 95% Prediction interval, which corresponds to the combin
 
 ![Parameter Identification - Prediction interval](../assets/images/part-5/PI-PredictionInterval.png)
 
-## More Features‌
+## More Features
 
-### Reuse of a Parameter Identification‌
+### Reuse of a Parameter Identification
 
 Parameter Identifications are saved in the project files and can be attached to the **Working Journal**. So you can rerun Parameter Identifications after modification of the original simulations as long as used outputs and simulation parameters are kept in the simulation.
 
@@ -490,7 +490,7 @@ Sometimes you may have different simulations for the same observed data to compa
 
 The mapping definition with weights, the definition of Identification Parameters and the Configuration remain the same as long as the corresponding parameters are available.
 
-### Export of Parameter Identification to Matlab®‌
+### Export of Parameter Identification to Matlab®
 
 If you want to use the Matlab® optimization capabilities for optimization, you can export the Parameter Identification to Matlab® by selecting the corresponding entry from the context menu of a **Parameter Identification** in the **Simulation Explorer**.
 
