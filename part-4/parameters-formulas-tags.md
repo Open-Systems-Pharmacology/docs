@@ -1,4 +1,4 @@
-# Parameters, Formulas, Tags‌, and Keywords
+# Parameters, Formulas, Tags, and Keywords
 
 This section describes in detail how to work with the important concepts of models building in MoBi.
 
@@ -12,7 +12,7 @@ Finally, the special [keywords](#keywords) that can be used in paths to define r
 
 ## Parameters
 
-### Functionality Overview‌
+### Functionality Overview
 
 In all building blocks, there may be a need to create and edit parameters. Parameters are typically listed in a separate tabbed view, named "Parameters". A parameter is used to describe physical or physiological properties of a molecule, a reaction or transport, a spatial structure, an event or an application.
 
@@ -68,13 +68,13 @@ You may also **add tags to any parameter** in the **Tags** tab of the parameters
 * To add a tag, click the "Add Tag" button and enter the tag in the input box.
 * To delete a tag, click the symbol that appears behind every tag in the list.
 
-### Constant Parameters‌
+### Constant Parameters
 
 A constant parameter is defined by a constant **Value**. You may use decimal points, exponential notation, and minus signs (e.g., 2.34; 1.2E-6; -150). Next to the value, its unit will be shown; the default unit is selected by your choice in the Dimension field, but it can be changed to other units listed in the combobox, e.g. from 1/min to 1/sec or 1/h.
 
 Examples for constant parameters are "Molecular weight" of a molecule or the rate constant of a reaction.
 
-### Distributed Parameters‌
+### Distributed Parameters
 
 **Distributed parameters** (only available for parameters of spatial structure containers) describe a variation around a constant value or between two numerical limits. Within a given MoBi® simulation, a distributed parameter has a fixed value (default defined by the value in the field **value**). A distributed parameter can be used only to calculate the percentile of the parameter value given a certain distribution. Distributed parameters are useful if population statistical data are to be defined within a model. To define such a parameter, use the **Create Distributed Parameter** command from the context menu of a spatial structure item, like for containers (e.g., organ sizes) or neighborhoods (e.g., blood flow rate). In addition to what is entered for constant parameters, the **Distribution Type** has to be selected. Available options are:
 
@@ -85,7 +85,7 @@ Examples for constant parameters are "Molecular weight" of a molecule or the rat
 
 If you use one of the different distributions, a **percentile** will be automatically calculated for the parameter value define in field **value** given the defined distribution.
 
-### State Variable Parameters‌
+### State Variable Parameters
 
 A parameter can also be defined as a *state variable* with a right-hand-side (RHS). This means, that the parameter value is defined by a differential equation. To do this, click the ![Image](../assets/icons/Checked.png) checkbox **Parameter is state variable** when entering or editing a parameter.
 
@@ -109,7 +109,7 @@ For state variable parameters, the values defined in a Parameter Values building
 
 ## Formulas
 
-### Functionality Overview‌
+### Functionality Overview
 
 Formulas are widely used in OSP models to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions. This section describes how to work with formulas in MoBi®.
 
@@ -131,7 +131,7 @@ It is a good idea to use a name related to the object where the formula is used 
 
 To enter or edit a **formula string**, click into the unnamed input box above the **Description** field and then use your keyboard. This formula string will be evaluated by the solver once the simulation is run. It is written as a mathematical term that comprises numeric values, arithmetic operation signs, and names of parameters or their alias names. As long as the formula has errors or is incomplete, a red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> is displayed left of the empty input box. Hovering the mouse over this warning symbol will show you a tool tip on the validity of the equation (e.g., missing references or syntax errors).
 
-### Supported Characters and Functions in a Formula‌
+### Supported Characters and Functions in a Formula
 
 In a (explicit) formula, the following characters may be used:
 
@@ -173,9 +173,9 @@ The above mathematical functions are defined as in the C programming language.
 
 Furthermore, defined **aliases** can be used in a formula as formula constants.
 
-### Formula aliases - using other parameters and molecule amounts in a formula‌
+### Formula aliases - using other parameters and molecule amounts in a formula
 
-The following figure shows the formula editor window that opens when you create or edit a formula.‌
+The following figure shows the formula editor window that opens when you create or edit a formula.
 
 ![](../assets/images/part-4/formula-aliases-editor.png)
 
@@ -205,7 +205,7 @@ Not all entries in the tree are allowed to be moved to the left, depending on th
 
 To **remove an object from the reference list**, right-click it and select **Remove**from the context menu.
 
-### Conditions in a Formula‌
+### Conditions in a Formula
 
 Logical conditions can be used in a formula to define different values depending on the fulfillment of a condition.
 
@@ -228,7 +228,7 @@ It is recommended to use events rather than "if conditions" in a formula if the 
 
 **Sum formulas** can be used to calculate sums of values of entities that comply with certain criteria. The criteria are defined by tags that are assigned to the entities. Tags can be assigned to containers, neighborhoods, parameters, and events (see [How Tags are used](#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)).
 
-### Table Formulas‌
+### Table Formulas
 
 A parameter can be defined by a table that is made up out of pairs of simulation- time and corresponding functional value. The parameter value as a function of time that is used in the simulation will be interpolated between these values. To enter a table:
 
@@ -250,7 +250,7 @@ Alternatively, you can import a table from an excel or csv file by clicking the 
 
 If you would like to use the first derivative of the interpolation, check **Use Derivative Values**. Values before the first and after the last data point of the series are set to 0.
 
-### Table Formulas with Offset‌
+### Table Formulas with Offset
 
 A table described in [Working with Tables](#table-formulas) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)).
     
@@ -261,7 +261,7 @@ For a table formula with offset, you have to specify:
 
 The values of the offset parameter will be subtracted from the X values of the original table at the time of evaluation.
 
-### Table Formulas with X-Argument‌
+### Table Formulas with X-Argument
 
 If a table should describe a parameter which values depend on any other parameter than the simulation time, a **table formula with X-Argument** can be used.
 
@@ -272,7 +272,7 @@ For a table formula with X-argument, you have to specify:
 
 The values of the selected X-Argument will be used as x-values in the original table at the time of evaluation. The values are considered to be in the base unit.
 
-## How Tags are used‌ - container criteria for formulas, observers, transports, and events‌
+## How Tags are used - container criteria for formulas, observers, transports, and events
 
 Containers and neighborhoods within a spatial structure, elements of an application, or parameters may be labelled with tags. These tags, together with the name given to a container or neighborhood, may be used for selectively enabling observers, active or passive transports, or events. They are used for formula evaluations of the formula type "sum".
 

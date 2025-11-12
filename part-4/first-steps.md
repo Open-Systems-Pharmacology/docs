@@ -1,4 +1,4 @@
-# MoBi®‌ - First Steps
+# MoBi® - First Steps
 
 This section guides you to your first project with MoBi® and familiarizes yourself with the software's user interface. If you are already familiar with MoBi® and want to learn about the modularization concept, please refer to [Modularization concept](modularization-concept.md).
 
@@ -6,7 +6,7 @@ First, the window structure of MoBi®and the basic steps for setting up a new Mo
 
 To create your first MoBi® project, simply follow the steps described in the sections below.
 
-## MoBi® - Window Overview‌
+## MoBi® - Window Overview
 
 In this section, we give a brief overview of the MoBi® window architecture and introduce some nomenclature.
 
@@ -52,9 +52,9 @@ An in-depth explanation on how to create simulations from the modules can be fou
 
 Once you have defined the simulations in the current project, the **Simulations Explorer** lists all of them. For details, see [Simulation Results](simulation-results.md).
 
-The **History Manager** lists all modeling steps and gives the opportunity to look at earlier versions and thus at the modeling history of the project. For details, see [History Manager and History Reporting‌](../part-5/history-manager-history-reporting‌.md).
+The **History Manager** lists all modeling steps and gives the opportunity to look at earlier versions and thus at the modeling history of the project. For details, see [History Manager and History Reporting](../part-5/history-manager-history-reporting.md).
 
-## Import PBPK Models from PK-Sim®‌
+## Import PBPK Models from PK-Sim®
 
 To develop a model in MoBi®, you can either create it from scratch or import a PBPK model from PK-Sim® and extend it. To import a PBPK model, proceed as follows:
 
@@ -73,13 +73,13 @@ To add extensions to the PK-Sim® module, create an **Extension Module**. To do 
 You can always add building blocks later if you did not select them when creating the module.
 {% endhint %}
 
-## Create a Project‌ from scratch‌
+## Create a Project from scratch
 
 Alternatively, you can create a new project from scratch. The first step to start working with MoBi® is to create a new project. To do this, click on **New** in the **File** menu. You can either work with amount or concentration based reaction networks which needs to be specified when creating a new project.
 
 Create a new module, and create all building blocks in it by selecting them in the "New Module" window. See description of the building blocks on how to populate them with the required information.
 
-## Create and Run a Simulation‌
+## Create and Run a Simulation
 
 With a model imported from PK-Sim® or created from scratch, you can now create and run a simulation. To do this, follow the steps below:
 

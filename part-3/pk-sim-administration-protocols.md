@@ -2,7 +2,7 @@
 
 An administration protocol is a set of data describing administration type, dose, and dosing regimen. These properties can be specified within the building block **Administration Protocol** <img src="../assets/icons/ProtocolFolder.svg" data-size="line">. Administration protocols can be saved as templates and shared among other projects and users.
 
-## Definition of new Administration Protocols in PK-Sim®‌
+## Definition of new Administration Protocols in PK-Sim®
 
 To create a new administration protocol, do one of the following:
 
@@ -25,7 +25,7 @@ The default is the **Simple Protocol** . In both options, the dose and dosing sc
 
 The administration protocol is initialized by providing it a **Name** in the respective input field. The name is used to identify the protocol when its parameters are saved in the project and/or as a template. Then, choose between **Simple protocol** and **Advanced protocol** and set the properties of the protocol.
 
-### Simple Protocol‌
+### Simple Protocol
 
 To create a **Simple Protocol**, follow the instructions in the table below.
 
@@ -49,7 +49,7 @@ Please note that if the administration type **Oral** is selected this will requi
 Please note that in case that the administration type **User Defined** is selected this will require the definition of a **Formulation** in the **Formulation** building block for the Simulation.
 {% endhint %}
 
-### Advanced Protocol‌
+### Advanced Protocol
 
 Activate **Advanced protocol** in the **Create Administration Protocol** window.
 
@@ -88,7 +88,7 @@ In the following screenshot, an example of an advanced protocol is given. The pr
 Please note that the combination of the Administration type **User defined** and the **Advanced protocol** is not available.
 {% endhint %}
 
-## Setting or Changing Administration Protocol Properties‌
+## Setting or Changing Administration Protocol Properties
 
 To set or change the properties of an existing administration protocol:
 
@@ -103,7 +103,7 @@ A window with the current settings will open where properties can be set appropr
 Please note that when you switch between simple and advanced protocol, this action will reset several parameters already defined. However, when switching from simple to advanced protocol, the dosing schedule will be transferred. This does not apply to the opposite direction.
 {% endhint %}
 
-## Cloning Administration protocols‌
+## Cloning Administration protocols
 
 To clone a protocol in the project:
 
@@ -112,7 +112,7 @@ To clone a protocol in the project:
 3. Set an alternative name for the protocol clone and, if desired, enter a description
 4. Confirm and close the window by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
-## Saving an Administration Protocols as Templates‌
+## Saving an Administration Protocols as Templates
 
 For each project, a number of administration protocols can be defined. They can be saved as a template and then be shared among several projects and users.
 
@@ -125,7 +125,7 @@ To save an existing administration protocol as template:
 * **Save as**: You can save the protocol under a different name. In this case, you will be asked to **Rename** the new template.
 * **Cancel**: This action will abort the saving process.
 
-## Loading Existing Administration Protocols from Templates‌
+## Loading Existing Administration Protocols from Templates
 
 To load an existing administration protocol from the template database:
 
@@ -138,7 +138,7 @@ The selected administration protocol will appear in the **Building Block Explore
 
 Administration protocols can also be directly loaded from the template database within a simulation.
 
-## Deleting Administration Protocols‌
+## Deleting Administration Protocols
 
 To delete an administration protocol from the project:
 

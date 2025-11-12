@@ -28,7 +28,7 @@
 ## Working with PK-Sim
 
 * PK-Sim Documentation
-  * [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
+  * [Quick Guide](part-3/pk-sim-quick-guide.md)
   * [Options](part-3/pk-sim-options.md)
   * [Projects](part-3/pk-sim-projects.md)
   * [Expression Profile](part-3/pk-sim-expression-profile.md)
@@ -46,7 +46,7 @@
 
 ## Working with MoBi
 
-* MoBi‌ Documentation
+* MoBi Documentation
   * [First Steps](part-4/first-steps.md)
   * [Options](part-4/mobi-options.md)
   * [The Building Block Concept](part-4/building-block-concepts.md)
@@ -79,11 +79,11 @@
 * [Import and Edit of Observed Data](part-5/import-edit-observed-data.md)
 * [Default, Display and Base Units](part-5/default-display-base-units.md)
 * [Working Journal](part-5/working-journal.md)
-* [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
-* [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
-* [Qualification‌](part-5/qualification.md)
+* [History Manager and History Reporting](part-5/history-manager-history-reporting.md)
+* [Setting up a Drug-Drug Interaction in PK-Sim](part-5/setting-drug-drug-interaction-pk-sim.md)
+* [Qualification](part-5/qualification.md)
 
-## Working with R‌
+## Working with R
 
 * [ospsuite-R Documentation](part-6/introduction-ospsuite-r.md)
 * [Reporting Engine (RE)](part-6/reporting-engine.md)

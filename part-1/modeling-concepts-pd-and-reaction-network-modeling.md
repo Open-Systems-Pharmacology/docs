@@ -1,4 +1,4 @@
-# Modeling Concepts - PD and Reaction Network Modeling‌
+# Modeling Concepts - PD and Reaction Network Modeling
 
 Pharmacodynamics (PD) describes the interactions of drugs with the organisms.
 

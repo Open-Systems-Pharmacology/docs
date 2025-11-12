@@ -6,7 +6,7 @@ This section describes the workflows of setting up and running a simulation. The
 * Load a simulation from a pkml file into the MoBi® project.
 * Create a new simulation from existing modules.
 
-## Load a Simulation‌
+## Load a Simulation
 
 A simulation created in PK-Sim or MoBi can be saved as a `*.pkml` file and later loaded into a MoBi® project.
 
@@ -20,7 +20,7 @@ The behavior will be slightly different based on the loaded simulation type.
 - When loading a simulation created with OSPS versions prior to 12.0, one module will be created containing all building blocks used in the simulation.
 - When loading a simulation consisting of several modules, all modules will be created in the project. If a module with the same name already exists in the project, the new module will be added as a copy with a counter suffix.
 
-## Create a Simulation‌
+## Create a Simulation
 
 A simulation can be created from at least one module or a combination of modules, individuals, and expression profiles. A specific combination of modules is called **model configuration**. To create a simulation:
 
@@ -51,7 +51,7 @@ Create of process rate parameter for all processes negatively impacts the perfor
 
 Finish the simulation creation by clicking on **OK** <img src="../assets/icons/OK.svg" data-size="line">. MoBi® now generates the new simulation, the progress of which is visualized by a progress bar. During this process the simulation is also checked for consistency, and possible issues will be reported.
 
-### Warnings and Errors‌
+### Warnings and Errors
 
 If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img src="../assets/icons/Notifications.svg" data-size="line"> **Warnings** or  <img src="../assets/icons/Error.svg" data-size="line"> **Errors** depending on their severity.
 
@@ -84,7 +84,7 @@ You can choose if only errors, only warnings or both are displayed by clicking (
 
 The <img src="../assets/icons/Notifications.svg" data-size="line"> Warnings and <img src="../assets/icons/Error.svg" data-size="line"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img src="../assets/icons/Save.svg" data-size="line"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
 
-## Defining simulation time - Output Intervals‌
+## Defining simulation time - Output Intervals
 
 The simulation time is specified in the **Simulation Settings -> Output Intervals** entry of the simulations "Parameters" tree view.
 
@@ -212,7 +212,7 @@ The outputs defined in this view will be automatically applied to new simulation
 
 - Chart Templates: a set of chart templates can be managed in the **Chart Editor**.
 
-## Editing Simulations‌
+## Editing Simulations
 
 Once a simulation is created, the basic structure of the simulation model is fixed.
 
@@ -238,13 +238,13 @@ If you need to change formulas, edit the corresponding building block and create
 In the following sections, a brief overview is given on where you can find the parameters that are specified in the building blocks from which the simulation was created. The examples given in some cases refer to a standard PK-Sim® simulation which was exported to MoBi®.
 {% endhint %}
 
-### Container and Neighborhood Properties‌
+### Container and Neighborhood Properties
 
 The container parameters are located at the same level where they were originally defined in the Spatial Structures building block, e.g., accessible by double- clicking the "Plasma" container at the "Organism|Liver" level.
 
 Parameters associated with Neighborhoods, e.g., "Surface Permeability Area", are also located at the same level on which they were originally defined in the Spatial Structures building block. For the kidney, for example, "Surface (Permeability) area" can be found under `Neighborhoods|Kidney\_int\_Kidney\_cell`.
 
-### Molecular Properties‌
+### Molecular Properties
 
 Molecules can have either **global** or **local** parameters.
 
@@ -255,7 +255,7 @@ Molecules can have either **global** or **local** parameters.
 
 Parameters of active transports are defined as a sub-node of the molecule that is transported. Parameters of protein interactions are defined as a sub-node of the molecule that is interacting with the protein.
 
-### Reaction Kinetics‌
+### Reaction Kinetics
 
 Parameters associated with reactions can also be local or global. Thus, the same rules as for molecule parameters apply also to reaction parameters as specified above.
 
@@ -263,7 +263,7 @@ Parameters associated with reactions can also be local or global. Thus, the same
 
 Parameters of Passive Transports are located in the neighborhoods where the respective passive transport is created.
 
-### Event and Application Properties‌
+### Event and Application Properties
 
 Parameters associated with Event and Application Properties can be accessed at the root level of the simulation hierarchy tree within the **Events** node. They are located at the same relative location as the Events building block from which the simulation was created.
 
@@ -291,7 +291,7 @@ Right-click on the simulation and select **Commit to Building Block**. A dialog 
 
 If no Parameter Values or Initial Conditions building block is selected for the last module, a new building block is created.
 
-## Further Options for Simulations‌
+## Further Options for Simulations
 
 Once a simulation is created, a number of options besides simply running the simulation are available.
 
