@@ -5,14 +5,14 @@
 * [How to Contribute](how-to-contribute.md)
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
-* Best Practices
-    * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
-    * [Model Development](part-7/model-development.md)
-    * [Model Evaluation](part-7/model-evaluation.md)
-    * [Application Simulation](part-7/application-simulation.md)
-    * [Documentation](part-7/documentation.md)
-  
-* Modeling Concepts
+
+* [Best Practices](mechanistic-modeling-of-pharmacokinetics-and-dynamics/best-practices/README.md)
+  * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
+  * [Model Development](part-7/model-development.md)
+  * [Model Evaluation](part-7/model-evaluation.md)
+  * [Application Simulation](part-7/application-simulation.md)
+  * [Documentation](part-7/documentation.md)
+* [Modeling Concepts](mechanistic-modeling-of-pharmacokinetics-and-dynamics/modeling-concepts/README.md)
   * [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
   * [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
   * [Principles of PBPK Modeling](part-1/principles-of-pbpk-modeling.md)
@@ -27,8 +27,8 @@
 
 ## Working with PK-Sim
 
-* PK-Sim Documentation
-  * [Quick Guide‌](part-3/pk-sim-quick-guide‌.md)
+* [PK-Sim Documentation](working-with-pk-sim/pk-sim-documentation/README.md)
+  * [Quick Guide](part-3/pk-sim-quick-guide.md)
   * [Options](part-3/pk-sim-options.md)
   * [Projects](part-3/pk-sim-projects.md)
   * [Expression Profile](part-3/pk-sim-expression-profile.md)
@@ -46,7 +46,7 @@
 
 ## Working with MoBi
 
-* MoBi‌ Documentation
+* [MoBi Documentation](working-with-mobi/mobi-documentation/README.md)
   * [First Steps](part-4/first-steps.md)
   * [Options](part-4/mobi-options.md)
   * [The Building Block Concept](part-4/building-block-concepts.md)
@@ -58,8 +58,11 @@
   * [Observers](part-4/observers-bb.md)
   * [Events](part-4/events-bb.md)
   * [Initial Conditions](part-4/initial-conditions-bb.md)
-  * [Model Building and Model Components](part-4/model-building-components.md)
-  * [Setting up a Simulation](part-4/setting-up-simulation.md)
+  * [Parameter Values](part-4/parameter-values-bb.md)
+  * [Expression Profiles](part-4/expression-profiles-bb.md)
+  * [Individuals](part-4/individuals-bb.md)
+  * [Parameters, Formulas, Tags, and Keywords](part-4/parameters-formulas-tags.md)
+  * [Simulations](part-4/setting-up-simulation.md)
   * [Simulation Results](part-4/simulation-results.md)
   * [Diagrams Overview](part-4/diagrams-overview.md)
   * [Tools](part-4/tools.md)
@@ -76,12 +79,11 @@
 * [Import and Edit of Observed Data](part-5/import-edit-observed-data.md)
 * [Default, Display and Base Units](part-5/default-display-base-units.md)
 * [Working Journal](part-5/working-journal.md)
-* [History Manager and History Reporting‌](part-5/history-manager-history-reporting‌.md)
-* [Setting up a Reaction Network‌](part-5/setting-up-reaction-network‌.md)
-* [Setting up a Drug-Drug Interaction in PK-Sim‌](part-5/setting-drug-drug-interaction-pk-sim‌.md)
-* [Qualification‌](part-5/qualification.md)
+* [History Manager and History Reporting](part-5/history-manager-history-reporting.md)
+* [Setting up a Drug-Drug Interaction in PK-Sim](part-5/setting-drug-drug-interaction-pk-sim.md)
+* [Qualification](part-5/qualification.md)
 
-## Working with R‌
+## Working with R
 
 * [ospsuite-R Documentation](part-6/introduction-ospsuite-r.md)
 * [Reporting Engine (RE)](part-6/reporting-engine.md)
@@ -89,7 +91,7 @@
 
 ## Appendix
 
-* [Appendix](appendix.md)
+* [Dimensions and Units](appendix.md)
 * [OSP Suite Fact Sheet](factsheet.md)
 
 ## References

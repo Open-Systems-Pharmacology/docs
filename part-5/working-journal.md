@@ -1,6 +1,6 @@
 # Working Journal
 
-## Project Documentation‌
+## Project Documentation
 
 The Working Journal allows for easy documentation of your working process with the Open Systems Pharmacology Suite. Because building PBPK and PD models is often a complex process, a documentation is necessary
 
@@ -22,11 +22,11 @@ After each important workstep, intermediate results or decision points can and s
 
 For instance, the values of the favorite parameters and result charts can be copied into the Working Journal by copy & paste and corresponding simulations and building blocks can be attached to the Journal Page directly from the context menu.
 
-## Overview‌
+## Overview
 
 To access the Working Journal, select the Tab Working Journal. Most buttons are deactivated before having created or selected a Journal for the current project file.
 
-![Journal Ribbon](../assets/images/part-5/JournalRibbonNew.png)
+![Journal Ribbon](../.gitbook/assets/JournalRibbonNew.png)
 
 To add the first Journal Page, click **Add Page**. You are asked, whether you want to open an existing Journal or to create a new one.
 
@@ -46,13 +46,13 @@ The Page is saved automatically, when closing the Editor or switching to another
 
 Additionally, you can save any time explicitly using the short cut CTRL-S or the corresponding button in the file menu.
 
-![Journal Editor window](../assets/images/part-5/JournalEditor1.png)
+![Journal Editor window](../.gitbook/assets/JournalEditor1.png)
 
-### Journal view‌
+### Journal view
 
-On the right side of the PK-Sim or MoBi application, the **Journal view** is shown by default. You can show and hide it like other views. In case you have removed the view, you can reopen it by clicking the corresponding button <img src="../assets/icons/Journal.svg" alt="" data-size="line"> in the Tab **Views**.
+On the right side of the PK-Sim or MoBi application, the **Journal view** is shown by default. You can show and hide it like other views. In case you have removed the view, you can reopen it by clicking the corresponding button <img src="../.gitbook/assets/Journal.svg" alt="" data-size="line"> in the Tab **Views**.
 
-![Image](../assets/images/part-5/JournalList1.png)
+![Image](../.gitbook/assets/JournalList1.png)
 
 By default, the Journal pages are ordered by the creation date in a descending order. For each page, the unique index, the title, creation date, tags and the first characters of the text are displayed. You can select other columns with the column chooser to display for example the userid of the author. You can use the columns for sorting, filtering and grouping. This is helpful in particular in large projects, where different authors contributed or different project files are used.
 
@@ -62,11 +62,11 @@ With a single click on a Journal Page row, you activate the Journal Page without
 
 At the bottom of the **Journal View**, some detail information is displayed for the selected Journal Page, in particular a list of related items, if you have attached e.g. simulations or building blocks.
 
-### Journal Ribbon group‌
+### Journal Ribbon group
 
 After you had selected a Working Journal for your project file, all buttons in the Journal Ribbon group are active.
 
-![Image](../assets/images/part-5/JournalRibbonActive.png)
+![Image](../.gitbook/assets/JournalRibbonActive.png)
 
 In the following sections we describe the available functions.
 
@@ -94,7 +94,7 @@ The current changes in the Journal Editor are saved and displayed in the Journal
 
 A file selection dialog is opened, which allows you to select another Working Journal .sbj file. This is usually not necessary, only in case you have selected the wrong Working Journal before.
 
-## Adding content to a Journal page‌
+## Adding content to a Journal page
 
 Besides manually entering content into a Journal page, you can copy and paste tables and charts from PK-Sim or MoBi. So you can for example copy the
 
@@ -104,7 +104,7 @@ Favorites table and the simulation chart within seconds to a Journal page and in
 It is recommended to select all parameters under consideration as **Favorites** and to document the source of all parameter values changed from the default in the column **Value Description**. This ensures a comprehensive overview of the essential input of your simulation which you can document by copying just the Favorites table.
 {% endhint %}
 
-### Copy & paste of tables‌
+### Copy & paste of tables
 
 You can copy tables or selection of rows to a Journal Page.
 
@@ -119,13 +119,13 @@ To copy the visible table into the Working Journal, do the following:
 
 Alternatively, you can paste the tables also to other tools like Powerpoint® or Excel®.
 
-![Copy and paste a Table](../assets/images/part-5/CopyAndPasteTable.png)
+![Copy and paste a Table](../.gitbook/assets/CopyAndPasteTable.png)
 
 {% hint style="info" %}
 Use short cuts for copy (CTRL+C for Selected Rows, SHFT+CTRL+C for whole table) and paste (CTRL+V).
 {% endhint %}
 
-### Copy & paste of charts‌
+### Copy & paste of charts
 
 You can copy charts in standard size independent on the size of the application window. To define the chart size and also font sizes open in the **Chart Editor** the Tab **Chart Export Options** and define the properties.
 
@@ -136,19 +136,19 @@ To copy the chart into the Working Journal, do the following
 
 Alternatively you can paste the tables also to other tools like Powerpoint® .
 
-![Copy and paste a Chart](../assets/images/part-5/CopyAndPasteChart.png)
+![Copy and paste a Chart](../.gitbook/assets/CopyAndPasteChart.png)
 
-## Working with Related Items‌
+## Working with Related Items
 
 Additionally to the content written and copied in a Journal Page, you can attach Simulations and Building Blocks to a Journal Page as **Related Items** to save the current state of your work.
 
 For example, you create a Journal Page to document the working state at some milestone presentation and attach the simulations used. Later, you can easily compare current simulations to those milestone simulations and identify differences. Or you can even reload the simulation in its old state and rerun it with a changed parameter value. (Reload of a simulation in MoBi results in loading missing Building blocks, too - in PK-Sim only the simulation itself is reloaded.)
 
-To attach a Simulation or a Building Block to the active Journal Page, just select the context menu entry <img src="../assets/icons/AddAction.svg" alt="" data-size="line"> **Add to Journal ...** at a Simulation or Building Block in the respective Explorer view.
+To attach a Simulation or a Building Block to the active Journal Page, just select the context menu entry <img src="../.gitbook/assets/AddAction.svg" alt="" data-size="line"> **Add to Journal ...** at a Simulation or Building Block in the respective Explorer view.
 
 The Simulation or Building Block is then displayed in the **Related Items** list at the bottom of the Journal view.
 
-![Image](../assets/images/part-5/RelatedItemsList.png)
+![Image](<../.gitbook/assets/RelatedItemsList (1).png>)
 
 Using the icons on the right of a **Related Item** you can
 
@@ -156,32 +156,32 @@ Using the icons on the right of a **Related Item** you can
 * reload the attached Simulation or Building Block into the project using a unique name,
 * delete the **Related Item**.
 
-## Searching the Journal‌
+## Searching the Journal
 
 After you documented your project work using the Working Journal, you might want to use these "memories". To do so, you can use the meta data like Title, creation date or tags to find the Journal Page you are interested in. But often it is easier just to search for a specific keyword or phrase you used in your documentation.
 
 To search for a word or phrase do the following:
 
-1. Click the <img src="../assets/icons/Search.svg" alt="" data-size="line"> Search button in the tab **Working Journal** to open the Search area in the **Journal view**.
-2. Enter the phrase into the Search field (or select one previous search phrase from the list you get by clicking the ![Image](../assets/icons/JournalSearchPhraseList.png) button at the right of the Search field). If necessary, open the Search Options by clicking the ![Image](../assets/icons/JournalSearchOptionsButton.png) button and select options.
+1. Click the <img src="../.gitbook/assets/Search.svg" alt="" data-size="line"> Search button in the tab **Working Journal** to open the Search area in the **Journal view**.
+2. Enter the phrase into the Search field (or select one previous search phrase from the list you get by clicking the ![Image](../.gitbook/assets/JournalSearchPhraseList.png) button at the right of the Search field). If necessary, open the Search Options by clicking the ![Image](../.gitbook/assets/JournalSearchOptionsButton.png) button and select options.
 3. Click on the **Find** button.
 4. A list of Journal Pages which contain the search phrase is displayed. For each Page the matches are displayed in the context.
 
 Double click on a Journal Page to open the Page in the Journal Editor - the **Find Dialog** of the Editor is displayed automatically; so you can browse through the find results in the Page. (A direct navigation from the match in the Journal view is not possible.)
 
-![Image](../assets/images/part-5/JournalSearch.png)
+![Image](../.gitbook/assets/JournalSearch.png)
 
-Click the ![Image](../assets/icons/JournalSearchCloseButton.png) button on the left of the Search field to close the search area.
+Click the ![Image](../.gitbook/assets/JournalSearchCloseButton.png) button on the left of the Search field to close the search area.
 
-## The Journal Diagram‌
+## The Journal Diagram
 
 The modelling process in PBPK/PD projects is often not straight forward but requires consideration of different alternatives and testing of several approaches. So the working process is mostly not represented appropriately by just a sequence of work status. Instead, it looks like a tree with several dead ends and one path to the final solution.
 
 Using the **Journal Diagram**, you can visualize your working process in a more appropriate way to maintain an overview of complex projects. You can use this overview for yourself or export it to project reports or slides. You can also see the Journal Diagram as a "diagram of content" of your Working Journal.
 
-You can find the Journal Diagram at the bottom of your PK-Sim or MoBi window. It is hidden by default. If you have removed the view, you can activate it using the button <img src="../assets/icons/JournalDiagram.svg" alt="" data-size="line"> Journal Diagram in the Tab Views. There is only one unique Journal Diagram per Working Journal.
+You can find the Journal Diagram at the bottom of your PK-Sim or MoBi window. It is hidden by default. If you have removed the view, you can activate it using the button <img src="../.gitbook/assets/JournalDiagram.svg" alt="" data-size="line"> Journal Diagram in the Tab Views. There is only one unique Journal Diagram per Working Journal.
 
-![Image](../assets/images/part-5/JournalDiagram.png)
+![Image](../.gitbook/assets/JournalDiagram.png)
 
 The Journal Diagram displays green rectangular nodes for each Journal Page and blue circle nodes for each attached related item at a Journal Page. You can arrange the nodes as you like just by drag & drop. If you move a Journal Page node the connected Related Item nodes are moved, too.
 
@@ -195,7 +195,7 @@ To connect two Journal Pages, do the following:
 
 To delete a connection, select it and press the DEL key.
 
-After you have arranged the Journal Diagram, click the Save Diagram button <img src="../assets/icons/Save.svg" alt="" data-size="line"> to save the Diagram layout to the Working Journal.
+After you have arranged the Journal Diagram, click the Save Diagram button <img src="../.gitbook/assets/Save.svg" alt="" data-size="line"> to save the Diagram layout to the Working Journal.
 
 {% hint style="warning" %}
 Clicking on Reset Layout to Default does immediately overwrite your layout work, so be careful using this button. (Result: All Journal Page nodes are displayed side by side in one horizontal sequence.)

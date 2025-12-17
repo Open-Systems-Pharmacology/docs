@@ -112,7 +112,7 @@ Then this data will be split into 4 data sets corresponding to the available com
 
 `{Organ, Compartment, Route}`:
 
-![Import result: Observed data sets](../assets/images/part-5/ImportResult-ObservedDataSets.PNG)
+![Import result: Observed data sets](../.gitbook/assets/ImportResult_ObservedDataSets.PNG)
 
 *   Data set 1: "`Brain.Plasma.IV`"
 
@@ -147,10 +147,10 @@ The general process of importing observed data is outlined here. A detailed desc
 
 To import data, you should do the following:
 
-1. Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®: ![Add Observed Data](../assets/images/part-5/AddObservedData.png)
+1. Click on "**Add Observed Data...**" in the context menu of "**Observed Data**" in the Building Blocks explorer of PK-Sim® or MoBi®: ![Add Observed Data](../.gitbook/assets/AddObservedData.png)
    * In PK-Sim® you can also preselect for which molecule observed data should be imported. For this, click on "Add Observed Data for" and select a molecule from the dropdown list:
 
-![Add Observed Data for](../assets/images/part-5/AddObservedDataFor.png)
+![Add Observed Data for](../.gitbook/assets/AddObservedDataFor.png)
 
 1. Select the input file (see [File Selection](import-edit-observed-data.md#file-selection)).
 2. Specify the **column mapping** (see [Mapping panel](import-edit-observed-data.md#mapping-panel)), enter all required metadata and set the unit and LLOQ information.
@@ -184,7 +184,7 @@ The left panel ("_Mapping settings_") is described in detail in the next section
 
 The right panel shows a preview of the imported data file, each tab representing one sheet.
 
-![Importer Window](../assets/images/part-5/ImporterInitialWindow.png)
+![Importer Window](../.gitbook/assets/ImporterInitialWindow.png)
 
 Sheets can be closed by clicking the 'x' or by right-clicking on a tab and selecting one of the options displayed. Closed sheets will not be imported and need not comply with the current data mapping. The user can retrieve all closed sheets of a document by the context menu option "Reopen all sheets".
 
@@ -192,11 +192,11 @@ Sheets can be closed by clicking the 'x' or by right-clicking on a tab and selec
 If the user closes an already loaded sheet, it will be removed from the loaded sheets!
 {% endhint %}
 
-![Importer Sheet Context Menu](../assets/images/part-5/ImporterSheetContextMenu.png)
+![Importer Sheet Context Menu](../.gitbook/assets/ImporterSheetContextMenu.png)
 
 The data preview table offers various possibilities for filtering and sorting the data. One can use the filter symbol in the column header of the data to open the filter menu (see screenshot below). By right-clicking the column name, the user can sort the data according to a specific column or open the 'Filter Editor' to create more sophisticated filters (s. [this tutorial](https://devexpress.github.io/dotnet-eud/interface-elements-for-desktop/articles/filter-editor/examples-of-using-the-filter-editor.html) and [this video tutorial (up to minute 2:55)](https://www.youtube.com/watch?v=A6OgNirrPaE#t=27s) for examples).
 
-![Importer Data Table Column Filter](../assets/images/part-5/ImporterTableColumnFilter.png) ![Importer Filter Editor](../assets/images/part-5/ImporterFilterEditor.png)
+![Importer Data Table Column Filter](../.gitbook/assets/ImporterTableColumnFilter.png) ![Importer Filter Editor](../.gitbook/assets/ImporterFilterEditor.png)
 
 {% hint style="warning" %}
 By default, the defined filter changes only the **preview** of the data. The user can choose to restrict **importing** to the filtered data by checking the checkbox "Use the filters for importing the data" under the data preview table.
@@ -296,13 +296,13 @@ The mapping panel is available throughout the whole import process. If the user 
 
 As shown in the screenshot below, the user gets a view of all the available mappings and can map a column to them. A column can be selected to a mapping only once and will no longer be available on the drop-down menus for other mappings, with one exception: the unit column for the measurement can also be mapped as the unit column for the corresponding error.
 
-![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png)
+![Importer Selecting an Excel Column](../.gitbook/assets/ImporterSelectingExcelColumn.png)
 
 Additionally, for some meta data mappings (e.g., Organ, Species and others), the user can select one option from the predefined ones that come from PK-Sim/MoBi. E.g. for the Organ mapping in the example below user could either map the Organ meta data to the source data column "Organ" or set it to any of predefined values ("_Peripheral venous blood_", ..., "_Spleen_", "_Stomach_").
 
 In the latter case: the selected predefined value will be used as "Organ" for ALL imported data sets.
 
-![List of values](../assets/images/part-5/Import-ListOfValues.PNG)
+![List of values](../.gitbook/assets/Import_ListOfValues.PNG)
 
 {% hint style="warning" %}
 The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' mapping.
@@ -310,37 +310,37 @@ The minimum set of a valid data mapping includes a 'Time' and a 'Measurement' ma
 
 For the molecule mapping, a column from the sheet can be selected. Alternatively, the user can select from a drop-down menu of the available molecules from the project or specify a new molecule manually by clicking "Edit manually" under "Edit extra fields".
 
-![Mapping molecules](../assets/images/part-5/Import-Map-Molecule.PNG)
+![Mapping molecules](../.gitbook/assets/Import_Map_Molecule.PNG)
 
 The user can also add one or more '**Group by**'-mappings. Those mappings are used to define _additional_ meta data and will be used together with the _predefined_ meta data ("_Organ_", "_Compartment_", ...) to break down a single data sheet into multiple data sets as described in [Data sets](import-edit-observed-data.md#data-sets).
 
-![Add GroupBy](../assets/images/part-5/Import-AddGroupBy.PNG)
+![Add GroupBy](../.gitbook/assets/Import_AddGroupBy.PNG)
 
 {% hint style="info" %}
 The mapping can be reset by right-clicking on the mapping panel and selecting one of the displayed options.
 {% endhint %}
 
-![Observed data mapping context menu](../assets/images/part-5/ObsData-MApping-ContextMenu.PNG)
+![Observed data mapping context menu](../.gitbook/assets/ObsData_MApping_ContextMenu.PNG)
 
 #### Selection of units
 
 The units for the mapped columns can either be manually entered or specified by a column. In the latter case, each data point can have a distinct unit but from the same dimension. In the unit dialog, the mode of unit definition can be selected. If the unit is specified as part of the header name (e.g. _Time\[h]_) it is automatically recognized by the importer. The user can edit the unit by opening the dialog in the column "**Edit extra fields**" of the corresponding mapping.
 
-![Setting the units manually](../assets/images/part-5/ImporterSetUnits.png)
+![Setting the units manually](../.gitbook/assets/ImporterSetUnits.png)
 
-![Setting the units from a column](../assets/images/part-5/ImporterSelectUnitFromColumn.png)
+![Setting the units from a column](../.gitbook/assets/ImporterSelectUnitFromColumn.png)
 
 When setting the unit manually, the user needs to select the dimension first, upon which the unit drop-down menu will be filled corresponding units.
 
 #### LLOQ
 
-The LLOQ can either be specified from the column of the measurement or from a separate column. 
+The LLOQ can either be specified from the column of the measurement or from a separate column.
 
-In the first case (specified in the measurement column), the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value. 
+In the first case (specified in the measurement column), the LLOQ values in the measurement column must be preceded by a "<", e.g. "<0.2", where 0.2 is the LLOQ value.
 
 In the second case (specified in a separate column), the values in the column must not be preceded by "<" or anything else, neither should they have the unit written next to them in the cell: the LLOQ column should just contain numerical values. The unit in this case is always the same as the measurement unit. There can only be one single LLOQ value for every data set. In case there are several LLOQ values defined, the user is warned, and in case the user wants to proceed with the import, the highest of these LLOQs will be assumed for the whole data set. Also in this case, if the user has some values that are preceded by "<" in the measurement column, the whole row of that value will be ignored and no simulation point will be loaded for it, since f.e. "<0.2" is not a numerical value, and the measurement column in this case has to contain only numerical values.
 
-When importing the datasets, the measurement values that are below the LLOQ are assigned the value LLOQ/2. For example a value written in the measurement column as "<0.2" will be imported in the data repository with a value of "0.1". This happens only to the values of the measurement that are preceded by "<" (e.g. "<0.2") in case the LLOQ comes from the measurement column, or in case the LLOQ comes from a separate column, just the measurement values that have an entry in the same row in the LLOQ column. 
+When importing the datasets, the measurement values that are below the LLOQ are assigned the value LLOQ/2. For example a value written in the measurement column as "<0.2" will be imported in the data repository with a value of "0.1". This happens only to the values of the measurement that are preceded by "<" (e.g. "<0.2") in case the LLOQ comes from the measurement column, or in case the LLOQ comes from a separate column, just the measurement values that have an entry in the same row in the LLOQ column.
 
 #### Configuring the error
 
@@ -348,7 +348,7 @@ The error can be set to '**Arithmetic Standard Deviation**' or '**Geometric Devi
 
 When the unit is configured as manual input, the user must first select the "Dimension" from the drop-down, and then the corresponding units to this dimension will become available in the "Unit" drop-down menu.
 
-![Selecting Error Type](../assets/images/part-5/ImporterSelectingErrorType.png)
+![Selecting Error Type](../.gitbook/assets/ImporterSelectingErrorType.png)
 
 #### Molecular weight
 
@@ -361,7 +361,7 @@ This can be done either by mapping of the data set to a molecule or by mapping o
   * If yes: observed data set will be automatically assigned the molecular weight of this compound.
   * If no: molecular weight of the given data set is undefined. However, if a new molecule with the name assigned to the data set is added to the project later on: observed data set will automatically become the molecular weight of this molecule.
 
-![](../assets/images/part-5/Import-MW-Molecule.PNG)
+![](../.gitbook/assets/Import_MW_Molecule.PNG)
 
 {% hint style="info" %}
 If molecular weight of the molecule is changed by user: molecular weight of all data sets linked to this molecule via the "Molecule" meta data will be automatically adjusted to the new value.
@@ -374,13 +374,13 @@ If the "Molecule" meta data was not mapped during the import process - it can be
 * If only the **Molecular Weight** (but not the **Molecule**) is mapped to a data source column: the value of the molecular weight is taken from the mapped data source column.
   * In such a case: mapped data column must contain the **same** molecular weight value for all rows of a data set - otherwise the import is not possible
 
-![](../assets/images/part-5/Import-MW-MW.PNG)
+![](../.gitbook/assets/Import_MW_MW.PNG)
 
 * If the **Molecule** is mapped to a data source column or is set to specific value and the **Molecular Weight** is mapped as well:
   * For each data set for which the **molecule name is not available in the project**: molecular weight will be taken from the imported data column as described above
   * For each data set which the **molecule name is available in the project**: molecular weight from the data column will be compared with the molecular weight of the molecule in the project. If they differ - import is not possible. Otherwise, the data set will automatically become the molecular weight of "its" molecule as described above.
 
-![](../assets/images/part-5/Import-MW-MW-Molecule.PNG)
+![](../.gitbook/assets/Import_MW_MW_Molecule.PNG)
 
 ### The NaN indicator
 
@@ -390,11 +390,11 @@ It is possible to define a specific number (e.g. 99999) as an equivalent of NaN.
 
 Data sets can be added to preview by clicking on "**Add current sheet**" or "**Add all sheets**":
 
-![Add data sheet(s) to preview](../assets/images/part-5/Import-AddDataSheets.PNG)
+![Add data sheet(s) to preview](../.gitbook/assets/Import_AddDataSheets.PNG)
 
 When at least one data set has been added to the preview, the confirmation tab "**Import preview**" gets activated.
 
-![Confirmation Tab](../assets/images/part-5/ImporterConfirmationTab.png)
+![Confirmation Tab](../.gitbook/assets/ImporterConfirmationTab.png)
 
 Here, the user can see which data sets have already been loaded. On selecting a data set, the data are being previewed to the right, both as values and in a chart form. The naming with which the data will be imported can be specified on the left side of the panel. This can be done by manually typing in the "Naming Pattern" input field: The user can type keys that represent the name of a mapping inside of curly brackets {}. This will be replaced by the corresponding value for every individual data set. The user is also free to write text that will then be the same for all the data sets names. Additionally, a drop-down with presets for naming patterns is also available.
 
@@ -408,7 +408,7 @@ By clicking the "**Save configuration**"-button, the user can save all configura
 
 The saved configuration can be used to resume the configuring at a later time point or to import a different file that should be imported with exactly the same configuration.
 
-![Save/Load configuration](../assets/images/part-5/Import-SaveLoadConfig.PNG)
+![Save/Load configuration](../.gitbook/assets/Import_SaveLoadConfig.PNG)
 
 {% hint style="info" %}
 If some sheets have already been loaded, this state is also part of the configuration.
@@ -424,7 +424,7 @@ Missing columns will be ignored.
 
 ## Editing Observed Data
 
-Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing metadata. Changes are reversible through  and will be tracked in the project history. Numerically changing a value is reflected in real-time in the preview graph below and will result in moving the data point in the data grid to the new settings.
+Once a repository of observed data is imported, it can be manipulated by adding new data points, numerically changing data points or changing metadata. Changes are reversible through and will be tracked in the project history. Numerically changing a value is reflected in real-time in the preview graph below and will result in moving the data point in the data grid to the new settings.
 
 The editing window can be accessed by double-clicking the observed data in the building block view or through the context menu.
 
@@ -440,11 +440,11 @@ All values in the time column must be unique in an observed data repository.
 
 Using the context menu on a single data set, the user can update **all data sets which were imported together with the selected one**.
 
-![Update previously imported data sets](../assets/images/part-5/Import-UpdateDataSets.PNG)
+![Update previously imported data sets](../.gitbook/assets/Import_UpdateDataSets.PNG)
 
 Upon selecting this option, the user is prompted to select the file from where the data will be re-imported (This can also be the same file used for the original import, just with edited data.) A window appears, showing the changes this re-import would make to the observed data: which data sets will be deleted, which will be overwritten and which will be newly imported. The user can then decide to proceed with the reload or abort it.
 
-![Reload summary](../assets/images/part-5/ImporterReloadSummary.png)
+![Reload summary](../.gitbook/assets/ImporterReloadSummary.png)
 
 {% hint style="info" %}
 Reloading previously imported data will always update **all** data sets which belong to the same import process. This also means that data sets which are not available in the new data source anymore will be automatically deleted from the project. If this is not possible (for example because a data set is used in a parameter identification or in a simulation) - the update is not possible and the user is prompted to remove such a data set from all simulations/parameter identifications/... **manually**. After that, the update process can be started again.

@@ -2,11 +2,11 @@
 
 In the building block **Formulation** the properties of the dosage form that is administered can be defined. Most of the predefined formulations are related to formulations typically administered via the oral route, whereas others, such as the **Zero Order** and the **First Order** release functions, can technically be administered into any other compartment. Please note that not all combinations of formulations and administration routes are possible. For an intravenous administration (bolus and infusion), formulation is not required as a drug administered intravenously is assumed to be dissolved in a medium.
 
-## Definition of new Formulations in PK- Sim®‌
+## Definition of new Formulations in PK- Sim®
 
 To create a new formulation, do one of the following:
 
-* Click on <img src="../assets/icons/Formulation.svg" alt="" data-size="line"> **Formulation** in the **Create** Group of the **Modeling** Tab, or
+* Click on <img src="../.gitbook/assets/Formulation.svg" alt="" data-size="line"> **Formulation** in the **Create** Group of the **Modeling** Tab, or
 * Right mouse click on **Formulations** in the **Building Block Explorer** and select **Add Formulation...**, or
 * Use the short cut **Ctrl+Alt+F**.
 
@@ -30,7 +30,7 @@ From the drop-down menu you can choose from the following predefined formulation
 
 In the following sections, the different formulation types are described in more detail.
 
-### Dissolved‌
+### Dissolved
 
 Using this type of formulation the drug is assumed to be administered in solution. Therefore, the whole amount of drug becomes available for absorption directly after the administration.
 
@@ -38,26 +38,26 @@ Using this type of formulation the drug is assumed to be administered in solutio
 The formulation type **Dissolved** characterizes the drug as being in solution at the point of administration. However, in case of poorly soluble compounds the intestinal absorption may be limited by the solubility, with the solubility (or in case of ionizable compounds the local pH-dependent GI solubility calculated using to the Henderson-Hasselbalch equation), imposing an upper bound to the absorption rate.
 {% endhint %}
 
-### Weibull‌
+### Weibull
 
-The Weibull function can be used to empirically (i.e., not mechanistically) describe the dissolution behavior of various dosage forms. The Weibull function can fit almost any kind of dissolution curve and is often used to describe experimental data when the mechanism of the release is not known [[7](../references.md#7)] [[30](../references.md#30)].
+The Weibull function can be used to empirically (i.e., not mechanistically) describe the dissolution behavior of various dosage forms. The Weibull function can fit almost any kind of dissolution curve and is often used to describe experimental data when the mechanism of the release is not known \[[7](../references.md#7)] \[[30](../references.md#30)].
 
-When applied to drug dissolution and release from pharmaceutical dosage forms, the Weibull function expresses the accumulated fraction of the drug $m$ in solution at a time $t$ according to the following equation [[40](../references.md#40)]:
+When applied to drug dissolution and release from pharmaceutical dosage forms, the Weibull function expresses the accumulated fraction of the drug $$m$$ in solution at a time $$t$$ according to the following equation \[[40](../references.md#40)]:
 
 $$m=1-\exp(\frac{-(t-T_{lag})^b}{a})$$
 
-where $a$ is the scale parameter, defining the time scale of the process, $T_{lag}$ the lag time before the onset of the dissolution or the release process, and $b$ the shape parameter characterizing the curve as either exponential ($b = 1$), sigmoid ($b > 1$), or parabolic ($b < 1$).
+where $$a$$ is the scale parameter, defining the time scale of the process, $$T_{lag}$$ the lag time before the onset of the dissolution or the release process, and $$b$$ the shape parameter characterizing the curve as either exponential ($$b = 1$$), sigmoid ($$b > 1$$), or parabolic ($$b < 1$$).
 
 The following parameters have to be defined when choosing the Weibull function:
 
-- **Dissolution shape** $b$ characterizing the curve as either exponential ($b = 1$), sigmoid ($b > 1$), or parabolic ($b < 1$).
-- **Dissolution time (50% dissolved)** defining the time (excluding the lag time) at which 50% of the administered dose is dissolved and, thus, corresponding to the scale parameter $a$ of the Weibull function.
-- **Lag time** $T_{lag}$ characterizing the time after which dissolution begins.
-- **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
+* **Dissolution shape** $$b$$ characterizing the curve as either exponential ($$b = 1$$), sigmoid ($$b > 1$$), or parabolic ($$b < 1$$).
+* **Dissolution time (50% dissolved)** defining the time (excluding the lag time) at which 50% of the administered dose is dissolved and, thus, corresponding to the scale parameter $$a$$ of the Weibull function.
+* **Lag time** $$T_{lag}$$ characterizing the time after which dissolution begins.
+* **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
 
 Please note that the Weibull function can only be combined with the Administration type **Oral**.
 
-### Lint80‌
+### Lint80
 
 The **Lint80** is an empirical function assuming linear release until 80% of the administered dose is dissolved. This type of formulation can only be combined with the Administration type **Oral**.
 
@@ -65,45 +65,45 @@ The following parameters have to be defined when choosing the **Lint80** functio
 
 * **Dissolution time (80% dissolved)**, defining the time (excluding the lag time) when 80% of the administered dose is dissolved.
 * **Lag time** characterizing the time after which dissolution starts.
-- **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
+* **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
 
-### Particle Dissolution‌
+### Particle Dissolution
 
-Particle Dissolution calculates the dissolution kinetics of spherical particles with a predefined particle size distribution based on the Noyes-Whitney approach. The details of the mechanistic dissolution model have been described by Willmann et al [[102](../references.md#102)]. In PK-Sim®, the particle dissolution can only be combined with the Administration type **Oral**. To simulate the particle size dependent dissolution, the following formulation-dependent parameters have to be defined:
+Particle Dissolution calculates the dissolution kinetics of spherical particles with a predefined particle size distribution based on the Noyes-Whitney approach. The details of the mechanistic dissolution model have been described by Willmann et al \[[102](../references.md#102)]. In PK-Sim®, the particle dissolution can only be combined with the Administration type **Oral**. To simulate the particle size dependent dissolution, the following formulation-dependent parameters have to be defined:
 
-- **Thickness (unstirred water layer)** - thickness of the diffusion layer.
-- **Type of particle size distribution** - monodisperse or polydisperse.
-- **Particle radius (mean)**.
+* **Thickness (unstirred water layer)** - thickness of the diffusion layer.
+* **Type of particle size distribution** - monodisperse or polydisperse.
+* **Particle radius (mean)**.
 
-For the **polydisperse** type of particule size distribution, the following additional parameters can be defined:
+For the **polydisperse** type of particle size distribution, the following additional parameters can be defined:
 
-- **Particle size distribution**:  either normal or log normal.
-- **Particle radius (min)**: the lower limit for the particle radius.
-- **Particle radius (max)**:  the upper limit for the particle radius.
-- **Number of bins**.
+* **Particle size distribution**: either normal or log normal.
+* **Particle radius (min)**: the lower limit for the particle radius.
+* **Particle radius (max)**: the upper limit for the particle radius.
+* **Number of bins**.
 
 For **normal** distribution:
 
-- **Particle radius (mean)**
-- **Particle radius (SD)**: Standard deviation of the particle radius.
+* **Particle radius (mean)**
+* **Particle radius (SD)**: Standard deviation of the particle radius.
 
 For **log normal** distribution:
 
-- **Particle radius (geomean)**.
-- **Coefficient of variation**.
+* **Particle radius (geomean)**.
+* **Coefficient of variation**.
 
 In addition, in order to use the Particle Dissolution formulation, the drug-related parameters have to be defined in the **Advanced Parameters** tab of the **Compound Building Block**. These include:
 
-- **Aqueous diffusion coefficient**.
-- **Density of the drug** material, and the threshold for immediate dissolution. Further, you will have to indicate how the precipitated amount should be treated (either as soluble or insoluble).
+* **Aqueous diffusion coefficient**.
+* **Density of the drug** material, and the threshold for immediate dissolution. Further, you will have to indicate how the precipitated amount should be treated (either as soluble or insoluble).
 
-### Table‌
+### Table
 
 Table defines the amount of drug applied per unit time as a continuous function. You can either manually specify time and fraction of the applied dose values or import dissolution data from Excel®.
 
 In order to manually enter the values:
 
-* Click on **Add Point** ![Image](../assets/icons/Add.png) to add a new row to the table
+* Click on **Add Point** ![Image](../.gitbook/assets/Add.png) to add a new row to the table
 * Enter appropriate values for **Time** and **Fraction (dose)** dissolved
 
 {% hint style="info" %}
@@ -112,7 +112,7 @@ The origin (0, 0) is always present. Values must be monotonically increasing in 
 
 In order to **import** experimental dissolution data from Excel®:
 
-1. Click <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Import Formulation**
+1. Click <img src="../.gitbook/assets/LoadAction.svg" alt="" data-size="line"> **Import Formulation**
 2. Select and open the Excel® file
 3. Import and transfer the appropriate Excel® sheet
 
@@ -120,50 +120,50 @@ In order to **import** experimental dissolution data from Excel®:
 For additional information about the import data and mapping workflow see [Import and Edit of Observed Data](../part-5/import-edit-observed-data.md).
 {% endhint %}
 
-- **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
+* **Use as suspension**: if selected, the formulation will disintegrate in the stomach and the disintegrated particles will migrate along the gastrointestinal tract compartments. Particle dissolution formulation is always treated as a suspension per construction. If, on the other side, this option is not selected, the tablet will be treated as nondisintegrating tablet with discrete transition in the different intestinal compartments.
 
-### Zero Order‌
+### Zero Order
 
-Zero Order defines the application at a constant rate. The total dose (defined in the administration protocol) will be administered at a constant rate until within the specified time [Start of administration, Start of administration + **(End time)**].
+Zero Order defines the application at a constant rate. The total dose (defined in the administration protocol) will be administered at a constant rate until within the specified time \[Start of administration, Start of administration + **(End time)**].
 
-### First Order‌
+### First Order
 
 First Order defines the application as a first order input. The required input is the half-life of application value **(t1/2)**. The formulation release is then described by the following equation:
 
 $$\frac{dA}{dt}=-k\cdot A$$
 
-where $A$ is the amount of drug at time $t$ and $k$ the first order rate constant calculated from the half-life of application value according to:
+where $$A$$ is the amount of drug at time $$t$$ and $$k$$ the first order rate constant calculated from the half-life of application value according to:
 
 $$k=\frac{\ln(2)}{t_{1/2}}$$
 
-## Setting or Changing Formulation Properties‌
+## Setting or Changing Formulation Properties
 
 To set or change the properties of an existing formulation:
 
-1. Right mouse click on the respective formulation in the **Building Blocsk Explorer**
-2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
+1. Right mouse click on the respective formulation in the **Building Blocks Explorer**
+2. Select <img src="../.gitbook/assets/Edit.svg" alt="" data-size="line"> **Edit...**
 
 or simply double click on the formulation in the **Building Blocks Explorer**
 
-The window with the properties of the formulation will open. The properties can be set or changed appropriately. The changes are saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
+The window with the properties of the formulation will open. The properties can be set or changed appropriately. The changes are saved by closing the window by clicking on ![Image](../.gitbook/assets/CloseWindow.png).
 
-## Cloning Formulations‌
+## Cloning Formulations
 
 To clone a formulation in the project:
 
 1. Right mouse click on the respective formulation in the **Building Blocks Explorer**
-2. Select <img src="../assets/icons/SimulationClone.svg" alt="" data-size="line"> **Clone...**
+2. Select <img src="../.gitbook/assets/SimulationClone.svg" alt="" data-size="line"> **Clone...**
 3. Set an alternative name for the formulation clone and enter a description, if desired.
-4. Confirm and close the window by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">.
+4. Confirm and close the window by clicking **OK** <img src="../.gitbook/assets/OK.svg" alt="" data-size="line">.
 
-## Formulations as Templates‌
+## Formulations as Templates
 
 For each project, a number of formulations can be defined. They can be saved as a template and then be shared among several projects and users.
 
 To **save** an existing formulation as template:
 
 1. Right mouse click on the respective formulation in the **Building Block Explorer**
-2. Select <img src="../assets/icons/SaveAction.svg" alt="" data-size="line"> **Save as Template...**
+2. Select <img src="../.gitbook/assets/SaveAction.svg" alt="" data-size="line"> **Save as Template...**
 
 In case a formulation with the same name already exists, a warning appears and you have the following opportunities:
 
@@ -174,23 +174,23 @@ In case a formulation with the same name already exists, a warning appears and y
 To **load** an existing formulation from the template database:
 
 1. Right mouse click on **Formulations** in the **Building Blocks Explorer**
-2. Select <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Load From Template...**
+2. Select <img src="../.gitbook/assets/LoadAction.svg" alt="" data-size="line"> **Load From Template...**
 3. Select the desired formulation from the user templates
 
 In case a formulation with the same name already exists in the project, a warning appears and you will have to **Rename** the formulation that is to be loaded from template.
 
-1. Click **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
+1. Click **OK** <img src="../.gitbook/assets/OK.svg" alt="" data-size="line">
 
 The selected formulation will appear in the **Building Blocks Explorer** view.
 
 In addition, formulations can be directly loaded from the template database within a simulation (see [Simulations](pk-sim-simulations.md)).
 
-## Deleting Formulations‌
+## Deleting Formulations
 
 To delete a formulation from the project:
 
 1. Right mouse click on the respective formulation in the **Building Blocks Explorer**
-2. Select <img src="../assets/icons/Delete.svg" alt="" data-size="line"> **Delete...**
+2. Select <img src="../.gitbook/assets/Delete.svg" alt="" data-size="line"> **Delete...**
 3. Confirm to by clicking **Yes**
 
 {% hint style="warning" %}

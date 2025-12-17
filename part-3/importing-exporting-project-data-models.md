@@ -1,63 +1,62 @@
 # Importing and Exporting Project Data and Models
 
-## Importing Observed data‌
+## Importing Observed data
 
 The Open Systems Pharmacology Suite offers a convenient handling of experimental time-values data. The process of loading of observed data from file formats like MS Excel, CSV, or NONMEM, is described in [Shared Tools - Import and edit of Observed Data](../part-5/import-edit-observed-data.md).
 
-## Importing Individual and Population Simulation‌
+## Importing Individual and Population Simulation
 
 The **Import** function of individual and population simulations allows you to use simulations that have been modified outside of PK-Sim® - most likely using MoBi® - in the PK-Sim® environment. This has several advantages:
 
-- Simulations are handled in the well-known PK-Sim® environment.
-- Performing population simulations with models extended in MoBi.
-- Performing PK parameter analyses with models extended in MoBi.
+* Simulations are handled in the well-known PK-Sim® environment.
+* Performing population simulations with models extended in MoBi.
+* Performing PK parameter analyses with models extended in MoBi.
 
 #### Loading an individual simulation
 
 A simulation previously exported as a \*.pkml file from PK-Sim® or MoBi® can be imported into the current project. To import an individual simulation:
 
-- Click on the **Import/Export** tab then click on the **Individual Simulation** icon <img src="../assets/icons/IndividualSimulationLoad.svg" alt="" data-size="line"> and select the \*.pkml file to be imported. The simulation will be imported into the project and will be available from the Simulation Explorer.
-- Imported simulations can be run and analysed as any standard PK-Sim® simulation. However, the structure of the simulation cannot be altered. That means that it is not possible to swap parts of the simulation using the building block concept described in [Modules, Philosophy, and Building Blocks](../part-2/modules-philsophy-building-blocks.md).
-- If an imported simulation contains parameters that are unknown in PK-Sim®, they can be found in the simulation parameter tree under the node MoBi®.
+* Click on the **Import/Export** tab then click on the **Individual Simulation** icon <img src="../.gitbook/assets/IndividualSimulationLoad.svg" alt="" data-size="line"> and select the \*.pkml file to be imported. The simulation will be imported into the project and will be available from the Simulation Explorer.
+* Imported simulations can be run and analysed as any standard PK-Sim® simulation. However, the structure of the simulation cannot be altered. That means that it is not possible to swap parts of the simulation using the building block concept described in [Modules, Philosophy, and Building Blocks](../part-2/modules-philsophy-building-blocks.md).
+* If an imported simulation contains parameters that are unknown in PK-Sim®, they can be found in the simulation parameter tree under the node MoBi®.
 
 #### Loading a population simulation
 
 Similarly to individual simulations, a simulation previously exported as a \*.pkml file from PK-Sim® or MoBi® can be imported into the current project as a population simulation. As the \*.pkml exports only contain individual simulation and no information about the population, population information must be either a) loaded from a \*.CSV file (e.g., previously exported from PK-Sim or created in R), or a Population Building Block must be created and assigned to the simulation. To import a population simulation:
 
-- Click on the **Import/Export** tab, then click on the **Population Simulation** icon <img src="../assets/icons/PopulationSimulationLoad.svg" alt="" data-size="line">. In the **Simulation** section of the "Import Population Simulation" dialog, select the \*.pkml file to be imported.
+* Click on the **Import/Export** tab, then click on the **Population Simulation** icon <img src="../.gitbook/assets/PopulationSimulationLoad.svg" alt="" data-size="line">. In the **Simulation** section of the "Import Population Simulation" dialog, select the \*.pkml file to be imported.
+* In the **Population** <img src="../.gitbook/assets/Population.svg" alt="" data-size="line"> section, the population needs to be specified. There are **three** different ways of defining the aforementioned population:
 
-- In the **Population** <img src="../assets/icons/Population.svg" alt="" data-size="line"> section, the population needs to be specified. There are **three** different ways of defining the aforementioned population:
-
-1. Use a population that is defined as building block in your current project. Available populations are itemized in the drop down menu of the **Population** field. In addition, you can define a new population by clicking on the **Add** <img src="../assets/icons/Population.svg" alt="" data-size="line"> button or load a population from a template by clicking on the **Load from template** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> button.
+1. Use a population that is defined as building block in your current project. Available populations are itemized in the drop down menu of the **Population** field. In addition, you can define a new population by clicking on the **Add** <img src="../.gitbook/assets/Population.svg" alt="" data-size="line"> button or load a population from a template by clicking on the **Load from template** <img src="../.gitbook/assets/LoadAction.svg" alt="" data-size="line"> button.
 2. Load a population from a .CSV file. This is a file that was previously generated from a population and saved in CSV format.
-   - Use this option if you want to manually modify the default distribution generated by PK-Sim® for a given parameter or if you wish to vary parameters that were created in MoBi® and that PK-Sim® is not aware of. The file is selected by specifying the population file path.
+   * Use this option if you want to manually modify the default distribution generated by PK-Sim® for a given parameter or if you wish to vary parameters that were created in MoBi® and that PK-Sim® is not aware of. The file is selected by specifying the population file path.
 3. Allocate the number of individuals. This is typically used when importing a simulation that was entirely created in MoBi® and is not based on a PK-Sim® model. In that case, all distributed parameters defined in the simulation will be randomly varied according to their distribution. Also all parameters marked with the flag “Can be varied in a population” in MoBi® can be varied manually after importing in the **User Defined Variability** tab of PK-Sim®.
 
-## Export To Excel®‌
+## Export To Excel®
 
 You can export the simulation results (time-values profiles within all included organs and compartments) to MS-Excel®.
 
-- Right mouse click on the simulation name within the **Simulations Explorer** and select **Export results to Excel**
+* Right mouse click on the simulation name within the **Simulations Explorer** and select **Export results to Excel**
 
 A window opens where you can enter the Excel® file name and the file type (\*.xls or \*.xlsx). Then Excel® is automatically started showing the exported data.
 
-## Export To CSV‌
+## Export To CSV
 
 You can export the simulation results (time-values profiles within all included organs and compartments) to a text file in CSV format. The procedure is identical to the export to Excel®.
 
-## Send To MoBi®‌
+## Send To MoBi®
 
 You can export a PK-Sim® simulation to MoBi® by one of the following steps:
 
-* Right mouse click on the simulation name within the **Simulations Explorer** and select **Export To MoBi...** <img src="../assets/icons/MoBi.svg" alt="" data-size="line">
+* Right mouse click on the simulation name within the **Simulations Explorer** and select **Export To MoBi...** <img src="../.gitbook/assets/MoBi.svg" alt="" data-size="line">
 
 The program MoBi® will open with the exported simulation. You can then save the exported simulation within MoBi® in MoBi® format (\*.mbp3 file).
 
-## Export to \*.pkml file for MoBi®‌
+## Export to \*.pkml file for MoBi®
 
 The **Shared Modeling File (\*.pkml)** can be used to transfer a PK-Sim® simulation into a MoBi® project. To export a PK-Sim® simulation to a \*.pkml file:
 
-* Right mouse click on the simulation name in the **Simulations Explorer** <img src="../assets/icons/Simulation.svg" alt="" data-size="line">.
+* Right mouse click on the simulation name in the **Simulations Explorer** <img src="../.gitbook/assets/Simulation.svg" alt="" data-size="line">.
 
 and select **Save Simulation to MoBi pkml format ...**
 
@@ -67,7 +66,7 @@ A window opens where you can choose the directory and enter the \*.pkml file nam
 The "Send to MoBi®" function described above is identical to exporting a simulation to a \*.pkml file and then opening this file from MoBi®.
 {% endhint %}
 
-## Exporting Simulation Structures To File‌
+## Exporting Simulation Structures To File
 
 You can export a PK-Sim® simulation to a text file that contains all model and simulation details: model structure, rate equations and parameter values. You can export the simulation by:
 
@@ -75,20 +74,19 @@ You can export a PK-Sim® simulation to a text file that contains all model and 
 
 A window opens where you can choose the directory and enter the file name. The file is saved and can be opened with a suitable text editor.
 
-## Exporting the Project History To File‌
+## Exporting the Project History To File
 
 To export the project history that contains any user action to an Excel® file:
 
-* Click on the **Export History** icon <img src="../assets/icons/History.svg" alt="" data-size="line"> in the **Export Project** group of the **Import/Export** tab.
+* Click on the **Export History** icon <img src="../.gitbook/assets/History.svg" alt="" data-size="line"> in the **Export Project** group of the **Import/Export** tab.
 
 A window opens where you can choose the directory and enter the Excel file name.
 
-## Exporting Population data‌
+## Exporting Population data
 
 To export the physiological parameters which are varied within a population to a table (\*.csv format):
 
 * Right mouse click on the population name within the **Building Blocks Explorer** and select **Export To CSV...**
-
 * If you have created a population simulation, you can also export the population data by right mouse click on the simulation name within the **Simulations Explorer** and select **Export To CSV...**.
 
 ## Exporting Project to Snapshot / Loading Project from Snapshot
@@ -101,32 +99,32 @@ If an old project is simply opened with a new PK-Sim version, it will contain **
 
 To simplify this task, PK-Sim offers a concept of **project snapshots**.
 
-A project snapshot contains the **minimal amount of information** required to recreate the project from scratch. This includes the information on primary substance specific input parameters (e.g., molecular properties like *molecular weight*, *lipophilicity*, etc.) and the required inputs (e.g., demographic characteristics) for defining the system parameters. Further, any changes made in the existing model, such as a change in liver volume, will be stored in the snapshot and included in the new model once recreated from the snapshot.
+A project snapshot contains the **minimal amount of information** required to recreate the project from scratch. This includes the information on primary substance specific input parameters (e.g., molecular properties like _molecular weight_, _lipophilicity_, etc.) and the required inputs (e.g., demographic characteristics) for defining the system parameters. Further, any changes made in the existing model, such as a change in liver volume, will be stored in the snapshot and included in the new model once recreated from the snapshot.
 
 Project snapshots are human-readable text files in [JSON format](https://en.wikipedia.org/wiki/JSON).
 
-![Snapshot example](../assets/images/part-3/Snapshot-Example.jpg)
+![Snapshot example](../.gitbook/assets/Snapshot_Example.jpg)
 
 The following PK-Sim entities are currently supported by snapshots and will be recreated when a project is loaded from snapshot:
 
-- All building block types (incl. observed data)
-- Simulations
-- Parameter Identifications
-- Simulation comparisons
+* All building block types (incl. observed data)
+* Simulations
+* Parameter Identifications
+* Simulation comparisons
 
 The following PK-Sim entities are not yet supported:
 
-- Sensitivity Analyses
+* Sensitivity Analyses
 
 To export a project to snapshot, select **File** :arrow\_right: **Export to Snapshot**
 
 {% hint style="warning" %}
 Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect. In this case PK-Sim will warn you. If exported anyway, the new project created from this snapshot may have some undesired deviations from the original projects, which must be corrected manually by the user.
 
-<img src="../assets/images/part-3/Snapshot-Export-Warning.png" alt="Snapshot export warning" data-size="original">
+<img src="../.gitbook/assets/Snapshot_Export_Warning.png" alt="Snapshot export warning" data-size="original">
 {% endhint %}
 
-To load a project from snapshot, select **File** - **Load from Snapshot** <img src="../assets/icons/SnapshotImport.svg" alt="" data-size="line">
+To load a project from snapshot, select **File** - **Load from Snapshot** <img src="../.gitbook/assets/SnapshotImport.svg" alt="" data-size="line">
 
 {% hint style="info" %}
 When loading a project from snapshot, you can select whether to **run the simulations immediately** after loading or not. Not running the simulations can significantly speed up the loading process, especially for large projects with many simulations.

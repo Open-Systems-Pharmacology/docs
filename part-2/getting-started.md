@@ -2,13 +2,13 @@
 
 ## Software and Hardware Requirements
 
-| OS | Windows 10®, Windows 11®, Windows Server 2016®, Windows Server 2019® |
-|-------------------|-----------------------------------------------------|
-| Processor | minimum 1 GHz (the faster, the better) |
-| Memory | 2 GB RAM, 4+ GB recommended |
-| Disk space | minimum 2 GB |
-|  | **Optional software** |
-| R® | version 4.1 or higher - 64bit |
+| OS         | Windows 10®, Windows 11®, Windows Server 2019®, Windows Server 2022®, Windows Server 2025® |
+| ---------- | ------------------------------------------------------------------------------------------ |
+| Processor  | minimum 1 GHz (the faster, the better)                                                     |
+| Memory     | 2 GB RAM, 4+ GB recommended                                                                |
+| Disk space | minimum 2 GB                                                                               |
+|            | **Optional software**                                                                      |
+| R®         | version 4.1 or higher - 64bit                                                              |
 
 The information provided above refers to the core components of the Open Systems Pharmacology Suite, including PK-Sim® MoBi®. Both PK-Sim® and MoBi® can be installed as stand-alone software packages to reduce the disk space required.
 
@@ -34,17 +34,12 @@ The modular structure of the Open Systems Pharmacology Suite is explained in [Mo
 
 To install the Open Systems Pharmacology Suite core components:
 
-1.  Download installation packages from [http://setup.open-systems-pharmacology.org/](http://setup.open-systems-pharmacology.org/).
-
-2.  Start the **OSPSuite-Full.X.Y.Z.exe**\* (where X.Y.Z is a program version, e.g. 12.0.397) from the menu Start -\> Run or from Windows Explorer.
-
-3.  Follow the instructions of the installation program. In most cases, the installation should be carried out with the default settings.
-
-4.  In most cases, you will have to restart your computer following installation.
-
-5.  Download PK-Sim® [gene expression databases](https://github.com/Open-Systems-Pharmacology/Gene-Expression-Databases/releases) and copy them to a folder accessible for all users.
-
-6.  Configure PK-Sim® gene expression databases (for details, see [PK-Sim® - Options](../part-3/pk-sim-options.md)).
+1. Download installation packages from [http://setup.open-systems-pharmacology.org/](http://setup.open-systems-pharmacology.org/).
+2. Start the **OSPSuite-Full.X.Y.Z.exe**\* (where X.Y.Z is a program version, e.g. 12.0.397) from the menu Start -> Run or from Windows Explorer.
+3. Follow the instructions of the installation program. In most cases, the installation should be carried out with the default settings.
+4. In most cases, you will have to restart your computer following installation.
+5. Download PK-Sim® [gene expression databases](https://github.com/Open-Systems-Pharmacology/Gene-Expression-Databases/releases) and copy them to a folder accessible for all users.
+6. Configure PK-Sim® gene expression databases (for details, see [PK-Sim® - Options](../part-3/pk-sim-options.md)).
 
 ### (Re-)Qualification Framework
 
