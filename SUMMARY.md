@@ -81,6 +81,7 @@
 * [Working Journal](part-5/working-journal.md)
 * [History Manager and History Reporting](part-5/history-manager-history-reporting.md)
 * [Setting up a Drug-Drug Interaction in PK-Sim](part-5/setting-drug-drug-interaction-pk-sim.md)
+* [Extraction of physiological parameters from PK-Sim database](part-5/db_extraction-physiological-parameters.md)
 * [Qualification](part-5/qualification.md)
 
 ## Working with R
