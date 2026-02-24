@@ -2,7 +2,7 @@
 
 A **Compound** is a set of data that describes the properties of the substance whose behavior is to be simulated. These properties are defined within the building block **Compound**. For each project, several compounds may be defined. The compounds defined can be saved as templates and shared among several projects and users.
 
-## Definition of new Compounds in PK- Sim®‌
+## Definition of new Compounds in PK- Sim®
 
 To create a new compound, do one of the following:
 
@@ -16,7 +16,7 @@ A dialog will open, where the properties of the compound can be defined. The com
 
 The **Create Compound** window is subdivided into three tabs: **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Properties**.
 
-### Basic Physico-Chemistry‌ tab
+### Basic Physico-Chemistry tab
 
 The basic physico-chemical properties of a compound are specified in the **Basic Physico-chemistry** tab. Most of the drug properties can have multiple values, e.g., coming from differed sources, determined using various methods or assays. During the simulation creation, you can choose one value for each property.
 
@@ -113,7 +113,7 @@ Intestinal solubility can also be defined as a linear interpolation of measured 
 
 ![](../assets/images/part-3/CreateSolubilityAsTable.png) ==> ![](../assets/images/part-3/EditSolubilityTable.png)
 
-### ADME Properties‌ tab
+### ADME Properties tab
 
 After having defined the basic physico-chemical properties of the compound, processes known to be involved in its distribution and elimination can be specified in the **ADME** tab. The **ADME** tab is accessible either by clicking Next or by directly clicking on the respective tab in the **Create Compound** window.
 
@@ -194,7 +194,7 @@ This approach cannot be implemented in PK-Sim. You can export the simulation to 
 
 #### Distribution - Distribution calculation
 
-**Partition coefficient calculation methods‌**
+**Partition coefficient calculation methods**
 
 Two parameters determine the rate and extent of passive distribution in the body: steady state organ-plasma partition coefficients (PC) as well as permeability surface area (PxSA) products of each organ, also called Cellular Permeabilities (CP).
 
@@ -225,24 +225,24 @@ Partition coefficients are derived from input data as follows:
 
 ![Image](../assets/images/part-3/K-protein.png) Calculated from **Lipophilicity** using a correlation determined experimentally by measuring the unspecific binding to different tissue protein fraction of various organs for a large set of diverse compounds.
 
-Drug partitioning between plasma and red blood cells ($K_{rbc}$) is calculated in analogous manner to ![Drug Partitioning](../assets/images/part-3/Eq-Krbc-PKSim.png)
+Drug partitioning between plasma and red blood cells ($$K_{rbc}$$) is calculated in analogous manner to ![Drug Partitioning](../assets/images/part-3/Eq-Krbc-PKSim.png)
 
 The only exceptions are the **Schmitt model** that additionally takes into account the amount of acidic and neutral phospholipids as well as neutral lipids, and the **Rodgers & Rowland** model, if experimental data for blood-to-plasma concentration ratios (B:P) are available.
 
-The equation for the calculation of $K_{rbc}$ in the Schmitt partition model is: ![Drug Partitioning Schmitt](../assets/images/part-3/equation-15-4.png)
+The equation for the calculation of $$K_{rbc}$$ in the Schmitt partition model is: ![Drug Partitioning Schmitt](../assets/images/part-3/equation-15-4.png)
 
-If a value for B:P is used in the Rodgers & Rowland model, $K_{rbc}$ is calculated as follows: ![Drug Partitioning Rodgers & Rowland](../assets/images/part-3/equation-15-5.png)
+If a value for B:P is used in the Rodgers & Rowland model, $$K_{rbc}$$ is calculated as follows: ![Drug Partitioning Rodgers & Rowland](../assets/images/part-3/equation-15-5.png)
 
-where HCT is the hematocrit and $BP_{ratio}$ is the blood-to-plasma concentration ratio.
+where HCT is the hematocrit and $$BP_{ratio}$$ is the blood-to-plasma concentration ratio.
 
 No general rules have emerged to determine which distribution model is best suited based on the knowledge about the substance properties. However, some trends are contained within the different model foundations and assumptions as outlined below:
 
 | Partition coefficient calculation method | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| PK-Sim® Standard (default)               | The relevant compound parameters are lipophilicity and binding to plasma proteins. As lipophilicity measure, the membrane affinity (partition coefficient between water and an artificial membrane bilayer) is preferred in this model. The subcompartments of tissue and blood or plasma are assumed to consist of lipids, proteins, and water. Therefore the respective volume fractions as well as lipid/water ($K_{lipid}$) and protein/ water ($K_{protein}$) partition coefficients of the compound are considered.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Rodgers & Rowland                        | In contrast to the previous model, this approach explicitly considers electrostatic interactions between ionized compounds (e.g. moderate-to-strong bases) and anionic phospholipids at physiological pH. It also considers interactions with intracellular neutral phospholipids and neutral lipids. Two additional input parameters are therefore necessary for the calculation of partition coefficients: the blood to plasma concentration ratio $BP_{ratio}$, as a measure for electrostatic interactions of drugs with acidic phospholipids, and the vegetable oil-water partition coefficient ($D_{vo:w}$) which is a better surrogate than the octanol-water partition coefficient ($P_{o:w}$) for neutral lipids [[59](../references.md#59)], [[62](../references.md#62)], [[60](../references.md#60)], [[61](../references.md#61)].                                                                                                                      |
+| PK-Sim® Standard (default)               | The relevant compound parameters are lipophilicity and binding to plasma proteins. As lipophilicity measure, the membrane affinity (partition coefficient between water and an artificial membrane bilayer) is preferred in this model. The subcompartments of tissue and blood or plasma are assumed to consist of lipids, proteins, and water. Therefore the respective volume fractions as well as lipid/water ($$K_{lipid}$$) and protein/ water ($$K_{protein}$$) partition coefficients of the compound are considered.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Rodgers & Rowland                        | In contrast to the previous model, this approach explicitly considers electrostatic interactions between ionized compounds (e.g. moderate-to-strong bases) and anionic phospholipids at physiological pH. It also considers interactions with intracellular neutral phospholipids and neutral lipids. Two additional input parameters are therefore necessary for the calculation of partition coefficients: the blood to plasma concentration ratio $$BP_{ratio}$$, as a measure for electrostatic interactions of drugs with acidic phospholipids, and the vegetable oil-water partition coefficient ($$D_{vo:w}$$) which is a better surrogate than the octanol-water partition coefficient ($$P_{o:w}$$) for neutral lipids [[59](../references.md#59)], [[62](../references.md#62)], [[60](../references.md#60)], [[61](../references.md#61)].                                                                                                                      |
 | Schmitt                                  | This approach offers a universally applicable method to calculate organ-plasma partition coefficients under explicit consideration of electrostatic interactions between charged molecules at physiological pH and acidic phospholipids. pH differences between different subcompartments are taken into account, which leads to different amounts of dissociated and undissociated weak acids and bases. In contrast to the Poulin & Theil model the lipid subcompartment is assumed to consist of neutral lipids, neutral phospholipids and acidic phospholipids in order to better describe partitioning into biological membranes – especially of charged drugs. For each of these membrane constituents fractional volumes based on experimental literature data were used 68.                                                                                                                                                                 |
-| Poulin & Theil                           | The approach developed by Poulin and Theil considers the cell lipid subcompartment as mainly consisting of phospholipids with a lipophilicity-hydrophobicity behavior similar to a mixture of 30 % neutral lipids and 70 % water. Organ-plasma partition coefficients are then calculated using the volume fractions of the aqueous ($F_w$) and organic subcompartments ($_{Fneutral\ lipid}$ and $F_{phospholipid}$) of the respective organ and plasma for this distribution model (select the combobox "advanced" in Individual --> Anatomy & Physiology and go to Physiology --> Tissue and body fluid physiology --> Tissue composition). For adipose tissue, vegetable oil-water partition coefficients ($D_{vo:w}$) are used as lipophilicity measures, whereas octanol- water partition coefficients ($P_{o:w}$) are used for non-adipose tissue [[53](../references.md#53)], [[54](../references.md#54)], [[55](../references.md#55)], [[52](../references.md#52)]. |
+| Poulin & Theil                           | The approach developed by Poulin and Theil considers the cell lipid subcompartment as mainly consisting of phospholipids with a lipophilicity-hydrophobicity behavior similar to a mixture of 30 % neutral lipids and 70 % water. Organ-plasma partition coefficients are then calculated using the volume fractions of the aqueous ($$F_w$$) and organic subcompartments ($$F_{neutral\ lipid}$$ and $$F_{phospholipid}$$) of the respective organ and plasma for this distribution model (select the combobox "advanced" in Individual --> Anatomy & Physiology and go to Physiology --> Tissue and body fluid physiology --> Tissue composition). For adipose tissue, vegetable oil-water partition coefficients ($$D_{vo:w}$$) are used as lipophilicity measures, whereas octanol- water partition coefficients ($$P_{o:w}$$) are used for non-adipose tissue [[53](../references.md#53)], [[54](../references.md#54)], [[55](../references.md#55)], [[52](../references.md#52)]. |
 | Berezhkovskiy                            | The assumptions made to describe drug partitioning into biological membranes as well as the input parameters correspond to those made in the Poulin & Theil model. However, peripheral drug elimination as well as drug exchange between compartments are considered, which leads to a modified version of the equation presented by Poulin and Theil [[5](../references.md#5)].                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 **Cellular permeability calculation methods**
@@ -313,7 +313,7 @@ The following process types can be defined in the **Metabolizing Enzymes** secti
 For calculation of in vivo clearance or Vmax values from in vitro values obtained from microsomal assays, the content of the CYP enzyme defined as the process type has to be specified. The default value in PK-Sim® is 108 pmol/mg microsomal protein which is the CYP3A4 protein content in liver microsomes [[63](../references.md#63)]. CYP enzyme contents in liver microsomes from this reference are shown when you move the mouse over the parameter Content of CYP proteins in liver microsomes. If you have defined other than these CYP enzymes, please insert the corresponding value in PK-Sim®.
 {% endhint %}
 
-##### Definition of a metabolite in an enzymatic process‌
+##### Definition of a metabolite in an enzymatic process
 
 A metabolite of a compound can be defined and used either as a "sink" or treated like any other compound. See [How to set up a parent/metabolite simulation](pk-sim-simulations.md#how-to-set-up-a-parentmetabolite-simulation) for details.
 
@@ -373,7 +373,7 @@ Biliary clearance is a systemic process that does not have to be linked to prope
 
 Drugs may influence a broad variety of ADME processes that in turn will then affect the PK of the drug and possibly also other drugs. See section [PK-Sim® Compounds: Defining Inhibition/Induction Processes](pk-sim-compounds-defining-inhibition-induction-processes.md) for details on how to define inhibition and induction processes in PK-Sim®.
 
-### Advanced Parameters‌ tab
+### Advanced Parameters tab
 
 Additional compound-related parameters can be defined in the **Advanced Parameters** that are needed in case the particle dissolution function (see [Formulations](pk-sim-formulations.md)) or the model for proteins and large molecules (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)) are used. In all other cases, the parameters defined in the **Advanced Parameters** tab will not be used and can be left unchanged.
 
@@ -406,7 +406,7 @@ Four drug-related parameters which are used in the model for proteins and large 
 
 After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Blocks Explorer** view.
 
-## Setting or Changing Compound Properties‌
+## Setting or Changing Compound Properties
 
 To set or change the properties of an existing compound:
 
@@ -417,7 +417,7 @@ or simply double click on the compound in the **Building Blocks Explorer**.
 
 A window with the three tabs **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Parameters** will open. The properties can be set or changed appropriately. The changes can be saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 
-## Cloning Compounds‌
+## Cloning Compounds
 
 To clone a compound in the project:
 
@@ -426,7 +426,7 @@ To clone a compound in the project:
 3. Enter an alternative name for the compound clone and enter a description, if desired.
 4. Confirm and close the window by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
-## Saving Compounds as Templates‌
+## Saving Compounds as Templates
 
 For each project, several compounds can be defined. They can be saved as templates and then shared among several projects and users.
 
@@ -441,7 +441,7 @@ In case a compound with the same name already exists, a warning appears and you 
 * Save as: You can save the compound under a different name. In this case, you will be asked to Rename the new template.
 * Cancel: This action will abort the saving process.
 
-## Loading Existing Compounds from Templates‌
+## Loading Existing Compounds from Templates
 
 As mentioned before, the compounds defined in a project can be saved as templates and then be shared among several projects and users.
 
@@ -458,7 +458,7 @@ The selected compound will appear in the **Building Block Explorer** view.
 
 Compounds can also be directly loaded from the template database within a simulation.
 
-## Deleting Compounds‌
+## Deleting Compounds
 
 To delete a compound from the project:
 

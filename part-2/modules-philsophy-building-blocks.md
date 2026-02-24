@@ -14,7 +14,7 @@ PK-Sim® is a comprehensive software tool for whole-body physiologically based p
 
 PK-Sim® applies the building blocks concept, separating information used for model building into groups: Individuals, Populations, Compounds, Formulations, Administration Protocols, Events, Observers, and Observed Data. The different building blocks are described in detail in “Working with PK-Sim®”. Building blocks from these groups are combined to generate a model. The advantage of building blocks is that they can be reused and combined to create different models. For example, after establishing a drug model after single-dose intravenous administration to an animal species, substitute the individual with a suitably parameterized virtual human population and obtain a first-in-man simulation model. Further substitute the formulation to get a controlled-release per oral simulation model, substitute the protocol to obtain a multiple dose simulation model, or replace the compound to obtain a simulation model for another drug.
 
-PK-Sim® will be described in detail in [Working with PK-Sim®](../part-3/pk-sim-quick-guide‌.md).
+PK-Sim® will be described in detail in [Working with PK-Sim®](../part-3/pk-sim-quick-guide.md).
 
 ## MoBi®
 
@@ -39,7 +39,7 @@ Apart from the two central, graphical user interface (GUI)- based software tools
 
 ### Qualification framework
 
-The qualification framework enables automated validation of various scenarios (use cases) supported by the OSP platform. This technical framework is used, for example, to release a new version of the OSP Suite in full confidence by automatically verifying that an ever-growing list of scenarios is performing as expected. The qualification framework will be described in detail in [Qualification‌](../part-5/qualification.md).
+The qualification framework enables automated validation of various scenarios (use cases) supported by the OSP platform. This technical framework is used, for example, to release a new version of the OSP Suite in full confidence by automatically verifying that an ever-growing list of scenarios is performing as expected. The qualification framework will be described in detail in [Qualification](../part-5/qualification.md).
 
 ### Validation and automation tools
 
@@ -65,8 +65,8 @@ OSP Qualification Framework and R packages are not included into the main OSP Su
 
 Models created in PK-Sim® or MoBi® can be exported in *PK Modeling Language* (\***.pkml**) format and shared between the OSP tools. Internally, the PKML file format is an XML format with a predefined structure.
 
-### Import and Export‌
+### Import and Export
 
 Apart from the communication and exchange via R, PK-Sim® and MoBi® have import and export functions for MS Excel®, CSV, and NONMEM® that allow for the import of experimental data or the export of simulation results, for example. MoBi® has SBML import functionalities.
 
-PK-Sim can also import and export *project snapshots* in [JSON format](https://en.wikipedia.org/wiki/JSON) (s. [Exporting Project to Snapshot](../part-3/importing-exporting-project-data-models.md#exporting-project-to-snapshot-loading-project-from-snapshot) for details).
+PK-Sim can also import and export *project snapshots* in [JSON format](https://en.wikipedia.org/wiki/JSON) (s. [Exporting Project to Snapshot](../part-3/importing-exporting-project-data-models.md#exporting-project-to-snapshot--loading-project-from-snapshot) for details).

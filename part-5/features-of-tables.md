@@ -2,7 +2,7 @@
 
 In this chapter you find the documentation of the table view, which is generally used throughout the Open Systems Pharmacology Suite.
 
-## Overview‌
+## Overview
 
 In PK-Sim® and MoBi®, tables are often used for input and output, for instance in parameter lists, history, and the chart editor. The tables have several useful features whose availability in some cases depends on the context.
 
@@ -36,7 +36,7 @@ The screenshot below shows a table
 
 ![Organ Table With Changes Applied](../assets/images/part-5/Table-OrganizedWithDescription.png)
 
-## Sorting‌
+## Sorting
 
 *   To sort the rows of a table ascendingly by a column, click the column header.
 
@@ -46,7 +46,7 @@ The screenshot below shows a table
 
 *   To sort by multiple columns, you need to press the shift key when clicking on the column headers for sorting. The ordering within a multiple column sort depends on the sequence with which the columns have been selected for sorting. To alter this sequence you deselect a column by **Clear Sorting** from **Context Menu** and then re-select it.
 
-## Grouping‌
+## Grouping
 
 *   To group the rows of a table by a column, drag the column header from the **Column Header Row** to the **Grouping Panel**, if visible, or select **Group by this column** from its **Context Menu**.
 
@@ -60,7 +60,7 @@ The screenshot below shows a table
 Note that the grouping feature is not available for all tables.
 {% endhint %}
 
-## Filtering‌
+## Filtering
 
 To filter the rows of a table do one of the following:
 
@@ -76,7 +76,7 @@ You can easily combine different filter features, as exemplary shown in below.
 
 ![Organ Table With All Features Applied](../assets/images/part-5/Table-AllFilterFeatures.png)
 
-## Select columns‌
+## Select columns
 
 *   Select **Column Chooser** from **Context Menu**.
 
@@ -88,7 +88,7 @@ You can easily combine different filter features, as exemplary shown in below.
 The column chooser is not available for organ composition table.
 {% endhint %}
 
-## Arrange columns‌
+## Arrange columns
 
 *   You can change the order of columns by dragging a column header to another location in the **Column Header Row**.
 

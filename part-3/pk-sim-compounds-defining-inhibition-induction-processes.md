@@ -4,7 +4,7 @@ Drugs may influence a broad variety of ADME processes that in turn will then aff
 
 The interaction processes in PK-Sim® are defined in the **ADME** tab of a compound.
 
-## Inhibition Processes‌
+## Inhibition Processes
 
 To set up an inhibition of a protein by a compound, do the following:
 
@@ -16,7 +16,7 @@ To set up an inhibition of a protein by a compound, do the following:
 
 Inhibition changes reaction rates and/or the kinetics of active transports or metabolization reactions by modifying the following reaction and/or transport parameters:
 
-*   The Michaelis-Menten constant $K_m$ and the turnover number $kcat$ for Michaelis-Menten kinetics
+*   The Michaelis-Menten constant $$K_m$$ and the turnover number $$kcat$$ for Michaelis-Menten kinetics
 
 *   The Specific Clearance for first order kinetics
 
@@ -24,15 +24,15 @@ In case of a *Michaelis-Menten* process, the reaction/transport rate **without i
 
 $$v=\frac{V_{max}\times S}{K_M+S}$$
 
- with $V_{max} = kcat \times E$ is maximum velocity where $kcat$ is the rate constant and $E$ is the amount of enzyme/transporter, and $S$ = free substrate concentration.
+ with $$V_{max} = kcat \times E$$ is maximum velocity where $$kcat$$ is the rate constant and $$E$$ is the amount of enzyme/transporter, and $$S$$ = free substrate concentration.
 
 In an inhibition scenario, both, the turnover number kcat and the Michaelis- Menten constant, are modified to new apparent values:
 
 $$v=\frac{V_{max,app}\times S}{K_{M,app}+S}$$
 
-with $V_{max,app} = kcat,app \times E$ apparent maximum velocity which is the product of apparent $kcat$ and $E$, the amount of enzyme/transporter, and $S$ = free substrate concentration.
+with $$V_{max,app} = kcat,app \times E$$ apparent maximum velocity which is the product of apparent $$kcat$$ and $$E$$, the amount of enzyme/transporter, and $$S$$ = free substrate concentration.
 
-PK-Sim® calculates the apparent $kcat$ and apparent Michaelis-Menten constant for the specified inhibition scenario. In case of a simple setting with just one inhibitor per process, the equations are listed in the next section.
+PK-Sim® calculates the apparent $$kcat$$ and apparent Michaelis-Menten constant for the specified inhibition scenario. In case of a simple setting with just one inhibitor per process, the equations are listed in the next section.
 
 If first order processes are inhibited, the specific clearances will be altered. The generic expression for a reversible linear, non saturable metabolism/transport process of first order is:
 
@@ -44,7 +44,7 @@ If an inhibition is set up for an enzyme or transporter, all processes with the 
 
 ![Metabolism or transport processes that are specified for a compound can be selected for inhibition.](../assets/images/part-3/metabolism-transport-processes.jpg)
 
-### Competitive inhibition - simple setting with one inhibitor‌
+### Competitive inhibition - simple setting with one inhibitor
 
 In a competitive enzyme inhibition, the inhibitor binds reversibly to the enzyme and competes with the substrate for free enzyme. In case of a reversible inhibition, high substrate concentrations can overcome this inhibition. The apparent Michaelis-Menten constant increases while the apparent maximum reaction velocity remains unchanged.
 
@@ -52,13 +52,13 @@ In a competitive enzyme inhibition, the inhibitor binds reversibly to the enzyme
 
 $$v=\frac{V_{max}\times S}{K_{M,app}+S}$$
 
-with $v$ = reaction velocity, $V_{max}$ = maximum reaction velocity, $K_{M,app}$ = apparent Michaelis-Menten constant, and $S$ = free substrate concentration. $K_{M,app}$ is calculated as follows:
+with $$v$$ = reaction velocity, $$V_{max}$$ = maximum reaction velocity, $$K_{M,app}$$ = apparent Michaelis-Menten constant, and $$S$$ = free substrate concentration. $$K_{M,app}$$ is calculated as follows:
 
 $$K_{M,app} = K_M \times (1+\frac{I}{K_I})$$
 
-with the variables defined above and $K_M$ = Michaelis-Menten constant in absence of an inhibitor, $I$ = free inhibitor concentration, and $K_I$ = dissociation constant of the enzyme-inhibitor complex.
+with the variables defined above and $$K_M$$ = Michaelis-Menten constant in absence of an inhibitor, $$I$$ = free inhibitor concentration, and $$K_I$$ = dissociation constant of the enzyme-inhibitor complex.
 
-### Uncompetitive inhibition - simple setting with one inhibitor‌
+### Uncompetitive inhibition - simple setting with one inhibitor
     
 In a uncompetitive enzyme inhibition, binding of the inhibitor to the enzyme requires prior binding of the substrate to the enzyme. Binding of the inhibitor to the enzyme-substrate complex is reversible. This kind of inhibition decreases the apparent Michaelis-Menten constant and the maximum reaction velocity.
 
@@ -68,20 +68,20 @@ The reaction rate is described by the following equation:
 
 $$v=\frac{V_{max,app}\times S}{K_{M,app}+S}$$
 
-with $V_{max,app}$ = apparent maximum reaction velocity, $K_{M,app}$ = apparent Michaelis-Menten constant, and $S$ = free substrate concentration.
+with $$V_{max,app}$$ = apparent maximum reaction velocity, $$K_{M,app}$$ = apparent Michaelis-Menten constant, and $$S$$ = free substrate concentration.
 
 The apparent maximum reaction velocity is decreased depending on the concentration of the inhibitor, and its affinity to the enzyme-substrate complex.
 
 $$V_{max,app} = \frac{V_{max}}{1+\frac{I}{K_I}}$$
 
-with $V_{max}$ = maximum reaction velocity, $I$ = free inhibitor concentration, and $K_I$ = dissociation constant of the enzyme-substrate-inhibitor complex.
+with $$V_{max}$$ = maximum reaction velocity, $$I$$ = free inhibitor concentration, and $$K_I$$ = dissociation constant of the enzyme-substrate-inhibitor complex.
 
 The apparent Michaelis-Menten constant is defined as follows:
 $$K_{M,app} = \frac{K_M}{1+ \frac{I}{K_I}}$$
 
 with the variables as defined above.
 
-### Mixed Inhibition : Simple Setting with One Inhibitor‌
+### Mixed Inhibition : Simple Setting with One Inhibitor
     
 In a mixed inhibition, the inhibitor binds reversibly to the enzyme or the enzyme/substrate complex with different affinities (and different dissociation constants). The inhibitor binding site is different from the substrate binding site on the enzyme molecule. The apparent Michaelis-Menten constant is changed and the apparent maximum velocity is decreased.
 
@@ -91,23 +91,23 @@ The reaction rate is described by the following equation:
 
 $$v=\frac{V_{max,app}\times S}{K_{M,app}+S}$$
 
-with $V_{max,app}$ = apparent maximum reaction velocity, $K_{M}$ = Michaelis-Menten constant in the absence of the inhibitor, and $S$ = free substrate concentration.
+with $$V_{max,app}$$ = apparent maximum reaction velocity, $$K_{M}$$ = Michaelis-Menten constant in the absence of the inhibitor, and $$S$$ = free substrate concentration.
 
 The apparent maximum velocity is calculated as follows:
 
 $$V_{max,app} = \frac{V_{max}}{1+\frac{I}{K_{Iu}}}$$
 
-with $V_{max}$ = maximum reaction velocity, $I$ = free inhibitor concentration, and $K_{Iu}$ = dissociation constant of the enzyme-substrate-inhibitor complex.
+with $$V_{max}$$ = maximum reaction velocity, $$I$$ = free inhibitor concentration, and $$K_{Iu}$$ = dissociation constant of the enzyme-substrate-inhibitor complex.
 
 The apparent Michaelis-Menten constant is calculated as follows:
 
 $$K_{M,app} = \frac{1+\frac{I}{K_{Ic}}}{1+\frac{I}{K_{Iu}}}$$
 
-with $K_{Ic}$ = dissociation constant of the enzyme-inhibitor complex, $K_{Iu}$ = dissociation constant of the enzyme-substrate-inhibitor complex, and $I$ = free inhibitor concentration.
+with $$K_{Ic}$$ = dissociation constant of the enzyme-inhibitor complex, $$K_{Iu}$$ = dissociation constant of the enzyme-substrate-inhibitor complex, and $$I$$ = free inhibitor concentration.
 
-### Non-Competitive Inhibition : Simple Setting with One Inhibitor‌
+### Non-Competitive Inhibition : Simple Setting with One Inhibitor
     
-The non-competitive inhibition is a special case of a mixed inhibition in which an inhibitor binds reversibly to the enzyme and/or to the enzyme/substrate complex with the same inhibition constant ($K_I = K_{Iu}=K_{Ic}$). The reaction velocity is described by the same equation as in a mixed inhibition and the apparent maximum velocity is described by the same equation as in an uncompetitive inhibition.
+The non-competitive inhibition is a special case of a mixed inhibition in which an inhibitor binds reversibly to the enzyme and/or to the enzyme/substrate complex with the same inhibition constant ($$K_I = K_{Iu}=K_{Ic}$$). The reaction velocity is described by the same equation as in a mixed inhibition and the apparent maximum velocity is described by the same equation as in an uncompetitive inhibition.
 
 ### Irreversible Inhibition / Mechanism-Based Inactivation
     
@@ -160,7 +160,7 @@ Given the variability and uncertainty associated with experimental determination
 Please note that for the mechanism-based inactivator no clearance process is defined via the inactivation process by default. In theory, for every inactivated enzyme molecule, also one inactivator molecule is cleared; this must be separately defined by the user in form of additional metabolization/excretion processes for the inhibitor.
 {% endhint %}
 
-## Protein Induction‌
+## Protein Induction
 
 Enzyme or transporter induction can occur as a result of either increased **de novo synthesis of protein** or (in very rare cases and currently not implemented in PK-Sim®) a decrease in degradation following protein stabilisation induction. Some examples of induction processes are:
 
@@ -181,7 +181,7 @@ In an induction, Emax ranges from 0 (= no induction) to infinity. A value of 1 m
 
 If the reaction of the enzyme Ex and the substrate Sj follows a Michaelis-Menten kinetics, the rate of the enzyme Ex degradation/production and the substrate Sj degradation are given by:
 
-## Multiple Inhibitors : Equations Used by PK-Sim®‌
+## Multiple Inhibitors : Equations Used by PK-Sim®
 
 The enzyme turnover for Enzyme X in the presence of m competitive (CI), n uncompetitive (UI), o non-competitive (NI), p mixed-type inhibitors (MI), q mechanism-based enzyme inactivators/time dependent inactivators (TDI) and r inducers (IND) is given by:
 

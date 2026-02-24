@@ -1,86 +1,59 @@
-# Setting up a Simulation
+# Simulations
 
-After having made yourself familiar with the processes of building model components in MoBi® - Model building and model components, this section describes the workflows of setting up a simulation using these components. There are two ways to set up a simulation:
+This section describes the workflows of setting up and running a simulation. There are three ways to set up a simulation in MoBi:
 
-* Load an existing simulation (pkml file) into the MoBi® project.
-* Create a new simulation from existing model components (building blocks). These two workflows of setting up simulations will be described in the following.
+* Export a simulation from [PK-Sim to MoBi](../part-3/importing-exporting-project-data-models.md#send-to-mobi).
+* Load a simulation from a pkml file into the MoBi® project.
+* Create a new simulation from existing modules.
 
-## Simulation settings
+## Load a Simulation
 
-- Output Intervals: start and end time point of a simulation and resolution of a simulation; can be edited in this view in the **Output Intervals** tab.
-
-- Solver Settings: solver parameters such as tolerance, use of Jacobian etc.; can also be edited in this view in the **Solver Settings** tab.
-
-{% hint style="warning" %}
-Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
-
-However, when scale divisors are calculated and applied to a simulation as described in [Model Building and Model Components](model-building-components.md), solver tolerances can often be safely increased without compromising accuracy.
-{% endhint %}
-
-- Output Selection: outputs that will be available for plots; cannot be edited in this view but will be listed in the **Output Selection** tab after a successful simulation run in the **Simulation Creation Wizard**.
-
-- Chart Templates: a set of chart templates can be managed in the **Chart Editor** as described in [Tools](tools.md); is part of the simulation settings, but not visible in this view.
-
-
-## Load a Simulation‌
-
-Existing simulations can be loaded by either:
+A simulation created in PK-Sim or MoBi can be saved as a `*.pkml` file and later loaded into a MoBi® project.
 
 * Clicking on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Load Simulation into Project** button in the Import Ribbon Group.
-* Right-click on an existing simulation in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line">
+* Right-click on the "Simulations" entry in the Simulations Explorer and select "Load Simulation..." in the context menu.
 
-Load Simulation in the context menu.
+The behavior will be slightly different based on the loaded simulation type.
 
-In both cases a new window is opened from where the existing simulation can be selected. After loading the pkml file, the simulation and the corresponding building blocks are automatically added to the Building Block Explorer and the Simulations Explorer.
+- When sending a simulation from PK-Sim, a new MoBi project will be created. The simulation will be transferred with the observed data sets linked in the simulation. A PK-Sim module (see [PK-Sim modules](../part-4/modularization-concept.md#pk-sim-modules)) will be created alongside with one individual and the expression profiles used in the simulation.
+- When loading a simulation from a pkml file that was saved from PK-Sim, a new PK-Sim module will be created alongside with one individual and the expression profiles used in the simulation. If a module, an individual, or an expression profile with the same name already exists in the project, the new modules/individuals/expression profiles will be added as copies with a counter suffix.
+- When loading a simulation created with OSPS versions prior to 12.0, one module will be created containing all building blocks used in the simulation.
+- When loading a simulation consisting of several modules, all modules will be created in the project. If a module with the same name already exists in the project, the new module will be added as a copy with a counter suffix.
 
-{% hint style="info" %}
-When working with PK-Sim®, simulations can be directly exported to MoBi® as described in [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi).
-{% endhint %}
+## Create a Simulation
 
-## Create a Simulation‌
+A simulation can be created from at least one module or a combination of modules, individuals, and expression profiles. A specific combination of modules is called **model configuration**. To create a simulation:
 
-To create a simulation, a full set of building blocks is needed. All building blocks and the workflows to create them are described in MoBi® - Model building and model components.
+* Click on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Simulation** button in the **Create** group of the **Modelling** ribbon.
+* Right-clicking on the "Simulations" entry in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> "Create Simulation..." in the context menu.
 
-A simulation can be created by:
+A **Simulation Creation Wizard** opens that allows to select the modules, individual, expression profiles, initial conditions, and parameter values building blocks to create the simulation from as depicted below.
 
-* Clicking on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Create** button in the Simulation Ribbon Group.
-* Right-clicking on an existing simulation in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> Create Simulation in the context menu.
+![Simulation Creation Wizard](../assets/images/part-4/simulation-configuration-dialog.png)
 
-Creating a simulation opens the **Simulation Creation Wizard** in a new window as shown below
+In the first step, select the modules that should be combined to the simulation. The selection of the modules results in a *hierarchy* of the modules, where the order of module selection determines the order of overwrite/extend actions. I.e., module 2 overwrites/extends module 1, module 3 overwrites/extends the combination of modules 1 and 2, and so on.
 
-![Simulation Creation Wizard](../assets/images/part-4/SimCW.png)
+For each selected module that contains at least one Initial Conditions or Parameter Values building block, you can select one (or none) Initial Conditions and/or Parameter Values building block.
 
-In the first step of the simulation creation you can choose the building blocks from which the simulation will be created. Using the combobox you can browse through the existing building blocks and select the desired item. You also need to specify a unique name for the new simulation. which you may also do later in the simulation creation process.
-
-In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the <img src="../assets/icons/AddAction.svg" data-size="line"> button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Molecule Start Values](building-block-concepts.md#molecule-start-values) and [Parameter Start Values](building-block-concepts.md#parameter-start-values).
-
-Clicking on **Next** <img src="../assets/icons/Forward.svg" data-size="line"> will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the  <img src="../assets/icons/Save.svg" data-size="line"> **Save Changes as new building block** button.
-
-![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW-MSV.png)
-
-Clicking on **Next** <img src="../assets/icons/Forward.svg" data-size="line"> will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
-
-{% hint style="info" %}
-Changes of start values will affect newly created simulations. Adding them to the project, will leave the original start values building blocks unaffected. **Save Changes as new building block** will create a new building block under a different name.
-{% endhint %}
-
-![Simulation Creation Wizard: Edit Parameter Start Values](../assets/images/part-4/SimCW-PSV.png)
+In the next step, select the individual that should be used in the simulation and the expression profiles. Parameters from the individual BB will be added to the simulation structure.
 
 {% hint style="warning" %}
-Newly created Molecule and Parameter Start Value building blocks in step one, or Start Values building blocks saved in steps two and three during the simulation creation process will only be added to the project when the simulation creation is completed by clicking **Finish** <img src="../assets/icons/OK.svg" data-size="line"> and not cancelled prematurely.
+Selected expression profiles will **not** add a protein that is not present in the model structure!
 {% endhint %}
 
-The third and fourth steps after clicking **Next** <img src="../assets/icons/Forward.svg" data-size="line"> allow you to edit the Output Intervals and Simulation Settings which is described in more detail in “Simulation Settings”.
+![Simulation Creation Wizard](../assets/images/part-4/simulation-configuration-dialog.png)
 
-In the last step, you can choose to immediately run the simulation upon completion of the simulation creation process by selecting the checkbox ![Image](../assets/icons/Checked.png) **Run Simulation** as depicted.
+During simulation creation, you can enable the checkbox "Create a process rate parameter for each process in the simulation." This will create a parameter called `ProcessRate` for each instance of a reaction or a (passive and active) transport in the simulation. The `ProcessRate` parameter can be used as output and help to analyze and debug the model.
 
-![Simulation Creation Wizard: Finish](../assets/images/part-4/SimCW-Finish.png)
+{% hint style="info" %}
+Create of process rate parameter for all processes negatively impacts the performance of the simulation and should only be used for debugging purposes.
+{% endhint %}
 
 Finish the simulation creation by clicking on **OK** <img src="../assets/icons/OK.svg" data-size="line">. MoBi® now generates the new simulation, the progress of which is visualized by a progress bar. During this process the simulation is also checked for consistency, and possible issues will be reported.
 
-### Warnings and Errors‌
+### Warnings and Errors
 
-If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img src="../assets/icons/Notifications.svg" data-size="line"> Warning or  <img src="../assets/icons/Error.svg" data-size="line"> Error depending on their severity.
+If the simulation creation process detects inconsistencies in the creation process, they will be displayed either as <img src="../assets/icons/Notifications.svg" data-size="line"> **Warnings** or  <img src="../assets/icons/Error.svg" data-size="line"> **Errors** depending on their severity.
 
 Errors and warning messages are shown in a notification viewer at the bottom of the page similar to the history viewer. Warnings and error notifications are described in more detail in the viewer as such describing
 
@@ -111,11 +84,9 @@ You can choose if only errors, only warnings or both are displayed by clicking (
 
 The <img src="../assets/icons/Notifications.svg" data-size="line"> Warnings and <img src="../assets/icons/Error.svg" data-size="line"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img src="../assets/icons/Save.svg" data-size="line"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
 
-## Simulation Settings‌
+## Defining simulation time - Output Intervals
 
-Simulation Settings allow you to specify the resolution of the results as well as the _output time intervals_ for which results should be generated. Furthermore, you can edit the _properties of the solver_ used for solving the differential equations which the MoBi® simulation model is based on.
-
-## Output Intervals‌
+The simulation time is specified in the **Simulation Settings -> Output Intervals** entry of the simulations "Parameters" tree view.
 
 Output Intervals specify the simulation times at which simulation results are stored. In MoBi® you can specify a variable number of Output Intervals (as depicted below).
 
@@ -129,29 +100,49 @@ Each Output Interval is defined by the following options:
 
 Each set of options defines a _separate_ simulation Output Interval
 
-![Image](../assets/images/part-4/output-interval-end-time.png)
+$$[t\_{start}, t\_{end}]$$
 
 with the corresponding number of output time points
 
-![Image](../assets/images/part-4/nt-resolution.png)
+$$N\_{t} = \frac{t\_{end} - t\_{start}}{resolution} + 1$$
 
 Additional output intervals can be defined and added to the list by clicking on the ![Image](../assets/icons/Add.png) **Add** button to the right of the list.
 
 {% hint style="info" %}
 * Output Intervals can be overlapping.
-* The _total_ time of simulation is from t = 0 to the highest specified End Time.
-* The changes made to the Output Intervals during simulation creation will become the default settings for the next simulation created.
+* The _total_ time of simulation is from t = 0 to the highest specified **End Time**.
 {% endhint %}
 
-The solution will be produced at the following time points for a number of _k_ Output Intervals:
+When creating a simulation, the output intervals defined in the [**Default Simulation Settings**](#default-simulation-settings) are automatically applied. To set the output intervals of a simulation as the project defaults, right-click on the "Simulation Settings" entry of the expanded simulation, select "Make project defaults" and then "Output Intervals and Solver Settings".
 
-![Image](../assets/images/part-4/equation-26-1.png)
+![Make Project Defaults](../assets/images/part-4/Simulation/make-simulation-settings-project-defaults.png)
+
+## Output selections
+
+To select the outputs that will be available for plots after a successful simulation run, click on **Define Settings and Run** button in the **Simulation** group of the **Run & Analyze** ribbon. By default, the outputs defined in the [**Default Simulation Settings**](#default-simulation-settings) are automatically applied.
+
+To make the current selection of outputs the project defaults, click on "Make defaults" in the output selection dialog, or right-click on the "Simulation Settings" entry of the expanded simulation, select "Make project defaults" and then "Output Selections".
+
+In the output selection dialog, only *Observers* and *molecule amounts* can be selected. If you want to plot any of the parameters of the simulation, navigate to the respective parameter in the "Parameters" view of the simulation and enable the "Plot parameter" checkbox.
+
+## Running simulations
+
+To run a simulation, open a simulation by clicking on it in the Simulation Explorer.
+
+Now you can run the simulation by one of the following options:
+
+* Click the <img src="../assets/icons/Run.svg" data-size="line"> **Run** button in the **Simulation** group of the **Run & Analyze** ribbon.
+* Press the function key **F5**
+
+Alternatively, select the <img src="../assets/icons/Run.svg" data-size="line"> **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ).
+
+The progress of a simulation run is shown by the progress bar in the lower right corner of the MoBi® window. A running simulation can be stopped by clicking the <img src="../assets/icons/Stop.svg" data-size="line"> **Stop** button in the Simulation Ribbon Group which will become active during a run.
+
+The results of all simulation runs are accessible through the Simulation Explorer and the edit window. After a successful simulation run, the most recent results can be displayed in the **Results** tab in the simulation edit mode as described in MoBi® _- Simulation Results_.
 
 ## ODE Solver Properties
 
-Special points (e.g. times of Events such as Applications) will be added automatically.
-
-MoBi® uses the CVODE differential equation solver. The solver settings can be accessed and edited either in the Simulation Wizard when creating a simulation (as depicted below) or in the simulation edit mode in the Settings tab.
+MoBi® uses the CVODE differential equation solver. The solver settings can be accessed and edited in the simulation edit mode in the "Simulation Settings -> Solver Settings" node.
 
 {% hint style="warning" %}
 For more information on the solver, please refer to the documentation of the CVODE solver: [https://computing.llnl.gov/projects/sundials](https://computing.llnl.gov/projects/sundials).
@@ -177,23 +168,57 @@ For some "difficult" problems, the predefined value of MxStep might be too small
 
 The parameters RelTol and AbsTol define a vector of error weights, ewt, defined as:
 
-![Image](../assets/images/part-4/equation-26-2.png)
+$$\text{ewt}[i] = \frac{1}{\text{RelTol} \times | y[i] + \text{AbsTol}|}$$
 
-where _y_ is a variable vector _y_ = _f_(t).
+where $$y$$ is a variable vector $$y = f(t)$$.
 
-This vector is used in all error and convergence tests, which use a weighted root mean square (RMS) norm on all error-like vectors _v_:
+This vector is used in all error and convergence tests, which use a weighted root mean square (RMS) norm on all error-like vectors $$v$$:
 
-![Image](../assets/images/part-4/equation-26-3.png)
+$$\text{WRMSNorm}(v) = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (v[i] \times \text{ewt}[i])^2}$$
+
+where N is the length of vector $$v$$.
 
 |             |                                                                                                                                                                                         |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| UseJacobian | If the Jacobian matrix of the ODE system should be supplied to the solver, use the value '1', otherwise use '0'. The default value is '1'. Using the Jacobian speeds up the simulation. |
+| UseJacobian | If the Jacobian matrix of the ODE system should be supplied to the solver, use the value 'True'. Using the Jacobian speeds up the simulation. |
 
-## Editing Simulations‌
+{% hint style="warning" %}
+Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
 
-Once a simulation is created from existing building blocks as described in “Create a Simulation”, the basic structure of the simulation model is fixed.
+However, when scale divisors are calculated and applied to a simulation, solver tolerances can often be safely increased without compromising accuracy. See [Calculate Scale Divisors](#calculate-scale-divisors) for more information on scale divisors.
+{% endhint %}
 
-In a simulation, you can only change the values of parameters. Also, if the value of a parameter is defined by an explicit formula you can only edit the numeric value of the formula, but not the formula definition. This means, that for example the kinetic formula of a reaction or the formula used for a certain observer are no longer editable. They may only be changed by changing a parameter the used formula depends on.
+## Default Simulation settings
+
+The project defaults for simulation output intervals, output selections, and solver settings can be defined in the **Default Simulation Settings** accessible through the **Edit** button of the **Simulation Settings** group in the **Modelling** ribbon. When a new simulation is created, these default settings are automatically applied.
+
+The default simulation settings can be exchanged between projects by saving them to and loading from a pkml file.
+
+The following defaults can be defined:
+
+- **Output Intervals**: start and end time point of a simulation and resolution of a simulation.
+
+- **Solver Settings**: solver parameters such as the tolerances.
+
+- **Output Selection**: outputs that will be available for plots. The outputs are represented as the paths to the observers that can be selected in the simulations.
+
+![Default Simulation Settings - Output Selection](../assets/images/part-4/Simulation/default-settings-outputs.png)
+
+The user can manually change the path, or select an observer from any simulation in the project by clicking on "...". New outputs can be added by clicking on the "+" sign.
+
+{% hint style="info" %}
+The outputs defined in this view will be automatically applied to new simulations created in the project. If a simulation does not contain an observer defined in the default output selection, the output will be ignored for that simulation.
+{% endhint %}
+
+- Chart Templates: a set of chart templates can be managed in the **Chart Editor**.
+
+## Editing Simulations
+
+Once a simulation is created, the basic structure of the simulation model is fixed.
+
+In a simulation, you can only change the values of parameters and initial conditions of molecules. Also, if the value of a parameter is defined by an explicit formula you can only edit the numeric value of the formula, but not the formula definition. This means, that for example the kinetic formula of a reaction or the formula used for a certain observer are no longer editable. They may only be changed by changing a parameter the used formula depends on.
+
+All changes made to the parameter or initial condition values are listed in the tab **Changes** of the simulation edit mode.
 
 {% hint style="info" %}
 It is recommended to select all parameters under consideration as **Favorites** and to document the source of all parameter values changed from the default in the column **Value Description**. Then you have a comprehensive overview about the essential input of your simulation, which you can document by copying just the Favorites table.
@@ -213,41 +238,36 @@ If you need to change formulas, edit the corresponding building block and create
 In the following sections, a brief overview is given on where you can find the parameters that are specified in the building blocks from which the simulation was created. The examples given in some cases refer to a standard PK-Sim® simulation which was exported to MoBi®.
 {% endhint %}
 
-### Molecular Properties‌
+### Container and Neighborhood Properties
 
-If you define parameters for molecules of the Molecules building block used, it depends on the Parameter Type where you can find them in your simulation.
+The container parameters are located at the same level where they were originally defined in the Spatial Structures building block, e.g., accessible by double- clicking the "Plasma" container at the "Organism|Liver" level.
+
+Parameters associated with Neighborhoods, e.g., "Surface Permeability Area", are also located at the same level on which they were originally defined in the Spatial Structures building block. For the kidney, for example, "Surface (Permeability) area" can be found under `Neighborhoods|Kidney\_int\_Kidney\_cell`.
+
+### Molecular Properties
+
+Molecules can have either **global** or **local** parameters.
 
 |          |                                                                                                                                                                                                                                        |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Global   | The parameter is attached to the respective molecule at the first level of your Simulation Hierarchy tree.                                                                                                                             |
-| Local    | The parameter is attached to the respective molecule where it is located in a physical container, e.g., accessible by double- clicking on a molecule located at the "Organism\|Liver\|Plasma" level of your Simulation Hierarchy tree. |
-| Property | The same as _Global_.                                                                                                                                                                                                                  |
+| Local    | The parameter is attached to the respective molecule where it is located in a physical container, e.g., accessible by double- clicking on a molecule located at the `Organism\|Liver\|Plasma` level of your Simulation Hierarchy tree. |
 
-Transporter properties defined for transporting molecules can be found below "Neighborhoods" in the Simulation Hierarchy tree, but are no longer editable, as mentioned before.
+Parameters of active transports are defined as a sub-node of the molecule that is transported. Parameters of protein interactions are defined as a sub-node of the molecule that is interacting with the protein.
 
-### Container and Neighborhood Properties‌
+### Reaction Kinetics
 
-The container parameters are located at the same level where they were originally defined in the Spatial Structures building block, e.g., accessible by double- clicking the "Plasma" container at the "Organism|Liver" level.
+Parameters associated with reactions can also be local or global. Thus, the same rules as for molecule parameters apply also to reaction parameters as specified above.
 
-Parameters associated with Neighborhoods, e.g., "Surface Permeability Area", are also located at the same level on which they were originally defined in the Spatial Structures building block. For the kidney, for example, "Surface (Permeability) area" can be found under "Neighborhoods|Kidney\_int\_Kidney\_cell".
+### Passive transports
 
-Properties of Passive Transports, which are also associated to Neighborhoods are not directly editable in a simulation; as mentioned, they are only editable at the building block level.
+Parameters of Passive Transports are located in the neighborhoods where the respective passive transport is created.
 
-### Reaction Kinetics‌
+### Event and Application Properties
 
-Parameters associated with reactions are also specified by the property Parameter Type. Thus, the same rules as for molecule parameters apply also to reaction parameters as specified above.
+Parameters associated with Event and Application Properties can be accessed at the root level of the simulation hierarchy tree within the **Events** node. They are located at the same relative location as the Events building block from which the simulation was created.
 
-Properties of reactions can be viewed directly at the hierarchy level where the reaction is located. However, they are not directly editable in a simulation, they are only editable at the building block level.
-
-### Event and Application Properties‌
-
-Parameters associated with Event and Application Properties can be accessed at the root level of the simulation hierarchy tree through the "Events" and "Applications" subtree. They are located at the same relative location as the Events building block from which the simulation was created.
-
-### Container Layout‌
-
-The Container layout of a simulation is based on the layout of the Spatial Structure building block from which the simulation was created. A detailed description of how the layout of the container structure can be edited is given in “Spatial Structures” and “Spatial Structure Diagram”.
-
-## Update and Commit Changes Between Simulations and Building Blocks‌
+## Update and Commit Changes Between Simulations and Modules.
 
 Within the **Simulation Explorer**, each building block item of the **Configuration** tree is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consistent with the corresponding general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
 
@@ -255,76 +275,69 @@ A right click on the red traffic lights in the **Simulation** window allows for 
 
 ![Image](../assets/images/part-4/MoBi-UpdateCommit.png)
 
-* Update: The simulation settings (local) will be updated with the (general) settings of the building block. This is useful if you want to discard the settings of your simulation and get back to the original settings defined in the building block. Updating from a Spatial Structure or Molecule Building Block will open a dialogue that allows you to check your configuration. You may check here automatically applied changes in the Molecule Start Values and Parameter Start Values and adjust them manually.
-* Commit: The (local) changes of the simulation will be committed to the general building block. This is useful if you want to make these changes available in other simulations.
+### Update from building blocks
 
-{% hint style="info" %}
-The Update and Commit logic in MoBi is slightly different from the one used in PK-Sim.
+If the information in the building blocks differs from that in the simulation, the simulation can be recreated using the same model configuration by right-clicking on the simulation and selecting **Update from Building Blocks**. This action is identical to creating a new simulation from the same model configuration. All local changes in the simulation will be lost.
+
+### Commit to building blocks
+
+Changes in parameter or initial condition values can be propagated to the modules.
+
+{% hint style="warning" %}
+Structural changes cannot be propagated to the modules. For example, if a reaction is added in the building block of a module, commiting from the simulation to the module will not remove the reaction.
 {% endhint %}
 
-## Running a Simulation‌
+Right-click on the simulation and select **Commit to Building Block**. A dialog opens that allows to select which changes should be committed to the building block. The values are always committed to the **selected** parameter values or initial conditions building blocks of the **last module** used in simulation configuration.
 
-To run a simulation, use the simulation edit mode by either double clicking on the simulation in the Simulation Explorer or by right-clicking on the simulation and select <img src="../assets/icons/Edit.svg" data-size="line"> **Edit** from the context menu.
+If no Parameter Values or Initial Conditions building block is selected for the last module, a new building block is created.
 
-Now you can run the simulation by one of the following options:
+## Further Options for Simulations
 
-* Click the <img src="../assets/icons/Run.svg" data-size="line"> **Run** button in the Simulation Ribbon Group
-* Press the function key **F5**
+Once a simulation is created, a number of options besides simply running the simulation are available.
 
-Alternatively, select the <img src="../assets/icons/Run.svg" data-size="line"> **Run** option within the simulation context menu (opens when right-clicking on the simulation in the **Simulation Explorer** ). Selecting the <img src="../assets/icons/Undo.svg" data-size="line"> **Undo** option from the menu bar discards all changes made in the simulation and resets settings to those of the original Building Blocks.
+### Calculate Scale Divisors
 
-The progress of a simulation run is shown by the progress bar in the lower right corner of the MoBi® window. A running simulation can be stopped by clicking the <img src="../assets/icons/Stop.svg" data-size="line"> **Stop** button in the Simulation Ribbon Group which will become active during a run.
+Internally, very small numerical values are divided by the scale divisors to get to an order of magnitude which is reasonable for the solver. The purpose is to reduce numerical noise and to enhance computation performance. This is also important when working with a broad variety of magnitudes of values. The scale divisors specify a typical scale for each species. Per default, all scale divisors are set to 1. If you work with very small amounts and/or a broad variety of magnitudes of values and your simulation yields implausible results (numerical noise, negative values, etc.), use the **Calculate Scale Divisor** function located in the **Simulation** group of the **Run & Analyze** ribbon to adjust the scale divisor for computational purposes.
 
-The results of all simulation runs are accessible through the Simulation Explorer and the edit window. After a successful simulation run, the most recent results can be displayed in the **Results** tab in the simulation edit mode as described in MoBi® _- Simulation Results_.
+### Context menu
 
-## Further Options for Simulations‌
+The context menu that opens when right-clicking on the **Simulations** node in the Simulation Explorer offers the following options:
 
-Once a simulation is created, a number of options besides simply running the simulation, are available. Clicking on the + sign of the simulation will expand the entry and show a **Configuration** entry. This again is expandable by a click on the + sign in front of it and yields a **list of all building blocks** used in the corresponding simulation.
+* <img src="../assets/icons/Simulation.svg" data-size="line"> **Create Simulation** - opens the Simulation Creation Wizard (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
+* <img src="../assets/icons/SimulationLoad.svg" data-size="line"> **Load Simulation** - loads a new simulation into the project (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)).
+- **Create Subfolder** - creates a new subfolder in the Simulations Explorer to organize simulations.
+- **Delete all subfolders and keep data** - deletes all subfolders in the Simulations Explorer, but keeps the simulations contained in the subfolders in the main Simulations Explorer.
+- **Delete all subfolders and data** - deletes all subfolders in the Simulations Explorer, including all simulations contained in the subfolders.
+- **Delete all results** - deletes all simulation results of all simulations in the project.
 
-The context menu that opens when right-clicking on the simulation in the Simulation Explorer offers the following options:
+The context menu that opens when right-clicking on a simulation offers the following options:
 
-* <img src="../assets/icons/Simulation.svg" data-size="line"> Create Simulation - opens the Simulation Creation Wizard (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
-* <img src="../assets/icons/SimulationLoad.svg" data-size="line"> Load Simulation - loads a new simulation into the project (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)).
-* <img src="../assets/icons/Run.svg" data-size="line"> Run - runs the simulation.
-* <img src="../assets/icons/Undo.svg" data-size="line"> Refresh - discard all changes made in the simulation.
-* <img src="../assets/icons/Edit.svg" data-size="line"> Edit - opens the simulation in the edit window (same as double-clicking).
-* <img src="../assets/icons/Rename.svg" data-size="line"> Rename - renames the simulation.
-* <img src="../assets/icons/Cancel.svg" data-size="line"> Remove - deletes the simulation from the project.
-* <img src="../assets/icons/SaveAs.svg" data-size="line"> Save As - saves the simulation as pkml file.
-* <img src="../assets/icons/Population.svg" data-size="line"> Start Population Simulation - calls the Population Simulation Analysis in PK-Sim®, loads the simulation and runs the population simulation (see “Running and analyzing a population simulation” for description).
-* Start Parameter Identification - calls Parameter Identification tool (see [Parameter Identification](tools.md#parameter-identification) for description).
-* <img src="../assets/icons/ObservedData.svg" data-size="line"> Export results to Excel® - generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).
-* <img src="../assets/icons/Report.svg" data-size="line"> Create Simulation Report - generates a plain text (txt) file containing all simulation information.
-* Export Simulation as Matlab® Differential Equations <img src="../assets/icons/Matlab.svg" data-size="line"> ... - exports the system of ordinary differential equations (ODE) of the simulation to m-files for MATLAB®. Into the output directory defined, several m-files defining the ODE system are written. The most important files are:
+* <img src="../assets/icons/Edit.svg" data-size="line"> **Edit** - opens the simulation in the edit window (same as double-clicking).
+* <img src="../assets/icons/Rename.svg" data-size="line"> **Rename** - renames the simulation.
+- **Configure** - opens the Simulation Creation Wizard to change the model configuration of the simulation. All local changes in the simulation will be lost.
+- **Update from Building Blocks** - updates the simulation from the building blocks used in the model configuration. All local changes in the simulation will be lost.
+* <img src="../assets/icons/Run.svg" data-size="line"> **Run** - runs the simulation.
+- **Stop** - stops a running simulation.
+* **Start Parameter Identification** - calls Parameter Identification tool (see [Parameter Identification](../part-5/parameter-identification.md) for description).
+- **Start sensitivity analysis** - calls Sensitivity Analysis tool (see [Sensitivity Analysis](../part-5/sensitivity-analysis.md) for description).
+- **Send to PK-Sim for Population Simulation** - sends the simulation to PK-Sim® and opens PK-Sim®. The simulation can then be used as basis for a population simulation in PK-Sim® (see [Running and analyzing a population simulation](../part-3/pk-sim-creating-populations.md) for description).
+* <img src="../assets/icons/SaveAs.svg" data-size="line"> **Save Simulation to MoBi pkml format** - saves the simulation as pkml file.
+- **Add to Journal** - adds a snapshot of the simulation to the Working Journal (see [Working Journal](../part-5/working-journal.md) for description).
+* <img src="../assets/icons/ObservedData.svg" data-size="line"> **Export results to Excel®** - generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).
+* **Export Simulation as Matlab® Differential Equations** <img src="../assets/icons/Matlab.svg" data-size="line"> ... - exports the system of ordinary differential equations (ODE) of the simulation to m-files for MATLAB®. Into the output directory defined, several m-files defining the ODE system are written. The most important files are:
   * _ODEMain.m_. This is the main function. Calling this function from the MATLAB® command window by typing _tout, yout = ODEMain_ will provide the numerical solution to the ODE system, whereby _tout_ is the time- point vector and _yout_ the solution matrix, containing the time-dependent changes of the modeled species. The matrix entry ordering is as specified and explained in the file _ODEInitialValues.m_.
   * _ODERHSFunction.m_. This file contains both the parameters and the differential equation definitions. Parameters are transformed from a hierarchical structure used in MoBi® to a flat structure used in MATLAB®. Therefore a renaming is necessary to P\_number using a consecutive numbering. The hierarchical MoBi® correspondence is provided as a commentary.
   * _ODEInitialValues.m_. This file specifies the initial conditions. The hierarchical species names of MoBi® are transformed into vectors in MATLAB®. The MATLAB® commentary provides information on the MoBi® species - vector relationship.
   * _ODEoptions.m_. This file contains numerical settings as chosen in MoBi®. The ode15s solver is used within MATLAB® (cf. _ODEMain.m_) . Please consult the MATLAB® help for additional information.
-* <img src="../assets/icons/ObservedData.svg" data-size="line">Export Model as Tables - exports Reactions, Parameters and Molecule Start Values into separate worksheets of an Excel® file.
 
-### Workflow - Merging simulations into a project‌
+* <img src="../assets/icons/Report.svg" data-size="line"> **Create simulation report** - generates a plain text (txt) file containing all simulation information.
 
-In addition, simulations from one project can be merged into another project.
+* <img src="../assets/icons/ObservedData.svg" data-size="line">**Export Model as Tables** - exports Reactions, Parameters Values and Initial Conditions into separate worksheets of an Excel® file.
 
-![The merge workflow is initiated from the button in the Workflows menu](../assets/images/part-4/MergeSimulation.png)
+- **Import Simulation Parameters** - Import parameter values from an Excel®. See [Parameter Values Building Block](parameter-values-bb.md) for details on the required structure.
 
-If two building blocks of the same name are merged together, a conflict management offers the following resolution options:
+- **Clone** - Create a copy of the simulation in the project.
 
-* Leave - Keep the existing and disregard the new
-* Replace - Overwrite the existing with the new
-* Clone - Keep the existing and assign a new name to the merged
-* In some cases, combine the two
+* <img src="../assets/icons/Cancel.svg" data-size="line"> **Delete** - deletes the simulation from the project.
 
-The following specific conflict resolution logic exists for each building block:
-
-|                                               |                                                                |
-| --------------------------------------------- | -------------------------------------------------------------- |
-| Reaction                                      | Leave, Replace, Clone                                          |
-| Observer                                      | Leave, Replace, Combine molecule list when formula is the same |
-| Passive Diffusion                             | Leave, Replace, Combine molecule list when formula is the same |
-| Molecule Start Values/ Parameter Start Values | Leave, Replace                                                 |
-| Spatial Structure                             | None                                                           |
-| Molecules                                     | Leave, Replace, Clone                                          |
-| Events                                        | Leave, Replace, Clone                                          |
-
-The merge conflict resolution function approximates the Windows Explorer® method of resolving copy/paste conflicts. A dialog will present the user with the appropriate options and the number of remaining conflicts. The user can also specify whether or not to apply the option he picked to all remaining conflicts.
+- **Delete all results** - deletes all simulation results of the selected simulation.

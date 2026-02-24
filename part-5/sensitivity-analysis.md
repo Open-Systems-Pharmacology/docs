@@ -4,7 +4,7 @@ The first two chapters provide a basic understanding of the Sensitivity Analysis
 
 In the following chapters you find more detailed descriptions of the features and configuration of the tool.
 
-## Motivation‌
+## Motivation
 
 The models built by PK-Sim® or MoBi® depend on a lot of input parameters which are based on literature values, measurements, databases, assumptions. For a given set of input parameters a number of output curves is computed in a **simulation**.
 
@@ -28,7 +28,7 @@ The general workflow to perform a **Sensitivity Analysis** for a chosen simulati
 
 In the following, we explain the mathematical background of the sensitivity analysis provided.
 
-## Mathematical background‌
+## Mathematical background
 
 To calculate the sensitivity of a PK Parameter of a certain output = PKj to an input parameter = \[ pi ]
 
@@ -52,13 +52,13 @@ For each value of k = 1 ... n, two factors are used: ![Image](../assets/images/p
 
 For the default setting n = 2 and a = 0.1, we get 4 variation factors: 1/1.1, 1/1.05, 1.05, 1.1 .
 
-## Selection of interesting outputs for a simulation‌
+## Selection of interesting outputs for a simulation
 
 Outputs of a simulation cannot be changed while creating or configuring the Sensitivity Analysis, you need to decide on the outputs before you create a Sensitivity Analysis.
 
 To select the outputs of interest for a simulation, open that simulation and click <img src="../assets/icons/Settings.svg" alt="" data-size="line"> Define Settings and Run to display the Curve Selection Dialog.
 
-## Creating a Sensitivity Analysis‌
+## Creating a Sensitivity Analysis
 
 To create a new Sensitivity Analysis, do one of the following
 
@@ -81,9 +81,9 @@ In the Simulation Explorer, the Sensitivity Analyses are also displayed in a tre
 * add a Sensitivity Analysis to a Journal page,
 * delete a Sensitivity Analysis.
 
-## Tab Parameters‌
+## Tab Parameters
 
-### Selection of interesting input parameters‌
+### Selection of interesting input parameters
 
 You can select the input parameters that are of interest to you and that you want to test in the Sensitivity Analysis in two ways:
 
@@ -106,7 +106,7 @@ In PK-Sim, parameters which should not be changed are also not available for sel
 
 You can also select another simulation at the top of this tab. If you have selected parameters already which are not available in the newly selected simulation, a warning pops up.
 
-### Adjustment of variation range‌
+### Adjustment of variation range
 
 See “Mathematical background” for the description of the variation concept in the calculation of sensitivities.
 
@@ -124,7 +124,7 @@ Be aware that the time to compute the Sensitivity Analysis is proportional to th
 So in case of performance problems, think about restricting the tested input parameters or reducing the number of steps.
 {% endhint %}
 
-## Starting Sensitivity Analysis‌
+## Starting Sensitivity Analysis
 
 In the ribbon bar **Sensitivity Analysis**, you can start and stop the calculation of the sensitivities.
 
@@ -141,7 +141,7 @@ Sensitivity Analysis in the ribbon bar Analyses.
 
 * switch to the tab **Results** to see a tabular overview of all calculated sensitivities.
 
-## Tab Sensitivity Analysis‌
+## Tab Sensitivity Analysis
 
 Select an output and a PK Parameter for that output. (Normalized PK parameters are not displayed, because they have the same sensitivity as the corresponding non normalized PK parameters.)
 
@@ -159,7 +159,7 @@ For display in the chart, the parameters which contribute 90% of the cumulated s
 with l=1,…,nP (number of parameters) and j index of PK parameter. The cumulated sensitivities as defined above include normalization to the absolute total sensitivity. Therefore, the normalized total sensitivity Stotal = SCum, nP j = 1. The cut-off is defined so that the above cut-off parameter sensitivities capture 90% of the total sensitivity.
 {% endhint %}
 
-## Tab Results‌
+## Tab Results
 
 Here, the matrix of all calculated sensitivities is shown. See Warnings in “Selection of interesting input parameters” for remarks which sensitivities are calculated.
 

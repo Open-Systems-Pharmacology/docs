@@ -15,7 +15,7 @@ Even if not all required building blocks are defined, you may still set up a sim
 
 Simulations are performed in 3 steps: Creating a simulation (see [Creating new simulations in PK-Sim®](pk-sim-simulations.md#creating-new-simulations-in-pk-sim)), running a simulation (see [Running a simulation in an individual](pk-sim-simulations.md#running-a-simulation-in-an-individual)), and displaying the results in the chart window (see [Analyzing results for a simulation in an individual](pk-sim-simulations.md#analyzing-results-for-a-simulation-in-an-individual)). Experimental data can also be imported in the chart window to enable comparison to the simulated results and to facilitate model refinement.
 
-## Creating new simulations in PK-Sim®‌
+## Creating new simulations in PK-Sim®
 
 To create a new simulation:
 
@@ -35,7 +35,7 @@ In order to create a new simulation, you are guided through the six tabs of the 
 - The **Events** tab to choose a specific event defined in the **Event** Building Block
 - The **Observers** tab to select user-defined observers
 
-### Definition of model structure‌
+### Definition of model structure
 
 In the **Model Structure** tab of the **Create Simulation** window you need to:
 
@@ -53,7 +53,7 @@ In the **Model Structure** tab of the **Create Simulation** window you need to:
   - Load a new compound from template by clicking **Load** <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> and follow the instructions in the dialog windows.
 - Select the model settings, i.e., either select the standard model for small molecules, or the model for proteins and large molecules
 
-#### Model settings‌
+#### Model settings
 
 | Model Settings                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ In the **Model Structure** tab of the **Create Simulation** window you need to:
 Please note that currently only for mouse, monkey and human species specific values for the concentration of the FcRn receptor, the concentration of the endogenous IgG and the affinity of the endogenous IgG to the FcRn receptor (needed for the **Model for proteins and large molecules**) are available. In case of all other animal species just reasonable values are used as physiological default values.
 {% endhint %}
 
-### Review compound settings‌
+### Review compound settings
 
 In the **Compounds** tab of the **Create Simulation** window you can review the *Calculation methods* selected for the partition coefficients and the cellular permeabilities. Also, you can review and override values for the *Parameter Alternatives*.
 
@@ -72,7 +72,7 @@ In the **Compounds** tab of the **Create Simulation** window you can review the 
 
 Click **Next** in order to assign the relevant biological processes. Note that you can switch between the **Tabbed view** and the **Accordion View** in the **Utilities/ Options** menu if you selected more than one compound.
 
-### Select relevant biological processes‌
+### Select relevant biological processes
 
 ![The Create Simulation dialog. Here, the Processes tab is shown, in which the proteins, i.e. the enzymes, transporters and binding proteins, expressed in the Individual can be linked to the corresponding active processes defined in the Compound.](../assets/images/part-3/ProcessesSimulation.png)
 
@@ -104,7 +104,7 @@ Link the process in the individual with the biological process of the compound (
 
 Click on **Next** in order to define the administration protocol.
 
-### Select administration‌
+### Select administration
 
 In the **Administration** tab of the **Create Simulation** window, the administration protocol can be loaded from the project database or from a template. Further, a novel administration protocol can be defined and used. In addition, in the case of oral and user defined administration types, a formulation is required for the simulation.
 
@@ -122,7 +122,7 @@ In case of oral and user defined administration, you will have to additionally m
 None or exactly one administration protocol can be assigned to every compound used in the simulation. Each administration protocol can be assigned to maximally one compound.
 {% endhint %}
 
-### Select events (optional)‌
+### Select events (optional)
 
 In the **Events** tab of the **Create Simulation** window, events such as the administration of meals and/or discrete gallbladder emptying can be defined at various points of the simulation.
 
@@ -144,7 +144,7 @@ If you have successfully created a simulation, it will appear in the simulation 
 The green check marks indicate that the building blocks used in the simulation have the same settings as the original building blocks saved in the building blocks explorer window. Changing the settings in the simulation is done locally without affecting the original building blocks in the building block explorer window.
 {% endhint %}
 
-## How to set up a parent/metabolite simulation‌
+## How to set up a parent/metabolite simulation
 
 PK-Sim® offers two alternatives to define drug metabolites. First, metabolites can be a "sink" which means that not actively or passively transported. They possess no physico-chemical or ADME properties and cannot be used as compounds in a simulation. Second, one of the compounds in a simulation can be assigned to be a metabolite or another compound. The metabolite possesses physico-chemical and ADME properties and be transported. In addition, the metabolite can be used in further metabolizations and thus a metabolic network can be built.
 
@@ -190,7 +190,7 @@ To reflect the quality or importance of the Observed Data set you can edit the w
 If there is no simulated time value corresponding to an observed time value, linear interpolation between simulated points is used to calculate the missing simulated value. This happens in the calculation of the Residuals in the Simulation, opposed to the calculation of Residuals in Parameter Identification (where every observed time point is added to simulation output points). This might result in slightly different total error values calculated in "Simulation" view and in Parameter Identification.
 
 
-## Running a simulation in an individual‌
+## Running a simulation in an individual
 
 If a simulation was successfully created, press the **Run** simulation button <img src="../assets/icons/Run.svg" alt="" data-size="line"> in the **Run & Analyze** ribbon or press the F5 key. If the simulation is run for the first time, the following window will appear in which the simulation curves that will be generated in the simulation can be selected:
 
@@ -261,7 +261,7 @@ You can synchronize the settings between the building block and the simulation t
 
 - **Configure**: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
 
-## Analyzing results for a simulation in an individual‌
+## Analyzing results for a simulation in an individual
 
 As described in the previous chapter **Run simulation**, clicking on **Run** in the **Modeling & Simulation** ribbon or pressing **F5** starts the calculation of the simulation. The results will be automatically displayed after finishing the calculation. The calculated results can the be exported to various file formats.
 
@@ -276,7 +276,7 @@ Generally, two different views are available and switching between these view ca
 * Chart view <img src="../assets/icons/TimeProfileAnalysis.svg" data-size="line"> (default): The simulated curves and the observed data are displayed
 * PK-Analysis view <img src="../assets/icons/PKAnalysis.svg" data-size="line">: The calculated PK parameters for the selected simulated curves are displayed.
 
-### Chart view‌
+### Chart view
 
 The simulated curves can be displayed. If simulated curves selected in the curve selection window are missing after (re-)running a simulation, most probably these are not selected in the chart. The graphs can be selected by clicking on **Chart Editor** on the right hand side of the chart. Curve options, axis options and chart options can be selected here and the general layout of the chart can be configured.
 
@@ -298,7 +298,7 @@ If you wish to display different curves or use different settings for the same s
 
 If you wish to display other percentiles or other curves without simulating again, click on the **Results** button <img src="../assets/icons/TimeProfileAnalysis.svg" data-size="line"> in the ribbon group **Simulation**. You will be directed to the **Curve selection for chart** window (see above).
 
-### PK-Analysis view‌
+### PK-Analysis view
 
 If a simulation has been successfully created, click **Show PK-Analysis** on the bottom of the chart window. PK parameters are then calculated and displayed next to the chart.
 
@@ -371,13 +371,13 @@ Globally calculated PK-parameters are always calculated for all individuals with
 
 By clicking on **Export to Excel**® the calculated PK-parameters (including the simulated concentration-time profiles) can be exported to MS Excel® format.
 
-## Running and analyzing a population simulation‌
+## Running and analyzing a population simulation
 
-### The population simulation analysis‌
+### The population simulation analysis
 
 Population simulation analysis function offers a variety of analyses and graphical displays: Time Profile, Box Whisker, Scatter and Range Analysis that will be explained in detail in the following sections of the manual.
 
-### Running a population simulation‌
+### Running a population simulation
 
 Unlike for simulations in single individuals, additional variability for parameters in population simulations may be defined. In the **User Defined Variability** tab, parameters from all building blocks that need to be varied may be selected and specific distributions/variabilities can be set. In the **Distribution** tab, these settings are graphically visualized.
 
@@ -393,7 +393,7 @@ Choose the organ and the compartment by expanding the respective drop-down menue
 
 By clicking into the **Save Settings** at the bottom left corner of the **Curve Selection window** the settings can be saved as user-specific default.
 
-### Analyzing a population simulation‌
+### Analyzing a population simulation
 
 After the simulation has been calculated, the **Create Time Profile Analysis** window opens up next in which the graphical display of simulated time profiles can be specified. If you do not want to plot time profiles, close this window and choose the analysis type you require from the **Analysis** button.
 
@@ -558,7 +558,7 @@ Similar to the **Scatter Plot Analysis**, the **Range Plot Analysis** offers con
 
 Details of your analysis can be changed by right mouse click into the plot and selecting **Edit**.
 
-### Cloning a Simulation‌
+### Cloning a Simulation
 
 In certain cases, it can be helpful to clone a simulation, e.g. in order to keep all parameters defined in the simulation, such as the partition coefficient method, and exchange only one particular building block, e.g. the administration protocol. This can easily be done by cloning an existing simulation and subsequently exchanging the respective building block using the **Configure** functionality (see above).
 
@@ -574,7 +574,7 @@ To clone a simulation in the project:
 Please note that a simulation can only be cloned if the local simulation settings are in agreement with the global settings of the building blocks, as indicated by **green check marks**.
 {% endhint %}
 
-### Comparison chart for individual or population simulations in one plot‌
+### Comparison chart for individual or population simulations in one plot
 
 The comparison chart function allows for comparison of results of different individual or population simulations in one plot.
 

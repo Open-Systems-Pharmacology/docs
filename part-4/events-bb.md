@@ -8,13 +8,13 @@ Events and applications are grouped in the **Events** building block (BB). Multi
 
 The following section describes the functionalities of the Events building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-events) is given. Since the generation of an application in MoBi® can be rather complicated and is beyond the scope of this manual, we will restrict the description to adapting applications that were previously imported from PK-Sim®, where complex applications schemes can be generated more easily.
 
-## Events - Functionality Overview‌
+## Events - Functionality Overview
 
-Events are organized in a tree structure. The top level container of the Events BB can be either an **Event Group** or an **Application**.‌
+Events are organized in a tree structure. The top level container of the Events BB can be either an **Event Group** or an **Application**.
 
 ### Event Group
 
-Event groups can combine **Applications**, **Events**, further **Event Groups**, and **Containers**.‌
+Event groups can combine **Applications**, **Events**, further **Event Groups**, and **Containers**.
 
 An event group can be created within:
     - another event group,
@@ -28,7 +28,7 @@ Like for observers, an empty criteria for the events group means that the group 
 
 ### Application
 
-Application is a special type of an event group that is defined for a specific **molecule**.‌ In addition to the properties of an event group, an application has to specify an **administered molecule** and the path to the **Application Molecule Builder**.
+Application is a special type of an event group that is defined for a specific **molecule**. In addition to the properties of an event group, an application has to specify an **administered molecule** and the path to the **Application Molecule Builder**.
 
  - **Application Model Builder**: Applications that add molecules to the system require an application model builder that is a virtual compartment for the administered molecule.
 
@@ -38,7 +38,7 @@ An Application can be created within:
 
 ### Event
 
-An **Event** is the actual event that changes something in the model, like the amount of a molecule or a parameter value.‌
+An **Event** is the actual event that changes something in the model, like the amount of a molecule or a parameter value.
 
 Events can be created within:
     - an event (sub-)group,
@@ -59,13 +59,13 @@ Each event has
 
 #### Event conditions
 
-**Event condition** is defined by a logical expression that evaluates to `true` or `false` (exmples: `Time = 100` or `Some_Parameter < 0.001 AND Another_Parameter >0`).‌ Once the equation is evaluated to `true`, the event is executed.‌
+**Event condition** is defined by a logical expression that evaluates to `true` or `false` (examples: `Time = 100` or `Some_Parameter < 0.001 AND Another_Parameter >0`). Once the equation is evaluated to `true`, the event is executed.
 
 {% hint style="info" %}
 Technically, the value of the equation is considered to be `true` if it is unequal to zero, and `false` if it is equal to zero.
 {% endhint %}
 
-See [Working with Formulas](model-building-components.md#working-with-formulas) for details on how to create formulas with conditions.
+See [Working with Formulas](parameters-formulas-tags.md#formulas) for details on how to create formulas with conditions.
 
 {% hint style="warning" %}
 If an event should be repeatedly fired during the simulation (i.e., the **One time** property is set to false), and the condition depends on systems state (parameter or state variables calculated during simulation), the event will only be fired if this condition is met within the defined output interval and resolution! This may lead to unexpected behavior if the output resolution is too coarse. For example, if the condition is `Concentration > 1 && Concentration < 2` and the concentration is 0.5 at time point t1 and 2 at time point t2, but no output is defined between t1 and t2, the event will not be fired since the condition was not met at any of the output time points.
@@ -75,7 +75,7 @@ A discussion on this topic can be found in the [MoBi® Forum](https://github.com
 
 #### Events assignments
 
-An **assignment** defines what should be changed when the event is executed.‌ Each event can have multiple assignments. Each assignment has the following properties:
+An **assignment** defines what should be changed when the event is executed. Each event can have multiple assignments. Each assignment has the following properties:
 
 - **Name**: A unique name for the assignment.
 - **Changed entity path**: Path to the parameter or molecule that should be changed by the event.
@@ -88,7 +88,7 @@ Containers can be created within:
     - an event (sub-)group,
     - an application.
 
-A container can be either **logical** or **physical** and behaves similarly to containers in a [spatial structure](spatial-structures-bb.md).‌ The container can have tags and parameters.
+A container can be either **logical** or **physical** and behaves similarly to containers in a [spatial structure](spatial-structures-bb.md). The container can have tags and parameters.
 
 **Logical containers** are used to group parameters.
 
@@ -96,15 +96,15 @@ A container can be either **logical** or **physical** and behaves similarly to c
 
 ### Transport
 
-Transports can be created within applications. An application transport is similar to a [passive transport](passive-transports-bb.md).‌ It defines a transport process between a *source* and a *target* container.‌ The *source* should be a physical container within the application. The *target* can be any physical container in the spatial structure.
+Transports can be created within applications. An application transport is similar to a [passive transport](passive-transports-bb.md). It defines a transport process between a *source* and a *target* container. The *source* should be a physical container within the application. The *target* can be any physical container in the spatial structure.
 
-In contrast to passive transports, it is not required to define a neighborhood between the source and the target. This neighborhood will be automatically created during simulation build.‌
+In contrast to passive transports, it is not required to define a neighborhood between the source and the target. This neighborhood will be automatically created during simulation build.
 
-## Example - Creating Events‌
+## Example - Creating Events
 
 Continue with the simple example we have been developing in the previous sections. Open the Events building block or create a new one by right clicking on the module and selecting "Add Building Blocks".
 
-### Event Groups and Events‌
+### Event Groups and Events
 
 To **create a new event group**, either
 
@@ -126,8 +126,8 @@ After the event group is created, individual events can be defined for this grou
 * Rename
 * Save As PKML - saves the selected event group to a pkml file.
 * Delete - deletes the selected event group.
-* Create Application - see [Applications](model-building-components.md#applications).
-* Load Application - see [Applications](model-building-components.md#applications).
+* Create Application - see [Applications](#applications).
+* Load Application - see [Applications](#applications).
 * Load Application From Template
 * Create Event - creates a new event within the current event group.
 * Load Event - loads an existing event from a pkml file.
@@ -135,8 +135,8 @@ After the event group is created, individual events can be defined for this grou
 * Create Event Group - creates a new event group below the highlighted event group.
 * Load Event Group - loads an existing event group from a pkml file below the highlighted event group.
 * Load Event Group From Template
-* Create Container - see [Applications](model-building-components.md#applications).
-* Load Container - see [Applications](model-building-components.md#applications).
+* Create Container - see [Applications](#applications).
+* Load Container - see [Applications](#applications).
 * Load Container From Template
 
 To create an event, click the **Create Event** option. A window named "New Event" will open (see image below). Then proceed with the following steps:
@@ -147,7 +147,7 @@ To create an event, click the **Create Event** option. A window named "New Event
 4.  To have more space for building the condition, close this window now by clicking **OK** or pressing **Enter** to complete the event building in the edit window. However, all required data could also be entered in the "New Event" window.
 
 ![New Event window](../assets/images/part-4/NewEvent.png)
-5. Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](model-building-components.md#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
+5. Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](reactions-bb.md#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
 6. There is still a Condition equation to be entered, as indicated by the red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time > 500", which would execute the event at 500 minutes. The use of "> 500" instead of "= 500" is advantageous since it might well be that during the simulation, the exact value of 500 will never be assumed, depending on the time step. If you plan to quickly test different values for this time, it is advantageous to define this execution time as a parameter which can be altered in the simulation.
 7. Define a time parameter as an event parameter (alternatively, it can be set as an event group parameter if it is needed in several events of this group). Click the "Parameters" tab, then the button <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**. A "New Parameter" window opens.
 8. Enter "E1Time" as parameter name.
@@ -179,7 +179,7 @@ An assignment can be changed by the following actions:
 * The ![Image](../assets/icons/Add.png) symbol has the same function as the button **Add Assignment**.
 * Clicking the ![Image](../assets/icons/Delete.png) symbol will delete the corresponding assignment.
 
-### Applications‌
+### Applications
 
 An application is basically an event group with a more complex structure than that described in the previous section. In almost all cases, the application will be created within PK-Sim®and then transferred to MoBi®. The scope of this section will be limited to working with this recommended workflow.
 
@@ -202,7 +202,7 @@ The descriptions at the bottom section of each parameter gives you more informat
 
 More complex changes, like changing complex dosing schemes or changing dissolution patterns, are much easier to achieve using the user interface of PK- Sim® and then exporting the corresponding simulation. Within a MoBi® project, you may then combine drug applications from several PK-Sim® exports. The following describes the workflow for this operation:
 
-1. Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi)).
+1. Save all applications of interest as PK-Sim® simulations to pkml files (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi)).
 2. Load your MoBi® project.
 3. Right-click the Events entry in the building block explorer, select <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Event Group Building Block**.
 4. Enter the name and location of your pkml file. You may be asked for a new building block name. A new Events building block is created.

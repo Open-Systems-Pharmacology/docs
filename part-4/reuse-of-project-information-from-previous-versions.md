@@ -1,6 +1,6 @@
-# MoBi®‌ Reuse of Project Information from Previous Versions
+# MoBi® Reuse of Project Information from Previous Versions
 
-## Reuse of MoBi® 2 projects in MoBi® 3‌
+## Reuse of MoBi® 2 projects in MoBi® 3
 MoBi® 2 projects are not supported any more.
 
 ## Conversion of MoBi® 3.1 projects.

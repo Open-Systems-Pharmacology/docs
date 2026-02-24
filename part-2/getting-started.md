@@ -2,7 +2,7 @@
 
 ## Software and Hardware Requirements
 
-| OS | Windows 10®, Windows 11®, Windows Server 2016®, Windows Server 2019® |
+| OS | Windows 10®, Windows 11®, Windows Server 2019®, Windows Server 2022®, Windows Server 2025® |
 |-------------------|-----------------------------------------------------|
 | Processor | minimum 1 GHz (the faster, the better) |
 | Memory | 2 GB RAM, 4+ GB recommended |

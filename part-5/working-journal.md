@@ -1,6 +1,6 @@
 # Working Journal
 
-## Project Documentation‌
+## Project Documentation
 
 The Working Journal allows for easy documentation of your working process with the Open Systems Pharmacology Suite. Because building PBPK and PD models is often a complex process, a documentation is necessary
 
@@ -22,7 +22,7 @@ After each important workstep, intermediate results or decision points can and s
 
 For instance, the values of the favorite parameters and result charts can be copied into the Working Journal by copy & paste and corresponding simulations and building blocks can be attached to the Journal Page directly from the context menu.
 
-## Overview‌
+## Overview
 
 To access the Working Journal, select the Tab Working Journal. Most buttons are deactivated before having created or selected a Journal for the current project file.
 
@@ -48,7 +48,7 @@ Additionally, you can save any time explicitly using the short cut CTRL-S or the
 
 ![Journal Editor window](../assets/images/part-5/JournalEditor1.png)
 
-### Journal view‌
+### Journal view
 
 On the right side of the PK-Sim or MoBi application, the **Journal view** is shown by default. You can show and hide it like other views. In case you have removed the view, you can reopen it by clicking the corresponding button <img src="../assets/icons/Journal.svg" alt="" data-size="line"> in the Tab **Views**.
 
@@ -62,7 +62,7 @@ With a single click on a Journal Page row, you activate the Journal Page without
 
 At the bottom of the **Journal View**, some detail information is displayed for the selected Journal Page, in particular a list of related items, if you have attached e.g. simulations or building blocks.
 
-### Journal Ribbon group‌
+### Journal Ribbon group
 
 After you had selected a Working Journal for your project file, all buttons in the Journal Ribbon group are active.
 
@@ -94,7 +94,7 @@ The current changes in the Journal Editor are saved and displayed in the Journal
 
 A file selection dialog is opened, which allows you to select another Working Journal .sbj file. This is usually not necessary, only in case you have selected the wrong Working Journal before.
 
-## Adding content to a Journal page‌
+## Adding content to a Journal page
 
 Besides manually entering content into a Journal page, you can copy and paste tables and charts from PK-Sim or MoBi. So you can for example copy the
 
@@ -104,7 +104,7 @@ Favorites table and the simulation chart within seconds to a Journal page and in
 It is recommended to select all parameters under consideration as **Favorites** and to document the source of all parameter values changed from the default in the column **Value Description**. This ensures a comprehensive overview of the essential input of your simulation which you can document by copying just the Favorites table.
 {% endhint %}
 
-### Copy & paste of tables‌
+### Copy & paste of tables
 
 You can copy tables or selection of rows to a Journal Page.
 
@@ -125,7 +125,7 @@ Alternatively, you can paste the tables also to other tools like Powerpoint® or
 Use short cuts for copy (CTRL+C for Selected Rows, SHFT+CTRL+C for whole table) and paste (CTRL+V).
 {% endhint %}
 
-### Copy & paste of charts‌
+### Copy & paste of charts
 
 You can copy charts in standard size independent on the size of the application window. To define the chart size and also font sizes open in the **Chart Editor** the Tab **Chart Export Options** and define the properties.
 
@@ -138,7 +138,7 @@ Alternatively you can paste the tables also to other tools like Powerpoint® .
 
 ![Copy and paste a Chart](../assets/images/part-5/CopyAndPasteChart.png)
 
-## Working with Related Items‌
+## Working with Related Items
 
 Additionally to the content written and copied in a Journal Page, you can attach Simulations and Building Blocks to a Journal Page as **Related Items** to save the current state of your work.
 
@@ -156,7 +156,7 @@ Using the icons on the right of a **Related Item** you can
 * reload the attached Simulation or Building Block into the project using a unique name,
 * delete the **Related Item**.
 
-## Searching the Journal‌
+## Searching the Journal
 
 After you documented your project work using the Working Journal, you might want to use these "memories". To do so, you can use the meta data like Title, creation date or tags to find the Journal Page you are interested in. But often it is easier just to search for a specific keyword or phrase you used in your documentation.
 
@@ -173,7 +173,7 @@ Double click on a Journal Page to open the Page in the Journal Editor - the **Fi
 
 Click the ![Image](../assets/icons/JournalSearchCloseButton.png) button on the left of the Search field to close the search area.
 
-## The Journal Diagram‌
+## The Journal Diagram
 
 The modelling process in PBPK/PD projects is often not straight forward but requires consideration of different alternatives and testing of several approaches. So the working process is mostly not represented appropriately by just a sequence of work status. Instead, it looks like a tree with several dead ends and one path to the final solution.
 

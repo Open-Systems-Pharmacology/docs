@@ -1,4 +1,4 @@
-# Observers‌ Building Block‌
+# Observers Building Block
 
 An **observer** which can be displayed in a chart (see [Simulation Results](simulation-results.md)) is an output derived from one or several molecules or parameters by a defined formula. There are two classes of observers: **molecule observers** and **container observers**; creating and editing of both classes will be explained in this section. The main difference between those two classes is:
 
@@ -12,17 +12,17 @@ After loading a simulation that was generated in PK-Sim® (see [Load a Simulatio
 
 ## Observers - Functionality Overview
 
-Each observer has **container conditions** that define in which containers the observer will be created and a **list of molecules** that defines for which molecules it will be created. Container conditions explained in [How Tags are used](model-building-components.md) in detail. The list of molecules can either include all molecules or it can be restricted to a list of included or excluded molecules.
+Each observer has **container conditions** that define in which containers the observer will be created and a **list of molecules** that defines for which molecules it will be created. Container conditions explained in [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events) in detail. The list of molecules can either include all molecules or it can be restricted to a list of included or excluded molecules.
 
 If an observer cannot be created because the conditions do not match any container or molecule, a warning will be issued when creating a simulation (see [Create a Simulation](setting-up-simulation.md#create-a-simulation)).
 
-## Example - Creating Observers‌
+## Example - Creating Observers
 
 In our **example project**, open the created **Observers** building block for editing by double-clicking it. If the observers BB was not created in the module, right click on the module and select **Add Building Blocks** and then select "Observers" from the list.
 
 For **creating a new observer** or loading one from a previously saved file, select the corresponding button <img src="../assets/icons/AddAction.svg" data-size="line"> **New** or <img src="../assets/icons/PKMLLoad.svg" data-size="line"> **Load** from the context-dependent ribbon and there select the proper observer type. Alternatively, you may right-click into the empty white space of the edit window and select **Create Molecule (resp. Container) Observer** or **Load Molecule (resp. Container) Observer** from the context menu. If you choose **New** or **Create**, a window named **New Molecule (resp. Container) Observer** opens.
 
-### Molecule Observers‌
+### Molecule Observers
 
 To work with molecule observers, make sure the tab "Molecule Observer" in the edit window is selected. To create a new molecule observer, use **Create Molecule Observer** as described above, upon which the "New Molecule Observer" window opens (see image below). For our test project, we want to create an observer that calculates the molar concentration from the amount of molecules, doing so for each molecule and each compartment except for "BigVial".
 
@@ -63,7 +63,7 @@ If you have already loaded or created a concentration parameter when building th
 
 Examples for many other molecule observers can be best studied when opening the observer building block in a simulation exported from PK-Sim®.
 
-### Container Observers‌
+### Container Observers
 
 To work with container observers, make sure the tab "Container Observer" in the edit window is selected. For our test project, we want to create an observer that calculates the sum of concentrations of the two metabolites **B** and **C**. This creation procedure is almost identical to molecule observers, but the paths you get are different, and you will use different properties and formulas.
 

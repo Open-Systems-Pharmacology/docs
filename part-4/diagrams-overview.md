@@ -12,7 +12,7 @@ These diagrams are used for three purposes: visualization, navigation and editin
 
 In the following sections we will first describe these general concepts and features (using examples from a Spatial Structure diagram), and then the features specific for the different building block diagrams.
 
-## General Visualization, Scrolling and Zooming‌
+## General Visualization, Scrolling and Zooming
 
 Obviously, you can comprehend two-dimensional network structures much easier in appropriate graphical representation. The most common example is an organism model exported from PK-Sim® to MoBi®, but you may also have simpler spatial structures (see “Spatial Structures” for an example).
 
@@ -39,7 +39,7 @@ To zoom the diagram, use one of the following options:
 
 For visualization, model containers are represented by **container nodes**, which can be expanded and collapsed (see next section). Other model entities are represented by **elementary nodes** and **links**. Neighborhoods, for example, are represented by a neighborhood node and links.
 
-## General Navigation, Expand and Collapse‌
+## General Navigation, Expand and Collapse
 
 You do not want to remain a passive viewer of these pictures, instead you want to use the graphical representation for navigation within the model and even for editing the model.
 
@@ -58,7 +58,7 @@ In the spatial structure and simulation view, you can navigate into subcontainer
 
 ![Expanded Kidney Structure](../assets/images/part-4/Kidney.png)
 
-## General Editing‌
+## General Editing
 
 Editing is a more complex topic than navigating. You can make three kinds of changes:
 
@@ -74,7 +74,7 @@ You can perform many changes via the context menu. To open the **context menu**,
 
 The different context menu items are described in the sections below.
 
-#### Model Changes‌
+#### Model Changes
 
 To edit the model, do one of the following:
 
@@ -85,7 +85,7 @@ To edit the model, do one of the following:
 * Select <img src="../assets/icons/Save.svg" alt="" data-size="line"> **Save** to save an entity separate from the project. You can load such entities in the same or into other projects.
 * Select <img src="../assets/icons/Cancel.svg" alt="" data-size="line"> **Remove** to remove an entity.
 
-### Diagram Changes‌
+### Diagram Changes
 
 You can rearrange the position of nodes or hide nodes in order to get a better visualization in general or for publishing (you can export diagrams as bitmaps, see [More Actions](diagrams-overview.md#more-actions)).
 
@@ -100,7 +100,7 @@ First select a single diagram node or a collection of diagram nodes you want to 
 * Select **Select / Visible linked nodes** to select all visible nodes, which are linked to nodes in the current selection.
 * Select **Select / Invert selection** to invert the selection within a container.
 
-#### Basic Actions‌
+#### Basic Actions
 
 Now you can move, hide or resize the selected nodes:
 
@@ -155,14 +155,14 @@ In addition, you may use the following features:
 * Select **Layout / Apply named Template to Container recursive** to apply a template to a container recursively; that means the template is applied to each subcontainer of the container. For example you can apply an organ template to all organs inside an organism by selecting this context menu item at the Organism container.
 * Select **Layout / AutoLayout children** to apply a force-based auto layout.
 
-#### More Actions‌
+#### More Actions
 
 You can export a container as bitmap:
 
 * Select **Diagram / Copy as bitmap** from the container or diagram context menu to copy the selected container or diagram as bitmap into the clipboard, from which you can insert it into documents or slides.
 * Select **Diagram / Save as bitmap** from the container or diagram context menu to save the selected container or diagram as bitmap to a file.
 
-### Display Changes‌
+### Display Changes
 
 We have already explained in “General Visualization, Scrolling and Zooming” how to change the display of a diagram by zooming and scrolling.
 
@@ -183,9 +183,9 @@ You can change the **default node size** for reaction, molecule and observer nod
 * the observer links in the simulation diagram,
 * Molecule nodes, which are unused in the simulation diagram containers.
 
-## Reactions Diagram‌
+## Reactions Diagram
 
-### Visualization‌
+### Visualization
 
 The Reaction building block consists of a list of reactions. Each reaction has educts and products, which are listed in the stoichiometry tab of the reaction properties editor. In the reactions diagram the reaction is represented by a triangle with a blue educts port, a green products port and a red modifiers port.
 
@@ -201,7 +201,7 @@ In the reaction diagram, no containers are used, so the remarks from “General 
 The diagram colors can be changed in the diagram options (see [Display Changes](diagrams-overview.md#display-changes)).
 {% endhint %}
 
-### Model Changes‌
+### Model Changes
 
 You can **insert reactions and molecule nodes** by the context menu as described in “Model Changes”.
 
@@ -218,7 +218,7 @@ To **remove an educt, product or modifier from a reaction**, disconnect the mole
 
 In the same way, you can remove an unconnected molecule node by clicking it and then pressing the **Delete** key.
 
-### Diagram Changes‌
+### Diagram Changes
 
 To move a molecule or reaction node, move the mouse to the center of the node until the cursor looks like ![Image](../assets/icons/ArrowCursor.png) click it and move it around.
 
@@ -232,7 +232,7 @@ You can emphasize and minimize reaction and molecule nodes by changing their nod
 In more complex reaction-molecule networks, some molecule names may be used in many reactions. In such cases, you may prefer more than one molecule node for this molecule name to avoid long connection lines with many intersections. You can create so called **twin nodes** by inserting a molecule node with the same name. Ports are now connected to the nearest twin node of a molecule name - at least after a **Refresh**. You cannot connect them to a twin node further away.
 {% endhint %}
 
-## Spatial Structure Diagram‌
+## Spatial Structure Diagram
 
 Most features of spatial structure diagrams have been explained in the general sections before.
 
@@ -244,7 +244,7 @@ To **insert a neighborhood** between two physical containers:
 4. Release the mouse. A **New Neighborhood** dialog appears.
 5. Enter a unique name and click **OK**. A new neighborhood is generated.
 
-## Simulation Diagram‌
+## Simulation Diagram
 
 Most features of simulation diagrams have been explained in the general sections before.
 

@@ -22,6 +22,10 @@ A MoBi project contains a set of:
 
 Every module consists of [building blocks](building-block-concepts.md), with BB types **Spatial Structures (SS)** (0-1), **Molecules** (0-1), **Reactions** (0-1), **Passive Transports (PT)** (0-1), **Observers** (0-1), **Events** (0-1), **Parameter Values (PV)** (0-n), and **Initial Conditions (IC)** (0-n). Every module includes no or exactly one BB of each type, except for PV and IC BBs, of which multiple can be present in one module.
 
+{% hint style="info" %}
+For convenient organization of the project, modules can be grouped in folders in the Modules Explorer.
+{% endhint %}
+
 ### PK-Sim modules
 A project in MoBi can be based on a PBPK model exported from PK-Sim. Such a model will be present as a **PK-Sim module** in MoBi containing *all of the BB types*. PK-Sim modules cannot be edited by default. If the user decides to edit a PK-Sim module, the PK-Sim module will be converted to an Extension module. A project can contain multiple or no PK-Sim modules.
 

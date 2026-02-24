@@ -12,19 +12,19 @@ When carrying out a simulation, this system of time-dependent differential equat
 
 PBPK can also be well understood within ADME logic, which is further detailed below.
 
-## (L)ADME logic and routes of administration‌
+## (L)ADME logic and routes of administration
 
 The pharmacokinetics of a substance can be understood by considering its (liberation), absorption, distribution, metabolism, and excretion (ADME). While intravenously administered substances are directly available in the systemic circulation for distribution, substances administered, e.g., orally, subcutaneously, or via inhalation, must be absorbed first. Also, in some cases, the substance might not be directly available for absorption, but needs to be liberated first, in case an extended LADME scheme is relevant.
 
-### Liberation‌
+### Liberation
 
 Depending on the formulation of a substance, it might not be directly available for absorption processes. Certain formulations liberate the substance in a more or less controlled fashion, and these processes can be included in PBPK models. Further details on modeling liberation in PK-Sim® are described in [PK-Sim® - Formulations](../part-3/pk-sim-formulations.md).
 
-### Absorption‌
+### Absorption
 
 Substances not administered intravenously generally must be absorbed before being available in the systemic circulation. The most common route of administration for which absorption is a critical issue is oral (per os, PO) administration. Factors such as gastric emptying and intestinal transit time, stability and solubility of a substance or formulation, as well as the permeability across the intestinal wall based on passive and active transport processes, are essential for the fraction of a substance absorbed into the systemic circulation. Bioavailability is further determined by potential first-pass metabolism as described below. Historically, a plug-flow-with-dispersion model was used in PK-Sim® [[93](../references.md#93)]. From version 5.0 on, a compartmental gastrointestinal model is used, which is further detailed and discussed in [[79](../references.md#79)] and [[80](../references.md#80)].
 
-### Distribution‌
+### Distribution
 
 After reaching systemic circulation, the compound may distribute into tissues and organs, decreasing the plasma concentration. The (apparent) volume of distribution is an important PK descriptor, theoretically defined as the volume in which the total amount of drug would need to be uniformly distributed to produce the given plasma concentration of a compound. However, the physiological processes that determine this volume may be complex.
 
@@ -34,9 +34,9 @@ Besides the passive processes described above, active transport processes or bin
 
 The relative contribution of different processes to distribution also depends on the type of the molecule. The blood endothelium in the different organs often does not constitute a major distribution hurdle for small molecules. An exception is the significant blood-brain barrier. For larger molecules such as biologics, endothelial permeation can significantly impact the PK, and additional processes, such as lymph flow, are important for recirculation.
 
-Further details and options for modeling distribution in PK-Sim® are described in ["Partition coefficient calculation methods”](../part-3/pk-sim-compounds-definition-and-work-flow.md#distribution).
+Further details and options for modeling distribution in PK-Sim® are described in ["Partition coefficient calculation methods”](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-new-compounds-in-pk--sim).
 
-### Metabolism‌
+### Metabolism
 
 Most substances are metabolized by enzymes in the organism. Often, two distinct phases are distinguished: Phase I enzymes catalyze modifications that generally add functional groups to non-polar molecules; Phase II enzymes can then conjugate soluble molecules to these groups to allow better elimination via the kidney or the gall bladder.
 
@@ -44,15 +44,15 @@ The products of such biotransformation steps are referred to as metabolites. If 
 
 Generally, the liver is considered the most relevant organ for biotransformation. However, most metabolizing enzymes are also expressed in various other organs, even though often to a lower extent. Nevertheless, extrahepatic metabolism can be very important. Mucosal clearance in the intestinal wall is just one prominent example. Together with first-pass clearance in the liver, this process also influences the bioavailability of a substance [[77](../references.md#77)].
 
-Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance for which enzymes are relevant. Further details on modeling metabolism in PK-Sim® are described in the section [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Metabolism is generally an active and substance-specific process. While the enzyme equipment is a property of the organism, it has to be considered for each substance for which enzymes are relevant. Further details on modeling metabolism in PK-Sim® are described in the section [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties-tab).
 
-### Excretion/Elimination‌
+### Excretion/Elimination
 
 Compounds and their metabolites are generally removed from the body via excretion or elimination processes. The two most prominent routes of excretion are via the kidney into urine and via biliary excretion into the intestine and further into the feces. During the latter process, reabsorption can lead to entero-hepatic circulation of a substance. While biliary secretion is generally mediated via active transport, urinary secretion can be passive (glomerular filtration) or also due to active transport (tubular secretion). Other special routes of elimination can include exhalation via the lungs.
 
-Just like the metabolization processes, the transporter "equipment" is a property of each individual organism. For each substance, it has to be considered which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties).
+Just like the metabolization processes, the transporter "equipment" is a property of each individual organism. For each substance, it has to be considered which transporters are relevant and whether or not the substance is subject to glomerular filtration. Further details on modeling excretion and elimination in PK-Sim® are described in [ADME Properties](../part-3/pk-sim-compounds-definition-and-work-flow.md#adme-properties-tab).
 
-## PBPK model parameterization‌
+## PBPK model parameterization
 
 Due to its physiological basis, most parameters in a PBPK model are independent of substance knowledge or PK measurements. For example, information on blood flow rates, compartment volumes, or composition, e.g., in terms of volume fractions of water, proteins, and lipids, can be implemented independently of the substance.
 

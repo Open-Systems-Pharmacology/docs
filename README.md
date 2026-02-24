@@ -2,6 +2,8 @@
 
 This manual describes the [Open Systems Pharmacology Suite](https://www.open-systems-pharmacology.org). It includes a technical description of each software element with examples and references for further reading. The aim of the manual is to assist users in effectively developing PBPK models.
 
+Documentation for the developers of the Open Systems Pharmacology Suite and more technical details are provided [here](https://dev.open-systems-pharmacology.org/).
+
 The handbook is divided into the following parts:
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
@@ -20,13 +22,13 @@ The handbook is divided into the following parts:
 
 A technical description of the different software elements is presented starting with PK-Sim® focusing on physiologically-based pharmacokinetics in "Working with PK-Sim®".
 
-[Go to: Working with PK-Sim®](part-3/pk-sim-quick-guide‌.md)
+[Go to: Working with PK-Sim®](part-3/pk-sim-quick-guide.md)
 
 ## Working with MoBi®
 
 MoBi® focusing on modular model customization and extension as well as on pharmacodynamics in "Working with MoBi®".
 
-[Go to: Working with MoBi®‌](part-4/first-steps.md)
+[Go to: Working with MoBi®](part-4/first-steps.md)
 
 ## Shared Tools and Example Workflows
 
