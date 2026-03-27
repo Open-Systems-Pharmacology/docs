@@ -13,9 +13,11 @@ The CLI returns exit code `0` when a command finishes successfully and a non-zer
 
 Before using the CLI, make sure that:
 
-* PK-Sim is installed on Windows and `PKSim.CLI` is available in the installation folder,
+* PK-Sim is installed on Windows,
 * you run the command from a shell that can access the PK-Sim installation directory,
 * input files and output directories are accessible from that shell.
+
+> **Note:** Any argument value (file name, folder path, etc.) that contains spaces must be enclosed in double quotes, e.g. `"C:\My Projects\input"`.
 
 ## Starting the CLI
 
@@ -49,7 +51,7 @@ This workflow is intended for automated execution of multiple snapshot-based pro
 ### Export format flags
 
 * `-c, --csv` export simulation results to CSV
-* `-x, --xml` export simulation model XML
+* `-x, --xml` export simulations to SimModel-XML
 * `-j, --json` export results to JSON (individual simulations only)
 * `-k, --pkml` export simulations to PKML
 * `-e, --excel` export results to XLSX (individual simulations only)
@@ -57,7 +59,7 @@ This workflow is intended for automated execution of multiple snapshot-based pro
 ### Logging options
 
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
-* `-l, --log <full path>` writes logs to one or more files in addition to console output.
+* `-l, --log <full path>` writes logs to a file in addition to console output.
 
 ### Examples
 
@@ -87,7 +89,7 @@ This workflow converts project representations in bulk between PK-Sim project fi
 ### Logging options
 
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
-* `-l, --log <full path>` writes logs to one or more files in addition to console output.
+* `-l, --log <full path>` writes logs to a file in addition to console output.
 
 ### Examples
 
@@ -111,13 +113,13 @@ This workflow is intended for exporting simulation artifacts from a specific PK-
 
 ### Optional behavior
 
-* `-s, --simulations` optional list of simulation names; if omitted, all simulations are exported
+* `-s, --simulations` optional list of simulation names separated by spaces (e.g. `-s S1 S2 "My Simulation"`); if omitted, all simulations are exported
 * `-r, --run` run simulations before export (default is `false`)
 
 ### Export format flags
 
 * `-c, --csv` export simulation results to CSV
-* `-x, --xml` export simulation model XML
+* `-x, --xml` export simulations to SimModel-XML
 * `-j, --json` export results to JSON (individual simulations only)
 * `-k, --pkml` export simulations to PKML
 * `-e, --excel` export results to XLSX (individual simulations only)
@@ -125,7 +127,7 @@ This workflow is intended for exporting simulation artifacts from a specific PK-
 ### Logging options
 
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
-* `-l, --log <full path>` writes logs to one or more files in addition to console output.
+* `-l, --log <full path>` writes logs to a file in addition to console output.
 
 ### Examples
 
@@ -136,15 +138,15 @@ PKSim.CLI export -p C:\Projects\Example.pksim5 -o C:\Exports --run --csv -s "Sim
 
 ## Qualification workflow (`qualification`)
 
-Use `qualification` to validate or run a qualification workflow from a JSON configuration file.
+Use `qualification` to validate or run a qualification workflow from a [qualification plan](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification).
 
 ### Purpose
 
-This workflow supports qualification automation from a configuration file, including validation-only runs and full qualification processing with optional simulation execution and project export.
+This workflow supports qualification automation from a [qualification plan](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification), including validation-only runs and full qualification processing with optional simulation execution and project export.
 
 ### Required option
 
-* `-i, --input` path to the qualification JSON configuration file
+* `-i, --input` path to the JSON qualification plan
 
 ### Workflow options
 
@@ -155,7 +157,7 @@ This workflow supports qualification automation from a configuration file, inclu
 ### Logging options
 
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
-* `-l, --log <full path>` writes logs to one or more files in addition to console output.
+* `-l, --log <full path>` writes logs to a file in addition to console output.
 
 ### Examples
 

@@ -11,7 +11,7 @@ The CLI returns exit code `0` when the command finishes successfully and a non-z
 
 Before using the CLI, make sure that:
 
-* MoBi is installed on Windows and `MoBi.CLI` is available in the installation folder,
+* MoBi is installed on Windows,
 * you run the command from a shell that can access the MoBi installation directory,
 * for qualification workflows that rebuild PK-Sim modules, a compatible PK-Sim installation is available locally.
 
@@ -55,7 +55,7 @@ Choose one of the following options:
 ### Logging options
 
 * `--logLevel <Debug|Information|Warning|Error>` controls the console and file log verbosity. The default is `Information`.
-* `-l, --log <full path>` writes log output to one or more files in addition to the console output.
+* `-l, --log <full path>` writes log output to a file in addition to the console output.
 
 ### Examples
 
@@ -112,7 +112,7 @@ The configuration file determines paths such as the source snapshot file, output
 ### Logging options
 
 * `--logLevel <Debug|Information|Warning|Error>` controls the console and file log verbosity. The default is `Information`.
-* `-l, --log <full path>` writes log output to one or more files in addition to the console output.
+* `-l, --log <full path>` writes log output to a file in addition to the console output.
 
 ### Examples
 
