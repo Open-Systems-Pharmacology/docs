@@ -1,6 +1,6 @@
-# Command Line Interface (CLI)
+# Command-Line Interface (CLI)
 
-MoBi provides a command line interface for automating workflows that would otherwise require repeated manual work in the desktop application. The current CLI supports two batch-oriented workflows:
+MoBi provides a command-line interface for automating workflows that would otherwise require repeated manual work in the desktop application. The current CLI supports two batch-oriented workflows:
 
 * converting MoBi project files and MoBi snapshot files with the `snap` command,
 * running or validating qualification workflows with the `qualification` command.

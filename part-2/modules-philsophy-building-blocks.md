@@ -46,7 +46,7 @@ The qualification framework enables automated validation of various scenarios (u
 Validation and automation tools include, for example:
 
 -   **Installation Validator**: enables "1-Click" validation of the OSP Suite installation on a target computer. The validation is performed by execution of the predefined set of simulation scenarios and comparison of the simulated results with the (validated) reference values.
--   **Command Line Interface** (*CLI*): allows batch processing of multiple projects in PK-Sim and is described in [Command Line Interface - CLI](../part-3/pk-sim-command-line-interface.md).
+-   **Command-Line Interface** (*CLI*): allows batch processing of multiple projects in PK-Sim and is described in [Command-Line Interface - CLI](../part-3/pk-sim-command-line-interface.md).
 
 ### R-packages
 

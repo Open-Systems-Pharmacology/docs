@@ -1,6 +1,6 @@
-# Command Line Interface (CLI)
+# Command-Line Interface (CLI)
 
-PK-Sim provides a command line interface for automation and batch processing. The current CLI supports four workflows:
+PK-Sim provides a command-line interface for automation and batch processing. The current CLI supports four workflows:
 
 * running simulations from snapshot files with the `run` command,
 * converting PK-Sim projects and snapshots with the `snap` command,
