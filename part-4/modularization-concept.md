@@ -91,7 +91,23 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 
 The list of available molecules is always extended. If module `A` has molecule `MolA` and module `B` has molecule `MolB`, the final model will contain both `MolA` and `MolB`, disregarding the merge behavior.
 
-Molecules are always overwritten by name. Therefore, if a molecule is defined in an Extension module, it must contain all required parameters. It is not possible to only add some parameters (in merge behavior "Extend"), while retaining parameters from the module that is higher in the hierarchy.
+#### Merge behavior "Extend"
+
+- **Molecule type** (Drug, Enzyme, Transporter, etc.) is **not** changed. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Drug in the final model.
+- **Stationary**: the property is always overwritten.
+- **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods olny apply to non-stationary molecules.
+- **Parameters** are always overwritten. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
+- **Parameter type** (local/global) is always overwritten.
+
+
+
+#### Merge behavior "Overwrite"
+
+- **Molecule type** (Drug, Enzyme, Transporter, etc.) is overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
+- **Stationary**: the property is always overwritten.
+- **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods olny apply to non-stationary molecules.
+- **Parameters** are always overwritten. Only parameters existent in the last module will be present in the simulation.
+- **Parameter type** (local/global) is always overwritten.
 
 ### Reactions
 
