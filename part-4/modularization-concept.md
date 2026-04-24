@@ -135,17 +135,20 @@ Currently, the merge behavior "Extend" for passive transports is identical to "O
 
 ##### Merge behavior "Overwrite"
 
+#### Merge behavior "Extend"
+
 - The equation in the **Monitoring** tab is overwritten.
 
-- The **In container with** list is overwritten, including the **Operator** (and/or).
+- The **Operator** of the "In container with" list is overwritten.
 
-- **Include/Exclude** molecule lists for molecules are always extended. However, behavior of the **All checkbox** is overwritten.
+- The **Conditions** list of the "In container with" list is extended.
 
-The current behavior of combining the observers might appear inconsistent and somewhat confusing. The discussion on this topic is still ongoing and can be followed [on GitHub](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2053).
+- **Include/Exclude** molecule lists for molecules are always extended. However, the behavior of the **All checkbox** is overwritten.
+  - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
 
-##### Merge behavior "Extend"
+#### Merge behavior "Overwrite"
 
-Currently, the merge behavior "Extend" for observers is identical to "Overwrite".
+Observers are completely overwritten by name.
 
 ### Events
 
