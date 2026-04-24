@@ -119,7 +119,25 @@ The list of available molecules is always extended. If module `A` has molecule `
 
 ### Reactions
 
-Reactions are always overwritten by name. Therefore, if a reaction is defined in an Extension module, it must contain all required parameters. It is not possible to only add some parameters (in merge behavior "Extend"), while retaining parameters from the module that is higher in the hierarchy.
+#### Merge behavior "Extend"
+
+- **Educts**, **Products**, and **Modifiers** are  extended. New educts/products/modifiers can be added, but existing cannot be removed. A workaround to exclude an educt or a product of being affected by the reaction is to set its stoichiometry to 0.
+
+- **Stoichiometry** values are overwritten.
+
+- **Equation** in the Properties tab is overwritten.
+
+- **Parameters** list is extended. That means that new parameters are added, but existing parameters are overwritten.
+
+- **Container criteria** are extended, the **Operator** is overwritten.
+
+- **Create process rate parameter** property is overwritten.
+
+- **Plot process rate parameter** property is overwritten.
+
+#### Merge behavior "Overwrite"
+
+Reactions are completely overwritten by name.
 
 ### Passive transports
 
