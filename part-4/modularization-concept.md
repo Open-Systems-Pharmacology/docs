@@ -75,7 +75,13 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 - **Parameters** are always overwritten. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
 - **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
 - **Tags** will be extended. If "Organism|Container 1" has a tag "Tag A" in module "A" and a tag "Tag B" in module "B", in the final model, "Organism|Container 1" will have tags "Tag A" and "Tag B".
-- **Neighborhoods** are extended (e.g., addition of new parameters, tags).
+- **Neighborhoods** are extended (e.g., addition of new parameters, tags). Neighbors are replaced. If module `A` defines a neighborhood `N1` between `Organism|Container 1` and `Organism|Container 2`, and module `B` defines a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`, the final model will contain a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`.
+
+{% hint style="warning" %}
+If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model.
+{% endhint %}
+
+
 
 #### Merge behavior "Overwrite"
 When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers from module `B` will overwrite the containers with the same path in module `A`. When overwriting, all descendants of a container are removed if not present in the module that overwrites (i.e., replacement of the whole tree structure). I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 2`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` without the sub-containers `Container 2` and `Container 3`. `Organism|Container 1` will only have parameters that are defined in module `B`, but not in module `A`.
@@ -86,6 +92,10 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 - Container (including neighborhoods) **Tags** will be overwritten. If `Organism|Container 1` has a tag "Tag A" in module `A` and a tag "Tag B" in module `B`, in the final model, `Organism|Container 1` will only have tag "Tag B".
 - **Formulas** are never overwritten (also not in the "overwrite" mode). Meaning, if module `B` defines a formula with the same name as a formula in module `A`, the updated formula will only be used for the parameters defined in module `B`, but not for other parameters that use this formula.
 - **Neighborhoods** will be overwritten by their names. Their parameters, tags, and neighbors will be overwritten.
+
+{% hint style="warning" %}
+If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model.
+{% endhint %}
 
 ### Molecules
 
