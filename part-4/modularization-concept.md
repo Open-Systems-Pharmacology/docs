@@ -133,8 +133,6 @@ Currently, the merge behavior "Extend" for passive transports is identical to "O
 
 ### Observers
 
-##### Merge behavior "Overwrite"
-
 #### Merge behavior "Extend"
 
 - The equation in the **Monitoring** tab is overwritten.
