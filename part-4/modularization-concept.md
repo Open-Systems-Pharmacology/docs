@@ -108,6 +108,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are always overwritten. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
 - **Parameter type** (local/global) is always overwritten.
+- **Active Transports** are extended. New transports are added, existing are extended using the merge behavior (parameters added, properties overwritten, etc).
 
 #### Merge behavior "Overwrite"
 
@@ -116,6 +117,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are always overwritten. Only parameters existent in the last module will be present in the simulation.
 - **Parameter type** (local/global) is always overwritten.
+- **Active Transports**: The molecule is completely overwritten. This implies that only active transports defined in the latest module will be present in the simulation.
 
 ### Reactions
 
