@@ -113,23 +113,22 @@ Reactions are always overwritten by name. Therefore, if a reaction is defined in
 
 ### Passive transports
 
-#### Merge behavior "Overwrite"
+#### Merge behavior "Extend"
 
 - The equation in the **Kinetic** tab is overwritten.
 
-- The **Parameters** list is overwritten. This also implies that parameters that are not defined in the module that is lower in the hierarchy are removed.
+- The **Parameters** list is extended.
 
 - The **Operator** (and/or) for the "Source" and "Target" lists are overwritten.
 
-- **Source** and **Target** lists are overwritten (i.e., it is possible to remove source/target condition).
+- **Source** and **Target** lists are extended.
 
-- **Include/Exclude** molecule lists for molecules are always extended. However, behavior of the **All checkbox** is overwritten.
+- **Include/Exclude** molecule lists for molecules are always extended. However, the behavior of the **All checkbox** is overwritten.
+  - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
 
-The current behavior of combining the passive transports might appear inconsistent and somewhat confusing. The discussion on this topic is still ongoing and can be followed [on GitHub](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2053).
+#### Merge behavior "Overwrite"
 
-#### Merge behavior "Extend"
-
-Currently, the merge behavior "Extend" for passive transports is identical to "Overwrite".
+Passive transports are completely overwritten by name.
 
 ### Observers
 
