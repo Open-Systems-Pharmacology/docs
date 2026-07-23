@@ -221,10 +221,10 @@ The tree structure of the event is extended. This means:
 
  - **Parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
 
-- **Administered molecule** is extended.
+- **Administered molecule** is *not* combined. When different modules define the same event (application) for **different** administered molecules, only the administered molecule of the module that is **higher in the hierarchy** (the first-selected module) is used; the administered molecule defined in a module lower in the hierarchy (selected later) is ignored. Note that this is the opposite precedence to parameters (above), where the lower module wins.
 
 {% hint style="warning" %}
- This results in a malformed event if different molecules are defined in different modules!
+Avoid defining the same event (application) for **different** administered molecules across modules. Under "Extend" the later module's administered molecule is silently dropped, so a redefinition of the administered molecule does not take effect. Always verify the administered molecule in the created simulation.
 {% endhint %}
 
 For each event:
