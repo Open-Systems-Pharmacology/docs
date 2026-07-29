@@ -67,7 +67,8 @@
   * [Diagrams Overview](part-4/diagrams-overview.md)
   * [Tools](part-4/tools.md)
   * [Command-Line Interface - CLI](part-4/mobi-command-line-interface.md)
-  * [Reuse of Project Information from Previous Versions](part-4/reuse-of-project-information-from-previous-versions.md)
+  * [Project conversion workflows](part-4/reuse-of-project-information-from-previous-versions.md)
+    * [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md)
   * [Example Workflows](part-4/example-workflows.md)
 
 ## Shared Tools and Example Workflows
