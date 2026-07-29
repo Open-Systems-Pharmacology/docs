@@ -34,7 +34,7 @@ The table below summarizes the behavioral changes. Only **Parameter Values** and
 | **Passive transports** | "Extend" was **identical to** "Overwrite". | "Extend" and "Overwrite" are now distinct. |
 | **Observers** | "Extend" was **identical to** "Overwrite". | "Extend" and "Overwrite" are now distinct. |
 | **Spatial structure** | No explicit `MoleculeProperties` rule. | `MoleculeProperties` are now **always extended** in both modes; neighborhood "neighbors are replaced" behavior clarified. |
-| **Events** | Documented rules unchanged, but for an equally-named event administering *different* molecules: Overwrite → last module's molecule; Extend → both (malformed). | Same *documented* rules, but the actual "Extend" behavior keeps the **first** module's molecule (see below). |
+| **Events** | For an equally-named event/application administering *different* molecules, "Extend" extended the administered molecule to **both** (a malformed event). | "Extend" keeps the **first** module's molecule; a later module's redefinition is silently dropped (see below). |
 
 ### Molecules
 
@@ -97,20 +97,22 @@ The same trap applies to **modifiers**: if one definition carries a modifier the
 **Migration impact — medium.** Under v12, an "Extend" module dropped source/target/parameter entries that were not present in it. Under v13 "Extend", those entries are now **retained** from the earlier module. If the intent was replacement (including removal of entries), switch to **"Overwrite"**.
 
 {% hint style="danger" %}
-**Combining multiple PK-Sim modules can now fail to build.** PK-Sim modules are imported with the default merge behavior **"Overwrite"**. In v12, combining two PK-Sim modules still worked — even under "Overwrite", parts of passive transports and observers (notably the molecule **include/exclude lists**) were extended rather than replaced. In v13, "Overwrite" replaces those lists too, so a passive transport defined for one module's molecules loses the other module's molecules.
+**Combining PK-Sim modules set to "Overwrite" can fail to build.** In v12, PK-Sim modules were imported with the default merge behavior **"Overwrite"**, and combining them still worked: even under "Overwrite", the molecule **include/exclude lists** of passive transports and observers were extended rather than replaced. In v13, "Overwrite" replaces those lists too, so a passive transport keeps only the molecules of the module that overwrites it.
 
-This breaks the combination of a **large-molecule model with a small-molecule model**: the large-molecule transports (e.g. FcRn-mediated `NetMassTransfer_*`) end up referencing molecule-specific entities that are no longer created, and **simulation creation fails** with errors such as:
+This surfaces when combining **two large-molecule models**. The FcRn-mediated `NetMassTransfer_*` transports apply to their own module's molecules via those molecule lists; once the lists are replaced instead of combined, the molecule-specific entities the transport formulas reference are no longer created and **simulation creation fails** with errors such as:
 
 ```
 Transport 'NetMassTransfer_InterstitialToEndosomal' references an entity with path
-'<Molecule>|Is small molecule' that cannot be found
+'<Molecule>-FcRn_Complex|Is small molecule' that cannot be found
 ```
 
-**Fix:** set the PK-Sim modules' merge behavior to **"Extend"** (via MoBi, or `module$mergeBehavior <- "Extend"` in the `ospsuite` R package). With PK-Sim modules extended rather than overwritten, the molecule lists combine and the simulation builds. Note the general rule still applies: select small-molecule models **before** large-molecule models.
+Because of this, **v13 changes the default merge behavior of PK-Sim modules to "Extend"** ([PK-Sim #3635](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3635)), so newly imported modules combine correctly out of the box. The failure therefore affects **model configurations carried over from v12**, whose modules still carry the old "Overwrite" default.
 
-Strictly, only the **later** module's mode matters: merge behavior governs how a module is combined into what precedes it, so the first module has nothing to overwrite and its mode is immaterial. Setting every PK-Sim module to "Extend" is the simpler rule and does no harm.
+**Fix:** set the affected PK-Sim modules' merge behavior to **"Extend"** (in MoBi, or `module$mergeBehavior <- "Extend"` in the `ospsuite` R package). With the modules extended rather than overwritten, the molecule lists combine and the simulation builds.
 
-In a controlled two-module test (one large-molecule + one small-molecule PK-Sim module), the **v13 "Extend" build reproduced the v12 "Overwrite" (standard) result exactly** — identical reactions, molecules, and observers (only benign v13 calculation-method and `Snapshot` serialization metadata differ). In other words, "Extend" in v13 recovers the v12 combination behavior. (v12 "Extend" was *not* identical — it additionally created a second, malformed application molecule; see [Events](#events).)
+Only the **first** module in the hierarchy has nothing to merge into, so its mode has no effect. The mode of every module selected after it matters — with more than two modules, check them all rather than only the last.
+
+In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" build reproduced the v12 "Overwrite" (default) result exactly** — identical reactions, molecules, and observers (only benign v13 calculation-method and `Snapshot` serialization metadata differ). In other words, "Extend" in v13 recovers the effective v12 combination behavior.
 {% endhint %}
 
 ### Observers
@@ -140,19 +142,21 @@ The container/parameter/tag/neighborhood rules are essentially as in v12, with t
 
 ### Events
 
-The **documented** event merge rules are unchanged from v12: events combine only when generated in the same container (by container criteria); under **Overwrite** the administered molecule is overwritten (last module wins), under **Extend** it is extended (both molecules, which results in a malformed event).
+The general rules are unchanged: events combine only when they are generated in the same container (by their container criteria). What changed is the **administered molecule** when two modules define an equally-named event/application for **different** molecules under merge behavior "Extend".
 
-However, the **actual v13 behavior does not match the documented rules** when two modules define an **equally-named event/application for *different* molecules**. Observed in a controlled two-module test (module A administers molecule X, module B — later in the hierarchy — administers molecule Y under the same application name):
+Observed in a controlled two-module test (module A administers molecule X, module B — later in the hierarchy — administers molecule Y under the same application name):
 
 | Mode | v12 | v13 |
 |------|-----|-----|
-| **Overwrite** | administers **Y** (last module — expected) | *(not tested in isolation)* |
-| **Extend** | administers **both X and Y** (malformed — uses a single molecule's molecular weight) | administers **X only (the *first* module)** |
+| **Overwrite** | administers **Y** — the last module's molecule | unchanged: administers **Y** |
+| **Extend** | administers **both X and Y** — a malformed event that uses a single molecule's molecular weight | administers **X only** — the *first* module's molecule; Y is silently dropped |
 
-The v13 "Extend" outcome — keeping the **first** module's molecule, so a later redefinition silently does *not* take effect — is counter-intuitive and is **not described by the documented rules** (which state that Extend extends to both molecules). This appears to be an undocumented behavior change and has been reported on the [MoBi issue tracker](https://github.com/Open-Systems-Pharmacology/MoBi/issues); note that event combination "will be changed in a future release".
+Under v13 "Extend" the administered molecule is therefore *not* combined, and it follows the **opposite** precedence to parameters, where the later module wins. The current rules are documented in [Events](modularization-concept.md#events).
+
+**Migration impact — medium.** A v12 Extension module that redefined the administered molecule of an existing application under "Extend" now has **no effect at all** — the base module's molecule is kept, silently. Note also that event combination is expected to change again in a future release.
 
 {% hint style="warning" %}
-**Avoid defining events/applications with the same name in more than one module.** Where this is unavoidable, explicitly verify **which molecule the application administers** after building the simulation — the result is mode-dependent, counter-intuitive, and not reliably documented in v13.
+**Avoid defining events/applications with the same name in more than one module.** Where this is unavoidable, explicitly verify **which molecule the application administers** after building the simulation.
 {% endhint %}
 
 ### Unchanged
