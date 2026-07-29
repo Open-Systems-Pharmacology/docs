@@ -44,7 +44,7 @@ The table below summarizes the behavioral changes. Only **Parameter Values** and
 
 - **Merge behavior "Extend"**
   - Molecule **type** (Drug, Enzyme, Transporter, …) is **not** changed — it is retained from the higher module.
-  - **Parameters** are overwritten *per absolute path*. Parameters present only in the higher module are **retained**.
+  - **Parameters** are overwritten individually: a parameter defined in both modules takes the later module's definition, while parameters present only in the higher module are **retained**.
   - **Active transports** are **extended** (new ones added; existing ones merged).
   - **Stationary**, **calculation methods** (defaults), and **parameter type** (local/global) are overwritten.
 - **Merge behavior "Overwrite"**
@@ -106,7 +106,7 @@ Transport 'NetMassTransfer_InterstitialToEndosomal' references an entity with pa
 '<Molecule>-FcRn_Complex|Is small molecule' that cannot be found
 ```
 
-Because of this, **v13 changes the default merge behavior of PK-Sim modules to "Extend"** ([PK-Sim #3635](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3635)), so newly imported modules combine correctly out of the box. The failure therefore affects **model configurations carried over from v12**, whose modules still carry the old "Overwrite" default.
+Because of this, **v13 changes the default merge behavior of PK-Sim modules to "Extend"** ([PK-Sim #3635](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3635)), so PK-Sim modules newly created in v13 combine correctly out of the box. The default is applied when the module is created from a PK-Sim simulation; it does **not** retroactively change modules already stored in a project. The failure therefore affects **model configurations carried over from v12**, whose modules still carry the old "Overwrite" default.
 
 **Fix:** set the affected PK-Sim modules' merge behavior to **"Extend"** (in MoBi, or `module$mergeBehavior <- "Extend"` in the `ospsuite` R package). With the modules extended rather than overwritten, the molecule lists combine and the simulation builds.
 
@@ -136,7 +136,7 @@ In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" 
 The container/parameter/tag/neighborhood rules are essentially as in v12, with two clarifications added in v13:
 
 - **`MoleculeProperties` are now always extended** in *both* "Extend" and "Overwrite" modes: new molecule properties from the later module are added, and a property present in both modules takes the later module's value/formula.
-- For neighborhoods, v13 clarifies that **neighbors are replaced** by the later module, and adds a warning: if the later module defines a neighborhood with *invalid* neighbors, the earlier module's neighborhood is kept unchanged (neighborhoods cannot be removed from a model).
+- For neighborhoods under **"Extend"**, v13 clarifies that **neighbors are replaced** by the later module; v12 only stated that neighborhoods are extended. (Under "Overwrite", v12 already specified that neighbors are overwritten.) Both modes now also carry a warning: if the later module defines a neighborhood with *invalid* neighbors, the earlier module's neighborhood is kept unchanged — neighborhoods cannot be removed from a model.
 
 **Migration impact — low to medium**, depending on whether molecule-property values/formulas were relied upon to be replaced rather than merged.
 
