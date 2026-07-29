@@ -2,7 +2,7 @@
 
 Version 13 of the OSP Suite refines the [modularization concept](modularization-concept.md) introduced in v12. The organizational structure (Modules → Building Blocks → Simulations) is unchanged, and the *parameter value* and *initial condition* resolution orders are unchanged. What changed is the **merge behavior of several building-block types when modules are combined** — specifically the difference between the **"Extend"** and **"Overwrite"** merge modes.
 
-Because these rules govern how a simulation is assembled from its modules, **a model configuration authored in v12 can produce a different simulation in v13 without any edit to the modules themselves.** This page summarizes the critical differences and describes how to migrate a v12 model configuration safely.
+Because these rules govern how a simulation is assembled from its modules, **a model configuration created in v12 can produce a different simulation in v13 without any edit to the modules themselves.** This page summarizes the critical differences and describes how to migrate a v12 model configuration safely.
 
 {% hint style="info" %}
 The complete v13 merge rules are documented in [Modularization concept](modularization-concept.md#creating-simulations-from-modules-and-combination-rules). This page only describes where v13 *differs* from v12 and what to do about it.
@@ -43,16 +43,17 @@ The table below summarizes the behavioral changes. Only **Parameter Values** and
 **v13** (see [Molecules](modularization-concept.md#molecules)):
 
 - **Merge behavior "Extend"**
-  - Molecule **type** (Drug, Enzyme, Transporter, …) is **not** changed — it is retained from the higher module.
   - **Parameters** are overwritten individually: a parameter defined in both modules takes the later module's definition, while parameters present only in the higher module are **retained**.
   - **Active transports** are **extended** (new ones added; existing ones merged).
-  - **Stationary**, **calculation methods** (defaults), and **parameter type** (local/global) are overwritten.
+  - Molecule **type** (Drug, Enzyme, Transporter, …), **stationary**, **calculation methods** (defaults), and **parameter type** (local/global) are overwritten — the later module wins, as in v12.
 - **Merge behavior "Overwrite"**
-  - Molecule **type** is overwritten.
   - Only the parameters present in the last module are retained.
   - Active transports are **completely** replaced.
+  - The molecule properties listed above are overwritten as well, exactly as under "Extend".
 
-**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained, and — critically — **the molecule type is not changed.** To reproduce the v12 result, set the module to **"Overwrite"**.
+**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained. To reproduce the v12 result, set the module to **"Overwrite"**.
+
+The molecule *properties* are the exception — type, stationary, calculation methods and parameter type are overwritten by the later module in both modes, so they need no migration attention. What changes between v12 and v13 is the treatment of the molecule's **parameters** and **active transports**.
 
 ### Reactions
 
