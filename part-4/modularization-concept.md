@@ -103,7 +103,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 
 #### Merge behavior "Extend"
 
-- **Molecule type** (Drug, Enzyme, Transporter, etc.) is **not** changed. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Drug in the final model.
+- **Molecule type** (Drug, Enzyme, Transporter, etc.) is always overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
 - **Stationary**: the property is always overwritten.
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are always overwritten. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
@@ -112,7 +112,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 
 #### Merge behavior "Overwrite"
 
-- **Molecule type** (Drug, Enzyme, Transporter, etc.) is overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
+- **Molecule type** (Drug, Enzyme, Transporter, etc.) is always overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
 - **Stationary**: the property is always overwritten.
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are always overwritten. Only parameters existent in the last module will be present in the simulation.
