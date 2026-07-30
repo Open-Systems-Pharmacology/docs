@@ -14,7 +14,7 @@ After having made yourself familiar with the processes of building model compone
 {% hint style="warning" %}
 Setting tolerances higher than the default values (absolute tolerance: 1.0E-10; relative tolerance: 1.0E-5) may reduce simulation time but cause convergence errors.
 
-However, when scale divisors are calculated and applied to a simulation as described in [Model Building and Model Components](model-building-components.md), solver tolerances can often be safely increased without compromising accuracy.
+However, when scale divisors are calculated and applied to a simulation as described in [Initial Conditions](initial-conditions-bb.md#initial-conditions---functionality-overview), solver tolerances can often be safely increased without compromising accuracy.
 {% endhint %}
 
 - Output Selection: outputs that will be available for plots; cannot be edited in this view but will be listed in the **Output Selection** tab after a successful simulation run in the **Simulation Creation Wizard**.
@@ -34,7 +34,7 @@ Load Simulation in the context menu.
 In both cases a new window is opened from where the existing simulation can be selected. After loading the pkml file, the simulation and the corresponding building blocks are automatically added to the Building Block Explorer and the Simulations Explorer.
 
 {% hint style="info" %}
-When working with PK-Sim®, simulations can be directly exported to MoBi® as described in [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-mobi).
+When working with PK-Sim®, simulations can be directly exported to MoBi® as described in [Send To MoBi®](../part-3/importing-exporting-project-data-models.md#send-to-mobi).
 {% endhint %}
 
 ## Create a Simulation‌
@@ -52,13 +52,13 @@ Creating a simulation opens the **Simulation Creation Wizard** in a new window a
 
 In the first step of the simulation creation you can choose the building blocks from which the simulation will be created. Using the combobox you can browse through the existing building blocks and select the desired item. You also need to specify a unique name for the new simulation. which you may also do later in the simulation creation process.
 
-In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the <img src="../assets/icons/AddAction.svg" data-size="line"> button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Molecule Start Values](building-block-concepts.md#molecule-start-values) and [Parameter Start Values](building-block-concepts.md#parameter-start-values).
+In the first step of the Simulation Creation Wizard, you can also create new Molecule and Parameter Start Values building blocks by clicking on the <img src="../assets/icons/AddAction.svg" data-size="line"> button. This follows the same workflow as for the creation of the Molecule and Parameter Start Values as described in [Initial Conditions](building-block-concepts.md#initial-conditions) and [Parameter Values](building-block-concepts.md#parameter-values).
 
-Clicking on **Next** <img src="../assets/icons/Forward.svg" data-size="line"> will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Molecule Start Values](building-block-concepts.md#molecule-start-values)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the  <img src="../assets/icons/Save.svg" data-size="line"> **Save Changes as new building block** button.
+Clicking on **Next** <img src="../assets/icons/Forward.svg" data-size="line"> will bring you to the second step of the simulation creation as depicted. Here you can edit the selected (or newly created) Molecule Start Values building block (for details see [Initial Conditions](building-block-concepts.md#initial-conditions)). You can also Save the displayed Start Values as a new Molecule Start Value building block using the  <img src="../assets/icons/Save.svg" data-size="line"> **Save Changes as new building block** button.
 
 ![Simulation Creation Wizard: Edit Molecule Start Values](../assets/images/part-4/SimCW-MSV.png)
 
-Clicking on **Next** <img src="../assets/icons/Forward.svg" data-size="line"> will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Start Values](building-block-concepts.md#parameter-start-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
+Clicking on **Next** <img src="../assets/icons/Forward.svg" data-size="line"> will bring you to the third step of the Simulation Creation as shown. Here you can edit the selected (or newly created) Parameter Start Values building block (for details see [Parameter Values](building-block-concepts.md#parameter-values)). You can also save the displayed start values as a new parameter start value building block using the **Save Changes as new building block** button.
 
 {% hint style="info" %}
 Changes of start values will affect newly created simulations. Adding them to the project, will leave the original start values building blocks unaffected. **Save Changes as new building block** will create a new building block under a different name.
@@ -292,7 +292,7 @@ The context menu that opens when right-clicking on the simulation in the Simulat
 * <img src="../assets/icons/Cancel.svg" data-size="line"> Remove - deletes the simulation from the project.
 * <img src="../assets/icons/SaveAs.svg" data-size="line"> Save As - saves the simulation as pkml file.
 * <img src="../assets/icons/Population.svg" data-size="line"> Start Population Simulation - calls the Population Simulation Analysis in PK-Sim®, loads the simulation and runs the population simulation (see “Running and analyzing a population simulation” for description).
-* Start Parameter Identification - calls Parameter Identification tool (see [Parameter Identification](tools.md#parameter-identification) for description).
+* Start Parameter Identification - calls Parameter Identification tool (see [Parameter Identification](../part-5/parameter-identification.md) for description).
 * <img src="../assets/icons/ObservedData.svg" data-size="line"> Export results to Excel® - generates an MS Excel® output file containing all result data (see [Simulation Results](simulation-results.md)).
 * <img src="../assets/icons/Report.svg" data-size="line"> Create Simulation Report - generates a plain text (txt) file containing all simulation information.
 * Export Simulation as Matlab® Differential Equations <img src="../assets/icons/Matlab.svg" data-size="line"> ... - exports the system of ordinary differential equations (ODE) of the simulation to m-files for MATLAB®. Into the output directory defined, several m-files defining the ODE system are written. The most important files are:
