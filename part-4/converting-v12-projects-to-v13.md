@@ -76,7 +76,7 @@ The molecule *properties* are the exception — type, stationary, calculation me
 **Worked example — silent loss of reactions.** Suppose a base module defines a reaction `R` (educt `A` → product `P1`) and an Extension module set to "Extend" *redefines* `R` as `A → P2`, intending to replace it.
 
 - In **v12** the extension's definition wins by name: `R` is `A → P2` and is created in every container where `A` and `P2` are present.
-- In **v13** the products are **unioned**: `R` becomes `A → P1 + P2`. A reaction is only instantiated where **all** its partners are present, so `R` now appears only in the intersection of "`P1` present" and "`P2` present" — potentially **far fewer** containers, and **zero** if `P1` and `P2` never co-occur. Where it *does* survive, its stoichiometry has changed (it now produces both `P1` and `P2`).
+- In **v13** the products are **combined into the union of both definitions**: `R` becomes `A → P1 + P2`. A reaction is only instantiated where **all** its partners are present, so `R` now appears only in the intersection of "`P1` present" and "`P2` present" — potentially **far fewer** containers, and **zero** if `P1` and `P2` never co-occur. Where it *does* survive, its stoichiometry has changed (it now produces both `P1` and `P2`).
 
 The same trap applies to **modifiers**: if one definition carries a modifier the other lacks, the union requires that modifier to be present in the container, which can remove the reaction from every container where it previously ran. These losses are **silent** — no error is raised; the reaction simply is not created.
 {% endhint %}
@@ -102,7 +102,7 @@ The same trap applies to **modifiers**: if one definition carries a modifier the
 
 This surfaces when combining **two large-molecule models**. The FcRn-mediated `NetMassTransfer_*` transports apply to their own module's molecules via those molecule lists; once the lists are replaced instead of combined, the molecule-specific entities the transport formulas reference are no longer created and **simulation creation fails** with errors such as:
 
-```
+```text
 Transport 'NetMassTransfer_InterstitialToEndosomal' references an entity with path
 '<Molecule>-FcRn_Complex|Is small molecule' that cannot be found
 ```
@@ -197,7 +197,10 @@ The goal is to arrive at a v13 model configuration whose every difference from t
    - **rewritten intestinal `Solubility` formulas** — these are *not* cosmetic and are numerically relevant for any oral administration
    - building-block renames `Reaction` → `Reactions` and `Observer` → `Observers`
 
-4. **Flag the affected building blocks.** For each Extension module, identify whether it redefines any **molecule, reaction, passive transport, or observer** that also exists in a module higher in the hierarchy. These are the entities whose merge result may have changed. **Also flag any event/application defined with the same name in more than one module** — especially administering *different* molecules; verify the administered molecule in the built simulation (see [Events](#events)), and prefer to avoid equally-named events across modules altogether.
+4. **Flag the affected building blocks.** Work through **every module after the first** — the first has nothing to merge into — and identify whether it redefines any **molecule, reaction, passive transport, or observer** that also exists in a module higher in the hierarchy. These are the entities whose merge result may have changed. Also flag:
+
+   - **Spatial structures** that redefine a container's `MoleculeProperties`, or that redefine a neighborhood. `MoleculeProperties` are extended in *both* merge modes in v13, so a v12 module that replaced them wholesale now merges into the earlier definition instead — and, unlike the cases above, no merge-mode setting reverses this (see [Spatial structure](#spatial-structure)).
+   - **Events/applications defined with the same name in more than one module**, especially those administering *different* molecules. Build the simulation and verify which molecule it actually administers (see [Events](#events)); prefer to avoid equally-named events across modules altogether.
 
 5. **Establish the ground truth by comparison.** Now for the **full** model configuration: build each affected simulation in **both** v12 and v13 and export the result to `*.pkml`. Compare the two PKML files, discounting the PK-Sim-only differences already catalogued in step 3. What remains reveals exactly which entities merged differently — it is far more reliable than reasoning from the rules alone.
 
@@ -207,9 +210,11 @@ The goal is to arrive at a v13 model configuration whose every difference from t
    Exported simulations may contain `SimulationEntitySource` provenance records (each entity traced to its origin `moduleName`, `buildingBlockType`, `sourcePath`). These do **not** affect model behavior. Their presence and count depend on the MoBi/export build rather than on model semantics — the same OSP version can export with or without them — so **do not treat them as a v12↔v13 difference; ignore them when comparing.**
    {% endhint %}
 
-6. **Decide per module: Extend or Overwrite.**
+6. **Decide per module: Extend or Overwrite.** The first module in the hierarchy has nothing to merge into, so its mode has no effect — make this decision for **every module selected after it**, not only the last one.
    - If the module was meant to **fully replace** a molecule/reaction/transport/observer (the common v12 assumption), set its merge mode to **"Overwrite"**.
    - If it was meant to **add to** an existing building block, keep **"Extend"** and verify the merged result — remove any now-redundant duplicated content, and remember that reaction educts/products cannot be removed (use stoichiometry `0`).
+   - **Spatial structures are only partly mode-sensitive.** Neighborhoods are replaced under "Extend" and overwritten under "Overwrite", but under neither mode can a neighborhood be *removed*, and a redefinition with invalid neighbors silently keeps the earlier one. `MoleculeProperties` are extended in both modes, so the mode cannot control their merge at all — inspect the merged result and, if it is wrong, change the module *content* rather than its merge mode.
+   - **Events.** If a module was meant to change the administered molecule of an application name it shares with an earlier module, "Extend" will not achieve that in v13 — the first module's molecule wins — so use **"Overwrite"**. If it was meant to add a *separate* application, give it a distinct name instead of relying on the merge mode.
 
 7. **Re-verify.** Rebuild in v13 after each change and compare against the v12 PKML again, until the simulation matches the intended v12 result (or until any intentional differences are understood and documented).
 
