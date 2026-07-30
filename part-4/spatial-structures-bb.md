@@ -52,7 +52,7 @@ Exporting a container to PKML also exports all of its sub-containers and all nei
 In the process of this and the next sections of this chapter, you will create an example project. An already completed project file named "ManualModel\_Sim.mbp3" is automatically installed together with MoBi® in the default program data directory. The entry "Examples" in the program start menu in the "MoBi" group will lead you to the proper path.
 {% endhint %}
 
-Start by creating a new project by executing the **New Project** command in the File menu or by clicking the corresponding icon ![Image](../assets/icons/NewProject.svg) in the Quick Access Toolbar. Create a new module by selecting the **Module** button in the **Create** group of the **Modeling** tab in the ribbon. Name the new module "ExampleModule" and select a "Spatial Structure" building block to be created within the new module. Click **OK** to create the new module.
+Start by creating a new project by executing the **New Project** command in the File menu or by clicking the corresponding icon ![Image](../assets/icons/ProjectNew.svg) in the Quick Access Toolbar. Create a new module by selecting the **Module** button in the **Create** group of the **Modeling** tab in the ribbon. Name the new module "ExampleModule" and select a "Spatial Structure" building block to be created within the new module. Click **OK** to create the new module.
 
 The screen should now look as shown in the following figure:
 
@@ -84,7 +84,7 @@ To create the required parameters:
 
 ### Creating Neighborhoods‌‌
 
-Within a spatial structure, transport processes may occur (see [Active Transporter Molecules](model-building-components.md#active-transporter-molecules) or [Passive Transports](model-building-components.md#passive-transports)) only between physical containers that are connected by a neighborhood.
+Within a spatial structure, transport processes may occur (see [Active transports](molecules-bb.md#active-transports) or [Passive Transports](passive-transports-bb.md)) only between physical containers that are connected by a neighborhood.
 
 To create a neighborhood between the two containers `BigVial|Vial1` and `BigVial|Vial2`, proceed as follows:
 

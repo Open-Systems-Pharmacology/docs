@@ -6,7 +6,7 @@ First, different types of [parameters](#parameters) and their properties are exp
 
 Then, the use of the different types of [formulas](#formulas) is described. Formulas are used to define parameters, reaction kinetics, transport processes, observer equations, and molecule initial conditions.
 
-Following is the explanation of the [tag concept](#how-tags-are-used). Tags are widely used to define conditions for localization of observers, transport processes, events, parameters, as well as for sum formulas.
+Following is the explanation of the [tag concept](#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events). Tags are widely used to define conditions for localization of observers, transport processes, events, parameters, as well as for sum formulas.
 
 Finally, the special [keywords](#keywords) that can be used in paths to define references in formulas are listed.
 
@@ -30,7 +30,7 @@ Within the different building blocks, there are slight differences in the proced
 
 - **Local** parameters are parameters whose values depend on the location of the molecule or reaction, e.g., "Concentration" of a molecule, or the apparent $$K_{M,app}$$ that depends on the concentration of the inhibitor (see [PK-Sim - Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)). These parameters are listed under the molecule or reaction node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE/REACTION>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`, or `Organism|Liver|Periportal|Intracellular|Midazolam-CYP3A4-Metabolization|Km_app`.
 
-Any parameter has a **Dimension**, and the value can be represented in different **Units**. The list of all supported dimensions can be found in [Appendix A.1](../appendix.md#a1-all-dimensions-and-base-units).
+Any parameter has a **Dimension**, and the value can be represented in different **Units**. The list of all supported dimensions can be found in [Appendix A.1](../appendix.md#a1-dimensions-and-base-units).
 
 {% hint style="warning" %}
 When using a parameter in a formula, the value is always internally converted to the base unit of the dimension. For example, if a parameter with the dimension "Concentration (molar)" is defined with the unit "nmol/l", its value will be converted to "µmol/l" when used in a formula.
@@ -63,7 +63,7 @@ In the bottom part of the **Create** or **Edit** window are several input option
 
 * For all parameter types, **a description can be added** into the input box at the bottom, for example to quote a reference. Clicking into the text field will open an edit dialog into which you can enter or paste any text of your choice.
 
-You may also **add tags to any parameter** in the **Tags** tab of the parameters editor. Tags are used to label parameters for selective evaluation in sum formulas (see [Sum Formulas](#sum-formulas)). The application of tags is explained in [How Tags are used](#how-tags-are-used).
+You may also **add tags to any parameter** in the **Tags** tab of the parameters editor. Tags are used to label parameters for selective evaluation in sum formulas (see [Sum Formulas](#sum-formulas)). The application of tags is explained in [How Tags are used](#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events).
 
 * To add a tag, click the "Add Tag" button and enter the tag in the input box.
 * To delete a tag, click the symbol that appears behind every tag in the list.
@@ -226,7 +226,7 @@ It is recommended to use events rather than "if conditions" in a formula if the 
 
 ### Sum Formulas
 
-**Sum formulas** can be used to calculate sums of values of entities that comply with certain criteria. The criteria are defined by tags that are assigned to the entities. Tags can be assigned to containers, neighborhoods, parameters, and events (see [How Tags are used](#how-tags-are-used)).
+**Sum formulas** can be used to calculate sums of values of entities that comply with certain criteria. The criteria are defined by tags that are assigned to the entities. Tags can be assigned to containers, neighborhoods, parameters, and events (see [How Tags are used](#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)).
 
 ### Table Formulas‌
 
@@ -252,7 +252,7 @@ If you would like to use the first derivative of the interpolation, check **Use 
 
 ### Table Formulas with Offset‌
 
-A table described in [Working with Tables](model-building-components.md#working-with-tables) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)).
+A table described in [Table Formulas](#table-formulas) may need to be reused and shifted by a constant time value. For example, PK-Sim® uses this logic to build up repeated advanced application protocols (compare [PK-Sim® - Administration Protocols](../part-3/pk-sim-administration-protocols.md)).
     
 For a table formula with offset, you have to specify:
 
@@ -396,7 +396,7 @@ If we create a sum formula with the following conditions:
         - `Organism|Container A|Container A1|Molecule A`
         - `Organism|Container A|Container A2|Molecule A`
 
-More than one condition can be combined for evaluation; the combinations are connected either with a logical `AND` or a logical `OR`. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](model-building-components.md#sum-formulas), [Transport Processes](model-building-components.md#transport-processes), [Observers](building-block-concepts.md#observers), [Events and Applications](model-building-components.md#events-and-applications)).
+More than one condition can be combined for evaluation; the combinations are connected either with a logical `AND` or a logical `OR`. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](#sum-formulas), [Passive Transports](passive-transports-bb.md), [Observers](building-block-concepts.md#observers), [Events](events-bb.md)).
 
 Models generated in **PK-Sim**® make extensive **use of tags**: For example, open a PK-Sim® model and look under [Passive Transports](building-block-concepts.md#passive-transports) for one part of the blood flow through the organs of an organism called "MassTransferBloodPool2OrgPl". This is a passive transport process that occurs from the arterial plasma compartment to the plasma compartments of all organs except for the lung. Consequently, this transport process is occurring under the following conditions:
 

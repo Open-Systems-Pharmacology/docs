@@ -24,7 +24,7 @@ The following molecule **properties** can be defined:
 
     The calculation method defines which method is used to calculate parameter values of parameters located in the **Spatial Structure** (**MoleculeProperties** node) which have the **Formula Type: Calculation Method**. These selections are only needed if you want to use distribution methods from PK-Sim®. Otherwise, leave them on "No Calculation Method". For further information on this subject, please refer to the discussion of the different distribution models in the PK-Sim® manual ([Simulations](../part-3/pk-sim-simulations.md)). If you select a certain "Calculation Method" you can get tool tip information on the equations and specific parameters used in the "Calculation Method" by hovering with the mouse over the "Category" entry.
 
-- The **Amount** field shows the default start amount of the molecule (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)) and can be defined either as a constant value (for drugs administered exogenously usually zero) or as a formula (e.g., for proteins, or endogenous compounds). To define different start amounts in different containers, use the **Initial Conditions** building block (see [Initial Conditions](initial-conditions)).
+- The **Amount** field shows the default start amount of the molecule and can be defined either as a constant value (for drugs administered exogenously usually zero) or as a formula (e.g., for proteins, or endogenous compounds). To define different start amounts in different containers, use the **Initial Conditions** building block (see [Initial Conditions](initial-conditions-bb.md)).
 
 ### Molecule Parameters‌
 
@@ -35,21 +35,21 @@ The **Parameters** tab shows a list of all parameters defined for the currently 
 Each parameter has:
 
 - a **Name**,
-- a **Value**, defined by a constant or a different types of formulas (compare [Working with Formulas](model-building-components.md#working-with-formulas)),
-- a **Dimension** (compare [Parameters](model-building-components.md#parameters)),
+- a **Value**, defined by a constant or a different types of formulas (compare [Formulas](parameters-formulas-tags.md#formulas)),
+- a **Dimension** (compare [Parameters](parameters-formulas-tags.md#parameters)),
 - a **Type** (**Local** or **Global**)
     - **Global** parameters are considered a property of a molecule that does not depend on the location of the molecule (e.g., "Molecular Weight", "LogP", "pKa"). These parameters are listed under the molecule node in the root of the simulation tree, and are accessed by the path `<MOLECULE>|<parameter name>`, e.g., `Cimetidine|Molecular weight`.
     - **Local** parameters are parameters whose values depend on the location of the molecule, e.g., "Concentration". These parameters are listed under the molecule node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`.
 
 {% hint style="info" %}
-The goal of defining a parameter as local is to have its value differ in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Molecule Start Values](setting-up-simulation.md#molecule-start-values)).
+The goal of defining a parameter as local is to have its value differ in different containers. Therefore, the parameter should either be defined by a formula that depends on the container (e.g., "Concentration" defined as `Amount/Volume`), or be set to different values in different containers by defining molecule start values (see [Initial Conditions](initial-conditions-bb.md)).
 {% endhint %}
 
 {% hint style="info" %}
-More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. Refer to the [general section](model-building-components.md#parameters-formulas-and-tags) for more information about the different formula types used for parameters.
+More examples for molecule parameters can be found by looking at a molecule in a simulation imported from PK-Sim®. Refer to the [general section](parameters-formulas-tags.md) for more information about the different formula types used for parameters.
 {% endhint %}
 
-- **Container Criteria**: Container criteria can be defined for local parameters to restrict the containers in which the parameter will be created. This is done by defining tag conditions (compare [How Tags are used](model-building-components.md#how-tags-are-used)). If no criteria are defined, the parameter will be created in all containers where the molecule is present. An example of such parameter is `Fraction expressed interstitial` of a protein molecule, which is only relevant in interstitial spaces of organs.
+- **Container Criteria**: Container criteria can be defined for local parameters to restrict the containers in which the parameter will be created. This is done by defining tag conditions (compare [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)). If no criteria are defined, the parameter will be created in all containers where the molecule is present. An example of such parameter is `Fraction expressed interstitial` of a protein molecule, which is only relevant in interstitial spaces of organs.
 
 ![Molecule parameter container criteria](../assets/images/part-4/Molecules/molecule-parameter-container-criteria.png)
 
@@ -99,7 +99,7 @@ As a second example, load the parameter "Concentration" from a PK-Sim® simulati
 2. Select a pkml file that you previously generated in PK-Sim® and select Concentration from the list. This local parameter is defined by a formula, and it is useful to have it in every molecule which is later used in a reaction kinetic equation.
 
 {% hint style="info" %}
-For a detailed description of the creation and use of formulas see below, [Reactions](model-building-components.md#reactions).
+For a detailed description of the creation and use of formulas see [Formulas](parameters-formulas-tags.md#formulas).
 {% endhint %}
 
 {% hint style="info" %}
@@ -117,9 +117,9 @@ First, an active transporter molecule needs to be defined:
 3. You are asked for a transporter name. Either enter a new name (e.g., **PGP**), or the name of an already existing transporter molecule if the very same transporter is active for several molecules in your list and has been previously defined.
 4. Press **Enter** or click **OK**. In the molecules tree, a transporter molecule is displayed, and a transporter entry is added to the molecule selected in step 1.
 5. In the transporter entry below the selected molecule, you may enter a description and parameters, as for any molecule.
-6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](model-building-components.md#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
+6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
 7. Right-click on the transporter attached to the molecule to be transported, and select **Create Transport** from the context menu. A window named "New Transport" opens.
-8. Enter a name into the Name input box, like "PGP Transport". Select the **source** and the **target** container criteria (see [How Tags are used](model-building-components.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)), define a transport rate parameter, and enter a transport kinetics formula. Also ses [Creating a Passive Transport‌](passive-transports-bb.md#example---creating-a-passive-transport) as an example on how to define a transport process.
+8. Enter a name into the Name input box, like "PGP Transport". Select the **source** and the **target** container criteria (see [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)), define a transport rate parameter, and enter a transport kinetics formula. Also ses [Creating a Passive Transport‌](passive-transports-bb.md#example---creating-a-passive-transport) as an example on how to define a transport process.
 9. The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a $$K_M$$ value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
 
 Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which transports the molecule from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to `C_PGP`, and that of molecule `A` to `C_A` by overriding the default names. The equation to be entered is `0.001 * C_PGP * C_A`. The figure below shows what the screen should look like after everything is properly set up.
