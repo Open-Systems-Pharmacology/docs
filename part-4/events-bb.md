@@ -73,6 +73,10 @@ Whenever a condition compares the simulation time with an expression that is **c
 
 For example, the condition `Time = 10 OR Time = 20 OR Time = P1 OR Time = P1 + P2` (with `P1` and `P2` being constant parameters) is evaluated at the time points 10, 20, `P1`, and `P1 + P2` - in addition to all time points defined by the output intervals.
 
+{% hint style="info" %}
+Such a time point is used to evaluate the condition, but it is not automatically added to the simulation results. If the execution time of an event is not part of the output intervals, the event is still executed at exactly this time, but the resulting change will only become visible in the outputs at the next output time point.
+{% endhint %}
+
 Consequently, use `=` to let an event happen at a given time, e.g., `Time = 500`. For a **one time** event, `Time >= 500` is equivalent.
 
 {% hint style="warning" %}
