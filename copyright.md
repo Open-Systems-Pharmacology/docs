@@ -8,6 +8,8 @@ Copyright © 2025 [Open Systems Pharmacology Community](references.md#115)
 
 The manual is provided “as is” without expressed or implied warranty.
 
+To refer to this manual in a publication, see [How to Cite this Manual](how-to-cite.md).
+
 **Trademark information:**
 
 All trademarks within this manual belong to their legitimate owners.
