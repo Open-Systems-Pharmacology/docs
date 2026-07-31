@@ -177,7 +177,7 @@ Making the typical Michaelis-Menten assumptions, mechanism-based inactivation to
 | partition ratio                         | ratio of the metabolite formation rate to the inactive enzyme formation rate (k3/k4 in the scheme above); an index of the efficacy of the inactivator    |
 | Ki                                      | dissociation constant of the reversible enzyme-inactivator complex; relevant only for the competitive inhibition of **other** substrates                 |
 
-Assuming a single binding site at the enzyme, Kkinact_half = Km = Ki.
+Assuming a single binding site at the enzyme and the simplified mechanism-based model used by default in PK-Sim® (see above), Kkinact_half = Km = Ki. The user may enter different values where these are available from measurements.
 
 When the inactivator binds to the enzyme, two things can happen: the inactivator is metabolized to an (in general circulating) metabolite and the enzyme stays fully operating, or it forms a quasi-irreversible complex and the enzyme is lost. The smaller the partition ratio, the higher the probability of the second option, i.e. the more efficient the inactivator.
 
@@ -195,17 +195,17 @@ The loss of inactivator that accompanies the inactivation is set up like any oth
 
 *   In the **ADME** tab of the inactivator, add a metabolizing enzyme process for the **same** enzyme for which the irreversible inhibition was defined.
 
-*   Choose a Michaelis-Menten process type and use the parameters of the inactivation process, i.e. kcat = kinact and Km = Kkinact_half.
+*   Choose the process type _In vitro clearance – Michaelis-Menten_ and enter Km = Kkinact_half. This process type takes a specific Vmax as input, from which PK-Sim® calculates kcat by normalizing to the enzyme concentration; choose the specific Vmax such that the resulting kcat equals kinact. With the default reference enzyme concentration of 1 µmol/l, this means entering kinact as the specific Vmax.
 
-Because the process is defined via the affected enzyme, it is driven by the current amount of active enzyme. The resulting clearance therefore decreases over time while the enzyme is being inactivated, and recovers together with the enzyme. Since a compound is never a reversible inhibitor of itself (see _Multiple Inhibitors : Equations Used by PK-Sim®_ below), this additional process is not competitively inhibited by the inactivator itself.
+Because the process is defined via the affected enzyme, it is driven by the current amount of active enzyme. The resulting clearance therefore decreases over time while the enzyme is being inactivated, and recovers together with the enzyme. Since PK-Sim® does not apply reversible auto-inhibition, i.e. a compound that is substrate and reversible inhibitor of the same enzyme does not appear in the Km\_interaction\_factor of its own process (see _Multiple Inhibitors : Equations Used by PK-Sim®_ below), this additional process is not competitively inhibited by the inactivator itself.
 
-If, in addition, the productive metabolism of the inactivator via the same enzyme shall be described and the partition ratio is known, the corresponding turnover number is given by kcat = partition ratio $$\times$$ kinact. It can be defined as a further Michaelis-Menten process with Km = Kkinact_half.
+If, in addition, the productive metabolism of the inactivator via the same enzyme shall be described and the partition ratio is known, the corresponding turnover number is given by kcat = partition ratio $$\times$$ kinact. It can be defined as a further process of the same type, again with Km = Kkinact_half and with the specific Vmax chosen to yield this kcat.
 
 **How relevant is this contribution?**
 
 Two simple checks help to decide whether the additional process is worth defining:
 
-*   If a metabolization of the inactivator via the same enzyme is already described with a turnover number kcat, the inactivation adds a fraction of kinact/kcat = 1/partition ratio to the turnover via this enzyme. Partition ratios of efficient inactivators are typically much larger than 1, in which case the additional loss is minor.
+*   If a metabolization of the inactivator via the same enzyme is already described with a turnover number kcat, the inactivation adds a fraction of kinact/kcat = 1/partition ratio to the turnover via this enzyme. Measured partition ratios are often much larger than 1, i.e. many productive turnovers occur per inactivation event, in which case the additional loss is minor. A ratio close to 1 means that almost every turnover inactivates an enzyme molecule, so that the additional loss is of the same order as the productive metabolism and should be defined.
 
 *   For inactivator concentrations well below Kkinact_half, the additional process behaves approximately like a first order process with the rate constant $$kinact \times E / K_{kinact\_half}$$, where $$E$$ is the concentration of active enzyme in the respective compartment. This value can be compared to the rate constants of the other elimination pathways of the inactivator.
 
