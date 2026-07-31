@@ -54,7 +54,7 @@ Each event has
         - Property whether the new formula is applied only once as a calculated value at the time point of event execution, or the formula overwrites the value (or other formula).
 
 {% hint style="warning" %}
-    Setting the **One time** property to false may lead to unexpected behavior, especially if the event changes a parameter or molecule amount in a way that the event condition is always true after the first execution, e.g., with the condition `TIME > StartTimeParameters`. In this case, the event will be executed at each simulated time step after the start time.
+    Setting the **One time** property to false may lead to unexpected behavior, especially if the event changes a parameter or molecule amount in a way that the event condition is always true after the first execution, e.g., with the condition `TIME >= StartTimeParameter`. In this case, the event will be executed at each simulated time step after the start time.
 {% endhint %}
 
 #### Event conditions
@@ -67,8 +67,22 @@ Technically, the value of the equation is considered to be `true` if it is unequ
 
 See [Formulas](parameters-formulas-tags.md#formulas) for details on how to create formulas with conditions.
 
+**Conditions based on the simulation time**
+
+Whenever a condition compares the simulation time with an expression that is **constant during the simulation** - a number, a constant parameter, or a formula of constant parameters - the value of that expression is added to the time points at which the solver evaluates the system. Such a condition is therefore guaranteed to be evaluated at exactly this time, independent of the output intervals and resolution defined for the simulation. This applies to comparisons of the form `Time <operator> <constant expression>` as well as `<constant expression> <operator> Time`, and to any combination of such comparisons with `AND`, `OR`, and `NOT`.
+
+For example, the condition `Time = 10 OR Time = 20 OR Time = P1 OR Time = P1 + P2` (with `P1` and `P2` being constant parameters) is evaluated at the time points 10, 20, `P1`, and `P1 + P2` - in addition to all time points defined by the output intervals.
+
+Consequently, use `=` to let an event happen at a given time, e.g., `Time = 500`. For a **one time** event, `Time >= 500` is equivalent.
+
 {% hint style="warning" %}
-If an event should be repeatedly fired during the simulation (i.e., the **One time** property is set to false), and the condition depends on systems state (parameter or state variables calculated during simulation), the event will only be fired if this condition is met within the defined output interval and resolution! This may lead to unexpected behavior if the output resolution is too coarse. For example, if the condition is `Concentration > 1 && Concentration < 2` and the concentration is 0.5 at time point t1 and 2 at time point t2, but no output is defined between t1 and t2, the event will not be fired since the condition was not met at any of the output time points.
+Do **not** use `>` to define the start time of an event, e.g., `Time > 500`. The condition is evaluated at 500 and returns `false` there, so the event will only be executed at the next output time point after 500. The actual execution time then depends on the output resolution of the simulation.
+{% endhint %}
+
+If you plan to quickly test different execution times, it is advantageous to define the time as a parameter which can be altered in the simulation, e.g., `Time = StartTimeParameter`.
+
+{% hint style="warning" %}
+If the condition depends on the system state (parameter or state variables calculated during simulation), no time point can be determined in advance, so the condition is only evaluated at the time points defined by the output intervals and resolution. In particular, if such an event should be repeatedly fired during the simulation (i.e., the **One time** property is set to false), the event will only be fired if this condition is met within the defined output interval and resolution! This may lead to unexpected behavior if the output resolution is too coarse. For example, if the condition is `Concentration > 1 && Concentration < 2` and the concentration is 0.5 at time point t1 and 2 at time point t2, but no output is defined between t1 and t2, the event will not be fired since the condition was not met at any of the output time points.
 
 A discussion on this topic can be found in the [MoBi® Forum](https://github.com/Open-Systems-Pharmacology/MoBi/issues/321).
 {% endhint %}
@@ -148,14 +162,14 @@ To create an event, click the **Create Event** option. A window named "New Event
 
 ![New Event window](../assets/images/part-4/NewEvent.png)
 5. Continue working with the right part of the edit window with building the event in the "Properties" tab. From the Possible Referenced Objects tree, you need the TIME variable, which reflects the simulation time. The procedure is the same as described for referenced objects used in reaction equations (see [Reaction Kinetics](reactions-bb.md#reaction-kinetics)): Drag the TIME with the mouse to the left hand side and release it in the white space below the "Alias" header under the "Condition". "Time" should appear in this field.
-6. There is still a Condition equation to be entered, as indicated by the red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time > 500", which would execute the event at 500 minutes. The use of "> 500" instead of "= 500" is advantageous since it might well be that during the simulation, the exact value of 500 will never be assumed, depending on the time step. If you plan to quickly test different values for this time, it is advantageous to define this execution time as a parameter which can be altered in the simulation.
+6. There is still a Condition equation to be entered, as indicated by the red error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> in front of that input box. The easiest way to let an event happen at a given simulation time would now be to enter the formula "Time = 500", which would execute the event at 500 minutes. As described in [Event conditions](#event-conditions), the condition is guaranteed to be evaluated at exactly this time point, so `=` is the operator of choice here - `Time > 500` would delay the execution to the next output time point after 500 minutes. Instead of entering the time directly into the condition, we will define it as a parameter, which makes it easy to test different execution times later on.
 7. Define a time parameter as an event parameter (alternatively, it can be set as an event group parameter if it is needed in several events of this group). Click the "Parameters" tab, then the button <img src="../assets/icons/AddAction.svg" data-size="line"> **Add Parameter**. A "New Parameter" window opens.
 8. Enter "E1Time" as parameter name.
 9. Select Time from the combobox "Dimension".
 10. Enter "500". If you prefer to do this in other units than minutes, you may change the dimension (e.g., to "h") in the combobox to the right of the value.
 11. Click **OK** or press **Enter**. The new parameter will appear in the parameters list.
 12. Click the "Properties" tab. Drag and drop the newly created parameter "E1Time" from the Possible Referenced Objects list on the right into the white space below the already added "Time" reference. To find this parameter, you need to look below the E1 event, so click on the + sign to open that part of the reference tree. In case you have defined the parameter under the event group, you will find it below the event group.
-13. Enter `Time > E1Time` into the formula input box, after which the error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> to the left of it should disappear.
+13. Enter `Time = E1Time` into the formula input box, after which the error sign <img src="../assets/icons/ErrorProvider.svg" data-size="line"> to the left of it should disappear.
 14. What is still needed is the assignment which determines what will happen when the event condition is fulfilled. As an example, we will set the amount of molecule "A" in the container "Vial1". To proceed, click the button **Add Assignment**. A window named "New Event Assignment" will open.
 15. Enter "SetA" as name into the Name input box.
 16. Click the **...** on the left hand side of the "Changed Entity" input box below Name. A window named "Select Changed Entity" will open. Select the molecule "A" in `BigVial|Vial1` as target.
@@ -169,7 +183,7 @@ To create an event, click the **Create Event** option. A window named "New Event
 
 Events can change a number of assignments, like reaction or transport rate constants, container volumes or neighborhood parameters. The entire formula of a reaction or transport may be changed by not checking "Use Assignment As Value" during the creation of an assignment, and by selecting Formula instead of Constant in "Formula Type". Also, you may change several assignments upon one condition: just click the button "Add Assignment" again, and you can go through the above steps 14 to 18 again and have another value changed.
 
-Instead of a one time event, you can have an **event permanently active** if you uncheck the box ![Image](../assets/icons/Unchecked.png) **One Time Event** in "Properties". In our example of setting the amount of molecule "A" to 50 µmol at above 500 minutes, this would result in keeping the amount of "A" constant at 50 µmol after 500 minutes.
+Instead of a one time event, you can have an **event permanently active** if you uncheck the box ![Image](../assets/icons/Unchecked.png) **One Time Event** in "Properties". For this, the condition must stay `true` after the start time, so change it to `Time >= E1Time`: in our example of setting the amount of molecule "A" to 50 µmol, this would result in keeping the amount of "A" constant at 50 µmol from 500 minutes on. With the condition `Time = E1Time`, unchecking the box would have no effect, since this condition is only `true` at exactly 500 minutes.
 
 An assignment can be changed by the following actions:
 
