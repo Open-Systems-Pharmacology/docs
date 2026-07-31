@@ -157,8 +157,63 @@ Given the variability and uncertainty associated with experimental determination
 {% endhint %}
 
 {% hint style="note" %}
-Please note that for the mechanism-based inactivator no clearance process is defined via the inactivation process by default. In theory, for every inactivated enzyme molecule, also one inactivator molecule is cleared; this must be separately defined by the user in form of additional metabolization/excretion processes for the inhibitor.
+Please note that for the mechanism-based inactivator no clearance process is defined via the inactivation process by default. In theory, for every inactivated enzyme molecule, also one inactivator molecule is cleared; this must be separately defined by the user in form of additional metabolization/excretion processes for the inhibitor. See [Clearance of the mechanism-based inactivator](#clearance-of-the-mechanism-based-inactivator) below for guidance on when and how to define such a process.
 {% endhint %}
+
+#### Clearance of the mechanism-based inactivator
+
+By default, PK-Sim® does not create a clearance process for the mechanism-based inactivator itself. The inactivation term reduces the amount of active enzyme, but it does not remove the inactivator from the system. In theory, for every enzyme molecule that is inactivated, one inactivator molecule is consumed as well. Whether this loss has to be defined explicitly depends on how the clearance of the inactivator was parameterized.
+
+**Parameters describing the complete process**
+
+Making the typical Michaelis-Menten assumptions, mechanism-based inactivation together with the "productive" metabolism of the inactivator is characterized by six parameters:
+
+| Parameter                               | Meaning                                                                                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| kinact                                  | rate constant describing the maximum rate of inactive enzyme formation                                                                                 |
+| Kkinact_half (often referred to as KI)  | inactivator concentration at which the inactivation rate is half-maximal                                                                                |
+| kcat                                    | rate constant describing the maximum rate of metabolite formation, where the metabolite is released and the enzyme remains fully active                 |
+| Km                                      | Michaelis-Menten constant of that metabolic reaction                                                                                                    |
+| partition ratio                         | ratio of the metabolite formation rate to the inactive enzyme formation rate (k3/k4 in the scheme above); an index of the efficacy of the inactivator    |
+| Ki                                      | dissociation constant of the reversible enzyme-inactivator complex; relevant only for the competitive inhibition of **other** substrates                 |
+
+Assuming a single binding site at the enzyme, Kkinact_half = Km = Ki.
+
+When the inactivator binds to the enzyme, two things can happen: the inactivator is metabolized to an (in general circulating) metabolite and the enzyme stays fully operating, or it forms a quasi-irreversible complex and the enzyme is lost. The smaller the partition ratio, the higher the probability of the second option, i.e. the more efficient the inactivator.
+
+**Why this clearance is not added automatically**
+
+The clearance of the inactivator is very often derived from a depletion experiment, e.g. with human liver microsomes. Such a measured depletion rate already contains the loss of compound associated with the inactivation, and the same holds for a clearance that was fitted to observed in vivo data of the inactivator. If PK-Sim® automatically added the inactivation-related clearance on top of the clearance defined by the user, this contribution would be counted twice and the user would have to subtract it from the depletion rate. PK-Sim® therefore only issues a warning and leaves the decision to the user.
+
+{% hint style="warning" %}
+Only define the additional process described below if the clearance of the inactivator was **not** derived from a depletion assay and was **not** fitted to observed data of the inactivator. In those cases the loss via inactivation is already included in the clearance, and defining it a second time would overestimate the elimination of the inactivator.
+{% endhint %}
+
+**How to define the additional clearance**
+
+The loss of inactivator that accompanies the inactivation is set up like any other metabolization process of the inactivator, but via the enzyme that is inactivated:
+
+*   In the **ADME** tab of the inactivator, add a metabolizing enzyme process for the **same** enzyme for which the irreversible inhibition was defined.
+
+*   Choose a Michaelis-Menten process type and use the parameters of the inactivation process, i.e. kcat = kinact and Km = Kkinact_half.
+
+Because the process is defined via the affected enzyme, it is driven by the current amount of active enzyme. The resulting clearance therefore decreases over time while the enzyme is being inactivated, and recovers together with the enzyme. Since a compound is never a reversible inhibitor of itself (see _Multiple Inhibitors : Equations Used by PK-Sim®_ below), this additional process is not competitively inhibited by the inactivator itself.
+
+If, in addition, the productive metabolism of the inactivator via the same enzyme shall be described and the partition ratio is known, the corresponding turnover number is given by
+
+$$kcat = \mathrm{partition\ ratio} \times kinact$$
+
+and can be defined as a further Michaelis-Menten process with Km = Kkinact_half.
+
+**How relevant is this contribution?**
+
+Two simple checks help to decide whether the additional process is worth defining:
+
+*   If a metabolization of the inactivator via the same enzyme is already described with a turnover number kcat, the inactivation adds a fraction of kinact/kcat = 1/partition ratio to the turnover via this enzyme. Partition ratios of efficient inactivators are typically much larger than 1, in which case the additional loss is minor.
+
+*   For inactivator concentrations well below Kkinact_half, the additional process behaves approximately like a first order process with the rate constant $$kinact \times E / K_{kinact\_half}$$, where $$E$$ is the concentration of active enzyme in the respective compartment. This value can be compared to the rate constants of the other elimination pathways of the inactivator.
+
+If the contribution is small compared to the overall clearance of the inactivator, it can be neglected as a separate process and the clearance defined by the user can be used as it is. Note that the additional clearance by inactivation is not constant but changes over time, so where it is relevant it should be defined explicitly rather than lumped into a constant clearance.
 
 ## Protein Induction‌
 
@@ -205,6 +260,6 @@ Please note that
 
 *   As for all other inhibition types, there is no reversible auto-inhibition (which means: if a compound is substrate and reversible inhibitor of the same enzyme, it does not appear in the Km\_interaction\_factor.) In the formula above it's done by excluding the substrate from the sum terms (a#j, b#j, etc.).
 
-*   For mechanism-based inactivators auto-inhibition can be accounted for by specifying a specific clearance pathway via the affected enzyme.
+*   For mechanism-based inactivators auto-inhibition can be accounted for by specifying a specific clearance pathway via the affected enzyme (see [Clearance of the mechanism-based inactivator](#clearance-of-the-mechanism-based-inactivator)).
 
 *   Free (unbound) concentrations of all inhibitors are used (e.g. TDI\_u,l(t) means: unbound concentration of TDI\_l).
