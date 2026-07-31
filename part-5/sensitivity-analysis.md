@@ -152,11 +152,13 @@ Then a list of the input parameters with the most impact on that PK Parameter is
 For some outputs not all PK Parameters are reasonable, for instance clearance parameters for Fraction excreted outputs. Then no ranking is calculated and displayed.
 
 {% hint style="info" %}
-For display in the chart, the parameters which contribute 90% of the cumulated sensitivity are determined. To do this the sensitivities are sorted by the absolute values and then they are cumulated in order of their sorting, according to
+For display in the chart, only those parameters are shown which together account for 90% of the cumulated sensitivity. To determine them, the sensitivities are sorted in descending order of their absolute values and are then cumulated in the order of that sorting, according to
 
-<img src="../assets/images/part-5/scum-lj.jpg" alt="Image" data-size="original">
+$$
+S_{Cum,l,j} = \frac{\sum_{i=1}^{l} \left| S_{i,j} \right|}{\sum_{i=1}^{nP} \left| S_{i,j} \right|}
+$$
 
-with l=1,…,nP (number of parameters) and j index of PK parameter. The cumulated sensitivities as defined above include normalization to the absolute total sensitivity. Therefore, the normalized total sensitivity Stotal = SCum, nP j = 1. The cut-off is defined so that the above cut-off parameter sensitivities capture 90% of the total sensitivity.
+with $$l = 1, \dots, nP$$, where $$nP$$ is the number of parameters with a defined sensitivity and $$j$$ is the index of the PK parameter. Since the cumulated sensitivities are normalized to the total absolute sensitivity, the normalized total sensitivity is $$S_{Cum,nP,j} = 1$$. The cut-off is the smallest $$l$$ for which $$S_{Cum,l,j} \geq 0.9$$; the parameters $$i = 1, \dots, l$$ are displayed in the chart.
 {% endhint %}
 
 ## Tab Results‌
