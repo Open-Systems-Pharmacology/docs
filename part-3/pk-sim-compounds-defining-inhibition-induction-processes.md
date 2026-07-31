@@ -199,11 +199,7 @@ The loss of inactivator that accompanies the inactivation is set up like any oth
 
 Because the process is defined via the affected enzyme, it is driven by the current amount of active enzyme. The resulting clearance therefore decreases over time while the enzyme is being inactivated, and recovers together with the enzyme. Since a compound is never a reversible inhibitor of itself (see _Multiple Inhibitors : Equations Used by PK-Sim®_ below), this additional process is not competitively inhibited by the inactivator itself.
 
-If, in addition, the productive metabolism of the inactivator via the same enzyme shall be described and the partition ratio is known, the corresponding turnover number is given by
-
-$$kcat = \mathrm{partition\ ratio} \times kinact$$
-
-and can be defined as a further Michaelis-Menten process with Km = Kkinact_half.
+If, in addition, the productive metabolism of the inactivator via the same enzyme shall be described and the partition ratio is known, the corresponding turnover number is given by kcat = partition ratio $$\times$$ kinact. It can be defined as a further Michaelis-Menten process with Km = Kkinact_half.
 
 **How relevant is this contribution?**
 
