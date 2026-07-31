@@ -1,10 +1,10 @@
 # Open Systems Pharmacology Suite Manual
 
-Version 12 Update 1
+Version 13
 
-Publication date September 2025
+Publication date 2026
 
-Copyright © 2025 [Open Systems Pharmacology Community](references.md#115)
+Copyright © 2026 [Open Systems Pharmacology Community](references.md#115)
 
 The manual is provided “as is” without expressed or implied warranty.
 
