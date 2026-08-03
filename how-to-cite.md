@@ -6,7 +6,7 @@ Cite the version of the manual that you actually used. The version number and th
 
 ## Plain text
 
-> Open Systems Pharmacology Community. _Open Systems Pharmacology Suite Manual_. Version 13. 2026. [https://docs.open-systems-pharmacology.org](https://docs.open-systems-pharmacology.org)
+> Open Systems Pharmacology Community. _Open Systems Pharmacology Suite Manual_. Version 13. 2026. [https://docs.open-systems-pharmacology.org/v13](https://docs.open-systems-pharmacology.org/v13)
 
 ## BibTeX
 
@@ -14,17 +14,17 @@ Cite the version of the manual that you actually used. The version number and th
 @Manual{OSPS-Manual-V13,
     title        = "Open Systems Pharmacology Suite Manual",
     author       = "{Open Systems Pharmacology Community}",
-    organization = "Open Systems Pharmacology Community",
+    organization = "Open Systems Pharmacology",
     edition      = "Version 13",
     year         = 2026,
-    url          = "https://docs.open-systems-pharmacology.org"
+    url          = "https://docs.open-systems-pharmacology.org/v13"
 }
 ```
 
 The braces around the author name are required. Without them, BibTeX reads "Open Systems Pharmacology" as given names and "Community" as a surname, and renders the author as "O. S. P. Community".
 
 {% hint style="info" %}
-If you used a different version of the manual, adjust the citation key and the `edition` and `year` fields to the values given on the [copyright page](copyright.md) of that version. Where that page also names a publication month, add it as a `month` field.
+If you used a different version of the manual, adjust the citation key, the `edition` and `year` fields, and the version segment of the `url` to match that version. The edition and year are given on the [copyright page](copyright.md) of that version. Where that page also names a publication month, add it as a `month` field.
 {% endhint %}
 
 ## Citing the Open Systems Pharmacology Suite

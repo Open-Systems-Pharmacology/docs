@@ -2,11 +2,11 @@
 
 This manual describes the [Open Systems Pharmacology Suite](https://www.open-systems-pharmacology.org). It includes a technical description of each software element with examples and references for further reading. The aim of the manual is to assist users in effectively developing PBPK models. The handbook is divided into the parts listed below.
 
-Documentation for the developers of the Open Systems Pharmacology Suite and more technical details are provided [here](https://dev.open-systems-pharmacology.org/).
+Documentation for the developers of the Open Systems Pharmacology Suite and more technical details are provided in the [developer documentation](https://dev.open-systems-pharmacology.org/).
 
 ## Software Version
 
-This edition of the manual describes **Version 13** of the Open Systems Pharmacology Suite. Behavior described here may differ from earlier versions of the software, and features introduced in later versions are not covered.
+This edition of the manual describes **Version 13** of the Open Systems Pharmacology Suite. Behavior described here may differ from earlier versions of the software.
 
 The version of the manual and its publication date are also stated on the [Open Systems Pharmacology Suite Manual & Copyright](copyright.md) page. See [How to Cite this Manual](how-to-cite.md) for how to reference this edition in a publication.
 
