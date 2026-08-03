@@ -220,7 +220,7 @@ You can decide if data values below LLOQ should be used or removed and how they 
 | Reduce trailing | <p>Sometimes observed concentrations end with several trailing .L.L.O.Q values.<br>In particular when only the Observed data below LLOQ is transformed, those trailing values should be reduced because the ratio between untransformed simulation values and transformed observed values can become large and cause trouble for Log scale outputs.</p> |
 
 {% hint style="warning" %}
-If in Observed Data LLOQ values are contained as 0 values, for **Remove data below LLOQ** the option Always should be used. Otherwise, those values can distort the optimization results, because $$\log_{10}(0)$$ resp. $$\log_{10}(\epsilon) = -20$$ with $$\epsilon = 10^{-20}$$ is evaluated in the residual calculation and these single residuals may dominate the whole optimization.
+If in Observed Data values below LLOQ are contained as 0 values instead of LLOQ/2, for **Remove data below LLOQ** the option Always should be used. Note that this removal is based on the LLOQ defined for the observed data, so 0 values in data without LLOQ information are not removed. Otherwise, those values can distort the optimization results, because the difference to a 0 value is not a meaningful residual. For Log scaled outputs, observed values close to 0 lead to very large residuals which may dominate the whole optimization, while values smaller than $$\epsilon = 10^{-20}$$ do not contribute to the residuals at all (see [Objective function and Total Error](#objective-function-and-total-error)).
 {% endhint %}
 
 **Transform data below LLOQ**
@@ -242,7 +242,7 @@ $$
 
 where $$o_{k,i}$$ is the observed value, $$s_{k,i}$$ is the value of the mapped simulation output at $$t_{k,i}$$, $$w_k$$ is the weight of the mapping and $$w_{k,i}$$ is the weight of the individual data point (see [Mapping Simulation Outputs to Observed Data](#mapping-simulation-outputs-to-observed-data)). Observed and simulated values are converted to the internal base units before the residual is calculated.
 
-The transformation $$g$$ is given by the **Scaling** of the mapping: $$g(y) = y$$ for Lin scaling and $$g(y) = \log_{10}(y)$$ for Log scaling, where values smaller than $$\epsilon = 10^{-20}$$ are replaced by $$\epsilon$$ before the logarithm is applied.
+The transformation $$g$$ is given by the **Scaling** of the mapping: $$g(y) = y$$ for Lin scaling and $$g(y) = \log_{10}(y)$$ for Log scaling, where values smaller than $$\epsilon = 10^{-20}$$ are replaced by $$\epsilon$$ before the logarithm is applied. Since observed values below $$\epsilon$$ are excluded from a log scaled output (see below), this replacement applies to simulated values only.
 
 The Total Error is then summed over all $$nM$$ output mappings, each contributing $$n_k$$ data points:
 
@@ -438,7 +438,7 @@ In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 
-This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The plotted values are the residuals $$r_{k,i}$$ as defined in [Objective function and Total Error](#objective-function-and-total-error); they include scaling, weights and LLOQ usage and are dimensionless, so you can assess the actual influence of the observed data.
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The plotted values are the residuals $$r_{k,i}$$ as defined in [Objective function and Total Error](#objective-function-and-total-error); they include scaling, weights and LLOQ usage, so you can assess the actual influence of the observed data. They are plotted without a unit: for Log scaled outputs they are dimensionless logarithmic ratios, for Lin scaled outputs they are weighted differences in the internal base units of the output.
 
 ![Parameter Identification Analysis - Residuals vs. Time](../assets/images/part-5/PI-Analysis-ResidualsVsTime.png)
 
