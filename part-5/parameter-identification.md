@@ -220,7 +220,7 @@ You can decide if data values below LLOQ should be used or removed and how they 
 | Reduce trailing | <p>Sometimes observed concentrations end with several trailing .L.L.O.Q values.<br>In particular when only the Observed data below LLOQ is transformed, those trailing values should be reduced because the ratio between untransformed simulation values and transformed observed values can become large and cause trouble for Log scale outputs.</p> |
 
 {% hint style="warning" %}
-If in Observed Data values below LLOQ are contained as 0 values instead of LLOQ/2, for **Remove data below LLOQ** the option Always should be used. Note that this removal is based on the LLOQ defined for the observed data, so 0 values in data without LLOQ information are not removed. Otherwise, those values can distort the optimization results, because the difference to a 0 value is not a meaningful residual. For Log scaled outputs, observed values close to 0 lead to very large residuals which may dominate the whole optimization, while values smaller than $$\epsilon = 10^{-20}$$ do not contribute to the residuals at all (see [Objective function and Total Error](#objective-function-and-total-error)).
+If in Observed Data values below LLOQ are contained as 0 values instead of LLOQ/2, for **Remove data below LLOQ** the option "Always" should be used. Note that this removal is based on the LLOQ defined for the observed data, so 0 values in data without LLOQ information are not removed. Otherwise, those values can distort the optimization results, because the difference to a 0 value is not a meaningful residual. For Log scaled outputs, observed values close to 0 lead to very large residuals which may dominate the whole optimization, while values smaller than $$\epsilon = 10^{-20}$$ do not contribute to the residuals at all (see [Objective function and Total Error](#objective-function-and-total-error)).
 {% endhint %}
 
 **Transform data below LLOQ**
@@ -259,8 +259,9 @@ Not every observed data point contributes to the Total Error. A data point is sk
 
 * it is excluded by the setting **Remove data below LLOQ**,
 * the observed value is not a valid number,
-* the observed time lies beyond the end of the simulated time range,
 * or the output is scaled logarithmically and the observed value is smaller than $$\epsilon$$.
+
+For all remaining data points, $$s_{k,i}$$ is a simulated and not an interpolated value: before the optimization starts, the observed time points are added to the output schema of the simulation, which is integrated up to the last of them (see [Handling of missing values for residuals](#handling-of-missing-values-for-residuals)).
 
 The definition of the Total Error does not depend on the selected optimization algorithm. Monte-Carlo and Nelder-Mead evaluate the Total Error directly, while Levenberg-Marquardt works on the vector of the residuals $$r_{k,i}$$ and minimizes the sum of their squares, which is minimal for the same parameter values.
 
