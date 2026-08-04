@@ -1,6 +1,6 @@
 # Shared Tools - Chart Component
 
-## Chart Display and Chart Editor‌
+## Chart Display and Chart Editor
 
 The chart component is used in PK-Sim® as well as in MoBi® . It consists of two views, the chart display and the chart editor. The chart display displays a chart, the chart editor is used to create and edit charts.
 
@@ -22,7 +22,7 @@ The most frequently edited chart elements, axes and curves, can be edited direct
 
 ![Data Chart](../assets/images/part-5/Overview.png)
 
-## General Chart Basics‌
+## General Chart Basics
 
 For a better understanding of the workflows and features of the chart component, we briefly introduce some chart basics. Charts are used to visualize data. In the Open Systems Pharmacology Suite, data consists of time series from simulation and measurements. Charts consist of axes and curves. Typically, the x-axis has the dimension time and the y-axis to dimension concentration.
 
@@ -32,7 +32,7 @@ Creating a chart consists of selecting the data and editing the curve / axis / c
 
 In the next sections, we describe the basic workflow and the subviews in detail.
 
-## Creating a Chart‌
+## Creating a Chart
 
 Creating a chart consists of two steps:
 
@@ -49,7 +49,7 @@ Creating a chart consists of two steps:
 
 We describe these steps in the following subsections.
 
-## Selecting Data‌
+## Selecting Data
 
 The data browser contains one row for each available time series. Depending on the complexity of your model, there can be thousands of rows. (For convenience, trivial time series with the constant value 0 are automatically excluded.)
 
@@ -102,7 +102,7 @@ When a Parameter Identification or Simulation chart is open, the data are first 
 
 ![The view for PI and Simulation Charts](../assets/images/part-5/LinkDataToSimulationCheckBox.png)
 
-## Editing Curve Options‌
+## Editing Curve Options
 
 The properties of the curves can be edited in the curves table. Each curve is displayed in one row, and the properties of the curves are displayed in different columns.
 
@@ -133,7 +133,7 @@ Selecting this option opens a new dialog listing the common options of the curve
 
 ![Edit Options Dialog](../assets/images/part-5/EditOptionsDialog.png)
 
-### Coloring curves with the same color‌
+### Coloring curves with the same color
 
 Often you may want to use the same color for different curves, e.g. for curves of the same molecule or organ or for observed data.
 
@@ -168,7 +168,7 @@ Alternatively, this feature can be toggled on and off from the User Settings, un
 When this option is selected and whole folders are dragged and dropped into a plot, the observed data from the same folders will be assigned the same color. However, when the user selects individual observed data sets instead of folders and drags and drops them on the plot, then each one will be assigned a new color, and they should not be grouped according to the folder they belong to. 
 
 
-### Creating clear legends‌
+### Creating clear legends
 
 To make you legends clear and readable - especially when exporting them - you can do the following
 
@@ -188,7 +188,7 @@ You can reorder them directly in the legend by dragging the line symbol to anoth
 
 You can reorder them also by dragging the row headers (the small gray area on the left of a row) in the curves table.
 
-## Editing Axis Options‌
+## Editing Axis Options
 
 You can edit properties of axes in the axes table. There is always one unique x- axis and one y-axis. You can add up to 2 additional y-axes by clicking the button on the right end of the y-axis row. Each axis is displayed in one row, and the properties of the axes are displayed in different columns.
 
@@ -211,7 +211,7 @@ You can select columns which are hidden by default using the **Column Chooser** 
 The Min and Max values are overridden by zooming the chart.
 {% endhint %}
 
-## Editing Chart Options‌
+## Editing Chart Options
 
 You can edit the properties of the chart in the chart options tab.
 
@@ -225,7 +225,7 @@ You can edit the properties of the chart in the chart options tab.
 | Diagram Background | The color of the diagram background. You can change these colors in the Chart Options. |
 | Side Margins Enabled | You can check to leave about 5% margins at each side of the chart or uncheck to fit the diagram area exactly to the Min and Max values of the curves. |
 
-## Editing Chart Export Options‌
+## Editing Chart Export Options
 
 You can export charts to the Working Journal or other applications by copy & paste. To copy the chart, just right click into the chart area and select Copy to clipboard.
 
@@ -248,7 +248,7 @@ You can edit the following properties of the exported chart in the tab **Chart E
 | Font size description | You can adjust the font size of the description of the chart in case you have defined one in **Chart Options**. |
 | Font size origin | You can adjust the font size of the origin data in case you have selected the **Include origin data** option. |
 
-## Zooming the Chart‌
+## Zooming the Chart
 
 To zoom into the chart, do one of the following:
 
@@ -262,9 +262,9 @@ To zoom into the chart, do one of the following:
 
 To reset the zoom right click on the chart area and select **Reset Zoom (Ctrl+0)** or use the shortcut **Ctrl+0** (Do not use the 0-key from the numeric block, but from the typewriter keys.).
 
-## Further Actions‌
+## Further Actions
 
-### Saving and managing chart settings‌
+### Saving and managing chart settings
 
 You can save the chart settings (Chart Options and Chart Export Options, Curve and Axes Options) in different Chart Templates and reuse them in a simulation. This is useful for example, if you want to switch between different settings. You can also save and load these Chart Templates to files and reuse them in other simulations.
     
@@ -314,7 +314,7 @@ All changes to a template or selection of output are made at the level of an ind
 
 ![Changes in the simulation setting can be committed to the settings at the project level](../assets/images/part-5/Aufnahme8.png)
 
-### Selecting Editor Layouts‌
+### Selecting Editor Layouts
 
 You can select one of the following predefined editor layouts:
 
@@ -331,7 +331,7 @@ Save your preferred Editor Layout to your user settings. Just select Save to Use
 In this layout are stored the selected view and column settings in the subviews like visibility, order, column width and grouping.
 {% endhint %}
 
-### Using Alternative X-Values‌
+### Using Alternative X-Values
 
 As mentioned in the introduction of this section, typically one curve corresponds to a single time series in which the x-values represent the time axis and the y- values are the corresponding functional values, such as concentration.
 
@@ -366,7 +366,7 @@ To select other x-values than the default ones, do the following (you can skip s
 
 ![Concentration versus Concentration Plot](../assets/images/part-5/Concentration-FractionDose.png)
 
-### Chart Options in User Settings‌‌
+### Chart Options in User Settings
 
 In MoBi®, you can change the default editor layout and the default curve name generation in the **Chart Options** tab within the **User Settings** dialog (click <img src="../assets/icons/Settings.svg" data-size="line"> **Options** in the Utilities ribbon tab).
 

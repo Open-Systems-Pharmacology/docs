@@ -1,6 +1,6 @@
 # Tools
 
-## Search Function‌
+## Search Function
 
 MoBi® contains a powerful search function to find parameters, molecules, reactions, or other elements in a project or simulation. This function is useful to locate parameters or elements of building blocks or simulations (e.g., molecules, parameters, container) within the current project.
 
@@ -26,11 +26,11 @@ To start the search, click on the magnifier glass icon at the right side of the 
 Double-clicking a listed item will show it in the edit window where you can view it in detail or enter changes.
 {% endhint %}
 
-## Project History‌
+## Project History
 
 The history manager allows you to document all steps that lead to a specific project status and particular results in MoBi®. With this manager you will be able to easily step back to previous states of your project work in the current session (i.e. a session endures from start of MoBi® to closing the program). The different lines in the manager represent different steps in modeling in the current project.
 
-Here we only give a brief description; for more details see [History Manager and History Reporting‌](../part-5/history-manager-history-reporting‌.md).
+Here we only give a brief description; for more details see [History Manager and History Reporting](../part-5/history-manager-history-reporting.md).
 
 {% hint style="info" %}
 If you want to test different possible directions in modeling of a specific problem, you can use this functionality to step back to the "decision point" (within the current session).

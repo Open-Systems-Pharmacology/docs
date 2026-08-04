@@ -1,6 +1,6 @@
-# Shared Tools - History Manager and History Reporting‌
+# Shared Tools - History Manager and History Reporting
 
-## Logging, undoing, and re-doing user actions‌
+## Logging, undoing, and re-doing user actions
 
 The history manager serves two purposes. On the one hand, it allows you to precisely log, and thereby document, all steps that lead to a particular result. This log can be saved to disk as an Excel® report. On the other hand, with the history available, the user can step back in the history to any previous state of the current session, and take that as starting point for a different direction in model development.
 
@@ -54,7 +54,7 @@ Like most tables in PK-Sim®, the history table view can be sorted and filtered 
 
 The following sections describe the use of the history manager for a) navigating in the project history, b) adding labels and comments to the history, and c) exporting the history as a report.
 
-### Undo and rollback: Navigating through the history‌
+### Undo and rollback: Navigating through the history
     
 As known from other applications, user interactions of the current session can be un-done:
     
@@ -68,7 +68,7 @@ PK-Sim® offers an additional way to achieve this:
 
 The "Modeling & Simulation" ribbon has a ribbon group History that offers a button "Undo". By clicking this button, you undo the last action. A second click on this button will undo the undo - that is reverting to the original state.
 
-### Labels and comments‌
+### Labels and comments
     
 At any stage, the current stage of the application can be labeled. The History Manager provides an button "Add Label...". When clicking on this button, an "Add Label..." window appears and allows you to add a label and a comment. This label will appear in the history manager and be time stamped with the current date and time. Labels are always applied to the _current_ state of the project.
 
@@ -76,6 +76,6 @@ In addition, the history manager provides an button, "Edit Comments". This can b
 
 In PK-Sim®, the "Add Label..." and "Edit Comments" functionality is additionally available as buttons in the "Modeling & Simulation" ribbon.
 
-### Exporting the history‌
+### Exporting the history
     
 The "Modeling & Simulation" ribbon provides a "Export History" button. When clicking on this button and selecting "Export history to Excel®", a file save dialog appears. Please choose a location and name for the file. The file will be saved in Excel® format and opened in Excel® after saving is complete.

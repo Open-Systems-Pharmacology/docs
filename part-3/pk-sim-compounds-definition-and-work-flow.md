@@ -2,7 +2,7 @@
 
 A **Compound** is a set of data that describes the properties of the substance whose behavior is to be simulated. These properties are defined within the building block **Compound**. For each project, several compounds may be defined. The compounds defined can be saved as templates and shared among several projects and users.
 
-## Definition of new Compounds in PK- Sim®‌
+## Definition of new Compounds in PK- Sim®
 
 To create a new compound, do one of the following:
 
@@ -16,7 +16,7 @@ A dialog will open, where the properties of the compound can be defined. The com
 
 The **Create Compound** window is subdivided into three tabs: **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Properties**.
 
-### Basic Physico-Chemistry‌ tab
+### Basic Physico-Chemistry tab
 
 The basic physico-chemical properties of a compound are specified in the **Basic Physico-chemistry** tab. Most of the drug properties can have multiple values, e.g., coming from differed sources, determined using various methods or assays. During the simulation creation, you can choose one value for each property.
 
@@ -113,7 +113,7 @@ Intestinal solubility can also be defined as a linear interpolation of measured 
 
 ![](../assets/images/part-3/CreateSolubilityAsTable.png) ==> ![](../assets/images/part-3/EditSolubilityTable.png)
 
-### ADME Properties‌ tab
+### ADME Properties tab
 
 After having defined the basic physico-chemical properties of the compound, processes known to be involved in its distribution and elimination can be specified in the **ADME** tab. The **ADME** tab is accessible either by clicking Next or by directly clicking on the respective tab in the **Create Compound** window.
 
@@ -194,7 +194,7 @@ This approach cannot be implemented in PK-Sim. You can export the simulation to 
 
 #### Distribution - Distribution calculation
 
-**Partition coefficient calculation methods‌**
+**Partition coefficient calculation methods**
 
 Two parameters determine the rate and extent of passive distribution in the body: steady state organ-plasma partition coefficients (PC) as well as permeability surface area (PxSA) products of each organ, also called Cellular Permeabilities (CP).
 
@@ -313,7 +313,7 @@ The following process types can be defined in the **Metabolizing Enzymes** secti
 For calculation of in vivo clearance or Vmax values from in vitro values obtained from microsomal assays, the content of the CYP enzyme defined as the process type has to be specified. The default value in PK-Sim® is 108 pmol/mg microsomal protein which is the CYP3A4 protein content in liver microsomes [[63](../references.md#63)]. CYP enzyme contents in liver microsomes from this reference are shown when you move the mouse over the parameter Content of CYP proteins in liver microsomes. If you have defined other than these CYP enzymes, please insert the corresponding value in PK-Sim®.
 {% endhint %}
 
-##### Definition of a metabolite in an enzymatic process‌
+##### Definition of a metabolite in an enzymatic process
 
 A metabolite of a compound can be defined and used either as a "sink" or treated like any other compound. See [How to set up a parent/metabolite simulation](pk-sim-simulations.md#how-to-set-up-a-parentmetabolite-simulation) for details.
 
@@ -373,7 +373,7 @@ Biliary clearance is a systemic process that does not have to be linked to prope
 
 Drugs may influence a broad variety of ADME processes that in turn will then affect the PK of the drug and possibly also other drugs. See section [PK-Sim® Compounds: Defining Inhibition/Induction Processes](pk-sim-compounds-defining-inhibition-induction-processes.md) for details on how to define inhibition and induction processes in PK-Sim®.
 
-### Advanced Parameters‌ tab
+### Advanced Parameters tab
 
 Additional compound-related parameters can be defined in the **Advanced Parameters** that are needed in case the particle dissolution function (see [Formulations](pk-sim-formulations.md)) or the model for proteins and large molecules (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)) are used. In all other cases, the parameters defined in the **Advanced Parameters** tab will not be used and can be left unchanged.
 
@@ -406,7 +406,7 @@ Four drug-related parameters which are used in the model for proteins and large 
 
 After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Blocks Explorer** view.
 
-## Setting or Changing Compound Properties‌
+## Setting or Changing Compound Properties
 
 To set or change the properties of an existing compound:
 
@@ -417,7 +417,7 @@ or simply double click on the compound in the **Building Blocks Explorer**.
 
 A window with the three tabs **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Parameters** will open. The properties can be set or changed appropriately. The changes can be saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 
-## Cloning Compounds‌
+## Cloning Compounds
 
 To clone a compound in the project:
 
@@ -426,7 +426,7 @@ To clone a compound in the project:
 3. Enter an alternative name for the compound clone and enter a description, if desired.
 4. Confirm and close the window by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">
 
-## Saving Compounds as Templates‌
+## Saving Compounds as Templates
 
 For each project, several compounds can be defined. They can be saved as templates and then shared among several projects and users.
 
@@ -441,7 +441,7 @@ In case a compound with the same name already exists, a warning appears and you 
 * Save as: You can save the compound under a different name. In this case, you will be asked to Rename the new template.
 * Cancel: This action will abort the saving process.
 
-## Loading Existing Compounds from Templates‌
+## Loading Existing Compounds from Templates
 
 As mentioned before, the compounds defined in a project can be saved as templates and then be shared among several projects and users.
 
@@ -458,7 +458,7 @@ The selected compound will appear in the **Building Block Explorer** view.
 
 Compounds can also be directly loaded from the template database within a simulation.
 
-## Deleting Compounds‌
+## Deleting Compounds
 
 To delete a compound from the project:
 

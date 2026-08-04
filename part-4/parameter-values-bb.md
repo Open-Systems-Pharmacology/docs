@@ -6,7 +6,7 @@ Additionally, PV BB can **create** new parameters during simulation creation.
 
 The following section describes the functionalities of the PV BB. Later on, a simple [example](#creating-parameter-values-building-blocks) is given to create a new PV BB and populate it with information.
 
-## Parameter Values - Functionality‌ Overview
+## Parameter Values - Functionality Overview
 
 In contrast to other BB types except for the initial conditions BB, **multiple** PV BBs can be created within one module. This allows you to define different parameterization sets for different simulation scenarios. For example, different parameter sets may represent different disease states or different species. During simulation creation, you can select which PV BB to use.
 
@@ -50,7 +50,7 @@ The table view shows the following:
 For *state variable* parameters, the **Value** is the initial value of the parameter.
 {% endhint %}
 
-## Creating new parameters in simulation structure through PV BB‌
+## Creating new parameters in simulation structure through PV BB
 
 A PV BB can be used to create new parameters that do not exist in the model yet. This can be useful to define parameters that are only relevant for a specific simulation scenario.
 
@@ -58,7 +58,7 @@ If parameter `Param A` in the container `Organism|Organ A|Container A1` does not
 
 The parameter will only be created if the parent path (i.e., `Organism|Organ A|Container A1`) exists in the model. If the parent path does not exist, the parameter will not be created and a warning will be shown during simulation creation.
 
-## Creating Parameter Values Building Blocks‌
+## Creating Parameter Values Building Blocks
 
 To create a new PV BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Parameter Values** and enter a unique name for the new BB. Click **OK** to create the new PV BB.
 

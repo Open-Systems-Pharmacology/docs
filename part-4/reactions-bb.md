@@ -1,4 +1,4 @@
-# Reactions‌ Building Block‌
+# Reactions Building Block
 
 In a **Reactions** building block (BB), all (bio-)chemical reactions which are of interest for the current project are defined. A reaction has a unique **name**, a reaction **kinetics equation**, may have **parameters**, and requires **reaction partners**.
 
@@ -7,7 +7,7 @@ In a **Reactions** building block (BB), all (bio-)chemical reactions which are o
 
 Working with reactions is done mostly using the Reaction Diagram. We describe the most important features in this section, for more details see [Diagrams Overview](diagrams-overview.md)
 
-## Reactions and Molecules‌
+## Reactions and Molecules
 
 When creating a simulation (see [Setting up a Simulation](setting-up-simulation.md)) the reactions defined in this building block are combined with the molecules from the Molecules building block. When we use the term **Molecule** in this section we refer to Molecule names only, which define the relationship between the Reactions to the Molecules from the Molecules building block.
 
@@ -47,7 +47,7 @@ A **reaction triangle** symbol showing the reaction name "R1" underneath will be
 
 Like molecules, reaction triangles can be dragged with the mouse to a desired position within the diagram area.
 
-## Connecting Molecules and Reactions‌
+## Connecting Molecules and Reactions
 
 Now you may want to connect molecules to the reaction and verify or change the stoichiometry. There are two ways to connect a molecule to a reaction as educt, product, or modifier:
 
@@ -68,7 +68,7 @@ Now, continue and check the **reaction's stoichiometry**. If you have connected 
 2. Click the **Properties** tab, and you see the Alias names (how they will be used in the formula, see next section), the path, and the dimension of the amount of molecules .
 3. Clicking on the **Stoichiometry** tab will list the educt and product stoichiometric coefficients. By default, these coefficients are set to 1, and you need to change that manually if your reaction has a different stoichiometry, e.g., if two molecules form a dimer.
 
-## Reaction Kinetics‌
+## Reaction Kinetics
 
 You are now ready to define **Reaction Parameters**, like kinetic rate constants, Michaelis-Menten parameters ($$kcat$$ or $$K_M$$), or binding constants. These parameters will then be used for the equation that defines the reaction kinetics. A new reaction parameter is defined by the following procedure:
 
@@ -104,7 +104,7 @@ To complete reaction R2 (created above, see [Reactions and Molecules](#reactions
 If using the same rate constant name for two different reactions is too confusing, use different names for the rate constants in different reactions.
 {% endhint %}
 
-## Additional Features for Editing Reactions‌
+## Additional Features for Editing Reactions
 
 There are more features available to handle reaction building. Some of which are briefly described here:
 

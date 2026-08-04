@@ -27,3 +27,4 @@ instantiations
 redefinitions
 BibTeX
 bibtex
+WRMSNorm
