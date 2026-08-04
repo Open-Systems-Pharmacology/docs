@@ -284,7 +284,7 @@ If the information in the building blocks differs from that in the simulation, t
 Changes in parameter or initial condition values can be propagated to the modules.
 
 {% hint style="warning" %}
-Structural changes cannot be propagated to the modules. For example, if a reaction is added in the building block of a module, commiting from the simulation to the module will not remove the reaction.
+Structural changes cannot be propagated to the modules. For example, if a reaction is added in the building block of a module, committing from the simulation to the module will not remove the reaction.
 {% endhint %}
 
 Right-click on the simulation and select **Commit to Building Block**. A dialog opens that allows to select which changes should be committed to the building block. The values are always committed to the **selected** parameter values or initial conditions building blocks of the **last module** used in simulation configuration.
