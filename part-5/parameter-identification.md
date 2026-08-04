@@ -242,7 +242,11 @@ $$
 
 where $$o_{k,i}$$ is the observed value, $$s_{k,i}$$ is the value of the mapped simulation output at $$t_{k,i}$$, $$w_k$$ is the weight of the mapping and $$w_{k,i}$$ is the weight of the individual data point (see [Mapping Simulation Outputs to Observed Data](#mapping-simulation-outputs-to-observed-data)). Observed and simulated values are converted to the internal base units before the residual is calculated.
 
+$$o_{k,i}$$ is always the mean value of the observed data point. If the observed data set also contains a standard deviation or another error column, that column is ignored during the optimization, whether it is defined or not. The error of a measurement therefore never influences the residual, and how strongly a data point contributes is determined by the weights $$w_k$$ and $$w_{k,i}$$ alone.
+
 The transformation $$g$$ is given by the **Scaling** of the mapping: $$g(y) = y$$ for Lin scaling and $$g(y) = \log_{10}(y)$$ for Log scaling, where values smaller than $$\epsilon = 10^{-20}$$ are replaced by $$\epsilon$$ before the logarithm is applied. Since observed values below $$\epsilon$$ are excluded from a log scaled output (see below), this replacement applies to simulated values only.
+
+The exclusion of observed values below $$\epsilon$$ is independent of LLOQ. It applies to every log scaled mapping, also when no LLOQ is defined for the data set, and in practice it removes observed values that are zero or negative, which have no logarithm.
 
 The Total Error is then summed over all $$nM$$ output mappings, each contributing $$n_k$$ data points:
 
@@ -259,7 +263,7 @@ Not every observed data point contributes to the Total Error. A data point is sk
 
 * it is excluded by the setting **Remove data below LLOQ**,
 * the observed value is not a valid number,
-* or the output is scaled logarithmically and the observed value is smaller than $$\epsilon$$.
+* or the output is scaled logarithmically and the observed value is smaller than $$\epsilon$$, regardless of whether an LLOQ is defined.
 
 For all remaining data points, $$s_{k,i}$$ is a simulated and not an interpolated value: before the optimization starts, the observed time points are added to the output schema of the simulation, which is integrated up to the last of them (see [Handling of missing values for residuals](#handling-of-missing-values-for-residuals)).
 
