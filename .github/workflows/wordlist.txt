@@ -25,4 +25,6 @@ BBs
 micellar
 instantiations
 redefinitions
+BibTeX
+bibtex
 sqrt
