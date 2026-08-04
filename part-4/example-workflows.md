@@ -74,7 +74,7 @@ This workflow illustrates how to add a tumor compartment to a PBPK model in MoBi
     
     ![Image](../assets/images/part-4-example-tumor/fig-18.png)
 
-## Setting up a Reaction Network‌
+## Setting up a Reaction Network
 
 This chapter will give a brief overview of:
 
