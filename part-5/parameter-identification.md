@@ -12,7 +12,7 @@ Often, experimental data for the outputs are given and the reverse question is a
 
 This reverse problem is called **Parameter Identification**: which values of certain input parameters yield simulation outputs that fit the observed data?
 
-A **Parameter Identification** problem is a kind of optimization problem: Minimize the residuals between observed data and corresponding simulation output by varying selected input parameters in a given range. (For a definition of residuals see the table “Scaling”)
+A **Parameter Identification** problem is a kind of optimization problem: Minimize the residuals between observed data and corresponding simulation output by varying selected input parameters in a given range. (For the definition of the residuals and of the resulting **Total Error** see [Objective function and Total Error](#objective-function-and-total-error))
 
 A variety of algorithms exist to solve optimization problems. The required effort and the quality of the solution depend on several factors, e.g. number and bounds of the input parameters of interest, complexity of the model, quality of start values for the input parameters.
 
@@ -148,11 +148,13 @@ For each mapping, the scaling can be defined as Lin or Log which determines the 
 |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Lin | Residuals are calculated as: Simulation value - Observed value. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values). Linear residuals are always calculated in the internal units.                                                                                                                                                                                                       |
-| Log | Residuals are calculated as: log(Simulation value) - log(Observed value) = log (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because log(10E-N) = -N can becomes large. Then, the weights should be manually adjusted or LLOQ handling should be adjusted in the **Configuration**. (See “Configuration of Optimization”) |
+| Log | Residuals are calculated as: $$\log_{10}$$(Simulation value) - $$\log_{10}$$(Observed value) = $$\log_{10}$$ (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because $$\log_{10}(10^{-N}) = -N$$ can become large. Then, the weights should be manually adjusted or LLOQ handling should be adjusted in the **Configuration**. (See “Configuration of Optimization”) |
 
 To reflect the quality or importance of the Observed Data item or to balance different magnitudes of values in case of Lin scaling, you can edit the weights of each mapping.
 
 If you select a mapping, the corresponding Observed Data is displayed as table and chart in the bottom area. There you can edit pointwise weights, e.g. to reduce or remove influence of outliers.
+
+Both the weight of the mapping and the weight of the individual data point are multiplied with the difference described above; the complete definition of the residuals and of the resulting objective function is given in [Objective function and Total Error](#objective-function-and-total-error).
 
 {% hint style="info" %}
 In MoBi®, you can freely define observers to match any kind of observed data. In order to enable the automatic mapping ensure that the meta data for Organ, Compartment and Molecule is the same for corresponding observed data and observers. Therefore, you can define the observers for specific Containers and Molecules and/or edit the meta data of the observed data.
@@ -218,7 +220,7 @@ You can decide if data values below LLOQ should be used or removed and how they 
 | Reduce trailing | <p>Sometimes observed concentrations end with several trailing .L.L.O.Q values.<br>In particular when only the Observed data below LLOQ is transformed, those trailing values should be reduced because the ratio between untransformed simulation values and transformed observed values can become large and cause trouble for Log scale outputs.</p> |
 
 {% hint style="warning" %}
-If in Observed Data LLOQ values are contained as 0 values, for **Remove data below LLOQ** the option Always should be used. Otherwise, those values can distort the optimization results, because log(0) resp. log(eps=10E-20) is evaluated in the residual calculation and these single residuals may dominate the whole optimization.
+If in Observed Data values below LLOQ are contained as 0 values instead of LLOQ/2, for **Remove data below LLOQ** the option "Always" should be used. Note that this removal is based on the LLOQ defined for the observed data, so 0 values in data without LLOQ information are not removed. Otherwise, those values can distort the optimization results, because the difference to a 0 value is not a meaningful residual. For Log scaled outputs, observed values close to 0 lead to very large residuals which may dominate the whole optimization, while values smaller than $$\epsilon = 10^{-20}$$ do not contribute to the residuals at all (see [Objective function and Total Error](#objective-function-and-total-error)).
 {% endhint %}
 
 **Transform data below LLOQ**
@@ -227,6 +229,49 @@ If in Observed Data LLOQ values are contained as 0 values, for **Remove data bel
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Observed data and simulated data below LLOQ set to LLOQ (default) | <p>Observed data and simulation data are transformed consistently to avoid artificial residuals, especially for log scaled outputs.<br>Values below LLOQ are set to LLOQ to avoid discontinuity for values little above and little below LLOQ.</p> |
 | Observed data below LLOQ set to LLOQ/2                            | This option is left for backward compatibility. Here, simulation data below LLOQ is not transformed in residual calculation in contrast to observed data.                                                                                          |
+
+### Objective function and Total Error
+
+All optimization algorithms minimize the same objective function, the **Total Error**. It is the square root of the sum of the squared residuals over all output mappings and it is the value that is reported in the tab **Results** and plotted in the error history of the **Visual Feedback**.
+
+For an output mapping $$k$$ and an observed data point $$i$$ measured at the time $$t_{k,i}$$, the residual is
+
+$$
+r_{k,i} = w_k \times w_{k,i} \times (g(s_{k,i}) - g(o_{k,i}))
+$$
+
+where $$o_{k,i}$$ is the observed value, $$s_{k,i}$$ is the value of the mapped simulation output at $$t_{k,i}$$, $$w_k$$ is the weight of the mapping and $$w_{k,i}$$ is the weight of the individual data point (see [Mapping Simulation Outputs to Observed Data](#mapping-simulation-outputs-to-observed-data)). Observed and simulated values are converted to the internal base units before the residual is calculated.
+
+$$o_{k,i}$$ is always the mean value of the observed data point. If the observed data set also contains a standard deviation or another error column, that column is ignored during the optimization, whether it is defined or not. The error of a measurement therefore never influences the residual, and how strongly a data point contributes is determined by the weights $$w_k$$ and $$w_{k,i}$$ alone.
+
+The transformation $$g$$ is given by the **Scaling** of the mapping: $$g(y) = y$$ for Lin scaling and $$g(y) = \log_{10}(y)$$ for Log scaling, where values smaller than $$\epsilon = 10^{-20}$$ are replaced by $$\epsilon$$ before the logarithm is applied. Since observed values below $$\epsilon$$ are excluded from a log scaled output (see below), this replacement applies to simulated values only.
+
+The exclusion of observed values below $$\epsilon$$ is independent of LLOQ. It applies to every log scaled mapping, also when no LLOQ is defined for the data set, and in practice it removes observed values that are zero or negative, which have no logarithm.
+
+The Total Error is then summed over all $$nM$$ output mappings, each contributing $$n_k$$ data points:
+
+$$
+E_{total} = \sqrt{\sum_{k=1}^{nM} \sum_{i=1}^{n_k} r_{k,i}^2}
+$$
+
+Before $$g$$ is applied, values below LLOQ are treated according to the option selected for **Transform data below LLOQ**:
+
+* With _Observed data and simulated data below LLOQ set to LLOQ_ (default), both $$o_{k,i}$$ and $$s_{k,i}$$ are set to LLOQ if they are smaller than LLOQ.
+* With _Observed data below LLOQ set to LLOQ/2_, neither of the two values is modified during the residual calculation. The LLOQ/2 stems from the import of the observed data, where measurements flagged as below LLOQ are stored as LLOQ/2, while simulated values are always used unchanged.
+
+Not every observed data point contributes to the Total Error. A data point is skipped if
+
+* it is excluded by the setting **Remove data below LLOQ**,
+* the observed value is not a valid number,
+* or the output is scaled logarithmically and the observed value is smaller than $$\epsilon$$, regardless of whether an LLOQ is defined.
+
+For all remaining data points, $$s_{k,i}$$ is a simulated and not an interpolated value: before the optimization starts, the observed time points are added to the output schema of the simulation, which is integrated up to the last of them (see [Handling of missing values for residuals](#handling-of-missing-values-for-residuals)).
+
+The definition of the Total Error does not depend on the selected optimization algorithm. Monte-Carlo and Nelder-Mead evaluate the Total Error directly, while Levenberg-Marquardt works on the vector of the residuals $$r_{k,i}$$ and minimizes the sum of their squares, which is minimal for the same parameter values.
+
+{% hint style="info" %}
+The sum is not normalized to the number of data points, so the Total Error grows with the amount of observed data used. Total Error values should therefore only be compared between optimizations that use the same observed data, weights and scaling, e.g. between the runs of a **Multiple optimization** or a **Calculation Methods Variation**, or between different algorithms applied to the same problem.
+{% endhint %}
 
 ### Optimization Algorithms
 
@@ -348,7 +393,7 @@ In case of **Multiple optimization** or **Calculation Methods Variation** the Vi
 
 After the optimization run is finished, you can view the results in the tab Results.
 
-Status, elapsed time, number of evaluations and the resulting total error are displayed in the upper table.
+Status, elapsed time, number of evaluations and the resulting total error (see [Objective function and Total Error](#objective-function-and-total-error)) are displayed in the upper table.
 
 Below, you find a table with the optimal values, start values and ranges for all Identification Parameters.
 
@@ -398,7 +443,7 @@ In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 
-This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The chart includes scaling, weights and LLOQ usage and the values are dimensionless, so you can assess the actual influence of the observed data.
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The plotted values are the residuals $$r_{k,i}$$ as defined in [Objective function and Total Error](#objective-function-and-total-error); they include scaling, weights and LLOQ usage, so you can assess the actual influence of the observed data. They are plotted without a unit: for Log scaled outputs they are dimensionless logarithmic ratios, for Lin scaled outputs they are weighted differences in the internal base units of the output.
 
 ![Parameter Identification Analysis - Residuals vs. Time](../assets/images/part-5/PI-Analysis-ResidualsVsTime.png)
 
