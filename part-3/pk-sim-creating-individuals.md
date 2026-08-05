@@ -12,7 +12,7 @@ In the building block **Individual** the properties of individuals are defined. 
 Please note that the volume of fat tissue is not optimized by the algorithm as this value is used to match the target body weight.
 {% endhint %}
 
-## Definition of new Individual in PK-Sim®‌
+## Definition of new Individual in PK-Sim®
 
 -   Click on **Individual** <img src="../assets/icons/Individual.svg" data-size="line"/> in the **Create** Group of the **Modeling** Tab or
 -   Right mouse click on **Individuals** in the **Building Block Explorer** and select **Add Individual...** or
@@ -24,7 +24,7 @@ A dialog will pop up in which the properties of the individual can be specified.
 
 The **Create Individual** window is subdivided into three tabs: **Biometrics, Anatomy & Physiology**, and **Expression**.
 
-### Biometrics‌
+### Biometrics
 
 In the first drop-down menu you can choose from the following species:
 
@@ -110,7 +110,7 @@ Significant breed-specific differences exist for some animal species. For exampl
 -   For the rat-specific physiological parameters affecting oral absorption from the GI tract see [[93](../references.md#93)]. An important feature of this species is that the rat lacks a gallbladder. As a result, bile fluid is secreted continuously in dilute form, which has an important effect on biliary clearance and entero-hepatic circulation (see [PK-Sim® - Events](pk-sim-events.md)).
 -   If mouse is selected, the anatomical and physiological data are set at default values for a mouse with a mean weight of 20 g.
 -   For rabbits, the default body weight is 2.5 kg. For the parameter values not found in the literature, the mouse PBPK model parameters were transferred and used, as it is the closest animal species to the rabbit among the species available in the physiology database (e.g., mouse retains a gallbladder unlike the rat). [[112](../references.md#112)]
--   Currently, only for mouse, monkey and human species specific values for the concentration of the FcRn receptor, the concentration of the endogenous IgG and the affinity of the endogenous IgG to the FcRn receptor (needed for the **Model for proteins and large molecules**) are available. For all other animal species, these values are taken from the monkey model.
+-   Currently, only for mouse, monkey and human species specific values for the concentration of the FcRn receptor, the concentration of the endogenous IgG and the affinity of the endogenous IgG to the FcRn receptor (needed for the **Model for proteins and large molecules**) are available. For all other animal species, the concentrations are taken from the human model and the Kd(FcRn) of the endogenous IgG in endosomal space is set to 0.75 µM.
 
 Irrespective of the species chosen, the **Calculation Method** for the estimation of the surface area of the capillary endothelium has to be selected. The endothelial surface area is needed for calculation of the rate of permeation through the endothelial barrier between plasma and interstitial space, which is determined by the permeability - surface area product. The drug dependent specific organ permeability can be defined in the **Compound** building block (see [PK-Sim® - Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md)).
 
@@ -120,7 +120,7 @@ Literature for capillary surface areas for the different organs and species is r
 2.  **Blood flow.** The capillary surface area is estimated by ![Image](../assets/images/part-3/sa-k-organ.png)\
     , with the constant of proportionality $$k$$, the organ blood flow $$Q_{organ}$$, the shape factor $$beta$$ (default: $$beta=1$$). The permeability-surface area product ![Image](../assets/images/part-3/psa.png) is related to the extraction $$E$$ by ![Image](../assets/images/part-3/psa-e-organ.png) [[8](../references.md#8)]. With the assumption that the extraction of drug in each organ is equal, ![Image](../assets/images/part-3/psa-organ.png) is obtained. If it is further assumed, that the permeability is equal for each organ one obtains ![Image](../assets/images/part-3/saq-org.png).
 
-### Anatomy & Physiology‌
+### Anatomy & Physiology
 
 Anatomical and physiological properties in PK-Sim® are set at default values for a mean representative of a species. These default values were carefully selected from literature. In the human species module, also the mean values for children of all age groups are included. For some purposes, e.g. to simulate pathological disorders, it is desirable to change these values. This can be done in the **Anatomy & Physiology** tab, in which the parameters are, using the default settings, displayed in a tree structure on the left hand side.
 
@@ -151,7 +151,7 @@ To change the value of a parameter, do one of the following
 -   Enter a new value in the respective input field
 -   Multiply the default values with the scale option There are three types of parameter values:
 
-1.  Parameter values displayed by default on a white background represent constants values. By changing the parameter value, the default value will be overwritten and the background of the field turns yellow. To reset the parameter value to default click **Reset parameter to default** <img src="../assets/icons/Refresh.svg" data-size="line"/> or use the **Rollback** function of the **History manager**, see [Shared Tools - History manager and history *reporting*](../part-5/history-manager-history-reporting‌.md).
+1.  Parameter values displayed by default on a white background represent constants values. By changing the parameter value, the default value will be overwritten and the background of the field turns yellow. To reset the parameter value to default click **Reset parameter to default** <img src="../assets/icons/Refresh.svg" data-size="line"/> or use the **Rollback** function of the **History manager**, see [Shared Tools - History manager and history *reporting*](../part-5/history-manager-history-reporting.md).
 2.  Parameter values displayed by default on a light blue background represent parameters calculated using a formula. By changing these values, the formula is overwritten and the background of the field turns yellow. To reset to the default value(s) click **Reset parameter to default** <img src="../assets/icons/Refresh.svg" data-size="line"/>.
 3.  Parameter values displayed by default on a grey background represent values which cannot be changed by the user, because otherwise a fundamental relationship could be destroyed.
 
@@ -179,7 +179,7 @@ Please note that when switching to another species on the Biometrics tab all par
 **User Defined** parameter node shows an overview of all parameters changed by the user in the individual.
 {% endhint %}
 
-### Expression‌
+### Expression
 
 In the **Expression** tab, all relevant enzymes, transport proteins and protein binding partners can be defined for the selected individual.
 
@@ -203,7 +203,7 @@ This is the only instance in PK-Sim where a a building block is referencing anot
 Please note that when adding an expression profile to an individual, the expression profile is linked directly to the individual. Any modification performed in the expression profile will be immediately reflected into the individual. This is the reason why all parameters are read-only in the individual.
 {% endhint %}
 
-### Editing and Scaling Individual Properties‌
+### Editing and Scaling Individual Properties
 
 To edit properties of existing individuals:
 
@@ -241,7 +241,7 @@ In order to **scale** an existing individual:
 
 The line **Target weight**, which appears only on the top of this window if modifications in organ volumes were made in the base individual, indicates the body weight of the scaled individual. A modification of organ volumes will automatically lead to a change in total body weight, which is the sum of all organ weights. Thus, if the default value of an organ weight is changed, the new body weight, which is no longer in agreement with the body weight previously selected on the biometrics tab, will be shown.
 
-### Clone an Individual‌
+### Clone an Individual
 
 To clone an individual in the project:
 
@@ -250,7 +250,7 @@ To clone an individual in the project:
 3.  Set an alternative name for the clone and enter a description if desired
 4.  Confirm and close the window by clicking <img src="../assets/icons/OK.svg" data-size="line"/> **OK**
 
-### Saving of Individuals as Templates‌
+### Saving of Individuals as Templates
 
 Previously defined individuals can be saved as a template in the template database and then be shared among several projects and users.
 
@@ -267,7 +267,7 @@ In case an individual with the same name already exists, a warning message will 
 -   Save as: You can save the individual under a different name. In this case, you will be asked to Rename the new template.
 -   Cancel: This action will abort the saving process.
 
-### Loading existing Individuals from Templates‌‌
+### Loading existing Individuals from Templates
 
 To load existing individuals from the template database:
 
@@ -280,7 +280,7 @@ The selected individual will appear in the **Building Block Explorer** view.
 
 In addition, individuals can be directly loaded from the template database within a simulation (see [PK-Sim® - Simulations](pk-sim-simulations.md).
 
-### Deleting Individuals‌
+### Deleting Individuals
 
 To delete individuals from a project:
 

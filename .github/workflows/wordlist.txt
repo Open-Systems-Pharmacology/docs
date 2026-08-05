@@ -28,3 +28,4 @@ redefinitions
 BibTeX
 bibtex
 sqrt
+WRMSNorm

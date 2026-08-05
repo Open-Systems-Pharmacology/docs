@@ -1,10 +1,10 @@
-# Molecules‌ Building Block
+# Molecules Building Block
 
 The **Molecules** building block contains all molecules with their default start values, molecule-specific parameters and properties. A molecule has a name, typically the name of the compound. Parameters and properties can be defined by you to describe the physico-chemistry, like solubility or lipophilicity. These parameters may later be used in reactions, passive and active transport processes, or may influence events. Also, active transporter molecules and active transport processes are defined for each molecule, if relevant for the model.
 
 The following section describes the functionalities of the Molecules building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-new-molecules) is given to create a molecule from scratch.
 
-## Molecules - Functionality‌ Overview‌
+## Molecules - Functionality Overview
 
 After loading a PBPK model from PK-Sim®, the molecules building block is located in the imported PK-Sim® module. Double-clicking on the Molecules (<img src="../assets/icons/Molecule.png" data-size="line">) or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
 
@@ -12,11 +12,11 @@ After loading a PBPK model from PK-Sim®, the molecules building block is locate
 
 In the left part of the window, a tree view lists all molecules that are currently defined in the project. Clicking on a molecule name will highlight it and show its properties in the right part of the window.
 
-### Molecule Properties‌
+### Molecule Properties
 
 The following molecule **properties** can be defined:
 
-- **Stationary**: If checked, the molecule will not be transported by passive transport processes. Typical molecules that are stationary are proteins (e.g., "CYP3A4", "GABRG2"), protein-drug complexes (e.g., "Midazolam-GABRG2-Buhr 1997 Complex"), or drug metabolites that are defined as *sink* (see [Definition of a metabolite in an enzymatic process‌](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-a-metabolite-in-an-enzymatic-process
+- **Stationary**: If checked, the molecule will not be transported by passive transport processes. Typical molecules that are stationary are proteins (e.g., "CYP3A4", "GABRG2"), protein-drug complexes (e.g., "Midazolam-GABRG2-Buhr 1997 Complex"), or drug metabolites that are defined as *sink* (see [Definition of a metabolite in an enzymatic process](../part-3/pk-sim-compounds-definition-and-work-flow.md#definition-of-a-metabolite-in-an-enzymatic-process
 )) (e.g., "Midazolam-CYP3A4-Optimized Metabolite").
 
 - **Molecule Type**:  This has only influence on the icon depicted in front of the molecules in the molecules tree view to the right. Selectable options are <img src="../assets/icons/Molecule.svg" data-size="line"> Drug, <img src="../assets/icons/Enzyme.svg" data-size="line"> Enzyme, <img src="../assets/icons/Transporter.svg" data-size="line"> Transporter, <img src="../assets/icons/Complex.svg" data-size="line"> Complex,<img src="../assets/icons/Metabolite.svg" data-size="line"> Metabolite ,<img src="../assets/icons/Protein.svg" data-size="line"> Protein, and Other Protein.
@@ -26,7 +26,7 @@ The following molecule **properties** can be defined:
 
 - The **Amount** field shows the default start amount of the molecule and can be defined either as a constant value (for drugs administered exogenously usually zero) or as a formula (e.g., for proteins, or endogenous compounds). To define different start amounts in different containers, use the **Initial Conditions** building block (see [Initial Conditions](initial-conditions-bb.md)).
 
-### Molecule Parameters‌
+### Molecule Parameters
 
 The **Parameters** tab shows a list of all parameters defined for the currently selected molecule. 
 
@@ -67,9 +67,9 @@ Protein interactions of a molecule are listed as sub-nodes of the interacted mol
 
 Note that in the Molecules BB, only the parameters of the interaction are defined. The interaction itself is modeled in the **Reactions** building block or taken into account in the equations of the active transport processes.
 
-## Example - Creating New Molecules‌
+## Example - Creating New Molecules
 
-### Creating a new molecule‌
+### Creating a new molecule
 
 1. Click on the **New** button <img src="../assets/icons/MoleculeAdd.svg" data-size="line"> in the **Add** group of the **Edit Molecule** tab, or right-click in the empty space of the Molecules tree view and select **Create Molecule...**. A new window titled "New Molecule" will open.
 2. Enter a molecule name into the "Name" input box.
@@ -80,7 +80,7 @@ At this point, you may already input a value for the "Default Start Amount" whic
 
 ![New Molecule window](../assets/images/part-4/new-molecule-window.jpg)
 
-### Adding molecule parameters‌
+### Adding molecule parameters
 
 As an example, create the parameter "Molecular weight" for the molecule created above.
 
@@ -119,7 +119,7 @@ First, an active transporter molecule needs to be defined:
 5. In the transporter entry below the selected molecule, you may enter a description and parameters, as for any molecule.
 6. Click on the transporter molecule at the top level of the molecules tree to modify this molecule's parameters, as described above in, [Molecule Parameters](#molecule-parameters). This may be the initial amount of transporter or a concentration parameter.
 7. Right-click on the transporter attached to the molecule to be transported, and select **Create Transport** from the context menu. A window named "New Transport" opens.
-8. Enter a name into the Name input box, like "PGP Transport". Select the **source** and the **target** container criteria (see [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)), define a transport rate parameter, and enter a transport kinetics formula. Also ses [Creating a Passive Transport‌](passive-transports-bb.md#example---creating-a-passive-transport) as an example on how to define a transport process.
+8. Enter a name into the Name input box, like "PGP Transport". Select the **source** and the **target** container criteria (see [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)), define a transport rate parameter, and enter a transport kinetics formula. Also ses [Creating a Passive Transport](passive-transports-bb.md#example---creating-a-passive-transport) as an example on how to define a transport process.
 9. The kinetics formula of an active transport process is entered into the formula input box within the Tab **Kinetic** so that the red error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> will disappear. A typical active transport formula will be dependent on the transporter concentration, substrate concentration in source and target container, and on molecule specific parameters, like a $$K_M$$ value for substrate and transporter. You will need to add all the required concentrations and parameters as references, or you may enter them in numeric form into the equation.
 
 Continuing with our **example project**, let us enter a transport called "PGP" for molecule "A" and a transport process called "PGP Transport A" which transports the molecule from "Vial2" as source to "Vial1" as target. As references for the transport equation, you need the concentration parameters of "PGP" and of "A" from the references tree. The alias of the PGP concentration is renamed to `C_PGP`, and that of molecule `A` to `C_A` by overriding the default names. The equation to be entered is `0.001 * C_PGP * C_A`. The figure below shows what the screen should look like after everything is properly set up.
@@ -134,7 +134,7 @@ If more than one molecule is transported by the very same transporter, you must 
 If two molecules compete for the same transporter, you can add inhibition terms to the transport equations that use all molecules, either as transporter substrate or as transporter inhibitor.
 {% endhint %}
 
-## Loading, Editing, and Saving Molecules‌
+## Loading, Editing, and Saving Molecules
 
 Alternatively to newly creating a molecule as described in the [Example - Creating New Molecules], **molecules can be loaded from a pkml file**. This file can be
 

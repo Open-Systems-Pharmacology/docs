@@ -1,4 +1,4 @@
-# Passive Transports‌ Building Block
+# Passive Transports Building Block
 
 The **Passive Transports (PT)** building block (BB) contains all passive transport processes that are generic for all non-stationary molecules. These processes are defined by source and target containers, and a kinetic formula defining the transport rate. Examples are passive diffusion, the flow of body fluids like blood, or perfusion processes.
 
@@ -6,7 +6,7 @@ In contrast to active transporter processes defined in the molecules building bl
 
 The following section describes the functionalities of the Passive Transports building block based on a PBPK model exported from PK-Sim. Later on, a simple [example](#example---creating-a-passive-transport) is given to create a passive transport from scratch.
 
-## Passive Transports - Functionalities Overview‌
+## Passive Transports - Functionalities Overview
 
 After loading a PBPK model from PK-Sim®, a set of PTs are available in the imported PK-Sim® module. Double-clicking on the Passive Transports BB <img src="../assets/icons/PassiveTransport.svg" data-size="line"> or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
 
@@ -16,7 +16,7 @@ Often, it is desired to define transport processes by a generic type of equation
 
  Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
 
-## Example - Creating a Passive Transport‌
+## Example - Creating a Passive Transport
 
 For **creating a new transport** or loading one from a previously saved file:
 
@@ -54,8 +54,8 @@ Continuing with our example, let us enter a simple diffusion equation based on a
 1. Make sure that the molecules created above all have a "Concentration" parameter. If not, see [Molecule Parameters](molecules-bb.md#molecule-parameters) how to proceed.
 2. To make the concentrations available for the diffusion formula, work with the "Possible Referenced Objects" tree view, as described in [Reaction Kinetics](reactions-bb.md#reaction-kinetics). Select "Relative path", and choose `Neighborhoods|V1V2Connection` as reference point. The relative path will result in source and target molecule paths that are generic for all molecules, whereas selecting an absolute path will be molecule-specific.
 3. Successively expand the "Possible Referenced Objects" tree view by clicking on the + signs to the left of "BigVial", there on "Vial1", then on "MoleculeProperties", then on "A" (or any other molecule name). The "Concentration" parameter should now appear, if present.
-4. Drag and drop exactly this "Concentration" parameter to the white references area to the left of the tree. The alias name "Concentration" and the path "SOURCE|MOLECULE|Concentration" should appear in the list.‌
-5. Then open the tree below "Vial2" -> "MoleculeProperties" -> "A" and drag exactly this "Concentration" parameter into the references as well. This time, the alias should be named "Concentration1" and the path should read "TARGET|MOLECULE|Concentration".‌
+4. Drag and drop exactly this "Concentration" parameter to the white references area to the left of the tree. The alias name "Concentration" and the path "SOURCE|MOLECULE|Concentration" should appear in the list.
+5. Then open the tree below "Vial2" -> "MoleculeProperties" -> "A" and drag exactly this "Concentration" parameter into the references as well. This time, the alias should be named "Concentration1" and the path should read "TARGET|MOLECULE|Concentration".
 6. Compare your screen to to the images below. If you want to change the aliases manually, you can do so by clicking on any name input box and replace the corresponding name with another.
 7. Now enter the formula `0.001 * (Concentration - Concentration1)` into the formula input box below the references. The error symbol <img src="../assets/icons/ErrorProvider.svg" data-size="line"> that was displayed to the left of this input box should now disappear, if everything is typed correctly. Compare your result again with the images below.
 

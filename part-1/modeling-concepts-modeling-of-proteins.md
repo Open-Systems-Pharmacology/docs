@@ -1,4 +1,4 @@
-# Modeling of Proteins‌
+# Modeling of Proteins
 
 Therapeutic proteins are an increasingly important class of drugs. Particularly, monoclonal antibodies are used for different indications including cancer, inflammatory and autoimmune diseases [[88](../references.md#88)]. These engineered antibody fragments with tailored pharmacokinetic properties have the potential to be used as diagnostic and therapeutic agents [[34](../references.md#34)].
 

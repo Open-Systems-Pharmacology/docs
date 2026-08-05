@@ -26,13 +26,13 @@ The version of the manual and its publication date are also stated on the [Open 
 
 A technical description of the different software elements is presented starting with PK-Sim® focusing on physiologically-based pharmacokinetics in "Working with PK-Sim®".
 
-[Go to: Working with PK-Sim®](part-3/pk-sim-quick-guide‌.md)
+[Go to: Working with PK-Sim®](part-3/pk-sim-quick-guide.md)
 
 ## Working with MoBi®
 
 MoBi® focusing on modular model customization and extension as well as on pharmacodynamics in "Working with MoBi®".
 
-[Go to: Working with MoBi®‌](part-4/first-steps.md)
+[Go to: Working with MoBi®](part-4/first-steps.md)
 
 ## Shared Tools and Example Workflows
 
