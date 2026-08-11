@@ -38,7 +38,7 @@ A dialog opens that shows one row for each formula in which the selected paramet
 
 * **Used By**: the path of the object whose formula uses the parameter.
 * **Type**: the type of the referencing object (e.g., Parameter, Observer).
-* **Used As**: whether the parameter is used in the formula of the object or in its right hand side formula.
+* **Used As**: whether the parameter is used in the formula of the object or in its right-hand-side formula.
 * **Alias**: the alias under which the parameter is referenced in the formula.
 * **Formula Name**: the name of the referencing formula.
 * **Formula**: the definition of the referencing formula.
