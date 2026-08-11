@@ -8,12 +8,12 @@ An example workflow illustrating how to use the modularization concept in practi
 
 ## MoBi project structure
 
-The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite <V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
+The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
 
 A MoBi project contains a set of:
 
 - PK-Sim modules
-    - A module created from a PK-Sim PBPK model. As a best practice, a PK-Sim module should not be modified. Instead, all changes/extensions to the model should be done in the so-called Extension modules (see below). A PK-Sim module is converted into an Extension module when edited by the user.
+    - A module created from a PK-Sim PBPK model. As a best practice, a PK-Sim module should not be modified. Instead, all changes/extensions to the model should be done in the so-called Extension modules (see below). A PK-Sim module is converted into an Extension module when edited by the user. A PK-Sim module carries its snapshot, so it can be re-created in PK-Sim.
 - Extension modules
     - Editable modules that contain any changes to the model structure made by the user.
 - Individuals
@@ -29,7 +29,7 @@ For convenient organization of the project, modules can be grouped in folders in
 ### PK-Sim modules
 A project in MoBi can be based on a PBPK model exported from PK-Sim. Such a model will be present as a **PK-Sim module** in MoBi containing *all of the BB types*. PK-Sim modules cannot be edited by default. If the user decides to edit a PK-Sim module, the PK-Sim module will be converted to an Extension module. A project can contain multiple or no PK-Sim modules.
 
-Export of a PK-Sim model to MoBi creates one PK-Sim module, one individual, and (0-n) expression profile BBs.
+Export of a PK-Sim model to MoBi creates one PK-Sim module, one individual, and (0-n) expression profile BBs. The PK-Sim snapshot of the module is stored with the module and allows the PK-Sim module to be recreated.
 
 ### Extension modules
 Each MoBi project may contain any number of **Extension modules**. An Extension module can add or modify any part of the default PK-Sim model structure - spatial structures, molecules, reactions, etc.
@@ -71,22 +71,20 @@ There are two types of combination behavior that can be defined for a module - *
 #### Merge behavior "Extend"
 When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers and parameters from module `B` will be added to module `A`. I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 3`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` with parameters defined in both modules, and with the sub-containers `Organism|Container 1|Container 2` and `Organism|Container 1|Container 3`.
 
-- **MoleculeProperties** are always extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used.
+- **MoleculeProperties** are always extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472)
 - **Parameters** are always overwritten. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
 - **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
 - **Tags** will be extended. If "Organism|Container 1" has a tag "Tag A" in module "A" and a tag "Tag B" in module "B", in the final model, "Organism|Container 1" will have tags "Tag A" and "Tag B".
 - **Neighborhoods** are extended (e.g., addition of new parameters, tags). Neighbors are replaced. If module `A` defines a neighborhood `N1` between `Organism|Container 1` and `Organism|Container 2`, and module `B` defines a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`, the final model will contain a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`.
 
 {% hint style="warning" %}
-If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model.
+If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model. (TODO https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/pull/2919)
 {% endhint %}
-
-
 
 #### Merge behavior "Overwrite"
 When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers from module `B` will overwrite the containers with the same path in module `A`. When overwriting, all descendants of a container are removed if not present in the module that overwrites (i.e., replacement of the whole tree structure). I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 2`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` without the sub-containers `Container 2` and `Container 3`. `Organism|Container 1` will only have parameters that are defined in module `B`, but not in module `A`.
 
-- **MoleculeProperties** are always extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used.
+- **MoleculeProperties** are always extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472)
 - **Parameters** will be overwritten by their absolute path. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used.
 - **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
 - Container (including neighborhoods) **Tags** will be overwritten. If `Organism|Container 1` has a tag "Tag A" in module `A` and a tag "Tag B" in module `B`, in the final model, `Organism|Container 1` will only have tag "Tag B".
@@ -94,7 +92,7 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 - **Neighborhoods** will be overwritten by their names. Their parameters, tags, and neighbors will be overwritten.
 
 {% hint style="warning" %}
-If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model.
+If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model. (TODO https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/pull/2919)
 {% endhint %}
 
 ### Molecules
@@ -106,7 +104,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Molecule type** (Drug, Enzyme, Transporter, etc.) is always overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
 - **Stationary**: the property is always overwritten.
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
-- **Parameters** are always overwritten. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
+- **Parameters** are extended. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc). New parameters can be added.
 - **Parameter type** (local/global) is always overwritten.
 - **Active Transports** are extended. New transports are added, existing are extended using the merge behavior (parameters added, properties overwritten, etc).
 
@@ -115,7 +113,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Molecule type** (Drug, Enzyme, Transporter, etc.) is always overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
 - **Stationary**: the property is always overwritten.
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
-- **Parameters** are always overwritten. Only parameters existent in the last module will be present in the simulation.
+- **Parameters** are overwritten. Only parameters existent in the last module will be present in the simulation. New parameters cannot be added.
 - **Parameter type** (local/global) is always overwritten.
 - **Active Transports**: The molecule is completely overwritten. This implies that only active transports defined in the latest module will be present in the simulation.
 
@@ -153,7 +151,7 @@ Reactions are completely overwritten by name.
 
 - **Source** and **Target** lists are extended.
 
-- **Include/Exclude** molecule lists for molecules are always extended. However, the behavior of the **All checkbox** is overwritten.
+- **Include/Exclude** molecule lists for molecules are extended. However, the behavior of the **All checkbox** is overwritten.
   - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
 
 #### Merge behavior "Overwrite"
@@ -170,7 +168,7 @@ Passive transports are completely overwritten by name.
 
 - The **Conditions** list of the "In container with" list is extended.
 
-- **Include/Exclude** molecule lists for molecules are always extended. However, the behavior of the **All checkbox** is overwritten.
+- **Include/Exclude** molecule lists for molecules are extended. However, the behavior of the **All checkbox** is overwritten.
   - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
 
 #### Merge behavior "Overwrite"
