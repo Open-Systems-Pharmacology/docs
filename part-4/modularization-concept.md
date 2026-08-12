@@ -177,26 +177,28 @@ Observers are completely overwritten by name.
 
 ### Events
 
+Events are combined **by name**: when multiple modules define an event with the same name, these definitions are merged into a single event definition *before* the simulation is created, following the rules below. The merged event is then created in every container that matches the resulting container criteria.
+
 #### Merge behavior "Extend"
 
 The tree structure of the event is extended. This means:
 
 - **Container criteria** from both modules are combined, while the **Operator** (and/or) is overwritten by the module that is lower in the hierarchy.
 
- - **Parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
+- **Parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
 
 - **Administered molecule** is overwritten.
 
 For each event:
 
-- **Events start condition** equation: Changes are not applied! (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
-- **Events start condition - "One Time" checkbox**: Changes are not applied! (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
+- **Event start condition** equation: Changes are not applied! (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
+- **Event start condition - "One Time" checkbox**: Changes are not applied! (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
 - The list of **Assignments** is extended.
 - New nodes (events, containers, etc.) are added.
 
 #### Merge behavior "Overwrite"
 
-The event definition from the module that is lower in the hierarchy completely replaces the definition from the higher modules - including the container criteria.
+The event definition from the module that is lower in the hierarchy completely replaces the definition from the higher modules.
 
 - **Container criteria** list is overwritten.
 
@@ -204,12 +206,12 @@ The event definition from the module that is lower in the hierarchy completely r
 
 - **Administered molecule** is overwritten.
 
-- All subnodes of the event (e.g., **ProtocolSchemaItem**, **Application_StartEvent**, etc.) are overwritten.
+- All subnodes of the event (e.g., **ProtocolSchemaItem**, **Application_StartEvent**) are overwritten.
 
 For each event:
 
-- **Events start condition** equation is overwritten.
-- **Events start condition - "One Time" checkbox** is overwritten.
+- **Event start condition** equation is overwritten.
+- **Event start condition - "One Time" checkbox** is overwritten.
 - The list of **Assignments** is overwritten.
 
 ### Parameter values
