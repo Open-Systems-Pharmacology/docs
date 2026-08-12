@@ -137,7 +137,7 @@ In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" 
 The container/parameter/tag/neighborhood rules are essentially as in v12, with two clarifications added in v13:
 
 - **`MoleculeProperties` are now always extended** in *both* "Extend" and "Overwrite" modes: new molecule properties from the later module are added, and a property present in both modules takes the later module's value/formula.
-- For neighborhoods under **"Extend"**, v13 clarifies that **neighbors are replaced** by the later module; v12 only stated that neighborhoods are extended. (Under "Overwrite", v12 already specified that neighbors are overwritten.) Both modes now also carry a warning: if the later module defines a neighborhood with *invalid* neighbors, the earlier module's neighborhood is kept unchanged — neighborhoods cannot be removed from a model. This behavior is tracked in the issue https://github.com/Open-Systems-Pharmacology/MoBi/issues/2367 and will be changed before the official v13 release.
+- For neighborhoods under **"Extend"**, v13 clarifies that **neighbors are replaced** by the later module; v12 only stated that neighborhoods are extended. (Under "Overwrite", v12 already specified that neighbors are overwritten.) Both modes now also carry a warning: if the later module defines a neighborhood with *invalid* neighbors, the earlier module's neighborhood is kept unchanged — neighborhoods cannot be removed from a model. This behavior is tracked in the issue https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2918 and will be changed before the official v13 release.
 
 **Migration impact — low to medium**, depending on whether molecule-property values/formulas were relied upon to be replaced rather than merged.
 

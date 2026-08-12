@@ -30,9 +30,9 @@ In a module, the user can change the parent container property for the top level
 
 Be cautious, as changing the parent path of a container will result in different absolute path to the respective container and might break the formulas that use absolute paths for variables definition. You might have to adjust the absolute paths accordingly, by manually appending the parent path to the aliases.
 
-### MoleculeProperties‌
+### MoleculeProperties
 
-Containers and neighborhoods of a spatial structure can have a child container named `MoleculeProperties`. In this container *molecule-dependent* parameters can be defined. Each parameter will be created **for each floating molecule** when a simulation is created.
+A spatial structure can contain child containers named `MoleculeProperties` in which *molecule-dependent* parameters are defined. When a simulation is created, each parameter is created for every applicable molecule — which molecules are applicable depends on the location of the `MoleculeProperties` container, the molecule type, and the parameter (see below).
 
 `MoleculeProperties` can appear at three locations, with a slightly different meaning each:
 
@@ -55,11 +55,11 @@ TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2437
 
 When combining modules, `MoleculeProperties` are always **extended**, in both the "Extend" and the "Overwrite" merge behavior (see [Modularization concept](modularization-concept.md#spatial-structure)).
 
-### Neighborhoods‌
+### Neighborhoods
 
 New neighborhoods can be created by dragging a line from one physical container to another in the **Diagram** view, or by right-clicking on the **Neighborhoods** node in the tree view and selecting **Create Neighborhood** from the context menu. The user must specify the neighbor containers and a name for the neighborhood.
 
-If a neighborhood is defined with a neighbor that is not present in the final model structure, the neighborhood is ignored.
+If a neighborhood is defined with a neighbor that is not present in the final model structure, the neighborhood is not created, and a warning is shown during simulation creation. Note that this cannot be used to *remove* a neighborhood: if a valid neighborhood with the same name is defined in another module, the valid definition is used (see [Modularization concept](modularization-concept.md#spatial-structure)).
 
  When renaming a container, the software suggests changing the neighbor of all neighborhoods associated with the container to the new name.
 
