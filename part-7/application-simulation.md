@@ -5,10 +5,10 @@
     - Application Case Examples
         - Case-scenario of an industry-application PBPK bottom-up modeling approach used to evaluate the DDI potential of acalabrutinib and its active metabolite, with CYP3A inhibitors and inducers [[149](../references.md#149)].
     - Model Template Development
-        - Türk’s paper describes a comprehensive workflow of DDI module in PK-Sim and the Supplementary Materials to this manuscript were compiled as one comprehensive reference manual with transparent documentation of the model performance to support DDI investigations during drug development, labeling, and submission for regulatory approval of new drugs [[145](../references.md#145)].
+        - The paper by Türk et al. describes a comprehensive workflow of DDI module in PK-Sim and the Supplementary Materials to this manuscript were compiled as one comprehensive reference manual with transparent documentation of the model performance to support DDI investigations during drug development, labeling, and submission for regulatory approval of new drugs [[145](../references.md#145)].
 - Special Populations / Organ Impairment
     - Pediatrics
-        - Yun’s paper determined the appropriateness of the virtual individual creating algorithm in PK-Sim® in predicting PK parameters and their variability in children by comparing a model output, clearance, to observed data. Identified the critical system specific input parameters within a pediatric PBPK model structure for estimating exposure in children via a sensitivity analysis [[147](../references.md#147)].
+        - Yun et al. determined the appropriateness of the virtual individual creating algorithm in PK-Sim® in predicting PK parameters and their variability in children by comparing a model output, clearance, to observed data. Identified the critical system specific input parameters within a pediatric PBPK model structure for estimating exposure in children via a sensitivity analysis [[147](../references.md#147)].
         - A brief overview of the development of pediatric physiologically based pharmacokinetic (PPBPK) models, the challenges of uncertain systems information, and finally performance verification considering recent regulatory guidance [[138](../references.md#138)].
     - Pregnancy 
         - These manuscripts provide overview of pregnancy model in PK-Sim and  its major aspect of the model and physiology changes [[132](../references.md#132)]

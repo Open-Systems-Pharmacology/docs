@@ -1,6 +1,6 @@
 # Tools
 
-## Search Function‌
+## Search Function
 
 MoBi® contains a powerful search function to find parameters, molecules, reactions, or other elements in a project or simulation. This function is useful to locate parameters or elements of building blocks or simulations (e.g., molecules, parameters, container) within the current project.
 
@@ -26,11 +26,36 @@ To start the search, click on the magnifier glass icon at the right side of the 
 Double-clicking a listed item will show it in the edit window where you can view it in detail or enter changes.
 {% endhint %}
 
-## Project History‌
+## Find References
+
+When editing a simulation, MoBi® can show where a parameter is used, i.e., list all formulas in the simulation model that reference the selected parameter. To find these references, in the parameters table of the simulation, right-click the row of the parameter in the area beside the leftmost column (highlighted below in green) and select **Find References...** from the context menu.
+
+![Find References... in the context menu of a parameter](../assets/images/part-4/FindReferencesContextMenu.png)
+
+A dialog opens that shows one row for each formula in which the selected parameter is used:
+
+![References to a parameter of a simulation](../assets/images/part-4/FindReferences.png)
+
+* **Used By**: the path of the object whose formula uses the parameter.
+* **Type**: the type of the referencing object (e.g., Parameter, Observer).
+* **Used As**: whether the parameter is used in the formula of the object or in its right-hand-side formula.
+* **Alias**: the alias under which the parameter is referenced in the formula.
+* **Formula Name**: the name of the referencing formula.
+* **Formula**: the definition of the referencing formula.
+
+References can be explored interactively: double-click a result row (or select **Find References...** from its context menu) to repeat the search for the referencing object, e.g., to find out where that object is used in turn. A breadcrumb trail at the top of the dialog shows the path along which you have drilled down, and **Back** returns to the previous target.
+
+Clicking **Go To...** closes the dialog and navigates to the object selected in the results table, so it can be inspected or edited in the simulation.
+
+{% hint style="info" %}
+The results can be copied to the clipboard using **Copy Selected Rows** (Ctrl+C) or **Copy Table** (Ctrl+Shift+C), available in the context menu of the results table.
+{% endhint %}
+
+## Project History
 
 The history manager allows you to document all steps that lead to a specific project status and particular results in MoBi®. With this manager you will be able to easily step back to previous states of your project work in the current session (i.e. a session endures from start of MoBi® to closing the program). The different lines in the manager represent different steps in modeling in the current project.
 
-Here we only give a brief description; for more details see [History Manager and History Reporting‌](../part-5/history-manager-history-reporting‌.md).
+Here we only give a brief description; for more details see [History Manager and History Reporting](../part-5/history-manager-history-reporting.md).
 
 {% hint style="info" %}
 If you want to test different possible directions in modeling of a specific problem, you can use this functionality to step back to the "decision point" (within the current session).

@@ -4,7 +4,7 @@ The first three chapters provide a basic understanding of the Parameter Identifi
 
 In the following chapters you find more detailed descriptions of the features and configuration of the tool and a more complex second example of a parameter identification.
 
-## Background‌
+## Background
 
 The models built by PK-Sim® or MoBi® depend on a lot of input parameters which are based on literature values, measurements, databases, assumptions. For a given set of input parameters a number of output curves is computed in a **simulation**.
 
@@ -12,7 +12,7 @@ Often, experimental data for the outputs are given and the reverse question is a
 
 This reverse problem is called **Parameter Identification**: which values of certain input parameters yield simulation outputs that fit the observed data?
 
-A **Parameter Identification** problem is a kind of optimization problem: Minimize the residuals between observed data and corresponding simulation output by varying selected input parameters in a given range. (For a definition of residuals see the table “Scaling”)
+A **Parameter Identification** problem is a kind of optimization problem: Minimize the residuals between observed data and corresponding simulation output by varying selected input parameters in a given range. (For the definition of the residuals and of the resulting **Total Error** see [Objective function and Total Error](#objective-function-and-total-error))
 
 A variety of algorithms exist to solve optimization problems. The required effort and the quality of the solution depend on several factors, e.g. number and bounds of the input parameters of interest, complexity of the model, quality of start values for the input parameters.
 
@@ -22,11 +22,11 @@ The user should be aware that a **Parameter Identification** as an optimization 
 
 In a lot of situations the available **Parameter Identification** features of the Open Systems Pharmacology Suite allow you to identify unknown parameter values much easier than by manual trial and error.
 
-## Overview of the workflow‌
+## Overview of the workflow
 
 Within a Parameter Identification you have to perform the following steps:
 
-### Prepare simulations‌
+### Prepare simulations
 <!--  -->
 In order to use the Parameter Identification tool, you should add all observed data you want to use to one or more simulations.
 
@@ -38,33 +38,33 @@ In the simulations which will be used for Parameter Identification, select all o
 Selecting the input parameters of interest as **Favorites** makes it much easier to select those parameters later in Parameter Identification.
 {% endhint %}
 
-### Create a Parameter Identification‌
+### Create a Parameter Identification
 
 A Parameter Identification can be based on one simulation or several simulations which correspond to different experiments. To create a Parameter Identification, multiselect those simulations and select <img src="../assets/icons/ParameterIdentification.svg" data-size="line"> **Start Parameter Identification ...** from the context menu.
 
-### Map outputs to observed data‌
+### Map outputs to observed data
 
 A mapping of observed data to corresponding simulation outputs is done automatically according to Organ, Compartment and Molecule meta data. Additionally, you can edit the mapping manually.
 
-### Define Identification Parameters‌
+### Define Identification Parameters
 
 You have to select those input parameters which should be varied and identified. Each of these Identification parameters can be linked to corresponding input parameters in different simulations.
 
-## Configure Optimization‌
+## Configure Optimization
 
 You can select between three optimization algorithms, edit their standard settings or change the usage of **Lower Limit Of Quantification** (LLOQ) values.
 
-### Run Optimization‌
+### Run Optimization
 
 After finishing the previous steps, you can run a Parameter Identification through the Ribbon Bar “Run & Analyze”. Running the Parameter Identification does not block the application, so you can proceed with manual work in your project. However the changes made in referenced simulations are not reflected in the _running_ Parameter Identification. Multiple Parameter Identifications can be run in parallel. The “Run & Analyze” Ribbon Bar reflects the state of the currently selected Parameter Identification.
 
-### View results‌
+### View results
 
 After the Parameter Identification is finished, you will find the parameter values and corresponding output curves. Other views can help to assess the quality of the result, e.g. Predicted vs. Observed values for drug concentration or the correlation between Identification Parameters at the identified parameter values.
 
 During the Parameter Identification Run you can get visual feedback about the current state. If you like, you can stop the Parameter Identification manually.
 
-## Simple Example‌
+## Simple Example
 
 For a hands on exercise, open the example project Theophylline.pksim5. You can download the project from [https://github.com/Open-Systems-Pharmacology/Example_Theophylline](https://github.com/Open-Systems-Pharmacology/Example_Theophylline).
 
@@ -105,7 +105,7 @@ For a hands on exercise, open the example project Theophylline.pksim5. You can d
 
 You can transfer the optimized values for the parameters to the simulations by clicking **Transfer to Simulation**. Or you can select one of the **Analyses** views from the Parameter Identification ribbon. If you are not satisfied, you can change mapping of outputs or definition of Identification Parameters and run the Parameter Identification again.
 
-## Creating a Parameter Identification‌
+## Creating a Parameter Identification
 
 To create a new Parameter Identification, do one of the following
 
@@ -125,7 +125,7 @@ In the Simulation Explorer, the Parameter Identifications are also displayed in 
 * export the Parameter Identification definition to Matlab,
 * delete a Parameter Identification.
 
-## Mapping Simulation Outputs to Observed Data‌
+## Mapping Simulation Outputs to Observed Data
 
 A mapping of observed data to corresponding simulation outputs is done automatically according to **Organ**, **Compartment** and **Molecule** meta data of observed data and path elements of the outputs.
 
@@ -148,11 +148,13 @@ For each mapping, the scaling can be defined as Lin or Log which determines the 
 |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Lin | Residuals are calculated as: Simulation value - Observed value. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values). Linear residuals are always calculated in the internal units.                                                                                                                                                                                                       |
-| Log | Residuals are calculated as: log(Simulation value) - log(Observed value) = log (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because log(10E-N) = -N can becomes large. Then, the weights should be manually adjusted or LLOQ handling should be adjusted in the **Configuration**. (See “Configuration of Optimization”) |
+| Log | Residuals are calculated as: $$\log_{10}$$(Simulation value) - $$\log_{10}$$(Observed value) = $$\log_{10}$$ (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because $$\log_{10}(10^{-N}) = -N$$ can become large. Then, the weights should be manually adjusted or LLOQ handling should be adjusted in the **Configuration**. (See “Configuration of Optimization”) |
 
 To reflect the quality or importance of the Observed Data item or to balance different magnitudes of values in case of Lin scaling, you can edit the weights of each mapping.
 
 If you select a mapping, the corresponding Observed Data is displayed as table and chart in the bottom area. There you can edit pointwise weights, e.g. to reduce or remove influence of outliers.
+
+Both the weight of the mapping and the weight of the individual data point are multiplied with the difference described above; the complete definition of the residuals and of the resulting objective function is given in [Objective function and Total Error](#objective-function-and-total-error).
 
 {% hint style="info" %}
 In MoBi®, you can freely define observers to match any kind of observed data. In order to enable the automatic mapping ensure that the meta data for Organ, Compartment and Molecule is the same for corresponding observed data and observers. Therefore, you can define the observers for specific Containers and Molecules and/or edit the meta data of the observed data.
@@ -162,7 +164,7 @@ In MoBi®, you can freely define observers to match any kind of observed data. I
 
 For every observed data time point, the respective time value is added to the output interval of the simulation. This way, simulated value exists for each observed time point, and no interpolation of simulation results is required for the calculation of the total error.
 
-## Defining Identification Parameters‌
+## Defining Identification Parameters
 
 In the tab **Parameters** you can select the parameters which should be identified. If you have different simulations in one Parameter Identification, you have to decide, if one **Identification Parameter** is linked to _multiple_ **Simulation Parameters** or _one_ **Simulation Parameter** only. (If necessary you can even link different simulation parameters from the _same_ simulation to _one_ Identification Parameter.)
 
@@ -197,7 +199,7 @@ By **Scaling** you define how the Identification Parameter is modified during op
 
 In special cases you may want to couple two simulation parameters but not by the same value, e.g. you know that the specific clearance of metabolite is half of compound's specific clearance. In this case you can add both Simulation Parameters for specific clearance to one Identification Parameter, check **Use as Factor** and use e.g. a Minimum Value of 0.5 and Maximum Value of 2. Then both specific clearances are varied in parallel by multiplication of the respective simulation value with the same factor between 0.5 and 2.
 
-## Configuration of Optimization‌
+## Configuration of Optimization
 
 You can configure the handling of LLOQ values, select among three optimization algorithms and edit the settings of the selected optimization algorithms.
 
@@ -205,7 +207,7 @@ When checking **Calculate Sensitivity** at the end of the optimization, the part
 
 Additionally, you have special options to vary calculation methods (PK-Sim only) or to start multiple optimizations with randomized start values.
 
-### Handling of LLOQ values‌
+### Handling of LLOQ values
 
 You can decide if data values below LLOQ should be used or removed and how they should be handled in the residual calculation.
 
@@ -218,7 +220,7 @@ You can decide if data values below LLOQ should be used or removed and how they 
 | Reduce trailing | <p>Sometimes observed concentrations end with several trailing .L.L.O.Q values.<br>In particular when only the Observed data below LLOQ is transformed, those trailing values should be reduced because the ratio between untransformed simulation values and transformed observed values can become large and cause trouble for Log scale outputs.</p> |
 
 {% hint style="warning" %}
-If in Observed Data LLOQ values are contained as 0 values, for **Remove data below LLOQ** the option Always should be used. Otherwise, those values can distort the optimization results, because log(0) resp. log(eps=10E-20) is evaluated in the residual calculation and these single residuals may dominate the whole optimization.
+If in Observed Data values below LLOQ are contained as 0 values instead of LLOQ/2, for **Remove data below LLOQ** the option "Always" should be used. Note that this removal is based on the LLOQ defined for the observed data, so 0 values in data without LLOQ information are not removed. Otherwise, those values can distort the optimization results, because the difference to a 0 value is not a meaningful residual. For Log scaled outputs, observed values close to 0 lead to very large residuals which may dominate the whole optimization, while values smaller than $$\epsilon = 10^{-20}$$ do not contribute to the residuals at all (see [Objective function and Total Error](#objective-function-and-total-error)).
 {% endhint %}
 
 **Transform data below LLOQ**
@@ -228,7 +230,50 @@ If in Observed Data LLOQ values are contained as 0 values, for **Remove data bel
 | Observed data and simulated data below LLOQ set to LLOQ (default) | <p>Observed data and simulation data are transformed consistently to avoid artificial residuals, especially for log scaled outputs.<br>Values below LLOQ are set to LLOQ to avoid discontinuity for values little above and little below LLOQ.</p> |
 | Observed data below LLOQ set to LLOQ/2                            | This option is left for backward compatibility. Here, simulation data below LLOQ is not transformed in residual calculation in contrast to observed data.                                                                                          |
 
-### Optimization Algorithms‌
+### Objective function and Total Error
+
+All optimization algorithms minimize the same objective function, the **Total Error**. It is the square root of the sum of the squared residuals over all output mappings and it is the value that is reported in the tab **Results** and plotted in the error history of the **Visual Feedback**.
+
+For an output mapping $$k$$ and an observed data point $$i$$ measured at the time $$t_{k,i}$$, the residual is
+
+$$
+r_{k,i} = w_k \times w_{k,i} \times (g(s_{k,i}) - g(o_{k,i}))
+$$
+
+where $$o_{k,i}$$ is the observed value, $$s_{k,i}$$ is the value of the mapped simulation output at $$t_{k,i}$$, $$w_k$$ is the weight of the mapping and $$w_{k,i}$$ is the weight of the individual data point (see [Mapping Simulation Outputs to Observed Data](#mapping-simulation-outputs-to-observed-data)). Observed and simulated values are converted to the internal base units before the residual is calculated.
+
+$$o_{k,i}$$ is always the mean value of the observed data point. If the observed data set also contains a standard deviation or another error column, that column is ignored during the optimization, whether it is defined or not. The error of a measurement therefore never influences the residual, and how strongly a data point contributes is determined by the weights $$w_k$$ and $$w_{k,i}$$ alone.
+
+The transformation $$g$$ is given by the **Scaling** of the mapping: $$g(y) = y$$ for Lin scaling and $$g(y) = \log_{10}(y)$$ for Log scaling, where values smaller than $$\epsilon = 10^{-20}$$ are replaced by $$\epsilon$$ before the logarithm is applied. Since observed values below $$\epsilon$$ are excluded from a log scaled output (see below), this replacement applies to simulated values only.
+
+The exclusion of observed values below $$\epsilon$$ is independent of LLOQ. It applies to every log scaled mapping, also when no LLOQ is defined for the data set, and in practice it removes observed values that are zero or negative, which have no logarithm.
+
+The Total Error is then summed over all $$nM$$ output mappings, each contributing $$n_k$$ data points:
+
+$$
+E_{total} = \sqrt{\sum_{k=1}^{nM} \sum_{i=1}^{n_k} r_{k,i}^2}
+$$
+
+Before $$g$$ is applied, values below LLOQ are treated according to the option selected for **Transform data below LLOQ**:
+
+* With _Observed data and simulated data below LLOQ set to LLOQ_ (default), both $$o_{k,i}$$ and $$s_{k,i}$$ are set to LLOQ if they are smaller than LLOQ.
+* With _Observed data below LLOQ set to LLOQ/2_, neither of the two values is modified during the residual calculation. The LLOQ/2 stems from the import of the observed data, where measurements flagged as below LLOQ are stored as LLOQ/2, while simulated values are always used unchanged.
+
+Not every observed data point contributes to the Total Error. A data point is skipped if
+
+* it is excluded by the setting **Remove data below LLOQ**,
+* the observed value is not a valid number,
+* or the output is scaled logarithmically and the observed value is smaller than $$\epsilon$$, regardless of whether an LLOQ is defined.
+
+For all remaining data points, $$s_{k,i}$$ is a simulated and not an interpolated value: before the optimization starts, the observed time points are added to the output schema of the simulation, which is integrated up to the last of them (see [Handling of missing values for residuals](#handling-of-missing-values-for-residuals)).
+
+The definition of the Total Error does not depend on the selected optimization algorithm. Monte-Carlo and Nelder-Mead evaluate the Total Error directly, while Levenberg-Marquardt works on the vector of the residuals $$r_{k,i}$$ and minimizes the sum of their squares, which is minimal for the same parameter values.
+
+{% hint style="info" %}
+The sum is not normalized to the number of data points, so the Total Error grows with the amount of observed data used. Total Error values should therefore only be compared between optimizations that use the same observed data, weights and scaling, e.g. between the runs of a **Multiple optimization** or a **Calculation Methods Variation**, or between different algorithms applied to the same problem.
+{% endhint %}
+
+### Optimization Algorithms
 
 The three available optimization algorithms have specific advantages and disadvantages. While for simple optimization problems (e.g. 1 - 3 Identification parameters which are well informed by sufficient and not contradicting observed data) each of the algorithms works stably and fast, there can be big differences in applicability, robustness and performance in more complex situations. In such cases, some optimization experience is often required. The descriptions and hints given here can only give some basic support, for more detailed information follow the references.
 
@@ -304,7 +349,7 @@ Nelder, John A.; R. Mead (1965). "A simplex method for function minimization". C
 | Convergence tolerance | Relative convergence tolerance                                                                   |
 | Maximum evaluations   | Termination occurs when the number of calls to objective function is greater or equal this value |
 
-### Variation of calculation methods and multiple optimizations‌
+### Variation of calculation methods and multiple optimizations
 
 #### Multiple optimization
 
@@ -324,9 +369,9 @@ If you have more than one molecule, you can decide whether the calculation metho
 
 Also, here optimization are done in parallel as long as processors are available to the Open Systems Pharmacology Suite.
 
-### Display of intermediate and final results‌
+### Display of intermediate and final results
 
-#### Visual Feedback‌
+#### Visual Feedback
 
 During the optimization run, you can view intermediate results. Click **Show Visual Feedback** in the Ribbon bar **Run & Analyze**. A new window is displayed.
 
@@ -344,11 +389,11 @@ In case of **Multiple optimization** or **Calculation Methods Variation** the Vi
 
 ![Visual Feedback of Calculation methods variation](../assets/images/part-5/Feedback-Calculation-Methods-Variation.png)
 
-### Results of Parameter Identification‌
+### Results of Parameter Identification
 
 After the optimization run is finished, you can view the results in the tab Results.
 
-Status, elapsed time, number of evaluations and the resulting total error are displayed in the upper table.
+Status, elapsed time, number of evaluations and the resulting total error (see [Objective function and Total Error](#objective-function-and-total-error)) are displayed in the upper table.
 
 Below, you find a table with the optimal values, start values and ranges for all Identification Parameters.
 
@@ -360,7 +405,7 @@ In case of **Multiple optimization** or **Calculation Methods Variation** you ca
 
 ![Result of Calculation methods variation](../assets/images/part-5/Results-Calculation-Methods-Variation.png)
 
-### Analyses‌
+### Analyses
 
 From the ribbon Run & Analyze you can select different charts to analyze the optimization result and assess its quality.
 
@@ -398,7 +443,7 @@ In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 
-This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The chart includes scaling, weights and LLOQ usage and the values are dimensionless, so you can assess the actual influence of the observed data.
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The plotted values are the residuals $$r_{k,i}$$ as defined in [Objective function and Total Error](#objective-function-and-total-error); they include scaling, weights and LLOQ usage, so you can assess the actual influence of the observed data. They are plotted without a unit: for Log scaled outputs they are dimensionless logarithmic ratios, for Lin scaled outputs they are weighted differences in the internal base units of the output.
 
 ![Parameter Identification Analysis - Residuals vs. Time](../assets/images/part-5/PI-Analysis-ResidualsVsTime.png)
 
@@ -436,7 +481,7 @@ Keep in mind that all information in this analysis is calculated only at the opt
 
 ![Parameter Identification Analysis - Covariance Matrix for three identification parameters](../assets/images/part-5/PI-Analysis-CovarianceMatrix3.png)
 
-### Confidence Interval‌
+### Confidence Interval
 
 From the ribbon Run & Analyze in the ribbon bar **Confidence Intervals** you can select different confidence interval charts to assess the quality of the Parameter Identification results.
 
@@ -478,9 +523,9 @@ This chart displays the 95% Prediction interval, which corresponds to the combin
 
 ![Parameter Identification - Prediction interval](../assets/images/part-5/PI-PredictionInterval.png)
 
-## More Features‌
+## More Features
 
-### Reuse of a Parameter Identification‌
+### Reuse of a Parameter Identification
 
 Parameter Identifications are saved in the project files and can be attached to the **Working Journal**. So you can rerun Parameter Identifications after modification of the original simulations as long as used outputs and simulation parameters are kept in the simulation.
 
@@ -490,7 +535,7 @@ Sometimes you may have different simulations for the same observed data to compa
 
 The mapping definition with weights, the definition of Identification Parameters and the Configuration remain the same as long as the corresponding parameters are available.
 
-### Export of Parameter Identification to Matlab®‌
+### Export of Parameter Identification to Matlab®
 
 If you want to use the Matlab® optimization capabilities for optimization, you can export the Parameter Identification to Matlab® by selecting the corresponding entry from the context menu of a **Parameter Identification** in the **Simulation Explorer**.
 

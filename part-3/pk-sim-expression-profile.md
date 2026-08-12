@@ -254,11 +254,11 @@ The workflow of integrating protein data with PBPK models comprises the followin
 
 4.  Devise applicable kinetics and adjust kinetic parameters (*modeling, your internal research or literature*)
 
-## Modeling protein/drug interactions in PK-Sim®‌
+## Modeling protein/drug interactions in PK-Sim®
 
 The distribution of a protein (metabolizing enzyme, transporter protein, or a protein binding partner) in the modeled organism is defined by an Expression Profile in the "Expression Profiles" building block. The expression profile is then linked to the individual (see [PK-Sim® Creating Individuals](pk-sim-creating-individuals.md)), and the interaction between the protein (e.g., a metabolization reaction) is defined in the "Compounds" building block, see [PK-Sim® Compounds: Definition and Work Flows](pk-sim-compounds-definition-and-work-flow.md).
 
-## Definition of new Expression Profile in PK-Sim®‌
+## Definition of new Expression Profile in PK-Sim®
 
 To create a new expression profile, do one of the following:
 
@@ -280,17 +280,17 @@ The following dialog will open in which the properties of the expression profile
 The combination {Species, Protein, Phenotype} needs to be unique in the project. It will define the name of the expression profile building block
 {% endhint %}
 
-## Editing an Expression Profile in PK-Sim®‌
+## Editing an Expression Profile in PK-Sim®
 
 There are two ways of editing an expression profile, either via a database query using the PK-Sim® gene expression database, or through direct entering of protein expression to a list of organs and tissues.
 
-### Editing protein expression manually‌
+### Editing protein expression manually
 
 If you know expression of proteins in one or several organs you can define the expression data manually.
 
 We will explain settings in detail in [Settings in the protein expression tab](#settings-in-the-protein-expression-tab).
 
-### Editing protein expression by querying the expression database‌
+### Editing protein expression by querying the expression database
 
 {% hint style="info" %}
 To be able to query expression data from a database you have to select a database for the current species in PK-Sim ®options (see [PK-Sim® Options](pk-sim-options.md)).
@@ -298,7 +298,7 @@ To be able to query expression data from a database you have to select a databas
 
 Click on **Database Query**. A database query wizard will open, using the name of the protein as a default search criteria. This is discussed in more detail in “[Advanced Analysis](#advanced-analysis)”. Here we walk you through the simplest possible process.
 
-### Adding search criteria‌
+### Adding search criteria
 
 The first panel of the database search wizard allows you to enter a search term in the search bar
 
@@ -332,7 +332,7 @@ The (entrez) gene ID is also a hyper link to the NCBI gene page where you can fi
 A hit row is highlighted in gray if the gene is known in the database but there are no expression data available. In this case the other tabs are disabled.
 {% endhint %}
 
-### Reviewing measured gene expression‌
+### Reviewing measured gene expression
 
 In the upper panel you can find a table of gene expression values. The table is organized with tissues in rows, and data sources in columns.
 
@@ -344,7 +344,7 @@ The lower panel gives a graphical representation of the gene expression values. 
 
 ![Expression Data Analysis](../assets/images/part-3/ExpressionDataAnalysis.PNG)
 
-### Reviewing data before transfer‌
+### Reviewing data before transfer
 
 In the data transfer overview tab the data to be transferred are compiled for reviewing. Note, that relative expression values are given. In the upper part of the windows one or more radio buttons are displayed. The radio buttons are used to select the appropriate data source. Currently, Array, EST or RT-PCR can be selected. After selecting one of the data sources the expression levels in different PBPK containers are displayed in the lower panel. Select the most appropriate data source and click **OK** to close the database query wizard. The expression data is transferred to PK-Sim®
 
@@ -368,7 +368,7 @@ The complete data set is stored within the PK-Sim® project. If you re-enter the
 You can rename a defined expression profile within your PK-Sim® project by selecting the **Rename...** menu item from the context menu of a defined expression profile. This name has no impact on the query and is only used to identify the protein within the PK-Sim® project.
 {% endhint %}
 
-## Settings in the protein expression tab‌
+## Settings in the protein expression tab
 
 In the upper section, the following entries can be adjusted:
 
@@ -470,7 +470,7 @@ In the lower section, values of relative expression can be edited for individual
 
 In this section the more advanced features of the expression database integration are explained.
 
-### Pivot Table‌
+### Pivot Table
 
 In the upper section of the “Data Analysis tab page” the expression data is compiled in a pivot table. With the help of a pivot table cross tabulations are easily possible. You can drag fields to use them as additional row or column headers. The table changes dynamically.
 
@@ -488,7 +488,7 @@ You can change the series building field used by the corresponding chart by doub
 You can reset all fields back to their default position by double clicking on a filter field header. The fields used in the chart are also reset by that action.
 {% endhint %}
 
-## Filtering Data‌
+## Filtering Data
 
 Each field can be used for filtering. To open the filter dialog click on the filter symbol ![Image](../assets/images/part-3/ExpressionFieldFilterSymbol.png) which is shown in the field header when hovering over a field.
 
@@ -531,7 +531,7 @@ Now the condition has changed and only data from adults will be used
 For filtering age ranges of populations you might find it more convenient to use the \[Age(Minimum)\] and \[Age(Maximum)\] columns.
 {% endhint %}
 
-### Edit Mapping‌
+### Edit Mapping
 
 A default mapping maps measured expression data of tissues to PK-Sim® containers. This mapping can be changed by users. If you double click on the value of a container or tissue the edit mapping dialog opens.
 

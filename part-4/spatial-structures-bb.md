@@ -1,4 +1,4 @@
-# Spatial Structures‌ Building Block
+# Spatial Structures Building Block
 
 A Spatial Structure is a hierarchical arrangement of containers (compartments) that can represent an organism consisting of organs, cells, and other substructures. Alternatively, it can be a laboratory setup, like a test tube or a flow chamber with interconnected compartments. Typically, each structure is described by physical parameters, in particular by volume.
 
@@ -12,7 +12,7 @@ The following section describes the functionalities of the Spatial Structure bui
 
 The complex structure of a complete organism can be inspected, used, and modified after loading a simulation that was generated in PK-Sim® (see [Load a Simulation](setting-up-simulation.md#load-a-simulation)). Alternatively, a spatial structure can be loaded on its own by using the <img src="../assets/icons/LoadAction.svg" data-size="line"> **Load Spatial Structure** command in the Building Block Explorer and selecting the pkml file generated in PK-Sim® or MoBi®.
 
-## Spatial Structures - Functionality‌ Overview‌
+## Spatial Structures - Functionality Overview
 
 After loading a PBPK model from PK-Sim®, the spatial structure representing the whole organism is located in the imported PK-Sim® module. Double-clicking on the spatial structure (<img src="../assets/icons/SpatialStructure.png" data-size="line">) or using the **Edit** command of the context menu that appears after right-clicking on it opens an edit window.
 
@@ -22,7 +22,7 @@ The right side of the window shows the structure either in a **Tree** or the **D
 
 The tab **Formulas** shows all formulas used in the parameters of the spatial structure.
 
-### Parent Path of Top Level Containers‌
+### Parent Path of Top Level Containers
 
 The spatial structures of the models are organized in a hierarchy of containers, where each container can be a child of a parent container. `Container A` can be a child of maximal one parent container `Container B`, and the parent of multiple containers. Each container has a property `Parent path` which specifies the full path to its parent container.
 
@@ -63,7 +63,7 @@ If a neighborhood is defined with a neighbor that is not present in the final mo
 
  When renaming a container, the software suggests changing the neighbor of all neighborhoods associated with the container to the new name.
 
-### Exporting containers as pkml files‌
+### Exporting containers as pkml files
 
 As described in ["Modularization concept"](modularization-concept.md), individual-specific parameters in PK-Sim modules are not stored directly in the spatial structure but in the Individual BB. When saving a container from a PK-Sim module to pkml, the user must select an Individual and, if applicable, the proteins for which the expression in this container should be allocated. This ensures that the exported container can be used without an individual.
 
@@ -71,7 +71,7 @@ When loading a container from *.pkml, the exported Expression Profiles are added
 
 Exporting a container to PKML also exports all of its sub-containers and all neighborhoods that have this container or its sub-containers as a neighbor.
 
-## Example - Creating a Spatial Structure‌
+## Example - Creating a Spatial Structure
 
 {% hint style="info" %}
 In the process of this and the next sections of this chapter, you will create an example project. An already completed project file named "ManualModel\_Sim.mbp3" is automatically installed together with MoBi® in the default program data directory. The entry "Examples" in the program start menu in the "MoBi" group will lead you to the proper path.
@@ -85,7 +85,7 @@ The screen should now look as shown in the following figure:
 
 In this example, you will construct a simple spatial structure which consists of a top level logical container having two interconnected physical containers. A common tag will be added to both physical containers which will be used later for restricting some computations (e.g., observers) to be only done for the two sub-containers. Tags are also used for restricting events or selecting source and target for transport processes. Check the corresponding sections for their use.
 
-### Creating Containers and Parameters‌
+### Creating Containers and Parameters
 
 1. Create a **top level container** by selecting **New** in the **Add** group of the **Edit Spatial Structure** tab in the ribbon, or by right-clicking on the free area of the tree view and selecting <img src="../assets/icons/ContainerAdd.svg" data-size="line"> **Create Top Container** from the context menu. Enter "BigVial" as the name. Make sure that the type of the container is set to **Logical** and **OK**.
 
@@ -96,7 +96,7 @@ In this example, you will construct a simple spatial structure which consists of
 
 4. Repeat steps 2 and 3 to create a second sub-container named "Vial2" with the same tag "Obs". Make sure to create the second sub-container as a child of "BigVial" by right-clicking on "BigVial" and not on "Vial1"!
 
-Any container or sub-container may have parameters associated with it. They can describe physical or biological properties of the container that are required for processes like transports or reactions. What is needed in our model is the volume parameter which is used to calculate concentrations required for kinetic equations or for plotting concentrations after a simulation has been performed.‌‌
+Any container or sub-container may have parameters associated with it. They can describe physical or biological properties of the container that are required for processes like transports or reactions. What is needed in our model is the volume parameter which is used to calculate concentrations required for kinetic equations or for plotting concentrations after a simulation has been performed.
 
 To create the required parameters:
 
@@ -107,7 +107,7 @@ To create the required parameters:
 5. Finally, click **OK**, and the new parameter "Volume" will appear in the parameter list.
 6. Repeat this procedure for the container `BigVial|Vial2` and set the value of the volume to 0.2 liters.
 
-### Creating Neighborhoods‌‌
+### Creating Neighborhoods
 
 Within a spatial structure, transport processes may occur (see [Active transports](molecules-bb.md#active-transports) or [Passive Transports](passive-transports-bb.md)) only between physical containers that are connected by a neighborhood.
 
