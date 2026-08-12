@@ -5,7 +5,7 @@ Version 13 of the OSP Suite refines the [modularization concept](modularization-
 Because these rules govern how a simulation is assembled from its modules, **a model configuration created in v12 can produce a different simulation in v13 without any edit to the modules themselves.** This page summarizes the critical differences and describes how to migrate a v12 model configuration safely.
 
 {% hint style="info" %}
-The complete v13 merge rules are documented in [Modularization concept](modularization-concept.md#creating-simulations-from-modules-and-combination-rules). This page only describes where v13 *differs* from v12 and what to do about it.
+The complete v13 merge rules are documented in [Modularization concept](modularization-concept.md#creating-simulations-from-modules-and-combination-rules). This page only describes where v13 *differs* from v12 and what to do about it. For the complete list of changes introduced in v13, see [What's New in Version 13](../NEWS.md).
 {% endhint %}
 
 ## The one thing to understand first

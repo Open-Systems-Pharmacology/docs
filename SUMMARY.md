@@ -1,6 +1,7 @@
 # Table of contents
 
 * [README](README.md)
+* [What's New in Version 13](NEWS.md)
 * [Open Systems Pharmacology Suite Manual & Copyright](copyright.md)
 * [How to Cite this Manual](how-to-cite.md)
 * [How to Contribute](how-to-contribute.md)

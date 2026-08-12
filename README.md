@@ -6,7 +6,7 @@ Documentation for the developers of the Open Systems Pharmacology Suite and more
 
 ## Software Version
 
-This edition of the manual describes **Version 13** of the Open Systems Pharmacology Suite. Behavior described here may differ from earlier versions of the software.
+This edition of the manual describes **Version 13** of the Open Systems Pharmacology Suite. Behavior described here may differ from earlier versions of the software. The user-facing changes introduced in this version are listed in [What's New in Version 13](NEWS.md).
 
 The version of the manual and its publication date are also stated on the [Open Systems Pharmacology Suite Manual & Copyright](copyright.md) page. See [How to Cite this Manual](how-to-cite.md) for how to reference this edition in a publication.
 
