@@ -196,6 +196,12 @@ For each event:
 - The list of **Assignments** is extended.
 - New nodes (events, containers, etc.) are added.
 
+For each **transport** in an event (see [Transport](events-bb.md#transport)):
+
+- The formula in the "Kinetic" tab is NOT overwritten. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
+- Source/Target lists are NOT extended or overwritten. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
+- "Create process rate parameter" and "Plot process rate parameter" checkboxes are NOT overwritten. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
+
 #### Merge behavior "Overwrite"
 
 The event definition from the module that is lower in the hierarchy completely replaces the definition from the higher modules.
