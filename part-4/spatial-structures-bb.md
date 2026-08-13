@@ -34,7 +34,7 @@ Be cautious, as changing the parent path of a container will result in different
 
 New neighborhoods can be created by dragging a line from one physical container to another in the **Diagram** view, or by right-clicking on the **Neighborhoods** node in the tree view and selecting **Create Neighborhood** from the context menu. The user must specify the neighbor containers and a name for the neighborhood.
 
-If a neighborhood is defined with a neighbor that is not present in the final model structure, the neighborhood is ignored.
+If a neighborhood is defined with a neighbor that is not present in the final model structure, the simulation cannot be created and an error is shown. A neighborhood can also be defined **without neighbors**: such a neighborhood is not created in the simulation and, when combining modules, removes the same-named neighborhood defined in a previous module (see [Modularization concept](modularization-concept.md#spatial-structure)).
 
  When renaming a container, the software suggests changing the neighbor of all neighborhoods associated with the container to the new name.
 
