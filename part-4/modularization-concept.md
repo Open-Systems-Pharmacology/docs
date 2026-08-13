@@ -78,7 +78,7 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 - **Neighborhoods** are extended (e.g., addition of new parameters, tags). Neighbors are replaced. If module `A` defines a neighborhood `N1` between `Organism|Container 1` and `Organism|Container 2`, and module `B` defines a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`, the final model will contain a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`.
 
 {% hint style="warning" %}
-If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model. (TODO https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/pull/2919)
+If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
 {% endhint %}
 
 #### Merge behavior "Overwrite"
@@ -92,7 +92,7 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 - **Neighborhoods** will be overwritten by their names. Their parameters, tags, and neighbors will be overwritten.
 
 {% hint style="warning" %}
-If module `B` defines the neighborhood `N1` with invalid neighbors (so it cannot be created), the neighborhood from module `A` will be used as is! It is not possible to remove neighborhoods from the model. (TODO https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/pull/2919)
+If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
 {% endhint %}
 
 ### Molecules
