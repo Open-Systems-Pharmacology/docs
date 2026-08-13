@@ -28,9 +28,7 @@ The changes in this section can make a project or model configuration created in
 - **PK-Sim® modules embed their PK-Sim® snapshot.** A module created in v13 carries everything needed to re-create it in a later PK-Sim® version — this is what makes the *next* migration straightforward. v12 modules do not contain a snapshot, which is why re-creating them in v13 is a manual step.
 - **Building-block renames in created simulations:** `Reaction` → `Reactions` and `Observer` → `Observers`.
 - **The new oral absorption model rejects low (strongly negative) Lipophilicity values.** A v12 model using such values may fail to build or simulate; see the [workaround](part-4/converting-v12-projects-to-v13.md#low-lipophilicity-values-rejected-by-the-new-oral-model). ([MoBi #2445](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2445))
-- **Neighborhoods are no longer created between logical containers**, which changes the structure of created models. ([Core #2614](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2614))
 - **Individuals created with v13 cannot be used in v12** (`createIndividual` in the R packages); attempting this now produces a clear error message. ([Core #2794](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2794))
-- **R API rename:** `ParameterValueBuildingBlockByName` is now `ParameterValuesBuildingBlockByName`; scripts using the old name must be updated. ([Core #2818](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2818), [MoBi #2348](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2348))
 - **Platform update:** PK-Sim®, MoBi® and the shared core now run on .NET 10. ([PK-Sim #3535](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3535), [MoBi #2386](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2386), [Core #2859](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2859))
 
 ## PK-Sim®
@@ -69,11 +67,9 @@ Population simulations can now include **aging**, a long-standing feature reques
 ### Other PK-Sim® improvements
 
 - **Subfolders for building blocks** — building blocks of one type, including Expression Profiles, can be organized into subfolders in the project explorer. ([PK-Sim #1435](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1435), [PK-Sim #2242](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/2242))
-- **Load a snapshot into an existing project** — snapshot content (including simulations) can now be loaded into the open project instead of only as a new project, simplifying e.g. the assembly of multi-compound projects from separate snapshots. ([PK-Sim #2023](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/2023), [PK-Sim #3556](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3556))
+- **Load building blocks from a snapshot into an existing project** — Building Blocks can now be loaded into the open project instead of only as a new project, simplifying e.g. the assembly of multi-compound projects from separate snapshots. ([PK-Sim #2023](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/2023). Loading of simulations is not supported, yet. [PK-Sim #3556](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3556))
 - **One administration protocol for several compounds** — the same protocol can be re-used for more than one compound in a simulation. ([PK-Sim #3603](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3603))
 - **Observed data in simulation comparisons** — when comparing simulations, the observed data used in the individual simulations is added to the comparison chart automatically. ([PK-Sim #3096](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3096))
-- **Faster startup** of the application. ([PK-Sim #1472](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1472), [Core #2901](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2901))
-- Clearer naming of applications generated from multiple-dose protocols. ([PK-Sim #3014](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3014))
 - `Oral mass absorbed` is now defined as an explicit sum formula. ([PK-Sim #2842](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/2842))
 
 ### PK-Sim® fixes
@@ -115,7 +111,6 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 - **Snapshot and project loading** — charts/analyses are restored when loading a project from a snapshot, simulations can be loaded from a MoBi® snapshot, and projects can be opened without loading their simulations. ([MoBi #2188](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2188), [MoBi #2402](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2402), [MoBi #1908](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1908))
 - The formula and paths of a transport can be shown inside the simulation. ([MoBi #2391](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2391))
 - The formula string editor shows the unit the formula evaluates to. ([MoBi #2250](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2250))
-- Warnings of the kind "Container … is defined as logical for the neighborhood …" are no longer shown. ([MoBi #2458](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2458))
 
 ### MoBi® fixes
 
@@ -139,7 +134,6 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 
 ### Solver and numerics
 
-- The solver option `AutoReduceTolerances` can be enabled for simulations. ([Core #1717](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/1717))
 - Parameters evaluating to `NaN` or infinity at simulation start are detected and reported. ([Core #2760](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2760))
 - The check for negative molecule amounts can be switched on/off globally and per simulation. ([Core #2693](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2693), [Core #1496](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/1496))
 
@@ -175,7 +169,6 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 - The **PK-Sim® command-line interface** is now fully documented, covering the `run`, `snap`, `export` and `qualification` workflows with all options and exit codes. See [Command-Line Interface](part-3/pk-sim-command-line-interface.md).
 - The new **MoBi® command-line interface** and **MoBi® R interface** are described [above](#mobi).
 - R-relevant changes in the shared core: simulations with mixed individual and population lists can be run in one call ([Core #2897](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2897)), populations can be created from a CSV string ([Core #2779](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2779)), and dimensions can be resolved by path ([Core #2821](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2821)).
-- `createExpressionProfileBB` accepts a phenotype argument. ([PK-Sim #3512](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3512))
 - Fixes for loading simulations from snapshots via R and for gestational-age units in `createIndividual`. ([PK-Sim #3592](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3592), [PK-Sim #3574](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3574), [PK-Sim #3549](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3549))
 
 ## Known issues
@@ -188,7 +181,6 @@ This list reflects the state at publication of this page and may change — chec
 |---|---|
 | [MoBi #2445](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2445) | The new oral absorption model rejects low (strongly negative) Lipophilicity values; see the [workaround](part-4/converting-v12-projects-to-v13.md#low-lipophilicity-values-rejected-by-the-new-oral-model). |
 | [MoBi #2367](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2367), [MoBi #2472](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472) | Neighborhoods cannot be removed from a model, and `MoleculeProperties` are extended even under "Overwrite"; both behaviors are under review. |
-| [Core #2917](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2917) | Under "Extend", the administered molecule of an equally-named application is taken from the *first* module — the opposite precedence to all other properties. |
 | [Core #2128](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2128) | A planned rework of application definitions will change how events are combined in a future release. |
 | [PK-Sim #3606](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3606), [MoBi #2439](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2439) | Errors can occur when loading snapshots across tools. |
 | [MoBi #2442](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2442) | The comparison of Individual building blocks is not informative. |
