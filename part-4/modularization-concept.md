@@ -66,6 +66,22 @@ During simulation creation, the modules are combined to a common model structure
 
 There are two types of combination behavior that can be defined for a module - **overwrite** or **extend**. The following sections describe how different building blocks are merged and what are the differences between the **overwrite** and the  **extend** modes, if any.
 
+### Condition lists
+
+Observers, passive transports, events, and reactions use *condition lists* - the lists titled "In container with" or "Between containers with" - to define where in the model structure they are created (see [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)). Wherever the sections below state that such a list is *extended*, the following rules apply:
+
+- All conditions defined in module `B` are added to the conditions defined in module `A`. Conditions are never removed. A condition defined in both modules is added twice, which does not change the result of the evaluation.
+- A **condition group** is treated as a single condition of the list. It is added as a whole, keeping the conditions and the operator (AND/OR) defined *within* the group. Condition groups of different modules are never combined with each other, and the operator within a group is never changed.
+- The **operator** (AND/OR) of the condition list itself is always taken from module `B`, even if module `B` defines only a single condition.
+
+Under the merge behavior "Overwrite", the complete condition list, including its operator, is taken from module `B`.
+
+{% hint style="warning" %}
+Because the operator of the condition list is always taken from the module lower in the hierarchy, an extension module can change the meaning of the conditions defined in a module higher in the hierarchy. Example: module `A` defines the condition list `(Condition group 1) OR (Condition group 2)`, and module `B` adds a single condition to the same list using the AND operator. The resulting condition list is `(Condition group 1) AND (Condition group 2) AND (condition from module B)`, so an entity that was created in the containers matching *either* group is now only created in the containers matching *both* of them.
+
+Note that AND is the default operator, and that the operator of a list with only one condition is not visible in the user interface. Always verify the resulting model structure in the created simulation.
+{% endhint %}
+
 ### Spatial structure
 
 #### Merge behavior "Extend"
