@@ -44,14 +44,14 @@ The table below summarizes the behavioral changes. Only **Parameter Values** and
 
 - **Merge behavior "Extend"**
   - **Parameters** are overwritten individually: a parameter defined in both modules takes the later module's definition, while parameters present only in the higher module are **retained**.
-  - **Active transports** are **extended** (new ones added; existing ones merged).
+  - **Active transports** are **extended** (new ones added; for an active transport process defined in both modules only its **parameters** are merged — its kinetic equation, source/target criteria and process rate parameter properties are kept from the higher module, see [Molecules](modularization-concept.md#molecules)). (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2493)
   - Molecule **type** (Drug, Enzyme, Transporter, …), **stationary**, **calculation methods** (defaults), and **parameter type** (local/global) are overwritten — the later module wins, as in v12.
 - **Merge behavior "Overwrite"**
   - Only the parameters present in the last module are retained.
   - Active transports are **completely** replaced.
   - The molecule properties listed above are overwritten as well, exactly as under "Extend".
 
-**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained. To reproduce the v12 result, set the module to **"Overwrite"**.
+**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained. A redefinition of the **kinetic equation** of an existing active transport process under "Extend" has **no effect at all** — the equation of the higher module is kept, while parameters changed in the same redefinition *are* applied. To reproduce the v12 result, set the module to **"Overwrite"**.
 
 The molecule *properties* are the exception — type, stationary, calculation methods and parameter type are overwritten by the later module in both modes, so they need no migration attention. What changes between v12 and v13 is the treatment of the molecule's **parameters** and **active transports**.
 
