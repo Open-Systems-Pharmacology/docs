@@ -278,7 +278,7 @@ Containers and neighborhoods within a spatial structure, elements of an applicat
 
 Tags can be entered when creating or editing a tag-carrying entity. The detailed procedures are described within this chapter in the corresponding sections describing spatial structures, observers, events, or parameters. Generally, one or more names are entered in a special input window of the corresponding entity.
 
-Conditions are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". Conditions can be combined using either **AND logic** (`Condition1 AND Condition2 AND ...`), or **OR logic** (`Condition1 OR Condition2 OR ...`).
+Conditions are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". All conditions in such a list are combined using one operator - either **AND logic** (`Condition1 AND Condition2 AND ...`), or **OR logic** (`Condition1 OR Condition2 OR ...`). The operator can be switched via the right-click context menu of the condition list. To mix **AND** and **OR** logic within one criterion, use a **condition group** (described below).
  
 Imagine the following simple model structure:
 
@@ -396,7 +396,40 @@ If we create a sum formula with the following conditions:
         - `Organism|Container A|Container A1|Molecule A`
         - `Organism|Container A|Container A2|Molecule A`
 
-More than one condition can be combined for evaluation; the combinations are connected either with a logical `AND` or a logical `OR`. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](#sum-formulas), [Passive Transports](passive-transports-bb.md), [Observers](building-block-concepts.md#observers), [Events](events-bb.md)).
+7. **Condition group**: a set of conditions that is combined with its own **AND** or **OR** operator and is evaluated as a single condition within the surrounding condition list. Condition groups make it possible to mix **AND** and **OR** logic within one criterion, which cannot be expressed with a flat list of conditions. For example, the criterion
+
+    `(Tagged with "Venous Blood" AND tagged with "Plasma") OR (tagged with "Muscle" AND tagged with "Interstitial")`
+
+    is defined as a condition list with the **OR** operator that contains two condition groups, each combining its two match tag conditions with the **AND** operator.
+
+    To create a condition group, right-click in the condition area and select **New condition group (AND/OR)**. In the **Create condition group** dialog, select the operator (**AND** or **OR**) used to combine the conditions *within* the group, and define one or more conditions. Each condition consists of a condition type (any of the condition types described above) and, where applicable, a tag.
+
+    The created group appears as one entry in the condition list, displayed in parentheses. When the criterion is evaluated, the conditions within the group are first combined using the group's operator; the result is then combined with the other entries of the condition list using the list's operator.
+
+    - For the example model structure above, consider a sum formula with a condition list using the **OR** operator that contains the condition `In container with: Container B` and a condition group `(Tagged with: Param A AND In container with: Container A)`, i.e., the criterion `In container with "Container B" OR (tagged with "Param A" AND in container with "Container A")`. The sum will include everything located in `Container B` (first condition) plus the parameters named "Param A" located in `Container A` (condition group):
+        - `Organism|Container B|Param A`
+        - `Organism|Container B|Container B1|Param A`
+        - `Organism|Container B|Container B1|Volume`
+        - `Organism|Container B|Container B1|Molecule A|Concentration`
+        - `Organism|Container B|Container B1|Molecule A|Param A`
+        - `Organism|Container B|Container B2|Param A`
+        - `Organism|Container B|Container B2|Volume`
+        - `Organism|Container B|Container B2|Molecule A|Concentration`
+        - `Organism|Container B|Container B2|Molecule A|Param A`
+        - `Organism|Container A|Param A`
+        - `Organism|Container A|Container A1|Param A`
+        - `Organism|Container A|Container A1|Molecule A|Param A`
+        - `Organism|Container A|Container A2|Param A`
+        - `Organism|Container A|Container A2|Molecule A|Param A`
+     **AND** molecule amounts
+        - `Organism|Container B|Container B1|Molecule A`
+        - `Organism|Container B|Container B2|Molecule A`
+
+    {% hint style="info" %}
+    A condition group cannot contain another condition group - only one nesting level is supported.
+    {% endhint %}
+
+More than one condition can be combined for evaluation; the combinations are connected with a logical `AND` or a logical `OR`, and both operators can be mixed within one criterion using condition groups. The detailed procedures when and how to enter tag conditions are described in this chapter ([Sum Formulas](#sum-formulas), [Passive Transports](passive-transports-bb.md), [Observers](building-block-concepts.md#observers), [Events](events-bb.md)).
 
 Models generated in **PK-Sim**® make extensive **use of tags**: For example, open a PK-Sim® model and look under [Passive Transports](building-block-concepts.md#passive-transports) for one part of the blood flow through the organs of an organism called "MassTransferBloodPool2OrgPl". This is a passive transport process that occurs from the arterial plasma compartment to the plasma compartments of all organs except for the lung. Consequently, this transport process is occurring under the following conditions:
 
