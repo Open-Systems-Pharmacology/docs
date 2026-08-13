@@ -91,7 +91,7 @@ The same trap applies to **modifiers**: if one definition carries a modifier the
   - Kinetic **equation** is overwritten.
   - **Parameters** list is **extended**.
   - **Source** and **target** lists are **extended**; their operators are overwritten.
-  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** behavior is overwritten (an exclusion in the later module takes precedence).
+  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** state is overwritten. Since the checkbox decides which of the two lists is evaluated, a later module that checks "All" widens the transport to every molecule except the excluded ones — see [Passive transports](modularization-concept.md#passive-transports).
 - **Merge behavior "Overwrite"**
   - The passive transport is **completely overwritten by name**.
 
@@ -126,7 +126,7 @@ In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" 
   - Monitoring **equation** is overwritten.
   - The **operator** of the "In container with" list is overwritten.
   - The **conditions** list of "In container with" is **extended**.
-  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** behavior is overwritten.
+  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** state is overwritten. As for passive transports, a later module that checks "All" widens the observer to every molecule except the excluded ones — see [Observers](modularization-concept.md#observers).
 - **Merge behavior "Overwrite"**
   - The observer is **completely overwritten by name**.
 
