@@ -278,7 +278,7 @@ Containers and neighborhoods within a spatial structure, elements of an applicat
 
 Tags can be entered when creating or editing a tag-carrying entity. The detailed procedures are described within this chapter in the corresponding sections describing spatial structures, observers, events, or parameters. Generally, one or more names are entered in a special input window of the corresponding entity.
 
-Conditions are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". All conditions in such a list are combined using one operator - either **AND logic** (`Condition1 AND Condition2 AND ...`), or **OR logic** (`Condition1 OR Condition2 OR ...`). The operator can be switched via the right-click context menu of the condition list. To mix **AND** and **OR** logic within one criterion, use a **condition group** (described below).
+Conditions are evaluated in fields of observers, transports, or event groups titled "In Container with" or "Between Containers with". All conditions in such a list are combined using one operator - either **AND logic** (`Condition1 AND Condition2 AND ...`), or **OR logic** (`Condition1 OR Condition2 OR ...`). The operator can be switched via the drop-down menu of the condition list. To mix **AND** and **OR** logic within one criterion, use a **condition group** (described below).
  
 Imagine the following simple model structure:
 
@@ -402,11 +402,11 @@ If we create a sum formula with the following conditions:
 
     is defined as a condition list with the **OR** operator that contains two condition groups, each combining its two match tag conditions with the **AND** operator.
 
-    To create a condition group, right-click in the condition area and select **New condition group (AND/OR)**. In the **Create condition group** dialog, select the operator (**AND** or **OR**) used to combine the conditions *within* the group, and define one or more conditions. Each condition consists of a condition type (any of the condition types described above) and, where applicable, a tag.
+    To create a condition group, right-click in the condition area and select **New condition group (AND/OR)**. In the **Create condition group** dialog, select the operator (**AND** or **OR**) used to combine the conditions *within* the group, and define one or more conditions. Each condition consists of a condition type (any of the condition types described above) and, where applicable, the value required by that condition type - a tag or a container name.
 
     The created group appears as one entry in the condition list, displayed in parentheses. When the criterion is evaluated, the conditions within the group are first combined using the group's operator; the result is then combined with the other entries of the condition list using the list's operator.
 
-    - For the example model structure above, consider a sum formula with a condition list using the **OR** operator that contains the condition `In container with: Container B` and a condition group `(Tagged with: Param A AND In container with: Container A)`, i.e., the criterion `In container with "Container B" OR (tagged with "Param A" AND in container with "Container A")`. The sum will include everything located in `Container B` (first condition) plus the parameters named "Param A" located in `Container A` (condition group):
+    - For the example model structure above, consider a sum formula with a condition list using the **OR** operator that contains the condition `In container with: Container B` and a condition group `(Tagged with: Param A AND In container with: Container A)`, i.e., the criterion `In container with "Container B" OR (tagged with "Param A" AND in container with "Container A")`. The sum will include everything located in `Container B` (first condition) plus the entities tagged with "Param A" located in `Container A` (condition group) - here, the parameters named "Param A", since an entity's name also acts as a tag:
         - `Organism|Container B|Param A`
         - `Organism|Container B|Container B1|Param A`
         - `Organism|Container B|Container B1|Volume`
