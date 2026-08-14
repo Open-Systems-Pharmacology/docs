@@ -126,7 +126,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are always overwritten. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
 - **Parameter type** (local/global) is always overwritten.
-- **Active Transports** are extended. New transports are added, existing are extended using the merge behavior (parameters added, properties overwritten, etc).
+- **Active Transports** are extended. Transporter molecules and active transport processes that are not defined in module `A` are added. For an active transport process that is defined in both modules, only the **parameters** are extended - new parameters are added, and a parameter defined in both modules is taken from module `B`. Its other properties are *not* overwritten: the equation in the **Kinetic** tab, the **source** and **target** container criteria, and the "Create process rate parameter" and "Plot process rate parameter" properties of module `A` are kept. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2493)
 
 #### Merge behavior "Overwrite"
 
