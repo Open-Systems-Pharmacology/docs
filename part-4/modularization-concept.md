@@ -171,8 +171,9 @@ Reactions are completely overwritten by name.
 
 - **Source** and **Target** lists are extended.
 
-- **Include/Exclude** molecule lists for molecules are always extended. However, the behavior of the **All checkbox** is overwritten.
-  - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
+- **Include/Exclude** molecule lists are extended: the molecules listed in module `B` are added to the respective list and removed from the other one. The state of the **All checkbox** is overwritten by module `B`.
+  - Only one of the two lists is evaluated when the simulation is created (see [Passive Transports](passive-transports-bb.md)): if the **All** checkbox is checked, the transport is created for all molecules *except* those in the Exclude List, and the Include List is ignored; if it is not checked, the transport is created only for the molecules in the Include List, and the Exclude List is ignored.
+  - Example: `Module A` has the **All** checkbox unchecked and `MolA` and `MolB` in its Include List. `Module B` has **All** checked and `MolB` in its Exclude List. In the final model, the checkbox is checked and the Exclude List contains `MolB`, so the transport is created for **all molecules except `MolB`** - not only for `MolA`, and also for molecules that neither of the two modules mentions.
 
 #### Merge behavior "Overwrite"
 
@@ -188,8 +189,9 @@ Passive transports are completely overwritten by name.
 
 - The **Conditions** list of the "In container with" list is extended.
 
-- **Include/Exclude** molecule lists for molecules are always extended. However, the behavior of the **All checkbox** is overwritten.
-  - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
+- **Include/Exclude** molecule lists are extended: the molecules listed in module `B` are added to the respective list and removed from the other one. The state of the **All checkbox** is overwritten by module `B`.
+  - Only one of the two lists is evaluated when the simulation is created (see [Observers](observers-bb.md)): if the **All** checkbox is checked, the observer is created for all molecules *except* those in the Exclude List, and the Include List is ignored; if it is not checked, the observer is created only for the molecules in the Include List, and the Exclude List is ignored.
+  - Example: `Module A` has the **All** checkbox unchecked and `MolA` and `MolB` in its Include List. `Module B` has **All** checked and `MolB` in its Exclude List. In the final model, the checkbox is checked and the Exclude List contains `MolB`, so the observer is created for **all molecules except `MolB`** - not only for `MolA`, and also for molecules that neither of the two modules mentions.
 
 #### Merge behavior "Overwrite"
 
