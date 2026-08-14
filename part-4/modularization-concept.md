@@ -256,15 +256,17 @@ For each event:
 
 ### Parameter values
 
-The final values or formulas of the parameters in a simulation are determined in the following order:
+The final values or formulas of the parameters in a simulation are determined in the following order. The values are applied in this sequence, so a value applied later overwrites a value applied before it:
 
 1. **Values defined in the building block:** first, the value defined in the BB where the parameter is defined. For example, the value of `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB. If a simulation is created using only this Molecules BB and no Expression Profile or PV BB is selected, the value will be 1 µmol/l.
 
-2. **Values defined in the individual.** If an individual is selected, the values from the individual are applied. When applying an individual to a PK-Sim module only, the parameters defined in the individual are not present in the spatial structure of the PK-Sim module. **These parameters are added to the model when the simulation is created.**
+2. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. For example, `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
+
+3. **Values defined in the individual.** If an individual is selected, the values from the individual are applied. When applying an individual to a PK-Sim module only, the parameters defined in the individual are not present in the spatial structure of the PK-Sim module. **These parameters are added to the model when the simulation is created.**
+
+    The individual is applied *after* the expression profiles. If a parameter is defined in both, the value from the individual is used. This is required for aging simulations, where the individual defines a parameter such as the ontogeny factor of a protein as a time-dependent table formula, while the expression profile defines it as a constant value.
 
     One special case occurs when an extension module explicitly defines a parameter in the spatial structure that is also present in the individual. In this case, the value from the individual will overwrite the value (or formula) defined in the extension module. To overwrite parameters defined in an individual (e.g. defining the volume of an organ as an age-dependent table rather than a constant value), define this parameter in the 'Parameter Values' section of an extension module.
-
-3. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. For example, `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
 
 4. **Values defined in PV BBs.** If a module containing a PV BB is selected, the values from the PV BB are applied. If multiple modules contain PV BBs with entries for the same parameters, the value from the latest module is selected. For example, if the Extension module contains an entry for `CYP3A4 Reference concentration`with a value of 2 µmol/l and a simulation is created using the Molecules BB module with a value of 1 µmol/l, the Expression Profile module with a value of 4.32 µmol/l and the PV BB module with a value of 2 µmol/l, the value in the simulation will be 2 µmol/l.
 

@@ -164,7 +164,7 @@ This first-module precedence is considered a bug — the administered molecule s
 
 ### Unchanged
 
-- **Parameter Values** — resolution order (Building Block → Individual → Expression Profile → PV BB, latest module wins) is unchanged.
+- **Parameter Values** — resolution order (Building Block → Expression Profile → Individual → PV BB, latest module wins) is unchanged.
 - **Initial Conditions** — resolution order (Molecules BB → Expression Profiles → IC BBs, latest module wins) is unchanged.
 
 ## Migration steps
