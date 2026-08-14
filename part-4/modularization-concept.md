@@ -66,6 +66,22 @@ During simulation creation, the modules are combined to a common model structure
 
 There are two types of combination behavior that can be defined for a module - **overwrite** or **extend**. The following sections describe how different building blocks are merged and what are the differences between the **overwrite** and the  **extend** modes, if any.
 
+### Condition lists
+
+Observers, passive transports, events, and reactions use *condition lists* - the lists titled "In container with" or "Between containers with" - to define where in the model structure they are created (see [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)). Wherever the sections below state that such a list is *extended*, the following rules apply:
+
+- All conditions defined in module `B` are added to the conditions defined in module `A`. Conditions are never removed. A condition defined in both modules is added twice, which does not change the result of the evaluation.
+- A **condition group** is treated as a single condition of the list. It is added as a whole, keeping the conditions and the operator (AND/OR) defined *within* the group. Condition groups of different modules are never combined with each other, and the operator within a group is never changed.
+- The **operator** (AND/OR) of the condition list itself is always taken from module `B`, even if module `B` defines only a single condition.
+
+Under the merge behavior "Overwrite", the complete condition list, including its operator, is taken from module `B`.
+
+{% hint style="warning" %}
+Because the operator of the condition list is always taken from the module lower in the hierarchy, an extension module can change the meaning of the conditions defined in a module higher in the hierarchy. Example: module `A` defines the condition list `(Condition group 1) OR (Condition group 2)`, and module `B` adds a single condition to the same list using the AND operator. The resulting condition list is `(Condition group 1) AND (Condition group 2) AND (condition from module B)`, so an entity that was created in the containers matching *either* group is now only created in the containers matching *both* of them.
+
+Note that AND is the default operator, and that the operator of a list with only one condition is not visible in the user interface. Always verify the resulting model structure in the created simulation.
+{% endhint %}
+
 ### Spatial structure
 
 #### Merge behavior "Extend"
@@ -74,11 +90,15 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 - **MoleculeProperties** are always extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472)
 - **Parameters** are always overwritten. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
 - **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
-- **Tags** will be extended. If "Organism|Container 1" has a tag "Tag A" in module "A" and a tag "Tag B" in module "B", in the final model, "Organism|Container 1" will have tags "Tag A" and "Tag B".
+- **Tags** of containers and neighborhoods will be extended. If "Organism|Container 1" has a tag "Tag A" in module "A" and a tag "Tag B" in module "B", in the final model, "Organism|Container 1" will have tags "Tag A" and "Tag B". A tag defined in module `A` can never be removed by module `B`. The tags of a **parameter** are *not* extended: as stated above, a parameter is replaced as a whole, so it only has the tags defined in module `B`.
 - **Neighborhoods** are extended (e.g., addition of new parameters, tags). Neighbors are replaced. If module `A` defines a neighborhood `N1` between `Organism|Container 1` and `Organism|Container 2`, and module `B` defines a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`, the final model will contain a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`.
 
 {% hint style="warning" %}
 If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
+{% endhint %}
+
+{% hint style="warning" %}
+Redefining a parameter in module `B` removes the tags that this parameter has in module `A`, even if the only intention was to change its value. Parameter tags are used to select parameters in [sum formulas](parameters-formulas-tags.md#sum-formulas), so a sum formula defined in module `A` will silently stop taking such a parameter into account. To avoid this, repeat all tags of the parameter in module `B`. Conditions that use the name of the parameter or the tags of its container are not affected, as the name of an entity also acts as a tag.
 {% endhint %}
 
 #### Merge behavior "Overwrite"
@@ -106,7 +126,7 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are extended. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc). New parameters can be added.
 - **Parameter type** (local/global) is always overwritten.
-- **Active Transports** are extended. New transports are added, existing are extended using the merge behavior (parameters added, properties overwritten, etc).
+- **Active Transports** are extended. Transporter molecules and active transport processes that are not defined in module `A` are added. For an active transport process that is defined in both modules, only the **parameters** are extended - new parameters are added, and a parameter defined in both modules is taken from module `B`. Its other properties are *not* overwritten: the equation in the **Kinetic** tab, the **source** and **target** container criteria, and the "Create process rate parameter" and "Plot process rate parameter" properties of module `A` are kept. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2493)
 
 #### Merge behavior "Overwrite"
 
@@ -151,8 +171,9 @@ Reactions are completely overwritten by name.
 
 - **Source** and **Target** lists are extended.
 
-- **Include/Exclude** molecule lists for molecules are extended. However, the behavior of the **All checkbox** is overwritten.
-  - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
+- **Include/Exclude** molecule lists are extended: the molecules listed in module `B` are added to the respective list and removed from the other one. The state of the **All checkbox** is overwritten by module `B`.
+  - Only one of the two lists is evaluated when the simulation is created (see [Passive Transports](passive-transports-bb.md)): if the **All** checkbox is checked, the transport is created for all molecules *except* those in the Exclude List, and the Include List is ignored; if it is not checked, the transport is created only for the molecules in the Include List, and the Exclude List is ignored.
+  - Example: `Module A` has the **All** checkbox unchecked and `MolA` and `MolB` in its Include List. `Module B` has **All** checked and `MolB` in its Exclude List. In the final model, the checkbox is checked and the Exclude List contains `MolB`, so the transport is created for **all molecules except `MolB`** - not only for `MolA`, and also for molecules that neither of the two modules mentions.
 
 #### Merge behavior "Overwrite"
 
@@ -168,8 +189,9 @@ Passive transports are completely overwritten by name.
 
 - The **Conditions** list of the "In container with" list is extended.
 
-- **Include/Exclude** molecule lists for molecules are extended. However, the behavior of the **All checkbox** is overwritten.
-  - Example: `Module A` includes `MolA` and `MolB`, `Module B` has "Calculate for All" checked and `MolB` excluded. The final model will include only `MolA`, even if `MolB` is specified in the include list of `Module A`. The exclusion list of `Module B` takes precedence.
+- **Include/Exclude** molecule lists are extended: the molecules listed in module `B` are added to the respective list and removed from the other one. The state of the **All checkbox** is overwritten by module `B`.
+  - Only one of the two lists is evaluated when the simulation is created (see [Observers](observers-bb.md)): if the **All** checkbox is checked, the observer is created for all molecules *except* those in the Exclude List, and the Include List is ignored; if it is not checked, the observer is created only for the molecules in the Include List, and the Exclude List is ignored.
+  - Example: `Module A` has the **All** checkbox unchecked and `MolA` and `MolB` in its Include List. `Module B` has **All** checked and `MolB` in its Exclude List. In the final model, the checkbox is checked and the Exclude List contains `MolB`, so the observer is created for **all molecules except `MolB`** - not only for `MolA`, and also for molecules that neither of the two modules mentions.
 
 #### Merge behavior "Overwrite"
 
@@ -222,15 +244,17 @@ For each event:
 
 ### Parameter values
 
-The final values or formulas of the parameters in a simulation are determined in the following order:
+The final values or formulas of the parameters in a simulation are determined in the following order. The values are applied in this sequence, so a value applied later overwrites a value applied before it:
 
 1. **Values defined in the building block:** first, the value defined in the BB where the parameter is defined. For example, the value of `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB. If a simulation is created using only this Molecules BB and no Expression Profile or PV BB is selected, the value will be 1 µmol/l.
 
-2. **Values defined in the individual.** If an individual is selected, the values from the individual are applied. When applying an individual to a PK-Sim module only, the parameters defined in the individual are not present in the spatial structure of the PK-Sim module. **These parameters are added to the model when the simulation is created.**
+2. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. For example, `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
+
+3. **Values defined in the individual.** If an individual is selected, the values from the individual are applied. When applying an individual to a PK-Sim module only, the parameters defined in the individual are not present in the spatial structure of the PK-Sim module. **These parameters are added to the model when the simulation is created.**
+
+    The individual is applied *after* the expression profiles. If a parameter is defined in both, the value from the individual is used. This is required for aging simulations, where the individual defines a parameter such as the ontogeny factor of a protein as a time-dependent table formula, while the expression profile defines it as a constant value.
 
     One special case occurs when an extension module explicitly defines a parameter in the spatial structure that is also present in the individual. In this case, the value from the individual will overwrite the value (or formula) defined in the extension module. To overwrite parameters defined in an individual (e.g. defining the volume of an organ as an age-dependent table rather than a constant value), define this parameter in the 'Parameter Values' section of an extension module.
-
-3. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. For example, `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
 
 4. **Values defined in PV BBs.** If a module containing a PV BB is selected, the values from the PV BB are applied. If multiple modules contain PV BBs with entries for the same parameters, the value from the latest module is selected. For example, if the Extension module contains an entry for `CYP3A4 Reference concentration`with a value of 2 µmol/l and a simulation is created using the Molecules BB module with a value of 1 µmol/l, the Expression Profile module with a value of 4.32 µmol/l and the PV BB module with a value of 2 µmol/l, the value in the simulation will be 2 µmol/l.
 

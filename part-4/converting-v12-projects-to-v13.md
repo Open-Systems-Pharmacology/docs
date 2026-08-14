@@ -44,14 +44,14 @@ The table below summarizes the behavioral changes. Only **Parameter Values** and
 
 - **Merge behavior "Extend"**
   - **Parameters** are overwritten individually: a parameter defined in both modules takes the later module's definition, while parameters present only in the higher module are **retained**.
-  - **Active transports** are **extended** (new ones added; existing ones merged).
+  - **Active transports** are **extended** (new ones added; for an active transport process defined in both modules only its **parameters** are merged — its kinetic equation, source/target criteria and process rate parameter properties are kept from the higher module, see [Molecules](modularization-concept.md#molecules)). (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2493)
   - Molecule **type** (Drug, Enzyme, Transporter, …), **stationary**, **calculation methods** (defaults), and **parameter type** (local/global) are overwritten — the later module wins, as in v12.
 - **Merge behavior "Overwrite"**
   - Only the parameters present in the last module are retained.
   - Active transports are **completely** replaced.
   - The molecule properties listed above are overwritten as well, exactly as under "Extend".
 
-**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained. To reproduce the v12 result, set the module to **"Overwrite"**.
+**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained. A redefinition of the **kinetic equation** of an existing active transport process under "Extend" has **no effect at all** — the equation of the higher module is kept, while parameters changed in the same redefinition *are* applied. To reproduce the v12 result, set the module to **"Overwrite"**.
 
 The molecule *properties* are the exception — type, stationary, calculation methods and parameter type are overwritten by the later module in both modes, so they need no migration attention. What changes between v12 and v13 is the treatment of the molecule's **parameters** and **active transports**.
 
@@ -91,7 +91,7 @@ The same trap applies to **modifiers**: if one definition carries a modifier the
   - Kinetic **equation** is overwritten.
   - **Parameters** list is **extended**.
   - **Source** and **target** lists are **extended**; their operators are overwritten.
-  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** behavior is overwritten (an exclusion in the later module takes precedence).
+  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** state is overwritten. Since the checkbox decides which of the two lists is evaluated, a later module that checks "All" widens the transport to every molecule except the excluded ones — see [Passive transports](modularization-concept.md#passive-transports).
 - **Merge behavior "Overwrite"**
   - The passive transport is **completely overwritten by name**.
 
@@ -126,7 +126,7 @@ In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" 
   - Monitoring **equation** is overwritten.
   - The **operator** of the "In container with" list is overwritten.
   - The **conditions** list of "In container with" is **extended**.
-  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** behavior is overwritten.
+  - **Include/Exclude** molecule lists are extended; the **"All" checkbox** state is overwritten. As for passive transports, a later module that checks "All" widens the observer to every molecule except the excluded ones — see [Observers](modularization-concept.md#observers).
 - **Merge behavior "Overwrite"**
   - The observer is **completely overwritten by name**.
 
@@ -171,7 +171,7 @@ Under v13 "Extend" the administered molecule is therefore *not* combined but **o
 
 ### Unchanged
 
-- **Parameter Values** — resolution order (Building Block → Individual → Expression Profile → PV BB, latest module wins) is unchanged.
+- **Parameter Values** — resolution order (Building Block → Expression Profile → Individual → PV BB, latest module wins) is unchanged.
 - **Initial Conditions** — resolution order (Molecules BB → Expression Profiles → IC BBs, latest module wins) is unchanged.
 
 ## Migration steps
