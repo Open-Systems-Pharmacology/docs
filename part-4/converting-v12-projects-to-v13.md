@@ -223,16 +223,3 @@ The goal is to arrive at a v13 model configuration whose every difference from t
 {% hint style="warning" %}
 When combining PBPK models with different structures, small-molecule models must still be selected **before** large-molecule models, or simulation creation fails due to missing parameters. This constraint is unchanged from v12.
 {% endhint %}
-
-## Other v13 migration notes (beyond modularization)
-
-The merge rules above are the main modularization change, but a v12 model can also hit unrelated v13 changes during migration. The most common one seen so far:
-
-### Low Lipophilicity values rejected by the new oral model
-
-v13 introduces a **new oral absorption model that does not accept low (strongly negative) Lipophilicity values** (see MoBi issue [#2445](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2445)). A model migrated from v12 that assigns a low/negative Lipophilicity to a compound may fail to build or simulate in v13.
-
-**Workaround:** raise the Lipophilicity into the accepted range.
-
-- For molecules where Lipophilicity does **not** affect the result — e.g. large molecules (peptides/proteins) that are not distributed into tissue — this is safe and has no impact on model behavior; set it to a value within the accepted range (e.g. `0`) purely to satisfy the restriction, and revert once the issue is fixed.
-- For small molecules where Lipophilicity drives partitioning/permeability, **do not** change it blindly — assess the impact on distribution first, or track the issue for a fix.

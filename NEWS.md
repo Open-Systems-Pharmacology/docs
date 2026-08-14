@@ -3,7 +3,7 @@
 This page lists the user-facing changes introduced in **Version 13** of the Open Systems Pharmacology Suite, relative to Version 12.3. Each entry links to the GitHub issue(s) where the change was tracked and, where available, to the section of this manual describing the feature.
 
 {% hint style="info" %}
-If you are migrating existing projects from v12, start with [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md) — several merge-behavior changes described below can alter how a v12 model configuration builds in v13 **without any edit to the modules themselves**.
+If you are migrating existing MoBi projects from v12, start with [Converting v12 MoBi projects to v13](part-4/converting-v12-projects-to-v13.md) — several merge-behavior changes described below can alter how a v12 model configuration builds in v13 **without any edit to the modules themselves**.
 {% endhint %}
 
 ## Highlights
@@ -17,8 +17,10 @@ If you are migrating existing projects from v12, start with [Converting v12 proj
 ## Breaking changes and migration
 
 {% hint style="warning" %}
-The changes in this section can make a project or model configuration created in v12 behave differently in v13. The full migration procedure is described in [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md).
+The changes in this section can make a project or model configuration created in MoBi v12 behave differently in v13. The full migration procedure is described in [Converting v12 MoBi projects to v13](part-4/converting-v12-projects-to-v13.md).
 {% endhint %}
+
+### MoBi
 
 - **"Extend" and "Overwrite" merge modes now genuinely differ.** In v12, Molecules, Reactions, Passive Transports and Observers were always fully overwritten by name regardless of the module's merge mode. In v13, "Extend" merges the later module's content into the earlier one, while "Overwrite" reproduces the old v12 full-replacement behavior. The complete v13 rules are documented in [Modularization concept](part-4/modularization-concept.md#creating-simulations-from-modules-and-combination-rules); the differences to v12 and their migration impact are summarized in [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md#what-changed-by-building-block). ([Core #2807](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2807), [Core #2640](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2640), [Core #2603](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2603), [Core #2848](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2848), [Core #2811](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2811))
 - **`MoleculeProperties` of the spatial structure are extended in both merge modes.** A molecule property present in two modules takes the later module's value or formula; no merge-mode setting reverses this. Neighborhoods cannot be removed by a later module, and a neighborhood redefinition with invalid neighbors silently keeps the earlier definition. See [Spatial structure](part-4/converting-v12-projects-to-v13.md#spatial-structure).
@@ -26,8 +28,13 @@ The changes in this section can make a project or model configuration created in
 - **Changed event combination under "Extend".** When two modules define an equally-named event or application administering different molecules, v12 "Extend" produced a malformed event administering both; in v13 the administered molecule is taken from the later module, consistent with the precedence of other overwritten properties (early v13 builds took it from the *first* module; fixed in [Core #2917](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2917)). See [Events](part-4/converting-v12-projects-to-v13.md#events).
 - **PK-Sim® modules embed their PK-Sim® snapshot.** A module created in v13 carries everything needed to re-create it in a later PK-Sim® version — this is what makes the *next* migration straightforward. v12 modules do not contain a snapshot, which is why re-creating them in v13 is a manual step.
 - **Building-block renames in created simulations:** `Reaction` → `Reactions` and `Observer` → `Observers`.
-- **The new oral absorption model rejects low (strongly negative) Lipophilicity values.** A v12 model using such values may fail to build or simulate; see the [workaround](part-4/converting-v12-projects-to-v13.md#low-lipophilicity-values-rejected-by-the-new-oral-model). ([MoBi #2445](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2445))
+
+### R
+
 - **Individuals created with v13 cannot be used in v12** (`createIndividual` in the R packages). ([Core #2794](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2794))
+
+### Common
+
 - **Platform update:** PK-Sim®, MoBi® and the shared core now run on .NET 10. ([PK-Sim #3535](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3535), [MoBi #2386](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2386), [Core #2859](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2859))
 
 ## PK-Sim®
@@ -164,20 +171,3 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 - The new **MoBi® command-line interface** and **MoBi® R interface** are described [above](#mobi).
 - R-relevant changes in the shared core: simulations with mixed individual and population lists can be run in one call ([Core #2897](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2897)), and populations can be created from a CSV string ([Core #2779](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2779)).
 - Fixes for loading simulations from snapshots via R and for gestational-age units in `createIndividual`. ([PK-Sim #3592](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3592), [PK-Sim #3574](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3574), [PK-Sim #3549](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3549))
-
-## Known issues
-
-{% hint style="warning" %}
-This list reflects the state at publication of this page and may change — check the linked issues for the current status.
-{% endhint %}
-
-| Issue | Description |
-|---|---|
-| [MoBi #2445](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2445) | The new oral absorption model rejects low (strongly negative) Lipophilicity values; see the [workaround](part-4/converting-v12-projects-to-v13.md#low-lipophilicity-values-rejected-by-the-new-oral-model). |
-| [Core #2918](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2918), [MoBi #2472](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472) | Neighborhoods cannot be removed from a model, and `MoleculeProperties` are extended even under "Overwrite"; both behaviors are under review. |
-| [Core #2128](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2128) | A planned rework of application definitions will change how events are combined in a future release. |
-| [PK-Sim #3606](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3606), [MoBi #2439](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2439) | Errors can occur when loading snapshots across tools. |
-| [MoBi #2442](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2442) | The comparison of Individual building blocks is not informative. |
-| [PK-Sim #3640](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3640) | After project conversion, an old simulation cannot be reconfigured. |
-| [PK-Sim #3641](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3641) | Progress popups show scrollbars at 125% font scaling. |
-| [PK-Sim #3506](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3506) | Molecules can be given names that clash with model elements. |
