@@ -9,6 +9,7 @@ Cite the version of the manual that you actually used. The version number and th
 > Open Systems Pharmacology Community. _Open Systems Pharmacology Suite Manual_. Version 13. 2026. [https://docs.open-systems-pharmacology.org/v13](https://docs.open-systems-pharmacology.org/v13)
 
 ## BibTeX
+
 <!-- markdown-link-check-disable -->
 ```bibtex
 @Manual{OSPS-Manual-V13,
@@ -21,6 +22,7 @@ Cite the version of the manual that you actually used. The version number and th
 }
 ```
 <!-- markdown-link-check-enable -->
+
 The braces around the author name are required. Without them, BibTeX reads "Open Systems Pharmacology" as given names and "Community" as a surname, and renders the author as "O. S. P. Community".
 
 {% hint style="info" %}
