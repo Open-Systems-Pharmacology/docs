@@ -40,7 +40,7 @@ The changes in this section can make a project or model configuration created in
 
 ## New features
 
-### PK-Sim®:  Mechanistic Oral Absorption & PBBM Framework 
+### PK-Sim®: Mechanistic Oral Absorption & PBBM Framework 
 
 **Scientific basis:** Vrenken et al., *Eur. J. Pharm. Sci.* 2025 - [Part 1: in vitro](https://doi.org/10.1016/j.ejps.2025.107164) & [Part 2: in vivo](https://doi.org/10.1016/j.ejps.2025.107189)
 
