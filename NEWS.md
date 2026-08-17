@@ -3,16 +3,16 @@
 This page lists the user-facing changes introduced in **Version 13** of the Open Systems Pharmacology Suite, relative to Version 12.3. Each entry links to the GitHub issue(s) where the change was tracked and, where available, to the section of this manual describing the feature.
 
 {% hint style="info" %}
-If you are migrating existing MoBi projects from v12, start with [Converting v12 MoBi projects to v13](part-4/converting-v12-projects-to-v13.md) — several merge-behavior changes described below can alter how a v12 model configuration builds in v13 **without any edit to the modules themselves**.
+If you are migrating existing MoBi projects from v12, start with [Converting v12 MoBi projects to v13](part-4/converting-v12-projects-to-v13.md) - several merge-behavior changes described below can alter how a v12 model configuration builds in v13 **without any edit to the modules themselves**.
 {% endhint %}
 
 ## Highlights
 
-- **New oral absorption model** — the physiologically based biopharmaceutics modeling (PBBM) workflow is integrated into PK-Sim®, with new bile-salt-micelle and lumen parameters and rewritten intestinal solubility formulas.
-- **Overwrite Parameter Sets** — named collections of compound-dependent parameter overrides that can be committed from a simulation back to the Compound and re-applied in other simulations.
-- **Events in administration protocols** — events can now be defined directly within PK-Sim® protocol schemas, including repetition, and visualized on the protocol timeline.
-- **MoBi® command-line interface and MoBi® R interface** — batch snapshot conversion and qualification runs without the GUI, and a new R package for scripting MoBi® workflows.
-- **Refined module merge behavior** — "Extend" and "Overwrite" now genuinely differ for Molecules, Reactions, Passive Transports, Observers and Events. This is the main **breaking change** of v13.
+- **Refined oral absorption model** - the physiologically based biopharmaceutics modeling (PBBM) workflow is integrated into PK-Sim®, with new bile-salt-micelle and lumen parameters and rewritten intestinal solubility formulas.
+- **Compound Overwrite Parameter Sets** - named collections of compound-dependent parameter overrides that can be committed from a simulation back to the Compound and re-applied in other simulations.
+- **Events in administration protocols** - events can now be defined directly within PK-Sim® protocol schemas, including repetition, and visualized on the protocol timeline.
+- **MoBi® command-line interface and MoBi® R interface** - batch snapshot conversion and qualification runs without the GUI, and a new R package for scripting MoBi® workflows.
+- **Refined module merge behavior** - "Extend" and "Overwrite" now genuinely differ for Molecules, Reactions, Passive Transports, Observers and Events. This is the main **breaking change** of v13.
 
 ## Breaking changes and migration
 
@@ -26,7 +26,7 @@ The changes in this section can make a project or model configuration created in
 - **`MoleculeProperties` of the spatial structure are extended in both merge modes.** A molecule property present in two modules takes the later module's value or formula; no merge-mode setting reverses this. Neighborhoods cannot be removed by a later module, and a neighborhood redefinition with invalid neighbors silently keeps the earlier definition. See [Spatial structure](part-4/converting-v12-projects-to-v13.md#spatial-structure).
 - **PK-Sim® modules are created with merge behavior "Extend" by default.** Because v13 "Overwrite" now also replaces the molecule include/exclude lists of passive transports and observers, combining two large-molecule PK-Sim® modules under the old "Overwrite" default fails simulation creation (`... references an entity with path '<Molecule>-FcRn_Complex|Is small molecule' that cannot be found`). Modules newly created in v13 default to "Extend"; **modules carried over from v12 keep "Overwrite" and must be switched manually**. See the detailed explanation under [Passive transports](part-4/converting-v12-projects-to-v13.md#passive-transports). ([PK-Sim #3635](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3635))
 - **Changed event combination under "Extend".** When two modules define an equally-named event or application administering different molecules, v12 "Extend" produced a malformed event administering both; in v13 the administered molecule is taken from the later module, consistent with the precedence of other overwritten properties (early v13 builds took it from the *first* module; fixed in [Core #2917](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2917)). See [Events](part-4/converting-v12-projects-to-v13.md#events).
-- **PK-Sim® modules embed their PK-Sim® snapshot.** A module created in v13 carries everything needed to re-create it in a later PK-Sim® version — this is what makes the *next* migration straightforward. v12 modules do not contain a snapshot, which is why re-creating them in v13 is a manual step.
+- **PK-Sim® modules embed their PK-Sim® snapshot.** A module created in v13 carries everything needed to re-create it in a later PK-Sim® version - this is what makes the *next* migration straightforward. v12 modules do not contain a snapshot, which is why re-creating them in v13 is a manual step.
 - **Building-block renames in created simulations:** `Reaction` → `Reactions` and `Observer` → `Observers`.
 
 ### R
@@ -37,62 +37,216 @@ The changes in this section can make a project or model configuration created in
 
 - **Platform update:** PK-Sim®, MoBi® and the shared core now run on .NET 10. ([PK-Sim #3535](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3535), [MoBi #2386](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2386), [Core #2859](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2859))
 
-## PK-Sim®
 
-### New oral absorption model (PBBM)
+## New features
 
-The physiologically based biopharmaceutics modeling workflow, previously available as a beta prototype, is integrated into PK-Sim® ([PK-Sim #3353](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3353)). User-visible consequences:
+### PK-Sim®:  Mechanistic Oral Absorption & PBBM Framework 
 
-- New per-compound **bile-salt-micelle** parameters (critical micellar concentration, partition coefficient bile-salt-micelle/water, …).
-- New parameters in each `Lumen` compartment (aqueous solubility, fluid velocity and viscosity, micellar diffusion, …).
-- **Rewritten intestinal `Solubility` formulas** — these are numerically relevant for any oral administration, not cosmetic.
+**Scientific basis:** Vrenken et al., *Eur. J. Pharm. Sci.* 2025 - [Part 1: in vitro](https://doi.org/10.1016/j.ejps.2025.107164) & [Part 2: in vivo](https://doi.org/10.1016/j.ejps.2025.107189)
 
-### Overwrite Parameter Sets
+#### What's new at a glance
 
-A new concept attached to Compounds ([PK-Sim #3422](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3422)): an Overwrite Parameter Set is a named collection of compound-dependent simulation-parameter values that can be committed from a simulation back to the compound and re-used.
+| Tool | What it does |
+|---|---|
+| **Updated dissolution model** | Noyes–Whitney dissolution with **separate transport of free and micelle-bound drug** plus hydrodynamic diffusion-layer thickness |
+| **Upgraded PBPK framework** | **Dynamic luminal pH and bile salt concentrations** (with population variability) feeding the new dissolution model |
 
-- Compounds get a new **Overwrite Parameter Sets** tab where sets can be viewed, edited and deleted. ([PK-Sim #3429](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3429), [PK-Sim #3435](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3435))
-- Changed compound-dependent simulation parameters are tracked and can be **committed** back to their compounds via a dedicated dialog. An **orange status indicator** marks simulations with uncommitted changes. ([PK-Sim #3430](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3430), [PK-Sim #3432](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3432), [PK-Sim #3505](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3505), [PK-Sim #3431](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3431))
-- When configuring a simulation, one Overwrite Parameter Set per compound can optionally be selected; it is applied automatically during model construction. ([PK-Sim #3433](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3433), [PK-Sim #3434](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3434), [PK-Sim #3458](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3458))
-- When such a simulation is opened in MoBi®, the overridden values appear as regular entries of the Parameter Values building block — no separate handling is needed. ([PK-Sim #3437](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3437))
+Three headline capabilities:
 
-### Events in administration protocols
+- **Bile-salt micellar solubilization** - apparent (biorelevant) solubility is now computed per GI segment from bile salt concentration and compound-specific micelle/water partition coefficients, instead of a single FaSSIF/FeSSIF reference value.
+- **Hydrodynamic dissolution** - the diffusion layer thickness can now vary dynamically with luminal fluid velocity and viscosity via a Reynolds/Schmidt/Sherwood (Ranz–Marshall) formulation, in addition to the classic constant-thickness and Hintz–Johnson options.
+- **Dynamic, meal- and water-responsive lumen** - gastric and upper-intestinal pH and bile salt concentrations now change over time in response to water and food intake, and carry population variability.
 
-Events are integrated into the protocol system using a placeholder mechanism, analogous to formulation placeholders ([PK-Sim #3424](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3424)). Previously, recurring events (e.g. meals three times a day over a week) had to be entered manually one by one in the simulation.
+---
 
-- **Advanced Protocols** can contain event entries in their schemas, inheriting the schema's repetition behavior. ([PK-Sim #3459](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3459), [PK-Sim #3460](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3460))
-- **Simple Protocols** support a single optional event with a (possibly negative) time offset relative to the administration. ([PK-Sim #3463](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3463), [PK-Sim #3614](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3614))
-- Event placeholders are mapped to actual event building blocks when configuring the simulation, and events can be created directly from the simulation configuration. ([PK-Sim #3461](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3461), [PK-Sim #3484](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3484), [PK-Sim #3493](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3493))
-- The protocol preview chart shows administrations and events on a unified timeline, and infusions are visualized with their duration. ([PK-Sim #3464](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3464), [PK-Sim #3273](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3273))
-- Simulations created with the event mechanism of earlier versions remain supported. ([PK-Sim #3466](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3466))
+#### New physiology: solubility & the luminal environment
+
+##### Bile-salt micellar solubilization
+
+Apparent solubility ($S_{br}$) in each luminal segment ($j$) is now built up from aqueous solubility plus micellar partitioning of both the neutral and ionized species ([Part 2, Eq. 3](https://doi.org/10.1016/j.ejps.2025.107189)):
+
+$S_{br,j}(t) = \left( \frac{C_{BS,j}(t)\,S_0}{C_{H_2O}}\,K_{m:w,\text{neutral}} + S_0 \right) + \left( \frac{C_{BS,j}(t)\,S_{i,j}(t)}{C_{H_2O}}\,K_{m:w,\text{ionized}} + S_{i,j}(t) \right)$
+
+Aqueous solubility follows PK-Sim's built-in Henderson–Hasselbalch relationship, with the **solubility gain per charge (SG)** and **micelle/water partition coefficients (Km:w)** now informed directly from *in vitro* data by the [OSP Solubility Toolbox](https://doi.org/10.1016/j.ejps.2025.107164). Separating pH and bile-salt effects avoids over-predicting solubility in low-bile-salt segments (stomach, large intestine).
+
+> 🖼️ **TODO (screenshot):** Add a screenshot of the Compound building block parameter list in PK-Sim showing the new micelle/water partition coefficient and Critical Micellar Concentration parameters.
+
+##### Dynamic luminal pH and bile salts
+
+The lumen is no longer static. New empirical models capture temporal dynamics ([Part 2](https://doi.org/10.1016/j.ejps.2025.107189)):
+
+- **Gastric pH after water** - a fluid-dilution model; pH rises with the water bolus and returns to baseline as volume normalizes (Eq. 16).
+- **Gastric pH after a meal** - a refitted exponential decay (Eq. 17; α = 1.72×10⁻², initial fed pH ≈ 4.85).
+- **Duodenal / upper-jejunal pH after a meal** - a 2nd-order polynomial dip and recovery (Eq. 18).
+- **Bile salt concentration after a meal** - a linear decline back to the fasted level (Eq. 19; fed CBS ≈ 13.9 mM).
+
+Fasted-state luminal pH values were also refreshed from a comprehensive literature review, and **population variability was added** to both pH and bile salt concentrations for all segments from stomach to rectum ([Part 2, Table 2](https://doi.org/10.1016/j.ejps.2025.107189)).
+
+> 🖼️ **TODO (screenshot):** Add a PK-Sim chart/plot screenshot illustrating simulated dynamic gastric pH and bile salt concentration profiles over time after a meal or water intake event.
+
+---
+
+#### New dissolution model
+
+The extended, film-theory dissolution model tracks **two parallel diffusional transports** - one for unbound API, one for micelle-bound API - from the particle surface to the bulk ([Part 2, Eq. 4](https://doi.org/10.1016/j.ejps.2025.107189)):
+
+$\frac{dm_{solid,i,j}}{dt} = -A_{i,j}(t) \left( \frac{D_u}{h_{u,i,j}(t)}\left(S_{u,surf,j}-C_{u,bulk,j}\right) + \frac{D_b}{h_{b,j}(t)}\left(S_{b,surf,j}-C_{b,bulk,j}\right) \right)\Psi(t)$
+
+Key mechanics:
+- Spherical particles binned into up to 20 size classes; bound-API diffusion coefficient from the **Stokes–Einstein** equation using the FaSSIF micelle radius (rₘ = 2.72×10⁻⁶ cm).
+- **Three diffusion-layer-thickness (h) options**, user-selectable per formulation:
+  1. **Constant** (30 µm, default)
+  2. **Hintz–Johnson** - h = particle radius, capped at an adjustable maximum
+  3. **Hydrodynamic model** - h derived from the **Sherwood number** via the **Ranz–Marshall** correlation using **Reynolds** and **Schmidt** numbers (Eqs. 7–12)
+- An **absolute surface integration factor (Ψ)** damps particle regrowth under supersaturation (Eq. 13).
+- Formulations are described with a **product particle-size distribution (P-PSD)** informed from *in vitro* dissolution, replacing empirical Weibull functions.
+
+> 🖼️ **TODO (screenshot):** Add a screenshot of the Formulation building block dialog in PK-Sim showing the new diffusion-layer-thickness options (Constant / Hintz–Johnson / Hydrodynamic Model) and P-PSD input.
+
+---
+
+##### Notable definition changes
+
+The **luminal pH** parameters were upgraded from static values to dynamic definitions - the clearest sign of the new time-varying lumen:
+
+| Segment | pH parameter | Change |
+|---|---|---|
+| Stomach | pH in fasted state | VALUE → **FORMULA** |
+| Duodenum | pH | VALUE → **FORMULA** |
+| Upper Jejunum | pH | VALUE → **FORMULA** |
+| Lower Jejunum, Upper/Lower Ileum, Caecum, Colon (Asc./Trans./Desc./Sigmoid) | pH | VALUE → **DISTRIBUTION** |
+
+The FORMULA transitions drive meal-responsive pH in the upper GI tract; the DISTRIBUTION transitions introduce **population variability** in the lower GI segments. Additionally, seven legacy `Meal_StopEvent` containers were repurposed into new `Reset Intestinal Transit Rate … Event` containers (35 event containers added in total).
+
+> 🖼️ **TODO (screenshot):** Add a screenshot of the PK-Sim Individual building block parameter tree showing the new/modified bile salt and luminal pH parameters (basal, fasted, post-meal).
+
+---
+
+##### References
+
+- Vrenken P., Vertzoni M., Frechen S., Solodenko J., Meyer M., Muenster U., Dallmann A. *Development of a novel PBBM framework using the Open Systems Pharmacology Suite, Part 1: in vitro modeling of vericiguat.* European Journal of Pharmaceutical Sciences 212 (2025) 107164. [doi:10.1016/j.ejps.2025.107164](https://doi.org/10.1016/j.ejps.2025.107164)
+- Vrenken P., Vertzoni M., Frechen S., Solodenko J., Meyer M., Muenster U., Dallmann A. *Development of a novel PBBM framework using the Open Systems Pharmacology Suite, Part 2: in vivo pharmacokinetic modeling of vericiguat.* European Journal of Pharmaceutical Sciences 212 (2025) 107189. [doi:10.1016/j.ejps.2025.107189](https://doi.org/10.1016/j.ejps.2025.107189)
+- Open Systems Pharmacology - Oral-PBBM-Workflow repository: [github.com/Open-Systems-Pharmacology/Oral-PBBM-Workflow](https://github.com/Open-Systems-Pharmacology/Oral-PBBM-Workflow)
+
+
+### PK-Sim®: Compound Overwrite Parameter Sets
+
+**PK-Sim now allows you to save your fine-tuned, compound-dependent simulation parameters (which are NOT part of a compound building block, e.g. permeabilities or partition coefficients) and reuse them across simulations and projects, so you no longer need to re-enter the same values manually.**
+
+---
+
+#### What's New
+
+##### Save simulation tweaks straight to the compound
+Changed a compound-dependent parameter inside a simulation (like partition coefficients or other formula-based values) because it fit your data better? You can now **commit those changes back to the compound** as a named **Overwrite Parameter Set** - a reusable snapshot of parameter values that lives with the compound itself, not just inside one simulation.
+
+##### Never lose track of unsaved tweaks again
+A new **orange status indicator** appears on your simulation (and on the compound within it) whenever there are uncommitted, compound-related parameter changes. At a glance, you'll know exactly when there's valuable work worth saving.
+
+> 🖼️ **TODO:** Screenshot of the simulation tree/toolbar showing the new orange "uncommitted changes" indicator next to the existing red compound-change indicator.
+
+##### One-click commit, with full control
+A new **"Commit simulation parameters to compounds"** action - available both at the simulation level and per compound - opens a dialog where you can:
+
+- Review every changed parameter, grouped by compound
+- Include or exclude entire compounds via checkboxes
+- Choose to **create a new Overwrite Parameter Set** (with its own name) or **update an existing one**, independently for each compound
+
+> 🖼️ **TODO:** Screenshot of the "Commit simulation parameters to compounds" dialog, showing parameters grouped by compound with checkboxes and name/dropdown options.
+
+##### A dedicated home for your parameter sets
+Compounds now have a new **Overwrite Parameter Sets tab**, positioned right after Advanced Parameters. It gives you a master-detail view of all your sets:
+
+- Browse all Overwrite Parameter Sets for a compound on the left
+- Inspect and edit parameter values, units, and metadata on the right
+- Delete individual parameters or entire sets
+- Mark any set as the **default** for that compound
+
+> 🖼️ **TODO:** Screenshot of the new "Overwrite Parameter Sets" tab in the Compound editor, showing the master-detail layout with a list of sets and parameter grid.
+
+##### Smarter simulation setup
+When adding or configuring a compound in a simulation, you'll now see an **Overwrite Parameter Set dropdown**:
+
+- Pick "None" to use the compound's original formula-based values
+- Pick any available set to apply its saved values automatically
+- If a compound has a default set, it's **auto-selected** for you - sensible defaults, zero extra clicks
+
+> 🖼️ **TODO:** Screenshot of the compound configuration panel in a simulation, showing the Overwrite Parameter Set selection dropdown with "None" and named sets.
+
+##### Document your configurations
+Add optional metadata - such as **species** or **disease state** - to any Overwrite Parameter Set, so your team always knows the intended use case at a glance.
+
+##### Built to fit your existing workflow
+- Parameters applied from an Overwrite Parameter Set behave just like normal compound parameters afterward - edit them the same way you always have.
+- All actions (create, rename, edit, delete, set default) are fully **undo/redo-aware**.
+- Uncommitted changes are **saved with your project**, so the orange indicator is still there when you reopen it later.
+- If a saved parameter path can no longer be resolved when building a simulation, PK-Sim will clearly flag the error before simulation creation proceeds - keeping your models consistent.
+
+---
+
+#### Under the Hood
+
+For MoBi users: Overwrite Parameter Sets are automatically merged into the standard `ParameterValues` building block during simulation creation, so your MoBi workflows continue to work without any changes on that side.
+
+---
+
+#### Why It Matters
+
+| Before | Now |
+|---|---|
+| Tuned parameters lived only inside one simulation | Tuned parameters can be saved to the compound and reused anywhere |
+| Re-entering values for every new simulation | One dropdown selection applies a full validated configuration |
+| No way to tell what had changed but wasn't saved | Clear orange indicator flags uncommitted changes |
+| Sharing configurations meant sending notes or files | Named, documented Overwrite Parameter Sets travel with the compound |
+
+### PK-Sim®: Events in administration protocols
+
+PK-Sim now integrates events more closely with administration protocols, so recurring scenarios such as meals, exercise, or other scheduled events can be defined in a more reusable and less manual way. The redesign was created to remove the need to enter the same event repeatedly in a simulation and to let events benefit from the same repetition logic already available for protocols. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations)
+
+> **TODO – PK-Sim screenshot:** Overview of the simulation setup showing where event handling is connected with administration protocols.
+
+Users can now define event entries inside an advanced protocol schema and map those placeholders to actual PK-Sim event building blocks during simulation setup. This makes it much easier to build schedules such as repeated meals over multiple days, combine administrations and events on one timeline, and reuse the same protocol with different event mappings across simulations. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
+
+#### What is new
+
+- Advanced Protocols now support **Event** entries in the schema, alongside administration entries, so events can follow the same repetition pattern as the protocol itself. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations)
+- Event placeholders can be mapped during the **Protocol** step of simulation configuration, together with other protocol-related mappings. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
+- The protocol preview now shows administrations and events on the same timeline, making timing relationships easier to verify. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
+- Simple Protocols now support one optional event with a configurable offset relative to the administration, covering common cases such as dosing before or after a meal. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
+- The **Events** tab remains available, so standalone events and legacy workflows continue to work alongside the new protocol-based approach. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-events)
+
+> **TODO – PK-Sim screenshot:** Advanced Protocol schema with an **Event** entry highlighted.
+
+> **TODO – PK-Sim screenshot:** Protocol mapping step showing how an event placeholder is mapped to a PK-Sim event building block.
+
+> **TODO – PK-Sim screenshot:** Protocol preview with administrations and events displayed on the same timeline.
+
+> **TODO – PK-Sim screenshot:** Simple Protocol configuration showing the optional event offset relative to administration.
+
+#### Why this matters
+
+This update reduces manual setup for repeated event schedules and makes common clinical or real-world timing patterns easier to model. It is especially useful for scenarios such as repeated meals, exercise schedules, or medication given at a fixed offset relative to an event. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-events)
+
+It also improves reuse: the same protocol can now be applied with different mapped events, helping users compare alternative scenarios without rebuilding the schedule from scratch. For users exporting models downstream, the redesign also aligns event handling more closely with the protocol structure used across the workflow. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations)
+
+#### Compatibility and behavior
+
+Existing simulations that use the previous event workflow remain supported, because the Events tab is still available and old-style events continue to coexist with protocol-based events. Simple Protocols intentionally keep a lightweight scope with support for a single optional event, while more complex recurring event patterns are handled through Advanced Protocols. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-events)
+
+> **TODO – PK-Sim screenshot:** Events tab or legacy workflow view showing continued compatibility with standalone events.
 
 ### Other PK-Sim® improvements
 
-- **Subfolders for building blocks** — building blocks of one type, including Expression Profiles, can be organized into subfolders in the project explorer. ([PK-Sim #1435](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1435))
-- **Load building blocks from a snapshot into an existing project** — Building Blocks can now be loaded into the open project instead of only as a new project, simplifying e.g. the assembly of multi-compound projects from separate snapshots ([PK-Sim #2023](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/2023)). Loading of simulations into an existing project is not supported yet ([PK-Sim #3324](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3324)).
-- **One administration protocol for several compounds** — the same protocol can be re-used for more than one compound in a simulation. ([PK-Sim #3603](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3603))
-- **Observed data in simulation comparisons** — when comparing simulations, the observed data used in the individual simulations is added to the comparison chart automatically. ([PK-Sim #3096](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3096))
+- **Subfolders for building blocks** - building blocks of one type, including Expression Profiles, can be organized into subfolders in the project explorer. ([PK-Sim #1435](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1435))
+- **Load building blocks from a snapshot into an existing project** - Building Blocks can now be loaded into the open project instead of only as a new project, simplifying e.g. the assembly of multi-compound projects from separate snapshots ([PK-Sim #2023](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/2023)). Loading of simulations into an existing project is not supported yet ([PK-Sim #3324](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3324)).
+- **One administration protocol for several compounds** - the same protocol can be re-used for more than one compound in a simulation. ([PK-Sim #3603](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3603))
+- **Observed data in simulation comparisons** - when comparing simulations, the observed data used in the individual simulations is added to the comparison chart automatically. ([PK-Sim #3096](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3096))
 
-### PK-Sim® fixes
+### MoBi®: Command-line interface
 
-- Renaming a molecule in an Expression Profile no longer corrupts the project or orphans population variability. ([PK-Sim #3514](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3514), [PK-Sim #3639](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3639))
-- Renaming a compound parameter alternative no longer breaks simulations using it. ([PK-Sim #3638](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3638))
-- Simulations can be created from individuals with overwritten distributed parameters. ([PK-Sim #3511](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3511))
-- Snapshot export handles table ontogenies. ([PK-Sim #3534](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3534))
-- Exported files and hyperlinks open automatically again after export. ([PK-Sim #3397](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3397))
-- The user-settings dialog respects **Cancel**, and color settings adapt to darker GUI skins. ([PK-Sim #1296](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1296), [PK-Sim #1872](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1872))
+MoBi® now ships a command-line interface for running workflows without the GUI - batch conversion between `*.mbp3` projects and JSON snapshots (`snap`) and validation/execution of qualification workflows (`qualification`). See [Command-Line Interface](part-4/mobi-command-line-interface.md). ([MoBi #2460](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2460), [MoBi #2449](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2449), [MoBi #2447](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2447))
 
-## MoBi®
-
-### Command-line interface
-
-MoBi® now ships a command-line interface for running workflows without the GUI — batch conversion between `*.mbp3` projects and JSON snapshots (`snap`) and validation/execution of qualification workflows (`qualification`). See [Command-Line Interface](part-4/mobi-command-line-interface.md). ([MoBi #2460](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2460), [MoBi #2449](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2449), [MoBi #2447](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2447))
-
-### R interface for MoBi®
-
-A new R package exposes MoBi® functionality for scripting, comparable to the existing `ospsuite` package for PK-Sim®: creating modules, loading and exporting building blocks as PKML, working with Individuals, Expression Profiles, Parameter Values and Initial Conditions, snapshot management, and calculation-method overrides. ([MoBi #2209](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2209))
-
-### Multiple analyses per simulation
+### MoBi®: Multiple analyses per simulation
 
 A MoBi® simulation can now hold multiple charts/analyses, as in PK-Sim®, with a shared context menu (Clone, Remove, Remove All, Rename). Existing projects are converted on load. ([MoBi #1709](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1709), [MoBi #2314](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2314), [MoBi #2315](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2315), [Core #2928](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2928))
 
@@ -107,57 +261,52 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 ### Other MoBi® improvements
 
 - **Excluding molecules from a passive transport** defined in another module is now possible through the [changed merge behavior](part-4/modularization-concept.md#passive-transports) of include/exclude molecule lists; previously, removing an included molecule had no effect and adding it to the exclude list raised an error. ([MoBi #2051](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2051))
-- **Batch update of simulations** — several simulations can be updated from changed building blocks in one action instead of one at a time. ([MoBi #2189](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2189))
-- **Calculation-method selection at simulation creation** — partition-coefficient and cellular-permeability calculation methods can be chosen when creating a simulation and overridden per molecule. ([MoBi #1427](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1427), [Core #2798](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2798))
-- **Snapshot and project loading** — simulations can be loaded from a MoBi® snapshot, and projects can be opened without loading their simulations. ([MoBi #2402](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2402), [MoBi #1908](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1908))
+- **Batch update of simulations** - several simulations can be updated from changed building blocks in one action instead of one at a time. ([MoBi #2189](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2189))
+- **Calculation-method selection at simulation creation** - partition-coefficient and cellular-permeability calculation methods can be chosen when creating a simulation and overridden per molecule. ([MoBi #1427](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1427), [Core #2798](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2798))
+- **Snapshot and project loading** - simulations can be loaded from a MoBi® snapshot, and projects can be opened without loading their simulations. ([MoBi #2402](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2402), [MoBi #1908](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1908))
 - The formula and paths of a transport can be shown inside the simulation. ([MoBi #2391](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2391))
 - The formula string editor shows the unit the formula evaluates to. ([MoBi #2250](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2250))
 
-### MoBi® fixes
+### R interface for MoBi®
 
-- Renaming a molecule also renames tags containing the molecule name in reactions; renaming a cloned expression profile fixes the contained parameter paths. ([MoBi #2389](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2389), [MoBi #2427](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2427))
-- Creating global and local parameters in `MoleculeProperties` works correctly again. ([MoBi #2432](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2432), [MoBi #2428](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2428))
-- "Possible referenced objects" shows all reaction parameters, and the path element `Events` is no longer lost in parameter paths. ([MoBi #2429](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2429), [MoBi #2436](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2436))
-- Committing simulation changes to a building block no longer duplicates charts; chart editor width is preserved. ([MoBi #2325](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2325), [MoBi #2415](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2415))
-- SBML import no longer crashes on certain models. ([MoBi #2258](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2258))
-- Configuring a simulation from two modules sharing a molecule no longer fails. ([MoBi #2298](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2298))
+A new R package exposes MoBi® functionality for scripting, comparable to the existing `ospsuite` package for PK-Sim®: creating modules, loading and exporting building blocks as PKML, working with Individuals, Expression Profiles, Parameter Values and Initial Conditions, snapshot management, and calculation-method overrides. ([MoBi #2209](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2209))
 
-## Shared components (PK-Sim® and MoBi®)
+### Shared components (PK-Sim® and MoBi®) improvements
 
-### Charting
+#### Charting
 
 - Manual control of the axis **major tick interval** and **minor tick count**. ([Core #2888](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2888))
 - **Chart templates** can be applied to curve charts other than time profiles. ([Core #2431](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2431))
 - Additional **legend positions** (e.g. bottom right/left inside the chart). ([Core #2880](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2880))
 - Line thickness can be entered freely, including for multiple curves at once. ([Core #2884](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2884), [Core #2874](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2874))
-- **Link data to simulations** — observed data can take the same color as the simulation results it is linked to. ([Core #2120](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2120), [Core #2720](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2720))
+- **Link data to simulations** - observed data can take the same color as the simulation results it is linked to. ([Core #2120](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2120), [Core #2720](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2720))
 - Fixes: "Color observed data by folder" works for partial selections, curve colors no longer change on close/reopen, clearer representation of 0 on logarithmic axes, and correct dimension handling in Axis Settings for merged dimensions. ([Core #2866](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2866), [Core #2752](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2752), [Core #2903](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2903), [Core #2891](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2891))
 
-### Solver and numerics
+#### Solver and numerics
 
 - Parameters evaluating to `NaN` or infinity at simulation start are detected and reported. ([Core #2760](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2760))
 - The check for negative molecule amounts can be switched on/off globally and per simulation. ([Core #2693](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2693), [Core #1496](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/1496))
 
-### Parameter Identification and Sensitivity Analysis
+#### Parameter Identification and Sensitivity Analysis
 
 - Parameter selection can be filtered to **user-defined parameters** only. ([Core #2740](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2740))
 - Simulation errors occurring during a Sensitivity Analysis are surfaced in the results. ([Core #2868](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2868))
 - Unified plot colors across Parameter Identification views; a cancelled identification reports its number of evaluations; options remain accessible on small screens. ([Core #2399](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2399), [Core #2814](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2814), [Core #2739](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2739))
 - "Transfer results to Simulation" works together with "Use as factor". ([Core #2754](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2754), [Core #2398](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2398))
-- The objective function minimized during Parameter Identification is now formally documented — see [Objective function and Total Error](part-5/parameter-identification.md#objective-function-and-total-error).
+- The objective function minimized during Parameter Identification is now formally documented - see [Objective function and Total Error](part-5/parameter-identification.md#objective-function-and-total-error).
 
-### Observed data
+#### Observed data
 
 - Observed data with non-monotonically increasing or duplicate x-values is accepted. ([Core #796](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/796), [Core #1863](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/1863))
 - The import can record an `OutputPath` as metadata, and import error messages are more specific. ([Core #2787](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2787), [Core #2648](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2648), [Core #2650](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2650))
 
-### Working journal, history and comparisons
+#### Working journal, history and comparisons
 
 - The project **history can be exported to CSV**. ([Core #2714](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2714))
 - The building-block comparison shows the **module name** of each compared building block. ([Core #2745](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2745))
 - The MiKTeX dependency was removed from the installation. ([Core #2800](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2800))
 
-### Miscellaneous
+#### Miscellaneous
 
 - The chart preview option is remembered per project. ([Core #2767](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2767))
 - Initial conditions default to the value `0` instead of "not available". ([Core #2743](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2743))
@@ -165,9 +314,29 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 - Performance improvement for projects containing expression profiles of proteins not used in the model. ([Core #2646](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2646))
 - Security and maintenance: dependency vulnerabilities fixed. ([Core #2894](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2894))
 
-## Command line and R
+### Command line and R
 
 - The **PK-Sim® command-line interface** is now fully documented, covering the `run`, `snap`, `export` and `qualification` workflows with all options and exit codes. See [Command-Line Interface](part-3/pk-sim-command-line-interface.md).
 - The new **MoBi® command-line interface** and **MoBi® R interface** are described [above](#mobi).
 - R-relevant changes in the shared core: simulations with mixed individual and population lists can be run in one call ([Core #2897](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2897)), and populations can be created from a CSV string ([Core #2779](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2779)).
 - Fixes for loading simulations from snapshots via R and for gestational-age units in `createIndividual`. ([PK-Sim #3592](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3592), [PK-Sim #3574](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3574), [PK-Sim #3549](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3549))
+
+## Fixed issues
+
+### PK-Sim®
+
+- Renaming a molecule in an Expression Profile no longer corrupts the project or orphans population variability. ([PK-Sim #3514](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3514), [PK-Sim #3639](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3639))
+- Renaming a compound parameter alternative no longer breaks simulations using it. ([PK-Sim #3638](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3638))
+- Simulations can be created from individuals with overwritten distributed parameters. ([PK-Sim #3511](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3511))
+- Snapshot export handles table ontogenies. ([PK-Sim #3534](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3534))
+- Exported files and hyperlinks open automatically again after export. ([PK-Sim #3397](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3397))
+- The user-settings dialog respects **Cancel**, and color settings adapt to darker GUI skins. ([PK-Sim #1296](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1296), [PK-Sim #1872](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1872))
+
+### MoBi®
+
+- Renaming a molecule also renames tags containing the molecule name in reactions; renaming a cloned expression profile fixes the contained parameter paths. ([MoBi #2389](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2389), [MoBi #2427](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2427))
+- Creating global and local parameters in `MoleculeProperties` works correctly again. ([MoBi #2432](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2432), [MoBi #2428](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2428))
+- "Possible referenced objects" shows all reaction parameters, and the path element `Events` is no longer lost in parameter paths. ([MoBi #2429](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2429), [MoBi #2436](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2436))
+- Committing simulation changes to a building block no longer duplicates charts; chart editor width is preserved. ([MoBi #2325](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2325), [MoBi #2415](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2415))
+- SBML import no longer crashes on certain models. ([MoBi #2258](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2258))
+- Configuring a simulation from two modules sharing a molecule no longer fails. ([MoBi #2298](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2298))
