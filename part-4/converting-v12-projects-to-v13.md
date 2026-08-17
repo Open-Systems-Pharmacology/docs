@@ -5,7 +5,7 @@ Version 13 of the OSP Suite refines the [modularization concept](modularization-
 Because these rules govern how a simulation is assembled from its modules, **a model configuration created in v12 can produce a different simulation in v13 without any edit to the modules themselves.** This page summarizes the critical differences and describes how to migrate a v12 model configuration safely.
 
 {% hint style="info" %}
-The complete v13 merge rules are documented in [Modularization concept](modularization-concept.md#creating-simulations-from-modules-and-combination-rules). This page only describes where v13 *differs* from v12 and what to do about it.
+The complete v13 merge rules are documented in [Modularization concept](modularization-concept.md#creating-simulations-from-modules-and-combination-rules). This page only describes where v13 *differs* from v12 and what to do about it. For the complete list of changes introduced in v13, see [What's New in Version 13](../NEWS.md).
 {% endhint %}
 
 ## The one thing to understand first
@@ -223,16 +223,3 @@ The goal is to arrive at a v13 model configuration whose every difference from t
 {% hint style="warning" %}
 When combining PBPK models with different structures, small-molecule models must still be selected **before** large-molecule models, or simulation creation fails due to missing parameters. This constraint is unchanged from v12.
 {% endhint %}
-
-## Other v13 migration notes (beyond modularization)
-
-The merge rules above are the main modularization change, but a v12 model can also hit unrelated v13 changes during migration. The most common one seen so far:
-
-### Low Lipophilicity values rejected by the new oral model
-
-v13 introduces a **new oral absorption model that does not accept low (strongly negative) Lipophilicity values** (see MoBi issue [#2445](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2445)). A model migrated from v12 that assigns a low/negative Lipophilicity to a compound may fail to build or simulate in v13.
-
-**Workaround:** raise the Lipophilicity into the accepted range.
-
-- For molecules where Lipophilicity does **not** affect the result — e.g. large molecules (peptides/proteins) that are not distributed into tissue — this is safe and has no impact on model behavior; set it to a value within the accepted range (e.g. `0`) purely to satisfy the restriction, and revert once the issue is fixed.
-- For small molecules where Lipophilicity drives partitioning/permeability, **do not** change it blindly — assess the impact on distribution first, or track the issue for a fix.
