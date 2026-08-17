@@ -246,6 +246,10 @@ Existing simulations that use the previous event workflow remain supported, beca
 
 MoBi® now ships a command-line interface for running workflows without the GUI - batch conversion between `*.mbp3` projects and JSON snapshots (`snap`) and validation/execution of qualification workflows (`qualification`). See [Command-Line Interface](part-4/mobi-command-line-interface.md). ([MoBi #2460](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2460), [MoBi #2449](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2449), [MoBi #2447](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2447))
 
+### MoBi®: R interface
+
+A new R package exposes MoBi® functionality for scripting, comparable to the existing `ospsuite` package for PK-Sim®: creating modules, loading and exporting building blocks as PKML, working with Individuals, Expression Profiles, Parameter Values and Initial Conditions, snapshot management, and calculation-method overrides. ([MoBi #2209](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2209))
+
 ### MoBi®: Multiple analyses per simulation
 
 A MoBi® simulation can now hold multiple charts/analyses, as in PK-Sim®, with a shared context menu (Clone, Remove, Remove All, Rename). Existing projects are converted on load. ([MoBi #1709](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1709), [MoBi #2314](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2314), [MoBi #2315](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2315), [Core #2928](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2928))
@@ -266,10 +270,6 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 - **Snapshot and project loading** - simulations can be loaded from a MoBi® snapshot, and projects can be opened without loading their simulations. ([MoBi #2402](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2402), [MoBi #1908](https://github.com/Open-Systems-Pharmacology/MoBi/issues/1908))
 - The formula and paths of a transport can be shown inside the simulation. ([MoBi #2391](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2391))
 - The formula string editor shows the unit the formula evaluates to. ([MoBi #2250](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2250))
-
-### R interface for MoBi®
-
-A new R package exposes MoBi® functionality for scripting, comparable to the existing `ospsuite` package for PK-Sim®: creating modules, loading and exporting building blocks as PKML, working with Individuals, Expression Profiles, Parameter Values and Initial Conditions, snapshot management, and calculation-method overrides. ([MoBi #2209](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2209))
 
 ### Shared components (PK-Sim® and MoBi®) improvements
 
@@ -317,7 +317,7 @@ A new R package exposes MoBi® functionality for scripting, comparable to the ex
 ### Command line and R
 
 - The **PK-Sim® command-line interface** is now fully documented, covering the `run`, `snap`, `export` and `qualification` workflows with all options and exit codes. See [Command-Line Interface](part-3/pk-sim-command-line-interface.md).
-- The new **MoBi® command-line interface** and **MoBi® R interface** are described [above](#mobi).
+- The new **MoBi® command-line interface** and **MoBi® R interface** are described above.
 - R-relevant changes in the shared core: simulations with mixed individual and population lists can be run in one call ([Core #2897](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2897)), and populations can be created from a CSV string ([Core #2779](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2779)).
 - Fixes for loading simulations from snapshots via R and for gestational-age units in `createIndividual`. ([PK-Sim #3592](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3592), [PK-Sim #3574](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3574), [PK-Sim #3549](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3549))
 
