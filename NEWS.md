@@ -140,7 +140,7 @@ Events can now be defined directly within the administration protocol building b
 
 > **TODO – PK-Sim screenshot:** Advanced Protocol schema with an **event** entry highlighted.
 
-- **Event mapping TODO docu link** - event placeholders are mapped to PK-Sim® event building blocks during the _Administration_ step of simulation configuration, together with the other protocol-related mappings. The same administration protocol can be reused with different event mappings across simulations. 
+- **Event mapping TODO documentation link** - event placeholders are mapped to PK-Sim® event building blocks during the _Administration_ step of simulation configuration, together with the other protocol-related mappings. The same administration protocol can be reused with different event mappings across simulations. 
 
 > **TODO – PK-Sim screenshot:** Protocol mapping step showing how an event placeholder is mapped to a PK-Sim event building block.
 
