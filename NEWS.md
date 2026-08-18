@@ -105,7 +105,7 @@ Key mechanics:
 
 ---
 
-##### Notable definition changes
+#### Notable definition changes
 
 The **luminal pH** parameters were upgraded from static values to dynamic definitions - the clearest sign of the new time-varying lumen:
 
@@ -122,7 +122,7 @@ The FORMULA transitions drive meal-responsive pH in the upper GI tract; the DIST
 
 ---
 
-##### References
+#### References
 
 - Vrenken P., Vertzoni M., Frechen S., Solodenko J., Meyer M., Muenster U., Dallmann A. *Development of a novel PBBM framework using the Open Systems Pharmacology Suite, Part 1: in vitro modeling of vericiguat.* European Journal of Pharmaceutical Sciences 212 (2025) 107164. [doi:10.1016/j.ejps.2025.107164](https://doi.org/10.1016/j.ejps.2025.107164)
 - Vrenken P., Vertzoni M., Frechen S., Solodenko J., Meyer M., Muenster U., Dallmann A. *Development of a novel PBBM framework using the Open Systems Pharmacology Suite, Part 2: in vivo pharmacokinetic modeling of vericiguat.* European Journal of Pharmaceutical Sciences 212 (2025) 107189. [doi:10.1016/j.ejps.2025.107189](https://doi.org/10.1016/j.ejps.2025.107189)
