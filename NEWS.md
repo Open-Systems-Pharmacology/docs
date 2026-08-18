@@ -73,7 +73,7 @@ Aqueous solubility follows PK-Sim's built-in Henderson–Hasselbalch relationshi
 
 ##### Dynamic luminal pH and bile salts
 
-The lumen is no longer static. New empirical models capture temporal dynamics ([Part 2](https://doi.org/10.1016/j.ejps.2025.107189)):
+Solubility-relevant parametrization of the lumen is no longer static. New empirical models capture temporal dynamics ([Part 2](https://doi.org/10.1016/j.ejps.2025.107189); all equation numbers below refer to the original publication):
 
 - **Gastric pH after water** - a fluid-dilution model; pH rises with the water bolus and returns to baseline as volume normalizes (Eq. 16).
 - **Gastric pH after a meal** - a refitted exponential decay (Eq. 17; α = 1.72×10⁻², initial fed pH ≈ 4.85).
@@ -107,7 +107,7 @@ Key mechanics:
 
 #### Notable definition changes
 
-The **luminal pH** parameters were upgraded from static values to dynamic definitions - the clearest sign of the new time-varying lumen:
+The **luminal pH** parameters were upgraded from static values to dynamic definitions:
 
 | Segment | pH parameter | Change |
 |---|---|---|
@@ -115,8 +115,6 @@ The **luminal pH** parameters were upgraded from static values to dynamic defini
 | Duodenum | pH | VALUE → **FORMULA** |
 | Upper Jejunum | pH | VALUE → **FORMULA** |
 | Lower Jejunum, Upper/Lower Ileum, Caecum, Colon (Asc./Trans./Desc./Sigmoid) | pH | VALUE → **DISTRIBUTION** |
-
-The FORMULA transitions drive meal-responsive pH in the upper GI tract; the DISTRIBUTION transitions introduce **population variability** in the lower GI segments. Additionally, seven legacy `Meal_StopEvent` containers were repurposed into new `Reset Intestinal Transit Rate … Event` containers (35 event containers added in total).
 
 > 🖼️ **TODO (screenshot):** Add a screenshot of the PK-Sim Individual building block parameter tree showing the new/modified bile salt and luminal pH parameters (basal, fasted, post-meal).
 
@@ -130,7 +128,7 @@ The FORMULA transitions drive meal-responsive pH in the upper GI tract; the DIST
 
 ### PK-Sim®: Events in administration protocols
 
-Events can now be defined directly within the administration protocol building blocks, including repetition. This means that recurring events, such as meals, no longer need to be entered individually in each simulation.  
+Events - e.g., meal intake, gallbladder emptying - can now be defined directly within the administration protocol building blocks, including repetition. This means that recurring events, such as meals, no longer need to be entered individually in each simulation.  
 
 - [**Simple Protocols**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#simple-protocol) - one optional event with a configurable offset relative to administration is supported, covering cases such as dosing before or after a meal. 
 
