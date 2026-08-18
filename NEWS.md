@@ -128,112 +128,53 @@ The FORMULA transitions drive meal-responsive pH in the upper GI tract; the DIST
 - Vrenken P., Vertzoni M., Frechen S., Solodenko J., Meyer M., Muenster U., Dallmann A. *Development of a novel PBBM framework using the Open Systems Pharmacology Suite, Part 2: in vivo pharmacokinetic modeling of vericiguat.* European Journal of Pharmaceutical Sciences 212 (2025) 107189. [doi:10.1016/j.ejps.2025.107189](https://doi.org/10.1016/j.ejps.2025.107189)
 - Open Systems Pharmacology - Oral-PBBM-Workflow repository: [github.com/Open-Systems-Pharmacology/Oral-PBBM-Workflow](https://github.com/Open-Systems-Pharmacology/Oral-PBBM-Workflow)
 
-
-### PK-Sim®: Compound Overwrite Parameter Sets
-
-**PK-Sim now allows you to save your fine-tuned, compound-dependent simulation parameters (which are NOT part of a compound building block, e.g. permeabilities or partition coefficients) and reuse them across simulations and projects, so you no longer need to re-enter the same values manually.**
-
----
-
-#### What's New
-
-##### Save simulation tweaks straight to the compound
-Changed a compound-dependent parameter inside a simulation (like partition coefficients or other formula-based values) because it fit your data better? You can now **commit those changes back to the compound** as a named **Overwrite Parameter Set** - a reusable snapshot of parameter values that lives with the compound itself, not just inside one simulation.
-
-##### Never lose track of unsaved tweaks again
-A new **orange status indicator** appears on your simulation (and on the compound within it) whenever there are uncommitted, compound-related parameter changes. At a glance, you'll know exactly when there's valuable work worth saving.
-
-> 🖼️ **TODO:** Screenshot of the simulation tree/toolbar showing the new orange "uncommitted changes" indicator next to the existing red compound-change indicator.
-
-##### One-click commit, with full control
-A new **"Commit simulation parameters to compounds"** action - available both at the simulation level and per compound - opens a dialog where you can:
-
-- Review every changed parameter, grouped by compound
-- Include or exclude entire compounds via checkboxes
-- Choose to **create a new Overwrite Parameter Set** (with its own name) or **update an existing one**, independently for each compound
-
-> 🖼️ **TODO:** Screenshot of the "Commit simulation parameters to compounds" dialog, showing parameters grouped by compound with checkboxes and name/dropdown options.
-
-##### A dedicated home for your parameter sets
-Compounds now have a new **Overwrite Parameter Sets tab**, positioned right after Advanced Parameters. It gives you a master-detail view of all your sets:
-
-- Browse all Overwrite Parameter Sets for a compound on the left
-- Inspect and edit parameter values, units, and metadata on the right
-- Delete individual parameters or entire sets
-- Mark any set as the **default** for that compound
-
-> 🖼️ **TODO:** Screenshot of the new "Overwrite Parameter Sets" tab in the Compound editor, showing the master-detail layout with a list of sets and parameter grid.
-
-##### Smarter simulation setup
-When adding or configuring a compound in a simulation, you'll now see an **Overwrite Parameter Set dropdown**:
-
-- Pick "None" to use the compound's original formula-based values
-- Pick any available set to apply its saved values automatically
-- If a compound has a default set, it's **auto-selected** for you - sensible defaults, zero extra clicks
-
-> 🖼️ **TODO:** Screenshot of the compound configuration panel in a simulation, showing the Overwrite Parameter Set selection dropdown with "None" and named sets.
-
-##### Document your configurations
-Add optional metadata - such as **species** or **disease state** - to any Overwrite Parameter Set, so your team always knows the intended use case at a glance.
-
-##### Built to fit your existing workflow
-- Parameters applied from an Overwrite Parameter Set behave just like normal compound parameters afterward - edit them the same way you always have.
-- All actions (create, rename, edit, delete, set default) are fully **undo/redo-aware**.
-- Uncommitted changes are **saved with your project**, so the orange indicator is still there when you reopen it later.
-- If a saved parameter path can no longer be resolved when building a simulation, PK-Sim will clearly flag the error before simulation creation proceeds - keeping your models consistent.
-
----
-
-#### Under the Hood
-
-For MoBi users: Overwrite Parameter Sets are automatically merged into the standard `ParameterValues` building block during simulation creation, so your MoBi workflows continue to work without any changes on that side.
-
----
-
-#### Why It Matters
-
-| Before | Now |
-|---|---|
-| Tuned parameters lived only inside one simulation | Tuned parameters can be saved to the compound and reused anywhere |
-| Re-entering values for every new simulation | One dropdown selection applies a full validated configuration |
-| No way to tell what had changed but wasn't saved | Clear orange indicator flags uncommitted changes |
-| Sharing configurations meant sending notes or files | Named, documented Overwrite Parameter Sets travel with the compound |
-
 ### PK-Sim®: Events in administration protocols
 
-PK-Sim now integrates events more closely with administration protocols, so recurring scenarios such as meals, exercise, or other scheduled events can be defined in a more reusable and less manual way. The redesign was created to remove the need to enter the same event repeatedly in a simulation and to let events benefit from the same repetition logic already available for protocols. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations)
+Events can now be defined directly within the administration protocol building blocks, including repetition. This means that recurring events, such as meals, no longer need to be entered individually in each simulation.  
 
-> **TODO – PK-Sim screenshot:** Overview of the simulation setup showing where event handling is connected with administration protocols.
-
-Users can now define event entries inside an advanced protocol schema and map those placeholders to actual PK-Sim event building blocks during simulation setup. This makes it much easier to build schedules such as repeated meals over multiple days, combine administrations and events on one timeline, and reuse the same protocol with different event mappings across simulations. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
-
-#### What is new
-
-- Advanced Protocols now support **Event** entries in the schema, alongside administration entries, so events can follow the same repetition pattern as the protocol itself. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations)
-- Event placeholders can be mapped during the **Protocol** step of simulation configuration, together with other protocol-related mappings. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
-- The protocol preview now shows administrations and events on the same timeline, making timing relationships easier to verify. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
-- Simple Protocols now support one optional event with a configurable offset relative to the administration, covering common cases such as dosing before or after a meal. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols)
-- The **Events** tab remains available, so standalone events and legacy workflows continue to work alongside the new protocol-based approach. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-events)
-
-> **TODO – PK-Sim screenshot:** Advanced Protocol schema with an **Event** entry highlighted.
-
-> **TODO – PK-Sim screenshot:** Protocol mapping step showing how an event placeholder is mapped to a PK-Sim event building block.
-
-> **TODO – PK-Sim screenshot:** Protocol preview with administrations and events displayed on the same timeline.
+- [**Simple Protocols**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#simple-protocol) - one optional event with a configurable offset relative to administration is supported, covering cases such as dosing before or after a meal. 
 
 > **TODO – PK-Sim screenshot:** Simple Protocol configuration showing the optional event offset relative to administration.
 
-#### Why this matters
+- [**Advanced Protocols**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#advanced-protocol) - the protocol schema supports event entries alongside administration entries, allowing events to follow the same repetition pattern as the protocol itself. 
 
-This update reduces manual setup for repeated event schedules and makes common clinical or real-world timing patterns easier to model. It is especially useful for scenarios such as repeated meals, exercise schedules, or medication given at a fixed offset relative to an event. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-events)
+> **TODO – PK-Sim screenshot:** Advanced Protocol schema with an **event** entry highlighted.
 
-It also improves reuse: the same protocol can now be applied with different mapped events, helping users compare alternative scenarios without rebuilding the schedule from scratch. For users exporting models downstream, the redesign also aligns event handling more closely with the protocol structure used across the workflow. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations)
+- **Event mapping TODO docu link** - event placeholders are mapped to PK-Sim® event building blocks during the _Administration_ step of simulation configuration, together with the other protocol-related mappings. The same administration protocol can be reused with different event mappings across simulations. 
 
-#### Compatibility and behavior
+> **TODO – PK-Sim screenshot:** Protocol mapping step showing how an event placeholder is mapped to a PK-Sim event building block.
 
-Existing simulations that use the previous event workflow remain supported, because the Events tab is still available and old-style events continue to coexist with protocol-based events. Simple Protocols intentionally keep a lightweight scope with support for a single optional event, while more complex recurring event patterns are handled through Advanced Protocols. [docs.open-systems-pharmacology](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-events)
+- **Protocol preview** - administrations and events are shown on the same timeline.
+
+> **TODO – PK-Sim screenshot:** Protocol preview with administrations and events displayed on the same timeline.
+
+- **Compatibility** - the _Events_ tab in the simulation configuration dialog is still available. Standalone events and existing simulations that use the previous event workflow continue to work with protocol-based events.
 
 > **TODO – PK-Sim screenshot:** Events tab or legacy workflow view showing continued compatibility with standalone events.
+
+### PK-Sim®: Compound Overwrite Parameter Sets
+
+You can now commit compound-dependent simulation parameters that **are not part of a compound building block** (e.g., permeabilities or partition coefficients) and were modified in a simulation back to the compound as a named **Overwrite Parameter Set**, which can be re-applied in other simulations and projects.
+
+- **Committing simulation parameters to the compound** - a new "Commit Simulation Parameters to Compound" action is available for each compound used in a simulation. This action opens a dialog listing all changed parameters, which can be deselected here. Then, either a new "Overwrite Parameter Set" can be created with its own name, or an existing one can be updated.
+
+> 🖼️ **TODO:** Screenshot of the "Commit simulation parameters to compounds" dialog, showing parameters grouped by compound with checkboxes and name/dropdown options.
+
+- **Uncommitted-changes indicator** - an orange status indicator on a compound within a simulation indicates uncommitted, compound-related parameter changes. These changes are saved with the project, so the indicator is retained when the project is reopened.
+
+> 🖼️ **TODO:** Screenshot of the simulation tree/toolbar showing the new orange "uncommitted changes" indicator next to the existing red compound-change indicator.
+
+- **Overwrite Parameter Sets tab** - compound building blocks have a new tab positioned after "Advanced Parameters" with a master-detail view of all "Overwrite Parameter Sets" of the compound. Parameter values, units, and metadata can be inspected and edited. Individual parameters or entire sets can be deleted. One set can be marked as the default.
+
+> 🖼️ **TODO:** Screenshot of the new "Overwrite Parameter Sets" tab in the Compound editor, showing the master-detail layout with a list of sets and parameter grid.
+
+- **Applying an Overwrite Parameter Set in a Simulation** - when adding or configuring a compound in a simulation, select an Overwrite Parameter Set from the dropdown menu. "\<None\>" uses the original formula-based values of the simulation parameters dependent on the compound, while any other selection applies the saved values of the chosen set. If the compound has a default set, it is preselected. Parameters applied from a set behave like normal compound parameters.
+
+> 🖼️ **TODO:** Screenshot of the compound configuration panel in a simulation, showing the Overwrite Parameter Set selection dropdown with "None" and named sets.
+
+- **Metadata** - optional metadata, such as species or disease state, can be stored in each Overwrite Parameter Set.
+- If a saved parameter path within an Overwrite Parameter Set cannot be resolved when the simulation is created, an error message will appear
+- **MoBi®** - Overwrite Parameter Sets are merged into the standard `ParameterValues` building block during simulation creation, so existing MoBi® workflows are not affected.
 
 ### Other PK-Sim® improvements
 
