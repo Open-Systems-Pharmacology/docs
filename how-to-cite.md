@@ -10,6 +10,7 @@ Cite the version of the manual that you actually used. The version number and th
 
 ## BibTeX
 
+<!-- markdown-link-check-disable -->
 ```bibtex
 @Manual{OSPS-Manual-V13,
     title        = "Open Systems Pharmacology Suite Manual",
@@ -20,6 +21,7 @@ Cite the version of the manual that you actually used. The version number and th
     url          = "https://docs.open-systems-pharmacology.org/v13"
 }
 ```
+<!-- markdown-link-check-enable -->
 
 The braces around the author name are required. Without them, BibTeX reads "Open Systems Pharmacology" as given names and "Community" as a surname, and renders the author as "O. S. P. Community".
 

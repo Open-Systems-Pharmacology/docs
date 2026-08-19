@@ -38,3 +38,8 @@ biopharmaceutics
 micelle
 MiKTeX
 subfolders
+TODO
+ejps
+Asc
+Desc
+Eqs
