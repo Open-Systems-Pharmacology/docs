@@ -30,11 +30,36 @@ In a module, the user can change the parent container property for the top level
 
 Be cautious, as changing the parent path of a container will result in different absolute path to the respective container and might break the formulas that use absolute paths for variables definition. You might have to adjust the absolute paths accordingly, by manually appending the parent path to the aliases.
 
+### MoleculeProperties
+
+A spatial structure can contain child containers named `MoleculeProperties` in which *molecule-dependent* parameters are defined. When a simulation is created, each parameter is created for every applicable molecule — which molecules are applicable depends on the location of the `MoleculeProperties` container, the molecule type, and the parameter (see below).
+
+`MoleculeProperties` can appear at three locations, with a slightly different meaning each:
+
+- **In a container.** The parameters are created for every molecule present in that container, below the molecule node: `<ContainerPath>|<MOLECULE>|<parameter name>`. In a PBPK model imported from PK-Sim®, `Organism|Kidney|Intracellular|MoleculeProperties` holds, among others, the parameter `Partition coefficient (water/container)`, which for the molecule "Midazolam" becomes `Organism|Kidney|Intracellular|Midazolam|Partition coefficient (water/container)`. Every molecule gets its own instance and can have its own value.
+- **In a neighborhood.** The parameters are created for every non-stationary molecule present in both neighbors, below `Neighborhoods|<neighborhood name>|<MOLECULE>|<parameter name>`. This is where molecule-specific transport properties such as `P (interstitial->intracellular)` or `Partition coefficient (intracellular/plasma)` are located, while properties of the barrier itself that do not depend on the molecule (e.g., `Surface area (plasma/interstitial)`) are parameters of the neighborhood.
+- **At the top level of the spatial structure**, next to the `Neighborhoods` node. These parameters do *not* depend on the location: they are created once per molecule directly below the molecule node in the root of the simulation, i.e., `<MOLECULE>|<parameter name>`. PK-Sim® uses this node for compound properties that are calculated from the individual, e.g., `Fraction unbound (plasma)` or `Blood/Plasma concentration ratio`.
+
+{% hint style="info" %}
+As a `MoleculeProperties` parameter is created for many molecules, its formula must be generic. Use the [`MOLECULE` keyword](parameters-formulas-tags.md#keywords) in the paths of the referenced objects - it is replaced by the concrete molecule name in each created instance.
+{% endhint %}
+
+A `MoleculeProperties` parameter and a *local* molecule parameter defined in the [Molecules building block](molecules-bb.md#molecule-parameters) end up at the same location in the simulation. The difference is the direction in which they are generic: a local molecule parameter is created for *one molecule in all containers* in which it is present, a `MoleculeProperties` parameter is created for *all molecules in one container*. Select the one that matches what the parameter describes.
+
+Parameters located in `MoleculeProperties` are also the place where the distribution models of PK-Sim® are plugged in: a parameter with the **Formula Type: Calculation Method** is filled by the calculation method selected for the molecule in the [Molecules building block](molecules-bb.md#molecule-properties).
+
+{% hint style="info" %}
+Not every parameter is created for every molecule. In a container, only `Ontogeny factor`, `t1/2`, and `Degradation coefficient` are created for endogenous stationary molecules (e.g., enzymes and transporters), whereas all other `MoleculeProperties` parameters are created for xenobiotic floating molecules (e.g., drugs).
+TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2437
+{% endhint %}
+
+When combining modules, `MoleculeProperties` are always **extended**, in both the "Extend" and the "Overwrite" merge behavior (see [Modularization concept](modularization-concept.md#spatial-structure)).
+
 ### Neighborhoods
 
 New neighborhoods can be created by dragging a line from one physical container to another in the **Diagram** view, or by right-clicking on the **Neighborhoods** node in the tree view and selecting **Create Neighborhood** from the context menu. The user must specify the neighbor containers and a name for the neighborhood.
 
-If a neighborhood is defined with a neighbor that is not present in the final model structure, the neighborhood is ignored.
+If a neighborhood is defined with a neighbor that is not present in the final model structure, the simulation cannot be created and an error is shown. A neighborhood can also be defined **without neighbors**: such a neighborhood is not created in the simulation and, when combining modules, removes the same-named neighborhood defined in a previous module (see [Modularization concept](modularization-concept.md#spatial-structure)).
 
  When renaming a container, the software suggests changing the neighbor of all neighborhoods associated with the container to the new name.
 
