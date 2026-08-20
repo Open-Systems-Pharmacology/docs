@@ -12,20 +12,36 @@ If you are migrating existing MoBi projects from v12, start with [Converting v12
 - **Compound Overwrite Parameter Sets** - named collections of compound-dependent parameter overrides that can be committed from a simulation back to the Compound and re-applied in other simulations.
 - **Events in administration protocols** - events can now be defined directly within PK-Sim® protocol schemas, including repetition, and visualized on the protocol timeline.
 - **MoBi® command-line interface and MoBi® R interface** - batch snapshot conversion and qualification runs without the GUI, and a new R package for scripting MoBi® workflows.
-- **Refined module merge behavior** - "Extend" and "Overwrite" now genuinely differ for Molecules, Reactions, Passive Transports, Observers and Events. This is the main **breaking change** of v13.
+- **Refined module merge behavior** - "Extend" and "Overwrite" now genuinely differ for Molecules, Reactions, Passive Transports, Observers, Events and the `MoleculeProperties` of the Spatial Structure. This is the main **breaking change** of v13.
 
 ## Breaking changes and migration
 
 {% hint style="warning" %}
-The changes in this section can make a project or model configuration created in MoBi v12 behave differently in v13. The full migration procedure is described in [Converting v12 MoBi projects to v13](part-4/converting-v12-projects-to-v13.md).
+The changes in this section can make a project or model configuration created in v12 behave differently in v13, or invalidate paths stored in it. The full migration procedure is described in [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md).
 {% endhint %}
+
+### PK-Sim
+
+- **Administrations without a formulation are nested under a "No formulation" container.** Every administration created in PK-Sim® now produces the same tree structure in the simulation, and therefore in MoBi®: an application that needs no formulation - **Intravenous Bolus** and **Intravenous Infusion** - is placed under a formulation container named `No formulation`, exactly as an oral administration is placed under its formulation. The protocol hierarchy always has the same depth. **Application parameter paths change accordingly:**
+
+  ```text
+  v12   Events|iv 5 mg|Application_1|ProtocolSchemaItem|Infusion time
+  v13   Events|iv 5 mg|No formulation|Application_1|ProtocolSchemaItem|Infusion time
+  ```
+
+  Applications *with* a formulation already had this intermediate level and are unaffected.
+
+  **Snapshots** written with v12 or earlier are converted on load - the `No formulation` element is inserted into the stored application parameter paths, so committed values are preserved. The snapshot format version is now 13. **Projects are not converted:** the simulations they contain are not rebuilt, so they keep their v12 structure and their stored paths stay valid. As soon as such a simulation is re-created or re-configured in v13, every path stored *outside* the simulation has to be updated - parameter identifications and sensitivity analyses that reference application parameters, R scripts, and MoBi® extension modules or formulas that address application parameters by path. ([PK-Sim #3462](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3462), [PK-Sim #3656](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3656), [Core #2941](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2941))
+- **Parameter rename: `Kd (FcRn) in endosomal space of container` → `Kd (FcRn) of container`.** The old name was misleading: the parameter takes the endosomal `Kd (FcRn)` only in endosomal containers, and the plasma/interstitial `Kd (FcRn)` in plasma and interstitial containers. It is a read-only parameter created in the simulation, so no project conversion is needed - but any path referring to the old name (R scripts, parameter identifications, sensitivity analyses, MoBi® formulas) must be updated. The Compound building block parameters `Kd (FcRn) in endosomal space` and `Kd (FcRn) in plasma/interstitial` are **not** renamed. ([PK-Sim #1097](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/1097), [PK-Sim #2543](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/2543))
 
 ### MoBi
 
 - **"Extend" and "Overwrite" merge modes now genuinely differ.** In v12, Molecules, Reactions, Passive Transports and Observers were always fully overwritten by name regardless of the module's merge mode. In v13, "Extend" merges the later module's content into the earlier one, while "Overwrite" reproduces the old v12 full-replacement behavior. The complete v13 rules are documented in [Modularization concept](part-4/modularization-concept.md#creating-simulations-from-modules-and-combination-rules); the differences to v12 and their migration impact are summarized in [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md#what-changed-by-building-block). ([Core #2807](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2807), [Core #2640](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2640), [Core #2603](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2603), [Core #2848](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2848), [Core #2811](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2811))
-- **`MoleculeProperties` of the spatial structure are extended in both merge modes.** A molecule property present in two modules takes the later module's value or formula; no merge-mode setting reverses this. Neighborhoods cannot be removed by a later module, and a neighborhood redefinition with invalid neighbors silently keeps the earlier definition. See [Spatial structure](part-4/converting-v12-projects-to-v13.md#spatial-structure).
+- **`MoleculeProperties` of the spatial structure now follow the module's merge behavior.** In v12 they were always merged, whatever the merge mode was set to. In v13, "Extend" merges them - a property present in both modules takes the later module's value or formula - while "Overwrite" **replaces** the accumulated container, so only the properties defined in the overwriting module survive. An overwriting module that contributes an *empty* `MoleculeProperties` container therefore clears the accumulated properties; since MoBi® still adds an empty container to every newly created spatial structure, delete it in modules set to "Overwrite" that are not meant to clear anything. See [Spatial structure](part-4/converting-v12-projects-to-v13.md#spatial-structure). ([Core #2944](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2944), [MoBi #2472](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472), [MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
+- **Neighborhoods can be removed, and unresolvable neighbors now fail the build.** A later module that redefines a neighborhood **without neighbors** removes it from the simulation (with a warning) - in v12 a neighborhood could not be removed at all. A neighborhood whose neighbors are not present in the final model structure now **fails simulation creation** instead of being silently skipped. See [Spatial structure](part-4/converting-v12-projects-to-v13.md#spatial-structure).
 - **PK-Sim® modules are created with merge behavior "Extend" by default.** Because v13 "Overwrite" now also replaces the molecule include/exclude lists of passive transports and observers, combining two large-molecule PK-Sim® modules under the old "Overwrite" default fails simulation creation (`... references an entity with path '<Molecule>-FcRn_Complex|Is small molecule' that cannot be found`). Modules newly created in v13 default to "Extend"; **modules carried over from v12 keep "Overwrite" and must be switched manually**. See the detailed explanation under [Passive transports](part-4/converting-v12-projects-to-v13.md#passive-transports). ([PK-Sim #3635](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3635))
 - **Changed event combination under "Extend".** When two modules define an equally-named event or application administering different molecules, v12 "Extend" produced a malformed event administering both; in v13 the administered molecule is taken from the later module, consistent with the precedence of other overwritten properties (early v13 builds took it from the *first* module; fixed in [Core #2917](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2917)). See [Events](part-4/converting-v12-projects-to-v13.md#events).
+- **Under "Extend", the later module also wins for the event start condition and for transport properties.** The start condition equation, the "One Time" flag, and — for a transport inside an event or application — the kinetic formula, the source/target criteria and the "Create/Plot process rate parameter" flags are now taken from the extending module, with the source/target criteria extended exactly as for passive transports. Early v13 builds silently kept all of these from the earlier module, so a redefinition in an extending module had no effect. ([Core #2943](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2943))
 - **PK-Sim® modules embed their PK-Sim® snapshot.** A module created in v13 carries everything needed to re-create it in a later PK-Sim® version - this is what makes the *next* migration straightforward. v12 modules do not contain a snapshot, which is why re-creating them in v13 is a manual step.
 - **Building-block renames in created simulations:** `Reaction` → `Reactions` and `Observer` → `Observers`.
 
@@ -118,6 +134,8 @@ The **luminal pH** parameters were upgraded from static values to dynamic defini
 
 > 🖼️ **TODO (screenshot):** Add a screenshot of the PK-Sim Individual building block parameter tree showing the new/modified bile salt and luminal pH parameters (basal, fasted, post-meal).
 
+The new compound parameters are grouped in two new (advanced) Compound building block groups, **Advanced Intestinal Solubility** and **Bile Salt Micelle Partitioning**. ([PK-Sim #3404](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3404))
+
 ---
 
 #### References
@@ -145,6 +163,8 @@ Events - e.g., meal intake, gallbladder emptying - can now be defined directly w
 - **Protocol preview** - administrations and events are shown on the same timeline.
 
 > **TODO – PK-Sim screenshot:** Protocol preview with administrations and events displayed on the same timeline.
+
+- **Uniform application structure** - every administration is now nested under a formulation container in the simulation tree. Administrations that need no formulation - **Intravenous Bolus** and **Intravenous Infusion** - are placed under a container named `No formulation`, so all administrations created in PK-Sim® have the same tree structure in MoBi®. This changes application parameter paths; see [Breaking changes](#pk-sim) above. ([PK-Sim #3462](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3462))
 
 - **Compatibility** - the _Events_ tab in the simulation configuration dialog is still available. Standalone events and existing simulations that use the previous event workflow continue to work with protocol-based events.
 
@@ -264,6 +284,8 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 
 ### PK-Sim®
 
+- Model adjustments for the new oral absorption model: the particle dissolution formulas guard against zero diffusion-layer thickness and zero liquid volume, low **Lipophilicity** values are accepted again, and `Partition coefficient (bile salt micelle/water) ionized` - which can only be calculated in the simulation - no longer shows as "Error" in the Compound building block. ([PK-Sim #3475](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3475), [PK-Sim #3669](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3669), [PK-Sim #3655](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3655))
+- Simulations of the protein model with a lymph flow of zero or a very small value no longer fail - the two-pore transport link kinetics is guarded against the resulting `NaN`/infinity. ([PK-Sim #3308](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3308))
 - Renaming a molecule in an Expression Profile no longer corrupts the project or orphans population variability. ([PK-Sim #3514](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3514), [PK-Sim #3639](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3639))
 - Renaming a compound parameter alternative no longer breaks simulations using it. ([PK-Sim #3638](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3638))
 - Simulations can be created from individuals with overwritten distributed parameters. ([PK-Sim #3511](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3511))

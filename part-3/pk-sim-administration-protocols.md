@@ -49,6 +49,16 @@ Please note that if the administration type **Oral** is selected this will requi
 Please note that in case that the administration type **User Defined** is selected this will require the definition of a **Formulation** in the **Formulation** building block for the Simulation.
 {% endhint %}
 
+{% hint style="info" %}
+**Where administrations end up in the simulation.** In the created simulation, every administration is nested under a container named after the formulation it uses. The administration types that require no formulation — **Intravenous Bolus** and **Intravenous Infusion** — are nested under a container named `No formulation`, so that all administrations have the same structure. The path of an application parameter is therefore
+
+```text
+Events|<protocol name>|<formulation or "No formulation">|Application_<n>|ProtocolSchemaItem|<parameter>
+```
+
+for example `Events|iv 5 mg|No formulation|Application_1|ProtocolSchemaItem|Infusion time`. The `No formulation` container was introduced in version 13; paths stored in projects created with earlier versions are missing it — see [Changed paths in PK-Sim modules](../part-4/converting-v12-projects-to-v13.md#changed-paths-in-pk-sim-modules).
+{% endhint %}
+
 ### Advanced Protocol
 
 Activate **Advanced protocol** in the **Create Administration Protocol** window.

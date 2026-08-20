@@ -87,7 +87,7 @@ Note that AND is the default operator, and that the operator of a list with only
 #### Merge behavior "Extend"
 When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers and parameters from module `B` will be added to module `A`. I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 3`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` with parameters defined in both modules, and with the sub-containers `Organism|Container 1|Container 2` and `Organism|Container 1|Container 3`.
 
-- **MoleculeProperties** are always extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472)
+- **MoleculeProperties** are extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used.
 - **Parameters** are always overwritten. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
 - **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
 - **Tags** of containers and neighborhoods will be extended. If "Organism|Container 1" has a tag "Tag A" in module "A" and a tag "Tag B" in module "B", in the final model, "Organism|Container 1" will have tags "Tag A" and "Tag B". A tag defined in module `A` can never be removed by module `B`. The tags of a **parameter** are *not* extended: as stated above, a parameter is replaced as a whole, so it only has the tags defined in module `B`.
@@ -104,7 +104,7 @@ Redefining a parameter in module `B` removes the tags that this parameter has in
 #### Merge behavior "Overwrite"
 When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers from module `B` will overwrite the containers with the same path in module `A`. When overwriting, all descendants of a container are removed if not present in the module that overwrites (i.e., replacement of the whole tree structure). I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 2`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` without the sub-containers `Container 2` and `Container 3`. `Organism|Container 1` will only have parameters that are defined in module `B`, but not in module `A`.
 
-- **MoleculeProperties** are always extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2472)
+- **MoleculeProperties** are overwritten, like any other container. The `MoleculeProperties` container of module `B` replaces the one accumulated from the previous modules, so only the molecule properties defined in module `B` are created. This applies to the `MoleculeProperties` container at the top level of the spatial structure (next to `Neighborhoods`) and to a top-level `MoleculeProperties` container inserted through a `Parent path`. A `MoleculeProperties` container located *inside* another container is replaced together with that container, as described above.
 - **Parameters** will be overwritten by their absolute path. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used.
 - **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
 - Container (including neighborhoods) **Tags** will be overwritten. If `Organism|Container 1` has a tag "Tag A" in module `A` and a tag "Tag B" in module `B`, in the final model, `Organism|Container 1` will only have tag "Tag B".
@@ -113,6 +113,10 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 
 {% hint style="warning" %}
 If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
+{% endhint %}
+
+{% hint style="danger" %}
+Because the `MoleculeProperties` container is replaced as a whole, an **empty** `MoleculeProperties` container in module `B` removes all molecule properties contributed by the previous modules. MoBi® adds an empty top-level `MoleculeProperties` container to every newly created spatial structure, so delete it from any module set to "Overwrite" that is not meant to clear anything. ([MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
 {% endhint %}
 
 ### Molecules
@@ -213,16 +217,17 @@ The tree structure of the event is extended. This means:
 
 For each event:
 
-- **Event start condition** equation: Changes are not applied! (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
-- **Event start condition - "One Time" checkbox**: Changes are not applied! (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
+- **Event start condition** equation is overwritten.
+- **Event start condition - "One Time" checkbox** is overwritten.
 - The list of **Assignments** is extended.
 - New nodes (events, containers, etc.) are added.
 
-For each **transport** in an event (see [Transport](events-bb.md#transport)):
+For each **transport** in an event (see [Transport](events-bb.md#transport)), the same rules apply as for a [passive transport](#passive-transports):
 
-- The formula in the "Kinetic" tab is NOT overwritten. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
-- Source/Target lists are NOT extended or overwritten. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
-- "Create process rate parameter" and "Plot process rate parameter" checkboxes are NOT overwritten. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2478)
+- The formula in the "Kinetic" tab is overwritten.
+- **Source** and **target** lists are extended; their operators are overwritten.
+- The "Create process rate parameter" and "Plot process rate parameter" checkboxes are overwritten.
+- The **parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
 
 #### Merge behavior "Overwrite"
 
