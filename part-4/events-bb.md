@@ -201,9 +201,17 @@ An assignment can be changed by the following actions:
 
 An application is basically an event group with a more complex structure than that described in the previous section. In almost all cases, the application will be created within PK-Sim®and then transferred to MoBi®. The scope of this section will be limited to working with this recommended workflow.
 
-The image below shows two example applications imported from PK-Sim®, an  intravenous (iv) and an oral administration. You can see the two application in the tree view of the event edit window. Each application consist of the application group, the application start event, and the protocol schema item. To make changes, look at the parameters of the protocol schema item, as displayed in the image.
+The image below shows two example applications imported from PK-Sim®, an  intravenous (iv) and an oral administration. You can see the two application in the tree view of the event edit window. Each application is nested in a formulation container and consists of the application group, the application start event, and the protocol schema item. To make changes, look at the parameters of the protocol schema item, as displayed in the image.
 
 ![Example Applications](../assets/images/part-4/events-application.jpg)
+
+> 🖼️ **TODO (screenshot):** the image above still shows the pre-v13 structure, in which the intravenous application had no formulation container. Replace it with a v13 export showing the `No formulation` container.
+
+{% hint style="info" %}
+**The `No formulation` container.** Every administration created in PK-Sim® is nested under a formulation container, named after the formulation used. Administrations that need no formulation — **Intravenous Bolus** and **Intravenous Infusion** — are nested under a container named `No formulation`, which carries no parameters. All applications imported from PK-Sim® therefore have the same tree structure and the same depth.
+
+This container was introduced in v13. An application imported from PK-Sim® v12 or earlier does not have it for administrations without a formulation, so absolute paths to application parameters changed — see [Changed paths in PK-Sim modules](converting-v12-projects-to-v13.md#changed-paths-in-pk-sim-modules).
+{% endhint %}
 
 You may make changes in the following parameters of this group:
 

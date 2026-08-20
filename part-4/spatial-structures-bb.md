@@ -53,7 +53,11 @@ Not every parameter is created for every molecule. In a container, only `Ontogen
 TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2437
 {% endhint %}
 
-When combining modules, `MoleculeProperties` are always **extended**, in both the "Extend" and the "Overwrite" merge behavior (see [Modularization concept](modularization-concept.md#spatial-structure)).
+When combining modules, `MoleculeProperties` follow the module's merge behavior: they are **extended** under "Extend" and **replaced** under "Overwrite" (see [Modularization concept](modularization-concept.md#spatial-structure)).
+
+{% hint style="warning" %}
+A newly created spatial structure already contains an empty top-level `MoleculeProperties` container. In a module with the merge behavior "Overwrite", that empty container removes all molecule properties contributed by the previous modules — delete it if this is not what you want. ([MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
+{% endhint %}
 
 ### Neighborhoods
 
