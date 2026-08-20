@@ -164,7 +164,7 @@ Events - e.g., meal intake, gallbladder emptying - can now be defined directly w
 
 > **TODO – PK-Sim screenshot:** Protocol preview with administrations and events displayed on the same timeline.
 
-- **Uniform application structure** - every administration is now nested under a formulation container in the simulation tree. Administrations that need no formulation - **Intravenous Bolus** and **Intravenous Infusion** - are placed under a container named `No formulation`, so all administrations created in PK-Sim® have the same tree structure in MoBi®. This changes application parameter paths; see [Breaking changes](#pk-sim) above. ([PK-Sim #3462](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3462))
+- **Uniform application structure** - every administration is now nested under a formulation container in the simulation tree. Administrations that need no formulation - **Intravenous Bolus** and **Intravenous Infusion** - are placed under a container named `No formulation`, so all administrations created in PK-Sim® have the same tree structure in MoBi®. This changes application parameter paths; see [Changed paths in PK-Sim modules](part-4/converting-v12-projects-to-v13.md#changed-paths-in-pk-sim-modules). ([PK-Sim #3462](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3462))
 
 - **Compatibility** - the _Events_ tab in the simulation configuration dialog is still available. Standalone events and existing simulations that use the previous event workflow continue to work with protocol-based events.
 
