@@ -284,7 +284,6 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 
 ### PK-Sim®
 
-- Model adjustments for the new oral absorption model: the particle dissolution formulas guard against zero diffusion-layer thickness and zero liquid volume, low **Lipophilicity** values are accepted again, and `Partition coefficient (bile salt micelle/water) ionized` - which can only be calculated in the simulation - no longer shows as "Error" in the Compound building block. ([PK-Sim #3475](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3475), [PK-Sim #3669](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3669), [PK-Sim #3655](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3655))
 - Simulations of the protein model with a lymph flow of zero or a very small value no longer fail - the two-pore transport link kinetics is guarded against the resulting `NaN`/infinity. ([PK-Sim #3308](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3308))
 - Renaming a molecule in an Expression Profile no longer corrupts the project or orphans population variability. ([PK-Sim #3514](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3514), [PK-Sim #3639](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3639))
 - Renaming a compound parameter alternative no longer breaks simulations using it. ([PK-Sim #3638](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3638))

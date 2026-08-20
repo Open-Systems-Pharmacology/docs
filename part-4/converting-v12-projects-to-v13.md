@@ -182,8 +182,6 @@ Under v13 "Extend" the administered molecule is therefore *not* combined but **o
 | **"Create process rate parameter"** / **"Plot process rate parameter"** | overwritten |
 | **Parameters** of the event and of its transports | extended; a parameter defined in both modules is taken from the later module (unchanged) |
 
-Early v13 builds silently kept all of these from the *earlier* module, so a redefinition in an extending module had no effect at all; this was fixed with [Core #2943](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2943). If you tested a v13 pre-release against your v12 model, re-check any extending module that redefines an event start condition or an application transport — its changes now apply.
-
 **Migration impact — medium to high.** A v12 configuration in which two modules defined an equally-named event with **different container criteria** — relying on the events being created separately — now produces a different result: under "Overwrite" only the later module's event exists, and under "Extend" the event may end up in more containers than before or (with the operator `AND`) in none at all. A v12 configuration that relied on the (malformed) double administration under "Extend" now administers only the later module's molecule. Note also that event combination is expected to change again in a future release through the planned [application definition rework](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2128).
 
 {% hint style="warning" %}
