@@ -53,8 +53,6 @@ The table below summarizes the behavioral changes. Only **Parameter Values** and
 
 **Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained, and an active transport's source/target criteria end up as the union of both definitions rather than only the later module's. To reproduce the v12 result, set the module to **"Overwrite"**.
 
-Early v13 builds additionally ignored the extending module's kinetic equation and process-rate-parameter properties for an existing active transport, so such a redefinition had no effect at all while parameters changed in the same redefinition *were* applied. This was fixed with [Core #2951](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2951); if you tested a v13 pre-release, re-check extending modules that redefine an active transport.
-
 The molecule *properties* are the exception — type, stationary, calculation methods and parameter type are overwritten by the later module in both modes, so they need no migration attention. What changes between v12 and v13 is the treatment of the molecule's **parameters** and **active transports**.
 
 ### Reactions
@@ -125,7 +123,7 @@ In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" 
 **v13** (see [Observers](modularization-concept.md#observers)):
 
 - **Merge behavior "Extend"**
-  - Monitoring **equation** is overwritten, and so are the observer's **dimension**, **description** and **icon**.
+  - Monitoring **equation** is overwritten, and so is the observer's **dimension**.
   - The **operator** of the "In container with" list is overwritten.
   - The **conditions** list of "In container with" is **extended**.
   - **Include/Exclude** molecule lists are extended; the **"All" checkbox** state is overwritten. As for passive transports, a later module that checks "All" widens the observer to every molecule except the excluded ones — see [Observers](modularization-concept.md#observers).
@@ -133,8 +131,6 @@ In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" 
   - The observer is **completely overwritten by name**.
 
 **Migration impact — medium.** Same pattern as passive transports.
-
-Early v13 builds applied the extending module's equation but kept the earlier module's container criteria and dimension, so the new equation was evaluated in the old set of containers — a result matching neither module. This was fixed with [Core #2950](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2950). Reactions were affected by the same class of bug in the opposite direction: their container criteria were *replaced* instead of extended, and because an empty criteria is permissive for reactions, an extending module that redefined a reaction without touching its criteria silently removed the earlier module's restriction and created the reaction in every container where its partners were present ([Core #2949](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2949)).
 
 ### Spatial structure
 
