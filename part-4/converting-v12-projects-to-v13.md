@@ -171,7 +171,7 @@ Migration-relevant consequences: under "Extend" with the operator `AND` (the def
 | **Overwrite** | administers **Y** — the last module's molecule | unchanged: administers **Y** |
 | **Extend** | administers **both X and Y** — a malformed event that uses a single molecule's molecular weight | administers **Y only** — the administered molecule is overwritten by the later module, like the other overwritten event properties |
 
-Under v13 "Extend" the administered molecule is therefore *not* combined but **overwritten** — the malformed double administration of v12 can no longer occur. (Early v13 test builds kept the *first* module's molecule instead; this was fixed with https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2917.)
+Under v13 "Extend" the administered molecule is therefore *not* combined but **overwritten** — the malformed double administration of v12 can no longer occur.
 
 **Start condition and transport properties.** Under "Extend", the later module now also wins for the properties that an event and its transports store on themselves rather than as child entities:
 
