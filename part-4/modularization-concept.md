@@ -115,12 +115,10 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
 {% endhint %}
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 Because the `MoleculeProperties` container is replaced as a whole, an **empty** `MoleculeProperties` container in module `B` removes all molecule properties contributed by the previous modules.
 
-This is easy to trigger without noticing for the **top-level** `MoleculeProperties` of the spatial structure: every spatial structure has one, it is empty until you put a parameter in it, and while it is empty MoBi® does not show it in the tree. A module that merely adds a container through its Spatial Structure building block therefore still contributes an empty top-level `MoleculeProperties`, and under "Overwrite" that wipes the molecule properties of the previous modules - including the PK-Sim® ones such as `Fraction unbound (plasma)`. Set such a module to **"Extend"**, or define in it every molecule property the simulation needs.
-
-For `MoleculeProperties` inside a container, v13 removes the corresponding trap at the source: MoBi® no longer creates a `MoleculeProperties` container automatically when a container is created or switched to physical - add one deliberately with **Add MoleculeProperties** from the container's context menu. ([MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
+MoBi® never creates such a container on its own - neither at the top level of a new Spatial Structure building block nor in a newly created container - so it is only present where it was added deliberately. If a module set to "Overwrite" carries a `MoleculeProperties` container that is not meant to replace anything, **delete the container** (see [MoleculeProperties](spatial-structures-bb.md#moleculeproperties)) or set the module to "Extend".
 {% endhint %}
 
 ### Molecules
