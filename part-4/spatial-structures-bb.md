@@ -39,8 +39,6 @@ A spatial structure can contain child containers named `MoleculeProperties` in w
 - **Add** - right-click the **spatial structure** node for the top-level container, or a **physical container** for a container-level one, and select **Add MoleculeProperties**. The entry is only offered while the selected node has no `MoleculeProperties` yet.
 - **Delete** - right-click the `MoleculeProperties` container itself and select **Delete**. This works for the top-level container and for containers under a physical parent, under a logical parent and inside a neighborhood. Switching a container to *logical* also removes its `MoleculeProperties`.
 
-Both actions can be undone. ([MoBi #2512](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2512), [MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498), [MoBi #2514](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2514))
-
 `MoleculeProperties` can appear at three locations, with a slightly different meaning each:
 
 - **In a container.** The parameters are created for every molecule present in that container, below the molecule node: `<ContainerPath>|<MOLECULE>|<parameter name>`. In a PBPK model imported from PK-Sim®, `Organism|Kidney|Intracellular|MoleculeProperties` holds, among others, the parameter `Partition coefficient (water/container)`, which for the molecule "Midazolam" becomes `Organism|Kidney|Intracellular|Midazolam|Partition coefficient (water/container)`. Every molecule gets its own instance and can have its own value.
