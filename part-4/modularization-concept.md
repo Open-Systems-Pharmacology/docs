@@ -115,8 +115,10 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
 {% endhint %}
 
-{% hint style="danger" %}
-Because the `MoleculeProperties` container is replaced as a whole, an **empty** `MoleculeProperties` container in module `B` removes all molecule properties contributed by the previous modules. MoBi® adds an empty top-level `MoleculeProperties` container to every newly created spatial structure, so delete it from any module set to "Overwrite" that is not meant to clear anything. ([MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
+{% hint style="warning" %}
+Because the `MoleculeProperties` container is replaced as a whole, an **empty** `MoleculeProperties` container in module `B` removes all molecule properties contributed by the previous modules.
+
+MoBi® never creates such a container on its own - neither at the top level of a new Spatial Structure building block nor in a newly created container - so it is only present where it was added deliberately. If a module set to "Overwrite" carries a `MoleculeProperties` container that is not meant to replace anything, **delete the container** (see [MoleculeProperties](spatial-structures-bb.md#moleculeproperties)) or set the module to "Extend".
 {% endhint %}
 
 ### Molecules
@@ -130,7 +132,12 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are extended. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc). New parameters can be added.
 - **Parameter type** (local/global) is always overwritten.
-- **Active Transports** are extended. Transporter molecules and active transport processes that are not defined in module `A` are added. For an active transport process that is defined in both modules, only the **parameters** are extended - new parameters are added, and a parameter defined in both modules is taken from module `B`. Its other properties are *not* overwritten: the equation in the **Kinetic** tab, the **source** and **target** container criteria, and the "Create process rate parameter" and "Plot process rate parameter" properties of module `A` are kept. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2493)
+- **Active Transports** are extended. Transporter molecules and active transport processes that are not defined in module `A` are added. For an active transport process defined in both modules, the same rules apply as for a [passive transport](#passive-transports):
+  - The **parameters** list is extended - new parameters are added, and a parameter defined in both modules is taken from module `B`.
+  - The equation in the **Kinetic** tab is overwritten.
+  - The **source** and **target** lists are extended; their operators are overwritten.
+  - The "Create process rate parameter" and "Plot process rate parameter" properties are overwritten.
+  - The **transport name** of the transporter molecule is overwritten.
 
 #### Merge behavior "Overwrite"
 
@@ -187,7 +194,7 @@ Passive transports are completely overwritten by name.
 
 #### Merge behavior "Extend"
 
-- The equation in the **Monitoring** tab is overwritten.
+- The equation in the **Monitoring** tab is overwritten. The **Dimension** of the observer is overwritten as well, together with its **Description** and **Icon**.
 
 - The **Operator** of the "In container with" list is overwritten.
 

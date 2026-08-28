@@ -44,14 +44,14 @@ The table below summarizes the behavioral changes. Only **Parameter Values** and
 
 - **Merge behavior "Extend"**
   - **Parameters** are overwritten individually: a parameter defined in both modules takes the later module's definition, while parameters present only in the higher module are **retained**.
-  - **Active transports** are **extended** (new ones added; for an active transport process defined in both modules only its **parameters** are merged — its kinetic equation, source/target criteria and process rate parameter properties are kept from the higher module, see [Molecules](modularization-concept.md#molecules)). (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2493)
+  - **Active transports** are **extended**: new ones are added, and for an active transport process defined in both modules the parameters are merged, the source/target criteria are extended, and the kinetic equation, the source/target **operators**, the process-rate-parameter properties and the transporter molecule's **transport name** are overwritten — the same rules as for passive transports (see [Molecules](modularization-concept.md#molecules)).
   - Molecule **type** (Drug, Enzyme, Transporter, …), **stationary**, **calculation methods** (defaults), and **parameter type** (local/global) are overwritten — the later module wins, as in v12.
 - **Merge behavior "Overwrite"**
   - Only the parameters present in the last module are retained.
   - Active transports are **completely** replaced.
   - The molecule properties listed above are overwritten as well, exactly as under "Extend".
 
-**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained. A redefinition of the **kinetic equation** of an existing active transport process under "Extend" has **no effect at all** — the equation of the higher module is kept, while parameters changed in the same redefinition *are* applied. To reproduce the v12 result, set the module to **"Overwrite"**.
+**Migration impact — high.** A v12 Extension module set to "Extend" that redefined a molecule expecting full replacement now instead *merges* into the existing molecule: leftover parameters and active transports from the base module are retained, and an active transport's source/target criteria end up as the union of both definitions rather than only the later module's. To reproduce the v12 result, set the module to **"Overwrite"**.
 
 The molecule *properties* are the exception — type, stationary, calculation methods and parameter type are overwritten by the later module in both modes, so they need no migration attention. What changes between v12 and v13 is the treatment of the molecule's **parameters** and **active transports**.
 
@@ -123,7 +123,7 @@ In a controlled test with two large-molecule PK-Sim modules, the **v13 "Extend" 
 **v13** (see [Observers](modularization-concept.md#observers)):
 
 - **Merge behavior "Extend"**
-  - Monitoring **equation** is overwritten.
+  - Monitoring **equation** is overwritten, and so is the observer's **dimension**.
   - The **operator** of the "In container with" list is overwritten.
   - The **conditions** list of "In container with" is **extended**.
   - **Include/Exclude** molecule lists are extended; the **"All" checkbox** state is overwritten. As for passive transports, a later module that checks "All" widens the observer to every molecule except the excluded ones — see [Observers](modularization-concept.md#observers).
@@ -145,11 +145,13 @@ The container/parameter/tag/neighborhood rules are essentially as in v12, with t
   - A neighborhood referencing a neighbor that is not present in the final model structure now **fails the simulation creation with an error**. In v12, such a neighborhood was silently skipped (the earlier module's same-named neighborhood, if any, was kept unchanged).
   - A neighborhood can now be **removed**: a later module that redefines it **without neighbors** removes the same-named neighborhood from the simulation, in both merge modes, with a warning during simulation creation. In v12, neighborhoods could not be removed from a model.
 
-{% hint style="danger" %}
-**An empty `MoleculeProperties` container in an "Overwrite" module clears the accumulated properties.** MoBi® adds an empty top-level `MoleculeProperties` container to every newly created spatial structure. Under "Overwrite" that empty container is now a valid instruction to remove everything the earlier modules contributed — including the PK-Sim® molecule properties such as `Fraction unbound (plasma)`. **Delete the empty container** from any module set to "Overwrite" that is not meant to clear anything. ([MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
+{% hint style="warning" %}
+**An empty `MoleculeProperties` container in an "Overwrite" module clears the accumulated properties.** Under "Overwrite", an empty container is a valid instruction to remove everything the earlier modules contributed — including PK-Sim® molecule properties such as `Fraction unbound (plasma)`.
+
+In v13, MoBi® does not create `MoleculeProperties` containers on its own, so this can only happen where one was added deliberately: a new Spatial Structure building block has no top-level `MoleculeProperties`, and a newly created container does not get one either. A container that should not replace anything can therefore simply be deleted from the module — or the module can be set to "Extend".
 {% endhint %}
 
-**Migration impact — low to medium.** For modules set to "Extend", nothing changes: `MoleculeProperties` merge as they did in v12. For modules set to "Overwrite", the v12 result was a merge and the v13 result is a replacement — check every such module for a `MoleculeProperties` container (including an empty one, see above) and switch it to "Extend" if the v12 merge was what you wanted. Note also that a v12 configuration containing a neighborhood with unresolvable neighbors — previously skipped with a warning — now **fails to build**: fix the neighbor references, or redefine the neighborhood without neighbors if the intent was to drop it.
+**Migration impact — low to medium.** For modules set to "Extend", nothing changes: `MoleculeProperties` merge as they did in v12. For modules set to "Overwrite", the v12 result was a merge and the v13 result is a replacement — check every such module for a `MoleculeProperties` container. Switch it to "Extend" when its properties must be merged; delete it only when it is empty or its properties should not be contributed. A v12 module carried over into v13 may still contain a `MoleculeProperties` container that was created automatically by the v12 user interface and never filled. Note also that a v12 configuration containing a neighborhood with unresolvable neighbors — previously skipped with a warning — now **fails to build**: fix the neighbor references, or redefine the neighborhood without neighbors if the intent was to drop it.
 
 ### Events
 
@@ -169,7 +171,7 @@ Migration-relevant consequences: under "Extend" with the operator `AND` (the def
 | **Overwrite** | administers **Y** — the last module's molecule | unchanged: administers **Y** |
 | **Extend** | administers **both X and Y** — a malformed event that uses a single molecule's molecular weight | administers **Y only** — the administered molecule is overwritten by the later module, like the other overwritten event properties |
 
-Under v13 "Extend" the administered molecule is therefore *not* combined but **overwritten** — the malformed double administration of v12 can no longer occur. (Early v13 test builds kept the *first* module's molecule instead; this was fixed with https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2917.)
+Under v13 "Extend" the administered molecule is therefore *not* combined but **overwritten** — the malformed double administration of v12 can no longer occur.
 
 **Start condition and transport properties.** Under "Extend", the later module now also wins for the properties that an event and its transports store on themselves rather than as child entities:
 
@@ -254,7 +256,7 @@ The goal is to arrive at a v13 model configuration whose every difference from t
 
 4. **Flag the affected building blocks.** Work through **every module after the first** — the first has nothing to merge into — and identify whether it redefines any **molecule, reaction, passive transport, or observer** that also exists in a module higher in the hierarchy. These are the entities whose merge result may have changed. Also flag:
 
-   - **Spatial structures** that contain a top-level `MoleculeProperties` container — including an *empty* one, which MoBi® adds to every new spatial structure — or that redefine a neighborhood. In v13, `MoleculeProperties` are replaced under "Overwrite" instead of merged as in v12, so a module set to "Overwrite" can silently drop molecule properties contributed by earlier modules (see [Spatial structure](#spatial-structure)).
+   - **Spatial structures that contain a `MoleculeProperties` container** — at the top level or in a container — in a module set to "Overwrite". In v13, `MoleculeProperties` are replaced under "Overwrite" instead of merged as in v12, so such a module drops the molecule properties contributed by earlier modules, and an *empty* container drops all of them. A v12 module may carry a container that the v12 user interface created automatically and that was never filled. Also flag spatial structures that redefine a **neighborhood** (see [Spatial structure](#spatial-structure)).
    - **Events/applications defined with the same name in more than one module**, especially those with *different container criteria* or administering *different* molecules. Equally-named events are now merged before creation, so check the resulting container criteria and operator; build the simulation and verify that the event is created in the intended containers and which molecule it actually administers (see [Events](#events)); prefer to avoid equally-named events across modules altogether.
 
 5. **Establish the ground truth by comparison.** Now for the **full** model configuration: build each affected simulation in **both** v12 and v13 and export the result to `*.pkml`. Compare the two PKML files, discounting the PK-Sim-only differences already catalogued in step 3. What remains reveals exactly which entities merged differently — it is far more reliable than reasoning from the rules alone.
@@ -268,7 +270,7 @@ The goal is to arrive at a v13 model configuration whose every difference from t
 6. **Decide per module: Extend or Overwrite.** The first module in the hierarchy has nothing to merge into, so its mode has no effect — make this decision for **every module selected after it**, not only the last one.
    - If the module was meant to **fully replace** a molecule/reaction/transport/observer (the common v12 assumption), set its merge mode to **"Overwrite"**.
    - If it was meant to **add to** an existing building block, keep **"Extend"** and verify the merged result — remove any now-redundant duplicated content, and remember that reaction educts/products cannot be removed (use stoichiometry `0`).
-   - **Spatial structures.** Under "Extend", a neighborhood is *extended* — parameters and tags of the later module are added — but its **neighbors are replaced**; under "Overwrite", the whole neighborhood is replaced, parameters and tags included. In either mode, a neighborhood can be *removed* by redefining it **without neighbors**, and a redefinition with neighbors that cannot be resolved fails the simulation creation with an error. `MoleculeProperties` are merged under "Extend" (the v12 result) and replaced under "Overwrite"; if a module has to be set to "Overwrite" for its other content but its `MoleculeProperties` should still merge, remove the `MoleculeProperties` container from it — or split the module.
+   - **Spatial structures.** Under "Extend", a neighborhood is *extended* — parameters and tags of the later module are added — but its **neighbors are replaced**; under "Overwrite", the whole neighborhood is replaced, parameters and tags included. In either mode, a neighborhood can be *removed* by redefining it **without neighbors**, and a redefinition with neighbors that cannot be resolved fails the simulation creation with an error. `MoleculeProperties` are merged under "Extend" (the v12 result) and replaced under "Overwrite". If a module has to be set to "Overwrite" for its other content but its `MoleculeProperties` should not replace anything, delete the `MoleculeProperties` container from it — or split the module.
    - **Events.** If a module was meant to add a *separate* application/event, give it a distinct name instead of relying on the merge mode — in v13 an equally-named event no longer creates a separate instance: "Overwrite" removes the earlier module's event entirely, and "Extend" merges the container criteria (conditions combined, operator from the later module), which with the operator `AND` can result in the event not being created at all. A redefined administered molecule is overwritten by the later module in both modes.
 
 7. **Re-verify.** Rebuild in v13 after each change and compare against the v12 PKML again, until the simulation matches the intended v12 result (or until any intentional differences are understood and documented).
