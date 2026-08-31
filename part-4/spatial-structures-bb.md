@@ -34,6 +34,11 @@ Be cautious, as changing the parent path of a container will result in different
 
 A spatial structure can contain child containers named `MoleculeProperties` in which *molecule-dependent* parameters are defined. When a simulation is created, each parameter is created for every applicable molecule — which molecules are applicable depends on the location of the `MoleculeProperties` container, the molecule type, and the parameter (see below).
 
+`MoleculeProperties` containers are **not** created automatically - neither at the top level of a new spatial structure nor in a newly created container. Add and remove them explicitly:
+
+- **Add** - right-click the **spatial structure** node for the top-level container, or a **physical container** for a container-level one, and select **Add MoleculeProperties**. The entry is only offered while the selected node has no `MoleculeProperties` yet.
+- **Delete** - right-click the `MoleculeProperties` container itself and select **Delete**. This works for the top-level container and for containers under a physical parent, under a logical parent and inside a neighborhood. Switching a container to *logical* also removes its `MoleculeProperties`.
+
 `MoleculeProperties` can appear at three locations, with a slightly different meaning each:
 
 - **In a container.** The parameters are created for every molecule present in that container, below the molecule node: `<ContainerPath>|<MOLECULE>|<parameter name>`. In a PBPK model imported from PK-Sim®, `Organism|Kidney|Intracellular|MoleculeProperties` holds, among others, the parameter `Partition coefficient (water/container)`, which for the molecule "Midazolam" becomes `Organism|Kidney|Intracellular|Midazolam|Partition coefficient (water/container)`. Every molecule gets its own instance and can have its own value.
@@ -56,7 +61,7 @@ TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2437
 When combining modules, `MoleculeProperties` follow the module's merge behavior: they are **extended** under "Extend" and **replaced** under "Overwrite" (see [Modularization concept](modularization-concept.md#spatial-structure)).
 
 {% hint style="warning" %}
-A newly created spatial structure already contains an empty top-level `MoleculeProperties` container. In a module with the merge behavior "Overwrite", that empty container removes all molecule properties contributed by the previous modules — delete it if this is not what you want. ([MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
+An **empty** `MoleculeProperties` container in a module with the merge behavior "Overwrite" removes all molecule properties contributed by the previous modules. Delete the container from such a module if it is not meant to replace anything, or set the module to "Extend".
 {% endhint %}
 
 ### Neighborhoods

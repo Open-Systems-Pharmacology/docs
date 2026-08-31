@@ -1,14 +1,18 @@
 # Modularization Concept in MoBi
 
-Starting with version 12 the OSP Suite introduces a new modularization concept for building models in MoBi. This new concept allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
+Since version 12, models in MoBi are built using the modularization concept. It allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
 
 This section provides an overview of the modularization concept and is especially suited for users familiar with previous versions of MoBi. It explains the advantages of using modules, how to create and manage them, and the rules that govern module combination.
 
-An example workflow illustrating how to use the modularization concept in practice can be found [here](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
+{% hint style="info" %}
+This page describes the concept as it works in **version 13**. The overall structure (Modules → Building Blocks → Simulations) is the same as in v12, but several of the [rules governing module combination](#creating-simulations-from-modules-and-combination-rules) changed. If you are migrating a project from v12, see [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for a summary of the differences.
+{% endhint %}
+
+An example workflow illustrating how to use the modularization concept in practice can be found in the [modularization use case—adding a tumor to a PBPK model](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
 
 ## MoBi project structure
 
-The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
+The modularization concept changed how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
 
 A MoBi project contains a set of:
 
@@ -40,7 +44,7 @@ When adding new containers (e.g., adding a new organ) or molecules in an Extensi
 
 ## Location of (individual) parameters
 
-Compared to the previous versions, v12 introduces some changes in how and where individual parameters are stored when a PBPK model is imported in MoBi.
+Since v12, individual parameters are stored as follows when a PBPK model is imported in MoBi (this is unchanged in v13):
 
 - All parameters of the spatial structure that are **present in all species** and have the **same value or the same formula in all species and individuals** are stored directly in the spatial structures BB with the fixed value or an explicit formula. Example: `Organism|Thickness (endothelium)` (constant value) or `Organism|Weight of blood organs` (sum formula).
 
@@ -54,7 +58,7 @@ The parameters that are defined in the individual are shown with grey background
 
 ## Parameter values building block
 
-Another important change (compared to the previous versions): the PV BB should only contain values for parameters that are different from those stored in other BBs. In most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transferred in the PV BB.
+The PV BB should only contain values for parameters that are different from those stored in other BBs. In most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transferred in the PV BB.
 
 ## Creating simulations from modules and combination rules
 
@@ -65,6 +69,10 @@ If a model configuration contains a PK-Sim module, the user must select an **Ind
 During simulation creation, the modules are combined to a common model structure. Entities are combined (extended or overwritten) by their absolute path (for containers in the spatial structure, parameters, and molecule values) or by their names (for neighborhoods, passive transports, molecules, etc). The result is a simulation which represents the combination of the selected modules.
 
 There are two types of combination behavior that can be defined for a module - **overwrite** or **extend**. The following sections describe how different building blocks are merged and what are the differences between the **overwrite** and the  **extend** modes, if any.
+
+{% hint style="info" %}
+The merge rules described below are the **v13** rules. Several of them differ from v12: in v12, "Extend" behaved like a full overwrite for Molecules, Reactions, Passive Transports, and Observers; `MoleculeProperties` in the spatial structure were always merged regardless of the merge behavior; and equally-named events were not merged across modules before simulation creation. A model configuration created in v12 can therefore produce a different simulation in v13. See [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for a complete list of the differences and the migration steps.
+{% endhint %}
 
 ### Condition lists
 
@@ -115,8 +123,10 @@ When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers
 If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
 {% endhint %}
 
-{% hint style="danger" %}
-Because the `MoleculeProperties` container is replaced as a whole, an **empty** `MoleculeProperties` container in module `B` removes all molecule properties contributed by the previous modules. MoBi® adds an empty top-level `MoleculeProperties` container to every newly created spatial structure, so delete it from any module set to "Overwrite" that is not meant to clear anything. ([MoBi #2498](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2498))
+{% hint style="warning" %}
+Because the `MoleculeProperties` container is replaced as a whole, an **empty** `MoleculeProperties` container in module `B` removes all molecule properties contributed by the previous modules.
+
+MoBi® never creates such a container on its own - neither at the top level of a new Spatial Structure building block nor in a newly created container - so it is only present where it was added deliberately. If a module set to "Overwrite" carries a `MoleculeProperties` container that is not meant to replace anything, **delete the container** (see [MoleculeProperties](spatial-structures-bb.md#moleculeproperties)) or set the module to "Extend".
 {% endhint %}
 
 ### Molecules
@@ -130,7 +140,12 @@ The list of available molecules is always extended. If module `A` has molecule `
 - **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
 - **Parameters** are extended. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc). New parameters can be added.
 - **Parameter type** (local/global) is always overwritten.
-- **Active Transports** are extended. Transporter molecules and active transport processes that are not defined in module `A` are added. For an active transport process that is defined in both modules, only the **parameters** are extended - new parameters are added, and a parameter defined in both modules is taken from module `B`. Its other properties are *not* overwritten: the equation in the **Kinetic** tab, the **source** and **target** container criteria, and the "Create process rate parameter" and "Plot process rate parameter" properties of module `A` are kept. (TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2493)
+- **Active Transports** are extended. Transporter molecules and active transport processes that are not defined in module `A` are added. For an active transport process defined in both modules, the same rules apply as for a [passive transport](#passive-transports):
+  - The **parameters** list is extended - new parameters are added, and a parameter defined in both modules is taken from module `B`.
+  - The equation in the **Kinetic** tab is overwritten.
+  - The **source** and **target** lists are extended; their operators are overwritten.
+  - The "Create process rate parameter" and "Plot process rate parameter" properties are overwritten.
+  - The **transport name** of the transporter molecule is overwritten.
 
 #### Merge behavior "Overwrite"
 
@@ -187,7 +202,7 @@ Passive transports are completely overwritten by name.
 
 #### Merge behavior "Extend"
 
-- The equation in the **Monitoring** tab is overwritten.
+- The equation in the **Monitoring** tab is overwritten. The **Dimension** of the observer is overwritten as well, together with its **Description** and **Icon**.
 
 - The **Operator** of the "In container with" list is overwritten.
 
@@ -273,7 +288,7 @@ The final start values or formulas for molecules in a simulation are determined 
 
 ## Commit/update changes
 
-The workflow of committing changes from a simulation to a building block and updating a simulation with changes from a building block has been changed.
+This section describes the workflow of committing changes from a simulation to a building block and updating a simulation with changes from a building block.
 
 ### Updating a simulation with changes from a building block
 
