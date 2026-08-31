@@ -3,7 +3,7 @@
 This page lists the user-facing changes introduced in **Version 13** of the Open Systems Pharmacology Suite, relative to Version 12.3. Each entry links to the GitHub issue(s) where the change was tracked and, where available, to the section of this manual describing the feature.
 
 {% hint style="info" %}
-If you are migrating existing MoBi projects from v12, start with [Converting v12 MoBi projects to v13](part-4/converting-v12-projects-to-v13.md) - several merge-behavior changes described below can alter how a v12 model configuration builds in v13 **without any edit to the modules themselves**.
+If you are migrating existing MoBi projects from v12, start with [Converting v12 MoBi projects to v13](https://docs.open-systems-pharmacology.org/v13/working-with-mobi/mobi-documentation/reuse-of-project-information-from-previous-versions/converting-v12-projects-to-v13) - several merge-behavior changes described below can alter how a v12 model configuration builds in v13 **without any edit to the modules themselves**.
 {% endhint %}
 
 ## Highlights
@@ -17,7 +17,7 @@ If you are migrating existing MoBi projects from v12, start with [Converting v12
 ## Breaking changes and migration
 
 {% hint style="warning" %}
-The changes in this section can make a project or model configuration created in v12 behave differently in v13, or invalidate paths stored in it. The full migration procedure is described in [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md).
+The changes in this section can make a project or model configuration created in v12 behave differently in v13, or invalidate paths stored in it. The full migration procedure is described in [Converting v12 projects to v13](https://docs.open-systems-pharmacology.org/v13/working-with-mobi/mobi-documentation/reuse-of-project-information-from-previous-versions/converting-v12-projects-to-v13).
 {% endhint %}
 
 ### PK-Sim
@@ -152,11 +152,11 @@ The new compound parameters are grouped in two new (advanced) Compound building 
 
 Events - e.g., meal intake, gallbladder emptying - can now be defined directly within the administration protocol building blocks, including repetition. This means that recurring events, such as meals, no longer need to be entered individually in each simulation.  
 
-- [**Simple Protocols**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#simple-protocol) - one optional event with a configurable offset relative to administration is supported, covering cases such as dosing before or after a meal. 
+- [**Simple Protocols**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#simple-protocol) - one optional event with a configurable offset relative to administration is supported, covering cases such as dosing before or after a meal. 
 
 > **TODO – PK-Sim screenshot:** Simple Protocol configuration showing the optional event offset relative to administration.
 
-- [**Advanced Protocols**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#advanced-protocol) - the protocol schema supports event entries alongside administration entries, allowing events to follow the same repetition pattern as the protocol itself. 
+- [**Advanced Protocols**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#advanced-protocol) - the protocol schema supports event entries alongside administration entries, allowing events to follow the same repetition pattern as the protocol itself. 
 
 > **TODO – PK-Sim screenshot:** Advanced Protocol schema with an **event** entry highlighted.
 
@@ -168,7 +168,7 @@ Events - e.g., meal intake, gallbladder emptying - can now be defined directly w
 
 > **TODO – PK-Sim screenshot:** Protocol preview with administrations and events displayed on the same timeline.
 
-- **Uniform application structure** - every administration is now nested under a formulation container in the simulation tree. Administrations that need no formulation - **Intravenous Bolus** and **Intravenous Infusion** - are placed under a container named `No formulation`, so all administrations created in PK-Sim® have the same tree structure in MoBi®. This changes application parameter paths; see [Changed paths in PK-Sim modules](part-4/converting-v12-projects-to-v13.md#changed-paths-in-pk-sim-modules). ([PK-Sim #3462](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3462))
+- **Uniform application structure** - every administration is now nested under a formulation container in the simulation tree. Administrations that need no formulation - **Intravenous Bolus** and **Intravenous Infusion** - are placed under a container named `No formulation`, so all administrations created in PK-Sim® have the same tree structure in MoBi®. This changes application parameter paths; see [Changed paths in PK-Sim modules](https://docs.open-systems-pharmacology.org/v13/working-with-mobi/mobi-documentation/reuse-of-project-information-from-previous-versions/converting-v12-projects-to-v13#changed-paths-in-pk-sim-modules). ([PK-Sim #3462](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3462))
 
 - **Compatibility** - the _Events_ tab in the simulation configuration dialog is still available. Standalone events and existing simulations that use the previous event workflow continue to work with protocol-based events.
 
@@ -207,7 +207,7 @@ You can now commit compound-dependent simulation parameters that **are not part 
 
 ### MoBi®: Command-line interface
 
-MoBi® now ships a command-line interface for running workflows without the GUI - batch conversion between `*.mbp3` projects and JSON snapshots (`snap`) and validation/execution of qualification workflows (`qualification`). See [Command-Line Interface](part-4/mobi-command-line-interface.md). ([MoBi #2460](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2460), [MoBi #2449](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2449), [MoBi #2447](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2447))
+MoBi® now ships a command-line interface for running workflows without the GUI - batch conversion between `*.mbp3` projects and JSON snapshots (`snap`) and validation/execution of qualification workflows (`qualification`). See [Command-Line Interface](https://docs.open-systems-pharmacology.org/v13/working-with-mobi/mobi-documentation/mobi-command-line-interface). ([MoBi #2460](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2460), [MoBi #2449](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2449), [MoBi #2447](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2447))
 
 ### MoBi®: R interface
 
@@ -219,7 +219,7 @@ A MoBi® simulation can now hold multiple charts/analyses, as in PK-Sim®, with 
 
 ### Find References
 
-When editing a simulation, MoBi® can list all formulas that reference a selected parameter, with interactive drill-down. See [Find References](part-4/tools.md#find-references). ([MoBi #608](https://github.com/Open-Systems-Pharmacology/MoBi/issues/608))
+When editing a simulation, MoBi® can list all formulas that reference a selected parameter, with interactive drill-down. See [Find References](https://docs.open-systems-pharmacology.org/v13/working-with-mobi/mobi-documentation/tools#find-references). ([MoBi #608](https://github.com/Open-Systems-Pharmacology/MoBi/issues/608))
 
 ### Combined `AND`/`OR` container criteria
 
@@ -257,7 +257,7 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 - Simulation errors occurring during a Sensitivity Analysis are surfaced in the results. ([Core #2868](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2868))
 - Unified plot colors across Parameter Identification views; a cancelled identification reports its number of evaluations; options remain accessible on small screens. ([Core #2399](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2399), [Core #2814](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2814), [Core #2739](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2739))
 - "Transfer results to Simulation" works together with "Use as factor". ([Core #2754](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2754), [Core #2398](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2398))
-- The objective function minimized during Parameter Identification is now formally documented - see [Objective function and Total Error](part-5/parameter-identification.md#objective-function-and-total-error).
+- The objective function minimized during Parameter Identification is now formally documented - see [Objective function and Total Error](https://docs.open-systems-pharmacology.org/v13/shared-tools-and-example-workflows/parameter-identification#objective-function-and-total-error).
 
 #### Observed data
 
@@ -280,7 +280,7 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 
 ### Command line and R
 
-- The **PK-Sim® command-line interface** is now fully documented, covering the `run`, `snap`, `export` and `qualification` workflows with all options and exit codes. See [Command-Line Interface](part-3/pk-sim-command-line-interface.md).
+- The **PK-Sim® command-line interface** is now fully documented, covering the `run`, `snap`, `export` and `qualification` workflows with all options and exit codes. See [Command-Line Interface](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-command-line-interface).
 - The new **MoBi® command-line interface** and **MoBi® R interface** are described above.
 - R-relevant changes in the shared core: simulations with mixed individual and population lists can be run in one call ([Core #2897](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2897)), and populations can be created from a CSV string ([Core #2779](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2779)).
 - Fixes for loading simulations from snapshots via R and for gestational-age units in `createIndividual`. ([PK-Sim #3592](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3592), [PK-Sim #3574](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3574), [PK-Sim #3549](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3549))
