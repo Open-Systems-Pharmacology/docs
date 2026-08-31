@@ -8,7 +8,7 @@ This section provides an overview of the modularization concept and is especiall
 This page describes the concept as it works in **version 13**. The overall structure (Modules → Building Blocks → Simulations) is the same as in v12, but several of the [rules governing module combination](#creating-simulations-from-modules-and-combination-rules) changed. If you are migrating a project from v12, see [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for a summary of the differences.
 {% endhint %}
 
-An example workflow illustrating how to use the modularization concept in practice can be found [here](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
+An example workflow illustrating how to use the modularization concept in practice can be found in the [modularization use case—adding a tumor to a PBPK model](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
 
 ## MoBi project structure
 
