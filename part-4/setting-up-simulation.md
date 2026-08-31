@@ -269,7 +269,7 @@ Parameters associated with Event and Application Properties can be accessed at t
 
 ## Update and Commit Changes Between Simulations and Modules.
 
-Within the **Simulation Explorer**, each building block item of the **Configuration** tree is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consistent with the corresponding general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
+Within the **Simulation Explorer**, each building block item listed below a simulation is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consistent with the corresponding general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
 
 A right click on the red traffic lights in the **Simulation** window allows for two actions:
 
@@ -294,6 +294,8 @@ If no Parameter Values or Initial Conditions building block is selected for the 
 ## Further Options for Simulations
 
 Once a simulation is created, a number of options besides simply running the simulation are available.
+
+Clicking on the + sign of the simulation will expand the entry and show the **modules and building blocks** used in the corresponding simulation. A module entry is again expandable by a click on the + sign in front of it and yields the building blocks of that module. The expanded simulation entry also lists the observed data used by the simulation (see [Observed Data used by a Simulation](simulation-results.md#observed-data-used-by-a-simulation)).
 
 ### Calculate Scale Divisors
 
