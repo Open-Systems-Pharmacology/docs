@@ -295,7 +295,7 @@ If no Parameter Values or Initial Conditions building block is selected for the 
 
 Once a simulation is created, a number of options besides simply running the simulation are available.
 
-Clicking on the + sign of the simulation will expand the entry and show the **modules and building blocks** used in the corresponding simulation. A module entry is again expandable by a click on the + sign in front of it and yields the building blocks of that module. The expanded simulation entry also lists the observed data used by the simulation (see [Observed Data used by a Simulation](simulation-results.md#observed-data-used-by-a-simulation)).
+Clicking on the expand icon in front of the simulation will expand the entry and show the **modules and building blocks** used in the corresponding simulation. A module entry is again expandable by a click on the expand icon in front of it and yields the building blocks of that module. The expanded simulation entry also lists the observed data used by the simulation (see [Observed Data used by a Simulation](simulation-results.md#observed-data-used-by-a-simulation)).
 
 ### Calculate Scale Divisors
 
