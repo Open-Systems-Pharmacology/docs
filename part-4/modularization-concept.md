@@ -1,14 +1,18 @@
 # Modularization Concept in MoBi
 
-Starting with version 12 the OSP Suite introduces a new modularization concept for building models in MoBi. This new concept allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
+Since version 12, models in MoBi are built using the modularization concept. It allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
 
 This section provides an overview of the modularization concept and is especially suited for users familiar with previous versions of MoBi. It explains the advantages of using modules, how to create and manage them, and the rules that govern module combination.
+
+{% hint style="info" %}
+This page describes the concept as it works in **version 13**. The overall structure (Modules → Building Blocks → Simulations) is the same as in v12, but several of the [rules governing module combination](#creating-simulations-from-modules-and-combination-rules) changed. If you are migrating a project from v12, see [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for a summary of the differences.
+{% endhint %}
 
 An example workflow illustrating how to use the modularization concept in practice can be found [here](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
 
 ## MoBi project structure
 
-The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
+The modularization concept changed how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
 
 A MoBi project contains a set of:
 
@@ -40,7 +44,7 @@ When adding new containers (e.g., adding a new organ) or molecules in an Extensi
 
 ## Location of (individual) parameters
 
-Compared to the previous versions, v12 introduces some changes in how and where individual parameters are stored when a PBPK model is imported in MoBi.
+Since v12, individual parameters are stored as follows when a PBPK model is imported in MoBi (this is unchanged in v13):
 
 - All parameters of the spatial structure that are **present in all species** and have the **same value or the same formula in all species and individuals** are stored directly in the spatial structures BB with the fixed value or an explicit formula. Example: `Organism|Thickness (endothelium)` (constant value) or `Organism|Weight of blood organs` (sum formula).
 
@@ -54,7 +58,7 @@ The parameters that are defined in the individual are shown with grey background
 
 ## Parameter values building block
 
-Another important change (compared to the previous versions): the PV BB should only contain values for parameters that are different from those stored in other BBs. In most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transferred in the PV BB.
+The PV BB should only contain values for parameters that are different from those stored in other BBs. In most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transferred in the PV BB.
 
 ## Creating simulations from modules and combination rules
 
@@ -65,6 +69,10 @@ If a model configuration contains a PK-Sim module, the user must select an **Ind
 During simulation creation, the modules are combined to a common model structure. Entities are combined (extended or overwritten) by their absolute path (for containers in the spatial structure, parameters, and molecule values) or by their names (for neighborhoods, passive transports, molecules, etc). The result is a simulation which represents the combination of the selected modules.
 
 There are two types of combination behavior that can be defined for a module - **overwrite** or **extend**. The following sections describe how different building blocks are merged and what are the differences between the **overwrite** and the  **extend** modes, if any.
+
+{% hint style="info" %}
+The merge rules described below are the **v13** rules. Several of them differ from v12: in v12, "Extend" behaved like a full overwrite for Molecules, Reactions, Passive Transports, and Observers; `MoleculeProperties` in the spatial structure were always merged regardless of the merge behavior; and equally-named events were not merged across modules before simulation creation. A model configuration created in v12 can therefore produce a different simulation in v13. See [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for a complete list of the differences and the migration steps.
+{% endhint %}
 
 ### Condition lists
 
@@ -280,7 +288,7 @@ The final start values or formulas for molecules in a simulation are determined 
 
 ## Commit/update changes
 
-The workflow of committing changes from a simulation to a building block and updating a simulation with changes from a building block has been changed.
+This section describes the workflow of committing changes from a simulation to a building block and updating a simulation with changes from a building block.
 
 ### Updating a simulation with changes from a building block
 
