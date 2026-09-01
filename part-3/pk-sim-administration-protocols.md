@@ -53,7 +53,7 @@ Please note that in case that the administration type **User Defined** is select
 
 In addition to the administration, one event - e.g., a meal or the emptying of the gallbladder - can be defined in a simple protocol. This covers the typical situations in which a drug is administered before, with, or after a meal, and it avoids having to add a recurring event to every simulation individually.
 
-1. Activate **Administer with event**.
+1. Activate **Add an event for every administration...**.
 2. Enter the **Event offset**, i.e., the time of the event relative to the corresponding administration.
 
 The event is repeated together with the administration, so that a multiple dosing regimen with a meal at every administration only has to be defined once. Which event building block is used for the event is decided when the simulation is created, see [Events](#events-in-a-simulation).
@@ -86,10 +86,11 @@ The secondary table, can be opened by clicking ![Image](../assets/icons/Add.png)
 
 1. The **Start Time** of schema items in relation to the start time of the protocol schema. If the start time of the schema items is **0**, the administration time equals the start time of the protocol schema.
 2. The **Dose** in units mg or mg/kg of the drug administered.
-3. The **Administration type**. You can choose from the following administration types from the drop-down menu:
+3. The **Type**. You can choose from the following administration or event types from the drop-down menu:
    * <img src="../assets/icons/IntravenousBolus.svg" alt="" data-size="line"> Intravenous Bolus
    * <img src="../assets/icons/Intravenous.svg" alt="" data-size="line"> Intravenous Infusion: requires the input of the **Infusion time** in units min, h, or s
    * <img src="../assets/icons/Oral.svg" alt="" data-size="line"> Oral: requires the input of the **Volume of water/body weight** co- administered, which is 3.5 mL/kg BW per default (see PK- Sim® - _Formulations_) and, additionally, the definition of a **Placeholder for formulation** in column 4.
+   * User defined: requires the input of the **Target organ** and **Target compartment**.
    * Event: schedules an event instead of an administration, see [Events in an Advanced Protocol](#events-in-an-advanced-protocol).
 4. **Placeholder**, holding the placeholder for the formulation of an administration and the placeholder for the event of an event entry.\
    For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation placeholder is not necessary, because the drug is always assumed to be dissolved when given intravenously (see [PK-Sim® - Formulations](pk-sim-formulations.md)).
