@@ -98,7 +98,7 @@ Prediction models for tissue partition coefficients
 Prediction models for cellular permeabilities and intestinal permeability
 * PK-Sim® Standard (default)
 * Charge dependent Schmitt
-* Charge dependent Schmitt normalized PK-Sim®
+* Charge dependent Schmitt normalized to PK-Sim®
 
 ### Formulations
 
