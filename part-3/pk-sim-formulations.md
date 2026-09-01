@@ -107,10 +107,6 @@ The thickness of the diffusion layer around a particle can be described with one
 
 With **Use Effective Diffusion**, the drug bound to bile salt micelles is transported through the diffusion layer in parallel to the free drug, which requires the compound parameters described in [Advanced intestinal solubility](pk-sim-compounds-definition-and-work-flow.md#advanced-intestinal-solubility).
 
-#### Product particle size distribution (P-PSD)
-
-Instead of describing the particles by a measured particle size distribution, a **product particle size distribution (P-PSD)** can be used. A P-PSD is a polydisperse particle size distribution whose parameters are identified from in vitro dissolution experiments of the drug product, so that the mechanistic dissolution model reproduces the observed in vitro dissolution profile. It is entered like any other polydisperse distribution, using the parameters listed above. The identification of a P-PSD from in vitro dissolution data is described in [[174](../references.md#174)].
-
 ### Table
 
 Table defines the amount of drug applied per unit time as a continuous function. You can either manually specify time and fraction of the applied dose values or import dissolution data from Excel®.
