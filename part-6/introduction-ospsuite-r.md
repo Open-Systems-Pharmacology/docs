@@ -15,6 +15,19 @@ The package requires R version 4.4 or higher (64bit). Installation instructions 
 Specific workflows and details regarding the ospsuite package can be found here:
 [https://www.open-systems-pharmacology.org/OSPSuite-R/articles/](https://www.open-systems-pharmacology.org/OSPSuite-R/articles/)
 
+A typical scripted simulation workflow uses the following functions:
+
+| Step | Functions |
+| --- | --- |
+| Load a simulation exported to `*.pkml` | `loadSimulation` |
+| Find and modify model entities | `getParameter`, `getAllParametersMatching`, `setParameterValues`, `getMolecule`, `getAllMoleculesMatching` |
+| Define the simulated outputs | `addOutputs`, `clearOutputs` |
+| Run one or several simulations | `runSimulation`, `runSimulations` |
+| Calculate PK parameters | `calculatePKAnalyses`, `pkAnalysesAsDataFrame` |
+| Combine simulated and observed data for plotting | `DataCombined`, `DefaultPlotConfiguration`, `plotIndividualTimeProfile`, `plotPopulationTimeProfile` |
+| Create individuals and populations | `createIndividual`, `createPopulation` |
+| Work with MoBi projects and building blocks | `loadMoBiProject`, `createMoBiModule`, `loadModuleFromPKML`, `createIndividualBuildingBlock`, `createExpressionProfileBuildingBlock` |
+
 
 ## References
 The list of functions defined in the package can be found here: 

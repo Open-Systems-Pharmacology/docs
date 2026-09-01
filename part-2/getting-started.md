@@ -37,7 +37,7 @@ To install the Open Systems Pharmacology Suite core components:
 
 1.  Download installation packages from [http://setup.open-systems-pharmacology.org/](http://setup.open-systems-pharmacology.org/).
 
-2.  Start the **OSPSuite-Full.X.Y.Z.exe**\* (where X.Y.Z is a program version, e.g. 13.0.123) from the menu Start -\> Run or from Windows Explorer.
+2.  Start the **OSPSuite-Full.X.Y.Z.exe**\* (where X.Y.Z is a program version, e.g. 13.0.x) from the menu Start -\> Run or from Windows Explorer.
 
 3.  Follow the instructions of the installation program. In most cases, the installation should be carried out with the default settings.
 
