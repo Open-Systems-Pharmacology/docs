@@ -513,7 +513,7 @@ Two types of plots are supported here:
 
 * "**Subunits**": OPTIONAL Subset of {"*Mechanism*", "*Perpetrator*", "*Victim*"}. If defined, additional subchapters will be generated with DDI ratio plots grouped by the mechanism of action, perpetrator and victim.
 
-  [Example report with subunits](https://github.com/Open-Systems-Pharmacology/OSP-Qualification-Reports/blob/master/DDI_Qualification_CYP3A4/report.md)
+  [Example report with subunits](https://github.com/Open-Systems-Pharmacology/OSP-Qualification-Reports/blob/v12.0/DDI_Qualification_CYP3A4/report.md)
   
 * "**Groups**": plotted DDI ratios can be grouped. Each group has its own caption, color and symbol
 
