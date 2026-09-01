@@ -46,8 +46,6 @@ Findings that could not be resolved against a source are explicitly marked **[UN
 * [ ] **[GAP]** The v13 headline feature *Events in administration protocols* links to `pk-sim-administration-protocols#simple-protocol` / `#advanced-protocol`, but those sections contain **no event documentation**; the only v13 content on that page is the `No formulation` path change.
 * [ ] **[GAP]** The v13 headline feature *Compound Overwrite Parameter Sets* (`NEWS.md:12, 177-199`) is not documented anywhere in the manual — the string occurs only in `NEWS.md`.
 * [ ] **[GAP]** The v13 PBBM/oral-absorption feature is undocumented in the manual body: the new Compound groups **"Advanced Intestinal Solubility"** and **"Bile Salt Micelle Partitioning"** (`NEWS.md:141`) do not appear in `part-3/pk-sim-compounds-definition-and-work-flow.md`; the three diffusion-layer-thickness options (Constant / Hintz–Johnson / Hydrodynamic) and the P-PSD formulation input (`NEWS.md:117-122`) do not appear in `part-3/pk-sim-formulations.md`.
-* [ ] **[MINOR]** Link style inconsistent within the file: absolute `https://docs.open-systems-pharmacology.org/v13/...` URLs (lines 6, 20, 155, 159, 171, 210, 222, 260, 283) mixed with repo-relative links (lines 39-43, 230, 233). Commit `60e9f80` was applied only partially.
-* [ ] **[MINOR]** `NEWS.md:271` states the MiKTeX dependency was removed, but `part-2/getting-started.md` never mentioned MiKTeX, so the prerequisites section was never aligned with either state.
 
 ## [copyright.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/copyright.md)
 
