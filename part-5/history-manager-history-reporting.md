@@ -6,7 +6,7 @@ The history manager serves two purposes. On the one hand, it allows you to preci
 
 ![History manager, and history related ribbon groups in PK-Sim®](../assets/images/part-5/PKSIM-History.png)
 
-The history manager is available both in PK-Sim® and MoBi®, with only minor differences between the two programs. It is located at the lower part of the application window screenshot above. If it is not apparent, look for the little handle on the lower left corner which can be used, by hovering over, to pop up the history manager. Use the top right controls (in this history window) to make the history permanently visible. Other elements of relevance for interaction with the history are placed in the "Modeling & Simulation" ribbon as Buttons:
+The history manager is available both in PK-Sim® and MoBi®, with only minor differences between the two programs. It is located at the lower part of the application window screenshot above. If it is not apparent, look for the little handle on the lower left corner which can be used, by hovering over, to pop up the history manager. Use the top right controls (in this history window) to make the history permanently visible. Other elements of relevance for interaction with the history are placed in the "Modeling" ribbon as Buttons:
 
 *   Undo
 
@@ -66,7 +66,7 @@ Please note that by using the rollback function all intermediate steps will, nev
 
 PK-Sim® offers an additional way to achieve this:
 
-The "Modeling & Simulation" ribbon has a ribbon group History that offers a button "Undo". By clicking this button, you undo the last action. A second click on this button will undo the undo - that is reverting to the original state.
+The "Modeling" ribbon has a ribbon group History that offers a button "Undo". By clicking this button, you undo the last action. A second click on this button will undo the undo - that is reverting to the original state.
 
 ### Labels and comments
     
@@ -74,8 +74,8 @@ At any stage, the current stage of the application can be labeled. The History M
 
 In addition, the history manager provides an button, "Edit Comments". This can be used to add a comment to the currently selected entry of the history. If a comment already exists, it can be edited. Comments of a label can be edited as well.
 
-In PK-Sim®, the "Add Label..." and "Edit Comments" functionality is additionally available as buttons in the "Modeling & Simulation" ribbon.
+In PK-Sim®, the "Add Label..." and "Edit Comments" functionality is additionally available as buttons in the "Modeling" ribbon.
 
 ### Exporting the history
     
-The "Modeling & Simulation" ribbon provides a "Export History" button. When clicking on this button and selecting "Export history to Excel®", a file save dialog appears. Please choose a location and name for the file. The file will be saved in Excel® format and opened in Excel® after saving is complete.
+The "Modeling" ribbon provides a "Export History" button. When clicking on this button and selecting "Export history to Excel®", a file save dialog appears. Please choose a location and name for the file. The file will be saved in Excel® format and opened in Excel® after saving is complete.

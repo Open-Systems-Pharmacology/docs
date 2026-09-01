@@ -231,7 +231,7 @@ Before we can create a simulation, we need to define start values. To create new
 
 Before we can simulate, the reactions network of a simulation has to be created from the building blocks. To create a simulation:
 
-* Click on <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Create** in the _Simulation_ Group the _Modeling & Simulation_ ribbon tab.
+* Click on <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Create** in the _Simulation_ Group of the _Modeling_ ribbon tab.
 * In the appearing "Simulation Creation Wizard" window, specify a name for the simulation. Here: "RN".
 * Confirm the simulation creation process by clicking **Finish** <img src="../assets/icons/OK.svg" alt="" data-size="line">.
 

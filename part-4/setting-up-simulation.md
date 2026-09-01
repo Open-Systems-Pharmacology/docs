@@ -24,7 +24,7 @@ The behavior will be slightly different based on the loaded simulation type.
 
 A simulation can be created from at least one module or a combination of modules, individuals, and expression profiles. A specific combination of modules is called **model configuration**. To create a simulation:
 
-* Click on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Simulation** button in the **Create** group of the **Modelling** ribbon.
+* Click on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Simulation** button in the **Create** group of the **Modeling** ribbon.
 * Right-clicking on the "Simulations" entry in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> "Create Simulation..." in the context menu.
 
 A **Simulation Creation Wizard** opens that allows to select the modules, individual, expression profiles, initial conditions, and parameter values building blocks to create the simulation from as depicted below.
@@ -190,7 +190,7 @@ However, when scale divisors are calculated and applied to a simulation, solver 
 
 ## Default Simulation settings
 
-The project defaults for simulation output intervals, output selections, and solver settings can be defined in the **Default Simulation Settings** accessible through the **Edit** button of the **Simulation Settings** group in the **Modelling** ribbon. When a new simulation is created, these default settings are automatically applied.
+The project defaults for simulation output intervals, output selections, and solver settings can be defined in the **Default Simulation Settings** accessible through the **Edit** button of the **Simulation Settings** group in the **Modeling** ribbon. When a new simulation is created, these default settings are automatically applied.
 
 The default simulation settings can be exchanged between projects by saving them to and loading from a pkml file.
 

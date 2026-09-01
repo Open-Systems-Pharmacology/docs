@@ -30,7 +30,7 @@ Within the different building blocks, there are slight differences in the proced
 
 - **Local** parameters are parameters whose values depend on the location of the molecule or reaction, e.g., "Concentration" of a molecule, or the apparent $$K_{M,app}$$ that depends on the concentration of the inhibitor (see [PK-Sim - Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)). These parameters are listed under the molecule or reaction node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<MOLECULE/REACTION>|<parameter name>`, e.g., `Organism|VenousBlood|Plasma|Cimetidine|Concentration`, or `Organism|Liver|Periportal|Intracellular|Midazolam-CYP3A4-Metabolization|Km_app`.
 
-Any parameter has a **Dimension**, and the value can be represented in different **Units**. The list of all supported dimensions can be found in [Appendix A.1](../appendix.md#a1-dimensions-and-base-units).
+Any parameter has a **Dimension**, and the value can be represented in different **Units**. The list of all supported dimensions can be found in [Dimensions and Base Units](../appendix.md#dimensions-and-base-units).
 
 {% hint style="warning" %}
 When using a parameter in a formula, the value is always internally converted to the base unit of the dimension. For example, if a parameter with the dimension "Concentration (molar)" is defined with the unit "nmol/l", its value will be converted to "µmol/l" when used in a formula.

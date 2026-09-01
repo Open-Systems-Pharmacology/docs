@@ -28,7 +28,7 @@ to the NHANES study](../assets/images/part-3/BW-vs-age.png)
 
 To create a new population, do one of the following:
 
-* Click on **Population** <img src="../assets/icons/Population.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling & Simulation** Tab, or
+* Click on **Population** <img src="../assets/icons/Population.svg" alt="" data-size="line"> in the **Create** Group of the **Modeling** Tab, or
 
 * Right mouse click on **Populations** <img src="../assets/icons/Population.svg" alt="" data-size="line">in the **Building Block Explorer** and select "Add Population...", or
 

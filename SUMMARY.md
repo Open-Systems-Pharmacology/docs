@@ -7,13 +7,7 @@
 * [How to Contribute](how-to-contribute.md)
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
-* Best Practices
-    * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
-    * [Model Development](part-7/model-development.md)
-    * [Model Evaluation](part-7/model-evaluation.md)
-    * [Application Simulation](part-7/application-simulation.md)
-    * [Documentation](part-7/documentation.md)
-  
+
 * Modeling Concepts
   * [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
   * [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
@@ -21,6 +15,13 @@
   * [Expression Data for PBPK Modeling](part-1/modeling-concepts-expression-data-for-pbpk-modeling.md)
   * [Modeling of Proteins](part-1/modeling-concepts-modeling-of-proteins.md)
   * [PD and Reaction Network Modeling](part-1/modeling-concepts-pd-and-reaction-network-modeling.md)
+
+* Best Practices
+  * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
+  * [Model Development](part-7/model-development.md)
+  * [Model Evaluation](part-7/model-evaluation.md)
+  * [Application Simulation](part-7/application-simulation.md)
+  * [Documentation](part-7/documentation.md)
 
 ## Open Systems Pharmacology Suite
 

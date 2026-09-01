@@ -22,7 +22,7 @@ Next, expression levels of metabolizing enzymes can be added to the **Individual
 
 ![Expression levels of enzymes needs to be specified](../assets/images/part-5/LoadItraconazoleEnzymes.png)
 
-Further building blocks can be defined in the respective sections and a simulation is then created by clicking on the **Create** button in the **Simulation** section in the **Modeling and Simulation** tab.
+Further building blocks can be defined in the respective sections and a simulation is then created by clicking on the **Create** button in the **Simulation** section in the **Modeling** tab.
 
 In the pre-configured compound templates, the inhibition processes for each enzyme or transporter are predefined, but can be adjusted by the user if applicable. Enzymes present in the **Individual** building block are matched with processes specified in the used **Compound** building blocks and metabolites are defined. Also, systemic processes regarding transport or excretion (e.g. ‘Glomerular Filtration’ like in the example displayed here) are shown and can be modified as desired.
 
@@ -32,7 +32,7 @@ In the next step, application protocols for each compound are defined using the 
 
 ![Definition of administration protocols for each compound from available building blocks](../assets/images/part-5/ItraconazoleTemplateAdmin.png)
 
-After having added and matched all building blocks required, the simulation is set up and can be run by either hitting F5 or using the **Run** button in the **Simulation** section of the **Modeling and Simulation** tab.
+After having added and matched all building blocks required, the simulation is set up and can be run by either hitting F5 or using the **Run** button in the **Run & Analyze** tab.
 
 After running the simulation, all compounds and metabolites (in this case Itraconazole, Hydroxy-Itraconazole and Midazolam) can be plotted and the simulated PK data can be analyzed for each.
 

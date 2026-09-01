@@ -1,10 +1,10 @@
-# Appendix A.
+# Dimensions and Units
 
-## A.1. Dimensions and Base Units
+## Dimensions and Base Units
 
 Here you find an overview of all dimensions with their base units. Default display units are listed, where deviating from base units.
 
-**A.1. All dimensions and base units**
+**All dimensions and base units**
 
 Dimension | Base unit | Deviating default display unit
 --- | --- | ---
@@ -98,3 +98,7 @@ Tesla | T | T
 Volt | V | V
 Watt | W | W
 Weber | Wb | Wb
+Amount per area per time | µmol/dm²/min | µmol/cm²/h
+Amount per area | µmol/dm² | µmol/cm²
+Inversed area | 1/dm² | 1/cm²
+Area per amount per time | dm²/µmol/min | dm²/µmol/min

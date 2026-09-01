@@ -26,7 +26,7 @@ Cite the version of the manual that you actually used. The version number and th
 The braces around the author name are required. Without them, BibTeX reads "Open Systems Pharmacology" as given names and "Community" as a surname, and renders the author as "O. S. P. Community".
 
 {% hint style="info" %}
-If you used a different version of the manual, adjust the citation key, the `edition` and `year` fields, and the version segment of the `url` to match that version. The edition and year are given on the [copyright page](copyright.md) of that version. Where that page also names a publication month, add it as a `month` field.
+If you used a different version of the manual, adjust the citation key, the `edition` and `year` fields, and the version segment of the `url` to match that version. The edition and year are given on the [copyright page](copyright.md) of that version.
 {% endhint %}
 
 ## Citing the Open Systems Pharmacology Suite
