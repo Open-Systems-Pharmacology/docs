@@ -89,6 +89,8 @@ $$S_{br,j}(t) = \left( \frac{C_{BS,j}(t)\,S_0}{C_{H_2O}}\,K_{m:w,\text{neutral}}
 
 Aqueous solubility follows PK-Sim's built-in Henderson–Hasselbalch relationship, with the **solubility gain per charge (SG)** and **micelle/water partition coefficients (Km:w)** now informed directly from *in vitro* data by the [OSP Solubility Toolbox](https://doi.org/10.1016/j.ejps.2025.107164). Separating pH and bile-salt effects avoids over-predicting solubility in low-bile-salt segments (stomach, large intestine).
 
+> 🖼️ **TODO (screenshot):** Add a screenshot of the Compound building block parameter list in PK-Sim showing the new micelle/water partition coefficient and Critical Micellar Concentration parameters.
+
 ##### Dynamic luminal pH and bile salts
 
 Solubility-relevant parametrization of the lumen is no longer static. New empirical models capture temporal dynamics ([Part 2](https://doi.org/10.1016/j.ejps.2025.107189); all equation numbers below refer to the original publication):
@@ -100,6 +102,8 @@ Solubility-relevant parametrization of the lumen is no longer static. New empiri
 
 Fasted-state luminal pH values were also refreshed from a comprehensive literature review, and **population variability was added** to both pH and bile salt concentrations for all segments from stomach to rectum ([Part 2, Table 2](https://doi.org/10.1016/j.ejps.2025.107189)).
 
+> 🖼️ **TODO (screenshot):** Add a PK-Sim chart/plot screenshot illustrating simulated dynamic gastric pH and bile salt concentration profiles over time after a meal or water intake event.
+
 ---
 
 #### New dissolution model
@@ -110,12 +114,14 @@ $$\frac{dm_{solid,i,j}}{dt} = -A_{i,j}(t) \left( \frac{D_u}{h_{u,i,j}(t)}\left(S
 
 Key mechanics:
 - Spherical particles binned into up to 20 size classes; bound-API diffusion coefficient from the **Stokes–Einstein** equation using the FaSSIF micelle radius (rₘ = 2.72×10⁻⁶ cm).
-- **Three diffusion-layer-thickness (h) options**, user-selectable per formulation (see [Diffusion layer thickness](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-formulations#diffusion-layer-thickness)):
+- **Three diffusion-layer-thickness (h) options**, user-selectable per formulation:
   1. **Constant** (30 µm, default)
   2. **Hintz–Johnson** - h = particle radius, capped at an adjustable maximum
   3. **Hydrodynamic model** - h derived from the **Sherwood number** via the **Ranz–Marshall** correlation using **Reynolds** and **Schmidt** numbers (Eqs. 7–12)
 - An **absolute surface integration factor (Ψ)** damps particle regrowth under supersaturation (Eq. 13).
-- Formulations are described with a [**product particle-size distribution (P-PSD)**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-formulations#product-particle-size-distribution-p-psd) informed from *in vitro* dissolution, replacing empirical Weibull functions.
+- Formulations are described with a **product particle-size distribution (P-PSD)** informed from *in vitro* dissolution, replacing empirical Weibull functions.
+
+> 🖼️ **TODO (screenshot):** Add a screenshot of the Formulation building block dialog in PK-Sim showing the new diffusion-layer-thickness options (Constant / Hintz–Johnson / Hydrodynamic Model) and P-PSD input.
 
 ---
 
@@ -130,7 +136,9 @@ The **luminal pH** parameters were upgraded from static values to dynamic defini
 | Upper Jejunum | pH | VALUE → **FORMULA** |
 | Lower Jejunum, Upper/Lower Ileum, Caecum, Colon (Asc./Trans./Desc./Sigmoid) | pH | VALUE → **DISTRIBUTION** |
 
-The new compound parameters are grouped in two new (advanced) Compound building block groups, **Advanced Intestinal Solubility** and **Bile Salt Micelle Partitioning**, see [Advanced intestinal solubility](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-compounds-definition-and-work-flow#advanced-intestinal-solubility). ([PK-Sim #3404](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3404))
+> 🖼️ **TODO (screenshot):** Add a screenshot of the PK-Sim Individual building block parameter tree showing the new/modified bile salt and luminal pH parameters (basal, fasted, post-meal).
+
+The new compound parameters are grouped in two new (advanced) Compound building block groups, **Advanced Intestinal Solubility** and **Bile Salt Micelle Partitioning**. ([PK-Sim #3404](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3404))
 
 ---
 
@@ -144,17 +152,27 @@ The new compound parameters are grouped in two new (advanced) Compound building 
 
 Events - e.g., meal intake, gallbladder emptying - can now be defined directly within the administration protocol building blocks, including repetition. This means that recurring events, such as meals, no longer need to be entered individually in each simulation.  
 
-- [**Simple Protocols**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#events-in-a-simple-protocol) - one optional event with a configurable offset relative to administration is supported, covering cases such as dosing before or after a meal. 
+- [**Simple Protocols**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#simple-protocol) - one optional event with a configurable offset relative to administration is supported, covering cases such as dosing before or after a meal. 
 
-- [**Advanced Protocols**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#events-in-an-advanced-protocol) - the protocol schema supports event entries alongside administration entries, allowing events to follow the same repetition pattern as the protocol itself. 
+> **TODO – PK-Sim screenshot:** Simple Protocol configuration showing the optional event offset relative to administration.
 
-- [**Event mapping**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#events-in-a-simulation) - event placeholders are mapped to PK-Sim® event building blocks during the _Administration_ step of simulation configuration, together with the other protocol-related mappings. The same administration protocol can be reused with different event mappings across simulations. 
+- [**Advanced Protocols**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-administration-protocols#advanced-protocol) - the protocol schema supports event entries alongside administration entries, allowing events to follow the same repetition pattern as the protocol itself. 
+
+> **TODO – PK-Sim screenshot:** Advanced Protocol schema with an **event** entry highlighted.
+
+- **Event mapping TODO documentation link** - event placeholders are mapped to PK-Sim® event building blocks during the _Administration_ step of simulation configuration, together with the other protocol-related mappings. The same administration protocol can be reused with different event mappings across simulations. 
+
+> **TODO – PK-Sim screenshot:** Protocol mapping step showing how an event placeholder is mapped to a PK-Sim event building block.
 
 - **Protocol preview** - administrations and events are shown on the same timeline.
+
+> **TODO – PK-Sim screenshot:** Protocol preview with administrations and events displayed on the same timeline.
 
 - **Uniform application structure** - every administration is now nested under a formulation container in the simulation tree. Administrations that need no formulation - **Intravenous Bolus** and **Intravenous Infusion** - are placed under a container named `No formulation`, so all administrations created in PK-Sim® have the same tree structure in MoBi®. This changes application parameter paths; see [Changed paths in PK-Sim modules](https://docs.open-systems-pharmacology.org/v13/working-with-mobi/mobi-documentation/reuse-of-project-information-from-previous-versions/converting-v12-projects-to-v13#changed-paths-in-pk-sim-modules). ([PK-Sim #3462](https://github.com/Open-Systems-Pharmacology/PK-Sim/issues/3462))
 
 - **Compatibility** - the _Events_ tab in the simulation configuration dialog is still available. Standalone events and existing simulations that use the previous event workflow continue to work with protocol-based events.
+
+> **TODO – PK-Sim screenshot:** Events tab or legacy workflow view showing continued compatibility with standalone events.
 
 ### PK-Sim®: Compound Overwrite Parameter Sets
 
@@ -162,15 +180,23 @@ You can now commit compound-dependent simulation parameters that **are not part 
 
 - **Committing simulation parameters to the compound** - a new "Commit Simulation Parameters to Compound" action is available for each compound used in a simulation. This action opens a dialog listing all changed parameters, which can be deselected here. Then, either a new "Overwrite Parameter Set" can be created with its own name, or an existing one can be updated.
 
+> 🖼️ **TODO:** Screenshot of the "Commit simulation parameters to compounds" dialog, showing parameters grouped by compound with checkboxes and name/dropdown options.
+
 - **Uncommitted-changes indicator** - an orange status indicator on a compound within a simulation indicates uncommitted, compound-related parameter changes. These changes are saved with the project, so the indicator is retained when the project is reopened.
 
-- [**Overwrite Parameter Sets tab**](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-compounds-definition-and-work-flow#overwrite-parameter-sets-tab) - compound building blocks have a new tab positioned after "Advanced Parameters" with a master-detail view of all "Overwrite Parameter Sets" of the compound. Parameter values, units, and metadata can be inspected and edited. Individual parameters or entire sets can be deleted. One set can be marked as the default.
+> 🖼️ **TODO:** Screenshot of the simulation tree/toolbar showing the new orange "uncommitted changes" indicator next to the existing red compound-change indicator.
+
+- **Overwrite Parameter Sets tab** - compound building blocks have a new tab positioned after "Advanced Parameters" with a master-detail view of all "Overwrite Parameter Sets" of the compound. Parameter values, units, and metadata can be inspected and edited. Individual parameters or entire sets can be deleted. One set can be marked as the default.
+
+> 🖼️ **TODO:** Screenshot of the new "Overwrite Parameter Sets" tab in the Compound editor, showing the master-detail layout with a list of sets and parameter grid.
 
 - **Applying an Overwrite Parameter Set in a Simulation** - when adding or configuring a compound in a simulation, select an Overwrite Parameter Set from the dropdown menu. "\<None\>" uses the original formula-based values of the simulation parameters dependent on the compound, while any other selection applies the saved values of the chosen set. If the compound has a default set, it is preselected. Parameters applied from a set behave like normal compound parameters.
 
+> 🖼️ **TODO:** Screenshot of the compound configuration panel in a simulation, showing the Overwrite Parameter Set selection dropdown with "None" and named sets.
+
 - **Metadata** - optional metadata, such as species or disease state, can be stored in each Overwrite Parameter Set.
 - If a saved parameter path within an Overwrite Parameter Set cannot be resolved when the simulation is created, an error message will appear
-- **MoBi®** - Overwrite Parameter Sets are merged into the standard `ParameterValues` building block when the simulation is exported to MoBi®, so existing MoBi® workflows are not affected.
+- **MoBi®** - Overwrite Parameter Sets are merged into the standard `ParameterValues` building block during simulation creation, so existing MoBi® workflows are not affected.
 
 ### Other PK-Sim® improvements
 
