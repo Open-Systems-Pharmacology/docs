@@ -34,12 +34,10 @@ Findings that could not be resolved against a source are explicitly marked **[UN
 
 * **[GAP]** `core-separator.md` exists in the repo but is not referenced from `SUMMARY.md`. Its entire content is a horizontal rule (`___`), so it is a leftover layout artifact.
 * **[MINOR]** In the "Mechanistic Modeling of Pharmacokinetics and Dynamics" part, `Best Practices` (part-7) is listed *before* `Modeling Concepts` (part-1), so best-practice guidance precedes the conceptual introduction it builds on (`SUMMARY.md:9-23`).
-* No dangling entries: all 73 entries resolve to existing files.
 
 ## [README.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/README.md)
 
 * **[GAP]** README describes the manual as "divided into the parts listed below" and enumerates part-1 → part-6, but **omits part-7 (Best Practices)**, which `SUMMARY.md` presents as the first section of the manual (`README.md:13-47` vs `SUMMARY.md:10-15`).
-* All 6 relative links resolve.
 
 ## [NEWS.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/NEWS.md)
 
@@ -54,7 +52,6 @@ Findings that could not be resolved against a source are explicitly marked **[UN
 ## [copyright.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/copyright.md)
 
 * **[MINOR]** Publication date is given only as a year ("Publication date 2026"), while `how-to-cite.md:29` instructs readers to add the publication month if named — the month is never provided.
-* Links resolve (`references.md#115` → `references.md:348`).
 
 ## [how-to-contribute.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/how-to-contribute.md)
 
@@ -78,17 +75,13 @@ Verified line-by-line against `OSPSuite.Dimensions.xml` (94 dimensions in the XM
   | `Area per amount per time` | `dm²/µmol/min` |
   | `Inversed area` | `1/dm²` |
 
-* **Verified correct:** zero base-unit mismatches, zero deviating-default-display-unit mismatches, and no extra dimensions listed that do not exist in the XML.
-* **Not a defect (corrects an earlier suspicion):** the empty cells in the `Fraction` row (`appendix.md:47`) faithfully reproduce `OSPSuite.Dimensions.xml`, where `Fraction` has `baseUnit=""`.
 * **[MINOR]** The page is titled "Appendix A." with a single section "A.1.", implying a non-existent A.2; `SUMMARY.md:98` labels the same page "Dimensions and Units".
-* The generator `R/get-dimensions-and-units.R` reads the XML shipped inside the installed `ospsuite` package, so the four missing dimensions indicate the table was generated against an older `OSPSuite.Dimensions.xml` than the current `master`.
 
 ## [references.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/references.md)
 
 * **[MINOR]** Entry **173** is never cited from any page (numbering runs 1–173; maximum citation used is 172).
 * **[MINOR]** Entries 123 and 125 carry inline HTML comments inside the heading text (`#### 123 <!-- markdown-link-check-disable-next-line -->`, `references.md:372, 378`). GitBook/GitHub slugging includes the comment text, so inbound links `references.md#123` and `references.md#125` (from `part-7/a-short-guide-to-pbpk-model-development.md:9` and `part-7/documentation.md:18`) are at risk of not resolving.
 * **[MINOR]** Duplicate entries cited as if distinct: `[[124]]`, `[[142]]`, `[[154]]` are the identical Peters & Dolgos (2019) paper; `[[129]]` and `[[159]]` are both Miller et al. (2019); `[[137]]` and `[[151]]` are both Kuemmel et al.
-* No dangling citation targets: every `references.md#N` used in the repo has a matching `#### N` heading.
 
 ## [factsheet.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/factsheet.md)
 
@@ -112,7 +105,6 @@ Verified line-by-line against `OSPSuite.Dimensions.xml` (94 dimensions in the XM
 
 * **[GAP]** The organ description ("vascular space, divided into plasma and (red) blood cells and the avascular space, divided into interstitial and cellular space", `:7`) omits the **endosome** subcompartment, which both `factsheet.md:209` and `part-1/modeling-concepts-modeling-of-proteins.md:9,12` describe as a standard subcompartment of the protein model.
 * **[MINOR]** Two malformed citation brackets in one sentence: `[[116]](../references.md#116)` (closing bracket outside link text) and `[[120\]](../references.md#120)` (escaped bracket) (`:5`).
-* All cross-links and anchors resolve.
 
 ## [part-1/modeling-concepts-expression-data-for-pbpk-modeling.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-1/modeling-concepts-expression-data-for-pbpk-modeling.md)
 
@@ -134,7 +126,6 @@ Verified line-by-line against `OSPSuite.Dimensions.xml` (94 dimensions in the XM
 * **[OUTDATED]** The CLI bullet describes the command-line interface as PK-Sim-only ("allows batch processing of multiple projects in PK-Sim") and links only to the PK-Sim CLI page. v13 introduced a **MoBi® command-line interface** (`MoBi.CLI/Program.cs`, verbs `snap` and `qualification`), documented at `part-4/mobi-command-line-interface.md` (`:49` vs `NEWS.md:208-210`).
 * **[GAP]** The R-package list omits the new **MoBi® R interface** package introduced in v13 (`:55-58` vs `NEWS.md:212-214`).
 * **[GAP]** The **Installation Validator** bullet gives no link to the tool, its repository, or any usage instructions, unlike every other bullet in the same section (`:48`).
-* All links and anchors resolve, including the double-dash anchor `../part-3/importing-exporting-project-data-models.md#exporting-project-to-snapshot--loading-project-from-snapshot`.
 
 ## [part-2/getting-started.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-2/getting-started.md)
 
@@ -146,7 +137,6 @@ Verified line-by-line against `OSPSuite.Dimensions.xml` (94 dimensions in the XM
 * **[GAP]** The **Installation Validator** — the "1-Click" way to validate an installation, with its own `InstallationValidator` executable — is not mentioned in the installation chapter at all. Repo-wide, "Installation Validator" occurs only in `part-2/modules-philsophy-building-blocks.md:48`. The tool's command-line behaviour (`InstallationValidator/Program.cs`) is documented nowhere in the manual.
 * **[MINOR]** "Third Party Tools" tells the reader to contact suppliers "indicated in the section 'Trademark information'" for **Matlab®**, but that section names only Excel® and R.
 * **[MINOR]** Repeated grammar error: "the core components of the Open Systems Pharmacology Suite, including PK-Sim® MoBi®" (missing "and") at `:13` and `:57`.
-* **[UNVERIFIED]** The supported-Windows list (10/11, Server 2019/2022/2025) and "R version 4.1 or higher" could not be confirmed against installer manifests; no page in `part-6/` states an R version either.
 
 ---
 
@@ -156,13 +146,11 @@ Verified line-by-line against `OSPSuite.Dimensions.xml` (94 dimensions in the XM
 
 Verified against `PKSim.CLI/Program.cs` and `PKSim.CLI/Commands/*.cs`.
 
-* **Verified correct:** the four verbs `run`, `snap`, `export`, `qualification`; exit codes `0` (success) / non-zero (error) per `enum ExitCodes { Success = 0, Error = 1 << 0 }`; every documented short/long option name, requiredness and default (`-i/--input`, `-o/--output`, `--forAll`, `-c/--csv`, `-x/--xml`, `-j/--json`, `-k/--pkml`, `-e/--excel`, `-p/--project`, `-s/--simulations`, `-s/--snapshot`, `-r/--run`, `-v/--validate`, `-e/--exp`, `-l/--log`, `--logLevel`).
 * **[GAP]** The `--cores` option is **not documented**. It is declared on the shared base class `PKSim.CLI/Commands/CLICommand.cs` and therefore available on **all four verbs**: *"Optional. Maximal number of cores to use … Default is the number of logical processors of the machine."* This is the primary performance-tuning knob of the CLI and it is absent from all four "Logging options" lists in the page.
 
 ## [part-3/pk-sim-creating-individuals.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-creating-individuals.md)
 
 * **[ERROR]** Internally inconsistent species enumeration: the page lists ten species (Human, Monkey, Beagle, Dog, Minipig, Rat, Mouse, Rabbit, Cat, Cattle), but the "Animal species" subsection enumerates only "Monkey, Beagle, Dog, Minipig, Rat or Mouse" — **Rabbit, Cat and Cattle are omitted** (`:29-40`).
-* **[UNVERIFIED]** The authoritative species set is populated from the PK-Sim database rather than from constants; `PKSim.Core/CoreConstants.Species` only declares the subset requiring special handling (`HUMAN`, `RAT`, `MOUSE`, `RABBIT`, `CAT`, `CATTLE`, `BEAGLE`, `MINIPIG`), which corroborates but does not close the ten-species list.
 
 ## [part-3/pk-sim-creating-populations.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-creating-populations.md)
 
@@ -187,7 +175,6 @@ Verified against `PKSim.CLI/Program.cs` and `PKSim.CLI/Commands/*.cs`.
 ## [part-3/pk-sim-formulations.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-formulations.md)
 
 * **[GAP]** Still lists only the pre-v13 formulation types. The v13 additions announced in `NEWS.md:117-122` — the three diffusion-layer-thickness options (Constant / Hintz–Johnson / Hydrodynamic) and the **P-PSD** formulation input — are absent.
-* Formulation display names in the page are consistent with `CoreConstants.Formulation` (`Particles`, `FirstOrder`, `ZeroOrder`, `Tablet_Lint80`, `Table`, `Tablet_Weibull`, `Dissolved`).
 
 ## [part-3/pk-sim-administration-protocols.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-administration-protocols.md)
 
@@ -201,7 +188,6 @@ Verified against `PKSim.CLI/Program.cs` and `PKSim.CLI/Commands/*.cs`.
 
 ## [part-3/pk-sim-options.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-options.md), [part-3/pk-sim-projects.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-projects.md), [part-3/pk-sim-quick-guide.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-quick-guide.md), [part-3/conversion-projects-from-previous-version.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/conversion-projects-from-previous-version.md), [part-3/importing-exporting-project-data-models.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/importing-exporting-project-data-models.md), [part-3/pk-sim-compounds-defining-inhibition-induction-processes.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-compounds-defining-inhibition-induction-processes.md), [part-3/pk-sim-creating-individuals-tabs.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-3/pk-sim-creating-individuals-tabs.md) and remaining part-3 pages
 
-* No source-backed discrepancies found beyond those listed above. Anchors targeted from other parts resolve (`#model-settings`, `#adme-properties-tab`, `#distribution---distribution-calculation`, `#definition-of-a-metabolite-in-an-enzymatic-process`, `#exporting-project-to-snapshot--loading-project-from-snapshot`, `#comparison-chart-for-individual-or-population-simulations-in-one-plot`).
 * **[MINOR]** `part-3/pk-sim-command-line-interface.md:141,145` use unversioned `docs.open-systems-pharmacology.org/…` links that bypass the v13 namespace.
 
 ---
@@ -212,10 +198,8 @@ Verified against `PKSim.CLI/Program.cs` and `PKSim.CLI/Commands/*.cs`.
 
 Verified against `MoBi.CLI/Program.cs`, `MoBi.CLI/Commands/CLICommand.cs`, `SnapshotRunCommand.cs`, `QualificationRunCommand.cs`.
 
-* **Verified correct:** exactly two verbs, `snap` and `qualification` (the MoBi CLI has no `run` or `export` verb); exit codes `0` / non-zero; the documented options `-i/--input`, `-o/--output`, `-p/--project`, `-s/--snapshot`, `-v/--validate`, `-r/--run`, `-e/--exp`, `-l/--log`, `--logLevel`.
 * **[GAP]** The `--cores` option is **not documented**. Declared on `MoBi.CLI/Commands/CLICommand.cs`, so it applies to both verbs.
 * **[GAP]** The `snap` verb has a long-only option **`--pksim`** (path of the PK-Sim installation folder) that is not documented. Without it, snapshot conversion of MoBi projects that reference PK-Sim modules relies on the registry lookup, which fails for portable installations.
-* Note that `qualification` also exposes `-p/--pksim` — i.e. `-p` means *project* on `snap` but *PK-Sim installation folder* on `qualification`. The page does not warn about this asymmetry. **[MINOR]**
 
 ## [part-4/setting-up-simulation.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/setting-up-simulation.md)
 
@@ -224,22 +208,6 @@ Verified against `MoBi.CLI/Program.cs`, `MoBi.CLI/Commands/CLICommand.cs`, `Snap
 ## [part-4/example-workflows.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/example-workflows.md)
 
 * **[ERROR]** Ribbon tab named **"Modeling & Simulation"** (`:234`: "**Create** in the *Simulation* Group the *Modeling & Simulation* ribbon tab"). `AppConstants.RibbonPages` for MoBi defines: `File`, `Modeling`, `Working Journal`, `Import/Export`, `Utilities`, the `Edit <BuildingBlock>` dynamic pages, `Run & Analyze`, `Views`, `Parameter Identification`. **There is no "Modeling & Simulation" ribbon page in MoBi.**
-
-## [part-4/converting-v12-projects-to-v13.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/converting-v12-projects-to-v13.md)
-
-* No source-backed discrepancies found. All internal anchors (`#what-changed-by-building-block`, `#changed-paths-in-pk-sim-modules`) resolve. This page is also the only place in the repo using `{% hint style="danger" %}`, which `how-to-contribute.md` does not list (see above).
-
-## [part-4/modularization-concept.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/modularization-concept.md), [part-4/building-block-concepts.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/building-block-concepts.md), [part-4/molecules-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/molecules-bb.md), [part-4/reactions-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/reactions-bb.md), [part-4/spatial-structures-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/spatial-structures-bb.md), [part-4/initial-conditions-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/initial-conditions-bb.md), [part-4/parameter-values-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/parameter-values-bb.md), [part-4/expression-profiles-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/expression-profiles-bb.md), [part-4/individuals-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/individuals-bb.md), [part-4/observers-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/observers-bb.md), [part-4/events-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/events-bb.md), [part-4/passive-transports-bb.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/passive-transports-bb.md), [part-4/parameters-formulas-tags.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/parameters-formulas-tags.md), [part-4/simulation-results.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/simulation-results.md), [part-4/tools.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/tools.md), [part-4/first-steps.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/first-steps.md) and remaining part-4 pages
-
-* No discrepancies confirmed against `MoBi.Assets/AppConstants.cs` / `MoBi.UI/UIConstants.cs` for the strings checked. The building-block terminology on these pages (**Initial Conditions**, **Parameter Values**, **Expression Profiles**, **Individuals**) is current and is what `part-2/modules-philsophy-building-blocks.md` fails to match.
-* All cross-file anchors targeted from other parts resolve.
-* **[UNVERIFIED]** Formula-function catalogue, solver default values and the `Find References` tool behaviour were not exhaustively diffed against `MoBi.Core`.
-
-## [part-4/mobi-options.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-4/mobi-options.md)
-
-* **[UNVERIFIED]** The individual option captions and defaults were not diffed against `MoBi.Core/StartOptions`/`MoBi.UI/UIConstants.cs`.
-
----
 
 # 6. Part 5 — Shared Tools
 
@@ -256,7 +224,6 @@ Verified against `MoBi.CLI/Program.cs`, `MoBi.CLI/Commands/CLICommand.cs`, `Snap
 * **[MINOR]** Cross-reference by title rather than link: "…is explained in 'Using Alternative X-Values'" (`:87`), while the same target is linked properly at `:326`.
 * **[MINOR]** Garbled sentence in the axes table, "Default" row: "Curves added to a y-axis get this linestyle by default. This way, Linestyle in the chart, curves can be easily correlated with their y-axes." — the column name has been spliced into the sentence (`:206`).
 * **[MINOR]** Typos: "To make you legends clear and readable" (should be "your") (`:173`).
-* **[UNVERIFIED]** The axis `Scaling` (Linear/Log), `Numbers` (Normal/Scientific/Relative), symbol list, line-style list, thickness values 1/2/3, the maximum of 3 y-axes and the "first 16 curves" auto-colouring rule (`:115-118, :193, :203-204`) were not confirmed against `OSPSuite.Core` chart enums. Note that the *qualification-plan* symbol enum (below) is far larger than the list documented here, which suggests the chart symbol list also warrants a direct check.
 
 ## [part-5/qualification.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/qualification.md)
 
@@ -288,7 +255,6 @@ Verified against `schemas/OSP_Qualification_Plan_Schema.json` (`QualificationPla
 * **[MINOR]** Several examples are truncated mid-structure (`GOFMergedPlots`, `ComparisonTimeProfilePlots`, `PKRatioPlots` at `:283-301, :379-396, :523-541`); two use indented rather than fenced `json` blocks.
 * **[MINOR]** Version-pinned external example links that will drift: the `v11.0` tag of `OSP-Qualification-Reports` (`:498`) and fixed commit SHAs for observed-data examples (`:125, :129`).
 * **[MINOR]** Multiple H1 headings in one page (`:1, :41, :599, :690`).
-* **Verified correct:** the building-block `Type` list at `:75`; `ObservedDataSets[].Type` values `TimeProfile`/`PKRatio`/`DDIRatio`; `GOFMergedPlots.PlotTypes` = `predictedVsObserved`/`residualsOverTime`; `DDIRatioPlots.PlotTypes` = `predictedVsObserved`/`residualsVsObserved`; `Artifacts` = `{Plot, Measure, GMFE}` for GOF plots and `{Plot, Measure, GMFE, Table}` for ratio plots; `Subunits` = `{Mechanism, Perpetrator, Victim}`.
 
 ## [part-5/parameter-identification.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/parameter-identification.md)
 
@@ -302,13 +268,6 @@ Verified against `schemas/OSP_Qualification_Plan_Schema.json` (`QualificationPla
 ## [part-5/history-manager-history-reporting.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/history-manager-history-reporting.md)
 
 * **[ERROR]** Ribbon name wrong in four places: `"Modeling & Simulation" ribbon` at `:9, :69, :77, :81`. Neither `PKSimConstants.RibbonPages` nor `AppConstants.RibbonPages` (MoBi) defines such a page; the ribbon is **`Modeling`** (with `Run & Analyze` for run/analyze commands).
-
-## [part-5/comparison-building-blocks.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/comparison-building-blocks.md), [part-5/import-edit-observed-data.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/import-edit-observed-data.md), [part-5/sensitivity-analysis.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/sensitivity-analysis.md), [part-5/setting-drug-drug-interaction-pk-sim.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/setting-drug-drug-interaction-pk-sim.md), [part-5/working-journal.md](https://github.com/Open-Systems-Pharmacology/docs/blob/v13/part-5/working-journal.md)
-
-* **[UNVERIFIED]** Not diffed against source. These require `OSPSuite.Core` (importer, sensitivity-analysis defaults, history manager, journal) and `PK-Sim` (DDI parameter names and formulas, PK-parameter names). No findings are reported rather than unsupported ones.
-* Note: the qualification-plan `pkParameters` enum (33 values, listed in the schema) is the authoritative PK-parameter name set and is a good cross-check target for the PK-parameter tables in these pages.
-
----
 
 # 7. Part 6 — Working with R
 
@@ -360,43 +319,3 @@ Verified against `schemas/OSP_Qualification_Plan_Schema.json` (`QualificationPla
 
 # 9. Cross-cutting issues
 
-## 9.1 Ribbon page names (highest-impact class of errors)
-
-Neither PK-Sim nor MoBi has a ribbon page called **"Modeling & Simulation"** or **"Modelling"**. Authoritative sets:
-
-* **PK-Sim** (`PKSim.Assets/PKSimConstants.RibbonPages`): `File`, `Working Journal`, `Modeling`, `Utilities`, `Import/Export`, `Import`, `Export`, `Run & Analyze`, `Analyze`, `Views`.
-* **MoBi** (`MoBi.Assets/AppConstants.RibbonPages`): `File`, `Modeling`, `Working Journal`, `Import/Export`, `Utilities`, `Edit Molecule`, `Edit Reaction`, `Edit Spatial Structure`, `Edit Passive Transport`, `Edit Observer`, `Edit Event`, `Edit Initial Conditions`, `Edit Parameter Values`, `Run & Analyze`, `Views`, `Parameter Identification`.
-
-Affected locations: `part-3/pk-sim-creating-populations.md:31`; `part-3/pk-sim-simulations.md:243, 266, 388`; `part-4/example-workflows.md:234`; `part-4/setting-up-simulation.md:27, 193`; `part-5/history-manager-history-reporting.md:9, 69, 77, 81`.
-
-## 9.2 Undocumented `--cores`
-
-`--cores` exists on **every** CLI in the suite and is documented on **none** of them: PK-Sim (all four verbs, `PKSim.CLI/Commands/CLICommand.cs`), MoBi (both verbs, `MoBi.CLI/Commands/CLICommand.cs`), QualificationRunner (`-c, --cores`).
-
-## 9.3 Unversioned documentation links
-
-`part-2/getting-started.md:51,53`, `part-3/pk-sim-command-line-interface.md:141,145` and `part-5/qualification.md:125,377` use `https://docs.open-systems-pharmacology.org/<path>` without the `/v13/` segment, so from the v13 manual they resolve to whatever version is currently the published default. `NEWS.md` was partially converted to versioned links by commit `60e9f80`; the rest of the manual was not.
-
-## 9.4 v13 features announced but not documented
-
-| Feature (`NEWS.md`) | Expected location | Status |
-| --- | --- | --- |
-| Compound Overwrite Parameter Sets | `part-3/pk-sim-compounds-definition-and-work-flow.md` | absent |
-| Advanced Intestinal Solubility / Bile Salt Micelle Partitioning | `part-3/pk-sim-compounds-definition-and-work-flow.md` | absent |
-| Diffusion layer thickness options, P-PSD | `part-3/pk-sim-formulations.md` | absent |
-| Events in administration protocols | `part-3/pk-sim-administration-protocols.md` | absent |
-| MoBi R interface package | `part-2/modules-philsophy-building-blocks.md`, `part-6/` | absent |
-| MoBi CLI | `part-2/modules-philsophy-building-blocks.md:49` | page exists, but part-2 still says CLI is PK-Sim-only |
-| .NET 10 | `part-2/getting-started.md` requirements table | absent |
-| `Kd (FcRn) of <container>` rename | `part-1/modeling-concepts-modeling-of-proteins.md` | absent |
-
-## 9.5 Not verified
-
-The following checks could not be completed and should be treated as open:
-
-* Exhaustive diff of `part-4` MoBi formula functions, solver defaults and tool captions against `MoBi.Core`.
-* `part-5/import-edit-observed-data.md`, `sensitivity-analysis.md`, `setting-drug-drug-interaction-pk-sim.md`, `working-journal.md`, `comparison-building-blocks.md` against `OSPSuite.Core` / `PK-Sim`.
-* Chart enum values in `part-5/chart-component.md` against `OSPSuite.Core` chart model.
-* HTTP status of external links (no status-code checking was performed; the link findings above are structural).
-* Supported-Windows matrix and R version in `part-2/getting-started.md`.
-* `OSPSuite.ReportingEngine` / `OSPSuite-R` / `TLF-Library` API coverage — moot as reference checks, because all three part-6 pages are link stubs containing zero API references, but this is itself the `[GAP]` reported in §7.
