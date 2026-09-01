@@ -19,10 +19,10 @@ Branch obtained with `git fetch origin v13`. 69 Markdown files were reviewed.
 
 Finding classification:
 
-* [ ] **[ERROR]** — the documentation states something that is factually wrong against the source.
-* [ ] **[OUTDATED]** — correct for an earlier version, superseded in v13.
-* [ ] **[GAP]** — implemented behaviour that is not documented at all.
-* [ ] **[MINOR]** — editorial, structural or consistency issue.
+* **[ERROR]** — the documentation states something that is factually wrong against the source.
+* **[OUTDATED]** — correct for an earlier version, superseded in v13.
+* **[GAP]** — implemented behaviour that is not documented at all.
+* **[MINOR]** — editorial, structural or consistency issue.
 
 Findings that could not be resolved against a source are explicitly marked **[UNVERIFIED]**.
 
