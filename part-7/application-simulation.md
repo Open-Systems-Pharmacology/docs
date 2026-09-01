@@ -9,7 +9,7 @@
         - Türk et al. published a whole-body PBPK model of trimethoprim that can be used as a template for drug-drug-gene interaction (DDGI) predictions involving MATE1, OCT1, OCT2 and CYP2C8 [[145](../references.md#145)].
 - Special Populations
     - Pediatrics
-        - Yun et al. determined the appropriateness of the virtual individual creating algorithm in PK-Sim® in predicting PK parameters and their variability in children by comparing a model output, clearance, to observed data. Identified the critical system specific input parameters within a pediatric PBPK model structure for estimating exposure in children via a sensitivity analysis [[147](../references.md#147)].
+        - Yun et al. determined the appropriateness of the virtual individual creating algorithm in PK-Sim® in predicting PK parameters and their variability in children by comparing a model output, clearance, to observed data. Identified the critical system-specific input parameters within a pediatric PBPK model structure for estimating exposure in children via a sensitivity analysis [[147](../references.md#147)].
         - A brief overview of the development of pediatric physiologically based pharmacokinetic (PPBPK) models, the challenges of uncertain systems information, and finally performance verification considering recent regulatory guidance [[138](../references.md#138)].
     - Pregnancy 
         - These manuscripts provide an overview of the pregnancy model in PK-Sim, its major aspects and the physiological changes it accounts for [[132](../references.md#132)], [[108](../references.md#108)], [[110](../references.md#110)]
