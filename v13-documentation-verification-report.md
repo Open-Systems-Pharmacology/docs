@@ -314,3 +314,37 @@ Verified against `schemas/OSP_Qualification_Plan_Schema.json` (`QualificationPla
 * **[MINOR]** "Organ Impairment" appears twice — as a sub-bullet under "Special Populations" and again as a top-level bullet (`:9,15`).
 * **[MINOR]** Reference `[[137]]` and its full descriptive sentence are duplicated verbatim (`:26` and `:38`).
 * **[MINOR]** Missing space after full stop: "…this tool.It also summarize…" (`:25`).
+
+---
+
+# 9. Cross-cutting issues
+
+## 9.1 Ribbon page names (highest-impact class of errors)
+
+Neither PK-Sim nor MoBi has a ribbon page called **"Modeling & Simulation"** or **"Modelling"**. Authoritative sets:
+
+* **PK-Sim** (`PKSim.Assets/PKSimConstants.RibbonPages`): `File`, `Working Journal`, `Modeling`, `Utilities`, `Import/Export`, `Import`, `Export`, `Run & Analyze`, `Analyze`, `Views`.
+* **MoBi** (`MoBi.Assets/AppConstants.RibbonPages`): `File`, `Modeling`, `Working Journal`, `Import/Export`, `Utilities`, `Edit Molecule`, `Edit Reaction`, `Edit Spatial Structure`, `Edit Passive Transport`, `Edit Observer`, `Edit Event`, `Edit Initial Conditions`, `Edit Parameter Values`, `Run & Analyze`, `Views`, `Parameter Identification`.
+
+Affected locations: `part-3/pk-sim-creating-populations.md:31`; `part-3/pk-sim-simulations.md:243, 266, 388`; `part-4/example-workflows.md:234`; `part-4/setting-up-simulation.md:27, 193`; `part-5/history-manager-history-reporting.md:9, 69, 77, 81`.
+
+## 9.2 Undocumented `--cores`
+
+`--cores` exists on **every** CLI in the suite and is documented on **none** of them: PK-Sim (all four verbs, `PKSim.CLI/Commands/CLICommand.cs`), MoBi (both verbs, `MoBi.CLI/Commands/CLICommand.cs`), QualificationRunner (`-c, --cores`).
+
+## 9.3 Unversioned documentation links
+
+`part-2/getting-started.md:51,53`, `part-3/pk-sim-command-line-interface.md:141,145` and `part-5/qualification.md:125,377` use `https://docs.open-systems-pharmacology.org/<path>` without the `/v13/` segment, so from the v13 manual they resolve to whatever version is currently the published default. `NEWS.md` was partially converted to versioned links by commit `60e9f80`; the rest of the manual was not.
+
+## 9.4 v13 features announced but not documented
+
+| Feature (`NEWS.md`) | Expected location | Status |
+| --- | --- | --- |
+| Compound Overwrite Parameter Sets | `part-3/pk-sim-compounds-definition-and-work-flow.md` | absent |
+| Advanced Intestinal Solubility / Bile Salt Micelle Partitioning | `part-3/pk-sim-compounds-definition-and-work-flow.md` | absent |
+| Diffusion layer thickness options, P-PSD | `part-3/pk-sim-formulations.md` | absent |
+| Events in administration protocols | `part-3/pk-sim-administration-protocols.md` | absent |
+| MoBi R interface package | `part-2/modules-philsophy-building-blocks.md`, `part-6/` | absent |
+| MoBi CLI | `part-2/modules-philsophy-building-blocks.md:49` | page exists, but part-2 still says CLI is PK-Sim-only |
+| .NET 10 | `part-2/getting-started.md` requirements table | absent |
+| `Kd (FcRn) of <container>` rename | `part-1/modeling-concepts-modeling-of-proteins.md` | absent |
