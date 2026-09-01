@@ -314,8 +314,3 @@ Verified against `schemas/OSP_Qualification_Plan_Schema.json` (`QualificationPla
 * **[MINOR]** "Organ Impairment" appears twice — as a sub-bullet under "Special Populations" and again as a top-level bullet (`:9,15`).
 * **[MINOR]** Reference `[[137]]` and its full descriptive sentence are duplicated verbatim (`:26` and `:38`).
 * **[MINOR]** Missing space after full stop: "…this tool.It also summarize…" (`:25`).
-
----
-
-# 9. Cross-cutting issues
-
