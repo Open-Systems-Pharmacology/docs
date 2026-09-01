@@ -32,7 +32,7 @@ What should not be neglected in the requirements analysis, is the evaluation of 
 
 ## Useful Literature
 - IVIVE / ADME [[129](../references.md#129)]
-  -  This best practice provides an overview of strategies for first in human prediction based on preclinical modelling. A Review of relevant scientific publications and case examples are provided as well.
+  -  This best practice provides an overview of strategies for first-in-human prediction based on preclinical modelling. A Review of relevant scientific publications and case examples are provided as well.
 - Absorption [[160](../references.md#160)] 
   - This review provides an overview of the determinants of intestinal absorption and first-pass elimination of drugs and focuses on the principles and applications of conventional in vitro–in vivo extrapolation (IVIVE) methods to predict Fabs, FG, and FH in humans.
 - Distribution [[161](../references.md#161)], [[162](../references.md#162)], [[163](../references.md#163)], [[164](../references.md#164)]
