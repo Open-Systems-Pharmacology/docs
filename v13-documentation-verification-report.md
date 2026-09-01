@@ -56,10 +56,6 @@ Findings that could not be resolved against a source are explicitly marked **[UN
 * **[MINOR]** Publication date is given only as a year ("Publication date 2026"), while `how-to-cite.md:29` instructs readers to add the publication month if named — the month is never provided.
 * Links resolve (`references.md#115` → `references.md:348`).
 
-## how-to-cite.md
-
-* No findings. Version/edition/URL statements are consistent with `copyright.md` and `README.md:9`.
-
 ## how-to-contribute.md
 
 * **[ERROR]** The documented list of hint styles is incomplete. The page states the available styles are `tip`, `note`, `warning`, `info` (`:61-66`), but the repo also uses `{% hint style="danger" %}` (`part-4/converting-v12-projects-to-v13.md:75, :100`).
@@ -112,10 +108,6 @@ Verified line-by-line against `OSPSuite.Dimensions.xml` (94 dimensions in the XM
 
 * **[MINOR]** Citation formatting deviates from the manual-wide convention: `[39](../references.md#39)` renders as "39" instead of "[39]" (`:11`).
 
-## part-1/modeling-concepts-pk-and-pd-modeling.md
-
-* No findings. All links, images and citations resolve.
-
 ## part-1/principles-of-pbpk-modeling.md
 
 * **[GAP]** The organ description ("vascular space, divided into plasma and (red) blood cells and the avascular space, divided into interstitial and cellular space", `:7`) omits the **endosome** subcompartment, which both `factsheet.md:209` and `part-1/modeling-concepts-modeling-of-proteins.md:9,12` describe as a standard subcompartment of the protein model.
@@ -130,10 +122,6 @@ Verified line-by-line against `OSPSuite.Dimensions.xml` (94 dimensions in the XM
 
 * **[GAP]** Not aligned with the v13 parameter rename `Kd (FcRn) in endosomal space of <container>` → `Kd (FcRn) of <container>` (`NEWS.md:35`); no parameter names are given at all, so a reader migrating scripts gets no pointer from the conceptual chapter.
 * **[MINOR]** Malformed citation bracket `[[114]](../references.md#114)` (`:5`).
-
-## part-1/modeling-concepts-pd-and-reaction-network-modeling.md
-
-* No findings.
 
 ---
 
@@ -311,10 +299,6 @@ Verified against `schemas/OSP_Qualification_Plan_Schema.json` (`QualificationPla
 * **[MINOR]** Numbered list restarts at `1.` mid-sequence, so the rendered numbering does not match the "2., 3., 4., 5." references used later in the same section (`:71-72` vs `:76`).
 * **[MINOR]** The "Predicted vs. Observed" subsection embeds three `part-3` images (`AddDeviationLines.png`, `DeviationLineDialog.png`, `TwoFoldDeviationLine.png`); the files exist, but the deviation-lines feature is documented in two places with shared assets.
 
-## part-5/features-of-tables.md
-
-* No discrepancies. All described context-menu commands are internally consistent and both referenced icons resolve.
-
 ## part-5/history-manager-history-reporting.md
 
 * **[ERROR]** Ribbon name wrong in four places: `"Modeling & Simulation" ribbon` at `:9, :69, :77, :81`. Neither `PKSimConstants.RibbonPages` nor `AppConstants.RibbonPages` (MoBi) defines such a page; the ribbon is **`Modeling`** (with `Run & Analyze` for run/analyze commands).
@@ -339,17 +323,9 @@ Verified against `schemas/OSP_Qualification_Plan_Schema.json` (`QualificationPla
 * **[GAP]** No workflow class names (`MeanModelWorkflow`, `PopulationWorkflow`), task names or plot-configuration names are mentioned. The page is a three-link stub, so none of `OSPSuite.ReportingEngine`'s exported API is documented in the manual.
 * **[MINOR]** Mentions *Qualification Reports* as the motivating use case but does not cross-link to `part-5/qualification.md`.
 
-## part-6/tlf-library.md
-
-* No discrepancies. The page is a three-link stub with no function or class references.
-
 ---
 
 # 8. Part 7 — Best Practices
-
-## part-7/a-short-guide-to-pbpk-model-development.md
-
-* No discrepancies. The referenced image exists and citations `[[123]]`–`[[130]]` all resolve (subject to the `references.md` anchor risk noted in §1).
 
 ## part-7/documentation.md
 
