@@ -90,7 +90,8 @@ The secondary table, can be opened by clicking ![Image](../assets/icons/Add.png)
    * <img src="../assets/icons/IntravenousBolus.svg" alt="" data-size="line"> Intravenous Bolus
    * <img src="../assets/icons/Intravenous.svg" alt="" data-size="line"> Intravenous Infusion: requires the input of the **Infusion time** in units min, h, or s
    * <img src="../assets/icons/Oral.svg" alt="" data-size="line"> Oral: requires the input of the **Volume of water/body weight** co- administered, which is 3.5 mL/kg BW per default (see PK- Sim® - _Formulations_) and, additionally, the definition of a **Placeholder for formulation** in column 4.
-4. **Placeholder for Formulation**.\
+   * Event: schedules an event instead of an administration, see [Events in an Advanced Protocol](#events-in-an-advanced-protocol).
+4. **Placeholder**, holding the placeholder for the formulation of an administration and the placeholder for the event of an event entry.\
    For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation placeholder is not necessary, because the drug is always assumed to be dissolved when given intravenously (see [PK-Sim® - Formulations](pk-sim-formulations.md)).
 
 In case of oral and user defined administration, you should add a note on the type of formulation. Later, in the simulation, the formulation placeholder can be matched with the corresponding **Formulation** building block. This may sound trivial in the case of only one formulation given repeatedly at the given times. However, consider that you can set up sophisticated dosing schedules, in which various administration types and formulations are administered at various times. Then, the formulation type should already be signified in the administration protocol in order to be able to appropriately match the schedules with the various formulations. For further information please see [PK-Sim® - Simulations](pk-sim-simulations.md).
@@ -109,7 +110,7 @@ Please note that the combination of the Administration type **User defined** and
 
 #### Events in an Advanced Protocol
 
-The table of the schema items contains an additional column **Event** in which an event can be selected for a schema item. Events defined in this way follow the repetition pattern of the protocol schema, i.e., an event that is defined once is repeated with every repetition of the schema. The preview in the lower panel of the window shows administrations and events on the same time axis.
+Events are entered as schema items with the **Administration type** set to **Event**: the **Dose** cell is then disabled and the **Placeholder** cell offers the event placeholders instead of the formulation placeholders. Events defined in this way follow the repetition pattern of the protocol schema, i.e., an event that is defined once is repeated with every repetition of the schema. The preview in the lower panel of the window shows administrations and events on the same time axis.
 
 ### Events in a Simulation
 

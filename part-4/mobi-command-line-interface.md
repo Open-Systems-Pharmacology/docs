@@ -58,7 +58,7 @@ Choose one of the following options:
 
 ### General options
 
-* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls the console and file log verbosity. The default is `Information`.
 * `-l, --log <full path>` writes log output to a file in addition to the console output.
 
@@ -116,7 +116,7 @@ The configuration file determines paths such as the source snapshot file, output
 
 ### General options
 
-* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls the console and file log verbosity. The default is `Information`.
 * `-l, --log <full path>` writes log output to a file in addition to the console output.
 

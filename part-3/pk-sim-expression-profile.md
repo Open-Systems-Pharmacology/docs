@@ -462,7 +462,7 @@ In the lower section, values of relative expression can be edited for individual
         {% endhint %}
 
         {% hint style="warning" %}
-        The transporter direction **Pgp-like** is, starting with version 11 of PK-Sim, marked as **\[DEPRECATED\]** in the selection list and should not be used anymore. It is still selectable and models that use it continue to run, but it is only kept for compatibility with older models and will be removed in a future version of the software. Replace it by **Efflux** in the affected organs when you revise such a model.
+        The transporter direction **Pgp-like** is, starting with version 11 of PK-Sim, marked as **\[DEPRECATED\]** in the selection list and should not be used anymore. It is still selectable and models that use it continue to run, but it is only kept for compatibility with older models and will be removed in a future version of the software. Note that **Pgp-like** is not simply another name for **Efflux**: in the vascular endothelium and in the blood cells, where no Pgp-like variant exists, both resolve to the same efflux direction, but in mucosa, tissue and the two brain localizations they resolve to different transport directions, which can select a different transport process and thus a different formula. Replacing **Pgp-like** by **Efflux** in these organs therefore changes the model and the result has to be re-evaluated.
         {% endhint %}
 
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)

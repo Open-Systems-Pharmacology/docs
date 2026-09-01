@@ -170,7 +170,7 @@ You can now commit compound-dependent simulation parameters that **are not part 
 
 - **Metadata** - optional metadata, such as species or disease state, can be stored in each Overwrite Parameter Set.
 - If a saved parameter path within an Overwrite Parameter Set cannot be resolved when the simulation is created, an error message will appear
-- **MoBi®** - Overwrite Parameter Sets are merged into the standard `ParameterValues` building block during simulation creation, so existing MoBi® workflows are not affected.
+- **MoBi®** - Overwrite Parameter Sets are merged into the standard `ParameterValues` building block when the simulation is exported to MoBi®, so existing MoBi® workflows are not affected.
 
 ### Other PK-Sim® improvements
 

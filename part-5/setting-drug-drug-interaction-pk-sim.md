@@ -22,7 +22,7 @@ Next, expression levels of metabolizing enzymes can be added to the **Individual
 
 ![Expression levels of enzymes needs to be specified](../assets/images/part-5/LoadItraconazoleEnzymes.png)
 
-Further building blocks can be defined in the respective sections and a simulation is then created by clicking on the **Create** button in the **Simulation** section in the **Modeling** tab.
+Further building blocks can be defined in the respective sections and a simulation is then created by clicking on the **Simulation** button in the **Create** group of the **Modeling** tab.
 
 In the pre-configured compound templates, the inhibition processes for each enzyme or transporter are predefined, but can be adjusted by the user if applicable. Enzymes present in the **Individual** building block are matched with processes specified in the used **Compound** building blocks and metabolites are defined. Also, systemic processes regarding transport or excretion (e.g. ‘Glomerular Filtration’ like in the example displayed here) are shown and can be modified as desired.
 

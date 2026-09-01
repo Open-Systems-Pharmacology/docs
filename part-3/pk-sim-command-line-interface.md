@@ -58,7 +58,7 @@ This workflow is intended for automated execution of multiple snapshot-based pro
 
 ### General options
 
-* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 
@@ -89,7 +89,7 @@ This workflow converts project representations in bulk between PK-Sim project fi
 
 ### General options
 
-* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 
@@ -128,7 +128,7 @@ This workflow is intended for exporting simulation artifacts from a specific PK-
 
 ### General options
 
-* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 
@@ -159,7 +159,7 @@ This workflow supports qualification automation from a [qualification plan](../p
 
 ### General options
 
-* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 

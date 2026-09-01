@@ -527,7 +527,7 @@ Same publication as [129](#129).
 [Willmann S, Schmitt W, Keldenich J, Lippert J, Dressman JB. A physiological model for the estimation of the fraction dose absorbed in humans. J Med Chem. 2004;47(16):4022–4031.](https://doi.org/10.1021/jm030999b)
 
 #### 174
-[Vrenken P, Vertzoni M, Frechen S, Solodenko J, Meyer M, Muenster U, Dallmann A. Development of a novel PBBM framework using the Open Systems Pharmacology Suite, Part 1: in vitro modeling of vericiguat. Eur J Pharm Sci. 2025;212:107164.](https://doi.org/10.1016/j.ejps.2025.107164)
+[Vrenken P, Vertzoni M, Frechen S, Solodenko J, Meyer M, Muenster U, Dallmann A. Development of a novel physiologically based biopharmaceutics modeling (PBBM) framework using the Open Systems Pharmacology Suite, Part 1: in vitro modeling of vericiguat. Eur J Pharm Sci. 2025;212:107164.](https://doi.org/10.1016/j.ejps.2025.107164)
 
 #### 175
-[Vrenken P, Vertzoni M, Frechen S, Solodenko J, Meyer M, Muenster U, Dallmann A. Development of a novel PBBM framework using the Open Systems Pharmacology Suite, Part 2: in vivo pharmacokinetic modeling of vericiguat. Eur J Pharm Sci. 2025;212:107189.](https://doi.org/10.1016/j.ejps.2025.107189)
+[Vrenken P, Vertzoni M, Frechen S, Solodenko J, Meyer M, Muenster U, Dallmann A. Development of a novel physiologically based biopharmaceutics modeling (PBBM) framework using the Open Systems Pharmacology Suite, Part 2: in vivo pharmacokinetic modeling of vericiguat. Eur J Pharm Sci. 2025;212:107189.](https://doi.org/10.1016/j.ejps.2025.107189)

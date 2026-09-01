@@ -263,7 +263,7 @@ You can synchronize the settings between the building block and the simulation t
 
 ## Analyzing results for a simulation in an individual
 
-As described in the previous chapter **Run simulation**, clicking on **Run** in the **Run & Analyze** ribbon or pressing **F5** starts the calculation of the simulation. The results will be automatically displayed after finishing the calculation. The calculated results can the be exported to various file formats.
+As described in the previous chapter **Run simulation**, clicking on **Run** in the **Run & Analyze** ribbon or pressing **F5** starts the calculation of the simulation. The results will be automatically displayed after finishing the calculation. The calculated results can be exported to various file formats.
 
 {% hint style="info" %}
 For more information on displaying and editing the charts, see [Chart Component](../part-5/chart-component.md)
@@ -385,7 +385,7 @@ Unlike for simulations in single individuals, additional variability for paramet
 For more information on adding variability to a defined population, go to [PK-Sim® - Creating Populations](pk-sim-creating-populations.md).
 {% endhint %}
 
-Once all parameters are set, click the **Run** simulation button <img src="../assets/icons/Run.svg" data-size="line"> in the **Run & Analyze** ribbon or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
+Once all parameters are set, click the **Run** simulation button <img src="../assets/icons/Run.svg" alt="" data-size="line"> in the **Run & Analyze** ribbon or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
 
 ![The Population Simulation Settings: Curve Selection window. Time profiles and PK-parameters will be calculated in the selected organs and compartments.](../assets/images/part-3/population-simulation-20-18.jpg)
 

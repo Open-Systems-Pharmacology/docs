@@ -244,7 +244,7 @@ A new simulation "RN" is added to the simulations explorer and automatically ope
 * Select the Settings tab of the simulation in the main window.
 * In the top half of the Settings tab set the **EndTime** to 0.25 h and the **Resolution** to 600.00 pts/h.
 
-Now we can run the simulation. To run the simulation, click <img src="../assets/icons/Run.svg" alt="" data-size="line"> **Run** in the simulation group of the modeling & simulation ribbon.
+Now we can run the simulation. To run the simulation, click <img src="../assets/icons/Run.svg" alt="" data-size="line"> **Run** in the **Simulation** group of the **Run & Analyze** ribbon.
 
 To view the simulation results:
 
