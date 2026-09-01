@@ -65,7 +65,7 @@ Optional OSP Suite components which are only required for the [creation of quali
 
 Installation instructions are provided in [Tools](../part-5/qualification.md#tools).
 
-### Third Party Tools
+### Third-Party Tools
 
 In addition to the core components of the Open Systems Pharmacology Suite, including PK-Sim® and MoBi®, interfaces are available for MS Excel® and R. For purchasing and installation options, please contact the respective suppliers, see [Trademark Information](#trademark-information).
 
