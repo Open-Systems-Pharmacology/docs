@@ -52,8 +52,13 @@ Choose one of the following options:
 * `-s, --snapshot` converts MoBi project files in the input folder to snapshot files in the output folder
 * `-p, --project` converts snapshot files in the input folder to MoBi project files in the output folder
 
-### Logging options
+### Optional behavior
 
+* `--pksim <path>` file path where PK-Sim can be found. It is required when loading snapshots that use PK-Sim modules and defaults to the value stored in the MoBi user settings. Note that this option has no short form, in contrast to `-p, --project`.
+
+### General options
+
+* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
 * `--logLevel <Debug|Information|Warning|Error>` controls the console and file log verbosity. The default is `Information`.
 * `-l, --log <full path>` writes log output to a file in addition to the console output.
 
@@ -109,8 +114,9 @@ The configuration file determines paths such as the source snapshot file, output
 * `-e, --exp` additionally exports project files requested by the qualification workflow
 * `-p, --pksim <path>` overrides the PK-Sim path stored in the MoBi user settings
 
-### Logging options
+### General options
 
+* `--cores <number>` maximum number of cores (1 or more) used for parallel work such as model construction and simulation runs. Default is the number of processors minus one.
 * `--logLevel <Debug|Information|Warning|Error>` controls the console and file log verbosity. The default is `Information`.
 * `-l, --log <full path>` writes log output to a file in addition to the console output.
 
