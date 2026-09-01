@@ -90,7 +90,7 @@
 
 ## Working with R
 
-* [ospsuite-R Documentation](part-6/introduction-ospsuite-r.md)
+* [ospsuite R Documentation](part-6/introduction-ospsuite-r.md)
 * [Reporting Engine (RE)](part-6/reporting-engine.md)
 * [TLF Library](part-6/tlf-library.md)
 

@@ -97,6 +97,20 @@ In addition, in order to use the Particle Dissolution formulation, the drug-rela
 - **Aqueous diffusion coefficient**.
 - **Density of the drug** material, and the threshold for immediate dissolution. Further, you will have to indicate how the precipitated amount should be treated (either as soluble or insoluble).
 
+#### Diffusion layer thickness
+
+The thickness of the diffusion layer around a particle can be described with one of three alternative approaches, which are selected per formulation:
+
+- **Constant** (default): the diffusion layer thickness is constant and given by the parameter **Thickness (unstirred water layer)**.
+- **Hintz-Johnson** (parameter **Use Hintz-Johnson**): the diffusion layer thickness is equal to the radius of the particle and thus decreases while the particle dissolves. It is limited by **Thickness (unstirred water layer)** as maximum value.
+- **Hydrodynamic model** (parameter **Use Hydrodynamic Model**): the diffusion layer thickness is calculated dynamically from the velocity and the viscosity of the luminal fluid, using the Ranz-Marshall correlation between the Sherwood, the Reynolds, and the Schmidt number [[175](../references.md#175)].
+
+With **Use Effective Diffusion**, the drug bound to bile salt micelles is transported through the diffusion layer in parallel to the free drug, which requires the compound parameters described in [Advanced intestinal solubility](pk-sim-compounds-definition-and-work-flow.md#advanced-intestinal-solubility).
+
+#### Product particle size distribution (P-PSD)
+
+Instead of describing the particles by a measured particle size distribution, a **product particle size distribution (P-PSD)** can be used. A P-PSD is a polydisperse particle size distribution whose parameters are identified from in vitro dissolution experiments of the drug product, so that the mechanistic dissolution model reproduces the observed in vitro dissolution profile. It is entered like any other polydisperse distribution, using the parameters listed above. The identification of a P-PSD from in vitro dissolution data is described in [[174](../references.md#174)].
+
 ### Table
 
 Table defines the amount of drug applied per unit time as a continuous function. You can either manually specify time and fraction of the applied dose values or import dissolution data from Excel®.

@@ -49,6 +49,15 @@ Please note that if the administration type **Oral** is selected this will requi
 Please note that in case that the administration type **User Defined** is selected this will require the definition of a **Formulation** in the **Formulation** building block for the Simulation.
 {% endhint %}
 
+#### Events in a Simple Protocol
+
+In addition to the administration, one event - e.g., a meal or the emptying of the gallbladder - can be defined in a simple protocol. This covers the typical situations in which a drug is administered before, with, or after a meal, and it avoids having to add a recurring event to every simulation individually.
+
+1. Activate **Administer with event**.
+2. Enter the **Event offset**, i.e., the time of the event relative to the corresponding administration.
+
+The event is repeated together with the administration, so that a multiple dosing regimen with a meal at every administration only has to be defined once. Which event building block is used for the event is decided when the simulation is created, see [Events](#events-in-a-simulation).
+
 {% hint style="info" %}
 **Where administrations end up in the simulation.** In the created simulation, every administration is nested under a container named after the formulation it uses. The administration types that require no formulation — **Intravenous Bolus** and **Intravenous Infusion** — are nested under a container named `No formulation`, so that all administrations have the same structure. The path of an application parameter is therefore
 
@@ -96,6 +105,18 @@ In the following screenshot, an example of an advanced protocol is given. The pr
 
 {% hint style="info" %}
 Please note that the combination of the Administration type **User defined** and the **Advanced protocol** is not available.
+{% endhint %}
+
+#### Events in an Advanced Protocol
+
+The table of the schema items contains an additional column **Event** in which an event can be selected for a schema item. Events defined in this way follow the repetition pattern of the protocol schema, i.e., an event that is defined once is repeated with every repetition of the schema. The preview in the lower panel of the window shows administrations and events on the same time axis.
+
+### Events in a Simulation
+
+Events that are defined in an administration protocol are placeholders, in the same way as the placeholders for formulations. They are mapped to [Events](pk-sim-events.md) building blocks of the project in the **Administration** step of the simulation configuration, together with the other protocol-related mappings. Selecting **\<None\>** means that no event is created for the placeholder. The same administration protocol can therefore be used with different events in different simulations.
+
+{% hint style="info" %}
+The **Events** tab of the simulation configuration is still available. Events that are not linked to an administration, as well as simulations created with previous versions, continue to work unchanged.
 {% endhint %}
 
 ## Setting or Changing Administration Protocol Properties

@@ -44,3 +44,6 @@ Asc
 Desc
 Eqs
 unresolvable
+micelles
+StartEvent
+subnodes
