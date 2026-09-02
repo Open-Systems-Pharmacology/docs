@@ -113,6 +113,8 @@ The **Overwrite parameter set in compound** drop-down list offers **\<None\>** p
 - If it has none, **\<None\>** is preselected.
 - **\<None\>** means that the compound-dependent simulation parameters keep their originally calculated values.
 
+The sets offered are those of the compound that is selected in the **Model Structure** step of the window — the compound of the project, or the copy currently used by the simulation. A set is added to the compound of the project by the commit, so a newly committed set is offered for the simulation's own copy only after that copy has been updated from the building block.
+
 ![The Compounds tab of the Configure Simulation window. For the compound Midazolam, the Overwrite Parameter Set group offers the sets defined for that compound.](../assets/images/part-3/overwrite-parameter-sets-selection.png)
 
 The selected set is applied at the end of the simulation creation, after the model has been built. For each entry of the set, the parameter with the stored path is looked up in the new simulation and its value is replaced.
