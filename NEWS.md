@@ -180,25 +180,25 @@ You can now commit compound-dependent simulation parameters that **are not part 
 
 - **Committing simulation parameters to the compound** - a new "Commit Simulation Parameters to Compound" action is available in the context menu of a compound in an individual simulation, as soon as that compound has uncommitted changes. This action opens a dialog listing the changed parameters of that compound, which can be deselected here. Then, either a new "Overwrite Parameter Set" can be created with its own name, or an existing one can be updated. Each compound is committed separately, from its own node in the simulation.
 
-![The Commit simulation parameters to compound dialog.](assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
+![The Commit simulation parameters to compound dialog.](https://raw.githubusercontent.com/Open-Systems-Pharmacology/docs/v13/assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
 
 - **Uncommitted-changes indicator** - an orange status indicator on a compound within a simulation indicates uncommitted, compound-related parameter changes. These changes are saved with the project, so the indicator is retained when the project is reopened.
 
-![The Simulation Explorer showing the orange uncommitted-changes overlay on the simulation, on a compound that is otherwise in sync, and on a compound that is also out of sync with its building block.](assets/images/part-3/overwrite-parameter-sets-uncommitted-indicator.png)
+![The Simulation Explorer showing the orange uncommitted-changes overlay on the simulation, on a compound that is otherwise in sync, and on a compound that is also out of sync with its building block.](https://raw.githubusercontent.com/Open-Systems-Pharmacology/docs/v13/assets/images/part-3/overwrite-parameter-sets-uncommitted-indicator.png)
 
 - **Overwrite Parameter Sets tab** - compound building blocks have a new tab positioned after "Advanced Parameters" with a master-detail view of all "Overwrite Parameter Sets" of the compound. Parameter values, units, and metadata can be inspected and edited. Individual parameters or entire sets can be deleted. One set can be marked as the default.
 
-![The Overwrite Parameter Sets tab of a compound, with the list of sets on the left and the metadata and parameter values of the selected set on the right.](assets/images/part-3/overwrite-parameter-sets-compound-tab.png)
+![The Overwrite Parameter Sets tab of a compound, with the list of sets on the left and the metadata and parameter values of the selected set on the right.](https://raw.githubusercontent.com/Open-Systems-Pharmacology/docs/v13/assets/images/part-3/overwrite-parameter-sets-compound-tab.png)
 
 - **Applying an Overwrite Parameter Set in a Simulation** - when adding or configuring a compound in a simulation, select an Overwrite Parameter Set from the dropdown menu. "\<None\>" uses the original formula-based values of the simulation parameters dependent on the compound, while any other selection applies the saved values of the chosen set. If the compound has a default set, it is preselected. Parameters applied from a set behave like normal compound parameters.
 
-![The Compounds tab of the Configure Simulation window, with the Overwrite Parameter Set selection for one compound.](assets/images/part-3/overwrite-parameter-sets-selection.png)
+![The Compounds tab of the Configure Simulation window, with the Overwrite Parameter Set selection for one compound.](https://raw.githubusercontent.com/Open-Systems-Pharmacology/docs/v13/assets/images/part-3/overwrite-parameter-sets-selection.png)
 
 - **Metadata** - optional metadata, such as species or disease state, can be stored in each Overwrite Parameter Set.
 - If a saved parameter path within an Overwrite Parameter Set cannot be resolved when the simulation is created, an error message will appear
 - **MoBi®** - Overwrite Parameter Sets are merged into the standard `ParameterValues` building block during simulation creation, so existing MoBi® workflows are not affected.
 
-The feature is described in detail in [Overwrite Parameter Sets](part-3/pk-sim-overwrite-parameter-sets.md).
+The feature is described in detail in [Overwrite Parameter Sets](https://docs.open-systems-pharmacology.org/v13/working-with-pk-sim/pk-sim-documentation/pk-sim-overwrite-parameter-sets).
 
 ### Other PK-Sim® improvements
 

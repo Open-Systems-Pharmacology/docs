@@ -28,7 +28,7 @@ Parameters that were applied from an Overwrite Parameter Set are also offered fo
 As soon as you change such a parameter, PK-Sim® marks the change as **uncommitted**. This is shown by an orange indicator:
 
 - On the **simulation** in the **Simulation Explorer**, an orange overlay is added to the simulation icon as long as the simulation contains any uncommitted compound-dependent change.
-- On the **compound inside the simulation**, the status icon becomes orange in addition to its usual green or red synchronization state. Green/orange means that the compound itself is in sync with its building block but has uncommitted compound-dependent simulation parameter changes; red/orange means that it is out of sync *and* has uncommitted changes.
+- On the **compound inside the simulation**, a second, orange status indicator is added next to the green or red synchronization state, which itself does not change. The combination of a green and an orange indicator means that the compound is in sync with its building block but has uncommitted compound-dependent parameter changes; the combination of a red and an orange indicator means that it is out of sync *and* has uncommitted changes.
 
 ![The Simulation Explorer of a simulation with two compounds. The simulation icon carries an orange overlay. Midazolam has only uncommitted compound-dependent changes, Keto-Itraconazole is in addition out of sync with its building block.](../assets/images/part-3/overwrite-parameter-sets-uncommitted-indicator.png)
 
@@ -47,12 +47,12 @@ The action is only offered for a compound of an **individual simulation** that a
 
 The **Commit simulation parameters to compound** dialog opens. It contains:
 
-- A grid of all uncommitted parameters of this compound, with the columns **Selected**, **Parameter** (the path of the parameter in the simulation), **Value** (with its display unit) and **Value Origin**. Every parameter is selected by default; clear the check box of the ones you do not want to store.
+- A table of all uncommitted parameters of this compound, with the columns **Selected**, **Parameter** (the path of the parameter in the simulation), **Value** (with its display unit) and **Value Origin**. Every parameter is selected by default; clear the check box of the ones you do not want to store.
 - A **Commit Options** group with two mutually exclusive choices:
   - **Create New Parameter Set** — enter a **Name** for the new set. By default it is filled in with the name of the compound. The name must not be empty and must not be used by another Overwrite Parameter Set of the same compound.
   - **Update Existing Parameter Set** — select an existing set from the **Parameter Set** drop-down list. This option is disabled as long as the compound has no Overwrite Parameter Set yet.
 
-![The Commit simulation parameters to compound dialog. The grid lists the uncommitted parameters of the compound, and a new Overwrite Parameter Set is being created under the Commit Options.](../assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
+![The Commit simulation parameters to compound dialog. The table lists the uncommitted parameters of the compound, and a new Overwrite Parameter Set is being created under the Commit Options.](../assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
 
 Confirm with **OK**. The set is created in — or updated on — the Compound building block of the project, and the committed parameters are no longer marked as uncommitted. The whole commit is a single action and can be undone.
 
@@ -68,10 +68,10 @@ After an update commit, re-creating the simulation with this set therefore repro
 
 ## The Overwrite Parameter Sets tab of a compound
 
-The Overwrite Parameter Sets of a compound are shown in the **Overwrite Parameter Sets** tab of the compound editor, after the **Advanced Parameters** tab. The tab uses a master-detail layout:
+The Overwrite Parameter Sets of a compound are shown in the same-named tab of the compound editor, after the **Advanced Parameters** tab. The tab uses a master-detail layout:
 
-- The **list on the left** shows all Overwrite Parameter Sets of the compound in the columns **Name**, **Default**, **Species** and **Disease State**, followed by a button that deletes the set.
-- The **details on the right** show the **Metadata** of the selected set above a grid of its parameter values, in the columns **Path**, **Value** and **Value Origin**, followed by a button that deletes the entry. The value is displayed together with its unit.
+- The **list on the left** shows all Overwrite Parameter Sets of the compound with the columns **Name**, **Default**, **Species** and **Disease State**, followed by a button that deletes the set.
+- The **details on the right** show the **Metadata** of the selected set above a table of its parameter values, with the columns **Path**, **Value** and **Value Origin**, followed by a button that deletes the entry. The value is displayed together with its unit.
 
 ![The Overwrite Parameter Sets tab of a compound. Two sets are defined, the first one is the default and carries Species and Disease State metadata. The tooltip shows the full path of the selected entry.](../assets/images/part-3/overwrite-parameter-sets-compound-tab.png)
 
@@ -81,7 +81,7 @@ New Overwrite Parameter Sets can only be created by committing from a simulation
 
 ### Editing a set
 
-In the parameter grid you can:
+In the parameter table you can:
 
 - Change the **Value** of a stored parameter.
 - Change the unit of the value, in the unit selector of the value editor. As for any other parameter in the suite, the displayed number is kept and the value in base unit is recalculated (see [Default, Display and Base Units](../part-5/default-display-base-units.md)).
@@ -91,9 +91,9 @@ In the parameter grid you can:
 Additionally you can:
 
 - Delete an entire Overwrite Parameter Set, with the button at the end of its row in the list on the left, after confirming the deletion.
-- Mark a set as the **Default** of the compound, or clear that flag. A compound can have at most one default set, and setting a new default clears the previous one. A compound is not required to have a default set.
+- Mark a set as the **Default** of the compound, or clear that flag. A compound can have at most one default set, and setting a new default clears the previous one. A compound is not required to have a default set. The default set is the one preselected when the compound is used in a new simulation; if the compound has no default set, no set is preselected (see [Using an Overwrite Parameter Set in a simulation](#using-an-overwrite-parameter-set-in-a-simulation)).
 
-All of these changes are regular PK-Sim® commands and can be undone.
+All of these changes can be undone.
 
 {% hint style="warning" %}
 An Overwrite Parameter Set that is used in any simulation of the project cannot be deleted. The error message lists the simulations that block the deletion.
@@ -148,6 +148,6 @@ Committing simulation parameters is not available from a population simulation. 
 
 - **Compound renaming.** Renaming a compound also renames the compound in all paths stored in its Overwrite Parameter Sets, so existing sets stay applicable.
 - **Templates and snapshots.** Overwrite Parameter Sets are part of the compound. They are stored in the project, saved with the compound as a template, and written to and read from snapshots, and are therefore available when the compound is re-used in another project.
-- **Update and commit of the compound.** **Update from Building Block** and **Commit to Building Block** on a compound of a simulation also synchronize the Overwrite Parameter Sets between the compound in the simulation and the Compound building block of the project.
+- **Update and commit of the compound.** A commit writes the Overwrite Parameter Set to the Compound building block of the project, not to the copy of the compound held by the simulation. Both **Update from Building Block** and **Commit to Building Block** on a compound of a simulation copy the Overwrite Parameter Sets of the building block into that copy, so that the sets defined in the project become visible and selectable there. Sets are never copied in the opposite direction.
 - **Comparison.** Overwrite Parameter Sets are part of the comparison of two compounds (see [Comparison of Building Blocks](../part-5/comparison-building-blocks.md)).
 - **MoBi®.** When a simulation is exported to MoBi®, the values of the selected Overwrite Parameter Sets are merged into the `ParameterValues` building block created for the simulation. MoBi® therefore receives the overwritten values without needing to know the concept, and no additional step is required.
