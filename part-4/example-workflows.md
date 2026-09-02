@@ -231,7 +231,7 @@ Before we can create a simulation, we need to define start values. To create new
 
 Before we can simulate, the reactions network of a simulation has to be created from the building blocks. To create a simulation:
 
-* Click on <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Create** in the _Simulation_ Group the _Modeling & Simulation_ ribbon tab.
+* Click on <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Create** in the _Simulation_ Group of the _Modeling_ ribbon tab.
 * In the appearing "Simulation Creation Wizard" window, specify a name for the simulation. Here: "RN".
 * Confirm the simulation creation process by clicking **Finish** <img src="../assets/icons/OK.svg" alt="" data-size="line">.
 
@@ -244,7 +244,7 @@ A new simulation "RN" is added to the simulations explorer and automatically ope
 * Select the Settings tab of the simulation in the main window.
 * In the top half of the Settings tab set the **EndTime** to 0.25 h and the **Resolution** to 600.00 pts/h.
 
-Now we can run the simulation. To run the simulation, click <img src="../assets/icons/Run.svg" alt="" data-size="line"> **Run** in the simulation group of the modeling & simulation ribbon.
+Now we can run the simulation. To run the simulation, click <img src="../assets/icons/Run.svg" alt="" data-size="line"> **Run** in the **Simulation** group of the **Run & Analyze** ribbon.
 
 To view the simulation results:
 

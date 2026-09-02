@@ -56,8 +56,9 @@ This workflow is intended for automated execution of multiple snapshot-based pro
 * `-k, --pkml` export simulations to PKML
 * `-e, --excel` export results to XLSX (individual simulations only)
 
-### Logging options
+### General options
 
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 
@@ -86,8 +87,9 @@ This workflow converts project representations in bulk between PK-Sim project fi
 * `-s, --snapshot` converts `*.pksim5` project files to `*.json` snapshots
 * `-p, --project` converts `*.json` snapshots to `*.pksim5` project files
 
-### Logging options
+### General options
 
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 
@@ -124,8 +126,9 @@ This workflow is intended for exporting simulation artifacts from a specific PK-
 * `-k, --pkml` export simulations to PKML
 * `-e, --excel` export results to XLSX (individual simulations only)
 
-### Logging options
+### General options
 
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 
@@ -138,11 +141,11 @@ PKSim.CLI export -p C:\Projects\Example.pksim5 -o C:\Exports --run --csv -s "Sim
 
 ## Qualification workflow (`qualification`)
 
-Use `qualification` to validate or run a qualification workflow from a [qualification plan](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification).
+Use `qualification` to validate or run a qualification workflow from a [qualification plan](../part-5/qualification.md).
 
 ### Purpose
 
-This workflow supports qualification automation from a [qualification plan](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/qualification), including validation-only runs and full qualification processing with optional simulation execution and project export.
+This workflow supports qualification automation from a [qualification plan](../part-5/qualification.md), including validation-only runs and full qualification processing with optional simulation execution and project export.
 
 ### Required option
 
@@ -154,8 +157,9 @@ This workflow supports qualification automation from a [qualification plan](http
 * `-r, --run` run simulations during qualification processing
 * `-e, --exp` additionally export project files (`*.json` snapshot and `*.pksim5` project)
 
-### Logging options
+### General options
 
+* `--cores <number>` maximum number of cores used for parallel work such as model construction and simulation runs. Default is the number of processors minus one. A value smaller than 1 is raised to 1, so at least one core is always used.
 * `--logLevel <Debug|Information|Warning|Error>` controls verbosity. Default is `Information`.
 * `-l, --log <full path>` writes logs to a file in addition to console output.
 

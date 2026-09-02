@@ -12,9 +12,11 @@ The version of the manual and its publication date are also stated on the [Open 
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
 
-"Mechanistic Modeling of Pharmacokinetics and Dynamics" provides a brief general introduction to the science of computational systems biology with a strong focus on mechanistic modeling of pharmacokinetics and –dynamics.
+"Mechanistic Modeling of Pharmacokinetics and Dynamics" provides a brief general introduction to the science of computational systems biology with a strong focus on mechanistic modeling of pharmacokinetics and pharmacodynamics. It consists of "Modeling Concepts", which introduces the underlying concepts, and "Best Practices", which condenses them into recommendations for building, evaluating, applying and documenting a model.
 
-[Go to: Mechanistic Modeling of Pharmacokinetics and Dynamics](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
+[Go to: Modeling Concepts](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
+
+[Go to: Best Practices](part-7/a-short-guide-to-pbpk-model-development.md)
 
 ## Open Systems Pharmacology Suite
 

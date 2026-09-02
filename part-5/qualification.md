@@ -21,7 +21,7 @@ The workflow of a PBPK model evaluation is similar to that of a PBPK model scena
 As a PBPK model evaluation workflow is similar to that of a qualification scenario, with the difference being model development and model application, respectively, the focus here will be on the scenario qualification workflow. In a first step, the qualification scenario is saved to a dedicated qualification repository on GitHub. This repository contains a detailed qualification plan that links and combines respective models and data describing the use case to qualify.
 The qualification plan consists of:
 
-- PK-Sim project files (more precisely: PK-Sim project file [**snapshots**](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/importing-exporting-project-data-models#exporting-project-to-snapshot-loading-project-from-snapshot))
+- PK-Sim project files (more precisely: PK-Sim project file [**snapshots**](../part-3/importing-exporting-project-data-models.md#exporting-project-to-snapshot--loading-project-from-snapshot))
 - Descriptions of potential cross-dependencies between PK-Sim project files (if adequate) (e.g. it is possible to inherit building blocks or simulation parameters)
 - Observed data sets (needed for model development and verification)
 - Qualification scenario description text modules
@@ -38,7 +38,7 @@ The automated execution of the described workflow can be triggered to assess re-
 
 Example: **Showcase of predicting cytochrome P450 3A4-mediated drug-drug interactions** ([[121]](../references.md#121))
 
-# Creating a (re-)qualification plan part I
+## Creating a (re-)qualification plan part I
 
 Creating a qualification report is similar to writing a scientific article: A report is written and structured in chapters, for example beginning with a short description of the scientific background of the scenario (use-case), followed by a brief methodological description (e.g. modeling strategy, available data used during model building (for model evaluation report), and underlying main assumptions) and the presentation of the qualification workflow results in the third section of the report.
 
@@ -51,13 +51,13 @@ This content may change between OSP versions in case of differences between the 
 
 Technically, a qualification plan is nothing more than a text file in [JSON format](https://en.wikipedia.org/wiki/JSON) (file extension: **.json**). You can use any plain text editor for creating and modification of such a file. However, it is much faster and easier to use a json editor (e.g. the free _Visual Studio Code_ (_VSCode_); s. the section [**Creating a (re-)qualification plan part II: Tools**](#creating-a-re-qualification-plan-part-ii-tools) for details). Note that many scripting environments (Matlab, R, etc...) also allow for the comfortable editing of JSON files.
 
-## Components of a (re-)qualification plan
+### Components of a (re-)qualification plan
 
 ![](../assets/images/part-5/QualificationPlan-00-Overview.png)
 
-### Projects
+#### Projects
 
-Describes all projects used in a qualification scenario. Currently, only PK-Sim projects are supported. MoBi projects will be supported in the mid-term future.
+Describes all projects used in a qualification scenario. Both PK-Sim and MoBi projects are supported.
 
 ![](../assets/images/part-5/QualificationPlan-01-Projects.png)
 
@@ -68,6 +68,8 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
   - Either in form of an URL of remote file (e.g. "_https://raw.githubusercontent.com/Open-Systems-Pharmacology/Dapagliflozin-Model/v1.1/Dapagliflozin-Model.json_"
   - or in form of a path to a LOCAL file (given **relative to the location of current qualification plan**), e.g. "_Dapagliflozin-Model/v1.1/Dapagliflozin-Model.json_")
 
+- "**Application**": OPTIONAL application used to run the project, one of "_PKSim_" or "_MoBi_". If omitted, "_PKSim_" is used. The installation folder of the respective application can be passed to the Qualification Runner with the options `--pksim` and `--mobi` (s. [Tools](#tools)).
+
 - "**BuildingBlocks**": OPTIONAL, may be empty. List of inherited building blocks.
 
   The idea behind is: The use-case requires some building blocks (e.g. compound, individual, ...) to be exactly **the same in one or more projects**. Instead of modifying those projects by hand, the qualification plan can automate this action and ensure that building blocks are used consistently.
@@ -76,7 +78,7 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
   - "**Name**": name of a building block (must be the same in both parent and child project)
   - "**Project**": Id of the parent project
 
-  #### Example
+  ##### Example
 
   - Individual building block "_Standard_Adult_UGT_" in the project "_Mefenamic_acid-Dapagliflozin-DDI_" will be overwritten by the Individual building block **with the same name** from the project "_Dapagliflozin_" (if there is no individual with the same name in the "_Dapagliflozin_" project: execution of the qualification plan will stop with an error)
 
@@ -94,13 +96,13 @@ Describes all projects used in a qualification scenario. Currently, only PK-Sim 
 
   - "**TargetSimulations**": Simulation name(s) within child project
 
-#### Example
+##### Example
 
 - In all target simulations of the project _Mefenamic_acid-Dapagliflozin-DDI_ shown below (_DDI Control - xxx, DDI Treatment - xxx_), the value of the parameter `Dapagliflozin|logP (veg.oil/water)` will be set to the value of the same parameter in the simulation `PO SD 10 mg (perm)` from the project _Dapagliflozin_: 
 
 ![](../assets/images/part-5/QualificationPlan-03-Projects.png)
 
-### Observed data sets
+#### Observed data sets
 
 Similar to a project, an observed data set is identified by its Id, which must be unique within a qualification plan.
 
@@ -122,7 +124,7 @@ There are two kinds of observed data set:
      
      
      
-     - "_TimeProfile_". Corresponding observed data set must have the columns with time values, measurement values and (optionally) error values with units (s. also [here](https://docs.open-systems-pharmacology.org/shared-tools-and-example-workflows/import-edit-observed-data)). [Example](https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/7ab7c59dfce9201845ebcd8247b2a5cad344bc03/examples/minimal/reporting%20engine%20input/ObservedData/Itraconazole%20600mg%20MD.csv)
+     - "_TimeProfile_". Corresponding observed data set must have the columns with time values, measurement values and (optionally) error values with units (s. also [Import and Edit Observed Data](import-edit-observed-data.md)). [Example](https://raw.githubusercontent.com/Open-Systems-Pharmacology/QualificationPlan/7ab7c59dfce9201845ebcd8247b2a5cad344bc03/examples/minimal/reporting%20engine%20input/ObservedData/Itraconazole%20600mg%20MD.csv)
      
        
      
@@ -152,7 +154,7 @@ There are two kinds of observed data set:
        
          Note that observed clearance ratios need to be transformed to AUC ratios before (adding a comment in the '*Comment*' column is recommended).
 
-### Sections
+#### Sections
 
 Defines the chapter structure of the report. A `section` consists of:
 
@@ -174,7 +176,7 @@ Defines the chapter structure of the report. A `section` consists of:
 
 {% hint style="tip" %}
 
-#### Markdown
+##### Markdown
 
 Markdown files are text files in Markdown format (file extension: **.md**).
 
@@ -189,7 +191,7 @@ Good introductions into the markdown format can be found here:
 You can use any plain text editor for creating and modification of markdown files. However it is much faster and easier to use a dedicated markdown editor, e.g. _Typora_ ([https://www.typora.io/](https://www.typora.io/))
 {% endhint %}
 
-### Intro
+#### Intro
 
 An (optional) introduction can be added to the report. The differences between introduction and sections are:
 
@@ -203,7 +205,7 @@ The introduction is defined by:
 
 ![](../assets/images/part-5/QualificationPlan-06-Intro.png)
 
-### Inputs
+#### Inputs
 
 A convenient way to specify which building blocks and/or simulations should be described in the report as well as the section of the report where the descriptions should be located.
 
@@ -213,13 +215,13 @@ Each input entry definition consists of:
 
 - "**Name**": name of the building block or simulation to describe
 
-- "**Type**": type of the building block/simulation (one of: "_Compound_", "_Event_", "_Formulation_", "_Individual_", "_ObserverSet_", "_Population_", "_Protocol_", "_Simulation_")
+- "**Type**": type of the building block/simulation (one of: "_Compound_", "_Event_", "_ExpressionProfile_", "_Formulation_", "_Individual_", "_ObserverSet_", "_Population_", "_Protocol_", "_Simulation_")
 
 - "**SectionReference**": Reference of the section where the input description will be inserted.
 
 Input description contains all input settings (model- type, calculation methods etc.) and all input parameters that deviate from the default incl. their value origins.
 
-### Plots
+#### Plots
 
 This section defines the type of plots (and some additional related information like tables and qualification measures) to generate for the report.
 
@@ -253,12 +255,13 @@ This section defines the type of plots (and some additional related information 
         "GridLines": false,
         "Scaling": "Log"
       }
-    ],
+    ]
+  }
   ```
 
 - "**AllPlots**"; "**GOFMergedPlots**"; ... : different kinds of plots, explained in detail below.
 
-#### AllPlots
+##### AllPlots
 
 All plots defined in the PK-Sim project _Project_ under simulation _Simulation_ will be placed into the report **using their settings defined in the PK-Sim project**. Thus one node from the "AllPlots"-section in the qualification plan will be expanded into N (N>=0) plots in the final report
 
@@ -273,32 +276,39 @@ All plots defined in the PK-Sim project _Project_ under simulation _Simulation_ 
     "SectionReference": "sufentanil-ct-profiles",
     "Project": "Sufentanil-Pediatrics",
     "Simulation": "Guay 1991 patient 3"
-  },
+  }
+]
 ```
 
 NOTE: at the moment, only Time Profile Plots (Individual and Population) will be exported.
 
-#### GOFMergedPlots
+##### GOFMergedPlots
 
-    "GOFMergedPlots": [
+```json
+"GOFMergedPlots": [
+  {
+    "SectionReference": "gof-plots",
+    "Title": "Midazolam concentration in plasma/blood",
+    "PlotTypes": ["predictedVsObserved", "residualsOverTime"],
+    "Artifacts": ["Plot", "Measure", "GMFE"],
+    "Groups": [
       {
-        "SectionReference": "gof-plots",
-        "Title": "Midazolam concentration in plasma/blood",
-        "PlotTypes": ["predictedVsObserved", "residualsOverTime"],
-        "Artifacts": ["Plot", "Measure", "GMFE"],
-        "Groups": [
+        "Caption": "Midazolam iv",
+        "Symbol": "Circle",
+        "OutputMappings": [
           {
-            "Caption": "Midazolam iv",
-            "Symbol": "Circle",
-            "OutputMappings": [
-              {
-                "Project": "Midazolam",
-                "Simulation": "iv 0.001 mg (5 min)",
-                "Output": "Organism|PeripheralVenousBlood|Midazolam|Plasma (Peripheral Venous Blood)",
-                "ObservedData": "Hohmann 2015 - iv 0.001 mg - Plasma - agg. (n=16)",
-                "Color": "#FF0000"
-              },
-              ...
+            "Project": "Midazolam",
+            "Simulation": "iv 0.001 mg (5 min)",
+            "Output": "Organism|PeripheralVenousBlood|Midazolam|Plasma (Peripheral Venous Blood)",
+            "ObservedData": "Hohmann 2015 - iv 0.001 mg - Plasma - agg. (n=16)",
+            "Color": "#FF0000"
+          }
+        ]
+      }
+    ]
+  }
+]
+```
 
 Two types of plots are supported here:
 
@@ -338,7 +348,7 @@ Combines data from several simulations; every simulation data can be displayed i
 
   - "**Caption**": group caption for the plot legend
 
-  - "**Symbol**": one of "_Asterisk_", "_Circle_", "_Cross_", "_Diamond_", "_Point_", "_Square_", "_Triangle_"
+  - "**Symbol**": one of `Asterisk`, `Circle`, `CircleOpen`, `Cross`, `Diamond`, `DiamondOpen`, `Hexagon`, `HexagonOpen`, `InvertedTriangle`, `InvertedTriangleOpen`, `Pentagon`, `PentagonOpen`, `Plus`, `Square`, `SquareOpen`, `Star`, `StarOpen`, `ThinCross`, `ThinPlus`, `Triangle`, `TriangleOpen`
 
   - "**OutputMappings**": definition of pairs {`Simulated output <=> Observed data set`}
 
@@ -372,28 +382,33 @@ Combines data from several simulations; every simulation data can be displayed i
 
     - "**Color**": Color in "_#RRGGBB_" format. There are numerous free tools for color generation, e.g. [https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp)
 
-#### ComparisonTimeProfilePlots
+##### ComparisonTimeProfilePlots
 
-Creates comparison time profile plots similar to [Comparison Charts in PK-Sim](https://docs.open-systems-pharmacology.org/working-with-pk-sim/pk-sim-documentation/pk-sim-simulations#comparison-chart-for-individual-or-population-simulations-in-one-plot). In addition, original results may be shifted in time.
+Creates comparison time profile plots similar to [Comparison Charts in PK-Sim](../part-3/pk-sim-simulations.md#comparison-chart-for-individual-or-population-simulations-in-one-plot). In addition, original results may be shifted in time.
 
-    "ComparisonTimeProfilePlots": [
+```json
+"ComparisonTimeProfilePlots": [
+  {
+    "SectionReference": "ct-profiles",
+    "Title": "Ahonen 1995",
+    "SimulationDuration": 20,
+    "TimeUnit": "h",
+    "OutputMappings": [
       {
-        "SectionReference": "ct-profiles",
-        "Title": "Ahonen 1995",
-        "SimulationDuration": 20,
+        "Project": "Itraconazole-Midazolam-DDI",
+        "Simulation": "DDI Control - Midazolam - Ahonen 1995",
+        "Output": "Organism|PeripheralVenousBlood|Midazolam|Plasma (Peripheral Venous Blood)",
+        "ObservedData": "Ahonen 1995 - Midazolam - PO - 7.5 mg - Plasma - agg. (n=12)",
+        "StartTime": 0,
         "TimeUnit": "h",
-        "OutputMappings": [
-          {
-            "Project": "Itraconazole-Midazolam-DDI",
-            "Simulation": "DDI Control - Midazolam - Ahonen 1995",
-            "Output": "Organism|PeripheralVenousBlood|Midazolam|Plasma (Peripheral Venous Blood)",
-            "ObservedData": "Ahonen 1995 - Midazolam - PO - 7.5 mg - Plasma - agg. (n=12)",
-            "StartTime": 0,
-            "TimeUnit": "h",
-            "Color": "#2166ac",
-            "Caption": "Control (without Itraconazole)",
-            "Symbol": "Circle"
-          },
+        "Color": "#2166ac",
+        "Caption": "Control (without Itraconazole)",
+        "Symbol": "Circle"
+      }
+    ]
+  }
+]
+```
 
 - "**Title**": title of the plot
 - "**SectionReference**": Reference of the section where the plot (and related artifacts; s. below) will be inserted.
@@ -411,7 +426,7 @@ Creates comparison time profile plots similar to [Comparison Charts in PK-Sim](h
 
 ![](../assets/images/part-5/016-plotComparisonTimeProfile.png)
 
-#### DDIRatioPlots
+##### DDIRatioPlots
 
 Creates DDI Ratio plots as described e.g. in Hanke et. al ([[106](../references.md#106)])
 
@@ -458,14 +473,17 @@ Two types of plots are supported here:
               }
             }
           ]
-        },
+        }
+      ]
+    }
+  ]
   ```
 
 * "**Title**": title of the plot
 
 * "**SectionReference**": Reference of the section where the plot (and related artifacts; s. below) will be inserted.
 
-* "**PKParameter**": PK Parameter for which DDI Ratios will be calculated. Subset of {"_AUC_", "_CMAX_"} 
+* "**PKParameters**": PK Parameters for which DDI Ratios will be calculated. Subset of {"_AUC_", "_CMAX_"} 
 
   - if both "_AUC_" and "_CMAX_" were selected: **2** plots will be generated (one for AUC Ratio and one for CMAX Ratio)
 
@@ -495,7 +513,7 @@ Two types of plots are supported here:
 
 * "**Subunits**": OPTIONAL Subset of {"*Mechanism*", "*Perpetrator*", "*Victim*"}. If defined, additional subchapters will be generated with DDI ratio plots grouped by the mechanism of action, perpetrator and victim.
 
-  [Example report with subunits](https://github.com/Open-Systems-Pharmacology/OSP-Qualification-Reports/blob/v11.0/DDI_Qualification_CYP3A4/report.md)
+  [Example report with subunits](https://github.com/Open-Systems-Pharmacology/OSP-Qualification-Reports/blob/v12.0/DDI_Qualification_CYP3A4/report.md)
   
 * "**Groups**": plotted DDI ratios can be grouped. Each group has its own caption, color and symbol
 
@@ -514,37 +532,44 @@ Two types of plots are supported here:
         * If the "**EndTime**" is set to "*Inf*": time range will be [`StartTime .. Simulation End Time`]
     * "**SimulationDDI**": description of the DDI simulation, given in the same way as Control simulation
 
-#### PKRatioPlots
+##### PKRatioPlots
 
 Creates plots of predicted/observed ratios for PK parameters of interest
 
 ![](../assets/images/part-5/QualificationPlan-30-PlotPKRatio.png)
 
-    "PKRatioPlots": [
+```json
+"PKRatioPlots": [
+  {
+    "Title": "Overall predictivity of the PBPK models. Open circles represent...",
+    "SectionReference": "pk-ratio-plots",
+    "PKParameters": ["AUC", "CL"],
+    "Artifacts": ["GMFE", "Measure", "Plot", "Table"],
+    "Groups": [
       {
-        "Title": "Overall predictivity of the PBPK models. Open circles represent...",
-        "SectionReference": "pk-ratio-plots",
-        "PKParameters": ["AUC", "CL"],
-        "Artifacts": ["GMFE", "Measure", "Plot", "Table"],
-        "Groups": [
+        "Caption": "Caption",
+        "Color": "#000000",
+        "Symbol": "Circle",
+        "PKRatios": [
           {
-            "Caption": "Caption",
-            "Color": "#000000",
-            "Symbol": "Circle",
-            "PKRatios": [
-              {
-                "Project": "Sufentanil",
-                "Simulation": "Davis 1987 15.5months",
-                "Output": "Organism|ArterialBlood|Plasma|Sufentanil|Concentration in container",
-                "ObservedData": "PK-Parameter",
-                "ObservedDataRecordId": 5130
-              }
+            "Project": "Sufentanil",
+            "Simulation": "Davis 1987 15.5months",
+            "Output": "Organism|ArterialBlood|Plasma|Sufentanil|Concentration in container",
+            "ObservedData": "PK-Parameter",
+            "ObservedDataRecordId": 5130
+          }
+        ]
+      }
+    ]
+  }
+]
+```
 
 - "**Title**": title of the plot
 
 - "**SectionReference**": Reference of the section where the plot (and related artifacts; s. below) will be inserted.
 
-- "**PKParameter**s": PK Parameter for which PK Ratios will be calculated. Subset of {"_AUC_", "_CL_"}
+- "**PKParameters**": PK Parameters for which PK Ratios will be calculated. Subset of {"_AUC_", "_CL_"}
 
   - if both "_AUC_" and "_CL_" were selected: **2** plots will be generated (one for AUC and one for Clearance)
 
@@ -578,7 +603,25 @@ Creates plots of predicted/observed ratios for PK parameters of interest
     - "**ObservedData**": Id of an observed data set (s. [Observed data sets](#observed-data-sets) for details)
     - "**ObservedDataRecordId**": Id of the data record (line) within the given observed data set. (corresponds to the **Id**-column of the data set)
 
-## How generated artifacts are combined into a report
+#### Units, dimensions and other constrained values
+
+Several properties of a qualification plan may only take values from a predefined list. The complete and authoritative definition is the [qualification plan schema](https://github.com/Open-Systems-Pharmacology/QualificationPlan/blob/main/schemas/OSP_Qualification_Plan_Schema.json), which is also used by the JSON editor described in [Creating a (re-)qualification plan part II: Tools](#creating-a-re-qualification-plan-part-ii-tools). The most frequently used enumerations are:
+
+| Property | Allowed values |
+| --- | --- |
+| Dimension (axes settings) | `Age`, `Amount`, `Concentration (mass)`, `Concentration (molar)`, `Fraction`, `Mass`, `Time`, `Dimensionless` |
+| Unit for the dimension `Time` | `s`, `min`, `h`, `day(s)`, `week(s)`, `month(s)`, `year(s)` |
+| Unit for the dimension `Age` | `year(s)`, `month(s)`, `week(s)`, `day(s)` |
+| Unit for the dimension `Amount` | `mol`, `mmol`, `µmol`, `nmol`, `pmol` |
+| Unit for the dimension `Mass` | `kg`, `g`, `mg`, `µg`, `ng`, `pg` |
+| Unit for the dimension `Concentration (mass)` | `mg/l`, `µg/l`, `ng/l`, `pg/l`, `mg/dl`, `mg/ml`, `µg/ml`, `ng/ml`, `pg/ml`, `kg/l` |
+| Unit for the dimension `Concentration (molar)` | `mol/l`, `mmol/l`, `µmol/l`, `nmol/l`, `pmol/l`, `fmol/l`, `mol/ml`, `mmol/ml`, `µmol/ml`, `nmol/ml`, `pmol/ml`, `fmol/ml` |
+| Unit for the dimension `Fraction` | `` (empty string) or `%` |
+| Unit for the dimension `Dimensionless` | `` (empty string) |
+| "**Scaling**" (axes settings) | `Linear`, `Log` |
+| "**FontFamilyName**" (plot settings) | `Arial`, `Tahoma`, `Times New Roman`, `Microsoft Sans Serif` |
+
+### How generated artifacts are combined into a report
 
 All static and dynamic elements described in a qualification plan are compiled into a report in the following order:
 
@@ -596,7 +639,7 @@ All static and dynamic elements described in a qualification plan are compiled i
 
    3.4 Subsections of the current section (if any) **in order of appearance in the qualification plan**. Per subsection ... (s. 3.1..3.4)
 
-# Creating a (re-)qualification plan part II: Tools
+## Creating a (re-)qualification plan part II: Tools
 
 1. Install VSCode (Visual Studio Code).
 
@@ -687,9 +730,9 @@ All static and dynamic elements described in a qualification plan are compiled i
    - Editing JSON with VSCode: [https://code.visualstudio.com/docs/languages/json](https://code.visualstudio.com/docs/languages/json)
    - Extending/Modifying Snippets: [https://code.visualstudio.com/docs/editor/userdefinedsnippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
-# Processing a (re-)qualification plan
+## Processing a (re-)qualification plan
 
-## Tools
+### Tools
 
 Creation of a qualification report from a qualification plan requires installation of additional tools, which are not part of the OSP Suite setup. All required tools can be downloaded from
 
@@ -698,7 +741,35 @@ Creation of a qualification report from a qualification plan requires installati
 - **QualificationRunner**: download `qualificationrunner-portable-setup_X.Y.Z.zip` and unzip it into any folder on your hard disc.
 - **Reporting Engine**. Follow the installation instructions under [https://www.open-systems-pharmacology.org/OSPSuite.ReportingEngine/](https://www.open-systems-pharmacology.org/OSPSuite.ReportingEngine/)
 
-## Creating a report in Markdown format
+#### Qualification Runner command line options
+
+The Qualification Runner is a command line tool. It reads a qualification plan, generates the inputs required by the Reporting Engine and (unless `--norun` is set) runs the simulations of the involved projects.
+
+```
+QualificationRunner.exe -i <qualification plan> -o <output folder> [options]
+```
+
+| Option | Required | Description |
+| --- | --- | --- |
+| `-i`, `--input` | yes | Path of the qualification configuration file (JSON) to process. |
+| `-o`, `--output` | yes | Path of the folder where the generated workflow files will be created. |
+| `-f`, `--force` | no | Delete the output folder even if it is not empty. Default is `false`. |
+| `-n`, `--name` | no | Name of the generated report qualification plan. |
+| `-p`, `--pksim` | no | Path of the PK-Sim installation folder. If not set, the folder is read from the registry. |
+| `-m`, `--mobi` | no | Path of the MoBi installation folder. If not set, the folder is read from the registry. |
+| `--norun` | no | Bypass the simulation runs, i.e. only generate the inputs of the Reporting Engine. Default is `false`. |
+| `-e`, `--exp` | no | Also export the project files (snapshot and PK-Sim project file). Default is `false`. |
+| `-c`, `--cores` | no | Maximal number of PK-Sim or MoBi command line processes started concurrently. Default is the number of logical processors of the machine. |
+| `-l`, `--log` | no | Full path of the log file where the log output will be written. No log file is created if this option is not provided. |
+| `--logLevel` | no | Log verbosity: `Debug`, `Information`, `Warning` or `Error`. Default is `Information`. |
+| `--help` | no | Display the list of available options. |
+| `--version` | no | Display version information. |
+
+{% hint style="tip" %}
+The applications used to run the projects of a qualification plan are defined by the "**Application**" property of each project (s. [Projects](#projects)). Provide `--pksim` and/or `--mobi` for portable installations, where the installation folder cannot be read from the registry.
+{% endhint %}
+
+### Creating a report in Markdown format
 
 A good starting point is [https://github.com/Open-Systems-Pharmacology/Evaluation-plan-template](https://github.com/Open-Systems-Pharmacology/Evaluation-plan-template).
 
@@ -708,7 +779,7 @@ Execute `createQualificationReport(...)`.
 
 S. [https://www.open-systems-pharmacology.org/OSPSuite.ReportingEngine/articles/qualification-workflow.html](https://www.open-systems-pharmacology.org/OSPSuite.ReportingEngine/articles/qualification-workflow.html) for further details.
 
-### Converting Markdown report to pdf.
+#### Converting Markdown report to pdf.
 
 Different (commercial and free) markdown to pdf converters are available.
 We recommend to use Typora ([https://www.typora.io/](https://www.typora.io/)) for this task.

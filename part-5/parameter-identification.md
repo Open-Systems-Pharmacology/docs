@@ -50,7 +50,7 @@ A mapping of observed data to corresponding simulation outputs is done automatic
 
 You have to select those input parameters which should be varied and identified. Each of these Identification parameters can be linked to corresponding input parameters in different simulations.
 
-## Configure Optimization
+### Configure Optimization
 
 You can select between three optimization algorithms, edit their standard settings or change the usage of **Lower Limit Of Quantification** (LLOQ) values.
 
@@ -71,17 +71,8 @@ For a hands on exercise, open the example project Theophylline.pksim5. You can d
 1. In the Simulation Explorer mark the two simulations "_Kaumeier IV 208 mg fit_" and "_Kaumeier oral solution 185mg_" and select <img src="../assets/icons/ParameterIdentification.svg" alt="" data-size="line"> **Start Parameter Identification ...** from the context menu.
 2. A new view for _Parameter Identification 1_ is displayed and the tab **Data** is opened. On the left, the simulations with the assigned observed data are displayed. On the right, a list of mappings from outputs to observed data is displayed. For each observed data set for concentrations and fractions the corresponding output is mapped automatically (based on the Organ, Compartment, Molecule meta data).
 
-![Parameter Identification - Mapping of outputs and observed data](../assets/images/part-5/Tab-Data.png)
-
-1.  Switch to the next tab **Parameters**. Here, you have to define the parameters for identification. On the left, a list of all parameters grouped by **Simulation** and **Organ** is displayed. You can reorder the list for a more convenient view:
-
-    1. In the column **Favorite**, filter for checked to display just the Favorites.
-    2. Ungroup the columns **Simulation** and **Organ** (by right click on the column names you find that entry in the context menu).
-    3. Group by column name.
-
-    Select both Lipophilicity parameters and click the upper **Add** button, then select both GFR fraction parameters and click the upper **Add** button again. Now, you have selected two identification parameters each linked to both corresponding simulation parameters.
-
-    Switch to the next tab **Parameters**. Here, you have to define the parameters for identification. On the left, a list of all parameters grouped by **Organ** and **Name** is displayed. (If you are interested only in the Favorite parameters you can filter the column **Favorite**.)
+    ![Parameter Identification - Mapping of outputs and observed data](../assets/images/part-5/Tab-Data.png)
+3.  Switch to the next tab **Parameters**. Here, you have to define the parameters for identification. On the left, a list of all parameters grouped by **Organ** and **Name** is displayed. (If you are interested only in the Favorite parameters you can filter the column **Favorite**. You can also ungroup or group by another column through the context menu of the column headers.)
 
     By default, all **Favorite parameters** are already selected as **Identification Parameters** in the right list of Identification Parameters.
 
@@ -92,14 +83,14 @@ For a hands on exercise, open the example project Theophylline.pksim5. You can d
     Enter Minimum Value 0 for both **Identification Parameters** and Maximum Value 2 Log Units for Lipophilicity and 1 for GFR fraction.
 
     <img src="../assets/images/part-5/Tab-Parameters.png" alt="Parameter Identification - Definition of Identification Parameters data" data-size="original">
-2. In the tab **Configuration** keep the default settings.
-3.  In the Ribbon Bar **Run & Analyze** click **Show Visual Feedback** and then Run to start the optimization.
+4. In the tab **Configuration** keep the default settings.
+5.  In the Ribbon Bar **Run & Analyze** click **Show Visual Feedback** and then Run to start the optimization.
 
     <img src="../assets/images/part-5/PI-Ribbon.png" alt="Parameter Identification Ribbon data" data-size="original">
-4.  Now the **Visual Feedback Window** shows the intermediate state during the Parameter Identification Run.
+6.  Now the **Visual Feedback Window** shows the intermediate state during the Parameter Identification Run.
 
     <img src="../assets/images/part-5/VisualFeedback.png" alt="Parameter Identification - Visual Feedback data" data-size="original">
-5.  After some iterations, the run is finished and you can switch to the tab **Results**.
+7.  After some iterations, the run is finished and you can switch to the tab **Results**.
 
     <img src="../assets/images/part-5/Tab-Results.png" alt="Parameter Identification - Results data" data-size="original">
 
@@ -188,10 +179,6 @@ Of course, you can use other ways to filter, sort and group the list of Simulati
 ![Text Filter in List of Simulation Parameters](../assets/images/part-5/Tab-Parameters-TextFilter.png)
 
 After selection of the Identification Parameters you should define their **Minimum and Maximum Values**. With these ranges you define the solution space of the optimization problem.
-
-Per default, the value of the first corresponding Simulation Parameter is used as a **Start Value**. You can edit this value manually or reset it to the Simulation Parameter value, e.g. after change of value in simulation (see column Value in the list of Simulation Parameters).
-
-By **Scaling** you define how the Identification Parameter is modified during optimization; if the magnitude of the parameter is not known, Log scale should be selected.
 
 Per default, the value of the first corresponding Simulation Parameter is used as a **Start Value**. You can edit this value manually or reset it to the Simulation Parameter value, e.g. after change of value in simulation (see column Value in the list of Simulation Parameters).
 
@@ -292,7 +279,7 @@ We recommend the following general approach:
 
 * Levenberg-Marquardt algorithm is faster than Monte-Carlo algorithm. However, it is susceptible to being trapped by local minima.
 * Using Levenberg-Marquardt algorithm: sometimes increasing the value of **Finite derivative step size** parameter (e.g. setting it to 1e-4 or 1e-3) might improve the result of parameter identification.
-* Using multiple optimization (along with any algorithm): if some single optimization runs fail with **Out of memory** exception: reduce the value of **Max. number of processors to use** program option. You can find it under Utilities/ Options (both PK-Sim and MoBi
+* Using multiple optimization (along with any algorithm): if some single optimization runs fail with **Out of memory** exception: reduce the value of **Max. number of processors to use** program option. You can find it under **Utilities > Options** (both PK-Sim and MoBi).
 
 #### Monte - Carlo
 

@@ -84,7 +84,7 @@ To select data:
 3.  Repeat step 2 until your data selection is complete.
 
 {% hint style="tip" %}
-The creation of charts with alternative x-values, e.g., other concentrations, is explained in “Using Alternative X-Values”.
+The creation of charts with alternative x-values, e.g., other concentrations, is explained in [Using Alternative X-Values](#using-alternative-x-values).
 {% endhint %}
 
 After selection, the corresponding curves are automatically shown and listed in the curves table.
@@ -125,7 +125,7 @@ If a row header or cell content cannot be fully displayed, the full content is s
 
 ##  Editing options of multiple curves
 
-In the “Curves and Axis Settings” Tab of the Chart Editor a new context menu item has been added called “Edit options for selected”. It is only visible when the user has selected at least two rows in the curves table.
+In the **Curves and Axis Options** tab of the Chart Editor, the context menu of the curves table offers the entry **Edit Options for Selected**. It is only visible when at least two rows are selected in the curves table.
 
 ![Edit Multiple Curves Context Menu](../assets/images/part-5/EditMultipleCurvesContextMenu.png)
 
@@ -170,7 +170,7 @@ When this option is selected and whole folders are dragged and dropped into a pl
 
 ### Creating clear legends
 
-To make you legends clear and readable - especially when exporting them - you can do the following
+To make your legends clear and readable - especially when exporting them - you can do the following
 
 *   Edit the curve name.
 
@@ -203,7 +203,7 @@ You can select columns which are hidden by default using the **Column Chooser** 
 | Scaling | You can switch between Linear and Log scaling. In case of Log scaling, values less than or equal to 0 are not displayed. By default, the scaling for y axes is **Log**, but in MoBi® you can change this in the Chart Options. |
 | Numbers | You can select the numbers representation from Normal, Scientific and Relative. If you select Relative for a y- axis, each curve is displayed relative to its own maximum value, which then corresponds to 100% . (Hidden by default) |
 | Min, Max | Empty for automatic range to show all values. You can override the values to restrict the displayed range. To return to automatic range, delete Min or Max value. |
-| Default | Curves added to a y-axis get this linestyle by default. This way, Linestyle in the chart, curves can be easily correlated with their y-axes. You can change the default linestyles here, which are by default solid for y, dashed for y2 and dotted for y3. |
+| Default Linestyle | Curves added to a y-axis get this linestyle by default. This way, curves in the chart can be easily correlated with their y-axes. You can change the default linestyles here, which are by default solid for y, dashed for y2 and dotted for y3. |
 | Default Color | If a color different from White is selected, curves added to a y-axis get this color by default. (Hidden by default) |
 | Grid | You can check this to display grid lines at the major ticks of the axis. |
 
