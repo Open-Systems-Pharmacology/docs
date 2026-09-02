@@ -300,13 +300,23 @@ It is no longer possible to update only selected building blocks.
 
 Changes to parameter or start values made in a simulation can be committed to the building block (BB) the parameter/start value belongs to. To do so, right-click on the simulation and select "Commit to building blocks".
 
-Changes to parameters values are committed to the selected Parameter Values (PV) building block of the last module in the simulation configuration. If the last module does not contain a PV BB, or no PV BB has been selected for this module, new PV BB will be created.
+After selecting which changes to commit, a dialog opens where the target of the commit is selected:
+
+![Selecting the module and the building blocks that receive the committed changes](../assets/images/part-4/MoBi-SelectCommitTarget.png)
+
+- **Module** - the module that receives the changes. One module is selected for all changed building block types, so committed changes always stay together in the same module.
+- **Parameter values building block** and **Initial conditions building block** - the Parameter Values (PV) or Initial Conditions (IC) building block of the selected module that receives the changes, or "New Parameter Values Building Block"/"New Initial Conditions Building Block" to create one. A selection is only offered for the building block types that actually have changes, and the lists are updated when the module selection changes.
+
+By default, the dialog offers the last module of the simulation configuration and the building blocks the simulation currently uses. Selecting **Cancel** aborts the commit. If there is nothing to choose - a single module with a single possible target for every changed building block type - the dialog is not shown.
 
 {% hint style="warning" %}
-When committing changes made to a simulation created from PK-Sim module(s) only, the last PK-Sim module will be converted to an extension module. To avoid this, create a new extension module that should contain the changes. Then create the simulation with the extension module.
+When committing changes made to a simulation created from PK-Sim module(s) only, the selected PK-Sim module will be converted to an extension module. To avoid this, create a new extension module that should contain the changes. Then create the simulation with the extension module.
 {% endhint %}
 
-Changes to initial conditions (IC) of molecules are handled similarly. They are committed to the selected IC BB of the last module in the simulation configuration. If the last module does not contain an IC BB, or no IC BB has been selected for this module, a new IC BB will be created.
+The simulation stays in sync with its building blocks only if the changes are committed to the building blocks the simulation actually uses, or to newly created ones if the selected module has none. Committing to any other building block writes the values to that building block alone - the simulation is not updated and remains marked as out of sync. MoBi® warns about this in two cases:
+
+- The selected building block is **not used** by the simulation. Configure the simulation to use that building block to make it reproduce the committed values.
+- The committed values are **shadowed** by a building block selected in a later module of the simulation configuration. The values of the later module win when the simulation is created, so a simulation re-created from the current configuration would not reproduce the committed values.
 
 Structural changes made to building blocks (e.g., adding/removing reactions, molecules, compartments, etc.) cannot be reverted by committing an "outdated" version of the building blocks from a simulation. Only changes to parameter values and initial conditions can be committed.
 
