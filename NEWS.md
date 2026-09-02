@@ -178,7 +178,7 @@ Events - e.g., meal intake, gallbladder emptying - can now be defined directly w
 
 You can now commit compound-dependent simulation parameters that **are not part of a compound building block** (e.g., permeabilities or partition coefficients) and were modified in a simulation back to the compound as a named **Overwrite Parameter Set**, which can be re-applied in other simulations and projects.
 
-- **Committing simulation parameters to the compound** - a new "Commit Simulation Parameters to Compound" action is available in the context menu of each compound used in a simulation. This action opens a dialog listing the changed parameters of that compound, which can be deselected here. Then, either a new "Overwrite Parameter Set" can be created with its own name, or an existing one can be updated. Each compound is committed separately, from its own node in the simulation.
+- **Committing simulation parameters to the compound** - a new "Commit Simulation Parameters to Compound" action is available in the context menu of a compound in an individual simulation, as soon as that compound has uncommitted changes. This action opens a dialog listing the changed parameters of that compound, which can be deselected here. Then, either a new "Overwrite Parameter Set" can be created with its own name, or an existing one can be updated. Each compound is committed separately, from its own node in the simulation.
 
 ![The Commit simulation parameters to compound dialog.](assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
 
