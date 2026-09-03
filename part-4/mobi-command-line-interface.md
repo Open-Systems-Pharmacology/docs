@@ -29,7 +29,7 @@ MoBi.CLI qualification --help
 
 ## Snapshot workflow (`snap`)
 
-Use the `snap` command to convert batches of MoBi projects and MoBi snapshots.
+Use the `snap` command to convert batches of MoBi projects and MoBi snapshots. See [Snapshots](mobi-snapshots.md) for what a MoBi snapshot contains.
 
 ### Purpose
 

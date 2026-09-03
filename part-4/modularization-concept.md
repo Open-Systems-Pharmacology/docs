@@ -33,7 +33,7 @@ For convenient organization of the project, modules can be grouped in folders in
 ### PK-Sim modules
 A project in MoBi can be based on a PBPK model exported from PK-Sim. Such a model will be present as a **PK-Sim module** in MoBi containing *all of the BB types*. PK-Sim modules cannot be edited by default. If the user decides to edit a PK-Sim module, the PK-Sim module will be converted to an Extension module. A project can contain multiple or no PK-Sim modules.
 
-Export of a PK-Sim model to MoBi creates one PK-Sim module, one individual, and (0-n) expression profile BBs. The PK-Sim snapshot of the module is stored with the module and allows the PK-Sim module to be recreated.
+Export of a PK-Sim model to MoBi creates one PK-Sim module, one individual, and (0-n) expression profile BBs. The PK-Sim snapshot of the module is stored with the module and allows the PK-Sim module to be recreated (s. [Snapshots](mobi-snapshots.md)).
 
 ### Extension modules
 Each MoBi project may contain any number of **Extension modules**. An Extension module can add or modify any part of the default PK-Sim model structure - spatial structures, molecules, reactions, etc.
