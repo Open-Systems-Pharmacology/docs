@@ -82,6 +82,10 @@ The snapshot embedded in a module or building block is the one PK-Sim® wrote wh
 {% endhint %}
 
 {% hint style="info" %}
+**In MoBi®, Individuals and Expression Profiles are independent building blocks.** Neither references the other; both are consumed by the *simulation*, which selects an Individual and any number of Expression Profiles in its [configuration](setting-up-simulation.md). Each therefore carries a self-contained snapshot and can be exported and re-created on its own, in any order. This differs from PK-Sim®, where an Individual references its Expression Profiles by name and they must be loaded first (s. [PK-Sim Snapshots](../part-3/pk-sim-snapshots.md#snapshots-of-single-building-blocks)).
+{% endhint %}
+
+{% hint style="info" %}
 The **Snapshot** menu appears only on objects that carry a PK-Sim® snapshot, i.e. on Modules, Individuals and Expression Profiles that originate from PK-Sim®. The remaining MoBi® building block types - Spatial Structures, Molecules, Reactions, Passive Transports, Observers, Events, Initial Conditions and Parameter Values - are not built from PK-Sim® inputs and are exchanged as PKML instead (s. [The Building Block Concept](building-block-concepts.md)). This differs from PK-Sim®, where **every** building block type can be exported to and loaded from a snapshot (s. [PK-Sim Snapshots](../part-3/pk-sim-snapshots.md#snapshots-of-single-building-blocks)).
 {% endhint %}
 
