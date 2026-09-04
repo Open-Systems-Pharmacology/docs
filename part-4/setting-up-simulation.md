@@ -287,9 +287,9 @@ Changes in parameter or initial condition values can be propagated to the module
 Structural changes cannot be propagated to the modules. For example, if a reaction is added in the building block of a module, committing from the simulation to the module will not remove the reaction.
 {% endhint %}
 
-Right-click on the simulation and select **Commit to Building Block**. A dialog opens that allows to select which changes should be committed to the building block. The values are always committed to the **selected** parameter values or initial conditions building blocks of the **last module** used in simulation configuration.
+Right-click on the simulation and select **Commit to Building Block**. A dialog opens that allows to select which changes should be committed. A second dialog then allows to select the **module** that receives the values and, within that module, the **parameter values** and **initial conditions** building block to write them to - or to create a new one. By default, the last module used in the simulation configuration and the building blocks the simulation currently uses are offered.
 
-If no Parameter Values or Initial Conditions building block is selected for the last module, a new building block is created.
+If the values are committed to a building block that the simulation does not use, they are written to that building block alone: the simulation is not updated and remains marked as out of sync. MoBi® shows a warning in this case. See [Committing changes from a simulation to a building block](modularization-concept.md#committing-changes-from-a-simulation-to-a-building-block) for the full behavior.
 
 ## Further Options for Simulations
 
