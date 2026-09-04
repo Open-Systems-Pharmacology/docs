@@ -298,16 +298,16 @@ It is no longer possible to update only selected building blocks.
 
 ### Committing changes from a simulation to a building block
 
-Changes to parameter or start values made in a simulation can be committed to the building block (BB) the parameter/start value belongs to. To do so, right-click on the simulation and select "Commit to building blocks".
+Changes to parameter values or initial conditions made in a simulation can be committed to the building block (BB) the parameter/start value belongs to. To do so, right-click on the simulation and select "Commit to building blocks".
 
-After selecting which changes to commit, a dialog opens where the target of the commit is selected:
+A dialog opens where the target of the commit is selected:
 
 ![Selecting the module and the building blocks that receive the committed changes](../assets/images/part-4/MoBi-SelectCommitTarget.png)
 
 - **Module** - the module that receives the changes. One module is selected for all changed building block types, so committed changes always stay together in the same module.
-- **Parameter values building block** and **Initial conditions building block** - the Parameter Values (PV) or Initial Conditions (IC) building block of the selected module that receives the changes, or "New Parameter Values Building Block"/"New Initial Conditions Building Block" to create one. A selection is only offered for the building block types that actually have changes, and the lists are updated when the module selection changes.
+- **Parameter values building block** and **Initial conditions building block** - the Parameter Values (PV) or Initial Conditions (IC) building block of the selected module that receives the changes, or "New Parameter Values Building Block"/"New Initial Conditions Building Block" to create one. A selection is only offered for the building block types that actually have changes.
 
-By default, the dialog offers the last module of the simulation configuration and the building blocks the simulation currently uses. Selecting **Cancel** aborts the commit. If there is nothing to choose - a single module with a single possible target for every changed building block type - the dialog is not shown.
+By default, the dialog offers the last module of the simulation configuration and the building blocks the simulation currently uses.
 
 {% hint style="warning" %}
 When committing changes made to a simulation created from PK-Sim module(s) only, the selected PK-Sim module will be converted to an extension module. To avoid this, create a new extension module that should contain the changes. Then create the simulation with the extension module.
