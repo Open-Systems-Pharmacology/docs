@@ -1,4 +1,10 @@
-# MoBi® Reuse of Project Information from Previous Versions
+# Project conversion workflows
+
+This section describes how projects created with previous versions of MoBi® are reused in the current version, and what has to be checked after such a conversion.
+
+- Conversion of projects created with MoBi® 2 and MoBi® 3.1 is covered below.
+- Conversion of projects created with OSP Suite v11 or earlier to the modularization concept introduced in v12 is described in [Modularization concept](modularization-concept.md#project-conversion).
+- Model configurations created with OSP Suite v12 can produce a *different* simulation in v13 because the module merge rules changed. See [Converting v12 projects to v13](converting-v12-projects-to-v13.md).
 
 ## Reuse of MoBi® 2 projects in MoBi® 3
 MoBi® 2 projects are not supported any more.

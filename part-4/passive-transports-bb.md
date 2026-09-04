@@ -12,7 +12,7 @@ After loading a PBPK model from PK-Sim®, a set of PTs are available in the impo
 
 A passive transport is defined by its **source** (origin) and **target** (sink), the molecules it should be applied for, and transport rate equation defined in the **Kinetic** tab.
 
-Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](spatial-structures-bb.md)). The usage of criteria based on tags is described in [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)).
+Often, it is desired to define transport processes by a generic type of equation, e.g., _in all organs from blood to interstitial space_. This is done by selecting the corresponding container tag conditions which previously should be defined to contain such container type information (see [Creating a Spatial Structure](spatial-structures-bb.md#example---creating-a-spatial-structure)). The usage of criteria based on tags is described in [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events).
 
  Further, passive processes that should transport all present and non-stationary molecules require a kinetic equation with generic references to molecule concentration or amount. By default, MoBi® uses relative reference paths with such generic names. This will be shown in the following example process.
 
@@ -51,7 +51,7 @@ If you notice later that a parameter would rather be placed at another location,
 
 Continuing with our example, let us enter a simple diffusion equation based on a constant multiplied by the concentration difference between the source and the target containers.
 
-1. Make sure that the molecules created above all have a "Concentration" parameter. If not, see [Molecule Parameters](molecules-bb.md#example---creating-new-molecules) how to proceed.
+1. Make sure that the molecules created above all have a "Concentration" parameter. If not, see [Molecule Parameters](molecules-bb.md#molecule-parameters) how to proceed.
 2. To make the concentrations available for the diffusion formula, work with the "Possible Referenced Objects" tree view, as described in [Reaction Kinetics](reactions-bb.md#reaction-kinetics). Select "Relative path", and choose `Neighborhoods|V1V2Connection` as reference point. The relative path will result in source and target molecule paths that are generic for all molecules, whereas selecting an absolute path will be molecule-specific.
 3. Successively expand the "Possible Referenced Objects" tree view by clicking on the + signs to the left of "BigVial", there on "Vial1", then on "MoleculeProperties", then on "A" (or any other molecule name). The "Concentration" parameter should now appear, if present.
 4. Drag and drop exactly this "Concentration" parameter to the white references area to the left of the tree. The alias name "Concentration" and the path "SOURCE|MOLECULE|Concentration" should appear in the list.

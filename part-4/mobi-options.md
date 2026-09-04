@@ -12,6 +12,8 @@ MoBi can be customized using several options. To do this, click on the **Options
 Always check which elements are renamed when this option is enabled. Sometimes, not all suggested renamings are desired
 {% endhint %}
 
+- **Warn for non-finite quantities**: If enabled, a warning will be shown in the **Notifications** view for each quantity whose value is `NaN` or infinite at time `t=0`. The check is performed when a simulation is created and each time it is run.
+
 -   **Number of recent file items shown**: Changes the number of recent documents displayed within the File Tab. The program needs to be restarted for the changes to take effect.
 - **Decimal places**: Changes the number of decimal places shown in numerical fields throughout the application.
 

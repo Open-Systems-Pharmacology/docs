@@ -14,7 +14,7 @@ There are 8 different building blocks types that are organized in modules:
 
 Additionally, the building block types **Individuals** and **Expression Profiles** are organized separately and can be used in simulations with different modules.
 
-The following sections give a brief overview of the different building blocks. More detailed information on each building block can be found in separate sections for each building block.
+The following sections give a brief overview of the different building blocks. More detailed information on each building block can be found in the corresponding sections of this chapter.
 
 ## Exporting and importing building blocks
 

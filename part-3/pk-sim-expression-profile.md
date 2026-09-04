@@ -50,7 +50,7 @@ Table: Reference concentration of CYP enzymes
 
 Special attention has to be paid when using ontogeny information together with the reference concentration. The reference concentration is subject to an age-dependent ontogeny, and the underlying implementation assumes that the reference concentration refers to an ontogeny factor of 1. For example, if it is known that for a 0.5-year-old individual, the ontogeny factor of a particular enzyme is 0.1, and the concentration of the enzyme in individuals of that age is 0.13 µmol/ L, the reference concentration (of an adult) is 1.3 µmol/L (that is 0.13/0.1).
 
-PK-Sim® supports different protein expression databases that must be configured in the PK-Sim® options, see [Options](pk-sim-options.md). As of August 2025, all models within the official [OSP PBPK Model Library](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/releases/tag/v12.0) are built with the large-scale human gene-expression [database Version 2](https://github.com/Open-Systems-Pharmacology/Gene-Expression-Databases/releases/tag/v2.0.0). This database was compiled from publicly available sources that were downloaded, processed, stored and customized to be directly utilized in PBPK model building \[[63](../references.md#63)\]. The public databases that were imported are
+PK-Sim® supports different protein expression databases that must be configured in the PK-Sim® options, see [Options](pk-sim-options.md). All models within the official [OSP PBPK Model Library](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library) are built with the large-scale human gene-expression [database Version 2](https://github.com/Open-Systems-Pharmacology/Gene-Expression-Databases/releases/tag/v2.0.0). This database was compiled from publicly available sources that were downloaded, processed, stored and customized to be directly utilized in PBPK model building \[[63](../references.md#63)\]. The public databases that were imported are
 
 -   whole genome expression arrays from ArrayExpress (ArrayExpress, 2010)
 -   RT-PCR-derived gene expression estimates from literature \[[49](../references.md#49)\], \[[50](../references.md#50)\], \[[51](../references.md#51)\]
@@ -162,13 +162,24 @@ Do only overwrite initial concentration by hand if absolutely required.
 
 ![Localization Transporter](../assets/images/part-3/Localization-Transporter.png)
 
-Transporters are located in the cell membranes, connecting two neighbor compartments. Four transport directions can be specified:
+Transporters are located in the cell membranes, connecting two neighbor compartments. For each transport protein, one of the following transport types is selected:
 
--   **Influx**: The substance is transported from the interstitial space or lumen to the intracellular space.
--   **Efflux**: The substance is transported from intracellular space to interstitial space or lumen.
+-   **Influx**: The substance is transported into the compartment on the far side of the membrane, e.g., from the interstitial space or the lumen into the intracellular space.
+-   **Efflux**: The substance is transported out of that compartment, e.g., from the intracellular space into the interstitial space or the lumen.
 -   **Bi-directional**: Facilitated transport along the concentration gradient. It is assumed that Vmax and Km values are equal for both directions. Only Michaelis-Menten kinetics can be used with this direction.
--   **Plasma to interstitial space** across endothelial border
--   **Interstitial space to plasma** across endothelial border
+-   **Pgp-like**: deprecated, only available for compatibility with older models (see [Settings in the protein expression tab](#settings-in-the-protein-expression-tab)).
+
+The transport direction that results from the selected transport type depends on the compartments that the transporter connects, and therefore on its localization:
+
+| Localization | Compartments connected | Transport types offered |
+| --- | --- | --- |
+| Vascular endothelium | Plasma and interstitial space | Influx, Efflux, Bi-directional |
+| Blood cells | Plasma and blood cells | Influx, Efflux, Bi-directional |
+| Organs (tissue) | Interstitial space and intracellular space | Influx, Efflux, Bi-directional, Pgp-like |
+| Mucosal tissue | Gastrointestinal lumen and intracellular space of the mucosa | Influx, Efflux, Bi-directional, Pgp-like |
+| Brain, blood-brain barrier | Brain plasma and brain interstitial space | Influx, Efflux, Bi-directional, Pgp-like |
+| Brain tissue | Brain interstitial space and brain intracellular space | Influx, Efflux, Bi-directional, Pgp-like |
+| Kidney and liver, apical membrane | Intracellular space and urine (kidney) resp. bile (liver) | Excretion only, the transport type is not used |
 
 As the model structure of PK-Sim does not explicitly contains membranes, expression of transporters is modeled in one of the neighbor compartments. In addition to the default transporter direction that is applied for all compartments, the direction can be specified for each compartment separately. As for proteins, the relative expression of a transport protein in an organ refers to the volume of organ tissue without blood cells and blood plasma.
 
@@ -442,7 +453,7 @@ In the lower section, values of relative expression can be edited for individual
 -   For transport proteins:
     -   For some organs, `Fraction expressed apical` can be set (see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins) for explanation of the various parameters).
 
-    -   Transporter direction can be set to **Efflux**, **Influx** or **Bi-Directional**.
+    -   Transporter direction can be set to **Efflux**, **Influx** or **Bi-Directional**. The entries offered for an organ depend on the compartments that the transporter connects there, see [Localizations, directions, and initial concentrations of transport proteins](#localizations-directions-and-initial-concentrations-of-transport-proteins). For transporters in tissue, mucosa and brain, the deprecated **Pgp-like** direction is offered in addition, while transporters on the apical membrane of kidney and liver cells always excrete into urine and bile, respectively.
 
         -   Transporter direction can be set **for each organ independently**. In order to change the direction in all organs simultaneously, change the selected value in the "Default Transporter Direction" selection box.
 
@@ -451,7 +462,7 @@ In the lower section, values of relative expression can be edited for individual
         {% endhint %}
 
         {% hint style="warning" %}
-        The transporter direction **Pgp-like** is, starting with version 11 of PK-Sim, marked as **\[DEPRECATED\]** and should not be used anymore. It is only available for compatibility reason with older models and will be removed in a future version of the software.
+        The transporter direction **Pgp-like** is, starting with version 11 of PK-Sim, marked as **\[DEPRECATED\]** in the selection list and should not be used anymore. It is still selectable and models that use it continue to run, but it is only kept for compatibility with older models and will be removed in a future version of the software. Note that **Pgp-like** is not simply another name for **Efflux**: in the vascular endothelium and in the blood cells, where no Pgp-like variant exists, both resolve to the same efflux direction, but in mucosa, tissue and the two brain localizations they resolve to different transport directions, which can select a different transport process and thus a different formula. Replacing **Pgp-like** by **Efflux** in these organs therefore changes the model and the result has to be re-evaluated.
         {% endhint %}
 
 ![Transporter directions](../assets/images/part-3/TransporterDirection.png)

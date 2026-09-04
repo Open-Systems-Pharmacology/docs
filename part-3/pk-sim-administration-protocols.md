@@ -49,6 +49,25 @@ Please note that if the administration type **Oral** is selected this will requi
 Please note that in case that the administration type **User Defined** is selected this will require the definition of a **Formulation** in the **Formulation** building block for the Simulation.
 {% endhint %}
 
+#### Events in a Simple Protocol
+
+In addition to the administration, one event - e.g., a meal or the emptying of the gallbladder - can be defined in a simple protocol. This covers the typical situations in which a drug is administered before, with, or after a meal, and it avoids having to add a recurring event to every simulation individually.
+
+1. Activate **Add an event for every administration...**.
+2. Enter the **Event offset**, i.e., the time of the event relative to the corresponding administration.
+
+The event is repeated together with the administration, so that a multiple dosing regimen with a meal at every administration only has to be defined once. Which event building block is used for the event is decided when the simulation is created, see [Events](#events-in-a-simulation).
+
+{% hint style="info" %}
+**Where administrations end up in the simulation.** In the created simulation, every administration is nested under a container named after the formulation it uses. The administration types that require no formulation — **Intravenous Bolus** and **Intravenous Infusion** — are nested under a container named `No formulation`, so that all administrations have the same structure. The path of an application parameter is therefore
+
+```text
+Events|<protocol name>|<formulation or "No formulation">|Application_<n>|ProtocolSchemaItem|<parameter>
+```
+
+for example `Events|iv 5 mg|No formulation|Application_1|ProtocolSchemaItem|Infusion time`. The `No formulation` container was introduced in version 13; paths stored in projects created with earlier versions are missing it — see [Changed paths in PK-Sim modules](../part-4/converting-v12-projects-to-v13.md#changed-paths-in-pk-sim-modules).
+{% endhint %}
+
 ### Advanced Protocol
 
 Activate **Advanced protocol** in the **Create Administration Protocol** window.
@@ -67,11 +86,13 @@ The secondary table, can be opened by clicking ![Image](../assets/icons/Add.png)
 
 1. The **Start Time** of schema items in relation to the start time of the protocol schema. If the start time of the schema items is **0**, the administration time equals the start time of the protocol schema.
 2. The **Dose** in units mg or mg/kg of the drug administered.
-3. The **Administration type**. You can choose from the following administration types from the drop-down menu:
+3. The **Type**. You can choose from the following administration or event types from the drop-down menu:
    * <img src="../assets/icons/IntravenousBolus.svg" alt="" data-size="line"> Intravenous Bolus
    * <img src="../assets/icons/Intravenous.svg" alt="" data-size="line"> Intravenous Infusion: requires the input of the **Infusion time** in units min, h, or s
-   * <img src="../assets/icons/Oral.svg" alt="" data-size="line"> Oral: requires the input of the **Volume of water/body weight** co- administered, which is 3.5 mL/kg BW per default (see PK- Sim® - _Formulations_) and, additionally, the definition of a **Placeholder for formulation** in column 4.
-4. **Placeholder for Formulation**.\
+   * <img src="../assets/icons/Oral.svg" alt="" data-size="line"> Oral: requires the input of the **Volume of water/body weight** co-administered, which is 3.5 mL/kg BW per default (see PK- Sim® - _Formulations_) and, additionally, the definition of a **Placeholder for formulation** in column 4.
+   * User defined: requires the input of the **Target organ** and **Target compartment**.
+   * Event: schedules an event instead of an administration, see [Events in an Advanced Protocol](#events-in-an-advanced-protocol).
+4. **Placeholder**, holding the placeholder for the formulation of an administration and the placeholder for the event of an event entry.\
    For an intravenous administration (Intravenous Bolus and Intravenous Infusion), the definition of a formulation placeholder is not necessary, because the drug is always assumed to be dissolved when given intravenously (see [PK-Sim® - Formulations](pk-sim-formulations.md)).
 
 In case of oral and user defined administration, you should add a note on the type of formulation. Later, in the simulation, the formulation placeholder can be matched with the corresponding **Formulation** building block. This may sound trivial in the case of only one formulation given repeatedly at the given times. However, consider that you can set up sophisticated dosing schedules, in which various administration types and formulations are administered at various times. Then, the formulation type should already be signified in the administration protocol in order to be able to appropriately match the schedules with the various formulations. For further information please see [PK-Sim® - Simulations](pk-sim-simulations.md).
@@ -85,7 +106,19 @@ In the following screenshot, an example of an advanced protocol is given. The pr
 ![The Create Administration Protocol dialog. Here, the example of an individually created advanced protocol is shown.](../assets/images/part-3/PKSim-Protocol-AdvancedEx.png)
 
 {% hint style="info" %}
-Please note that the combination of the Administration type **User defined** and the **Advanced protocol** is not available.
+Please note that the combination of the Type **User defined** and the **Advanced protocol** is not available.
+{% endhint %}
+
+#### Events in an Advanced Protocol
+
+Events are entered as schema items with the **Type** set to **Event**: the **Dose** cell is then disabled and the **Placeholder** cell offers the event placeholders instead of the formulation placeholders. Events defined in this way follow the repetition pattern of the protocol schema, i.e., an event that is defined once is repeated with every repetition of the schema. The preview in the lower panel of the window shows administrations and events on the same time axis.
+
+### Events in a Simulation
+
+Events that are defined in an administration protocol are placeholders, in the same way as the placeholders for formulations. They are mapped to [Events](pk-sim-events.md) building blocks of the project in the **Administration** step of the simulation configuration, together with the other protocol-related mappings. Selecting **\<None\>** means that no event is created for the placeholder. The same administration protocol can therefore be used with different events in different simulations.
+
+{% hint style="info" %}
+The **Events** tab of the simulation configuration is still available. Events that are not linked to an administration, as well as simulations created with previous versions, continue to work unchanged.
 {% endhint %}
 
 ## Setting or Changing Administration Protocol Properties

@@ -24,7 +24,7 @@ The behavior will be slightly different based on the loaded simulation type.
 
 A simulation can be created from at least one module or a combination of modules, individuals, and expression profiles. A specific combination of modules is called **model configuration**. To create a simulation:
 
-* Click on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Simulation** button in the **Create** group of the **Modelling** ribbon.
+* Click on the <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> **Simulation** button in the **Create** group of the **Modeling** ribbon.
 * Right-clicking on the "Simulations" entry in the Simulations Explorer and select <img src="../assets/icons/Simulation.svg" alt="" data-size="line"> "Create Simulation..." in the context menu.
 
 A **Simulation Creation Wizard** opens that allows to select the modules, individual, expression profiles, initial conditions, and parameter values building blocks to create the simulation from as depicted below.
@@ -190,7 +190,7 @@ However, when scale divisors are calculated and applied to a simulation, solver 
 
 ## Default Simulation settings
 
-The project defaults for simulation output intervals, output selections, and solver settings can be defined in the **Default Simulation Settings** accessible through the **Edit** button of the **Simulation Settings** group in the **Modelling** ribbon. When a new simulation is created, these default settings are automatically applied.
+The project defaults for simulation output intervals, output selections, and solver settings can be defined in the **Default Simulation Settings** accessible through the **Edit** button of the **Simulation Settings** group in the **Modeling** ribbon. When a new simulation is created, these default settings are automatically applied.
 
 The default simulation settings can be exchanged between projects by saving them to and loading from a pkml file.
 
@@ -269,7 +269,7 @@ Parameters associated with Event and Application Properties can be accessed at t
 
 ## Update and Commit Changes Between Simulations and Modules.
 
-Within the **Simulation Explorer**, each building block item of the **Configuration** tree is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consistent with the corresponding general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
+Within the **Simulation Explorer**, each building block item listed below a simulation is displayed with a green or red traffic light. The traffic lights indicate if the building block item of the simulation is consistent with the corresponding general **Building Block**. If a **Building Block** or parameter settings within a **Simulation** are changed, the red traffic lights in the **Simulation** window indicate that the local settings in the simulation are different from the settings in the general **Building Block**.
 
 A right click on the red traffic lights in the **Simulation** window allows for two actions:
 
@@ -284,16 +284,18 @@ If the information in the building blocks differs from that in the simulation, t
 Changes in parameter or initial condition values can be propagated to the modules.
 
 {% hint style="warning" %}
-Structural changes cannot be propagated to the modules. For example, if a reaction is added in the building block of a module, commiting from the simulation to the module will not remove the reaction.
+Structural changes cannot be propagated to the modules. For example, if a reaction is added in the building block of a module, committing from the simulation to the module will not remove the reaction.
 {% endhint %}
 
-Right-click on the simulation and select **Commit to Building Block**. A dialog opens that allows to select which changes should be committed to the building block. The values are always committed to the **selected** parameter values or initial conditions building blocks of the **last module** used in simulation configuration.
+Right-click on the simulation and select **Commit to Building Block**. A dialog opens that allows to select which changes should be committed. A second dialog then allows to select the **module** that receives the values and, within that module, the **parameter values** and **initial conditions** building block to write them to - or to create a new one. By default, the last module used in the simulation configuration and the building blocks the simulation currently uses are offered.
 
-If no Parameter Values or Initial Conditions building block is selected for the last module, a new building block is created.
+If the values are committed to a building block that the simulation does not use, they are written to that building block alone: the simulation is not updated and remains marked as out of sync. MoBi® shows a warning in this case. See [Committing changes from a simulation to a building block](modularization-concept.md#committing-changes-from-a-simulation-to-a-building-block) for the full behavior.
 
 ## Further Options for Simulations
 
 Once a simulation is created, a number of options besides simply running the simulation are available.
+
+Clicking on the expand icon in front of the simulation will expand the entry and show the **modules and building blocks** used in the corresponding simulation. A module entry is again expandable by a click on the expand icon in front of it and yields the building blocks of that module. The expanded simulation entry also lists the observed data used by the simulation (see [Observed Data used by a Simulation](simulation-results.md#observed-data-used-by-a-simulation)).
 
 ### Calculate Scale Divisors
 

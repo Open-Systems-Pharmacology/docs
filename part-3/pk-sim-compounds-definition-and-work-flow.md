@@ -107,6 +107,10 @@ The solubility of the compound is only needed for the oral administration route.
 First estimates can be made using water solubility. However, especially for lipophilic compounds this value might underestimate the solubility in the intestine so that it is better to use a value obtained under bio-relevant conditions (e.g., in *Fasted State Simulated Intestinal Fluid*, FaSSIF). If different values are available for one compound (e.g., in FaSSIF and in *Fed State Simulated Intestinal Fluid*, FeSSIF), several alternative solubility values can specified and the appropriate value can then chosen in the **Simulation** creation step.
 {% endhint %}
 
+{% hint style="info" %}
+Instead of using a single solubility value measured under bio-relevant conditions, the apparent solubility in each segment of the gastrointestinal tract can be calculated from the local bile salt concentration, see [Advanced intestinal solubility](#advanced-intestinal-solubility).
+{% endhint %}
+
 #### Intestinal solubility as table function of pH
 
 Intestinal solubility can also be defined as a linear interpolation of measured (pH, Solubility) data pairs.
@@ -241,7 +245,7 @@ No general rules have emerged to determine which distribution model is best suit
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | PK-Sim® Standard (default)               | The relevant compound parameters are lipophilicity and binding to plasma proteins. As lipophilicity measure, the membrane affinity (partition coefficient between water and an artificial membrane bilayer) is preferred in this model. The subcompartments of tissue and blood or plasma are assumed to consist of lipids, proteins, and water. Therefore the respective volume fractions as well as lipid/water ($$K_{lipid}$$) and protein/ water ($$K_{protein}$$) partition coefficients of the compound are considered.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Rodgers & Rowland                        | In contrast to the previous model, this approach explicitly considers electrostatic interactions between ionized compounds (e.g. moderate-to-strong bases) and anionic phospholipids at physiological pH. It also considers interactions with intracellular neutral phospholipids and neutral lipids. Two additional input parameters are therefore necessary for the calculation of partition coefficients: the blood to plasma concentration ratio $$BP_{ratio}$$, as a measure for electrostatic interactions of drugs with acidic phospholipids, and the vegetable oil-water partition coefficient ($$D_{vo:w}$$) which is a better surrogate than the octanol-water partition coefficient ($$P_{o:w}$$) for neutral lipids [[59](../references.md#59)], [[62](../references.md#62)], [[60](../references.md#60)], [[61](../references.md#61)].                                                                                                                      |
-| Schmitt                                  | This approach offers a universally applicable method to calculate organ-plasma partition coefficients under explicit consideration of electrostatic interactions between charged molecules at physiological pH and acidic phospholipids. pH differences between different subcompartments are taken into account, which leads to different amounts of dissociated and undissociated weak acids and bases. In contrast to the Poulin & Theil model the lipid subcompartment is assumed to consist of neutral lipids, neutral phospholipids and acidic phospholipids in order to better describe partitioning into biological membranes – especially of charged drugs. For each of these membrane constituents fractional volumes based on experimental literature data were used 68.                                                                                                                                                                 |
+| Schmitt                                  | This approach offers a universally applicable method to calculate organ-plasma partition coefficients under explicit consideration of electrostatic interactions between charged molecules at physiological pH and acidic phospholipids. pH differences between different subcompartments are taken into account, which leads to different amounts of dissociated and undissociated weak acids and bases. In contrast to the Poulin & Theil model the lipid subcompartment is assumed to consist of neutral lipids, neutral phospholipids and acidic phospholipids in order to better describe partitioning into biological membranes – especially of charged drugs. For each of these membrane constituents fractional volumes based on experimental literature data were used [[68](../references.md#68)].                                                                                                                                                                 |
 | Poulin & Theil                           | The approach developed by Poulin and Theil considers the cell lipid subcompartment as mainly consisting of phospholipids with a lipophilicity-hydrophobicity behavior similar to a mixture of 30 % neutral lipids and 70 % water. Organ-plasma partition coefficients are then calculated using the volume fractions of the aqueous ($$F_w$$) and organic subcompartments ($$F_{neutral\ lipid}$$ and $$F_{phospholipid}$$) of the respective organ and plasma for this distribution model (select the combobox "advanced" in Individual --> Anatomy & Physiology and go to Physiology --> Tissue and body fluid physiology --> Tissue composition). For adipose tissue, vegetable oil-water partition coefficients ($$D_{vo:w}$$) are used as lipophilicity measures, whereas octanol- water partition coefficients ($$P_{o:w}$$) are used for non-adipose tissue [[53](../references.md#53)], [[54](../references.md#54)], [[55](../references.md#55)], [[52](../references.md#52)]. |
 | Berezhkovskiy                            | The assumptions made to describe drug partitioning into biological membranes as well as the input parameters correspond to those made in the Poulin & Theil model. However, peripheral drug elimination as well as drug exchange between compartments are considered, which leads to a modified version of the equation presented by Poulin and Theil [[5](../references.md#5)].                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -375,7 +379,7 @@ Drugs may influence a broad variety of ADME processes that in turn will then aff
 
 ### Advanced Parameters tab
 
-Additional compound-related parameters can be defined in the **Advanced Parameters** that are needed in case the particle dissolution function (see [Formulations](pk-sim-formulations.md)) or the model for proteins and large molecules (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)) are used. In all other cases, the parameters defined in the **Advanced Parameters** tab will not be used and can be left unchanged.
+Additional compound-related parameters can be defined in the **Advanced Parameters** that are needed in case the particle dissolution function (see [Formulations](pk-sim-formulations.md)), the calculation of the intestinal solubility from the bile salt concentration, or the model for proteins and large molecules (see [Modeling of Proteins](../part-1/modeling-concepts-modeling-of-proteins.md)) are used. In all other cases, the parameters defined in the **Advanced Parameters** tab will not be used and can be left unchanged.
 
 #### **Particle dissolution**
 
@@ -395,6 +399,21 @@ The following parameters cane be specified:
 
 Further parameters such as the mean particle size and the particle size distribution, the number of bins, and the diffusion layer thickness are considered to be related to the formulation and thus can be defined in the Formulation Building Block (see [Formulations](pk-sim-formulations.md)).
 
+#### **Advanced intestinal solubility**
+
+Instead of using one solubility value measured under bio-relevant conditions for the whole gastrointestinal tract (see [Solubility](#solubility)), the apparent solubility can be calculated for each segment of the intestine from the bile salt concentration of that segment and the partitioning of the compound between the bile salt micelles and water. The required compound parameters are organized in the two groups **Advanced Intestinal Solubility** and **Bile Salt Micelle Partitioning**:
+
+- **Critical Micellar concentration**: the bile salt concentration above which micelles are formed.
+- **Solubility gain per charge**: the factor by which the solubility increases with each ionization step. It is the same parameter as in the **Basic Physico-Chemistry** tab.
+- **Partition coefficient (bile salt micelle/water) neutral** and **Partition coefficient (bile salt micelle/water) ionized**: partitioning of the neutral and of the ionized species of the compound between the bile salt micelles and water.
+- **Partition coefficient (bile salt micelle/water) constant 1** and **Partition coefficient (bile salt micelle/water) constant 2**: constants of the correlation used when the partition coefficients are not entered directly. As for other parameter groups with a calculated alternative, you can switch between the values calculated from lipophilicity and your own values.
+
+The model, the in vitro data required to inform these parameters, and their evaluation are described in [[174](../references.md#174)] and [[175](../references.md#175)].
+
+{% hint style="info" %}
+The bile salt concentrations and the luminal pH values used in the calculation are properties of the individual and change over time in response to water and food intake. Together with the [Particle Dissolution](pk-sim-formulations.md#particle-dissolution) formulation, these parameters form the mechanistic oral absorption (PBBM) framework introduced in version 13.
+{% endhint %}
+
 #### **Model for proteins and large molecules**
 
 Four drug-related parameters which are used in the model for proteins and large molecules can be defined in the **Advanced Parameters** tab, namely:
@@ -403,6 +422,30 @@ Four drug-related parameters which are used in the model for proteins and large 
 - **Kd (FcRn) in endosomal space:** the dissociation constant for binding to FcRn in the acidic endosomal space. By default, this value is set to a very high value, implying no binding.
 - **Kd (FcRn) in plasma/interstitial:** the dissociation constant for binding to FcRn in plasma and the interstitial space (neutral environment). By default, this value is set to a very high value, implying no binding. For monoclonal antibodies, the binding to FcRn in neutral environment is generally very weak or not detectable. In this case, the high default value for Kd (FcRn) in plasma/interstitial space can be kept.
 - **kass (FcRn):** the association rate constant for binding to FcRn in both the acidic endosomal space and the plasma/interstitial space. The default value is a typical value for monoclonal antibodies and can usually be kept as is.
+
+### Overwrite Parameter Sets tab
+
+Some parameters that depend on the compound are not part of the compound building block because they are only created in the context of a simulation, e.g., permeabilities or partition coefficients of the organs. If such parameters have been modified in a simulation, they can be committed back to the compound as a named **Overwrite Parameter Set** and re-applied in other simulations and projects.
+
+**Committing simulation parameters to a compound**
+
+In a simulation, select **Commit Simulation Parameters to Compound...** in the context menu of the compound. A dialog lists all changed parameters, which can be deselected individually. Under **Commit Options**, either **Create New Parameter Set** with its own **Name**, or **Update Existing Parameter Set** and select the **Parameter Set** to be updated. A compound with uncommitted, compound-related parameter changes is marked in the simulation with an orange status indicator. Uncommitted changes are saved with the project.
+
+**Managing Overwrite Parameter Sets**
+
+The **Overwrite Parameter Sets** tab of the compound follows the **Advanced Parameters** tab and shows all overwrite parameter sets of the compound in a master-detail view. Parameter values, units, and metadata (e.g., species or disease state) can be inspected and edited, individual parameters or whole sets can be deleted, and one set can be marked as **Default**.
+
+**Applying an Overwrite Parameter Set**
+
+When a compound is added to a simulation or its configuration is changed, an overwrite parameter set can be selected from the drop-down list. **\<None\>** uses the original, formula-based values of the compound-dependent simulation parameters, any other selection applies the values stored in the selected set. If the compound has a default set, this set is preselected. Parameters applied from a set behave like any other compound parameter.
+
+{% hint style="warning" %}
+If a parameter path stored in an overwrite parameter set cannot be resolved when the simulation is created, e.g., because the corresponding process is not part of the simulation, an error message is shown.
+{% endhint %}
+
+{% hint style="info" %}
+Overwrite parameter sets are merged into the standard **Parameter Values** building block when a simulation is exported to MoBi®, so MoBi® workflows are not affected.
+{% endhint %}
 
 After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Blocks Explorer** view.
 

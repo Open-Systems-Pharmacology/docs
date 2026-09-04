@@ -30,11 +30,45 @@ In a module, the user can change the parent container property for the top level
 
 Be cautious, as changing the parent path of a container will result in different absolute path to the respective container and might break the formulas that use absolute paths for variables definition. You might have to adjust the absolute paths accordingly, by manually appending the parent path to the aliases.
 
+### MoleculeProperties
+
+A spatial structure can contain child containers named `MoleculeProperties` in which *molecule-dependent* parameters are defined. When a simulation is created, each parameter is created for every applicable molecule — which molecules are applicable depends on the location of the `MoleculeProperties` container, the molecule type, and the parameter (see below).
+
+`MoleculeProperties` containers are **not** created automatically - neither at the top level of a new spatial structure nor in a newly created container. Add and remove them explicitly:
+
+- **Add** - right-click the **spatial structure** node for the top-level container, or a **physical container** for a container-level one, and select **Add MoleculeProperties**. The entry is only offered while the selected node has no `MoleculeProperties` yet.
+- **Delete** - right-click the `MoleculeProperties` container itself and select **Delete**. This works for the top-level container and for containers under a physical parent, under a logical parent and inside a neighborhood. Switching a container to *logical* also removes its `MoleculeProperties`.
+
+`MoleculeProperties` can appear at three locations, with a slightly different meaning each:
+
+- **In a container.** The parameters are created for every molecule present in that container, below the molecule node: `<ContainerPath>|<MOLECULE>|<parameter name>`. In a PBPK model imported from PK-Sim®, `Organism|Kidney|Intracellular|MoleculeProperties` holds, among others, the parameter `Partition coefficient (water/container)`, which for the molecule "Midazolam" becomes `Organism|Kidney|Intracellular|Midazolam|Partition coefficient (water/container)`. Every molecule gets its own instance and can have its own value.
+- **In a neighborhood.** The parameters are created for every non-stationary molecule present in both neighbors, below `Neighborhoods|<neighborhood name>|<MOLECULE>|<parameter name>`. This is where molecule-specific transport properties such as `P (interstitial->intracellular)` or `Partition coefficient (intracellular/plasma)` are located, while properties of the barrier itself that do not depend on the molecule (e.g., `Surface area (plasma/interstitial)`) are parameters of the neighborhood.
+- **At the top level of the spatial structure**, next to the `Neighborhoods` node. These parameters do *not* depend on the location: they are created once per molecule directly below the molecule node in the root of the simulation, i.e., `<MOLECULE>|<parameter name>`. PK-Sim® uses this node for compound properties that are calculated from the individual, e.g., `Fraction unbound (plasma)` or `Blood/Plasma concentration ratio`.
+
+{% hint style="info" %}
+As a `MoleculeProperties` parameter is created for many molecules, its formula must be generic. Use the [`MOLECULE` keyword](parameters-formulas-tags.md#keywords) in the paths of the referenced objects - it is replaced by the concrete molecule name in each created instance.
+{% endhint %}
+
+A `MoleculeProperties` parameter and a *local* molecule parameter defined in the [Molecules building block](molecules-bb.md#molecule-parameters) end up at the same location in the simulation. The difference is the direction in which they are generic: a local molecule parameter is created for *one molecule in all containers* in which it is present, a `MoleculeProperties` parameter is created for *all molecules in one container*. Select the one that matches what the parameter describes.
+
+Parameters located in `MoleculeProperties` are also the place where the distribution models of PK-Sim® are plugged in: a parameter with the **Formula Type: Calculation Method** is filled by the calculation method selected for the molecule in the [Molecules building block](molecules-bb.md#molecule-properties).
+
+{% hint style="info" %}
+Not every parameter is created for every molecule. In a container, only `Ontogeny factor`, `t1/2`, and `Degradation coefficient` are created for endogenous stationary molecules (e.g., enzymes and transporters), whereas all other `MoleculeProperties` parameters are created for xenobiotic floating molecules (e.g., drugs).
+TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2437
+{% endhint %}
+
+When combining modules, `MoleculeProperties` follow the module's merge behavior: they are **extended** under "Extend" and **replaced** under "Overwrite" (see [Modularization concept](modularization-concept.md#spatial-structure)).
+
+{% hint style="warning" %}
+An **empty** `MoleculeProperties` container in a module with the merge behavior "Overwrite" removes all molecule properties contributed by the previous modules. Delete the container from such a module if it is not meant to replace anything, or set the module to "Extend".
+{% endhint %}
+
 ### Neighborhoods
 
 New neighborhoods can be created by dragging a line from one physical container to another in the **Diagram** view, or by right-clicking on the **Neighborhoods** node in the tree view and selecting **Create Neighborhood** from the context menu. The user must specify the neighbor containers and a name for the neighborhood.
 
-If a neighborhood is defined with a neighbor that is not present in the final model structure, the neighborhood is ignored.
+If a neighborhood is defined with a neighbor that is not present in the final model structure, the simulation cannot be created and an error is shown. A neighborhood can also be defined **without neighbors**: such a neighborhood is not created in the simulation and, when combining modules, removes the same-named neighborhood defined in a previous module (see [Modularization concept](modularization-concept.md#spatial-structure)).
 
  When renaming a container, the software suggests changing the neighbor of all neighborhoods associated with the container to the new name.
 
@@ -52,7 +86,7 @@ Exporting a container to PKML also exports all of its sub-containers and all nei
 In the process of this and the next sections of this chapter, you will create an example project. An already completed project file named "ManualModel\_Sim.mbp3" is automatically installed together with MoBi® in the default program data directory. The entry "Examples" in the program start menu in the "MoBi" group will lead you to the proper path.
 {% endhint %}
 
-Start by creating a new project by executing the **New Project** command in the File menu. Create a new module by selecting the **Module** button in the **Create** group of the **Modeling** tab in the ribbon. Name the new module "ExampleModule" and select a "Spatial Structure" building block to be created within the new module. Click **OK** to create the new module.
+Start by creating a new project by executing the **New Project** command in the File menu or by clicking the corresponding icon ![Image](../assets/icons/ProjectNew.svg) in the Quick Access Toolbar. Create a new module by selecting the **Module** button in the **Create** group of the **Modeling** tab in the ribbon. Name the new module "ExampleModule" and select a "Spatial Structure" building block to be created within the new module. Click **OK** to create the new module.
 
 The screen should now look as shown in the following figure:
 
@@ -84,7 +118,7 @@ To create the required parameters:
 
 ### Creating Neighborhoods
 
-Within a spatial structure, transport processes may occur (see [Active Transporter Molecules](molecules-bb.md#active-transports) or [Passive Transports](passive-transports-bb.md)) only between physical containers that are connected by a neighborhood.
+Within a spatial structure, transport processes may occur (see [Active transports](molecules-bb.md#active-transports) or [Passive Transports](passive-transports-bb.md)) only between physical containers that are connected by a neighborhood.
 
 To create a neighborhood between the two containers `BigVial|Vial1` and `BigVial|Vial2`, proceed as follows:
 

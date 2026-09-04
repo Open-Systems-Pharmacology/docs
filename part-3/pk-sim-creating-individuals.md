@@ -92,7 +92,7 @@ For more information on the implementation, please refer to [[122](../references
 
 ### Animal species
 
-If one of the animal species, i.e. **Monkey, Beagle, Dog, Minipig, Rat** or **Mouse** is selected, the menu items are slightly different.
+If one of the animal species, i.e. **Monkey, Beagle, Dog, Minipig, Rat, Mouse, Rabbit, Cat** or **Cattle** is selected, the menu items are slightly different.
 
 {% hint style="info" %}
 Please note that PK-Sim® does currently not distinguish between male and female animals. Animal models represent an average adult animal of the species or breed.

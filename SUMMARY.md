@@ -1,17 +1,13 @@
 # Table of contents
 
 * [README](README.md)
+* [What's New in Version 13](NEWS.md)
 * [Open Systems Pharmacology Suite Manual & Copyright](copyright.md)
+* [How to Cite this Manual](how-to-cite.md)
 * [How to Contribute](how-to-contribute.md)
 
 ## Mechanistic Modeling of Pharmacokinetics and Dynamics
-* Best Practices
-    * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
-    * [Model Development](part-7/model-development.md)
-    * [Model Evaluation](part-7/model-evaluation.md)
-    * [Application Simulation](part-7/application-simulation.md)
-    * [Documentation](part-7/documentation.md)
-  
+
 * Modeling Concepts
   * [PBPK Modeling - Systems Biology](part-1/modeling-concepts-pbpk-modeling-systems-biology.md)
   * [PK and PD Modeling](part-1/modeling-concepts-pk-and-pd-modeling.md)
@@ -19,6 +15,13 @@
   * [Expression Data for PBPK Modeling](part-1/modeling-concepts-expression-data-for-pbpk-modeling.md)
   * [Modeling of Proteins](part-1/modeling-concepts-modeling-of-proteins.md)
   * [PD and Reaction Network Modeling](part-1/modeling-concepts-pd-and-reaction-network-modeling.md)
+
+* Best Practices
+  * [Introduction](part-7/a-short-guide-to-pbpk-model-development.md)
+  * [Model Development](part-7/model-development.md)
+  * [Model Evaluation](part-7/model-evaluation.md)
+  * [Application Simulation](part-7/application-simulation.md)
+  * [Documentation](part-7/documentation.md)
 
 ## Open Systems Pharmacology Suite
 
@@ -42,7 +45,7 @@
   * [Simulations](part-3/pk-sim-simulations.md)
   * [Importing and Exporting Project Data and Models](part-3/importing-exporting-project-data-models.md)
   * [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
-  * [Command Line Interface - CLI](part-3/pk-sim-command-line-interface.md)
+  * [Command-Line Interface - CLI](part-3/pk-sim-command-line-interface.md)
 
 ## Working with MoBi
 
@@ -66,7 +69,9 @@
   * [Simulation Results](part-4/simulation-results.md)
   * [Diagrams Overview](part-4/diagrams-overview.md)
   * [Tools](part-4/tools.md)
-  * [Reuse of Project Information from Previous Versions](part-4/reuse-of-project-information-from-previous-versions.md)
+  * [Command-Line Interface - CLI](part-4/mobi-command-line-interface.md)
+  * [Project conversion workflows](part-4/reuse-of-project-information-from-previous-versions.md)
+    * [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md)
   * [Example Workflows](part-4/example-workflows.md)
 
 ## Shared Tools and Example Workflows
@@ -85,7 +90,7 @@
 
 ## Working with R
 
-* [ospsuite-R Documentation](part-6/introduction-ospsuite-r.md)
+* [ospsuite R Documentation](part-6/introduction-ospsuite-r.md)
 * [Reporting Engine (RE)](part-6/reporting-engine.md)
 * [TLF Library](part-6/tlf-library.md)
 

@@ -1,19 +1,23 @@
 # Modularization Concept in MoBi
 
-Starting with version 12 the OSP Suite introduces a new modularization concept for building models in MoBi. This new concept allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
+Since version 12, models in MoBi are built using the modularization concept. It allows users to create, share, and reuse models more efficiently by breaking them down into smaller, manageable components called **modules**.
 
 This section provides an overview of the modularization concept and is especially suited for users familiar with previous versions of MoBi. It explains the advantages of using modules, how to create and manage them, and the rules that govern module combination.
 
-An example workflow illustrating how to use the modularization concept in practice can be found [here](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
+{% hint style="info" %}
+This page describes the concept as it works in **version 13**. The overall structure (Modules → Building Blocks → Simulations) is the same as in v12, but several of the [rules governing module combination](#creating-simulations-from-modules-and-combination-rules) changed. If you are migrating a project from v12, see [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for a summary of the differences.
+{% endhint %}
+
+An example workflow illustrating how to use the modularization concept in practice can be found in the [modularization use case—adding a tumor to a PBPK model](example-workflows.md#modularization-use-case---adding-a-tumor-to-a-pbpk-model).
 
 ## MoBi project structure
 
-The new concept introduces changes in how model structures are organized and combined into simulations. While OSP Suite <V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the new modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
+The modularization concept changed how model structures are organized and combined into simulations. While OSP Suite \<V12 had two major layers of organization of a MoBi project – **Building Blocks (BB)** that are combined into **Simulations**, the modularization concept extends the structure to **Modules**, **Building Blocks**, and **Simulations**.
 
 A MoBi project contains a set of:
 
 - PK-Sim modules
-    - A module created from a PK-Sim PBPK model. As a best practice, a PK-Sim module should not be modified. Instead, all changes/extensions to the model should be done in the so-called Extension modules (see below). A PK-Sim module is converted into an Extension module when edited by the user.
+    - A module created from a PK-Sim PBPK model. As a best practice, a PK-Sim module should not be modified. Instead, all changes/extensions to the model should be done in the so-called Extension modules (see below). A PK-Sim module is converted into an Extension module when edited by the user. A PK-Sim module carries its snapshot, so it can be re-created in PK-Sim.
 - Extension modules
     - Editable modules that contain any changes to the model structure made by the user.
 - Individuals
@@ -29,7 +33,7 @@ For convenient organization of the project, modules can be grouped in folders in
 ### PK-Sim modules
 A project in MoBi can be based on a PBPK model exported from PK-Sim. Such a model will be present as a **PK-Sim module** in MoBi containing *all of the BB types*. PK-Sim modules cannot be edited by default. If the user decides to edit a PK-Sim module, the PK-Sim module will be converted to an Extension module. A project can contain multiple or no PK-Sim modules.
 
-Export of a PK-Sim model to MoBi creates one PK-Sim module, one individual, and (0-n) expression profile BBs.
+Export of a PK-Sim model to MoBi creates one PK-Sim module, one individual, and (0-n) expression profile BBs. The PK-Sim snapshot of the module is stored with the module and allows the PK-Sim module to be recreated.
 
 ### Extension modules
 Each MoBi project may contain any number of **Extension modules**. An Extension module can add or modify any part of the default PK-Sim model structure - spatial structures, molecules, reactions, etc.
@@ -40,7 +44,7 @@ When adding new containers (e.g., adding a new organ) or molecules in an Extensi
 
 ## Location of (individual) parameters
 
-Compared to the previous versions, v12 introduces some changes in how and where individual parameters are stored when a PBPK model is imported in MoBi.
+Since v12, individual parameters are stored as follows when a PBPK model is imported in MoBi (this is unchanged in v13):
 
 - All parameters of the spatial structure that are **present in all species** and have the **same value or the same formula in all species and individuals** are stored directly in the spatial structures BB with the fixed value or an explicit formula. Example: `Organism|Thickness (endothelium)` (constant value) or `Organism|Weight of blood organs` (sum formula).
 
@@ -54,7 +58,7 @@ The parameters that are defined in the individual are shown with grey background
 
 ## Parameter values building block
 
-Another important change (compared to the previous versions): the PV BB should only contain values for parameters that are different from those stored in other BBs. In most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transferred in the PV BB.
+The PV BB should only contain values for parameters that are different from those stored in other BBs. In most cases, the PV BB will be empty when a PK-Sim model is imported into MoBi. An exception is when the user has modified parameter values in the PK-Sim simulation that are not part of any PK-Sim BB (e.g., intestinal permeability of Midazolam in the [Midazolam PBPK model](https://github.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/tree/master/Midazolam).) These "Simulation parameters" are transferred in the PV BB.
 
 ## Creating simulations from modules and combination rules
 
@@ -66,137 +70,211 @@ During simulation creation, the modules are combined to a common model structure
 
 There are two types of combination behavior that can be defined for a module - **overwrite** or **extend**. The following sections describe how different building blocks are merged and what are the differences between the **overwrite** and the  **extend** modes, if any.
 
+{% hint style="info" %}
+The merge rules described below are the **v13** rules. Several of them differ from v12: in v12, "Extend" behaved like a full overwrite for Molecules, Reactions, Passive Transports, and Observers; `MoleculeProperties` in the spatial structure were always merged regardless of the merge behavior; and equally-named events were not merged across modules before simulation creation. A model configuration created in v12 can therefore produce a different simulation in v13. See [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for a complete list of the differences and the migration steps.
+{% endhint %}
+
+### Condition lists
+
+Observers, passive transports, events, and reactions use *condition lists* - the lists titled "In container with" or "Between containers with" - to define where in the model structure they are created (see [How Tags are used](parameters-formulas-tags.md#how-tags-are-used---container-criteria-for-formulas-observers-transports-and-events)). Wherever the sections below state that such a list is *extended*, the following rules apply:
+
+- All conditions defined in module `B` are added to the conditions defined in module `A`. Conditions are never removed. A condition defined in both modules is added twice, which does not change the result of the evaluation.
+- A **condition group** is treated as a single condition of the list. It is added as a whole, keeping the conditions and the operator (AND/OR) defined *within* the group. Condition groups of different modules are never combined with each other, and the operator within a group is never changed.
+- The **operator** (AND/OR) of the condition list itself is always taken from module `B`, even if module `B` defines only a single condition.
+
+Under the merge behavior "Overwrite", the complete condition list, including its operator, is taken from module `B`.
+
+{% hint style="warning" %}
+Because the operator of the condition list is always taken from the module lower in the hierarchy, an extension module can change the meaning of the conditions defined in a module higher in the hierarchy. Example: module `A` defines the condition list `(Condition group 1) OR (Condition group 2)`, and module `B` adds a single condition to the same list using the AND operator. The resulting condition list is `(Condition group 1) AND (Condition group 2) AND (condition from module B)`, so an entity that was created in the containers matching *either* group is now only created in the containers matching *both* of them.
+
+Note that AND is the default operator, and that the operator of a list with only one condition is not visible in the user interface. Always verify the resulting model structure in the created simulation.
+{% endhint %}
+
 ### Spatial structure
-
-#### Merge behavior "Overwrite"
-When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers from module `B` will overwrite the containers with the same path in module `A`. When overwriting, all descendants of a container are removed if not present in the module that overwrites (i.e., replacement of the whole tree structure). I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 2`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` without the sub-containers `Container 2` and `Container 3`. `Organism|Container 1` will only have parameters that are defined in module `B`, but not in module `A`.
-
-- **Parameters** will be overwritten by their absolute path. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used.
-- **Container types** (physical or logical) will be overwritten.
-- Container (including neighborhoods) **Tags** will be overwritten. If `Organism|Container 1` has a tag "Tag A" in module `A` and a tag "Tag B" in module `B`, in the final model, `Organism|Container 1` will only have tag "Tag B".
-- **Formulas** are never overwritten (also not in the "overwrite" mode). Meaning, if module `B` defines a formula with the same name as a formula in module `A`, the updated formula will only be used for the parameters defined in module `B`, but not for other parameters that use this formula.
-- **Neighborhoods** will be overwritten by their names. Their parameters, tags, and neighbors will be overwritten.
 
 #### Merge behavior "Extend"
 When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers and parameters from module `B` will be added to module `A`. I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 3`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` with parameters defined in both modules, and with the sub-containers `Organism|Container 1|Container 2` and `Organism|Container 1|Container 3`.
 
+- **MoleculeProperties** are extended. That means that new molecule properties from module `B` will be added to the existing ones in module `A`. If module `B` has a molecule property that is also present in module `A`, the property (its constant value or formula) from module `B` will be used.
 - **Parameters** are always overwritten. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc).
-- **Container types** will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
-- **Tags** will be extended. If "Organism|Container 1" has a tag "Tag A" in module "A" and a tag "Tag B" in module "B", in the final model, "Organism|Container 1" will have tags "Tag A" and "Tag B".
-- **Neighborhoods** are extended (e.g., addition of new parameters, tags).
+- **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
+- **Tags** of containers and neighborhoods will be extended. If "Organism|Container 1" has a tag "Tag A" in module "A" and a tag "Tag B" in module "B", in the final model, "Organism|Container 1" will have tags "Tag A" and "Tag B". A tag defined in module `A` can never be removed by module `B`. The tags of a **parameter** are *not* extended: as stated above, a parameter is replaced as a whole, so it only has the tags defined in module `B`.
+- **Neighborhoods** are extended (e.g., addition of new parameters, tags). Neighbors are replaced. If module `A` defines a neighborhood `N1` between `Organism|Container 1` and `Organism|Container 2`, and module `B` defines a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`, the final model will contain a neighborhood `N1` between `Organism|Container 2` and `Organism|Container 3`.
+
+{% hint style="warning" %}
+If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
+{% endhint %}
+
+{% hint style="warning" %}
+Redefining a parameter in module `B` removes the tags that this parameter has in module `A`, even if the only intention was to change its value. Parameter tags are used to select parameters in [sum formulas](parameters-formulas-tags.md#sum-formulas), so a sum formula defined in module `A` will silently stop taking such a parameter into account. To avoid this, repeat all tags of the parameter in module `B`. Conditions that use the name of the parameter or the tags of its container are not affected, as the name of an entity also acts as a tag.
+{% endhint %}
+
+#### Merge behavior "Overwrite"
+When combining modules `A` and `B` (with the hierarchy `A <- B`), all containers from module `B` will overwrite the containers with the same path in module `A`. When overwriting, all descendants of a container are removed if not present in the module that overwrites (i.e., replacement of the whole tree structure). I.e., if module `A` has a container `Organism|Container 1` with two sub-containers `Container 2` and `Container 3` (absolute paths: `Organism|Container 1|Container 2` and `Organism|Container 1|Container 2`), and module `B` has a container `Organism|Container 1` without any sub-containers, the final model will contain `Organism|Container 1` without the sub-containers `Container 2` and `Container 3`. `Organism|Container 1` will only have parameters that are defined in module `B`, but not in module `A`.
+
+- **MoleculeProperties** are overwritten, like any other container. The `MoleculeProperties` container of module `B` replaces the one accumulated from the previous modules, so only the molecule properties defined in module `B` are created. This applies to the `MoleculeProperties` container at the top level of the spatial structure (next to `Neighborhoods`) and to a top-level `MoleculeProperties` container inserted through a `Parent path`. A `MoleculeProperties` container located *inside* another container is replaced together with that container, as described above.
+- **Parameters** will be overwritten by their absolute path. If both modules have a parameter `Organism|Container 1|Param`, the parameter from module `B` will be used.
+- **Container types** (physical or logical) will be overwritten. If "Organism|Container 1" is "physical" in module "A" and "logical" in module "B", the container will be "logical" in the final model.
+- Container (including neighborhoods) **Tags** will be overwritten. If `Organism|Container 1` has a tag "Tag A" in module `A` and a tag "Tag B" in module `B`, in the final model, `Organism|Container 1` will only have tag "Tag B".
+- **Formulas** are never overwritten (also not in the "overwrite" mode). Meaning, if module `B` defines a formula with the same name as a formula in module `A`, the updated formula will only be used for the parameters defined in module `B`, but not for other parameters that use this formula.
+- **Neighborhoods** will be overwritten by their names. Their parameters, tags, and neighbors will be overwritten.
+
+{% hint style="warning" %}
+If module `B` defines the neighborhood `N1` with a neighbor that cannot be found in the final model structure, the simulation creation fails with an error. To **remove** a neighborhood defined in a previous module, redefine it **without neighbors**: the neighborhood is then removed from the simulation, and a warning is shown during simulation creation. The removal works in both merge behaviors.
+{% endhint %}
+
+{% hint style="warning" %}
+Because the `MoleculeProperties` container is replaced as a whole, an **empty** `MoleculeProperties` container in module `B` removes all molecule properties contributed by the previous modules.
+
+MoBi® never creates such a container on its own - neither at the top level of a new Spatial Structure building block nor in a newly created container - so it is only present where it was added deliberately. If a module set to "Overwrite" carries a `MoleculeProperties` container that is not meant to replace anything, **delete the container** (see [MoleculeProperties](spatial-structures-bb.md#moleculeproperties)) or set the module to "Extend".
+{% endhint %}
 
 ### Molecules
 
-Molecules are always overwritten by name. Therefore, if a molecule is defined in an Extension module, it must contain all required parameters. It is not possible to only add some parameters (in merge behavior "Extend"), while retaining parameters from the module that is higher in the hierarchy.
-
-### Reactions
-
-Reactions are always overwritten by name. Therefore, if a reaction is defined in an Extension module, it must contain all required parameters. It is not possible to only add some parameters (in merge behavior "Extend"), while retaining parameters from the module that is higher in the hierarchy.
-
-### Passive transports
-
-#### Merge behavior "Overwrite"
-
-- The equation in the **Kinetic** tab is overwritten.
-
-- The **Parameters** list is overwritten. This also implies that parameters that are not defined in the module that is lower in the hierarchy are removed.
-
-- The **Operator** (and/or) for the "Source" and "Target" lists are overwritten.
-
-- **Source** and **Target** lists are overwritten (i.e., it is possible to remove source/target condition).
-
-- **Include/Exclude** molecule lists for molecules are always extended. However, behavior of the **All checkbox** is overwritten.
-
-The current behavior of combining the passive transports might appear inconsistent and somewhat confusing. The discussion on this topic is still ongoing and can be followed [on GitHub](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2053).
+The list of available molecules is always extended. If module `A` has molecule `MolA` and module `B` has molecule `MolB`, the final model will contain both `MolA` and `MolB`, disregarding the merge behavior.
 
 #### Merge behavior "Extend"
 
-Currently, the merge behavior "Extend" for passive transports is identical to "Overwrite".
-
-### Observers
-
-##### Merge behavior "Overwrite"
-
-- The equation in the **Monitoring** tab is overwritten.
-
-- The **In container with** list is overwritten, including the **Operator** (and/or).
-
-- **Include/Exclude** molecule lists for molecules are always extended. However, behavior of the **All checkbox** is overwritten.
-
-The current behavior of combining the observers might appear inconsistent and somewhat confusing. The discussion on this topic is still ongoing and can be followed [on GitHub](https://github.com/Open-Systems-Pharmacology/MoBi/issues/2053).
-
-##### Merge behavior "Extend"
-
-Currently, the merge behavior "Extend" for observers is identical to "Overwrite".
-
-### Events
-
-Imagine the following case:
-
-1. Module `A` has an event `Event 1` and Module `B` has an event `Event 1`. The event from module `A` has the container criteria `Events`, and the event from module `B` has the container criteria `Organism`. The event from module `A` has a parameter `Param 1` and the event from module `B` has a parameter `Param 2`. 
-
-    When creating a simulation, these events are created separately based on their container criteria. Therefore, the simulation will contain two events called `Event 1` - one event in the node `Events` with the parameter `Param 1`, and one event in the node `Organism` with the parameter `Param 2`, disregarding the merge behavior.
-
-2. If the event from module `B` has container criteria `Events` OR `Organism`
-    - Merge behavior **Overwrite**: the final model will contain the `Event 1` in both containers `Events` and `Organism` with `Param 2` only (`Organism|Event 1` is defined in module `B` only, and `Events|Event 1` is defined in both modules and will be overwritten by the event defined in module `B`).
-    - Merge behavior **Extend**: the final model will contain the event `Event 1` in container `Events` with parameters `Param 1` and `Param 2` (`Events|Event 1` is defined in both modules and will be extended), and the `Event 1` in container `Organism` with the parameter `Param 2`.
-
-{% hint style="warning" %}
-The container criteria of events are not combined in any way. The events across different modules are generated separately based on their container criteria and combined (merge or extend) only if they are created in the same container.
-{% endhint %}
-
-{% hint style="note" %}
-This behavior will be changed in a future release, allowing more straightforward combination of events across modules.
-{% endhint %}
-
-For the events with identical final absolute paths (generated by the container criteria), the following rules apply:
+- **Molecule type** (Drug, Enzyme, Transporter, etc.) is always overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
+- **Stationary**: the property is always overwritten.
+- **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
+- **Parameters** are extended. If both modules have a parameter `MolA|Param`, the parameter from module `B` will be used. This applies to all properties of the parameter (value, formula, unit, tags etc). New parameters can be added.
+- **Parameter type** (local/global) is always overwritten.
+- **Active Transports** are extended. Transporter molecules and active transport processes that are not defined in module `A` are added. For an active transport process defined in both modules, the same rules apply as for a [passive transport](#passive-transports):
+  - The **parameters** list is extended - new parameters are added, and a parameter defined in both modules is taken from module `B`.
+  - The equation in the **Kinetic** tab is overwritten.
+  - The **source** and **target** lists are extended; their operators are overwritten.
+  - The "Create process rate parameter" and "Plot process rate parameter" properties are overwritten.
+  - The **transport name** of the transporter molecule is overwritten.
 
 #### Merge behavior "Overwrite"
 
-The complete tree structure of the event is overwritten. This means:
+- **Molecule type** (Drug, Enzyme, Transporter, etc.) is always overwritten. If module `A` defined molecule `MolA` as Drug, and module `B` defined molecule `MolA` as Enzyme, the molecule `MolA` will be of type Enzyme in the final model.
+- **Stationary**: the property is always overwritten.
+- **Calculation methods**: The defaults are always overwritten. Be aware that calculation methods only apply to non-stationary molecules.
+- **Parameters** are overwritten. Only parameters existent in the last module will be present in the simulation. New parameters cannot be added.
+- **Parameter type** (local/global) is always overwritten.
+- **Active Transports**: The molecule is completely overwritten. This implies that only active transports defined in the latest module will be present in the simulation.
 
-- **Parameters** list is overwritten. Only parameters defined in the module that is lower in the hierarchy are used.
+### Reactions
 
-- **Administered molecule** is overwritten.
+#### Merge behavior "Extend"
 
-- All subnodes of the event (e.g., **ProtocolSchemaItem**, **Application_StartEvent**, etc.) are overwritten.
+- **Educts**, **Products**, and **Modifiers** are  extended. New educts/products/modifiers can be added, but existing cannot be removed. A workaround to exclude an educt or a product of being affected by the reaction is to set its stoichiometry to 0.
 
-For each event:
+- **Stoichiometry** values are overwritten.
 
-- **Events start condition** equation is overwritten.
-- **Events start condition - "One Time" checkbox** is overwritten.
-- The list of **Assignments** is overwritten.
+- **Equation** in the Properties tab is overwritten.
+
+- **Parameters** list is extended. That means that new parameters are added, but existing parameters are overwritten.
+
+- **Container criteria** are extended, the **Operator** is overwritten.
+
+- **Create process rate parameter** property is overwritten.
+
+- **Plot process rate parameter** property is overwritten.
+
+#### Merge behavior "Overwrite"
+
+Reactions are completely overwritten by name.
+
+### Passive transports
+
+#### Merge behavior "Extend"
+
+- The equation in the **Kinetic** tab is overwritten.
+
+- The **Parameters** list is extended.
+
+- The **Operator** (and/or) for the "Source" and "Target" lists are overwritten.
+
+- **Source** and **Target** lists are extended.
+
+- **Include/Exclude** molecule lists are extended: the molecules listed in module `B` are added to the respective list and removed from the other one. The state of the **All checkbox** is overwritten by module `B`.
+  - Only one of the two lists is evaluated when the simulation is created (see [Passive Transports](passive-transports-bb.md)): if the **All** checkbox is checked, the transport is created for all molecules *except* those in the Exclude List, and the Include List is ignored; if it is not checked, the transport is created only for the molecules in the Include List, and the Exclude List is ignored.
+  - Example: `Module A` has the **All** checkbox unchecked and `MolA` and `MolB` in its Include List. `Module B` has **All** checked and `MolB` in its Exclude List. In the final model, the checkbox is checked and the Exclude List contains `MolB`, so the transport is created for **all molecules except `MolB`** - not only for `MolA`, and also for molecules that neither of the two modules mentions.
+
+#### Merge behavior "Overwrite"
+
+Passive transports are completely overwritten by name.
+
+### Observers
+
+#### Merge behavior "Extend"
+
+- The equation in the **Monitoring** tab is overwritten. The **Dimension** of the observer is overwritten as well, together with its **Description** and **Icon**.
+
+- The **Operator** of the "In container with" list is overwritten.
+
+- The **Conditions** list of the "In container with" list is extended.
+
+- **Include/Exclude** molecule lists are extended: the molecules listed in module `B` are added to the respective list and removed from the other one. The state of the **All checkbox** is overwritten by module `B`.
+  - Only one of the two lists is evaluated when the simulation is created (see [Observers](observers-bb.md)): if the **All** checkbox is checked, the observer is created for all molecules *except* those in the Exclude List, and the Include List is ignored; if it is not checked, the observer is created only for the molecules in the Include List, and the Exclude List is ignored.
+  - Example: `Module A` has the **All** checkbox unchecked and `MolA` and `MolB` in its Include List. `Module B` has **All** checked and `MolB` in its Exclude List. In the final model, the checkbox is checked and the Exclude List contains `MolB`, so the observer is created for **all molecules except `MolB`** - not only for `MolA`, and also for molecules that neither of the two modules mentions.
+
+#### Merge behavior "Overwrite"
+
+Observers are completely overwritten by name.
+
+### Events
+
+Events are combined **by name**: when multiple modules define an event with the same name, these definitions are merged into a single event definition *before* the simulation is created, following the rules below. The merged event is then created in every container that matches the resulting container criteria.
 
 #### Merge behavior "Extend"
 
 The tree structure of the event is extended. This means:
 
- - **Parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
+- **Container criteria** from both modules are combined, while the **Operator** (and/or) is overwritten by the module that is lower in the hierarchy.
 
-- **Administered molecule** is extended.
+- **Parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
 
-{% hint style="warning" %}
- This results in a malformed event if different molecules are defined in different modules!
-{% endhint %}
+- **Administered molecule** is overwritten.
 
 For each event:
 
-- **Events start condition** equation: Changes are not applied!
-- **Events start condition - "One Time" checkbox**: Changes are not applied!
-- The list of **Assignments** is overwritten.
+- **Event start condition** equation is overwritten.
+- **Event start condition - "One Time" checkbox** is overwritten.
+- The list of **Assignments** is extended.
 - New nodes (events, containers, etc.) are added.
+
+For each **transport** in an event (see [Transport](events-bb.md#transport)), the same rules apply as for a [passive transport](#passive-transports):
+
+- The formula in the "Kinetic" tab is overwritten.
+- **Source** and **target** lists are extended; their operators are overwritten.
+- The "Create process rate parameter" and "Plot process rate parameter" checkboxes are overwritten.
+- The **parameters** list is extended. If the same parameter is defined in multiple modules, the parameter from the module that is lower in the hierarchy is used.
+
+#### Merge behavior "Overwrite"
+
+The event definition from the module that is lower in the hierarchy completely replaces the definition from the higher modules.
+
+- **Container criteria** list is overwritten.
+
+- **Parameters** list is overwritten. Only parameters defined in the module that is lower in the hierarchy are used.
+
+- **Administered molecule** is overwritten.
+
+- All subnodes of the event (e.g., **ProtocolSchemaItem**, **Application_StartEvent**) are overwritten.
+
+For each event:
+
+- **Event start condition** equation is overwritten.
+- **Event start condition - "One Time" checkbox** is overwritten.
+- The list of **Assignments** is overwritten.
 
 ### Parameter values
 
-The final values or formulas of the parameters in a simulation are determined in the following order:
+The final values or formulas of the parameters in a simulation are determined in the following order. The values are applied in this sequence, so a value applied later overwrites a value applied before it:
 
 1. **Values defined in the building block:** first, the value defined in the BB where the parameter is defined. For example, the value of `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB. If a simulation is created using only this Molecules BB and no Expression Profile or PV BB is selected, the value will be 1 µmol/l.
 
-2. **Values defined in the individual.** If an individual is selected, the values from the individual are applied. When applying an individual to a PK-Sim module only, the parameters defined in the individual are not present in the spatial structure of the PK-Sim module. **These parameters are added to the model when the simulation is created.**
+2. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. For example, `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
+
+3. **Values defined in the individual.** If an individual is selected, the values from the individual are applied. When applying an individual to a PK-Sim module only, the parameters defined in the individual are not present in the spatial structure of the PK-Sim module. **These parameters are added to the model when the simulation is created.**
+
+    The individual is applied *after* the expression profiles. If a parameter is defined in both, the value from the individual is used. This is required for aging simulations, where the individual defines a parameter such as the ontogeny factor of a protein as a time-dependent table formula, while the expression profile defines it as a constant value.
 
     One special case occurs when an extension module explicitly defines a parameter in the spatial structure that is also present in the individual. In this case, the value from the individual will overwrite the value (or formula) defined in the extension module. To overwrite parameters defined in an individual (e.g. defining the volume of an organ as an age-dependent table rather than a constant value), define this parameter in the 'Parameter Values' section of an extension module.
-
-3. **Values defined in an Expression Profile.** If an expression profile is selected, the values from the expression profile are applied. For example, `CYP3A4|Reference concentration` is set to 1 µmol/l in the Molecules BB, and 4.32 µmol/l in the Expression Profile. If a simulation is created with the module with the Molecules BB and the Expression Profile, the value will be 4.32 µmol/l (overriding the value from the Molecules BB).
 
 4. **Values defined in PV BBs.** If a module containing a PV BB is selected, the values from the PV BB are applied. If multiple modules contain PV BBs with entries for the same parameters, the value from the latest module is selected. For example, if the Extension module contains an entry for `CYP3A4 Reference concentration`with a value of 2 µmol/l and a simulation is created using the Molecules BB module with a value of 1 µmol/l, the Expression Profile module with a value of 4.32 µmol/l and the PV BB module with a value of 2 µmol/l, the value in the simulation will be 2 µmol/l.
 
@@ -210,7 +288,7 @@ The final start values or formulas for molecules in a simulation are determined 
 
 ## Commit/update changes
 
-The workflow of committing changes from a simulation to a building block and updating a simulation with changes from a building block has been changed.
+This section describes the workflow of committing changes from a simulation to a building block and updating a simulation with changes from a building block.
 
 ### Updating a simulation with changes from a building block
 
@@ -220,15 +298,25 @@ It is no longer possible to update only selected building blocks.
 
 ### Committing changes from a simulation to a building block
 
-Changes to parameter or start values made in a simulation can be committed to the building block (BB) the parameter/start value belongs to. To do so, right-click on the simulation and select "Commit to building blocks".
+Changes to parameter values or initial conditions made in a simulation can be committed to the building block (BB) the parameter/start value belongs to. To do so, right-click on the simulation and select "Commit to building blocks".
 
-Changes to parameters values are committed to the selected Parameter Values (PV) building block of the last module in the simulation configuration. If the last module does not contain a PV BB, or no PV BB has been selected for this module, new PV BB will be created.
+A dialog opens where the target of the commit is selected:
+
+![Selecting the module and the building blocks that receive the committed changes](../assets/images/part-4/MoBi-SelectCommitTarget.png)
+
+- **Module** - the module that receives the changes. One module is selected for all changed building block types, so committed changes always stay together in the same module.
+- **Parameter values building block** and **Initial conditions building block** - the Parameter Values (PV) or Initial Conditions (IC) building block of the selected module that receives the changes, or "New Parameter Values Building Block"/"New Initial Conditions Building Block" to create one. A selection is only offered for the building block types that actually have changes.
+
+By default, the dialog offers the last module of the simulation configuration and the building blocks the simulation currently uses.
 
 {% hint style="warning" %}
-When committing changes made to a simulation created from PK-Sim module(s) only, the last PK-Sim module will be converted to an extension module. To avoid this, create a new extension module that should contain the changes. Then create the simulation with the extension module.
+When committing changes made to a simulation created from PK-Sim module(s) only, the selected PK-Sim module will be converted to an extension module. To avoid this, create a new extension module that should contain the changes. Then create the simulation with the extension module.
 {% endhint %}
 
-Changes to initial conditions (IC) of molecules are handled similarly. They are committed to the selected IC BB of the last module in the simulation configuration. If the last module does not contain an IC BB, or no IC BB has been selected for this module, a new IC BB will be created.
+The simulation stays in sync with its building blocks only if the changes are committed to the building blocks the simulation actually uses, or to newly created ones if the selected module has none. Committing to any other building block writes the values to that building block alone - the simulation is not updated and remains marked as out of sync. MoBi® warns about this in two cases:
+
+- The selected building block is **not used** by the simulation. Configure the simulation to use that building block to make it reproduce the committed values.
+- The committed values are **shadowed** by a building block selected in a later module of the simulation configuration. The values of the later module win when the simulation is created, so a simulation re-created from the current configuration would not reproduce the committed values.
 
 Structural changes made to building blocks (e.g., adding/removing reactions, molecules, compartments, etc.) cannot be reverted by committing an "outdated" version of the building blocks from a simulation. Only changes to parameter values and initial conditions can be committed.
 
