@@ -77,6 +77,10 @@ Modules, Individuals and Expression Profiles that were created in PK-Sim® carry
 * **Reload module** / **Reload Individual** / **Reload Expression Profile** re-creates the object from its stored PK-Sim® snapshot through the local PK-Sim® installation and **adds it to the project as an additional object** — the existing one is not overwritten. Use it to obtain an unmodified copy, or a copy rebuilt by a newer PK-Sim® version.
 * **Export...** writes the stored PK-Sim® snapshot to a `*.json` file. For a module, this is a complete PK-Sim® project snapshot and can be loaded in PK-Sim®.
 
+{% hint style="warning" %}
+**Reloading a PK-Sim® module re-creates only the module.** Exporting a PBPK model from PK-Sim® to MoBi® creates a PK-Sim® module *and* an Individual and (0-n) Expression Profiles (s. [Modularization concept](modularization-concept.md)). **Reload module** re-creates the module alone - the Individual and the Expression Profiles that came with it are not re-created and are left untouched. Reload each of them separately from its own **Snapshot** menu if they should be rebuilt as well, and check the module configuration of every simulation that used them afterwards.
+{% endhint %}
+
 {% hint style="info" %}
 The snapshot embedded in a module or building block is the one PK-Sim® wrote when the model was transferred to MoBi®; it is not updated by later changes in MoBi®. Changes made in MoBi® to the parameter values of an Individual or an Expression Profile are therefore **not** contained in the file written by **Export...**, whereas they *are* contained in a snapshot of the whole project.
 {% endhint %}
