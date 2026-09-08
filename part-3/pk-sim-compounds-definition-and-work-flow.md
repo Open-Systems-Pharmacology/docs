@@ -427,25 +427,9 @@ Four drug-related parameters which are used in the model for proteins and large 
 
 Some parameters that depend on the compound are not part of the compound building block because they are only created in the context of a simulation, e.g., permeabilities or partition coefficients of the organs. If such parameters have been modified in a simulation, they can be committed back to the compound as a named **Overwrite Parameter Set** and re-applied in other simulations and projects.
 
-**Committing simulation parameters to a compound**
+The **Overwrite Parameter Sets** tab lists all sets defined for the compound in a master-detail view. Parameter values, units, and metadata (e.g., species or disease state) can be inspected and edited, individual parameters or whole sets can be deleted, and one set can be marked as **Default**. New sets are only created by committing from a simulation, never from this tab.
 
-In a simulation, select **Commit Simulation Parameters to Compound...** in the context menu of the compound. A dialog lists all changed parameters, which can be deselected individually. Under **Commit Options**, either **Create New Parameter Set** with its own **Name**, or **Update Existing Parameter Set** and select the **Parameter Set** to be updated. A compound with uncommitted, compound-related parameter changes is marked in the simulation with an orange status indicator. Uncommitted changes are saved with the project.
-
-**Managing Overwrite Parameter Sets**
-
-The **Overwrite Parameter Sets** tab of the compound follows the **Advanced Parameters** tab and shows all overwrite parameter sets of the compound in a master-detail view. Parameter values, units, and metadata (e.g., species or disease state) can be inspected and edited, individual parameters or whole sets can be deleted, and one set can be marked as **Default**.
-
-**Applying an Overwrite Parameter Set**
-
-When a compound is added to a simulation or its configuration is changed, an overwrite parameter set can be selected from the drop-down list. **\<None\>** uses the original, formula-based values of the compound-dependent simulation parameters, any other selection applies the values stored in the selected set. If the compound has a default set, this set is preselected. Parameters applied from a set behave like any other compound parameter.
-
-{% hint style="warning" %}
-If a parameter path stored in an overwrite parameter set cannot be resolved when the simulation is created, e.g., because the corresponding process is not part of the simulation, an error message is shown.
-{% endhint %}
-
-{% hint style="info" %}
-Overwrite parameter sets are merged into the standard **Parameter Values** building block when a simulation is exported to MoBi®, so MoBi® workflows are not affected.
-{% endhint %}
+See [Overwrite Parameter Sets](pk-sim-overwrite-parameter-sets.md) for the commit workflow, for selecting a set when a simulation is created or configured, and for the behavior in population simulations.
 
 After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Blocks Explorer** view.
 
@@ -458,7 +442,7 @@ To set or change the properties of an existing compound:
 
 or simply double click on the compound in the **Building Blocks Explorer**.
 
-A window with the three tabs **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Parameters** will open. The properties can be set or changed appropriately. The changes can be saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
+A window with the tabs **Basic Physico-chemistry**, **ADME Properties**, **Advanced Parameters**, and **Overwrite Parameter Sets** will open. The properties can be set or changed appropriately. The changes can be saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 
 ## Cloning Compounds
 
