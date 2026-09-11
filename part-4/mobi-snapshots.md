@@ -12,8 +12,8 @@ For a PBPK model built in PK-Sim®, the snapshot concept also carries the model 
 | --- | --- |
 | PK-Sim® modules | as the PK-Sim® snapshot the module carries, embedded as a JSON sub-node. The module is **re-created by PK-Sim®** when the snapshot is loaded. |
 | Extension modules | as PKML, stored verbatim (Base64-encoded). They are restored as they were, not re-created. |
-| Individuals and Expression Profiles created in PK-Sim® | as the PK-Sim® snapshot of the building block, plus the parameter values (and formulas) that were changed in MoBi® afterwards. The building block is re-created by PK-Sim® and the stored changes are re-applied on top. |
-| Individuals and Expression Profiles not originating from PK-Sim® | as PKML, stored verbatim (Base64-encoded). |
+| Individuals and Expression Profiles created with version 13 or later | as the PK-Sim® snapshot of the building block, plus the parameter values (and formulas) that were changed in MoBi® afterwards. The building block is re-created by PK-Sim® and the stored changes are re-applied on top. |
+| Individuals and Expression Profiles created before version 13 | as PKML, stored verbatim (Base64-encoded). |
 | Simulations | as their [simulation configuration](setting-up-simulation.md) — the modules used with the selected `Initial Conditions` and `Parameter Values` building blocks, the Individual and the Expression Profiles, solver settings, output schema and random seed — plus the output selections, the observed-data mappings, the charts, and every parameter value and scale divisor changed by the user inside the simulation. |
 | Observed data | completely, including data values and meta data. |
 | Parameter Identifications | completely, including their configuration and their link to the simulations. |
@@ -62,7 +62,7 @@ To create a project from a snapshot, select **File** :arrow\_right: **Load from 
 * If a single simulation cannot be created, the load continues with the remaining ones and reports how many simulations were loaded.
 
 {% hint style="info" %}
-If the project snapshot contains PK-Sim® modules, or Individuals and Expression Profiles originating from PK-Sim®, a compatible **PK-Sim® installation is required** to load it, because these are re-created by PK-Sim®. MoBi® uses the PK-Sim® installation found on the system; a different one can be specified as **PK-Sim executable path** in the [options](mobi-options.md).
+If the project snapshot contains PK-Sim® modules, or Individuals and Expression Profiles that carry a PK-Sim® snapshot, a compatible **PK-Sim® installation is required** to load it, because these are re-created by PK-Sim®. MoBi® uses the PK-Sim® installation found on the system; a different one can be specified as **PK-Sim executable path** in the [options](mobi-options.md).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -72,7 +72,7 @@ MoBi® and PK-Sim® **project** snapshots are not interchangeable: a project sna
 
 ## Snapshots of single modules and building blocks
 
-Modules, Individuals and Expression Profiles that were created in PK-Sim® carry their own PK-Sim® snapshot. For these, a **Snapshot** entry is available in the context menu of the object in the **Modules Explorer**:
+Modules, Individuals and Expression Profiles created with version 13 or later carry their own PK-Sim® snapshot. For these, a **Snapshot** entry is available in the context menu of the object in the **Modules Explorer**:
 
 * **Reload module** / **Reload Individual** / **Reload Expression Profile** re-creates the object from its stored PK-Sim® snapshot through the local PK-Sim® installation and **adds it to the project as an additional object** — the existing one is not overwritten. Use it to obtain an unmodified copy, or a copy rebuilt by a newer PK-Sim® version.
 * **Export...** writes the stored PK-Sim® snapshot to a `*.json` file. For a module, this is a complete PK-Sim® project snapshot and can be loaded in PK-Sim®.
@@ -90,7 +90,7 @@ The snapshot embedded in a module or building block is the one PK-Sim® wrote wh
 {% endhint %}
 
 {% hint style="info" %}
-The **Snapshot** menu appears only on objects that carry a PK-Sim® snapshot, i.e. on Modules, Individuals and Expression Profiles that originate from PK-Sim®. The remaining MoBi® building block types - Spatial Structures, Molecules, Reactions, Passive Transports, Observers, Events, Initial Conditions and Parameter Values - are not built from PK-Sim® inputs and are exchanged as PKML instead (s. [The Building Block Concept](building-block-concepts.md)). This differs from PK-Sim®, where **every** building block type can be exported to and loaded from a snapshot (s. [PK-Sim Snapshots](../part-3/pk-sim-snapshots.md#snapshots-of-single-building-blocks)).
+The **Snapshot** menu appears only on objects that carry a PK-Sim® snapshot, i.e. on Modules, Individuals and Expression Profiles created with version 13 or later. The remaining MoBi® building block types - Spatial Structures, Molecules, Reactions, Passive Transports, Observers, Events, Initial Conditions and Parameter Values - are not built from PK-Sim® inputs and are exchanged as PKML instead (s. [The Building Block Concept](building-block-concepts.md)). This differs from PK-Sim®, where **every** building block type can be exported to and loaded from a snapshot (s. [PK-Sim Snapshots](../part-3/pk-sim-snapshots.md#snapshots-of-single-building-blocks)).
 {% endhint %}
 
 ![The Snapshot submenu in the context menu of a PK-Sim module](../assets/images/part-4/MoBi-Snapshot-ModuleContextMenu.png)
