@@ -93,41 +93,4 @@ To export the physiological parameters which are varied within a population to a
 
 ## Exporting Project to Snapshot / Loading Project from Snapshot
 
-PK-Sim includes various structural models together with relevant physiological and molecular databases for PBPK modeling of small and large molecules in different animal species and human populations. Relatively few inputs from the user are required to setup a complete PBPK model.
-
-Model and/or data information stored in PK-Sim databases may change over time (e.g. in order to reflect the newest scientific findings) and be incorporated into newer PK-Sim versions. Please ensure you have the latest version installed.
-
-If an old project is simply opened with a new PK-Sim version, it will contain **old** model information, **old** anatomical/physiological data etc. and will not make use of improvements in the new version. The most appropriate way to incorporate the new knowledge would be to **recreate, from scratch**, the existing project in the new PK-Sim version.
-
-To simplify this task, PK-Sim offers a concept of **project snapshots**.
-
-A project snapshot contains the **minimal amount of information** required to recreate the project from scratch. This includes the information on primary substance specific input parameters (e.g., molecular properties like *molecular weight*, *lipophilicity*, etc.) and the required inputs (e.g., demographic characteristics) for defining the system parameters. Further, any changes made in the existing model, such as a change in liver volume, will be stored in the snapshot and included in the new model once recreated from the snapshot.
-
-Project snapshots are human-readable text files in [JSON format](https://en.wikipedia.org/wiki/JSON).
-
-![Snapshot example](../assets/images/part-3/Snapshot-Example.jpg)
-
-The following PK-Sim entities are currently supported by snapshots and will be recreated when a project is loaded from snapshot:
-
-- All building block types (incl. observed data)
-- Simulations
-- Parameter Identifications
-- Simulation comparisons
-
-The following PK-Sim entities are not yet supported:
-
-- Sensitivity Analyses
-
-To export a project to snapshot, select **File** :arrow\_right: **Export to Snapshot**
-
-{% hint style="warning" %}
-Snapshots for a project created with a version of PK-Sim <=7.2 might be incorrect. In this case PK-Sim will warn you. If exported anyway, the new project created from this snapshot may have some undesired deviations from the original projects, which must be corrected manually by the user.
-
-<img src="../assets/images/part-3/Snapshot-Export-Warning.png" alt="Snapshot export warning" data-size="original">
-{% endhint %}
-
-To load a project from snapshot, select **File** - **Load from Snapshot** <img src="../assets/icons/SnapshotImport.svg" alt="" data-size="line">
-
-{% hint style="info" %}
-When loading a project from snapshot, you can select whether to **run the simulations immediately** after loading or not. Not running the simulations can significantly speed up the loading process, especially for large projects with many simulations.
-{% endhint %}
+Projects, and single building blocks, can be exported to and recreated from snapshots in [JSON format](https://en.wikipedia.org/wiki/JSON). S. [Snapshots](pk-sim-snapshots.md) for details.

@@ -44,6 +44,7 @@
   * [Events](part-3/pk-sim-events.md)
   * [Simulations](part-3/pk-sim-simulations.md)
   * [Importing and Exporting Project Data and Models](part-3/importing-exporting-project-data-models.md)
+  * [Snapshots](part-3/pk-sim-snapshots.md)
   * [Conversion of Projects from Previous Version](part-3/conversion-projects-from-previous-version.md)
   * [Command-Line Interface - CLI](part-3/pk-sim-command-line-interface.md)
 
@@ -69,6 +70,7 @@
   * [Simulation Results](part-4/simulation-results.md)
   * [Diagrams Overview](part-4/diagrams-overview.md)
   * [Tools](part-4/tools.md)
+  * [Snapshots](part-4/mobi-snapshots.md)
   * [Command-Line Interface - CLI](part-4/mobi-command-line-interface.md)
   * [Project conversion workflows](part-4/reuse-of-project-information-from-previous-versions.md)
     * [Converting v12 projects to v13](part-4/converting-v12-projects-to-v13.md)
