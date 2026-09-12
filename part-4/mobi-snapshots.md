@@ -4,7 +4,7 @@ Starting with version 13, MoBi® can export a project to a **project snapshot** 
 
 A project snapshot is a human-readable text file in [JSON format](https://en.wikipedia.org/wiki/JSON) that contains the information required to re-create the project. In contrast to a `*.mbp3` project file, which stores the fully built models, a snapshot stores the *inputs*: the modules and building blocks of the project, the configuration of each simulation, and the changes made by the user. When the snapshot is loaded, the simulations are rebuilt from that configuration.
 
-For a PBPK model built in PK-Sim®, the snapshot concept also carries the model *forward*: the PK-Sim® modules of a MoBi® project are stored as PK-Sim® snapshots and are re-created by a local PK-Sim® installation when the MoBi® snapshot is loaded, so they are rebuilt with the physiological and molecular database of the installed PK-Sim® version. See [Modularization concept](modularization-concept.md) and [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for what this means for model migration.
+For a PBPK model built in PK-Sim®, the snapshot concept also carries the model *forward*: the PK-Sim® modules, Individuals and Expression Profiles of a MoBi® project are stored as PK-Sim® snapshots and are re-created by a local PK-Sim® installation when the MoBi® snapshot is loaded, so they are rebuilt with the physiological and molecular database of the installed PK-Sim® version. See [Modularization concept](modularization-concept.md) and [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for what this means for model migration.
 
 ## What a MoBi project snapshot contains
 
@@ -13,7 +13,7 @@ For a PBPK model built in PK-Sim®, the snapshot concept also carries the model 
 | PK-Sim® modules | as the PK-Sim® snapshot the module carries, embedded as a JSON sub-node. The module is **re-created by PK-Sim®** when the snapshot is loaded. |
 | Extension modules | as PKML, stored verbatim (Base64-encoded). They are restored as they were, not re-created. |
 | Individuals and Expression Profiles created with version 13 or later | as the PK-Sim® snapshot of the building block, plus the parameter values (and formulas) that were changed in MoBi® afterwards. The building block is re-created by PK-Sim® and the stored changes are re-applied on top. |
-| Individuals and Expression Profiles created before version 13 | as PKML, stored verbatim (Base64-encoded). |
+| Individuals and Expression Profiles created before version 13 | as PKML, stored verbatim (Base64-encoded). They are restored as they were, not re-created. |
 | Simulations | as their [simulation configuration](setting-up-simulation.md) — the modules used with the selected `Initial Conditions` and `Parameter Values` building blocks, the Individual and the Expression Profiles, solver settings, output schema and random seed — plus the output selections, the observed-data mappings, the charts, and every parameter value and scale divisor changed by the user inside the simulation. |
 | Observed data | completely, including data values and meta data. |
 | Parameter Identifications | completely, including their configuration and their link to the simulations. |
