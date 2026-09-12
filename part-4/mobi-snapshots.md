@@ -4,7 +4,7 @@ Starting with version 13, MoBi® can export a project to a **project snapshot** 
 
 A project snapshot is a human-readable text file in [JSON format](https://en.wikipedia.org/wiki/JSON) that contains the information required to re-create the project. In contrast to a `*.mbp3` project file, which stores the fully built models, a snapshot stores the *inputs*: the modules and building blocks of the project, the configuration of each simulation, and the changes made by the user. When the snapshot is loaded, the simulations are rebuilt from that configuration.
 
-For a PBPK model built in PK-Sim®, the snapshot concept also carries the model *forward*: the PK-Sim® modules, Individuals and Expression Profiles of a MoBi® project are stored as PK-Sim® snapshots and are re-created by a local PK-Sim® installation when the MoBi® snapshot is loaded, so they are rebuilt with the physiological and molecular database of the installed PK-Sim® version. See [Modularization concept](modularization-concept.md) and [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for what this means for model migration.
+For a PBPK model built in PK-Sim®, the snapshot concept also carries the model *forward*: the PK-Sim® modules, Individuals and Expression Profiles of a MoBi® project that were created with version 13 or later are stored as PK-Sim® snapshots and are re-created by a local PK-Sim® installation when the MoBi® snapshot is loaded, so they are rebuilt with the physiological and molecular database of the installed PK-Sim® version. See [Modularization concept](modularization-concept.md) and [Converting v12 projects to v13](converting-v12-projects-to-v13.md) for what this means for model migration.
 
 ## What a MoBi project snapshot contains
 
