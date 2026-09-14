@@ -79,7 +79,7 @@ A neighborhood can be defined **without neighbors**, i.e. with both **First neig
 Clearing both neighbors of an existing neighborhood has the same effect. Every removal is reported when the simulation is created, see [Removed neighborhoods](setting-up-simulation.md#removed-neighborhoods).
 
 {% hint style="warning" %}
-**Both** neighbors must be empty. A neighborhood with only one neighbor is not a removal but an incomplete definition: MoBi® rejects an empty neighbor as long as the other one is set, and a simulation built from such a neighborhood - for example from a building block that was edited outside of MoBi® - fails with the error `Cannot create the neighborhood '<name>' from building block '<building block>': at least one neighbor cannot be found in the simulation`.
+**Both** neighbors must be empty. A neighborhood with only one neighbor is not a removal but an incomplete definition: MoBi® rejects an empty neighbor as long as the other one is set, and a simulation built with such a neighborhood cannot be created with the error `Cannot create the neighborhood '<name>' from building block '<building block>': at least one neighbor cannot be found in the simulation`.
 {% endhint %}
 
 ### Exporting containers as pkml files
