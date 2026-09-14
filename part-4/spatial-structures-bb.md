@@ -66,11 +66,21 @@ An **empty** `MoleculeProperties` container in a module with the merge behavior 
 
 ### Neighborhoods
 
-New neighborhoods can be created by dragging a line from one physical container to another in the **Diagram** view, or by right-clicking on the **Neighborhoods** node in the tree view and selecting **Create Neighborhood** from the context menu. The user must specify the neighbor containers and a name for the neighborhood.
+New neighborhoods can be created by dragging a line from one physical container to another in the **Diagram** view, or by right-clicking on the **Neighborhoods** node in the tree view and selecting **Create Neighborhood** from the context menu. The user must specify a name for the neighborhood and, unless the neighborhood is meant to remove another one, its two neighbors. Only physical containers can be selected as neighbors.
 
-If a neighborhood is defined with a neighbor that is not present in the final model structure, the simulation cannot be created and an error is shown. A neighborhood can also be defined **without neighbors**: such a neighborhood is not created in the simulation and, when combining modules, removes the same-named neighborhood defined in a previous module (see [Modularization concept](modularization-concept.md#spatial-structure)).
+If a neighborhood is defined with a neighbor that is not present in the final model structure, the simulation cannot be created and an error is shown.
 
  When renaming a container, the software suggests changing the neighbor of all neighborhoods associated with the container to the new name.
+
+#### Removing a neighborhood defined in another module
+
+A neighborhood can be defined **without neighbors**, i.e. with both **First neighbor** and **Second neighbor** left empty. Such a neighborhood is never created in a simulation. Its purpose is to **remove** a neighborhood: when modules are combined, it removes the same-named neighborhood contributed by a previous module, whatever the merge behavior (see [Modularization concept](modularization-concept.md#spatial-structure)).
+
+To define one, right-click the **Neighborhoods** node, select **Create Neighborhood**, enter the **name of the neighborhood to be removed** and leave both neighbor trees unselected. Clearing both neighbors of an existing neighborhood has the same effect. If no previous module defines a neighborhood of that name, nothing is removed and the definition is ignored. Every removal is reported when the simulation is created, see [Removed neighborhoods](setting-up-simulation.md#removed-neighborhoods).
+
+{% hint style="warning" %}
+**Both** neighbors must be empty. A neighborhood with only one neighbor is not a removal but an incomplete definition: MoBi® rejects an empty neighbor as long as the other one is set, and a simulation built from such a neighborhood - for example from a building block that was edited outside of MoBi® - fails with the error `Cannot create the neighborhood '<name>' from building block '<building block>': at least one neighbor cannot be found in the simulation`.
+{% endhint %}
 
 ### Exporting containers as pkml files
 

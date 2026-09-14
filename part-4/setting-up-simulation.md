@@ -70,6 +70,7 @@ Warnings are generated, for example, in these cases:
 * References in formulas for non-essential objects like observers are faulty. In this case, the affected observer is simply omitted in the created simulation.
 * An error in the dimension of a formula, if the option Validate Dimension is selected in Options/User Settings/General (which is the MoBi® default).
 * An empty condition is present in an event.
+* A module removes a neighborhood defined in a previous module by redefining it without neighbors, see [Removed neighborhoods](#removed-neighborhoods).
 
 #### Error: Fatal inconsistency.
 
@@ -77,12 +78,21 @@ In this case, the simulation cannot be created. Errors are generated, for exampl
 
 * Missing or wrong references in formulas for essential objects like Molecule Start Values.
 * General syntax errors in formulas.
+* A neighborhood references a neighbor that is not present in the final model structure.
 
 You can choose if only errors, only warnings or both are displayed by clicking (activating/deactivating) the <img src="../assets/icons/Error.svg" data-size="line"> Errors and <img src="../assets/icons/Notifications.svg" data-size="line"> Warnings buttons in the top row of the Notifications window. Warnings are grouped according to their category.
 
 ![Notifications View: Warnings](../assets/images/part-4/SimCW-Warnings.png)
 
 The <img src="../assets/icons/Notifications.svg" data-size="line"> Warnings and <img src="../assets/icons/Error.svg" data-size="line"> Errors displayed in the Notifications View can also be saved in a Log file (csv format) using the <img src="../assets/icons/Save.svg" data-size="line"> **Save Log...** button. You may apply changes and selections to the Notifications table as for any table, see Shared Tools - Features of _Tables_, which can be helpful for longer lists. A double-click on the error message or the warning directly opens the editor in the corresponding building block.
+
+#### Removed neighborhoods
+
+A module can remove a neighborhood contributed by a previous module by redefining it without neighbors, see [Removing a neighborhood defined in another module](spatial-structures-bb.md#removing-a-neighborhood-defined-in-another-module). Such a removal changes the model structure, but it is intended and therefore easy to overlook among the other notifications. MoBi® lists all removed neighborhoods in a separate dialog after a simulation has been created, updated or configured. Nothing is shown if no neighborhood was removed.
+
+![Dialog listing the neighborhoods removed from the simulation](../assets/images/part-4/MoBi-RemovedNeighborhoods-Dialog.png)
+
+The same messages are also reported as <img src="../assets/icons/Notifications.svg" data-size="line"> **Warnings** in the Notifications view.
 
 ## Defining simulation time - Output Intervals
 
