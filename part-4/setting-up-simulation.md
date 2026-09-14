@@ -88,7 +88,7 @@ The <img src="../assets/icons/Notifications.svg" data-size="line"> Warnings and 
 
 #### Removed neighborhoods
 
-A module can remove a neighborhood contributed by a previous module by redefining it without neighbors, see [Removing a neighborhood defined in another module](spatial-structures-bb.md#removing-a-neighborhood-defined-in-another-module). Such a removal changes the model structure, but it is intended and therefore easy to overlook among the other notifications. MoBi® lists all removed neighborhoods in a separate dialog after a simulation has been created, updated or configured. Nothing is shown if no neighborhood was removed.
+A module can remove a neighborhood contributed by a previous module by redefining it with empty neighbors, see [Removing a neighborhood defined in another module](spatial-structures-bb.md#removing-a-neighborhood-defined-in-another-module). MoBi® lists all removed neighborhoods in a separate dialog after a simulation has been created, updated, or configured.
 
 ![Dialog listing the neighborhoods removed from the simulation](../assets/images/part-4/MoBi-RemovedNeighborhoods-Dialog.png)
 
