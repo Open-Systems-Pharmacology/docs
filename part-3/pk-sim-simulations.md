@@ -68,6 +68,8 @@ Please note that currently only for mouse, monkey and human species specific val
 
 In the **Compounds** tab of the **Create Simulation** window you can review the *Calculation methods* selected for the partition coefficients and the cellular permeabilities. Also, you can review and override values for the *Parameter Alternatives*.
 
+In addition, the **Overwrite parameter set in compound** drop-down list selects the [Overwrite Parameter Set](pk-sim-overwrite-parameter-sets.md) to be applied for this compound. **\<None\>** keeps the originally calculated values of the compound-dependent simulation parameters; any other entry applies the values stored in the selected set. If the compound has a default set, it is preselected.
+
 ![The Create Simulation dialog. Here, the two selected compounds can be viewed in the tabbed view.](../assets/images/part-3/create-simulation-20-2.jpg)
 
 Click **Next** in order to assign the relevant biological processes. Note that you can switch between the **Tabbed view** and the **Accordion View** in the **Utilities/ Options** menu if you selected more than one compound.
@@ -240,7 +242,7 @@ It is recommended to select all parameters under consideration as **Favorites** 
 If you change the parameter settings in the **Parameter** tab, the green check marks (traffic lights) on the Results tab will turn red indicating that the displayed simulation results were not performed with the current settings:
 
 ![Image](../assets/images/part-3/PK-Sim-CreateSimulation-RunSimulation-Results3.png)\
-Press the **Run** simulation button in the **Modeling & Simulation** ribbon or press the **F5** key again to re-run the simulation with the current settings and display the results.
+Press the **Run** simulation button in the **Run & Analyze** ribbon or press the **F5** key again to re-run the simulation with the current settings and display the results.
 {% endhint %}
 
 ## Synchronization options for building blocks in a simulation
@@ -259,11 +261,13 @@ You can synchronize the settings between the building block and the simulation t
 
 - **Commit to building block**: The (local) settings of the simulation will be committed to the building block (global settings). This is useful if you want to make these settings available in other simulations.
 
+- **Commit Simulation Parameters to Compound**: Compound-dependent parameters that are calculated during simulation creation — e.g. partition coefficients or permeabilities — do not exist in the Compound building block and can therefore not be written back with **Commit to building block**. If such parameters were changed in the simulation, the compound is additionally marked with an orange indicator, and this action stores the changed values in the compound as a named **Overwrite Parameter Set** that can be re-applied in other simulations. The action is offered for a compound of an individual simulation only. See [Overwrite Parameter Sets](pk-sim-overwrite-parameter-sets.md).
+
 - **Configure**: Instead of updating a single building block within your simulation you can also Configure the entire simulation and update or exchange several building blocks at a time. To do so, right mouse click on the simulation and select Configure. The Create Simulation dialog will open where you can exchange the parameters and building blocks of your simulation. In the case of building blocks for which changes were made in the simulation, the name will be supplemented by the warning This is not the template building block!. To update the settings of the simulation select the appropriate building block from the drop-down menu.
 
 ## Analyzing results for a simulation in an individual
 
-As described in the previous chapter **Run simulation**, clicking on **Run** in the **Modeling & Simulation** ribbon or pressing **F5** starts the calculation of the simulation. The results will be automatically displayed after finishing the calculation. The calculated results can the be exported to various file formats.
+As described in the previous chapter **Run simulation**, clicking on **Run** in the **Run & Analyze** ribbon or pressing **F5** starts the calculation of the simulation. The results will be automatically displayed after finishing the calculation. The calculated results can be exported to various file formats.
 
 {% hint style="info" %}
 For more information on displaying and editing the charts, see [Chart Component](../part-5/chart-component.md)
@@ -385,7 +389,7 @@ Unlike for simulations in single individuals, additional variability for paramet
 For more information on adding variability to a defined population, go to [PK-Sim® - Creating Populations](pk-sim-creating-populations.md).
 {% endhint %}
 
-Once all parameters are set, click the **Run** simulation button <img src="../assets/icons/Run.svg" data-size="line"> in the **Modeling & Simulation** group or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
+Once all parameters are set, click the **Run** simulation button <img src="../assets/icons/Run.svg" alt="" data-size="line"> in the **Run & Analyze** ribbon or press the **F5** key. The **Population Simulation Settings window: Curve selection** window will appear in which organs and compartments are selected in which time profiles and PK-parameters will be calculated.
 
 ![The Population Simulation Settings: Curve Selection window. Time profiles and PK-parameters will be calculated in the selected organs and compartments.](../assets/images/part-3/population-simulation-20-18.jpg)
 

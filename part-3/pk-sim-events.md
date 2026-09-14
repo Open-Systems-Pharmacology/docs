@@ -101,7 +101,7 @@ In case an event with the same name already exists, a warning appears and you ha
 * Save as: You can save the event under a different name. In this case, you will be asked to Rename the new template.
 * Cancel: This action will abort the saving process.
 
-To load an existing formulation from the template database:
+To load an existing event from the template database:
 
 1. Right mouse click on **Events** in the **Building Block Explorer**
 2. Select <img src="../assets/icons/LoadAction.svg" alt="" data-size="line"> **Load From Template...**

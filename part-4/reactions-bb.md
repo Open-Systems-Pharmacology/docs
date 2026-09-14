@@ -80,11 +80,11 @@ You are now ready to define **Reaction Parameters**, like kinetic rate constants
     - **Local** parameters are parameters whose values depend on the location of the reaction, e.g., "Km interaction factor" which is the parameter describing the change of $$Km$$ by a perpetrator, e.g., an inhibitor (see section [Defining Inhibition/Induction Processes](../part-3/pk-sim-compounds-defining-inhibition-induction-processes.md)). Therefore, the value of this parameter may be different in different containers depending on the local concentration of the perpetrator. These parameters are listed under the reaction node in each container of the simulation tree, and are accessed by the path `<ContainerPath>|<REACTION>|<parameter name>`, e.g., `Organism|Kidney|Intracellular|Midazolam-CYP3A4-Optimized|Km interaction factor`.
 
 5. Select the proper dimension in the **Dimension** combobox, which is Inversed Time for the first order rate constant in our example.
-6. Enter a value for your parameter, 0.01 as an example. If needed, select a different dimension unit in the combobox to the right of the value input box. The parameter may also be defined by a formula or data table, or you may make the parameter state variable (compare [Parameters, Formulas, and Tags](parameters-formulas-tags.md)).
+6. Enter a value for your parameter, 0.01 as an example. If needed, select a different dimension unit in the combobox to the right of the value input box. The parameter may also be defined by a formula or data table, or you may make the parameter state variable (compare [Parameters, Formulas, Tags, and Keywords](parameters-formulas-tags.md)).
 7. Optionally you may enter a description.
 8. Finally, press **Enter** or click **OK**.
 
-Alternatively to entering it manually, you may also load it from a file or copy and paste it from another reaction in the same way as described above, see [Parameters, Formulas, and Tags](parameters-formulas-tags.md). Any setting of a parameter can be edited later, and as many parameters as you need can be added to a reaction. The figure below shows what the screen would look like after one parameter has been added.
+Alternatively to entering it manually, you may also load it from a file or copy and paste it from another reaction in the same way as described above, see [Parameters, Formulas, Tags, and Keywords](parameters-formulas-tags.md). Any setting of a parameter can be edited later, and as many parameters as you need can be added to a reaction. The figure below shows what the screen would look like after one parameter has been added.
 
 ![Reaction parameter k1 has been added to reaction R1](../assets/images/part-4/ReactionParameter.png)
 

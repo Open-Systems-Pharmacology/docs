@@ -12,7 +12,7 @@ Often, experimental data for the outputs are given and the reverse question is a
 
 This reverse problem is called **Parameter Identification**: which values of certain input parameters yield simulation outputs that fit the observed data?
 
-A **Parameter Identification** problem is a kind of optimization problem: Minimize the residuals between observed data and corresponding simulation output by varying selected input parameters in a given range. (For a definition of residuals see the table “Scaling”)
+A **Parameter Identification** problem is a kind of optimization problem: Minimize the residuals between observed data and corresponding simulation output by varying selected input parameters in a given range. (For the definition of the residuals and of the resulting **Total Error** see [Objective function and Total Error](#objective-function-and-total-error))
 
 A variety of algorithms exist to solve optimization problems. The required effort and the quality of the solution depend on several factors, e.g. number and bounds of the input parameters of interest, complexity of the model, quality of start values for the input parameters.
 
@@ -50,7 +50,7 @@ A mapping of observed data to corresponding simulation outputs is done automatic
 
 You have to select those input parameters which should be varied and identified. Each of these Identification parameters can be linked to corresponding input parameters in different simulations.
 
-## Configure Optimization
+### Configure Optimization
 
 You can select between three optimization algorithms, edit their standard settings or change the usage of **Lower Limit Of Quantification** (LLOQ) values.
 
@@ -71,17 +71,8 @@ For a hands on exercise, open the example project Theophylline.pksim5. You can d
 1. In the Simulation Explorer mark the two simulations "_Kaumeier IV 208 mg fit_" and "_Kaumeier oral solution 185mg_" and select <img src="../assets/icons/ParameterIdentification.svg" alt="" data-size="line"> **Start Parameter Identification ...** from the context menu.
 2. A new view for _Parameter Identification 1_ is displayed and the tab **Data** is opened. On the left, the simulations with the assigned observed data are displayed. On the right, a list of mappings from outputs to observed data is displayed. For each observed data set for concentrations and fractions the corresponding output is mapped automatically (based on the Organ, Compartment, Molecule meta data).
 
-![Parameter Identification - Mapping of outputs and observed data](../assets/images/part-5/Tab-Data.png)
-
-1.  Switch to the next tab **Parameters**. Here, you have to define the parameters for identification. On the left, a list of all parameters grouped by **Simulation** and **Organ** is displayed. You can reorder the list for a more convenient view:
-
-    1. In the column **Favorite**, filter for checked to display just the Favorites.
-    2. Ungroup the columns **Simulation** and **Organ** (by right click on the column names you find that entry in the context menu).
-    3. Group by column name.
-
-    Select both Lipophilicity parameters and click the upper **Add** button, then select both GFR fraction parameters and click the upper **Add** button again. Now, you have selected two identification parameters each linked to both corresponding simulation parameters.
-
-    Switch to the next tab **Parameters**. Here, you have to define the parameters for identification. On the left, a list of all parameters grouped by **Organ** and **Name** is displayed. (If you are interested only in the Favorite parameters you can filter the column **Favorite**.)
+    ![Parameter Identification - Mapping of outputs and observed data](../assets/images/part-5/Tab-Data.png)
+3.  Switch to the next tab **Parameters**. Here, you have to define the parameters for identification. On the left, a list of all parameters grouped by **Organ** and **Name** is displayed. (If you are interested only in the Favorite parameters you can filter the column **Favorite**. You can also ungroup or group by another column through the context menu of the column headers.)
 
     By default, all **Favorite parameters** are already selected as **Identification Parameters** in the right list of Identification Parameters.
 
@@ -92,14 +83,14 @@ For a hands on exercise, open the example project Theophylline.pksim5. You can d
     Enter Minimum Value 0 for both **Identification Parameters** and Maximum Value 2 Log Units for Lipophilicity and 1 for GFR fraction.
 
     <img src="../assets/images/part-5/Tab-Parameters.png" alt="Parameter Identification - Definition of Identification Parameters data" data-size="original">
-2. In the tab **Configuration** keep the default settings.
-3.  In the Ribbon Bar **Run & Analyze** click **Show Visual Feedback** and then Run to start the optimization.
+4. In the tab **Configuration** keep the default settings.
+5.  In the Ribbon Bar **Run & Analyze** click **Show Visual Feedback** and then Run to start the optimization.
 
     <img src="../assets/images/part-5/PI-Ribbon.png" alt="Parameter Identification Ribbon data" data-size="original">
-4.  Now the **Visual Feedback Window** shows the intermediate state during the Parameter Identification Run.
+6.  Now the **Visual Feedback Window** shows the intermediate state during the Parameter Identification Run.
 
     <img src="../assets/images/part-5/VisualFeedback.png" alt="Parameter Identification - Visual Feedback data" data-size="original">
-5.  After some iterations, the run is finished and you can switch to the tab **Results**.
+7.  After some iterations, the run is finished and you can switch to the tab **Results**.
 
     <img src="../assets/images/part-5/Tab-Results.png" alt="Parameter Identification - Results data" data-size="original">
 
@@ -148,11 +139,13 @@ For each mapping, the scaling can be defined as Lin or Log which determines the 
 |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Lin | Residuals are calculated as: Simulation value - Observed value. This means that the residuals are defined by absolute differences. If the magnitudes of values are different for different parameters, the different magnitudes of residuals should be harmonized by corresponding weights (reciprocal values). Linear residuals are always calculated in the internal units.                                                                                                                                                                                                       |
-| Log | Residuals are calculated as: log(Simulation value) - log(Observed value) = log (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because log(10E-N) = -N can becomes large. Then, the weights should be manually adjusted or LLOQ handling should be adjusted in the **Configuration**. (See “Configuration of Optimization”) |
+| Log | Residuals are calculated as: $$\log_{10}$$(Simulation value) - $$\log_{10}$$(Observed value) = $$\log_{10}$$ (Simulation Value / Observed Value). This means that the ratio of values is considered which is independent of the magnitude of the value. But for very small observed values, in particular close to 0 values, this can lead to problems, because $$\log_{10}(10^{-N}) = -N$$ can become large. Then, the weights should be manually adjusted or LLOQ handling should be adjusted in the **Configuration**. (See “Configuration of Optimization”) |
 
 To reflect the quality or importance of the Observed Data item or to balance different magnitudes of values in case of Lin scaling, you can edit the weights of each mapping.
 
 If you select a mapping, the corresponding Observed Data is displayed as table and chart in the bottom area. There you can edit pointwise weights, e.g. to reduce or remove influence of outliers.
+
+Both the weight of the mapping and the weight of the individual data point are multiplied with the difference described above; the complete definition of the residuals and of the resulting objective function is given in [Objective function and Total Error](#objective-function-and-total-error).
 
 {% hint style="info" %}
 In MoBi®, you can freely define observers to match any kind of observed data. In order to enable the automatic mapping ensure that the meta data for Organ, Compartment and Molecule is the same for corresponding observed data and observers. Therefore, you can define the observers for specific Containers and Molecules and/or edit the meta data of the observed data.
@@ -189,10 +182,6 @@ After selection of the Identification Parameters you should define their **Minim
 
 Per default, the value of the first corresponding Simulation Parameter is used as a **Start Value**. You can edit this value manually or reset it to the Simulation Parameter value, e.g. after change of value in simulation (see column Value in the list of Simulation Parameters).
 
-By **Scaling** you define how the Identification Parameter is modified during optimization; if the magnitude of the parameter is not known, Log scale should be selected.
-
-Per default, the value of the first corresponding Simulation Parameter is used as a **Start Value**. You can edit this value manually or reset it to the Simulation Parameter value, e.g. after change of value in simulation (see column Value in the list of Simulation Parameters).
-
 By **Scaling** you define how the Identification Parameter is modified during optimization; if the magnitude of the parameter is not known, Log scale should be selected, which requires a **Minimum Value** > 0.
 
 In special cases you may want to couple two simulation parameters but not by the same value, e.g. you know that the specific clearance of metabolite is half of compound's specific clearance. In this case you can add both Simulation Parameters for specific clearance to one Identification Parameter, check **Use as Factor** and use e.g. a Minimum Value of 0.5 and Maximum Value of 2. Then both specific clearances are varied in parallel by multiplication of the respective simulation value with the same factor between 0.5 and 2.
@@ -218,7 +207,7 @@ You can decide if data values below LLOQ should be used or removed and how they 
 | Reduce trailing | <p>Sometimes observed concentrations end with several trailing .L.L.O.Q values.<br>In particular when only the Observed data below LLOQ is transformed, those trailing values should be reduced because the ratio between untransformed simulation values and transformed observed values can become large and cause trouble for Log scale outputs.</p> |
 
 {% hint style="warning" %}
-If in Observed Data LLOQ values are contained as 0 values, for **Remove data below LLOQ** the option Always should be used. Otherwise, those values can distort the optimization results, because log(0) resp. log(eps=10E-20) is evaluated in the residual calculation and these single residuals may dominate the whole optimization.
+If in Observed Data values below LLOQ are contained as 0 values instead of LLOQ/2, for **Remove data below LLOQ** the option "Always" should be used. Note that this removal is based on the LLOQ defined for the observed data, so 0 values in data without LLOQ information are not removed. Otherwise, those values can distort the optimization results, because the difference to a 0 value is not a meaningful residual. For Log scaled outputs, observed values close to 0 lead to very large residuals which may dominate the whole optimization, while values smaller than $$\epsilon = 10^{-20}$$ do not contribute to the residuals at all (see [Objective function and Total Error](#objective-function-and-total-error)).
 {% endhint %}
 
 **Transform data below LLOQ**
@@ -227,6 +216,49 @@ If in Observed Data LLOQ values are contained as 0 values, for **Remove data bel
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Observed data and simulated data below LLOQ set to LLOQ (default) | <p>Observed data and simulation data are transformed consistently to avoid artificial residuals, especially for log scaled outputs.<br>Values below LLOQ are set to LLOQ to avoid discontinuity for values little above and little below LLOQ.</p> |
 | Observed data below LLOQ set to LLOQ/2                            | This option is left for backward compatibility. Here, simulation data below LLOQ is not transformed in residual calculation in contrast to observed data.                                                                                          |
+
+### Objective function and Total Error
+
+All optimization algorithms minimize the same objective function, the **Total Error**. It is the square root of the sum of the squared residuals over all output mappings and it is the value that is reported in the tab **Results** and plotted in the error history of the **Visual Feedback**.
+
+For an output mapping $$k$$ and an observed data point $$i$$ measured at the time $$t_{k,i}$$, the residual is
+
+$$
+r_{k,i} = w_k \times w_{k,i} \times (g(s_{k,i}) - g(o_{k,i}))
+$$
+
+where $$o_{k,i}$$ is the observed value, $$s_{k,i}$$ is the value of the mapped simulation output at $$t_{k,i}$$, $$w_k$$ is the weight of the mapping and $$w_{k,i}$$ is the weight of the individual data point (see [Mapping Simulation Outputs to Observed Data](#mapping-simulation-outputs-to-observed-data)). Observed and simulated values are converted to the internal base units before the residual is calculated.
+
+$$o_{k,i}$$ is always the mean value of the observed data point. If the observed data set also contains a standard deviation or another error column, that column is ignored during the optimization, whether it is defined or not. The error of a measurement therefore never influences the residual, and how strongly a data point contributes is determined by the weights $$w_k$$ and $$w_{k,i}$$ alone.
+
+The transformation $$g$$ is given by the **Scaling** of the mapping: $$g(y) = y$$ for Lin scaling and $$g(y) = \log_{10}(y)$$ for Log scaling, where values smaller than $$\epsilon = 10^{-20}$$ are replaced by $$\epsilon$$ before the logarithm is applied. Since observed values below $$\epsilon$$ are excluded from a log scaled output (see below), this replacement applies to simulated values only.
+
+The exclusion of observed values below $$\epsilon$$ is independent of LLOQ. It applies to every log scaled mapping, also when no LLOQ is defined for the data set, and in practice it removes observed values that are zero or negative, which have no logarithm.
+
+The Total Error is then summed over all $$nM$$ output mappings, each contributing $$n_k$$ data points:
+
+$$
+E_{total} = \sqrt{\sum_{k=1}^{nM} \sum_{i=1}^{n_k} r_{k,i}^2}
+$$
+
+Before $$g$$ is applied, values below LLOQ are treated according to the option selected for **Transform data below LLOQ**:
+
+* With _Observed data and simulated data below LLOQ set to LLOQ_ (default), both $$o_{k,i}$$ and $$s_{k,i}$$ are set to LLOQ if they are smaller than LLOQ.
+* With _Observed data below LLOQ set to LLOQ/2_, neither of the two values is modified during the residual calculation. The LLOQ/2 stems from the import of the observed data, where measurements flagged as below LLOQ are stored as LLOQ/2, while simulated values are always used unchanged.
+
+Not every observed data point contributes to the Total Error. A data point is skipped if
+
+* it is excluded by the setting **Remove data below LLOQ**,
+* the observed value is not a valid number,
+* or the output is scaled logarithmically and the observed value is smaller than $$\epsilon$$, regardless of whether an LLOQ is defined.
+
+For all remaining data points, $$s_{k,i}$$ is a simulated and not an interpolated value: before the optimization starts, the observed time points are added to the output schema of the simulation, which is integrated up to the last of them (see [Handling of missing values for residuals](#handling-of-missing-values-for-residuals)).
+
+The definition of the Total Error does not depend on the selected optimization algorithm. Monte-Carlo and Nelder-Mead evaluate the Total Error directly, while Levenberg-Marquardt works on the vector of the residuals $$r_{k,i}$$ and minimizes the sum of their squares, which is minimal for the same parameter values.
+
+{% hint style="info" %}
+The sum is not normalized to the number of data points, so the Total Error grows with the amount of observed data used. Total Error values should therefore only be compared between optimizations that use the same observed data, weights and scaling, e.g. between the runs of a **Multiple optimization** or a **Calculation Methods Variation**, or between different algorithms applied to the same problem.
+{% endhint %}
 
 ### Optimization Algorithms
 
@@ -247,7 +279,7 @@ We recommend the following general approach:
 
 * Levenberg-Marquardt algorithm is faster than Monte-Carlo algorithm. However, it is susceptible to being trapped by local minima.
 * Using Levenberg-Marquardt algorithm: sometimes increasing the value of **Finite derivative step size** parameter (e.g. setting it to 1e-4 or 1e-3) might improve the result of parameter identification.
-* Using multiple optimization (along with any algorithm): if some single optimization runs fail with **Out of memory** exception: reduce the value of **Max. number of processors to use** program option. You can find it under Utilities/ Options (both PK-Sim and MoBi
+* Using multiple optimization (along with any algorithm): if some single optimization runs fail with **Out of memory** exception: reduce the value of **Max. number of processors to use** program option. You can find it under **Utilities > Options** (both PK-Sim and MoBi).
 
 #### Monte - Carlo
 
@@ -348,7 +380,7 @@ In case of **Multiple optimization** or **Calculation Methods Variation** the Vi
 
 After the optimization run is finished, you can view the results in the tab Results.
 
-Status, elapsed time, number of evaluations and the resulting total error are displayed in the upper table.
+Status, elapsed time, number of evaluations and the resulting total error (see [Objective function and Total Error](#objective-function-and-total-error)) are displayed in the upper table.
 
 Below, you find a table with the optimal values, start values and ranges for all Identification Parameters.
 
@@ -398,7 +430,7 @@ In the Chart Editor the deviation lines are grouped under the Category Identity.
 
 #### Residuals vs. Time
 
-This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The chart includes scaling, weights and LLOQ usage and the values are dimensionless, so you can assess the actual influence of the observed data.
+This chart is similar to the Time Profile chart, but on the y-axis the (absolute) residuals used in the optimization are plotted. The plotted values are the residuals $$r_{k,i}$$ as defined in [Objective function and Total Error](#objective-function-and-total-error); they include scaling, weights and LLOQ usage, so you can assess the actual influence of the observed data. They are plotted without a unit: for Log scaled outputs they are dimensionless logarithmic ratios, for Lin scaled outputs they are weighted differences in the internal base units of the output.
 
 ![Parameter Identification Analysis - Residuals vs. Time](../assets/images/part-5/PI-Analysis-ResidualsVsTime.png)
 

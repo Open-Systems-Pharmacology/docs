@@ -52,10 +52,10 @@ Provides a great way to bring the reader's attention to specific elements.
 
 By surrounding your text with `{ % hint style="xxx" %}` and `{ % endhint %}`, a visual clue will be created for your content, making it pop out
 
-For example: using the style `note`, we can create the following visual element
+For example: using the style `info`, we can create the following visual element
 
 {% hint style="info" %}
-This is a note
+This is an info hint
 {% endhint %}
 
 Available styles are:
@@ -64,3 +64,4 @@ Available styles are:
 - note
 - warning
 - info
+- danger

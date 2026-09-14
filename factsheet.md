@@ -15,6 +15,10 @@
 
   - Formulations / Meal effects
 
+  - Mechanistic oral absorption / physiologically based biopharmaceutics
+    modeling (PBBM), including bile salt micelle solubilization and dynamic
+    luminal pH and bile salt concentrations
+
   - PBPK/PD, QSP as well as pathway, network and disease modeling
   - Modular model building approach, enabling collaboration, re-usability, and validation of developed modules
 
@@ -25,11 +29,14 @@
 * Pre-parameterized whole-body PBPK models including detailed integrated GI tract for
   * Human
   * Monkey
-  * Dog (beagle and mongrale)
+  * Beagle
+  * Dog
   * Minipig
   * Rat
   * Mouse
   * Rabbit
+  * Cat
+  * Cattle
 * Allowing for full flexibility for parameterization of (anthropo)metrics, anatomical and physiological properties, protein expression levels, etc.
 * Most important organs included. For each organ optional processes can be added:
   * Metabolizing pathways
@@ -75,29 +82,33 @@ The PK-Sim® library includes large-scale gene-expression data from publicly ava
     * Solute radius (calculated for molecular weight as per default)
     * Dissociation constant for binding to FcRn
 * Including a set of pre-parameterized standard compounds
+* Compound-dependent simulation parameters, e.g. permeabilities or partition coefficients, can be stored with the compound as named **Overwrite Parameter Sets** and re-applied in other simulations
 
 #### Partition Coefficients
 
 Prediction models for tissue partition coefficients
-* PK-Sim 2003
-*  Rodgers & Rowland
+* PK-Sim® Standard (default)
+* Rodgers & Rowland
 * Schmitt
 * Poulin & Theil
-* Berezhkovsky
+* Berezhkovskiy
 
 #### Permeability
 
 Prediction models for cellular permeabilities and intestinal permeability
+* PK-Sim® Standard (default)
+* Charge dependent Schmitt
+* Charge dependent Schmitt normalized to PK-Sim®
 
 ### Formulations
 
 * Dissolved
-* Particle distribution
+* Particle Dissolution
 * Weibull
 * Lint80
 * Table
-* 1st order
-* Zero order
+* First Order
+* Zero Order
 
 ### Administration protocols
 
@@ -117,6 +128,9 @@ Prediction models for cellular permeabilities and intestinal permeability
 * Gallbladder emptying
 
 ### Observers
+
+* Standard observers, e.g. for concentrations in the different compartments and for the fraction of dose metabolized or excreted, are created automatically with every simulation
+* User-defined observers can be loaded from templates and selected in the **Observers** tab when a simulation is created
 
 ## Modeling tools
 

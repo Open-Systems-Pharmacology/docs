@@ -26,6 +26,21 @@ To display the data in a new chart right-click on the data and select <img src="
 
 To display the dataset in an existing chart window, simply drag\&drop the dataset into the chart. The observed dataset is then also listed in the data browser of the chart editor.
 
+### Observed Data used by a Simulation
+
+As in PK-Sim®, each simulation keeps track of the observed data it uses. An observed dataset is added to a simulation
+
+* when it is dragged\&dropped into a chart of the simulation, or
+* via the context menu: while the simulation is open for editing, right-click on the dataset in the Building Block Explorer and select **Add to Simulation '\<simulation name>'**. The entry is only offered if the active simulation does not already use the dataset.
+
+The observed data used by a simulation are listed in the Simulation Explorer below the corresponding simulation and are saved with the project. Because this association is independent of the charts, the datasets remain available in the data browser of the chart editor even if they are currently not plotted, e.g., after re-running the simulation or after applying a chart template.
+
+To remove an observed dataset from a simulation, right-click on the dataset below the simulation in the Simulation Explorer and select <img src="../assets/icons/Cancel.svg" alt="" data-size="line"> **Remove** in the context menu. The dataset is then removed from the simulation and its charts but remains in the project. An observed dataset that is used together with the simulation in a parameter identification cannot be removed from the simulation.
+
+{% hint style="info" %}
+When a project created with an earlier version of MoBi® is opened, the list of observed data used by each simulation is automatically initialized from the curves of the simulation charts and from the output mappings of the simulation.
+{% endhint %}
+
 ### Deleting imported Observed Data
 
 To delete imported observed data from the project right-click on the data and select <img src="../assets/icons/Cancel.svg" alt="Image" data-size="line"> **Remove** in the context menu (or simply press the **Delete** key on your keyboard to delete the selected data). This also removes the data from the chart and the data browser of the chart editor.

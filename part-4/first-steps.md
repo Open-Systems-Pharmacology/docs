@@ -48,7 +48,7 @@ The **Modules Explorer** shows all modules with their building blocks **Spatial 
 For convenient organization of the project, modules can be grouped in folders in the Modules Explorer.
 {% endhint %}
 
-An in-depth explanation on how to create simulations from the modules can be found in [Setting up a Simulation](setting-up-simulation.md).
+A detailed introduction on how to develop models in MoBi® is given in [The Building Block Concept](building-block-concepts.md). An in-depth explanation on how to create simulations from the modules can be found in [Setting up a Simulation](setting-up-simulation.md).
 
 Once you have defined the simulations in the current project, the **Simulations Explorer** lists all of them. For details, see [Simulation Results](simulation-results.md).
 
@@ -59,7 +59,7 @@ The **History Manager** lists all modeling steps and gives the opportunity to lo
 To develop a model in MoBi®, you can either create it from scratch or import a PBPK model from PK-Sim® and extend it. To import a PBPK model, proceed as follows:
 
 1.  In PK-Sim®, create a simulation with the desired compound and individual.
-2.  Save the simulation as `*.pkml` file (see [Export To MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi)).
+2.  Save the simulation as `*.pkml` file (see [Export to \*.pkml file for MoBi®](../part-3/importing-exporting-project-data-models.md#export-to-pkml-file-for-mobi)).
 3.  Start MoBi®.
 4.  Open the `*.pkml` file using the **File** menu and choose the <img src="../assets/icons/Simulation.svg" data-size="line"> **Open Simulation** command.
 
