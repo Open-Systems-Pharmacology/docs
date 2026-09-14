@@ -76,7 +76,7 @@ If a neighborhood is defined with a neighbor that is not present in the final mo
 
 A neighborhood can be defined **without neighbors**, i.e. with both **First neighbor** and **Second neighbor** left empty. Such a neighborhood is never created in a simulation. Its purpose is to **remove** a neighborhood: when modules are combined, it removes the same-named neighborhood contributed by a previous module, whatever the merge behavior (see [Modularization concept](modularization-concept.md#spatial-structure)).
 
-To define one, right-click the **Neighborhoods** node, select **Create Neighborhood**, enter the **name of the neighborhood to be removed** and leave both neighbor trees unselected. Clearing both neighbors of an existing neighborhood has the same effect. If no previous module defines a neighborhood of that name, nothing is removed and the definition is ignored. Every removal is reported when the simulation is created, see [Removed neighborhoods](setting-up-simulation.md#removed-neighborhoods).
+Clearing both neighbors of an existing neighborhood has the same effect. Every removal is reported when the simulation is created, see [Removed neighborhoods](setting-up-simulation.md#removed-neighborhoods).
 
 {% hint style="warning" %}
 **Both** neighbors must be empty. A neighborhood with only one neighbor is not a removal but an incomplete definition: MoBi® rejects an empty neighbor as long as the other one is set, and a simulation built from such a neighborhood - for example from a building block that was edited outside of MoBi® - fails with the error `Cannot create the neighborhood '<name>' from building block '<building block>': at least one neighbor cannot be found in the simulation`.
