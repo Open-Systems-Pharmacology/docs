@@ -21,7 +21,7 @@ The workflow of a PBPK model evaluation is similar to that of a PBPK model scena
 As a PBPK model evaluation workflow is similar to that of a qualification scenario, with the difference being model development and model application, respectively, the focus here will be on the scenario qualification workflow. In a first step, the qualification scenario is saved to a dedicated qualification repository on GitHub. This repository contains a detailed qualification plan that links and combines respective models and data describing the use case to qualify.
 The qualification plan consists of:
 
-- PK-Sim project files (more precisely: PK-Sim project file [**snapshots**](../part-3/importing-exporting-project-data-models.md#exporting-project-to-snapshot--loading-project-from-snapshot))
+- PK-Sim project files (more precisely: PK-Sim project file [**snapshots**](../part-3/pk-sim-snapshots.md))
 - Descriptions of potential cross-dependencies between PK-Sim project files (if adequate) (e.g. it is possible to inherit building blocks or simulation parameters)
 - Observed data sets (needed for model development and verification)
 - Qualification scenario description text modules
