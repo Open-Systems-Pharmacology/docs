@@ -32,10 +32,10 @@ As soon as you change such a parameter, PK-Sim® marks the change as **uncommitt
 
 ![The Simulation Explorer of a simulation with two compounds. The simulation icon carries an orange overlay. Midazolam has only uncommitted compound-dependent changes, Keto-Itraconazole is in addition out of sync with its building block.](../assets/images/part-3/overwrite-parameter-sets-uncommitted-indicator.png)
 
-Resetting a parameter to its original value removes it from the uncommitted changes again, and undo/redo restores the previous state of the indicator. The list of uncommitted changes is saved with the project, so the indicator is still there when the project is reopened.
+Resetting a parameter that is not supplied by the selected Overwrite Parameter Set returns it to its original value and removes it from the uncommitted changes again. Undo/redo restores the previous state of the indicator. The list of uncommitted changes is saved with the project and kept when the simulation is configured, so the indicator is still there when the project is reopened.
 
-{% hint style="warning" %}
-Resetting a parameter that was applied from an Overwrite Parameter Set returns it to the value originally calculated for the simulation, not to the value stored in the set, and removes it from the uncommitted changes. Neither the simulation nor the compound is marked as differing from the set, so the simulation then uses a value that the selected set does not contain. Configuring the simulation applies the set again and restores the stored value; committing to the selected set instead removes the parameter from the set.
+{% hint style="info" %}
+Resetting a parameter that was applied from the Overwrite Parameter Set selected for the simulation returns it to the value originally calculated for the simulation, not to the value stored in the set. The reset is marked as an uncommitted change, because the simulation now uses a value that the selected set does not contain. Committing it to the selected set removes the parameter from the set. Configuring the simulation instead applies the set again, restores the stored value and discards the reset.
 {% endhint %}
 
 ## Committing simulation parameters to a compound
@@ -51,32 +51,45 @@ The action is only offered for a compound of an **individual simulation** that a
 
 The **Commit simulation parameters to compound** dialog opens. It contains:
 
-- A table of all uncommitted parameters of this compound, with the columns **Selected**, **Parameter** (the path of the parameter in the simulation), **Value** (with its display unit) and **Value Origin**. Every parameter is selected by default; clear the check box of the ones you do not want to store.
+- A table of the parameters the commit writes, with the columns **Selected**, **Parameter** (the path of the parameter in the simulation), **Change**, **Value** (with its display unit) and **Value Origin**. The **Change** column tells what the commit does with each row:
+  - **Update value** — the parameter was changed in the simulation, and its current value is written to the set.
+  - **Remove from set** — the parameter belongs to the set selected for the simulation and was reset, so it is removed from that set. The **Value** column shows the recalculated value the simulation now uses. These rows are listed only when the selected set is updated.
+  - **Unchanged** — an entry of the set selected for the simulation that you did not touch. It is copied into the new set with the value the simulation currently uses. These rows are listed only when a new set is created.
+
+  Every row is selected by default. Clear the check box of the rows you do not want to commit; they stay uncommitted.
 - A **Commit Options** group with two mutually exclusive choices:
-  - **Create New Parameter Set** — enter a **Name** for the new set. By default it is filled in with the name of the compound. The name must not be empty and must not be used by another Overwrite Parameter Set of the same compound.
-  - **Update Existing Parameter Set** — select an existing set from the **Parameter Set** drop-down list. This option is disabled as long as the compound has no Overwrite Parameter Set yet.
+  - **Create New Parameter Set** — enter a **Name** for the new set. By default it is filled in with the name of the compound. The name must not be empty and must not be used by another Overwrite Parameter Set of the same compound. This option is disabled when the only rows are removals, because reset parameters alone cannot make up a set.
+  - **Update Parameter Set '…'** — updates the set selected for the compound in the simulation, whose name is shown in the option. It is preselected when a set is selected, and disabled when the simulation uses no set.
 
-![The Commit simulation parameters to compound dialog. The table lists the uncommitted parameters of the compound, and a new Overwrite Parameter Set is being created under the Commit Options.](../assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
+To store simulation parameters in another existing set, select that set for the compound when configuring the simulation, then commit.
 
-Confirm with **OK**. The set is created in — or updated on — the Compound building block of the project, and the committed parameters are no longer marked as uncommitted. The whole commit is a single action and can be undone.
+![The Commit simulation parameters to compound dialog. The selected set is being updated: the table lists a changed parameter and a reset parameter that is removed from the set.](../assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
 
-Because the commit changes the Compound building block, the compound is afterwards shown as out of sync with the simulation, even when the set holds exactly the values the simulation currently has. **Update from Building Block** or **Commit to Building Block** on that compound copies the sets into the compound of the simulation and clears the difference.
+Confirm with **OK**, which is enabled as soon as at least one row is selected. The whole commit is a single action and can be undone.
 
-Committing does not change which Overwrite Parameter Set is selected for the simulation. Selecting the new set automatically would replace a set that is already selected, and since a new set contains only the parameters of that commit, the values supplied by the previously selected set would be lost the next time the simulation is built.
+The set is written to the Compound building block of the project and to the compound used in the simulation, so both hold the same sets afterwards. The synchronization state of the compound in the simulation does not change: a compound that was in sync stays in sync, and one that was out of sync for another reason stays out of sync. Other simulations that use the same compound are shown as out of sync, and **Update from Building Block** brings the new or updated set into them.
 
-### What happens when an existing set is updated
+Committing to a new set selects it for the compound in the simulation. The simulation is not rebuilt, because the new set holds the values the simulation currently uses and applying it would change nothing. Updating the selected set keeps the selection.
 
-Updating an existing set is not a full replacement. PK-Sim® keeps the set consistent with the current state of the simulation:
+After the commit, the orange indicator shows what the selected set does not hold:
 
-- Parameters you are committing are added to the set, or their stored value is overwritten.
-- Parameters that were in the set and that you have **reset** in the simulation since the last commit are **removed** from the set.
-- Parameters that were in the set and that you have not touched are **preserved**.
-
-After an update commit, re-creating the simulation with this set therefore reproduces exactly the parameter values the simulation has at the moment of the commit.
+- Committed rows are no longer marked as uncommitted.
+- Rows whose check box you cleared stay uncommitted.
+- When a new set is created, parameters that you reset are left out of it and are no longer marked, since the simulation already uses their calculated value. An **Unchanged** row whose check box you cleared is left out of the new set as well and becomes an uncommitted change, since the simulation still uses the value the previous set supplied.
 
 {% hint style="warning" %}
-The dialog lists only the parameters that are currently uncommitted, not the whole content of the set. Entries that you have reset in the simulation are therefore removed from the set by the commit without appearing in the dialog.
+A parameter that the previously selected set supplied and that you leave out of a new set is not stored anywhere the simulation uses. It stays marked as uncommitted, but configuring the simulation with the new set returns it to its calculated value. Commit it before configuring the simulation to keep its value.
 {% endhint %}
+
+### What happens when the selected set is updated
+
+Updating the selected set is not a full replacement. PK-Sim® keeps the set consistent with the current state of the simulation:
+
+- Parameters you are committing are added to the set, or their stored value is overwritten.
+- Parameters listed as **Remove from set** are removed from the set when their row is selected.
+- Parameters that were in the set and that you have not touched are **preserved**.
+
+After a commit that includes every row, re-creating the simulation with the selected set therefore reproduces exactly the parameter values the simulation has at the moment of the commit. This holds for a new set as well, since it contains the committed parameters and the untouched entries of the previously selected set.
 
 ## The Overwrite Parameter Sets tab of a compound
 
@@ -125,7 +138,7 @@ The **Overwrite parameter set in compound** drop-down list offers **\<None\>** p
 - If it has none, **\<None\>** is preselected.
 - **\<None\>** means that the compound-dependent simulation parameters keep their originally calculated values.
 
-The sets offered are those of the compound that is selected in the **Model Structure** step of the window — the compound of the project, or the copy currently used by the simulation. A set is added to the compound of the project by the commit, so a newly committed set is offered for the simulation's own copy only after that copy has been updated from the building block.
+The sets offered are those of the compound that is selected in the **Model Structure** step of the window — the compound of the project, or the copy currently used by the simulation. A commit writes the set to both, so a newly committed set can be selected right away.
 
 ![The Compounds tab of the Configure Simulation window. For the compound Midazolam, the Overwrite Parameter Set group offers the sets defined for that compound.](../assets/images/part-3/overwrite-parameter-sets-selection.png)
 
@@ -141,7 +154,7 @@ The set can therefore only be applied to a simulation in which exactly these pat
 
 Parameters that were overwritten this way behave as **compound parameters** from then on:
 
-- They are shown as compound parameters and lose the reset behavior of a simulation parameter, because their reference value is now the value stored in the set.
+- They are shown as compound parameters. Resetting one returns it to its originally calculated value and marks the reset as an uncommitted change, a pending removal from the set (see [Uncommitted changes](#uncommitted-changes)).
 - Their value origin is taken from the entry of the set.
 - They have no counterpart in the Compound building block itself, so they can only be written back through a commit to an Overwrite Parameter Set, not through **Commit to Building Block**.
 - Their value depends on the selection from then on: configuring the simulation with **\<None\>** returns them to their originally calculated value. Parameters that were never supplied by a set keep the value you gave them across a configuration.
@@ -163,7 +176,7 @@ Committing simulation parameters is not available from a population simulation. 
 
 A compound used in a simulation is a copy of the Compound building block of the project, and it carries its own Overwrite Parameter Sets. Two rules describe how the two are kept together:
 
-1. **The sets of the compound in the simulation are a copy of those in the building block.** Both **Update from Building Block** and **Commit to Building Block** make the compound of the simulation an exact copy of the Overwrite Parameter Sets of the Compound building block: missing sets are added, differing ones updated, and sets that no longer exist in the building block removed. Sets are never copied in the opposite direction — a set reaches the building block only by committing simulation parameters to it.
+1. **The sets of the compound in the simulation are a copy of those in the building block.** **Update from Building Block**, **Commit to Building Block** and committing simulation parameters all make the compound of the simulation an exact copy of the Overwrite Parameter Sets of the Compound building block: missing sets are added, differing ones updated, and sets that no longer exist in the building block removed. Sets are never copied in the opposite direction — a set reaches the building block only by committing simulation parameters to it.
 2. **Neither operation changes a parameter value that came from a set.** The values of an Overwrite Parameter Set are applied only when the simulation is created or configured.
 
 The individual situations follow from these two rules:
@@ -171,9 +184,7 @@ The individual situations follow from these two rules:
 | Situation | Set in the building block | Set in the compound of the simulation | Parameter value in the simulation |
 | --- | --- | --- | --- |
 | **Commit to Building Block** after the value was changed in the set in the compound | keeps the changed value; it is not overwritten from the simulation | copy of the building block, so the changed value | unchanged |
-| **Commit to Building Block** after simulation parameters were committed to a set that is *not* selected for the simulation | contains the new or updated set | copy of the building block, so the set becomes selectable | unchanged, the set is not selected |
-| **Commit to Building Block** after simulation parameters were committed to the set *selected* for the simulation | holds the values the simulation had at the commit | copy of the building block | unchanged, it already holds these values |
-| **Commit to Building Block** after simulation parameters were committed to *another* set | that other set holds the values, the selected one is untouched | copy of the building block | unchanged |
+| **Update from Building Block** in another simulation after simulation parameters were committed | contains the new or updated set | copy of the building block, so the set becomes selectable | unchanged; the values of the set are applied when the simulation is next configured with it |
 | **Update from Building Block** after the value was changed in the set in the compound | changed value | copy of the building block, so the changed value | unchanged; the new value is applied when the simulation is next configured |
 | **Update from Building Block** after an Overwrite Parameter Set parameter was changed in the simulation | unchanged | unchanged | the change is kept and stays an uncommitted change |
 
