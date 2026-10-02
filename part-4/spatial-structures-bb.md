@@ -55,7 +55,6 @@ Parameters located in `MoleculeProperties` are also the place where the distribu
 
 {% hint style="info" %}
 Not every parameter is created for every molecule. In a container, only `Ontogeny factor`, `t1/2`, and `Degradation coefficient` are created for endogenous stationary molecules (e.g., enzymes and transporters), whereas all other `MoleculeProperties` parameters are created for xenobiotic floating molecules (e.g., drugs).
-TODO https://github.com/Open-Systems-Pharmacology/MoBi/issues/2437
 {% endhint %}
 
 When combining modules, `MoleculeProperties` follow the module's merge behavior: they are **extended** under "Extend" and **replaced** under "Overwrite" (see [Modularization concept](modularization-concept.md#spatial-structure)).

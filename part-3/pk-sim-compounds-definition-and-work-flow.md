@@ -14,7 +14,9 @@ A dialog will open, where the properties of the compound can be defined. The com
 
 ![The Create Compound dialog. Here, the basic physico-chemical properties of diclofenac are shown.](../assets/images/part-3/PKSim-Compound-NewCompound.png)
 
-The **Create Compound** window is subdivided into three tabs: **Basic Physico-chemistry**, **ADME Properties**, and **Advanced Properties**.
+The **Create Compound** window is subdivided into four tabs: **Basic Physico-chemistry**, **ADME Properties**, **Advanced Properties**, and **Overwrite Parameter Sets**, which are described in details in the sections below.
+
+After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Blocks Explorer** view.
 
 ### Basic Physico-Chemistry tab
 
@@ -427,11 +429,9 @@ Four drug-related parameters which are used in the model for proteins and large 
 
 Some parameters that depend on the compound are not part of the compound building block because they are only created in the context of a simulation, e.g., permeabilities or partition coefficients of the organs. If such parameters have been modified in a simulation, they can be committed back to the compound as a named **Overwrite Parameter Set** and re-applied in other simulations and projects.
 
-The **Overwrite Parameter Sets** tab lists all sets defined for the compound in a master-detail view. Parameter values, units, and metadata (e.g., species or disease state) can be inspected and edited, individual parameters or whole sets can be deleted, and one set can be marked as **Default**. New sets are only created by committing from a simulation, never from this tab.
+The **Overwrite Parameter Sets** tab lists all sets defined for the compound. Parameter values, units, and metadata (e.g., species or disease state) can be inspected and edited, individual parameters or whole sets can be deleted, and one set can be marked as **Default**. New sets are only created by committing from a simulation, never from this tab.
 
 See [Overwrite Parameter Sets](pk-sim-overwrite-parameter-sets.md) for the commit workflow, for selecting a set when a simulation is created or configured, and for the behavior in population simulations.
-
-After all information about the compound properties has been entered, the **Create Compound** window can be closed by clicking **OK** <img src="../assets/icons/OK.svg" alt="" data-size="line">. The new compound will appear in the **Building Blocks Explorer** view.
 
 ## Setting or Changing Compound Properties
 
@@ -441,8 +441,6 @@ To set or change the properties of an existing compound:
 2. Select <img src="../assets/icons/Edit.svg" alt="" data-size="line"> **Edit...**
 
 or simply double click on the compound in the **Building Blocks Explorer**.
-
-A window with the tabs **Basic Physico-chemistry**, **ADME Properties**, **Advanced Parameters**, and **Overwrite Parameter Sets** will open. The properties can be set or changed appropriately. The changes can be saved by closing the window by clicking on ![Image](../assets/icons/CloseWindow.png).
 
 ## Cloning Compounds
 
