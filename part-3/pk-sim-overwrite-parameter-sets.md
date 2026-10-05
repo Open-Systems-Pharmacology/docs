@@ -26,7 +26,7 @@ Parameters that were applied from an Overwrite Parameter Set are also offered fo
 As soon as you change the value of such a parameter in a simulation, PK-Sim® marks the change as **uncommitted**. This is shown by an orange indicator:
 
 - On the **simulation** in the **Simulation Explorer**, an orange overlay is added to the simulation icon as long as the simulation contains any uncommitted compound-dependent change.
-- On the **compound inside the simulation**, the orange status indicator is added next to the green or red synchronization state. The combination of a green and an orange indicator means that the compound is in sync with its building block properties, but has uncommitted compound-dependent parameter changes; the combination of a red and an orange indicator means that it is out of sync (e.g., parameters that are defined in the compounds building block, such as Lipophilicty, or any of the ADME processes, differ) *and* has uncommitted changes.
+- On the **compound inside the simulation**, the orange status indicator is added next to the green or red synchronization state. The combination of a green and an orange indicator means that the compound is in sync with its building block properties, but has uncommitted compound-dependent parameter changes; the combination of a red and an orange indicator means that it is out of sync (e.g., parameters that are defined in the compound building block, such as Lipophilicity, or any of the ADME processes, differ) *and* has uncommitted changes.
 
 ![The Simulation Explorer of a simulation with two compounds. The simulation icon carries an orange overlay. Midazolam has only uncommitted compound-dependent changes, Keto-Itraconazole is in addition out of sync with its building block.](../assets/images/part-3/overwrite-parameter-sets-uncommitted-indicator.png)
 
@@ -50,11 +50,11 @@ The **Commit simulation parameters to compound** dialog opens. It contains:
 - A table of all uncommitted parameters of this compound, with the columns **Selected**, **Parameter** (the path of the parameter in the simulation), **Change** (update value, or remove from the list), **Value** (with its display unit), and **Value Origin**. Every parameter is selected by default; clear the check box of the ones you do not want to store.
 - A **Commit Options** group:
   - **Create New Parameter Set** — enter a **Name** for the new set. By default it is filled in with the name of the compound. The name must not be empty and must not be used by another Overwrite Parameter Set of the same compound.
-  - **Update Existing Parameter Set** — select an existing set from the **Parameter Set** drop-down list. This option is disabled as long as the compound has no Overwrite Parameter Set yet.
+  - **Update Parameter Set** — update the currently selected Overwrite Parameter Set.
 
 ![The Commit simulation parameters to compound dialog. The table lists the uncommitted parameters of the compound, and a new Overwrite Parameter Set is being created under the Commit Options.](../assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
 
-Confirm with **OK**. The set is created in — or updated on — the Compound building block of the project, and the committed parameters are no longer marked as uncommitted. Keep in mind that this action cannot be undone.
+Confirm with **OK**. The set is created in — or updated on — the Compound building block of the project, and the committed parameters are no longer marked as uncommitted.
 
 When a new parameter set is created during the commit, this set is automatically selected in the simulation configuration for this compound.
 
@@ -97,7 +97,7 @@ Additionally you can:
 An Overwrite Parameter Set that is used in any simulation of the project cannot be deleted. The error message lists the simulations that block the deletion.
 {% endhint %}
 
-When you edit an existing Overwrite Parameter set (e.g., change its values, metadata, or remove entries), or remove a set, all simulations that use this compound get the "Red exclamation mark", even if the overwrite parameter set is not used in the simulation. The reason is that the compounds building block information has changed, even if it is not used in the simulation.
+When you edit an existing Overwrite Parameter Set (e.g., change its values, metadata, or remove entries), or remove a set, all simulations that use this compound get the "Red exclamation mark", even if the Overwrite Parameter Set is not used in the simulation. The reason is that the compounds building block information has changed, even if it is not used in the simulation.
 
 ### Metadata
 
@@ -142,9 +142,9 @@ Committing simulation parameters is not available from a population simulation. 
 
 A compound used in a simulation is a copy of the Compound building block of the project, and it carries its own Overwrite Parameter Sets.
 
-**The sets of the compound in the simulation are a copy of those in the building block.** Both **Update from Building Block** and **Commit to Building Block** make the compound of the simulation an exact copy of the Overwrite Parameter Sets of the Compound building block: missing sets are added, differing ones updated, and sets that no longer exist in the building block removed.
+To get new Overwrite Parameter Sets into a simulation for selection (e.g., when a new set was created in another simulation using the same compound), you need to update the Compound from its building block.
 
-Commiting compound changes from the simulation (e.g., changed lipophilicity) never touches the Over Parameter Values Sets; they are only changed with the "Commit Simulation Parameters to Compound..." action.
+Commiting compound changes from the simulation (e.g., changed lipophilicity) never touches the Overwrite Parameter Sets; they are only changed with the "Commit Simulation Parameters to Compound..." action.
 
 ## Overwrite Parameter Sets and the rest of the project
 
