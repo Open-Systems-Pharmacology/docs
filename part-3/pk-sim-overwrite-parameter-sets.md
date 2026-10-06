@@ -15,7 +15,7 @@ Overwrite Parameter Sets complement, but do not replace, the existing synchroniz
 A simulation parameter is offered for a commit when both of the following are true:
 
 - It is a **simulation parameter**, i.e. its value is not taken from a Compound building block but is calculated during simulation creation (usually, these are the parameters that depend on the compounds *and* individual properties).
-- Its path contains the name of the compound.
+- One element of its path exactly matches the name of the compound.
 
 Compounds that are created inside the simulation but are not represented by a separate Compound building block — for example an unnamed metabolite of a parent/metabolite simulation — are not considered.
 
@@ -36,7 +36,7 @@ Resetting a parameter that was applied from an Overwrite Parameter Set returns i
 
 ## Committing simulation parameters to a compound
 
-1. In the **Simulation Explorer**, expand the simulation and right mouse click on the compound whose parameters you want to store.
+1. In the **Simulation Explorer**, expand the simulation and right-click on the compound whose parameters you want to store.
 2. Select **Commit Simulation Parameters to Compound...**
 
 ![The context menu of a compound used in a simulation, with the Commit Simulation Parameters to Compound action.](../assets/images/part-3/overwrite-parameter-sets-context-menu.png)
@@ -52,7 +52,7 @@ The **Commit simulation parameters to compound** dialog opens. It contains:
   - **Create New Parameter Set** — enter a **Name** for the new set. By default it is filled in with the name of the compound. The name must not be empty and must not be used by another Overwrite Parameter Set of the same compound.
   - **Update Parameter Set** — update the currently selected Overwrite Parameter Set.
 
-![The Commit simulation parameters to compound dialog. The table lists the uncommitted parameters of the compound, and a new Overwrite Parameter Set is being created under the Commit Options.](../assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
+![The Commit simulation parameters to compound dialog. The table lists the parameter changes, and the currently selected Overwrite Parameter Set is being updated.](../assets/images/part-3/overwrite-parameter-sets-commit-dialog.png)
 
 Confirm with **OK**. The set is created in — or updated on — the Compound building block of the project, and the committed parameters are no longer marked as uncommitted.
 
@@ -97,7 +97,7 @@ Additionally you can:
 An Overwrite Parameter Set that is used in any simulation of the project cannot be deleted. The error message lists the simulations that block the deletion.
 {% endhint %}
 
-When you edit an existing Overwrite Parameter Set (e.g., change its values, metadata, or remove entries), or remove a set, all simulations that use this compound get the "Red exclamation mark", even if the Overwrite Parameter Set is not used in the simulation. The reason is that the compounds building block information has changed, even if it is not used in the simulation.
+When you edit an existing Overwrite Parameter Set (e.g., change its values, metadata, or remove entries), or remove a set, all simulations that use this compound get the "Red exclamation mark", even if the Overwrite Parameter Set is not used in the simulation. The reason is that the compound building block information has changed, even if it is not used in the simulation.
 
 ### Metadata
 
@@ -144,7 +144,7 @@ A compound used in a simulation is a copy of the Compound building block of the 
 
 To get new Overwrite Parameter Sets into a simulation for selection (e.g., when a new set was created in another simulation using the same compound), you need to update the Compound from its building block.
 
-Commiting compound changes from the simulation (e.g., changed lipophilicity) never touches the Overwrite Parameter Sets; they are only changed with the "Commit Simulation Parameters to Compound..." action.
+Committing compound changes from the simulation (e.g., changed lipophilicity) never touches the Overwrite Parameter Sets in the compound building block; they are only changed with the "Commit Simulation Parameters to Compound..." action.
 
 ## Overwrite Parameter Sets and the rest of the project
 
