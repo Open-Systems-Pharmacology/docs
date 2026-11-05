@@ -52,17 +52,17 @@ For *state variable* parameters, the **Value** is the initial value of the param
 
 ## Copying and pasting entries
 
-Entries can be copied from one PV BB and pasted into another PV BB, or into the same one. The table view offers two kinds of copy:
+Entries can be copied from one Parameter Values building block and pasted into another Parameter Values building block, or into the same one. The table view offers two kinds of copy:
 
-- **Copying entries**: copies the parameter values themselves, so that they can be pasted into a PV BB.
+- **Copying entries**: copies the parameter values themselves, so that they can be pasted into a Parameter Values building block.
     - **Copy** in the context menu of the table, or **Ctrl+C**, copies the selected entries. A distributed parameter value is copied together with its sub-parameters.
     - **Ctrl+Shift+C** copies all entries shown in the table. If the table is filtered, only the shown entries are copied.
-    - **Paste** in the context menu, or **Ctrl+V**, adds the copied entries to the PV BB. **Paste** is only available when parameter values have been copied. Formulas used by the copied entries are added to the formulas of the PV BB, or matched to an identical formula that already exists there.
+    - **Paste** in the context menu, or **Ctrl+V**, adds the copied entries to the building block. **Paste** is only available when parameter values have been copied. Formulas used by the copied entries are added to the formulas of the building block, or matched to an identical formula that already exists there.
 - **Copying as text**: copies the content of the table as text to the Windows clipboard, for example to paste it into Excel. Right-click the row indicator to the left of the rows and select **Copy Selection as Text**, **Copy Selected Rows as Text** or **Copy Table as Text**.
 
 **Ctrl+C** and **Ctrl+Shift+C** do both: they copy the entries, and the same entries as text. Pasting in MoBi adds the entries, while pasting in another application, such as Excel, inserts the text. While a cell is being edited, **Ctrl+C** and **Ctrl+V** copy and paste the text of the cell only.
 
-When pasting, entries with a new path are added. If an entry with the same path already exists in the PV BB, a dialog asks which of the existing entries to replace. Existing entries that are not selected are kept unchanged. A paste can be undone in one step.
+When pasting, entries with a new path are added. If an entry with the same path already exists in the building block, a dialog asks which of the existing entries to replace. Existing entries that are not selected are kept unchanged. A paste can be undone in one step.
 
 ## Creating new parameters in simulation structure through PV BB
 
