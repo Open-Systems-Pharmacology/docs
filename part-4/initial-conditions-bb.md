@@ -71,6 +71,24 @@ Internally, very small numerical values are divided by the scale divisors to get
 Entries for molecules and/or containers that do not exist in the final model will be ignored.
 {% endhint %}
 
+## Copying and pasting entries
+
+Entries can be copied from one IC BB and pasted into another IC BB, or into the same one. The table view offers two kinds of copy:
+
+- **Copying entries**: copies the initial conditions themselves, so that they can be pasted into an IC BB.
+    - **Copy** in the context menu of the table, or **Ctrl+C**, copies the selected entries.
+    - **Ctrl+Shift+C** copies all entries shown in the table. If the table is filtered, only the shown entries are copied.
+    - **Paste** in the context menu, or **Ctrl+V**, adds the copied entries to the IC BB. **Paste** is only available when initial conditions have been copied. Formulas used by the copied entries are added to the formulas of the IC BB, or matched to an identical formula that already exists there.
+- **Copying as text**: copies the content of the table as text to the Windows clipboard, for example to paste it into Excel. Right-click the row indicator to the left of the rows and select **Copy Selection as Text**, **Copy Selected Rows as Text** or **Copy Table as Text**.
+
+**Ctrl+C** and **Ctrl+Shift+C** do both: they copy the entries, and the same entries as text. Pasting in MoBi adds the entries, while pasting in another application, such as Excel, inserts the text. While a cell is being edited, **Ctrl+C** and **Ctrl+V** copy and paste the text of the cell only.
+
+When pasting, entries with a new path are added. If an entry with the same path already exists in the IC BB, a dialog asks which of the existing entries to replace. Existing entries that are not selected are kept unchanged. A paste can be undone in one step.
+
+{% hint style="info" %}
+The initial conditions of an Expression Profile BB can be copied, but entries cannot be pasted into an Expression Profile BB, because its initial conditions are defined by the expression profile.
+{% endhint %}
+
 ## Creating IC BB
 
 To create a new IC BB in a module, right-click on the module and select **Add Building Blocks** from the context menu. In the dialog that opens, select **Initial Conditions** and enter a unique name for the new BB. Click **OK** to create the new IC BB.
