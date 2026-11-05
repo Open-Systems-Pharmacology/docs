@@ -52,7 +52,7 @@ For *state variable* parameters, the **Value** is the initial value of the param
 
 ## Copying and pasting entries
 
-Entries can be copied from one Parameter Values building block and pasted into another Parameter Values building block, or into the same one. The table view offers two kinds of copy:
+Entries can be copied from one Parameter Values building block and pasted into another Parameter Values building block. The table view offers two kinds of copy:
 
 - **Copying entries**: copies the parameter values themselves, so that they can be pasted into a Parameter Values building block.
     - **Copy** in the context menu of the table, or **Ctrl+C**, copies the selected entries. A distributed parameter value is copied together with its sub-parameters.

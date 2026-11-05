@@ -73,7 +73,7 @@ Entries for molecules and/or containers that do not exist in the final model wil
 
 ## Copying and pasting entries
 
-Entries can be copied from one Initial Conditions building block and pasted into another Initial Conditions building block, or into the same one. The table view offers two kinds of copy:
+Entries can be copied from one Initial Conditions building block and pasted into another Initial Conditions building block. The table view offers two kinds of copy:
 
 - **Copying entries**: copies the initial conditions themselves, so that they can be pasted into an Initial Conditions building block.
     - **Copy** in the context menu of the table, or **Ctrl+C**, copies the selected entries.
