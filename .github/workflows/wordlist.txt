@@ -50,3 +50,5 @@ subnodes
 PKParameters
 FontFamilyName
 DDGI
+DevExpress
+dialogs
