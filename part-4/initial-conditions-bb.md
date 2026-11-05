@@ -78,12 +78,18 @@ Entries can be copied from one Initial Conditions building block and pasted into
 - **Copying entries**: copies the initial conditions themselves, so that they can be pasted into an Initial Conditions building block.
     - **Copy** in the context menu of the table, or **Ctrl+C**, copies the selected entries.
     - **Ctrl+Shift+C** copies all entries shown in the table. If the table is filtered, only the shown entries are copied.
-    - **Paste** in the context menu, or **Ctrl+V**, adds the copied entries to the building block. **Paste** is only available when initial conditions have been copied. Formulas used by the copied entries are added to the formulas of the building block, or matched to an identical formula that already exists there.
+    - **Paste** in the context menu, or **Ctrl+V**, adds the copied entries to the building block. **Paste** is only available when initial conditions have been copied.
 - **Copying as text**: copies the content of the table as text to the Windows clipboard, for example to paste it into Excel. Right-click the row indicator to the left of the rows and select **Copy Selection as Text**, **Copy Selected Rows as Text** or **Copy Table as Text**.
 
 **Ctrl+C** and **Ctrl+Shift+C** do both: they copy the entries, and the same entries as text. Pasting in MoBi adds the entries, while pasting in another application, such as Excel, inserts the text. While a cell is being edited, **Ctrl+C** and **Ctrl+V** copy and paste the text of the cell only.
 
 When pasting, entries with a new path are added. If an entry with the same path already exists in the building block, a dialog asks which of the existing entries to replace. Existing entries that are not selected are kept unchanged. A paste can be undone in one step.
+
+Formulas used by the copied entries are added to the formulas of the building block. If the building block already contains a formula with the same name, the copied entries use the existing formula when both formulas are the same. Otherwise, the copied formula is added under a new name. Two formulas with the same name are the same when they have the same type and:
+
+- **Constant formulas**: the same value.
+- **Explicit formulas**: the same formula string and the same references, i.e., the same alias, path and dimension for each reference.
+- **All other formulas**, e.g., distributed or table formulas: nothing else is compared. The same name and type are enough.
 
 {% hint style="info" %}
 The initial conditions of an Expression Profile building block can be copied, but entries cannot be pasted into an Expression Profile building block, because its initial conditions are defined by the expression profile.
