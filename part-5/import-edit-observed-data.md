@@ -13,6 +13,7 @@ Each data table:
 
 * **must** have at least 2 data columns with numeric values: one column with **time** values and one column with **measurement** values.
 * **can** have additional data column with numeric values for measurement **error** values
+  * The error type (arithmetic or geometric standard deviation) can be given in a further data column (s. [Error type from a column](import-edit-observed-data.md#error-type-from-a-column) for details)
 * **can** have additional data column with numeric values for the _lower limit of quantification_ (**LLOQ**)
   * It is also possible to provide LLOQ values directly in the measurement column (s. [LLOQ](import-edit-observed-data.md#lloq) for details)
 * **can** have arbitrary number of further numeric or non-numeric data columns, which can be interpreted as **meta data** which describes a _data set_ (e.g. "Study Id", "Subject Id", "Organ", "Compartment", ...). S. [Data sets](import-edit-observed-data.md#data-sets) for the explanation how meta data is used to split a data table into different data sets.
@@ -294,7 +295,7 @@ Results in the following mapping:
 The mapping panel is available throughout the whole import process. If the user changes the mapping, the changes are automatically applied to all data sheets, and the result of the modified mapping is automatically updated.
 {% endhint %}
 
-As shown in the screenshot below, the user gets a view of all the available mappings and can map a column to them. A column can be selected to a mapping only once and will no longer be available on the drop-down menus for other mappings, with one exception: the unit column for the measurement can also be mapped as the unit column for the corresponding error.
+As shown in the screenshot below, the user gets a view of all the available mappings and can map a column to them. A column can be selected to a mapping only once and will no longer be available on the drop-down menus for other mappings, with two exceptions: the unit column for the measurement can also be mapped as the unit column for the corresponding error, and the column selected as [error type column](import-edit-observed-data.md#error-type-from-a-column) can also be used in a '**Group by**'-mapping.
 
 ![Importer Selecting an Excel Column](../assets/images/part-5/ImporterSelectingExcelColumn.png)
 
@@ -344,11 +345,43 @@ When importing the datasets, the measurement values that are below the LLOQ are 
 
 #### Configuring the error
 
-The error can be set to '**Arithmetic Standard Deviation**' or '**Geometric Deviation**'. Since the geometric deviation is dimensionless, it is not possible to specify a unit for it. Otherwise, the user can specify the unit either manually or by a column. The dimension of the measurement and the error unit, as well as their source (manually entered or specified by a column), have to be consistent. This is checked when loading the sheet, and data with inconsistent dimensions cannot be imported.
+The error can be set to '**Arithmetic Standard Deviation**' or '**Geometric Standard Deviation**'. Since the geometric standard deviation is dimensionless, it is not possible to specify a unit for it. Otherwise, the user can specify the unit either manually or by a column. The dimension of the measurement and the error unit, as well as their source (manually entered or specified by a column), have to be consistent. This is checked when loading the sheet, and data with inconsistent dimensions cannot be imported.
 
 When the unit is configured as manual input, the user must first select the "Dimension" from the drop-down, and then the corresponding units to this dimension will become available in the "Unit" drop-down menu.
 
 ![Selecting Error Type](../assets/images/part-5/ImporterSelectingErrorType.png)
+
+##### Error type from a column
+
+By default, the selected error type is used for all imported data sets. If a file contains data sets with different error types, the error type can be read from a column of the file instead. To do so, open "**Edit extra fields**" of the error mapping, check "**Import error type from a column**" and select the column.
+
+The cells of the error type column can contain the following values. The values are not case sensitive, and leading or trailing spaces are ignored:
+
+| Error type                    | Accepted values                                                |
+| ----------------------------- | -------------------------------------------------------------- |
+| Arithmetic Standard Deviation | `ASD`, `ArithmeticStdDev`, `Arithmetic Standard Deviation`     |
+| Geometric Standard Deviation  | `GSD`, `GeometricStdDev`, `Geometric Standard Deviation`       |
+
+There can only be one error type for every data set:
+
+* If all rows of a data set have the same error type, this type is used for the data set. Empty cells are ignored.
+* If the error type column is empty for all rows of a data set, the error type selected in the error editor is used. While "**Import error type from a column**" is checked, this selection is labeled "**Error type (default for empty cells)**".
+* If a data set has more than one error type, or a value that is not listed above, the data cannot be imported. The error message names the sheet, the data set and the values found.
+
+Only the rows that are imported are considered: rows without a time or measurement value do not define the error type of a data set.
+
+The error type column does not split the data into data sets by itself (s. [Data sets](import-edit-observed-data.md#data-sets)). If a sheet contains e.g. arithmetic and geometric errors for otherwise identical meta data, map the error type column as a '**Group by**'-mapping as well. The data is then split into one data set per error type.
+
+Units are handled per data set, according to its error type:
+
+* For a data set with an arithmetic standard deviation, the error unit is used as described above and must have the same dimension as the measurement unit.
+* For a data set with a geometric standard deviation, the error is imported as a dimensionless value exactly as written in the file. The error unit is ignored.
+
+For this reason, the unit selection stays visible while "**Import error type from a column**" is checked, even if the default error type is the geometric standard deviation.
+
+{% hint style="info" %}
+The error type column is part of the mapping, like a unit or LLOQ column. A sheet that does not contain this column cannot be loaded with this mapping.
+{% endhint %}
 
 #### Molecular weight
 
