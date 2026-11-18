@@ -368,8 +368,6 @@ There can only be one error type for every data set:
 * If the error type column is empty for all rows of a data set, the error type selected in the error editor is used. While "**Import error type from a column**" is checked, this selection is labeled "**Error type (default for empty cells)**".
 * If a data set has more than one error type, or a value that is not listed above, the data cannot be imported. The error message names the sheet, the data set and the values found.
 
-Only the rows that are imported are considered: rows without a time or measurement value do not define the error type of a data set.
-
 The error type column does not split the data into data sets by itself (s. [Data sets](import-edit-observed-data.md#data-sets)). If a sheet contains e.g. arithmetic and geometric errors for otherwise identical meta data, map the error type column as a '**Group by**'-mapping as well. The data is then split into one data set per error type.
 
 Units are handled per data set, according to its error type:
