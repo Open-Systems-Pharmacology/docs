@@ -440,7 +440,7 @@ All values in the time column must be unique in an observed data repository.
 
 When observed data is added to a simulation, it is mapped automatically to a simulation output. By default, this mapping uses the `Organ`, `Compartment` and `Molecule` meta data of the data set (see the description of the output mapping in [PK-Sim® Simulations](../part-3/pk-sim-simulations.md)). If these meta data do not identify the output uniquely, or if the output is not located in an organ and compartment (for example, an observer in a MoBi® model), you can name the output directly with the `OutputPath` meta data.
 
-To add it, open the observed data and click **Add Output Path** in the meta data area of the editing window. A new meta data row named `OutputPath` is added. Its name cannot be changed. Enter the path of the simulation output as the value. The entry is stored in the data set once a value is entered. The button is disabled while the data set already has an `OutputPath` entry. The entry can be removed like any other meta data.
+To add it, open the observed data and click **Add Output Path** in the meta data area of the editing window. A new meta data row named `OutputPath` is added. Enter the path of the simulation output as the value. The button is disabled while the data set already has an `OutputPath` entry. The entry can be removed like any other meta data.
 
 The output path can also be set during the import. Add a column named `OutputPath` to the data table and map it as a **Group by** column in the [Mapping panel](import-edit-observed-data.md#mapping-panel) (the column is not mapped automatically). The imported data sets then have the `OutputPath` meta data with the value from this column, and the value can still be changed in the editing window. As with any **Group by** column, the data table is also split into separate data sets for each distinct output path.
 
@@ -452,7 +452,7 @@ Organism|PeripheralVenousBlood|Aciclovir|Plasma (Peripheral Venous Blood)
 
 When the observed data is added to a simulation:
 
-* If `OutputPath` has a value, the data set is mapped to the selected simulation output whose path is exactly this value. The comparison is case sensitive. The `Organ`, `Compartment` and `Molecule` meta data are not used for the mapping.
+* If `OutputPath` has a value, the data set is mapped to the selected simulation output whose path is exactly this value. The `Organ`, `Compartment` and `Molecule` meta data are not used for the mapping.
 * If no selected output of the simulation has this path, the data set is not mapped (the output is set to **None**). The mapping does not fall back to the `Organ`, `Compartment` and `Molecule` meta data.
 * If `OutputPath` is missing or empty, the mapping uses the `Organ`, `Compartment` and `Molecule` meta data.
 

@@ -276,7 +276,8 @@ Container criteria (in passive transports, observers, events, sum formulas, …)
 #### Observed data
 
 - Observed data with non-monotonically increasing or duplicate x-values is accepted. ([Core #796](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/796), [Core #1863](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/1863))
-- The import can record an `OutputPath` as metadata, and import error messages are more specific. ([Core #2787](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2787), [Core #2648](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2648), [Core #2650](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2650))
+- **OutputPath meta data:** observed data can name the simulation output it belongs to with the `OutputPath` meta data, added with the new **Add Output Path** button in the observed data editor or imported from a data column. When set, observed data is mapped automatically to the output with exactly this path instead of using the Organ, Compartment and Molecule meta data. See [Output path meta data](part-5/import-edit-observed-data.md#output-path-meta-data). ([Core #2787](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2787))
+- Import error messages are more specific. ([Core #2648](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2648), [Core #2650](https://github.com/Open-Systems-Pharmacology/OSPSuite.Core/issues/2650))
 
 #### Working journal, history and comparisons
 
