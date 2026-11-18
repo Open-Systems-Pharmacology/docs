@@ -379,10 +379,6 @@ Units are handled per data set, according to its error type:
 
 For this reason, the unit selection stays visible while "**Import error type from a column**" is checked, even if the default error type is the geometric standard deviation.
 
-{% hint style="info" %}
-The error type column is part of the mapping, like a unit or LLOQ column. A sheet that does not contain this column cannot be loaded with this mapping.
-{% endhint %}
-
 #### Molecular weight
 
 Concentration data can be imported either in molar units (e.g. \[µmol/l]) or in mass units (e.g. \[mg/ml]). In order to switch between molar and mass units (e.g. to display the data which was imported in \[µmol/l] in \[mg/ml]) it is required to specify the **Molecular weight** of a data set.
