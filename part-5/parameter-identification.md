@@ -30,7 +30,7 @@ Within a Parameter Identification you have to perform the following steps:
 <!--  -->
 In order to use the Parameter Identification tool, you should add all observed data you want to use to one or more simulations.
 
-Ensure that meta data for **Organ**, **Compartment**, **Molecule** is up to date, because this meta data is used for automatic mapping to outputs.
+Ensure that meta data for **Organ**, **Compartment**, **Molecule** is up to date, because this meta data is used for automatic mapping to outputs. Alternatively, set the **OutputPath** meta data to map a data set to one specific output (see [Output path meta data](import-edit-observed-data.md#output-path-meta-data)).
 
 In the simulations which will be used for Parameter Identification, select all outputs to be mapped to observed data.
 
@@ -44,7 +44,7 @@ A Parameter Identification can be based on one simulation or several simulations
 
 ### Map outputs to observed data
 
-A mapping of observed data to corresponding simulation outputs is done automatically according to Organ, Compartment and Molecule meta data. Additionally, you can edit the mapping manually.
+A mapping of observed data to corresponding simulation outputs is done automatically according to Organ, Compartment and Molecule meta data, or according to the OutputPath meta data if it is set (see [Output path meta data](import-edit-observed-data.md#output-path-meta-data)). Additionally, you can edit the mapping manually.
 
 ### Define Identification Parameters
 
@@ -69,7 +69,7 @@ During the Parameter Identification Run you can get visual feedback about the cu
 For a hands on exercise, open the example project Theophylline.pksim5. You can download the project from [https://github.com/Open-Systems-Pharmacology/Example_Theophylline](https://github.com/Open-Systems-Pharmacology/Example_Theophylline).
 
 1. In the Simulation Explorer mark the two simulations "_Kaumeier IV 208 mg fit_" and "_Kaumeier oral solution 185mg_" and select <img src="../assets/icons/ParameterIdentification.svg" alt="" data-size="line"> **Start Parameter Identification ...** from the context menu.
-2. A new view for _Parameter Identification 1_ is displayed and the tab **Data** is opened. On the left, the simulations with the assigned observed data are displayed. On the right, a list of mappings from outputs to observed data is displayed. For each observed data set for concentrations and fractions the corresponding output is mapped automatically (based on the Organ, Compartment, Molecule meta data).
+2. A new view for _Parameter Identification 1_ is displayed and the tab **Data** is opened. On the left, the simulations with the assigned observed data are displayed. On the right, a list of mappings from outputs to observed data is displayed. For each observed data set for concentrations and fractions the corresponding output is mapped automatically (based on the OutputPath meta data if it is set, otherwise on the Organ, Compartment, Molecule meta data).
 
     ![Parameter Identification - Mapping of outputs and observed data](../assets/images/part-5/Tab-Data.png)
 3.  Switch to the next tab **Parameters**. Here, you have to define the parameters for identification. On the left, a list of all parameters grouped by **Organ** and **Name** is displayed. (If you are interested only in the Favorite parameters you can filter the column **Favorite**. You can also ungroup or group by another column through the context menu of the column headers.)
@@ -148,7 +148,7 @@ If you select a mapping, the corresponding Observed Data is displayed as table a
 Both the weight of the mapping and the weight of the individual data point are multiplied with the difference described above; the complete definition of the residuals and of the resulting objective function is given in [Objective function and Total Error](#objective-function-and-total-error).
 
 {% hint style="info" %}
-In MoBi®, you can freely define observers to match any kind of observed data. In order to enable the automatic mapping ensure that the meta data for Organ, Compartment and Molecule is the same for corresponding observed data and observers. Therefore, you can define the observers for specific Containers and Molecules and/or edit the meta data of the observed data.
+In MoBi®, you can freely define observers to match any kind of observed data. In order to enable the automatic mapping ensure that the meta data for Organ, Compartment and Molecule is the same for corresponding observed data and observers. Therefore, you can define the observers for specific Containers and Molecules and/or edit the meta data of the observed data. Alternatively, set the OutputPath meta data of the observed data to the path of the observer (see [Output path meta data](import-edit-observed-data.md#output-path-meta-data)).
 {% endhint %}
 
 ### Handling of missing values for residuals
